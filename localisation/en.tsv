@@ -1,5 +1,5 @@
 xatw3_refresh	Refresh candidates
-xatw3_refresh_tooltip	Replace ordinary candidates of the selected type. Legendary, wounded and previously recruited characters are protected. Initial adapters: Empire General and Empire Captain.
+xatw3_refresh_tooltip	Replace ordinary automatically generated candidates of the selected subtype for free. Legendary, immortal, wounded, previously recruited and unknown-history characters stay. Special training is unsupported.
 xatw3_capital	Move capital
 xatw3_capital_tooltip	Move the faction capital to the selected owned settlement for free. Does not change province capitals or building levels.
 xatw3_confirm_title	Recruitment and Capitals

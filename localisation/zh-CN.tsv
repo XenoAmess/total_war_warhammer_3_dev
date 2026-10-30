@@ -1,5 +1,5 @@
 xatw3_refresh	刷新候选
-xatw3_refresh_tooltip	替换当前类别的普通候选。传奇、受伤及已招募人物受保护。首版适配帝国将军与帝国队长。
+xatw3_refresh_tooltip	替换当前子类型的普通自动生成候选，免费。传奇、不朽、受伤、已招募和履历不明人物保留；不支持特殊训练。
 xatw3_capital	迁都
 xatw3_capital_tooltip	将派系首都迁至选中的自有城镇。免费，不改变省会或建筑等级。
 xatw3_confirm_title	征募与迁都
