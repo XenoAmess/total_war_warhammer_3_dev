@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-30T18:04:02.844161+00:00",
+  "recorded_at_utc": "2026-10-30T18:39:33.766407+00:00",
   "source_commit": "cb43cc56f3cadbfaa6d652e3cadf6eb895dd6c90",
   "release_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
   "release_pack_bytes": 42899,
-  "release_status": "FROZEN_OFFLINE_ACCEPTANCE_IN_PROGRESS",
+  "release_status": "FROZEN_OFFLINE_CORE_ACCEPTANCE_PASS",
   "L0": "PASS",
   "L1": "PASS",
   "L2": "PASS",
-  "L3": "IN_PROGRESS",
+  "L3": "PASS",
   "L4": "NOT_RUN",
   "machine_id": "pc-20260924rtuf-f11af23c08",
   "steam_app_id": 1142710,
@@ -25,8 +25,8 @@
     "ui_controller_tests": 8,
     "native_bridge_rejection_tests": 3,
     "runtime_metadata_tests": 5,
-    "python_tool_tests": 7,
-    "total_tests": 58,
+    "python_tool_tests": 8,
+    "total_tests": 59,
     "deterministic_build": "PASS",
     "pack_round_trip": "PASS"
   },
@@ -43,7 +43,7 @@
     "frozen_new_hero_normal_recruitment": "PASS",
     "frozen_province_and_minor_capital_buttons": "PASS",
     "frozen_cancel_and_current_capital_rejection": "PASS",
-    "frozen_full_offline_flow": "IN_PROGRESS",
+    "frozen_full_offline_flow": "PASS",
     "production_embedded_in_fixture": false,
     "production_hot_reloaded_during_frozen_acceptance": false,
     "frozen_full_offline_player_actions": "PASS",
@@ -57,24 +57,130 @@
       "lord_actor": 1320,
       "lord_gold_before": 6035,
       "lord_gold_after": 5285
-    }
+    },
+    "frozen_offline_ten_real_ui_refreshes_each": "PASS",
+    "frozen_offline_next_turn_and_natural_replenishment": "PASS",
+    "frozen_offline_save_exit_cold_reload_no_replay": "PASS",
+    "frozen_final_turn": 3,
+    "frozen_next_sequence": 57,
+    "frozen_final_lord_pool_ids": [
+      17068,
+      17069,
+      17189
+    ],
+    "frozen_final_hero_pool_ids": [
+      16863,
+      16865,
+      17070,
+      17071,
+      17190
+    ]
   },
   "steam_mode": {
     "status": "offline",
     "offline_mode": true,
-    "observed_at_utc": "2026-10-30T17:56:53.482525+00:00",
+    "observed_at_utc": "2026-10-30T18:37:50.608129+00:00",
     "method": "native_current_user_byte",
-    "prelaunch_fresh_probe_required": true
+    "prelaunch_fresh_probe_required": true,
+    "receipt": "D:\\workspace\\.codex-wh3-runtime\\research\\steam-post-final-acceptance-20261031-a01.json"
   },
   "workshop": {
     "item_id": null,
     "create_or_upload_api_called": false,
     "anonymous_page_verification": "NOT_RUN",
     "download_hash_verification": "NOT_RUN",
-    "blocker": "Frozen offline full-flow acceptance is still in progress"
+    "blocker": null
   },
   "cleanup": {
-    "status": "PENDING_ACTIVE_ACCEPTANCE"
+    "status": "PASS",
+    "recorded_at_utc": "2026-10-30T18:38:35.538810+00:00",
+    "files": [
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_acceptance.pack",
+        "sha256": "1714f5dd2a2cc80a241d6b61d6a6f526b7b8aaba37b2ff8130984fc4f350da74",
+        "action": "removed"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+        "sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+        "action": "removed"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+        "sha256": "d034ea466c29f6a75da92d43e6c8261d319d3d2710310c6b88ee88bed15b9a0b",
+        "action": "removed"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\scripts\\user.script.txt",
+        "sha256": "a713f349ffd9bfb1a6d7298b40dfa2ff245a15a0af6145195a6d836d6e261ba9",
+        "action": "removed"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\twwh3-memreader_plus.dll",
+        "sha256": "9f451aac6dab4e05d597a3c2102272f79887c85f0338e9b880f374ec7594f3ab",
+        "action": "removed"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\xatw3_research.save",
+        "sha256": "1dd319f7084d14669ff6eb2a05b5285e18d2e56d87f466b7cda2198f98af10d4",
+        "action": "archived_then_removed"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\冰雪王廷_自动保存.12309392272.save",
+        "sha256": "8ea11ec1e3a58ded5da1a21a0e64d5343b812821b0e16fa03bd68caabd3233b9",
+        "action": "archived_then_removed"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\冰雪王廷_自动保存.22309392272.save",
+        "sha256": "125a2226488d0b42a1873700d9f3e5d6822b4db0409950743ae5a5eb445e7cc0",
+        "action": "archived_then_removed"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\冰雪王廷_自动保存.32309392272.save",
+        "sha256": "1dd319f7084d14669ff6eb2a05b5285e18d2e56d87f466b7cda2198f98af10d4",
+        "action": "archived_then_removed"
+      }
+    ],
+    "preferences_restored_sha256": "43560e114df88d3d2ece174150ec8efb650b3e43f665d0c6556acd267e763709",
+    "preexisting_steam_appid_preserved": true
   },
-  "previous_failed_acceptance": "acceptance-results-2026-10-30.json"
+  "previous_failed_acceptance": "acceptance-results-2026-10-30.json",
+  "not_verified": [
+    "Physical visual layout at multiple UI scales: native screenshot was fully transparent",
+    "Full campaign flows for other races",
+    "Combined third-party mods",
+    "Capital loss and uninstall experiments"
+  ],
+  "evidence": [
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\native.log",
+      "bytes": 167649,
+      "sha256": "1770f331dfb36f3e352b849cbcd28a627350a65e00c83397bc91f9fe24a185de"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\final-frozen-offline-turn3.save",
+      "bytes": 11470735,
+      "sha256": "1dd319f7084d14669ff6eb2a05b5285e18d2e56d87f466b7cda2198f98af10d4"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\final-frozen-offline-save.json",
+      "bytes": 376,
+      "sha256": "5b4eb96af0a3136a559ba92dfdad099e65a73d20711bcf5d21d4aee88b3f2962"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\final-cleanup.json",
+      "bytes": 2665,
+      "sha256": "fd70e66de28953b86c08067890d8b5e07a14ba46960b6632e05eef17192c141e"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\final_reload_audit.lua",
+      "bytes": 1822,
+      "sha256": "7d238f00672b4f482154a7bf39664775aaadf89f87e36d87e8e6ee80a52b76b8"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\steam-post-final-acceptance-20261031-a01.json",
+      "bytes": 2332,
+      "sha256": "c109cc42b04695a8601488b6ccce97262e47c7d85329f9372addfb451a35841f"
+    }
+  ]
 }
