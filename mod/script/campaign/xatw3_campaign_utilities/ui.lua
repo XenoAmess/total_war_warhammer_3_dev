@@ -48,6 +48,27 @@ function M.new(runtime, logic, environment)
                     if matches == 1 then self.selected_subtype = selected end
                 end
             end
+            if not self.selected_subtype then
+                local list = find_uicomponent(panel, 'character_list', 'listview', 'list_clip', 'list_box')
+                if list then
+                    local fallback
+                    for index = 0, list:ChildCount() - 1 do
+                        local card = UIComponent(list:Find(index))
+                        local candidate = find_uicomponent(card, 'button_wh3')
+                        if candidate and candidate:Visible() then
+                            fallback = fallback or candidate
+                            if candidate:CurrentState() == 'selected' then fallback = candidate; break end
+                        end
+                    end
+                    if fallback then
+                        local ok, subtype = pcall(function()
+                            local context = fallback:GetContextObject('CcoCampaignCharacter')
+                            return context and context:Call('AgentSubtypeRecordContext.Key')
+                        end)
+                        if ok and runtime.supported(subtype) then self.selected_subtype = subtype end
+                    end
+                end
+            end
             local anchor = find_uicomponent(panel, 'character_list') or panel
             local b = button('refresh_candidates', panel, 'refresh', anchor)
             if not runtime.refresh_verified then b:SetTooltipText(text('refresh_unavailable'), true) end
@@ -222,6 +243,7 @@ function M.new(runtime, logic, environment)
                             tab = find_uicomponent(panel, 'lords_and_agents_holder', runtime.subtypes[reopen.subtype])
                         end
                         if tab and tab:Visible() and tab:CurrentState() ~= 'selected' then tab:SimulateLClick() end
+                        self.selected_subtype = reopen.subtype
                         finish()
                     end)
                 end)

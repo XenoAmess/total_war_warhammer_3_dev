@@ -79,7 +79,7 @@ class Steam:
                     raise RuntimeError('Steam API call failed')
                 if result.result != 1:
                     raise RuntimeError(f'Steam returned EResult={result.result}')
-                if result.needs_agreement and check_agreement:
+                if check_agreement and result.needs_agreement:
                     raise RuntimeError('Steam requires the account owner to accept the Workshop legal agreement')
                 return result
             time.sleep(0.1)

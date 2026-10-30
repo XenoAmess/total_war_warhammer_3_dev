@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import ctypes as C
 import json
 import struct
 import sys
@@ -11,7 +12,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from pack import read_pack, write_loc, write_pack
-from workshop import publish
+from workshop import publish, Steam, DependencyResult
 
 
 class PackTests(unittest.TestCase):
@@ -49,6 +50,19 @@ class PackTests(unittest.TestCase):
 
 
 class PublicationGateTests(unittest.TestCase):
+    def test_dependency_callback_has_no_agreement_field(self):
+        steam = Steam.__new__(Steam)
+        steam.utils = 1
+        steam.pump = lambda: None
+        def get_result(utils, handle, output, size, callback, failed):
+            self.assertEqual(callback, 3412)
+            result = C.cast(output, C.POINTER(DependencyResult)).contents
+            result.result, result.item_id, result.child_id = 1, 12, 34
+            return True
+        steam.bind = lambda name, *args: (get_result if name.endswith('GetAPICallResult') else lambda *args: True)
+        result = steam.wait(1, DependencyResult, 3412, check_agreement=False)
+        self.assertEqual((result.item_id, result.child_id), (12, 34))
+
     def test_failed_native_acceptance_never_contacts_steam(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

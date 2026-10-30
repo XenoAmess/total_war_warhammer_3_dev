@@ -48,7 +48,7 @@ end
 function M.refresh(adapter, faction, subtype, expected)
     local before = adapter.read_pool(faction, subtype)
     if not before then return {status = 'REJECTED', reason = 'pool_unavailable', completed = 0} end
-    if #before >= 4 then return {status = 'REJECTED', reason = 'unsafe_pool_size', completed = 0} end
+    if #before >= 100 then return {status = 'REJECTED', reason = 'unsafe_pool_size', completed = 0} end
     local plan = M.plan(before, faction, subtype)
     if plan.fingerprint ~= expected then
         return {status = 'REJECTED', reason = 'stale', completed = 0}

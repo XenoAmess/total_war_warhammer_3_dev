@@ -1,7 +1,7 @@
 local M = {}
 local PREFIX = 'xatw3_campaign_utilities'
 
--- Expand this list only after the corresponding native recruitment path is tested.
+-- Seed types also let the UI identify an empty recruitment category.
 M.subtypes = {
     wh3_main_ksl_boyar = 'general',
     wh3_main_ksl_patriarch = 'dignitary'
@@ -23,6 +23,29 @@ function M.new(logic, environment)
     local self = {logic = logic, subtypes = M.subtypes, refresh_verified = false, state = nil,
         pending_entries = {}, pending_recruited = {}, initialized = false}
     self.native_pool = require('script.campaign.xatw3_campaign_utilities.native_pool').new(environment)
+    self.subtypes = {}
+    for subtype, agent in pairs(M.subtypes) do self.subtypes[subtype] = agent end
+    local ordinary_agents = {general = true, dignitary = true, wizard = true, champion = true,
+        engineer = true, runesmith = true, spy = true}
+
+    function self.supported(subtype, faction_key)
+        if not logic.valid_key(subtype) then return false end
+        if self.subtypes[subtype] then return true end
+        local generated = safe(function()
+            return common.get_context_value('CcoAgentSubtypeRecord', subtype, 'AutoGenerate')
+        end, false)
+        if generated ~= true then return false end
+        local faction = cm:get_faction(faction_key or cm:get_local_faction_name())
+        if not valid(faction) then return false end
+        local agent = safe(function()
+            return common.get_context_value('CcoCampaignFaction', faction:command_queue_index(),
+                'CharacterRecruitmentPoolEntriesForAgentSubtype(DatabaseRecordContext("CcoAgentSubtypeRecord","'
+                .. subtype .. '")).At(0).AgentRecordContext.Key')
+        end, nil)
+        if not ordinary_agents[agent] then return false end
+        self.subtypes[subtype] = agent
+        return true
+    end
 
     function self.log(message)
         out('[' .. PREFIX .. '] ' .. tostring(message))
@@ -56,7 +79,7 @@ function M.new(logic, environment)
     function self.observe_entry(details)
         if not valid(details) or not valid(details:faction()) or not details:faction():is_human() then return end
         local subtype = details:character_subtype_key()
-        if not M.subtypes[subtype] then return end
+        if not self.supported(subtype, details:faction():name()) then return end
         if not self.initialized then
             self.pending_entries[#self.pending_entries + 1] = details:family_member():command_queue_index()
             return
@@ -85,7 +108,6 @@ function M.new(logic, environment)
     end
 
     function self.turn() return cm:model():turn_number() end
-    function self.supported(subtype) return M.subtypes[subtype] ~= nil end
     function self.campaign_supported() return cm:get_campaign_name() == 'main_warhammer' end
 
     function self.can_act(faction_key)
@@ -142,7 +164,7 @@ function M.new(logic, environment)
 
     function self.spawn_candidate(faction, subtype, old)
         local details = cm:spawn_character_to_pool(faction, '', '', '', '', 30, old.male,
-            M.subtypes[subtype], subtype, false, '')
+            self.subtypes[subtype], subtype, false, '')
         if not valid(details) then return nil, 'spawn_failed' end
         local id = details:family_member():command_queue_index()
         self.state.history[tostring(id)] = {faction = faction, subtype = subtype,

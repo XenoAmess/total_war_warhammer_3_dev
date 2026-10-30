@@ -187,9 +187,19 @@ end)
 test('oversized_pool_never_creates_another_candidate', function()
     local a, state, request, calls = fixture()
     local pool = a.read_pool()
-    pool[#pool + 1] = candidate(4)
+    for id = 4, 100 do pool[#pool + 1] = candidate(id) end
     request.expected = logic.fingerprint(pool)
     check(logic.execute(state, request, a).reason == 'unsafe_pool_size')
     check(calls.spawn == 0 and calls.remove == 0)
+end)
+test('four_candidates_preserve_protected_entry', function()
+    local a, state, request = fixture()
+    a.read_pool()[4] = candidate(4)
+    request.expected = logic.fingerprint(a.read_pool())
+    local result = logic.execute(state, request, a)
+    check(result.status == 'SUCCEEDED' and result.completed == 3 and #a.read_pool() == 4)
+    local protected = false
+    for _, c in ipairs(a.read_pool()) do if c.id == 3 then protected = true end end
+    check(protected)
 end)
 return passed
