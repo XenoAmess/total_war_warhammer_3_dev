@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "study_date": "2026-10-30",
+  "verification_level": "static inspection only",
+  "game_launched": false,
+  "mod_built": false,
+  "environment": {
+    "observed_at_utc": "2026-10-30T14:04:36.245226+00:00",
+    "machine_id": "windows-634083a4aa370b5f",
+    "machine_id_method": "windows- + first 16 hex characters of SHA-256(lowercase Windows MachineGuid); raw GUID omitted",
+    "game_version": "9.0.4.0",
+    "steam_app_id": "1142710",
+    "steam_build_id": "25961564",
+    "game_directory": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III",
+    "sources": [
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\Warhammer3.exe",
+        "bytes": 232531920,
+        "sha256": "9bd58c63bd7fc5c9909b3d3d9b6b7a6ae4eac784369bf91a9e53c3e9f42be496"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\data_script.pack",
+        "bytes": 13899105,
+        "sha256": "d102ff9dc9d15e588f5a0c2fd372e3d730363c3afcd84d10a9904e79ceb431c3"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\db.pack",
+        "bytes": 8667644,
+        "sha256": "c5ebe71a6190c37c9fd7615251351046914d6fe34229e8903bfdbbb9712da503"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\ui3.pack",
+        "bytes": 107795268,
+        "sha256": "c7339b38d582efe81ec31c60f79e23c9390be385e4e597a8935131931364088e"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\data.pack",
+        "bytes": 429548936,
+        "sha256": "5a39499e9d9d5b1fef798930c9a749f7aabe40bb286cf8a60f398fe325d8ca39"
+      }
+    ]
+  },
+  "method": {
+    "pack_signature": "PFH5",
+    "inspection_tool": "temporary read-only Python standard-library script outside repository",
+    "python_version": "3.15.1",
+    "checks": [
+      "pack index fully consumed",
+      "entry offsets end at pack size",
+      "extracted compressed entry sizes match advertised size",
+      "campaign_variables table fully decoded to EOF"
+    ],
+    "extracted_game_files_committed": false
+  },
+  "local_evidence": [
+    {
+      "pack": "data.pack",
+      "path": "documentation/script/campaign/episodic_scripting.html",
+      "bytes": 1044180,
+      "sha256": "0bd3be43449bf1a6b8037d0e827ed53c7e2e5920bbb04845c11b99c160fa3942",
+      "id": "L01",
+      "summary": "Documents spawn_character_to_pool, change_home_region_of_faction and character lookup filters."
+    },
+    {
+      "pack": "data.pack",
+      "path": "documentation/script/campaign/model_hierarchy.html",
+      "bytes": 318551,
+      "sha256": "fa265f2a5f64914643c2668a442ed814f914852304c55b3484f88df937487a13",
+      "id": "L02",
+      "summary": "Lists character_details identity and protection queries, and faction home_region queries."
+    },
+    {
+      "pack": "data_script.pack",
+      "path": "script/_lib/lib_campaign_manager.lua",
+      "bytes": 820953,
+      "sha256": "27a553a415705e2e9c5d8dbb08e91568122baaae6e138217907009a7cbf48c27",
+      "id": "L03",
+      "summary": "Wraps recruitment pool creation events, including a startup queue, as ScriptEventNewCharacterEnteredRecruitmentPool.",
+      "line_range_in_extracted_file": [
+        8130,
+        8170
+      ]
+    },
+    {
+      "pack": "data_script.pack",
+      "path": "script/campaign/wh3_campaign_underdeep.lua",
+      "bytes": 24655,
+      "sha256": "d39cee94579f6751a269fd4bc991872e3f79e00b4993010a0d0efae18af75694",
+      "id": "L04",
+      "summary": "Native dilemma choice changes faction home region to the Eight Peaks region.",
+      "line_range_in_extracted_file": [
+        449,
+        455
+      ]
+    },
+    {
+      "pack": "data_script.pack",
+      "path": "script/campaign/main_warhammer/episodes/episode_vermintide.lua",
+      "bytes": 76842,
+      "sha256": "92117c65d153179cce6a4598581a901d59c2b87d1c66d44d98aae464f3bd2f42",
+      "id": "L05",
+      "summary": "Native campaign script changes a faction home region.",
+      "line_range_in_extracted_file": [
+        611,
+        613
+      ]
+    },
+    {
+      "pack": "ui3.pack",
+      "path": "ui/campaign ui/character_panel.twui.xml",
+      "bytes": 208411,
+      "sha256": "758c402ab3be48d99cff671e94e98109376e609291e9f86e78f924830bfc2839",
+      "id": "L06",
+      "summary": "Contains character_panel, character_list, lord_parent and CharacterRecruitmentPanelCallback; runtime paths not yet verified."
+    },
+    {
+      "pack": "ui3.pack",
+      "path": "ui/campaign ui/settlement_panel.twui.xml",
+      "bytes": 445761,
+      "sha256": "4e19c4d94e1ec03c1d3ecbf6a12c17943caecc0d1339c19964c5843b4a511e45",
+      "id": "L07",
+      "summary": "Contains button_rename and CcoCampaignSettlement contexts; intended capital button anchor.",
+      "line_range_in_extracted_file": [
+        3511,
+        3611
+      ]
+    },
+    {
+      "pack": "db.pack",
+      "path": "db/campaign_variables_tables/data__",
+      "bytes": 54873,
+      "sha256": "fbdab692abb7ce81c76fa3bd1dbffe8ea82b0b087c4556c75079da9b63b2dfc4",
+      "id": "L08",
+      "summary": "Decoded all 1068 rows and verified end of file; contains candidate lifetime and pool size parameters."
+    },
+    {
+      "pack": "data_script.pack",
+      "path": "script/campaign/wh3_campaign_innate_trait_reset.lua",
+      "bytes": 7844,
+      "sha256": "93d1e251fb8da855594abd1f938718f77fa1f69bce21196d97b758fe404704f4",
+      "id": "L09",
+      "summary": "Specific vampire character trait reroll implementation; not proof of generic recruitment refresh.",
+      "line_range_in_extracted_file": [
+        161,
+        207
+      ]
+    },
+    {
+      "pack": "data_script.pack",
+      "path": "script/campaign/wh3_campaign_kislev_ice_court.lua",
+      "bytes": 6198,
+      "sha256": "614a9cfb14b718a19fe53c417ab7aad1b1337b7518ab4b3d8068e5927f3bde1e",
+      "id": "L10",
+      "summary": "Creates pool characters and separately applies Ice Court traits; illustrates special recruitment constraints.",
+      "line_range_in_extracted_file": [
+        152,
+        165
+      ]
+    },
+    {
+      "pack": "data.pack",
+      "path": "documentation/script/campaign/campaignui.html",
+      "bytes": 42561,
+      "sha256": "07c6ec87172a75e8a9bc0a2541892028815b16304f1f8cdbafc36453d8ce611f",
+      "id": "L11",
+      "summary": "Documents TriggerCampaignScriptEvent and UITrigger; broadcast alone does not prove multiplayer compatibility."
+    },
+    {
+      "pack": "data.pack",
+      "path": "documentation/script/campaign/core.html",
+      "bytes": 183198,
+      "sha256": "47796733be1d3e8691961ad34db5131ef3246a2c328c1129bffb72bcfd58fc81",
+      "id": "L12",
+      "summary": "Documents get_or_create_component and event listeners."
+    }
+  ],
+  "campaign_variables": {
+    "table": "db/campaign_variables_tables/data__",
+    "decoded_row_count": 1068,
+    "character_recruitment_min_rounds_in_pool": 10.0,
+    "character_recruitment_max_rounds_in_pool": 15.0,
+    "recruitment_pool_entries_per_category": 2.0,
+    "min_total_recruitment_pool_entries": 3.0
+  },
+  "external_sources": [
+    {
+      "id": "W01",
+      "url": "https://chadvandy.github.io/tw_modding_resources/WH3/campaign/episodic_scripting.html",
+      "kind": "community-hosted mirror of CA-generated API documentation"
+    },
+    {
+      "id": "W02",
+      "url": "https://chadvandy.github.io/tw_modding_resources/WH3/cco/documentation.html",
+      "kind": "community-hosted mirror of CA-generated CCO documentation",
+      "downloaded_html_sha256": "cf422c1820db820f8379413cec06d275459bf1b9fc796ff1bfc09f2d360164bd"
+    },
+    {
+      "id": "W03",
+      "url": "https://chadvandy.github.io/tw_modding_resources/WH3/campaign/campaignui.html",
+      "kind": "community-hosted mirror of CA-generated API documentation"
+    },
+    {
+      "id": "W04",
+      "url": "https://chadvandy.github.io/tw_modding_resources/WH3/campaign/core.html",
+      "kind": "community-hosted mirror of CA-generated API documentation"
+    },
+    {
+      "id": "W05",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2984384707",
+      "kind": "mod author description; not a compatibility test"
+    },
+    {
+      "id": "W06",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2820394157",
+      "kind": "mod author description of timed pool refresh"
+    },
+    {
+      "id": "W07",
+      "url": "https://steamcommunity.com/workshop/filedetails/?id=3452514536",
+      "kind": "mod author description of timed pool generation and expiry"
+    },
+    {
+      "id": "W08",
+      "url": "https://github.com/Frodo45127/rpfm",
+      "kind": "tool author repository"
+    },
+    {
+      "id": "W09",
+      "url": "https://github.com/Frodo45127/rpfm/blob/master/CHANGELOG.md",
+      "kind": "tool author changelog"
+    }
+  ],
+  "runtime_experiments": {
+    "P-UI": "NOT_RUN",
+    "P-R1": "NOT_RUN",
+    "P-R2": "NOT_RUN",
+    "P-R3": "NOT_RUN",
+    "P-C1": "NOT_RUN",
+    "P-C2": "NOT_RUN"
+  }
+}
