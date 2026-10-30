@@ -1,5 +1,5 @@
 -- Exercise the production UI controller through its registered events.
-local passed, listeners, dispatched = {}, {}, {}
+local passed, listeners, dispatched, closed = {}, {}, {}, {}
 local function component(id, parent, subtype)
     local c = {id = id, parent = parent, subtype = subtype, visible = true, children = {}}
     function c:Id() return self.id end
@@ -41,7 +41,9 @@ core = {
         listeners[name] = {event = event, condition = condition, callback = callback}
     end
 }
-CampaignUI = {TriggerCampaignScriptEvent = function(cqi, payload)
+CampaignUI = {ClosePanel = function(name) closed[#closed + 1] = name end,
+CloseCurrentHUDPanel = function() end,
+TriggerCampaignScriptEvent = function(cqi, payload)
     dispatched[#dispatched + 1] = {cqi, payload}
 end}
 local runtime = {initialized = true, state = {locked = false}, can_act = function() return true end}
@@ -90,11 +92,39 @@ test('confirm_dispatches_frozen_request_once', function()
     click(component('button_tick', dialog))
     click(component('button_tick', dialog))
     assert(#dispatched == 1 and dispatched[1][1] == 17)
+    assert(#closed == 1 and closed[1] == 'character_panel')
     assert(dispatched[1][2] == 'xatw3|1|refresh|8|3|supported|snapshot')
 end)
 test('result_dialog_cannot_replay_previous_request', function()
     runtime.on_result({status = 'SUCCEEDED'})
     click(component('button_tick', dialog))
     assert(#dispatched == 1 and ui.pending == nil)
+end)
+
+test('visible_recruitment_panel_blocks_dispatch', function()
+    local before = #dispatched
+    local panel = component('character_panel', root)
+    root.children.character_panel = panel
+    ui.confirm(request, 'confirm')
+    click(component('button_tick', dialog))
+    assert(#dispatched == before and not ui.submitting)
+    root.children.character_panel = nil
+end)
+
+test('refresh_dispatch_waits_until_native_panel_is_closed', function()
+    local before, callbacks = #dispatched, {}
+    local panel = component('character_panel', root)
+    root.children.character_panel = panel
+    environment.CampaignUI.ClosePanel = function(name)
+        assert(name == 'character_panel')
+        panel.visible = false
+    end
+    environment.cm.callback = function(_, fn) callbacks[#callbacks + 1] = fn end
+    ui.confirm(request, 'confirm')
+    click(component('button_tick', dialog))
+    assert(#dispatched == before and not panel.visible and #callbacks == 1)
+    callbacks[1]()
+    assert(#dispatched == before + 1)
+    root.children.character_panel = nil
 end)
 return passed

@@ -43,7 +43,7 @@ function M.new(logic, environment)
             self.state.locked = true
         end
         self.initialized = true
-        self.native_pool.initialize()
+        self.refresh_verified = self.native_pool.initialize()
         for _, id in ipairs(self.pending_entries) do
             local fm = cm:get_family_member_by_cqi(id)
             if fm then self.observe_entry(fm:character_details()) end
@@ -162,6 +162,8 @@ function M.new(logic, environment)
     end
 
     function self.can_remove_candidate(id)
+        local panel = environment.find_uicomponent(environment.core:get_ui_root(), 'character_panel')
+        if panel and panel:Visible() then return false, 'recruitment_panel_open' end
         local fm = cm:get_family_member_by_cqi(id)
         if not fm then return false end
         return self.native_pool.can_remove(fm:character_details())

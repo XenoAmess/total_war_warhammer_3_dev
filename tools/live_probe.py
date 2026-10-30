@@ -40,7 +40,7 @@ end
 '''
 
 
-def fixture(output: Path, runtime: Path, production_pack: Path) -> Path:
+def fixture(output: Path, runtime: Path, production_pack: Path, include_production: bool = True) -> Path:
     runtime.mkdir(parents=True, exist_ok=True)
     script = LUA.replace('__RUNTIME__', json.dumps(runtime.resolve().as_posix()))
     campaign = script + '''
@@ -67,7 +67,7 @@ end
 xatw3_test.record('FRONTEND_READY')
 core:get_tm():real_callback(poll, 1000, 'xatw3_acceptance_frontend')
 '''
-    files = read_pack(production_pack.read_bytes())
+    files = read_pack(production_pack.read_bytes()) if include_production else {}
     files.update({
         'script/campaign/mod/zz_xatw3_acceptance.lua': campaign.encode(),
         'script/frontend/mod/zz_xatw3_acceptance.lua': frontend.encode()
@@ -82,5 +82,6 @@ if __name__ == '__main__':
     p.add_argument('--runtime', type=Path, required=True)
     p.add_argument('--output', type=Path, default=ROOT / 'build/zz_xatw3_acceptance.pack')
     p.add_argument('--production-pack', type=Path, default=ROOT / 'build/xatw3_campaign_utilities.pack')
+    p.add_argument('--dispatcher-only', action='store_true', help='Load production through the real mod pack separately')
     args = p.parse_args()
-    print(fixture(args.output, args.runtime, args.production_pack))
+    print(fixture(args.output, args.runtime, args.production_pack, not args.dispatcher_only))

@@ -16,6 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_ID = 1142710
+REQUIRED_WORKSHOP_ITEMS = (3811098873,)  # memreader Plus, published by its author
 
 
 class CreateResult(C.Structure):
@@ -28,6 +29,10 @@ class UpdateResult(C.Structure):
 
 class Tags(C.Structure):
     _fields_ = [('values', C.POINTER(C.c_char_p)), ('count', C.c_int32)]
+
+
+class DependencyResult(C.Structure):
+    _fields_ = [('result', C.c_int32), ('item_id', C.c_uint64), ('child_id', C.c_uint64)]
 
 
 class Steam:
@@ -107,6 +112,15 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
             save()
             if result.needs_agreement:
                 raise RuntimeError('Steam requires the account owner to accept the Workshop legal agreement; item ID has been saved')
+        add_dependency = steam.bind('SteamAPI_ISteamUGC_AddDependency', C.c_uint64,
+                                    C.c_void_p, C.c_uint64, C.c_uint64)
+        for child in REQUIRED_WORKSHOP_ITEMS:
+            result = steam.wait(add_dependency(steam.ugc, int(state['item_id']), child),
+                                DependencyResult, 3412, check_agreement=False)
+            if result.item_id != int(state['item_id']) or result.child_id != child:
+                raise RuntimeError('Steam returned a dependency result for the wrong item')
+        state['required_items'] = [str(item) for item in REQUIRED_WORKSHOP_ITEMS]
+        save()
         stage = ROOT / 'build/workshop-content'
         stage.mkdir(parents=True, exist_ok=True)
         leftovers = [p.name for p in stage.iterdir() if p.name != pack.name]

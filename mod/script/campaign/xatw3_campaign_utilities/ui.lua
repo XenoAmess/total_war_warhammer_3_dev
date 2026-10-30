@@ -37,6 +37,16 @@ function M.new(runtime, logic, environment)
                         self.selected_subtype = subtype
                     end
                 end
+                if not self.selected_subtype then
+                    local selected, matches = nil, 0
+                    for subtype, agent in pairs(runtime.subtypes or {}) do
+                        local tab = find_uicomponent(categories, agent)
+                        if tab and tab:Visible() and tab:CurrentState() == 'selected' then
+                            selected, matches = subtype, matches + 1
+                        end
+                    end
+                    if matches == 1 then self.selected_subtype = selected end
+                end
             end
             local anchor = find_uicomponent(panel, 'character_list') or panel
             local b = button('refresh_candidates', panel, 'refresh', anchor)
@@ -83,16 +93,43 @@ function M.new(runtime, logic, environment)
     function self.submit()
         local request = self.pending
         self.pending = nil
-        if not request then return end
+        if not request or self.submitting then return end
+        self.submitting = true
         -- SP-only: no UI-dependent data is evaluated by remote clients.
         local payload = table.concat({'xatw3', '1', request.action, tostring(request.sequence),
             tostring(request.turn), request.target, request.expected}, '|')
-        CampaignUI.TriggerCampaignScriptEvent(cm:get_local_faction():command_queue_index(), payload)
+        local function dispatch()
+            CampaignUI.TriggerCampaignScriptEvent(cm:get_local_faction():command_queue_index(), payload)
+        end
+        if request.action == 'refresh' then
+            self.reopen = {subtype = request.target,
+                button = runtime.subtypes and runtime.subtypes[request.target] == 'general'
+                    and 'button_create_army' or 'button_agents'}
+            -- Native recruitment cards cache the old character details. Let the
+            -- game close the panel and release those contexts before removing them.
+            CampaignUI.ClosePanel('character_panel')
+            CampaignUI.CloseCurrentHUDPanel()
+            local attempts = 0
+            local function wait_until_closed()
+                local panel = find_uicomponent(core:get_ui_root(), 'character_panel')
+                if panel and panel:Visible() then
+                    attempts = attempts + 1
+                    if attempts < 30 then after(wait_until_closed)
+                    else
+                        self.submitting, self.reopen = false, nil
+                        self.message('error', text('failed'))
+                    end
+                    return
+                end
+                dispatch()
+            end
+            after(wait_until_closed)
+        else dispatch() end
     end
 
     function self.prepare(action)
         local faction = cm:get_local_faction_name()
-        if not runtime.can_act(faction) or runtime.state.locked then return end
+        if self.submitting or not runtime.can_act(faction) or runtime.state.locked then return end
         local request = {version = 1, action = action, faction = faction,
             sequence = runtime.state.next_sequence, turn = runtime.turn()}
         if action == 'refresh' then
@@ -160,15 +197,35 @@ function M.new(runtime, logic, environment)
             after(self.refresh_buttons)
         end, true)
         runtime.on_result = function(result)
+            self.submitting = false
             local message = text('failed')
             if result.status == 'SUCCEEDED' then message = text('done')
             elseif result.reason == 'refresh_unverified' then message = text('refresh_unavailable')
             elseif result.reason == 'stale' then message = text('stale')
             elseif result.reason == 'no_candidates' then message = text('no_candidates')
             elseif result.status == 'UNKNOWN' or result.status == 'PARTIAL' then message = text('uncertain') end
-            self.message(result.status == 'SUCCEEDED' and 'success' or 'error',
-                message)
-            after(self.refresh_buttons)
+            local reopen = self.reopen
+            self.reopen = nil
+            local function finish()
+                self.message(result.status == 'SUCCEEDED' and 'success' or 'error', message)
+                after(self.refresh_buttons)
+            end
+            if reopen and (result.status == 'SUCCEEDED' or result.status == 'REJECTED') then
+                after(function()
+                    local root = core:get_ui_root()
+                    local b = find_uicomponent(root, 'hud_campaign', 'hud_center_docker', reopen.button)
+                    if b and b:Visible() and b:CurrentState() == 'active' then b:SimulateLClick() end
+                    after(function()
+                        local panel = find_uicomponent(root, 'character_panel')
+                        local tab = panel and find_uicomponent(panel, 'lords_and_agents_holder', reopen.subtype)
+                        if not tab and panel and runtime.subtypes then
+                            tab = find_uicomponent(panel, 'lords_and_agents_holder', runtime.subtypes[reopen.subtype])
+                        end
+                        if tab and tab:Visible() and tab:CurrentState() ~= 'selected' then tab:SimulateLClick() end
+                        finish()
+                    end)
+                end)
+            else finish() end
         end
         self.refresh_buttons()
     end
