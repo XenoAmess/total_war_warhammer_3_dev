@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-30T16:12:16.131922+00:00",
-  "source_commit": "2dc343fdda172ee0f2866a122d464f7a99d6e35b",
-  "release_pack_sha256": "37044bc9fc4059c634b548674b29b562307b55631e7ed157d9fd1469b10a13f7",
-  "release_pack_bytes": 29299,
-  "release_status": "UNRELEASED_NATIVE_ACCEPTANCE_FAILED",
+  "recorded_at_utc": "2026-10-30T17:56:39.680568+00:00",
+  "source_commit": "cb43cc56f3cadbfaa6d652e3cadf6eb895dd6c90",
+  "release_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+  "release_pack_bytes": 42899,
+  "release_status": "FROZEN_OFFLINE_ACCEPTANCE_IN_PROGRESS",
   "L0": "PASS",
   "L1": "PASS",
-  "L2": "FAIL",
-  "L3": "FAIL",
+  "L2": "PASS",
+  "L3": "IN_PROGRESS",
   "L4": "NOT_RUN",
-  "machine_id": "windows-634083a4aa370b5f",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
   "steam_app_id": 1142710,
   "steam_build_id": 25961564,
   "exe_version": "9.0.4.0",
@@ -20,87 +20,49 @@
       5,
       1
     ],
-    "production_lua_files_compiled": 4,
-    "business_rule_tests": 33,
-    "ui_controller_tests": 6,
-    "python_tool_tests": 6,
-    "total_tests": 45,
-    "fixture_lifecycle_and_command_environment": "PASS",
+    "production_lua_files_compiled": 5,
+    "business_rule_tests": 35,
+    "ui_controller_tests": 8,
+    "native_bridge_rejection_tests": 3,
+    "runtime_metadata_tests": 5,
+    "python_tool_tests": 7,
+    "total_tests": 58,
     "deterministic_build": "PASS",
     "pack_round_trip": "PASS"
   },
   "native": {
-    "menu_and_campaign_launch": "PASS",
-    "campaign_script_name": "main_warhammer",
-    "faction": "wh3_main_ksl_the_ice_court",
-    "read_lord_and_hero_pool": "PASS",
-    "lord_refresh": "FAIL",
-    "hero_refresh": "NOT_RUN",
-    "capital_to_minor_settlement": "PASS",
-    "capital_to_province_capital": "PASS",
-    "capital_save_reload": "PASS",
-    "unknown_lock_save_reload": "PASS",
-    "current_capital_rejected_without_mutation": "PASS",
-    "disabled_refresh_backend_guard": "PASS",
-    "hero_page_disabled_refresh_button": "PASS",
-    "formal_pack_without_fixture_full_acceptance": "NOT_RUN",
-    "crash": {
-      "local_time": "2026-10-30T23:56:35+08:00",
-      "exception": "0xc0000409",
-      "module_offset": "0x1137271",
-      "cause": "UNDETERMINED: coroutine and enlarged-pool experiment not isolated"
-    }
+    "lord_and_hero_real_button_ten_refreshes_each": "PASS",
+    "normal_lord_and_hero_recruitment_source_iteration": "PASS",
+    "protected_wounded_immortal_unknown_and_deployed": "PASS",
+    "four_candidate_mixed_pool": "PASS",
+    "mixed_wizard_agent_pool_isolation": "PASS",
+    "normal_end_turn": "PASS",
+    "frozen_pack_cold_load_snapshot_and_history": "PASS",
+    "frozen_lord_and_hero_button_refresh": "PASS",
+    "frozen_lord_normal_recruitment": "PASS",
+    "frozen_new_hero_normal_recruitment": "PENDING",
+    "frozen_province_and_minor_capital_buttons": "PASS",
+    "frozen_cancel_and_current_capital_rejection": "PASS",
+    "frozen_full_offline_flow": "IN_PROGRESS",
+    "production_embedded_in_fixture": false,
+    "production_hot_reloaded_during_frozen_acceptance": false
   },
-  "runtime_refresh_verified": false,
+  "steam_mode": {
+    "status": "offline",
+    "offline_mode": true,
+    "observed_at_utc": "2026-10-30T17:52:27.306465+00:00",
+    "method": "native_current_user_byte",
+    "prelaunch_fresh_probe_required": true
+  },
   "workshop": {
     "item_id": null,
     "create_or_upload_api_called": false,
     "anonymous_page_verification": "NOT_RUN",
     "download_hash_verification": "NOT_RUN",
-    "blocker": "L2/L3 failed; recruitment replacement is unverified and disabled",
-    "preflight": "BLOCKED_BEFORE_STEAM_INIT"
+    "blocker": "Frozen offline full-flow acceptance is still in progress"
   },
   "cleanup": {
-    "recorded_at_utc": "2026-10-30T16:11:29.011793+00:00",
-    "fixture_removed": true,
-    "installed_fixture_sha256": "4f08ceda32198c9ad0da900674b1f0fd093d4a977fd902cb13f4da547e1a9f36",
-    "preferences_restored": true,
-    "preferences_before_restore_sha256": "b4f63082e4a6b2b4bc40391eab7a4c13ed8825a0ee4f2fd1afd327eceadaba1e",
-    "preferences_restored_sha256": "43560e114df88d3d2ece174150ec8efb650b3e43f665d0c6556acd267e763709",
-    "test_save_archived_and_removed_from_profile": true,
-    "test_save_sha256": "c47ef35c2f3cbfdaf9096b6aaffee7bb396a3d2c21fdc253780d80cf1d50742f",
-    "game_process_exited": true
+    "status": "PENDING_ACTIVE_ACCEPTANCE"
   },
-  "evidence": [
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\native.log",
-      "bytes": 69766,
-      "sha256": "0c711e3266a1b6307de05bd402688d9cc4392c11515e928b5c24f3a5cba7b587",
-      "committed": false
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\script-errors.log",
-      "bytes": 2512,
-      "sha256": "d2294b490b6205e0df3bca3e8f19720290f24011607752876e6089fecc47fbb3",
-      "committed": false
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\D2026-10-30_T23-56-27.stack.txt",
-      "bytes": 369,
-      "sha256": "1880523c777ca36b17f8f2b2efa1acb8cd79b974fc94f25839b5abe37af7ab39",
-      "committed": false
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\disposable-campaign.save",
-      "bytes": 10112257,
-      "sha256": "c47ef35c2f3cbfdaf9096b6aaffee7bb396a3d2c21fdc253780d80cf1d50742f",
-      "committed": false
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\acceptance\\cleanup.json",
-      "bytes": 612,
-      "sha256": "7f2d0c8d108fcf22e10ac2f53967ee7ecfe6429e139b8a344ec535999ccd70c4",
-      "committed": false
-    }
-  ]
+  "previous_failed_acceptance": "acceptance-results-2026-10-30.json"
 }
