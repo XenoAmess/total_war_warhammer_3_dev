@@ -5,6 +5,8 @@
 | [可行性预研](feasibility-study.md) | 本机原版接口、候选池机制、技术路线、风险与原型验证计划 |
 | [Mod 设计](mod-design.md) | 招募刷新和迁都交互、模块结构、状态、兼容范围及验收标准 |
 | [同类 Mod 调查](similar-mods-research.md) | 作者说明、实际下载包源码/数据、原生清理路径及连续刷新实验 |
+| [顾问语音与 DLC 资源预研](advisor-voice-research.md) | 顾问共用范围、声音库与文案结构、DLC 资源发现边界及换声验证路线 |
+| [顾问语音研究证据](advisor-voice-research-evidence-2026-10-31.json) | 本机包与成员哈希、顾问提示计数、声音库目录及中文文案关联样本 |
 | [测试验收与发布方案](test-acceptance-plan.md) | 静态检查、业务测试、实机矩阵及创意工坊发布验收 |
 | [验收报告](acceptance-report.md) | 已执行的离线与实机实验、失败证据及当前功能限制 |
 | [验收结果 JSON](acceptance-results.json) | 构建哈希、分层状态及本机证据索引 |

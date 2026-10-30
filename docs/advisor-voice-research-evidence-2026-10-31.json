@@ -1,0 +1,575 @@
+{
+  "schema_version": 1,
+  "study_date": "2026-10-31",
+  "observed_at_utc": "2026-10-30T18:24:22.205330+00:00",
+  "verification_level": "read-only static inspection; no audio playback or replacement",
+  "environment": {
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "steam_app_id": "1142710",
+    "steam_build_id": "25961564",
+    "game_directory": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III",
+    "game_file_version": "9.0.4.0",
+    "game_file_version_source": "Get-Item Warhammer3.exe VersionInfo, read during this documentation task",
+    "python_version": "3.15.1",
+    "git_head_before_documentation": "1cc93986d3e85c089b8f0cbae4dac036874924a2"
+  },
+  "steam_observation": {
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-10-30T18:24:22.184540+00:00",
+    "status": "offline",
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "pid": 3632,
+    "birth_filetime": "134378562462328666",
+    "file_version": "11.15.70.27",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "raw_samples": [
+      1,
+      1
+    ],
+    "tray_state_samples": [
+      4,
+      4
+    ]
+  },
+  "packs": {
+    "db.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\db.pack",
+      "bytes": 8667644,
+      "entry_count": 1603,
+      "header_and_index_sha256": "fb08c93465e42b3f538483d74c64b20caab45f0b7ebad486c7998507c481e500",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 0,
+      "file_sha256": "c5ebe71a6190c37c9fd7615251351046914d6fe34229e8903bfdbbb9712da503"
+    },
+    "audio_base_bnk.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_base_bnk.pack",
+      "bytes": 50613813,
+      "entry_count": 265,
+      "header_and_index_sha256": "39d99cdc6a888fd5dbe224931adb2792fbfbeb5a9a5f17e63c6ac60c68463888",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 0,
+      "file_sha256": "53c2faf5fa3409e4798a2f20ad540d8a9742e975634c41c0fced5c758ced50d2"
+    },
+    "audio_en_bnk.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_en_bnk.pack",
+      "bytes": 31113372,
+      "entry_count": 648,
+      "header_and_index_sha256": "fb8a171e475316a29de18d2a0666b22390b49ea9b456415154a53bed9fd13987",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 0,
+      "file_sha256": "76a8aee562bc1ae67e7279321601068bb7d49cfe3bf2b909d7de61edfcc068cd"
+    },
+    "audio_cn_bnk.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_cn_bnk.pack",
+      "bytes": 31110804,
+      "entry_count": 648,
+      "header_and_index_sha256": "ecfd15cead0b548919a9f594add5d3c32569f07f4abc3738ae86ccab102c15c3",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 0,
+      "file_sha256": "45be4deacd3cd87991f415845609e68c315b4ab7e0d93271410be824b7a89cdf"
+    },
+    "audio_en.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_en.pack",
+      "bytes": 4913267327,
+      "entry_count": 184662,
+      "header_and_index_sha256": "fb62c4333fab27eb4318901df3253a5a4fe0593bad4952db600f60c4d5889583",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 184662
+    },
+    "audio_base.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_base.pack",
+      "bytes": 5721032969,
+      "entry_count": 163350,
+      "header_and_index_sha256": "a5d24fb95d0a3131b486e282eac8d1aea70e0fd8b2cadd80b932ffb13da3687b",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 163350
+    },
+    "local_cn.pack": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_cn.pack",
+      "bytes": 30944785,
+      "entry_count": 40,
+      "header_and_index_sha256": "6839c40f614c71582d996198f77131ddbb83983185780f07c0a314233a8b179e",
+      "index_consumed_exactly": true,
+      "entry_offsets_end_at_file_size": true,
+      "wem_entry_count": 0,
+      "file_sha256": "47a0ac4620a45efa1360877c4af80bd498831f7404523b5b66b1e84a78cdb164"
+    }
+  },
+  "selected_members": [
+    {
+      "pack": "db.pack",
+      "path": "db/advice_levels_tables/data__",
+      "stored_bytes": 35559,
+      "decoded_bytes": 417020,
+      "compression": "zstd_with_u32_length",
+      "stored_sha256": "5013ae59593d156f5c72c6af910da15b4de979dd3876b3af6438950c47cf5141",
+      "decoded_sha256": "77a65ad05b1ac1d21a7d2afaccac6669d562f2c7bb256016cb58ea4dbc1ef5dd"
+    },
+    {
+      "pack": "db.pack",
+      "path": "db/advisors_tables/data__",
+      "stored_bytes": 417,
+      "decoded_bytes": 1730,
+      "compression": "zstd_with_u32_length",
+      "stored_sha256": "118361b99a25ecf9c0d26fc41738c213f0d4d699c677f78ba083254a49c68721",
+      "decoded_sha256": "337476877d8186417304a038c2588443d544517b7d9dca29719f7ed419868c5d"
+    },
+    {
+      "pack": "audio_en_bnk.pack",
+      "path": "audio/wwise/english(uk)/battle_advice__core.bnk",
+      "stored_bytes": 60124,
+      "decoded_bytes": 60124,
+      "compression": "none",
+      "stored_sha256": "8b83ca69c99a88bd7f77053eff48fe5c786397e14c894b4889627142ec341cc2",
+      "decoded_sha256": "8b83ca69c99a88bd7f77053eff48fe5c786397e14c894b4889627142ec341cc2"
+    },
+    {
+      "pack": "audio_en_bnk.pack",
+      "path": "audio/wwise/english(uk)/campaign_advice_1385955645__core.bnk",
+      "stored_bytes": 3346,
+      "decoded_bytes": 3346,
+      "compression": "none",
+      "stored_sha256": "eb2fdb411b3021f62bc23f86c82b5251dbeca3195d6f34b7f6f9a35200b8a080",
+      "decoded_sha256": "eb2fdb411b3021f62bc23f86c82b5251dbeca3195d6f34b7f6f9a35200b8a080"
+    },
+    {
+      "pack": "audio_en_bnk.pack",
+      "path": "audio/wwise/english(uk)/campaign_advice_1927722379__core.bnk",
+      "stored_bytes": 3346,
+      "decoded_bytes": 3346,
+      "compression": "none",
+      "stored_sha256": "d6c7009d07c5a744316cd6900bc52771facdbf807f11fca278b8be1e67f91e04",
+      "decoded_sha256": "d6c7009d07c5a744316cd6900bc52771facdbf807f11fca278b8be1e67f91e04"
+    },
+    {
+      "pack": "audio_en_bnk.pack",
+      "path": "audio/wwise/english(uk)/campaign_advice_2173257825__core.bnk",
+      "stored_bytes": 28819,
+      "decoded_bytes": 28819,
+      "compression": "none",
+      "stored_sha256": "6751cd10ddb7fbc9b729ae9e809e1208a0723405a1e8db9b9de57167edf8cf2f",
+      "decoded_sha256": "6751cd10ddb7fbc9b729ae9e809e1208a0723405a1e8db9b9de57167edf8cf2f"
+    },
+    {
+      "pack": "audio_en_bnk.pack",
+      "path": "audio/wwise/english(uk)/campaign_advice_909104986__core.bnk",
+      "stored_bytes": 1006,
+      "decoded_bytes": 1006,
+      "compression": "none",
+      "stored_sha256": "432e639f73a962514d6363fd55f2b57a8843651ad8d0e62a5ead673d6b3b550e",
+      "decoded_sha256": "432e639f73a962514d6363fd55f2b57a8843651ad8d0e62a5ead673d6b3b550e"
+    },
+    {
+      "pack": "audio_en_bnk.pack",
+      "path": "audio/wwise/english(uk)/campaign_advice__core.bnk",
+      "stored_bytes": 400361,
+      "decoded_bytes": 400361,
+      "compression": "none",
+      "stored_sha256": "6e68a189bfc19549fbfbffb9890ddc73708871492cde914cbe7f8866dab0d8a7",
+      "decoded_sha256": "6e68a189bfc19549fbfbffb9890ddc73708871492cde914cbe7f8866dab0d8a7"
+    },
+    {
+      "pack": "audio_cn_bnk.pack",
+      "path": "audio/wwise/chinese/battle_advice__core.bnk",
+      "stored_bytes": 60124,
+      "decoded_bytes": 60124,
+      "compression": "none",
+      "stored_sha256": "1ee9da046ea58c03ea7e21da8f84f1ff58bce56ab0cb37311e67be210d9a9005",
+      "decoded_sha256": "1ee9da046ea58c03ea7e21da8f84f1ff58bce56ab0cb37311e67be210d9a9005"
+    },
+    {
+      "pack": "audio_cn_bnk.pack",
+      "path": "audio/wwise/chinese/campaign_advice_1385955645__core.bnk",
+      "stored_bytes": 3346,
+      "decoded_bytes": 3346,
+      "compression": "none",
+      "stored_sha256": "b07780c9d90cd139c6bb4225f708d263891ba0b817e86034361f8f30bad719f2",
+      "decoded_sha256": "b07780c9d90cd139c6bb4225f708d263891ba0b817e86034361f8f30bad719f2"
+    },
+    {
+      "pack": "audio_cn_bnk.pack",
+      "path": "audio/wwise/chinese/campaign_advice_1927722379__core.bnk",
+      "stored_bytes": 3346,
+      "decoded_bytes": 3346,
+      "compression": "none",
+      "stored_sha256": "12797c10ed5994e8c1af3aacd9ed9c8fbce952f0b31e2997275cc99d86706397",
+      "decoded_sha256": "12797c10ed5994e8c1af3aacd9ed9c8fbce952f0b31e2997275cc99d86706397"
+    },
+    {
+      "pack": "audio_cn_bnk.pack",
+      "path": "audio/wwise/chinese/campaign_advice_2173257825__core.bnk",
+      "stored_bytes": 28819,
+      "decoded_bytes": 28819,
+      "compression": "none",
+      "stored_sha256": "5f55a4ef8d02b564989dbde6487f17f983d27c353febd6a690cdcf4e3833fc66",
+      "decoded_sha256": "5f55a4ef8d02b564989dbde6487f17f983d27c353febd6a690cdcf4e3833fc66"
+    },
+    {
+      "pack": "audio_cn_bnk.pack",
+      "path": "audio/wwise/chinese/campaign_advice_909104986__core.bnk",
+      "stored_bytes": 1006,
+      "decoded_bytes": 1006,
+      "compression": "none",
+      "stored_sha256": "3af349270040b95e586fe5d574517cc1e8a47ff0859df8ccf67ae945ab1a49c1",
+      "decoded_sha256": "3af349270040b95e586fe5d574517cc1e8a47ff0859df8ccf67ae945ab1a49c1"
+    },
+    {
+      "pack": "audio_cn_bnk.pack",
+      "path": "audio/wwise/chinese/campaign_advice__core.bnk",
+      "stored_bytes": 400373,
+      "decoded_bytes": 400373,
+      "compression": "none",
+      "stored_sha256": "c1fe2422eacb06c0c881d4f66d6ad39c359a7ced5fb8ab71ff2f774dc184e623",
+      "decoded_sha256": "c1fe2422eacb06c0c881d4f66d6ad39c359a7ced5fb8ab71ff2f774dc184e623"
+    },
+    {
+      "pack": "audio_base_bnk.pack",
+      "path": "audio/wwise/english(uk)/advisor/wwise.dat",
+      "stored_bytes": 2856,
+      "decoded_bytes": 2856,
+      "compression": "none",
+      "stored_sha256": "e18ff992f1ddf90295d0cc0c5d9c70107a44bc2c5733878c7f37ddea53fe6bb5",
+      "decoded_sha256": "e18ff992f1ddf90295d0cc0c5d9c70107a44bc2c5733878c7f37ddea53fe6bb5"
+    },
+    {
+      "pack": "local_cn.pack",
+      "path": "text/localisation__.loc",
+      "stored_bytes": 5646748,
+      "decoded_bytes": 44098329,
+      "compression": "zstd_with_u32_length",
+      "stored_sha256": "e72515b10e6d5abbbc663576d07a78a048512bc5286a3a467910ba9cc491745a",
+      "decoded_sha256": "c9d6149253d0b477580b328482e61a93704649319d1670b301fc037705659265"
+    }
+  ],
+  "advisor_table": {
+    "version": 2,
+    "row_count": 13,
+    "decoded_to_eof": true,
+    "entries": [
+      {
+        "advisor_name": "archaon",
+        "portrait": "ui/portraits/portholes/no_culture/chs_ch_archaon_0.png"
+      },
+      {
+        "advisor_name": "faction_leader",
+        "portrait": "ui/skins/default/preview_advisor.png"
+      },
+      {
+        "advisor_name": "isabella",
+        "portrait": "ui/portraits/portholes/no_culture/vmp_ch_isabella_0.png"
+      },
+      {
+        "advisor_name": "nagash",
+        "portrait": "ui/portraits/portholes/no_culture/vmp_nagash_0.png"
+      },
+      {
+        "advisor_name": "narrator",
+        "portrait": "ui/skins/default/narrator_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "prologue_advisor",
+        "portrait": "ui/skins/wh3_main_ksl_kislev_pro/gerik_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "prologue_yuri_0",
+        "portrait": "ui/skins/wh3_main_ksl_kislev_pro/yuri_001_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "prologue_yuri_1",
+        "portrait": "ui/skins/wh3_main_ksl_kislev_pro/yuri_002_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "prologue_yuri_2",
+        "portrait": "ui/skins/wh3_main_ksl_kislev_pro/yuri_003_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "prologue_yuri_3",
+        "portrait": "ui/skins/wh3_main_ksl_kislev_pro/yuri_004_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "prologue_yuri_4",
+        "portrait": "ui/skins/wh3_main_ksl_kislev_pro/yuri_004_porthole_portrait.png"
+      },
+      {
+        "advisor_name": "skreech",
+        "portrait": "ui/portraits/portholes/no_culture/skv_skreech_verminking_0.png"
+      },
+      {
+        "advisor_name": "standard_advisor",
+        "portrait": "ui/skins/default/preview_advisor.png"
+      }
+    ]
+  },
+  "advice_levels": {
+    "version": 5,
+    "row_count": 2969,
+    "decoded_to_eof": true,
+    "advisor_name_counts": {
+      "archaon": 4,
+      "faction_leader": 613,
+      "isabella": 1,
+      "nagash": 4,
+      "narrator": 140,
+      "prologue_advisor": 215,
+      "prologue_yuri_0": 23,
+      "prologue_yuri_1": 25,
+      "prologue_yuri_2": 7,
+      "prologue_yuri_3": 4,
+      "skreech": 5,
+      "standard_advisor": 1928
+    },
+    "audio_clip_value_counts": {
+      "n": 2969
+    },
+    "dlc_thread_examples": [
+      {
+        "thread_tag": "dlc23",
+        "row_count": 19,
+        "samples": [
+          {
+            "key": "1091338103",
+            "advice_thread": "wh3_dlc23_ie_camp_chd_astragoth_intro_01",
+            "advisor_name": "faction_leader"
+          },
+          {
+            "key": "1092229878",
+            "advice_thread": "wh3.dlc23.camp.advice.chd.labour_panel.001",
+            "advisor_name": "faction_leader"
+          }
+        ]
+      },
+      {
+        "thread_tag": "dlc24",
+        "row_count": 6,
+        "samples": [
+          {
+            "key": "139522005",
+            "advice_thread": "wh3_dlc24_yuan_bo_cam_quest_mission.001",
+            "advisor_name": "faction_leader"
+          },
+          {
+            "key": "1932892682",
+            "advice_thread": "wh3_dlc24_mother_ostankya_cam_quest_mission.001",
+            "advisor_name": "faction_leader"
+          }
+        ]
+      },
+      {
+        "thread_tag": "dlc25",
+        "row_count": 23,
+        "samples": [
+          {
+            "key": "100383497",
+            "advice_thread": "wh3_dlc25_elspeth_cam_mission_imperial_authority_001",
+            "advisor_name": "faction_leader"
+          },
+          {
+            "key": "1091820390",
+            "advice_thread": "wh3.dlc25.camp.advice.nur.tamurkhan_chieftains.001",
+            "advisor_name": "faction_leader"
+          }
+        ]
+      },
+      {
+        "thread_tag": "dlc26",
+        "row_count": 16,
+        "samples": [
+          {
+            "key": "1012418722",
+            "advice_thread": "wh3_dlc26_ie_camp_kho_arbaal_intro_01",
+            "advisor_name": "faction_leader"
+          },
+          {
+            "key": "1017916923",
+            "advice_thread": "wh3.dlc26.camp.advice.grn.da_plan.001",
+            "advisor_name": "faction_leader"
+          }
+        ]
+      },
+      {
+        "thread_tag": "dlc27",
+        "row_count": 5,
+        "samples": [
+          {
+            "key": "1102064174",
+            "advice_thread": "wh3_dlc27_ie_camp_sla_dechala_intro_01",
+            "advisor_name": "faction_leader"
+          },
+          {
+            "key": "1579390611",
+            "advice_thread": "wh3_dlc27_ie_camp_hef_aislinn_intro_01",
+            "advisor_name": "faction_leader"
+          }
+        ]
+      },
+      {
+        "thread_tag": "dlc28",
+        "row_count": 0,
+        "samples": []
+      }
+    ]
+  },
+  "advice_soundbanks": {
+    "audio_en_bnk.pack": [
+      "audio/wwise/english(uk)/battle_advice__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_1385955645__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_1927722379__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_2173257825__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_909104986__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice__core.bnk"
+    ],
+    "audio_cn_bnk.pack": [
+      "audio/wwise/chinese/battle_advice__core.bnk",
+      "audio/wwise/chinese/campaign_advice_1385955645__core.bnk",
+      "audio/wwise/chinese/campaign_advice_1927722379__core.bnk",
+      "audio/wwise/chinese/campaign_advice_2173257825__core.bnk",
+      "audio/wwise/chinese/campaign_advice_909104986__core.bnk",
+      "audio/wwise/chinese/campaign_advice__core.bnk"
+    ]
+  },
+  "localisation": {
+    "pack": "local_cn.pack",
+    "member": "text/localisation__.loc",
+    "version": 1,
+    "row_count": 212411,
+    "decoded_to_eof": true,
+    "advice_levels_prefix_row_count": 2926,
+    "onscreen_text_row_count": 2926,
+    "advice_rows_with_matching_onscreen_key": 2926,
+    "advice_rows_without_matching_onscreen_key_in_this_member": 43,
+    "missing_advice_keys": [
+      "1012530609",
+      "1017916923",
+      "1037390624",
+      "1091820390",
+      "1092229878",
+      "114953719",
+      "1162956597",
+      "126816619",
+      "1307190165",
+      "1353353725",
+      "1412434840",
+      "1507511056",
+      "1511952213",
+      "1571222438",
+      "1585596626",
+      "165944266",
+      "1666705907",
+      "1704432663",
+      "1806367463",
+      "1871962849",
+      "1881635775",
+      "1886756074",
+      "1975907681",
+      "2073083473",
+      "258324211",
+      "279197684",
+      "327354460",
+      "331962124",
+      "376767814",
+      "48439041",
+      "485406942",
+      "502583046",
+      "558353667",
+      "68395899",
+      "749844431",
+      "77967356",
+      "825749103",
+      "830705929",
+      "884335102",
+      "894092559",
+      "919516407",
+      "937207671",
+      "969300180"
+    ],
+    "selected_matches": [
+      {
+        "advice_key": "1001682303",
+        "advice_thread": "wh2_dlc13.camp.advice.lzd.warmblood_invaders.001",
+        "advisor_name": "standard_advisor",
+        "loc_key": "advice_levels_onscreen_text_1001682303",
+        "found": true,
+        "characters": 40,
+        "text_utf8_sha256": "617dc6e5423a24a19513b56cd9b5a5546b14efb207b9d0d35b92201aadb9c3ee"
+      },
+      {
+        "advice_key": "1001950543",
+        "advice_thread": "wh3_main_camp_narrative_shared_increase_control_02",
+        "advisor_name": "standard_advisor",
+        "loc_key": "advice_levels_onscreen_text_1001950543",
+        "found": true,
+        "characters": 33,
+        "text_utf8_sha256": "bc073995ad6efe0668d8cdd2302d3b62194d6c6b17fa3a375e9f4943d42d94a0"
+      },
+      {
+        "advice_key": "2013388857",
+        "advice_thread": "Play_wh3_dlc29_endtimes_narrative_nagash_nagash_004",
+        "advisor_name": "nagash",
+        "loc_key": "advice_levels_onscreen_text_2013388857",
+        "found": true,
+        "characters": 51,
+        "text_utf8_sha256": "75a9f02bfd25e2b86ef6aa8daa1d8d7c27a1037a813d018548dc920a93acc91e"
+      },
+      {
+        "advice_key": "333684377",
+        "advice_thread": "Play_wh3_dlc29_endtimes_narrative_nagash_nagash_003",
+        "advisor_name": "nagash",
+        "loc_key": "advice_levels_onscreen_text_333684377",
+        "found": true,
+        "characters": 20,
+        "text_utf8_sha256": "061fd3e8872783ff8865b12539e882298411d55bcea4c81fc8a6474c056f69d0"
+      }
+    ]
+  },
+  "boundaries": {
+    "dlc_ownership_checked": false,
+    "owned_vs_unowned_controlled_comparison": false,
+    "every_event_resolved_to_wem": false,
+    "all_dlc_audio_text_coverage_verified": false,
+    "game_launched_by_this_task": false,
+    "audio_playback_performed": false,
+    "replacement_mod_built_or_installed": false,
+    "game_files_modified": false,
+    "game_audio_or_full_localisation_committed": false
+  },
+  "external_sources": [
+    {
+      "id": "W01",
+      "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/manuals/TWW3_PC_STEAM_MANUAL_EN.pdf?t=1779441058",
+      "scope": "Official manual page 5, advisor and configurable advice presentation."
+    },
+    {
+      "id": "W02",
+      "url": "https://support.sega.com/hc/en-gb/articles/51224684758929-Total-War-WARHAMMER-A-New-Player-Survival-Guide-FAQ",
+      "scope": "Official explanation of playable ownership and unowned AI factions; not a complete media inventory."
+    },
+    {
+      "id": "W03",
+      "url": "https://www.tw-modding.com/wiki/Audio_modding",
+      "scope": "Community audio tool workflow for Wwise events, soundbanks and WEM replacement; not a local compatibility test."
+    },
+    {
+      "id": "W04",
+      "url": "https://github.com/Frodo45127/rpfm-schemas/blob/master/schema_wh3.ron",
+      "scope": "DB field definitions; local advice_levels version 5 and advisors version 2 decoded to EOF."
+    },
+    {
+      "id": "W05",
+      "url": "https://github.com/donkeyProgramming/TheAssetEditor",
+      "scope": "Audio exploration and editing tool maintained by its authors."
+    }
+  ]
+}
