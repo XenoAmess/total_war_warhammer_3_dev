@@ -1,0 +1,15 @@
+xatw3_refresh	Refresh candidates
+xatw3_refresh_tooltip	Replace ordinary candidates of the selected type. Legendary, wounded and previously recruited characters are protected. Initial adapters: Empire General and Empire Captain.
+xatw3_capital	Move capital
+xatw3_capital_tooltip	Move the faction capital to the selected owned settlement for free. Does not change province capitals or building levels.
+xatw3_confirm_title	Recruitment and Capitals
+xatw3_confirm_refresh	Replace ordinary candidates of the selected type? Special and previously recruited characters stay. Planned replacements:
+xatw3_confirm_capital	Move the capital to this settlement? Building levels and province capital status stay unchanged.
+xatw3_error	Operation incomplete
+xatw3_success	Operation complete
+xatw3_done	The game model confirms the operation completed.
+xatw3_failed	Operation incomplete. Check the log. Uncertain operations are never retried automatically.
+xatw3_pool_unavailable	The recruitment pool cannot be read. No candidates were changed.
+xatw3_no_candidates	No ordinary candidates can be safely replaced. Special characters and characters with unknown history are protected.
+xatw3_stale	The candidate list or capital changed while confirming. Nothing was changed by this request. Please select again.
+xatw3_uncertain	The operation could not be fully verified. Further changes are stopped. Load the save from before the operation; see the log for details.

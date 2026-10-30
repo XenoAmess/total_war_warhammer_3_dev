@@ -1,0 +1,34 @@
+# 征募与迁都 / Recruitment and Capitals
+
+《全面战争：战锤 3》战役 Mod 的开发仓库：普通领主/事务官招募刷新，以及玩家迁移派系首都。
+
+当前为 `0.1.0` 开发原型。Lua 5.1 离线测试已通过；游戏内候选操作和 UI 尚待原版引擎验收，尚未发布到 Steam 创意工坊。刷新适配首先限定帝国将军和帝国队长；迁都面向单人超凡帝国的常规自有城镇，不声明全派系兼容。
+
+## 开发
+
+构建只需要 Python 标准库：
+
+```powershell
+python tools/build.py
+python tools/build.py --language en --output build/en
+```
+
+产物为 `build/xatw3_campaign_utilities.pack` 和含 SHA-256 的 `manifest.json`。构建不会改动游戏安装；英文构建为替代语言版本，不与中文包同时启用。
+
+离线检查使用 Python 3.13 与 Lupa 提供的 Lua 5.1：
+
+```powershell
+py -3.13 -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements-dev.txt
+.venv/Scripts/python.exe tools/test.py
+```
+
+`tools/live_probe.py` 构建单独的引擎测试夹具；只在专用测试环境显式安装，正式包不会包含该夹具。它允许从指定本机目录执行可信测试命令，不能与正式包一起上传。
+
+## 文档
+
+- [预研报告](docs/feasibility-study.md)
+- [设计文档](docs/mod-design.md)
+- [测试验收与发布方案](docs/test-acceptance-plan.md)
+
+发布工具 `tools/workshop.py` 只允许上传与验收清单哈希一致、且 L0–L3 全部 PASS 的包。工具在创建条目后立即记录 ID，重试更新同一个条目。上传回执与公开页面验证分别记录。

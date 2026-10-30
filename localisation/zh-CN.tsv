@@ -1,0 +1,15 @@
+xatw3_refresh	刷新候选
+xatw3_refresh_tooltip	替换当前类别的普通候选。传奇、受伤及已招募人物受保护。首版适配帝国将军与帝国队长。
+xatw3_capital	迁都
+xatw3_capital_tooltip	将派系首都迁至选中的自有城镇。免费，不改变省会或建筑等级。
+xatw3_confirm_title	征募与迁都
+xatw3_confirm_refresh	确认替换当前类别的普通候选？特殊和已招募人物保留。预计替换人数：
+xatw3_confirm_capital	确认将首都迁至此城镇？不改变建筑等级和省会位置。
+xatw3_error	操作未完成
+xatw3_success	操作完成
+xatw3_done	已读回游戏模型并确认操作完成。
+xatw3_failed	操作未完成，请查看日志。结果不明时不会自动重试。
+xatw3_pool_unavailable	暂时无法读取当前招募池，未修改候选。
+xatw3_no_candidates	当前没有可安全替换的普通候选；特殊人物和履历不明的人物将保留。
+xatw3_stale	候选列表或首都已在确认期间改变。未执行本次操作，请重新选择。
+xatw3_uncertain	操作未完整完成，已停止继续修改。请载入操作前的存档；详情见日志。
