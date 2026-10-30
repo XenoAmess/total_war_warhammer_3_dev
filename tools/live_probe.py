@@ -31,6 +31,7 @@ function xatw3_test.tick()
         local code = f:read('*a'); f:close(); os.remove(root .. '/command.lua')
         local chunk, err = loadstring(code, 'xatw3_acceptance_command')
         if chunk then
+            setfenv(chunk, getfenv(1))
             local ok, result = pcall(chunk)
             xatw3_test.record('COMMAND_RESULT ok=' .. tostring(ok) .. ' result=' .. tostring(result))
         else xatw3_test.record('COMMAND_COMPILE_ERROR ' .. tostring(err)) end

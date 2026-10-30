@@ -169,4 +169,19 @@ test('capital_city_attributes_unchanged', function()
     request.action, request.target, request.expected = 'capital', 'grunburg', 'altdorf'
     check(logic.execute(state, request, a).status == 'UNKNOWN')
 end)
+test('unverified_refresh_never_mutates_or_consumes_sequence', function()
+    local a, state, request, calls = fixture()
+    a.refresh_verified = false
+    check(logic.execute(state, request, a).reason == 'refresh_unverified')
+    check(calls.spawn == 0 and calls.remove == 0 and state.next_sequence == 1)
+end)
+
+test('oversized_pool_never_creates_another_candidate', function()
+    local a, state, request, calls = fixture()
+    local pool = a.read_pool()
+    pool[#pool + 1] = candidate(4)
+    request.expected = logic.fingerprint(pool)
+    check(logic.execute(state, request, a).reason == 'unsafe_pool_size')
+    check(calls.spawn == 0 and calls.remove == 0)
+end)
 return passed

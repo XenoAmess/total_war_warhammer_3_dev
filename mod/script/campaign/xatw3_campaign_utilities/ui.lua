@@ -1,7 +1,11 @@
 local M = {}
 local PREFIX = 'xatw3_'
 
-function M.new(runtime, logic)
+function M.new(runtime, logic, environment)
+    environment = environment or getfenv(2)
+    local core, cm, common = environment.core, environment.cm, environment.common
+    local find_uicomponent, UIComponent, CampaignUI = environment.find_uicomponent,
+        environment.UIComponent, environment.CampaignUI
     local self = {pending = nil, selected_subtype = nil, selected_region = nil}
     local function text(key) return common.get_localised_string(PREFIX .. key) end
     local function after(callback) cm:callback(callback, 0.1) end
@@ -25,9 +29,19 @@ function M.new(runtime, logic)
         local root = core:get_ui_root()
         local panel = find_uicomponent(root, 'character_panel')
         if panel and panel:Visible() then
+            local categories = find_uicomponent(panel, 'lords_and_agents_holder')
+            if categories then
+                for subtype in pairs(runtime.subtypes or {}) do
+                    local tab = find_uicomponent(categories, subtype)
+                    if tab and tab:Visible() and tab:CurrentState() == 'selected' then
+                        self.selected_subtype = subtype
+                    end
+                end
+            end
             local anchor = find_uicomponent(panel, 'character_list') or panel
             local b = button('refresh_candidates', panel, 'refresh', anchor)
-            b:SetInteractive(self.selected_subtype ~= nil and runtime.supported(self.selected_subtype)
+            if not runtime.refresh_verified then b:SetTooltipText(text('refresh_unavailable'), true) end
+            b:SetInteractive(runtime.refresh_verified == true and self.selected_subtype ~= nil and runtime.supported(self.selected_subtype)
                 and runtime.can_act(faction) and not runtime.state.locked)
         end
         panel = find_uicomponent(root, 'settlement_panel')
@@ -82,6 +96,7 @@ function M.new(runtime, logic)
         local request = {version = 1, action = action, faction = faction,
             sequence = runtime.state.next_sequence, turn = runtime.turn()}
         if action == 'refresh' then
+            if not runtime.refresh_verified then self.message('error', text('refresh_unavailable')); return end
             request.target = self.selected_subtype
             if not request.target or not runtime.supported(request.target) then return end
             local pool = runtime.read_pool(faction, request.target)
@@ -134,11 +149,11 @@ function M.new(runtime, logic)
             -- Category changes must never retain the last page's refresh target.
             self.selected_subtype = nil
             local ok, subtype = pcall(function()
-                local id = component:GetContextObjectId('CcoAgentSubtypeRecord')
-                if id and id ~= '' then return common.get_context_value('CcoAgentSubtypeRecord', id, 'Key') end
-                local character = component:GetContextObjectId('CcoCampaignCharacter')
-                if character and character ~= '' then
-                    return common.get_context_value('CcoCampaignCharacter', character, 'AgentSubtypeRecordContext.Key')
+                local record = component:GetContextObject('CcoAgentSubtypeRecord')
+                if record then return record:Call('Key') end
+                local character = component:GetContextObject('CcoCampaignCharacter')
+                if character then
+                    return character:Call('AgentSubtypeRecordContext.Key')
                 end
             end)
             if ok and subtype then self.selected_subtype = subtype end
@@ -147,6 +162,7 @@ function M.new(runtime, logic)
         runtime.on_result = function(result)
             local message = text('failed')
             if result.status == 'SUCCEEDED' then message = text('done')
+            elseif result.reason == 'refresh_unverified' then message = text('refresh_unavailable')
             elseif result.reason == 'stale' then message = text('stale')
             elseif result.reason == 'no_candidates' then message = text('no_candidates')
             elseif result.status == 'UNKNOWN' or result.status == 'PARTIAL' then message = text('uncertain') end

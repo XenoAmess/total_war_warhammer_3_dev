@@ -48,6 +48,7 @@ end
 function M.refresh(adapter, faction, subtype, expected)
     local before = adapter.read_pool(faction, subtype)
     if not before then return {status = 'REJECTED', reason = 'pool_unavailable', completed = 0} end
+    if #before >= 4 then return {status = 'REJECTED', reason = 'unsafe_pool_size', completed = 0} end
     local plan = M.plan(before, faction, subtype)
     if plan.fingerprint ~= expected then
         return {status = 'REJECTED', reason = 'stale', completed = 0}
@@ -119,6 +120,9 @@ function M.move_capital(adapter, faction, target, expected)
 end
 
 function M.execute(state, request, adapter)
+    if request.action == 'refresh' and adapter.refresh_verified == false then
+        return {status = 'REJECTED', reason = 'refresh_unverified'}
+    end
     if request.sequence ~= state.next_sequence then return {status = 'REJECTED', reason = 'duplicate_or_invalid_sequence'} end
     if state.locked then return {status = 'REJECTED', reason = 'unresolved_operation'} end
     if request.version ~= 1 or not M.valid_key(request.faction) or not M.valid_key(request.target)

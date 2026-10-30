@@ -17,8 +17,11 @@ local function safe(fn, fallback)
     return fallback
 end
 
-function M.new(logic)
-    local self = {logic = logic, state = nil, pending_entries = {}, pending_recruited = {}, initialized = false}
+function M.new(logic, environment)
+    environment = environment or getfenv(2)
+    local cm, common, out = environment.cm, environment.common, environment.out
+    local self = {logic = logic, subtypes = M.subtypes, refresh_verified = false, state = nil,
+        pending_entries = {}, pending_recruited = {}, initialized = false}
 
     function self.log(message)
         out('[' .. PREFIX .. '] ' .. tostring(message))
@@ -81,9 +84,10 @@ function M.new(logic)
 
     function self.turn() return cm:model():turn_number() end
     function self.supported(subtype) return M.subtypes[subtype] ~= nil end
+    function self.campaign_supported() return cm:get_campaign_name() == 'main_warhammer' end
 
     function self.can_act(faction_key)
-        if cm:is_multiplayer() or cm:get_campaign_name() ~= 'wh3_main_combi' then return false end
+        if cm:is_multiplayer() or not self.campaign_supported() then return false end
         local faction = cm:get_faction(faction_key)
         return faction and faction:is_human() and faction:name() == cm:get_local_faction_name()
             and faction:is_factions_turn() and not cm:model():pending_battle():is_active()
@@ -105,7 +109,7 @@ function M.new(logic)
             leader = valid(actor) and actor:is_faction_leader() or false,
             recruited = history.recruited == true,
             provenance = history.provenance or 'unknown',
-            male = details:is_male(), forename = details:forename(), surname = details:surname(),
+            male = details:is_male(), forename = details:get_forename(), surname = details:get_surname(),
             background = details:background_skill()
         }
     end
@@ -149,8 +153,9 @@ function M.new(logic)
         local fm = cm:get_family_member_by_cqi(candidate.id)
         if not fm then return false end
         local details = fm:character_details()
-        return candidate.background ~= '' and candidate.background ~= nil
-            and safe(function() return details:get_forename() ~= '' end, false)
+        local name = safe(function() return details:get_forename() end, nil)
+        return type(candidate.background) == 'string' and candidate.background ~= ''
+            and type(name) == 'string' and name ~= ''
             and not candidate.unique and not candidate.immortal
     end
 
@@ -182,12 +187,16 @@ function M.new(logic)
         cm:change_home_region_of_faction(cm:get_faction(faction_key), cm:get_region(region_key))
     end
 
-    function self.execute(request)
-        local result = logic.execute(self.state, request, self)
+    function self.report(result)
         self.log('RESULT sequence=' .. tostring(result.sequence) .. ' action=' .. tostring(result.action)
             .. ' status=' .. result.status .. ' reason=' .. tostring(result.reason)
             .. ' completed=' .. tostring(result.completed))
         if self.on_result then self.on_result(result) end
+    end
+
+    function self.execute(request)
+        local result = logic.execute(self.state, request, self)
+        self.report(result)
         return result
     end
 

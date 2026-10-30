@@ -45,9 +45,22 @@ def run() -> dict:
             real_timer = {register_repeating = function(name, interval) timer_registered = true end}
             cm = {add_first_tick_callback = function(self, callback) first_tick = callback end}
         ''')
-        probe_lua.execute(probe)
+        load_probe = probe_lua.eval('''function(source)
+            local env = setmetatable({}, {__index = _G})
+            local chunk = assert(loadstring(source))
+            setfenv(chunk, env)
+            chunk()
+            return env
+        end''')
+        probe_env = load_probe(probe)
         if not probe_lua.eval('timer_registered and type(first_tick) == "function" and type(ui_created) == "function"'):
             raise RuntimeError('Native acceptance fixture failed before WorldCreated')
+        (Path(temporary) / 'runtime/command.lua').write_text(
+            "xatw3_test.record('ISOLATED_COMMAND_ENV')", encoding='utf-8')
+        probe_env['xatw3_test']['tick']()
+        probe_log = (Path(temporary) / 'runtime/native.log').read_text(encoding='utf-8')
+        if 'ISOLATED_COMMAND_ENV' not in probe_log or 'COMMAND_RESULT ok=true' not in probe_log:
+            raise RuntimeError('Native command escaped the fixture script environment')
     rows = read_translations(ROOT / 'localisation/zh-CN.tsv')
     import re
     ui = (ROOT / 'mod/script/campaign/xatw3_campaign_utilities/ui.lua').read_text(encoding='utf-8')
@@ -58,6 +71,7 @@ def run() -> dict:
               'production_logic_tests': tests, 'production_ui_tests': ui_tests,
               'test_count': len(tests) + len(ui_tests),
               'fixture_pre_world_created': True,
+              'fixture_command_environment': True,
               'deterministic_build': True, 'pack_round_trip': True,
               'release_pack_sha256': hashlib.sha256(raw).hexdigest(), 'release_pack_bytes': len(raw),
               'native_game_acceptance': 'NOT_RUN'}

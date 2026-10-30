@@ -11,6 +11,11 @@ local function component(id, parent, subtype)
     function c:GetContextObjectId(kind)
         return kind == 'CcoAgentSubtypeRecord' and self.subtype or ''
     end
+    function c:GetContextObject(kind)
+        if kind == 'CcoAgentSubtypeRecord' and self.subtype then
+            return {Call = function() return self.subtype end}
+        end
+    end
     return c
 end
 local root = component('root')
@@ -41,7 +46,11 @@ CampaignUI = {TriggerCampaignScriptEvent = function(cqi, payload)
 end}
 local runtime = {initialized = true, state = {locked = false}, can_act = function() return true end}
 runtime.supported = function(key) return key == 'supported' end
-local ui = ui_module.new(runtime, {})
+local environment = {core = core, cm = cm, common = common, find_uicomponent = find_uicomponent,
+    UIComponent = UIComponent, CampaignUI = CampaignUI}
+local ui = ui_module.new(runtime, {}, environment)
+-- require() can load modules in a different environment from campaign scripts.
+core, cm, common, find_uicomponent, UIComponent, CampaignUI = nil, nil, nil, nil, nil, nil
 ui.install()
 local function emit(event, context)
     for _, listener in pairs(listeners) do

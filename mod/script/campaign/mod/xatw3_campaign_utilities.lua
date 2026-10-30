@@ -1,6 +1,7 @@
 local logic = require('script.campaign.xatw3_campaign_utilities.logic')
-local runtime = require('script.campaign.xatw3_campaign_utilities.runtime').new(logic)
-local ui = require('script.campaign.xatw3_campaign_utilities.ui').new(runtime, logic)
+local environment = getfenv(1)
+local runtime = require('script.campaign.xatw3_campaign_utilities.runtime').new(logic, environment)
+local ui = require('script.campaign.xatw3_campaign_utilities.ui').new(runtime, logic, environment)
 
 -- This namespace is also the explicit entry point used by the separate acceptance fixture.
 xatw3_campaign_utilities = {logic = logic, runtime = runtime, ui = ui, version = '0.1.0'}
@@ -36,6 +37,6 @@ end, true)
 
 cm:add_first_tick_callback(function()
     runtime.initialize()
-    if cm:get_campaign_name() == 'wh3_main_combi' and not cm:is_multiplayer() then ui.install() end
+    if runtime.campaign_supported() and not cm:is_multiplayer() then ui.install() end
     runtime.log('loaded version=0.1.0 campaign=' .. cm:get_campaign_name())
 end)
