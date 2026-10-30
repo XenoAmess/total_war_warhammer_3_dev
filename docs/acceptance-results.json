@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-30T17:56:39.680568+00:00",
+  "recorded_at_utc": "2026-10-30T18:04:02.844161+00:00",
   "source_commit": "cb43cc56f3cadbfaa6d652e3cadf6eb895dd6c90",
   "release_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
   "release_pack_bytes": 42899,
@@ -40,17 +40,29 @@
     "frozen_pack_cold_load_snapshot_and_history": "PASS",
     "frozen_lord_and_hero_button_refresh": "PASS",
     "frozen_lord_normal_recruitment": "PASS",
-    "frozen_new_hero_normal_recruitment": "PENDING",
+    "frozen_new_hero_normal_recruitment": "PASS",
     "frozen_province_and_minor_capital_buttons": "PASS",
     "frozen_cancel_and_current_capital_rejection": "PASS",
     "frozen_full_offline_flow": "IN_PROGRESS",
     "production_embedded_in_fixture": false,
-    "production_hot_reloaded_during_frozen_acceptance": false
+    "production_hot_reloaded_during_frozen_acceptance": false,
+    "frozen_full_offline_player_actions": "PASS",
+    "frozen_recruitment_evidence": {
+      "hero_family_member": 17024,
+      "hero_actor": 1319,
+      "hero_gold_before": 6385,
+      "hero_gold_after": 6035,
+      "hero_capacity": 2,
+      "lord_family_member": 17027,
+      "lord_actor": 1320,
+      "lord_gold_before": 6035,
+      "lord_gold_after": 5285
+    }
   },
   "steam_mode": {
     "status": "offline",
     "offline_mode": true,
-    "observed_at_utc": "2026-10-30T17:52:27.306465+00:00",
+    "observed_at_utc": "2026-10-30T17:56:53.482525+00:00",
     "method": "native_current_user_byte",
     "prelaunch_fresh_probe_required": true
   },
