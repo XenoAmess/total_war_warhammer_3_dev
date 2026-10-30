@@ -1,9 +1,9 @@
-Unreleased draft. Candidate refresh is disabled pending native acceptance.
 0.1.0 Alpha — Initial release / 首个版本
 
-新增普通人物招募页“刷新候选”按钮，首批适配基斯里夫波耶老爷、牧首。
+新增普通人物招募页“刷新候选”按钮，按引擎自动生成标记和实际职业识别普通子类型；基斯里夫波耶老爷、牧首完成真实按钮、招募和连续刷新实测。
 新增自有城镇面板“迁都”按钮，修改派系首都，不改变省会或建筑等级。
 默认免费，提供确认步骤、受保护人物过滤、重复请求防护及结果读回。
 支持单人超凡帝国；联机和特殊招募机制暂不支持。
+需要同时启用 memreader Plus；实测 Windows x64、9.0.4。刷新前释放原生卡片上下文，缺少依赖或原生结构校验失败时停止。
 
-Adds ordinary candidate refresh for Kislev Boyars and Patriarchs, and faction capital relocation for owned regular settlements. Includes confirmation, character protection and result verification. Single-player Immortal Empires only.
+Adds ordinary candidate refresh and faction capital relocation. Includes confirmation, character protection, native panel close/reopen and result verification. Full player flow tested with Kislev Boyars and Patriarchs. Requires memreader Plus. Windows x64, game 9.0.4, single-player Immortal Empires.

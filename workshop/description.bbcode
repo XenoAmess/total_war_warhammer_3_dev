@@ -1,12 +1,17 @@
 [h1]征募与迁都 / Recruitment and Capitals[/h1]
 
-[b]未发布说明草稿：候选刷新未通过验收，当前默认禁用。[/b]
 [b]0.1.0 Alpha · 单人超凡帝国[/b]
+
+[b]必需物品：memreader Plus。请订阅并在启动器中同时启用它与本 Mod。当前实测环境为 Windows x64、游戏 9.0.4。[/b]
 
 [h2]招募刷新[/h2]
 在普通人物招募页选择类别后，可使用“刷新候选”按钮替换当前类别中的普通候选，无需结束回合。
 
-[b]本版刷新适配：基斯里夫波耶老爷、牧首。[/b] 其他子类型暂不启用。传奇、唯一、不朽、受伤和已招募过的人物受到保护；履历不明的人物不会被猜测删除。冰雪宫廷训练类不在刷新范围内。
+免费，无额外回合冷却。刷新当前选中人物的子类型，成功后候选人数保持。允许引擎标记为普通自动生成的领主和事务官；同一职业页内的不同法师派系分别处理。新人物仍须通过原版建筑、容量、费用与内容所有权检查才能招募。
+
+传奇、唯一、不朽、受伤和已招募过的人物受到保护；履历不明的人物不会被猜测删除。冰雪宫廷训练、仪式及其他特殊来源不在刷新范围内。旧存档候选可能受未知履历保护，后续自然生成的普通候选才会获得可刷新履历。
+
+本机完整流程实测：基斯里夫波耶老爷、牧首，包括刷新后正常招募、受保护人物保留和连续刷新。其他普通类型按引擎元数据识别；不宣称全种族或特殊机制兼容。
 
 [h2]迁移首都[/h2]
 在自己的城镇面板使用“迁都”，确认后将派系首都迁至该城镇。省会与小城均可作为普通目标；免费，不添加收入加成，不改变省会位置、建筑等级或城市所有权。
@@ -21,10 +26,12 @@
 [*]禁用 Mod 不会自动撤销已经保存的首都和人物变化。
 [/list]
 
-默认提供简体中文，无额外前置 Mod。可取消确认；执行结果不明时会停止继续修改，不自动重复操作。
+默认提供简体中文。可取消确认；执行结果不明时会停止继续修改，不自动重复操作。刷新前会关闭招募面板以释放旧卡片，完成后重开。缺少前置、引擎函数签名或候选结构无法验证时停止刷新。
 
 [h2]English[/h2]
-Adds candidate refresh and faction capital relocation to single-player Immortal Empires. Initial refresh adapters cover Kislev Boyars and Patriarchs. Select an ordinary character type, then use Refresh Candidates. Legendary, unique, immortal, wounded, previously recruited and unknown-history characters are protected.
+Requires memreader Plus, enabled alongside this mod. Tested on Windows x64, game 9.0.4. Adds free candidate refresh and faction capital relocation to single-player Immortal Empires. Ordinary automatically generated subtypes are identified from engine metadata. Select a candidate to choose its subtype. Legendary, unique, immortal, wounded, previously recruited and unknown-history characters are protected. Special training and ritual recruitment are unsupported. Existing-save candidates without recorded history remain protected until natural replacements appear.
+
+The full player flow was tested with Kislev Boyars and Patriarchs. Other ordinary subtypes use the same metadata checks; universal faction or overhaul compatibility is not claimed. Recruitment still requires the game's normal buildings, capacity, gold and content ownership.
 
 Move Capital changes the faction capital to an owned regular settlement, without changing province capitals or building levels. No gold cost or additional economic bonuses. Multiplayer and special recruitment systems are unsupported. Keep a save from before making changes.
 
