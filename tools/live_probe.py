@@ -43,9 +43,14 @@ def fixture(output: Path, runtime: Path, production_pack: Path) -> Path:
     runtime.mkdir(parents=True, exist_ok=True)
     script = LUA.replace('__RUNTIME__', json.dumps(runtime.resolve().as_posix()))
     campaign = script + '''
+xatw3_test.record('CAMPAIGN_SCRIPTS_LOADED')
+local function poll()
+    xatw3_test.tick()
+    core:get_tm():real_callback(poll, 500, 'xatw3_acceptance_campaign')
+end
+core:get_tm():real_callback(poll, 500, 'xatw3_acceptance_campaign')
 cm:add_first_tick_callback(function()
     xatw3_test.record('CAMPAIGN_READY ' .. cm:get_campaign_name())
-    cm:repeat_callback(xatw3_test.tick, 0.5, 'xatw3_acceptance_poll')
 end)
 '''
     frontend = script + '''

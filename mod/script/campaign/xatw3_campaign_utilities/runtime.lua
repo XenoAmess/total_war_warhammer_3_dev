@@ -3,8 +3,8 @@ local PREFIX = 'xatw3_campaign_utilities'
 
 -- Expand this list only after the corresponding native recruitment path is tested.
 M.subtypes = {
-    wh_main_emp_lord = 'general',
-    wh_main_emp_captain = 'champion'
+    wh3_main_ksl_boyar = 'general',
+    wh3_main_ksl_patriarch = 'dignitary'
 }
 
 local function valid(object)

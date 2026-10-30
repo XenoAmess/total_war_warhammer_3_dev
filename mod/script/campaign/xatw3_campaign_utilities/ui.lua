@@ -11,6 +11,8 @@ function M.new(runtime, logic)
             'ui/templates/square_medium_text_button.twui.xml', parent)
         component:SetStateText(text(label))
         component:SetTooltipText(text(label .. '_tooltip'), true)
+        component:SetCanResizeWidth(true)
+        component:Resize(170, 34)
         component:SetVisible(true)
         local x, y = anchor:Position()
         component:MoveTo(x, y - 45)
@@ -100,7 +102,14 @@ function M.new(runtime, logic)
 
     function self.install()
         core:add_listener(PREFIX .. 'panels', 'PanelOpenedCampaign', true,
-            function() after(self.refresh_buttons) end, true)
+            function(context)
+                if context.string == 'character_panel' then self.selected_subtype = nil end
+                after(self.refresh_buttons)
+            end, true)
+        core:add_listener(PREFIX .. 'closed', 'PanelClosedCampaign', true,
+            function(context)
+                if context.string == 'character_panel' then self.selected_subtype = nil end
+            end, true)
         core:add_listener(PREFIX .. 'settlement', 'SettlementSelected', true, function(context)
             self.selected_region = context:garrison_residence():region():name()
             after(self.refresh_buttons)
@@ -122,6 +131,8 @@ function M.new(runtime, logic)
             if context.string == PREFIX .. 'refresh_candidates' then self.prepare('refresh'); return end
             if context.string == PREFIX .. 'move_capital' then self.prepare('capital'); return end
             local component = UIComponent(context.component)
+            -- Category changes must never retain the last page's refresh target.
+            self.selected_subtype = nil
             local ok, subtype = pcall(function()
                 local id = component:GetContextObjectId('CcoAgentSubtypeRecord')
                 if id and id ~= '' then return common.get_context_value('CcoAgentSubtypeRecord', id, 'Key') end
