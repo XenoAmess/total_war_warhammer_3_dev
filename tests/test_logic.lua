@@ -106,6 +106,14 @@ test('stale_pool_does_not_mutate', function()
     check(logic.execute(state, request, a).reason == 'stale')
     check(calls.spawn == 0 and calls.remove == 0)
 end)
+
+test('native_layout_failure_rejects_before_spawning', function()
+    local a, state, request, calls = fixture()
+    function a.can_remove_candidate(id) return id ~= 2 end
+    local result = logic.execute(state, request, a)
+    check(result.status == 'REJECTED' and result.reason == 'native_pool_unavailable')
+    check(calls.spawn == 0 and calls.remove == 0 and not state.locked)
+end)
 test('past_turn_rejected', function()
     local a, state, request, calls = fixture(); request.turn = 6
     check(logic.execute(state, request, a).status == 'REJECTED' and calls.spawn == 0)

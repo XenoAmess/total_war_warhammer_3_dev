@@ -23,6 +23,9 @@ def run() -> dict:
     tests = list(lua.execute((ROOT / 'tests/test_logic.lua').read_text(encoding='utf-8')).values())
     lua.globals().ui_module = lua.execute((ROOT / 'mod/script/campaign/xatw3_campaign_utilities/ui.lua').read_text(encoding='utf-8'))
     ui_tests = list(lua.execute((ROOT / 'tests/test_ui.lua').read_text(encoding='utf-8')).values())
+    lua.globals().native_pool_module = lua.execute(
+        (ROOT / 'mod/script/campaign/xatw3_campaign_utilities/native_pool.lua').read_text(encoding='utf-8'))
+    native_tests = list(lua.execute((ROOT / 'tests/test_native_pool.lua').read_text(encoding='utf-8')).values())
     first = build()
     raw = (ROOT / 'build' / first['pack']).read_bytes()
     second = build()
@@ -69,7 +72,8 @@ def run() -> dict:
             raise RuntimeError('Missing localisation: ' + key)
     result = {'status': 'PASS', 'lua_version': lua.lua_version, 'compiled_lua_files': len(sources),
               'production_logic_tests': tests, 'production_ui_tests': ui_tests,
-              'test_count': len(tests) + len(ui_tests),
+              'native_bridge_rejection_tests': native_tests,
+              'test_count': len(tests) + len(ui_tests) + len(native_tests),
               'fixture_pre_world_created': True,
               'fixture_command_environment': True,
               'deterministic_build': True, 'pack_round_trip': True,

@@ -54,6 +54,13 @@ function M.refresh(adapter, faction, subtype, expected)
         return {status = 'REJECTED', reason = 'stale', completed = 0}
     end
     if #plan.replace == 0 then return {status = 'REJECTED', reason = 'no_candidates', completed = 0} end
+    if adapter.can_remove_candidate then
+        for _, candidate in ipairs(plan.replace) do
+            if not adapter.can_remove_candidate(candidate.id) then
+                return {status = 'REJECTED', reason = 'native_pool_unavailable', completed = 0}
+            end
+        end
+    end
     local result = {status = 'SUCCEEDED', completed = 0, total = #plan.replace, pairs = {}}
     for _, old in ipairs(plan.replace) do
         local new, reason = adapter.spawn_candidate(faction, subtype, old)

@@ -22,6 +22,7 @@ function M.new(logic, environment)
     local cm, common, out = environment.cm, environment.common, environment.out
     local self = {logic = logic, subtypes = M.subtypes, refresh_verified = false, state = nil,
         pending_entries = {}, pending_recruited = {}, initialized = false}
+    self.native_pool = require('script.campaign.xatw3_campaign_utilities.native_pool').new(environment)
 
     function self.log(message)
         out('[' .. PREFIX .. '] ' .. tostring(message))
@@ -42,6 +43,7 @@ function M.new(logic, environment)
             self.state.locked = true
         end
         self.initialized = true
+        self.native_pool.initialize()
         for _, id in ipairs(self.pending_entries) do
             local fm = cm:get_family_member_by_cqi(id)
             if fm then self.observe_entry(fm:character_details()) end
@@ -159,11 +161,16 @@ function M.new(logic, environment)
             and not candidate.unique and not candidate.immortal
     end
 
+    function self.can_remove_candidate(id)
+        local fm = cm:get_family_member_by_cqi(id)
+        if not fm then return false end
+        return self.native_pool.can_remove(fm:character_details())
+    end
+
     function self.remove_candidate(id)
         local fm = cm:get_family_member_by_cqi(id)
         if not fm then return false end
-        cm:kill_character_and_commanded_unit('family_member_cqi:' .. id, false, true)
-        return true -- The business layer separately reads the actual pool after this call.
+        return self.native_pool.remove(fm:character_details())
     end
 
     function self.capital(faction_key)
