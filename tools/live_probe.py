@@ -49,6 +49,7 @@ cm:add_first_tick_callback(function()
 end)
 '''
     frontend = script + '''
+_G.suppress_intro_movie = true
 local function poll()
     xatw3_test.tick()
     core:get_tm():real_callback(poll, 500, 'xatw3_acceptance_frontend')

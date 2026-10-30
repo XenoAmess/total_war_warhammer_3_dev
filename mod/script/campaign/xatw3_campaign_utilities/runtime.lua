@@ -49,13 +49,13 @@ function M.new(logic)
     end
 
     function self.observe_entry(details)
+        if not valid(details) or not valid(details:faction()) or not details:faction():is_human() then return end
+        local subtype = details:character_subtype_key()
+        if not M.subtypes[subtype] then return end
         if not self.initialized then
             self.pending_entries[#self.pending_entries + 1] = details:family_member():command_queue_index()
             return
         end
-        if not valid(details) or not valid(details:faction()) or not details:faction():is_human() then return end
-        local subtype = details:character_subtype_key()
-        if not M.subtypes[subtype] then return end
         local id = details:family_member():command_queue_index()
         local key = tostring(id)
         if self.state.history[key] then return end
