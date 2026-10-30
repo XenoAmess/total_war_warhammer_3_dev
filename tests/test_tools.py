@@ -7,12 +7,13 @@ import struct
 import sys
 import tempfile
 import unittest
+from io import BytesIO
 from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from pack import read_pack, write_loc, write_pack
-from workshop import publish, Steam, DependencyResult
+from workshop import publish, Steam, DependencyResult, account_activity
 
 
 class PackTests(unittest.TestCase):
@@ -50,6 +51,22 @@ class PackTests(unittest.TestCase):
 
 
 class PublicationGateTests(unittest.TestCase):
+    def test_miniprofile_detects_active_game_before_profile_xml(self):
+        response = BytesIO(json.dumps({'in_game': {'name': 'Hearts of Iron IV'}}).encode())
+        response.headers = {'Age': '0', 'Date': 'test date'}
+        with patch('workshop.urllib.request.urlopen', return_value=response) as request:
+            result = account_activity('76561198273714027')
+        self.assertEqual((result['status'], result['game']), ('BUSY', 'Hearts of Iron IV'))
+        self.assertEqual(request.call_count, 1)
+
+    def test_absent_miniprofile_game_still_requires_public_profile_evidence(self):
+        mini = BytesIO(b'{"in_game": null}'); mini.headers = {'Age': '0'}
+        private = BytesIO(b'<profile><steamID64>76561198273714027</steamID64>'
+                          b'<privacyState>private</privacyState><onlineState>offline</onlineState></profile>')
+        private.headers = {'Age': '0'}
+        with patch('workshop.urllib.request.urlopen', side_effect=[mini, private]):
+            self.assertEqual(account_activity('76561198273714027')['status'], 'UNAVAILABLE')
+
     def test_busy_or_unknown_account_never_initializes_game_sdk(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

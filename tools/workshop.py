@@ -27,6 +27,30 @@ def account_activity(owner: str) -> dict:
     if not re.fullmatch(r'[0-9]{17}', owner):
         raise ValueError('Expected an explicit Steam account ID')
     observed = datetime.now(timezone.utc).isoformat()
+    account_id = int(owner) - 76561197960265728
+    if not 0 <= account_id < 2**32:
+        raise ValueError('Expected an individual Steam account ID')
+    # This separate official endpoint remains useful when profile XML is rate
+    # limited. A reported game proves occupancy; an absent game does not prove
+    # idle, so the full public-profile checks below are still required.
+    mini_request = urllib.request.Request(
+        f'https://steamcommunity.com/miniprofile/{account_id}/json?l=english&presence_check={time.time_ns()}',
+        headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
+    try:
+        with urllib.request.urlopen(mini_request, timeout=15) as response:
+            mini_raw = response.read(512001)
+            mini_age = response.headers.get('Age', '0')
+            mini_date = response.headers.get('Date')
+        if len(mini_raw) <= 512000 and mini_age.isdecimal() and int(mini_age) <= 5:
+            mini = json.loads(mini_raw)
+            game = (mini.get('in_game') or {}).get('name')
+            if isinstance(game, str) and game:
+                return {'owner': owner, 'status': 'BUSY', 'game': game,
+                        'observed_at_utc': observed, 'server_date': mini_date,
+                        'source': 'steam_community_miniprofile',
+                        'response_sha256': hashlib.sha256(mini_raw).hexdigest()}
+    except (OSError, ValueError, AttributeError):
+        pass
     request = urllib.request.Request(
         f'https://steamcommunity.com/profiles/{owner}/?xml=1&l=english&presence_check={time.time_ns()}',
         headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
