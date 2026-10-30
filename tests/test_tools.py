@@ -50,6 +50,19 @@ class PackTests(unittest.TestCase):
 
 
 class PublicationGateTests(unittest.TestCase):
+    def test_busy_or_unknown_account_never_initializes_game_sdk(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            pack = root / 'test.pack'; pack.write_bytes(b'accepted fixture')
+            acceptance = root / 'acceptance.json'
+            acceptance.write_text(json.dumps({'L0': 'PASS', 'L1': 'PASS', 'L2': 'PASS', 'L3': 'PASS',
+                                              'release_pack_sha256': hashlib.sha256(pack.read_bytes()).hexdigest()}))
+            for status in ('BUSY', 'UNAVAILABLE'):
+                with self.subTest(status=status), patch('workshop.account_activity', return_value={'status': status}), patch('workshop.Steam') as steam:
+                    with self.assertRaisesRegex(RuntimeError, 'keep Steam offline and wait'):
+                        publish(root / 'missing.dll', pack, acceptance, root / 'state.json', None, '76561198273714027')
+                    steam.assert_not_called()
+
     def test_dependency_callback_has_no_agreement_field(self):
         steam = Steam.__new__(Steam)
         steam.utils = 1

@@ -12,11 +12,45 @@ import json
 import os
 import re
 import time
+import urllib.request
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_ID = 1142710
 REQUIRED_WORKSHOP_ITEMS = (3811098873,)  # memreader Plus, published by its author
+
+
+def account_activity(owner: str) -> dict:
+    """Read fresh public presence before initializing any game SDK session."""
+    if not re.fullmatch(r'[0-9]{17}', owner):
+        raise ValueError('Expected an explicit Steam account ID')
+    observed = datetime.now(timezone.utc).isoformat()
+    request = urllib.request.Request(
+        f'https://steamcommunity.com/profiles/{owner}/?xml=1&l=english&presence_check={time.time_ns()}',
+        headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
+    with urllib.request.urlopen(request, timeout=15) as response:
+        raw = response.read(512001)
+        age = response.headers.get('Age', '0')
+        server_date = response.headers.get('Date')
+    if len(raw) > 512000 or not age.isdecimal() or int(age) > 5:
+        raise RuntimeError('Steam account activity response is stale or invalid')
+    profile = ET.fromstring(raw)
+    if profile.findtext('steamID64') != owner:
+        raise RuntimeError('Steam returned another account profile')
+    state, game = profile.findtext('onlineState'), profile.findtext('inGameInfo/gameName')
+    if game or state == 'in-game':
+        status = 'BUSY'
+    elif (profile.findtext('privacyState') == 'public'
+          and profile.find('mostPlayedGames') is not None and state in ('online', 'offline')):
+        status = 'PUBLIC_PRESENCE_IDLE'
+    else:
+        status = 'UNAVAILABLE'
+    return {'owner': owner, 'status': status, 'game': game, 'online_state': state,
+            'observed_at_utc': observed, 'server_date': server_date,
+            'source': 'steam_community_public_presence',
+            'response_sha256': hashlib.sha256(raw).hexdigest()}
 
 
 class CreateResult(C.Structure):
@@ -86,12 +120,20 @@ class Steam:
         raise TimeoutError('Steam API call did not complete before timeout; preserve the saved item ID')
 
 
-def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: Path | None):
+def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: Path | None,
+            expected_owner: str | None = None):
     sha = hashlib.sha256(pack.read_bytes()).hexdigest()
     results = json.loads(acceptance.read_text(encoding='utf-8'))
     if results.get('release_pack_sha256') != sha or any(results.get(key) != 'PASS' for key in ('L0', 'L1', 'L2', 'L3')):
         raise RuntimeError('Publication requires L0/L1/L2/L3 PASS for this exact pack SHA-256')
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
+    owner = expected_owner or state.get('owner')
+    if not owner:
+        raise RuntimeError('Specify --owner before creating a Workshop item')
+    activity = account_activity(owner)
+    if activity['status'] != 'PUBLIC_PRESENCE_IDLE':
+        raise RuntimeError('Account is busy or its activity is unavailable; keep Steam offline and wait: '
+                           + json.dumps(activity))
     steam = Steam(dll)
 
     def save():
@@ -99,6 +141,9 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
         state_path.write_text(json.dumps(state, indent=2) + '\n', encoding='utf-8')
 
     try:
+        if steam.steam_id != owner:
+            raise RuntimeError('The active Steam account differs from the checked account')
+        state['account_activity_before_sdk_init'] = activity
         if state.get('owner') and state['owner'] != steam.steam_id:
             raise RuntimeError('Stored Workshop item belongs to a different Steam account')
         if not state.get('item_id'):
@@ -169,5 +214,6 @@ if __name__ == '__main__':
     parser.add_argument('--acceptance', type=Path, default=ROOT / 'docs/acceptance-results.json')
     parser.add_argument('--state', type=Path, default=ROOT / 'workshop/publication-state.json')
     parser.add_argument('--preview', type=Path)
+    parser.add_argument('--owner', help='Expected Steam account ID; required for the first publication')
     args = parser.parse_args()
-    print(json.dumps(publish(args.dll, args.pack, args.acceptance, args.state, args.preview), indent=2))
+    print(json.dumps(publish(args.dll, args.pack, args.acceptance, args.state, args.preview, args.owner), indent=2))
