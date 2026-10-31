@@ -1,0 +1,93 @@
+{
+  "schema": "wh3.local-model-review/v1",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "actual_post_count": 2,
+  "peak_overlapping_client_post_intervals": 1,
+  "server_inference_concurrency": "UNKNOWN",
+  "receipt": {
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "task_id": "metadata-repair",
+    "attempt": 1,
+    "started_at_utc": "2026-10-31T14:15:34.892602+00:00",
+    "url": "http://192.168.1.11:8080/v1/chat/completions",
+    "request_bytes": 29196,
+    "request_sha256": "26c03c3c716ec41c8231c990edddd76b5d52b0beaef86cb20d4d951147202b9e",
+    "http_status": 200,
+    "http_headers_ms": 7465.011200001754,
+    "first_nonempty_content_delta_ms": 7467.895900001167,
+    "usage": {
+      "prompt_tokens": 7202,
+      "completion_tokens": 1534,
+      "total_tokens": 8736
+    },
+    "finish_reason": "stop",
+    "sse_done": true,
+    "response_id": "chatcmpl-ae8510d4b75a6da5",
+    "candidate_json_valid": true,
+    "finished_at_utc": "2026-10-31T14:16:06.329431+00:00",
+    "total_ms": 31436.824000000342,
+    "error": null
+  },
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z",
+  "decision": "ADOPTED_WITH_OWNER_CHANGES",
+  "adopted": "Metadata-only query/update helper and callback declaration.",
+  "owner_changes": [
+    "Release query on setup failure; reject zero/bool/invalid handles; validate expected metadata before any query.",
+    "Read-only precheck, exact signatures/failure tests and real Mod identity tests.",
+    "Live Steam canonical spelling PACK_NAME required case-insensitive owned-key checks with duplicate detection; raw spelling retained.",
+    "Bound query waiting and preserve before/after diagnostics on failed verification."
+  ],
+  "verification": {
+    "common_tool_tests": 68,
+    "live_metadata_readback_both_mods": "PASS",
+    "actual_subscription_download_both_mods": "PASS"
+  },
+  "owner_runtime_errors": [
+    "Initial client startup and UI identity checks were too early; added readiness waits.",
+    "Repeated receipt filenames could read stale files after probe failure. Those intermediate mode claims are invalid; now unique raw filenames, invocation-time check, stable startup wait and independent confirmation.",
+    "Full legacy launcher backend read in offline mode returned Steam EResult3; online validation still required."
+  ],
+  "shared_operation_id": "launcher-both-followup-20261031T141338Z",
+  "counting_note": "Two sequential POSTs in this shared operation; do not sum per-Mod copies.",
+  "confirmation_candidate": {
+    "receipt": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "task_id": "confirmation",
+      "attempt": 1,
+      "started_at_utc": "2026-10-31T14:45:54.686977+00:00",
+      "url": "http://192.168.1.11:8080/v1/chat/completions",
+      "request_bytes": 35695,
+      "request_sha256": "9e3c2e34eb8e086ae1127f970be9f7605838d18c09a2865b6fbc417bf708692f",
+      "http_status": 200,
+      "http_headers_ms": 1441.019800000504,
+      "first_nonempty_content_delta_ms": 1443.8579999987269,
+      "usage": {
+        "prompt_tokens": 8644,
+        "completion_tokens": 625,
+        "total_tokens": 9269
+      },
+      "finish_reason": "stop",
+      "sse_done": true,
+      "response_id": "chatcmpl-b85a3f5f43628ca8",
+      "candidate_json_valid": true,
+      "finished_at_utc": "2026-10-31T14:46:00.975068+00:00",
+      "total_ms": 6288.091899998108,
+      "error": null
+    },
+    "decision": "PARTIAL_STRUCTURE_ADOPTION_OWNER_REWROTE_VALIDATION",
+    "review": "Candidate time arithmetic used undefined timedelta and datetime+timezone, skipped freshness when now=None, and allowed bool schema. Owner rewrote critical validation and supplied failure-path tests; final window covers this continuous publishing operation without refreshing user reply time."
+  },
+  "final_verification": {
+    "common_tool_tests": 72,
+    "metadata_both": "PASS",
+    "subscription_download_both": "PASS",
+    "legacy_backend_both": "PASS",
+    "recruitment_refresh_021_publication": "PASS",
+    "native_gameplay": "DEFERRED_BY_USER"
+  },
+  "final_offline_evidence": {
+    "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+    "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
+  },
+  "mod_id": "recruitment_refresh"
+}

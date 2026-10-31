@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "release_pack_sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+  "authorized_by": "user",
+  "deferred_checks": ["L2", "L3"],
+  "instruction": "0.2.1 先发布，实机测试后补",
+  "scope": "This exact 0.2.1 recruitment_refresh pack only; native visual and gameplay acceptance remain NOT_RUN."
+}

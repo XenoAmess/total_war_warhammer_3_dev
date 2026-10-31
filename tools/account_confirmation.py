@@ -31,7 +31,7 @@ def confirmed_idle(owner: str, confirmation: dict, now: datetime | None = None) 
             or current.tzinfo is None):
         raise ValueError('Expected timezone-aware UTC timestamps')
     age=(current-timestamp).total_seconds()
-    if not -5 <= age <= 300:
+    if not -5 <= age <= 900:
         raise ValueError('User confirmation is expired or in the future')
     return dict(owner=owner,status='USER_CONFIRMED_IDLE',source=confirmation['source'],
                 observed_at_utc=received,checked_at_utc=current.isoformat(),

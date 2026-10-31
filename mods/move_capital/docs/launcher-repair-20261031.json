@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "mod_id": "move_capital",
+  "recorded_at_utc": "2026-10-31T15:01:45.652516+00:00",
+  "metadata": {
+    "item_id": "3830651933",
+    "status": "REPAIRED",
+    "before": {},
+    "after": {
+      "PACK_NAME": [
+        "xatw3_move_capital.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    },
+    "submit_handle": "5816496279353861597",
+    "mod_id": "move_capital",
+    "observed_at_utc": "2026-10-31T14:31:20.112338+00:00",
+    "published_pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4"
+  },
+  "subscription_download": {
+    "mod_id": "move_capital",
+    "item_id": "3830651933",
+    "initial_flags": 4,
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830651933\\xatw3_move_capital.pack",
+    "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+    "bytes": 15128,
+    "observed_at_utc": "2026-10-31T14:31:21.450665+00:00"
+  },
+  "metadata_only_public_content_unchanged": true,
+  "legacy_backend_offline_attempt": {
+    "status": "FAILED",
+    "error": "[object Object]",
+    "fields": {
+      "error_message": "Steam returned result '3' while retrieving mod details, please see Steam API for possible causes:\nhttps://partner.steamgames.com/doc/api/ISteamUGC#SendQueryUGCRequest",
+      "error_code": 32,
+      "steam_error_code": 0
+    }
+  },
+  "legacy_backend_online_validation": {
+    "mod_id": "xatw3_move_capital.pack",
+    "title": "迁移首都 | Move Capital",
+    "owner": "76561198273714027",
+    "workshop_id": "3830651933",
+    "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830651933/xatw3_move_capital.pack",
+    "category": "campaign",
+    "subscribed": true,
+    "up_to_date": true,
+    "conflicted": false,
+    "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+    "bytes": 15128,
+    "observed_at_utc": "2026-10-31T14:56:36.276Z",
+    "status": "PASS",
+    "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
+  },
+  "fresh_stable_offline_receipt": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-10-31T15:00:22.962460+00:00",
+    "nonce": "1c641c91af0015ddec011332671f7638",
+    "reason": "observed",
+    "steam": {
+      "pid": 7512,
+      "birth_filetime": "134379323536087099",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-10-31T15:00:22.962460+00:00",
+      "nonce": "1c641c91af0015ddec011332671f7638",
+      "module_base": "140707975856128",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140707994291911",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 7512,
+        "birth_filetime": "134379323536087099",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 7512,
+        "birth_filetime": "134379323536087099",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "2310219702400",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z",
+  "common_tool_tests": 72,
+  "final_offline_evidence": {
+    "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+    "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
+  },
+  "evidence": [
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\move_capital-metadata.json",
+      "sha256": "92bc8ed84a22959495aa6edd7e471b395c65a4cb98cabbf8a58d6cfeecd44a99"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\move_capital-subscription-download.json",
+      "sha256": "6ecc399ef214f00cfd462b5c114ecb7e87e307899a125a6712a37bbebbe0b672"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\publish-0.2.1\\legacy-backend-online.json",
+      "sha256": "9e98e7818b333c0a7b3e7b330709ae4fc5021d48df35771d6c597a98139dff53"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+      "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
+    }
+  ],
+  "invalidated_mode_receipts": "Early reused filenames or initialization-stage samples were not final evidence. Unique fresh, stable samples above supersede them."
+}

@@ -2,9 +2,9 @@
 
 《全面战争：战锤 3》“招募候选刷新”Mod：普通领主/事务官招募刷新。本目录是[多 Mod 仓库](../../README.md)中的独立项目。
 
-`0.2.0 Alpha` 已更新[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)，标题、封面、独立 BBCode 和发布包均已核对。离线检查通过；按用户最新优先级先发布，当前拆分包完整实机回归和截图后补，未把待办标记为通过。见 [拆分设计与验收](docs/split-release.md) 与 [发布记录](docs/workshop-publication.md)。
+`0.2.1 Alpha` 已更新[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)，正文、发布包、远端启动器元数据和真实订阅下载均已核对。旧启动器自身的原生读取接口已返回本 Mod；完整游戏内回归和截图按用户授权后补。见[发布记录](docs/workshop-publication.md)。
 
-当前源码为 `0.2.1` 待发布修复：按钮移到“招募”右侧，单击直接刷新，成功后返回招募页；保留错误提示、执行中防重和关闭面板保护。已补齐老启动器发布元数据写入。新包尚未上传，订阅端和实机界面仍待验，见[修复验收](docs/ui-launcher-fix-0.2.1.md)。
+`0.2.1` 将按钮移到“招募”右侧，单击直接刷新，成功后返回招募页；保留错误提示、执行中防重和关闭面板保护。两个 Mod 的老启动器元数据均已补齐，订阅包哈希和旧启动器接口读取已验证；实际字体渲染与游戏行为仍待验，见[修复验收](docs/ui-launcher-fix-0.2.1.md)。
 
 此版本不再包含迁都功能；迁都已拆为[独立 Mod](../move_capital/README.md)，已发布于[独立工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933)。旧存档中已经迁移的首都保持现状，不会回滚。
 
@@ -41,4 +41,4 @@ py -3.13 -m venv .venv
 - [设计文档](docs/mod-design.md)
 - [测试验收与发布方案](docs/test-acceptance-plan.md)
 
-根目录发布工具 `tools/workshop.py --mod recruitment_refresh` 默认要求本目录验收清单的 `mod_id`、包名、哈希一致且 L0–L3 全部 PASS。本次用户明确要求先发布，显式使用[延期记录](docs/publication-waiver-20261031.json)仅延期该包的 L2/L3，原始待验状态保留。工坊资料和既有条目状态在 `workshop/`；工具重试更新同一个条目，上传回执与公开页面验证分别记录。
+根目录发布工具 `tools/workshop.py --mod recruitment_refresh` 默认要求本目录验收清单的 `mod_id`、包名、哈希一致且 L0–L3 全部 PASS。本次用户明确要求 0.2.1 先发布，显式使用[新包专用延期记录](docs/publication-waiver-0.2.1-20261031.json)仅延期该包的 L2/L3，原始待验状态保留。工坊资料和既有条目状态在 `workshop/`；工具更新同一个条目，上传回执与公开查询验证分别记录。

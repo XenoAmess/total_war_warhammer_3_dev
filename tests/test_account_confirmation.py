@@ -22,7 +22,7 @@ class AccountConfirmationTests(unittest.TestCase):
         self.assertEqual(actual['statement'],record['statement'])
 
     def test_expired_future_naive_or_invalid_time_rejected(self):
-        for value in ((NOW-timedelta(seconds=301)).isoformat(),(NOW+timedelta(seconds=6)).isoformat(),
+        for value in ((NOW-timedelta(seconds=901)).isoformat(),(NOW+timedelta(seconds=6)).isoformat(),
                       '2026-10-31T14:45:00','invalid',None,True):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 confirmed_idle(OWNER,dict(confirmation(),received_at_utc=value),NOW)

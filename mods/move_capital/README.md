@@ -5,6 +5,8 @@
 
 This mod provides a dedicated UI and logic for moving the faction capital to a selected settlement in the main Warhammer campaign.
 
+The existing Workshop item now includes the legacy launcher's required metadata. Actual subscription, download hash, and the installed legacy launcher's native Mod listing were verified for this mod and Recruitment Refresh. The 0.1.0 pack is unchanged. See the [launcher repair record](docs/launcher-repair-20261031.md).
+
 ## Features
 - **Move Capital:** Select a settlement owned by your faction and move the capital there.
 - **Safety Checks:** Ensures the target is a valid settlement, not the current capital, not besieged, and owned by the faction.

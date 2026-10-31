@@ -43,8 +43,52 @@
   "verification_for_version": "0.1.0",
   "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
   "final_offline_receipt": {
-    "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline-before-commit.json",
-    "sha256": "54643c2a853982806b35216fc3df8625856b5246bb50eaba229d77731456f284"
+    "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+    "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
   },
-  "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9"
+  "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9",
+  "launcher_metadata": {
+    "pack_name": "xatw3_move_capital.pack",
+    "game_version": "589824"
+  },
+  "launcher_metadata_verification": "PASS",
+  "launcher_metadata_verified_at_utc": "2026-10-31T14:56:36.276Z",
+  "actual_subscription_download": {
+    "mod_id": "move_capital",
+    "item_id": "3830651933",
+    "initial_flags": 4,
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830651933\\xatw3_move_capital.pack",
+    "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+    "bytes": 15128,
+    "observed_at_utc": "2026-10-31T14:31:21.450665+00:00"
+  },
+  "launcher_repair_record": "docs/launcher-repair-20261031.json",
+  "legacy_launcher_backend_verification": "PASS",
+  "legacy_launcher_backend": {
+    "mod_id": "xatw3_move_capital.pack",
+    "title": "迁移首都 | Move Capital",
+    "owner": "76561198273714027",
+    "workshop_id": "3830651933",
+    "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830651933/xatw3_move_capital.pack",
+    "category": "campaign",
+    "subscribed": true,
+    "up_to_date": true,
+    "conflicted": false,
+    "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+    "bytes": 15128,
+    "observed_at_utc": "2026-10-31T14:56:36.276Z",
+    "status": "PASS",
+    "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
+  },
+  "launcher_metadata_remote": {
+    "PACK_NAME": [
+      "xatw3_move_capital.pack"
+    ],
+    "game_version": [
+      "589824"
+    ]
+  }
 }

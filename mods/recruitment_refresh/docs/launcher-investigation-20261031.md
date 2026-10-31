@@ -14,3 +14,5 @@
 共用发布工具现已加入两个键的写入和失败中止，配置见[元数据约定](../../../docs/workshop-launcher-metadata.md)。这是已实现的兼容修复候选；尚不能宣称远端元数据已修复或订阅端列表恢复。需要发布后查询远端两个键，取得真实 Subscribed 状态，下载同一 SHA，并在旧启动器查看原始 getModInformation 数据及最终列表。
 
 本机运行材料位于 `D:/workspace/.codex-wh3-runtime/workshop-consumer-audit-20261031/`。当前不启动 Steam SDK 或游戏：最近账号查询显示其他机器正在运行 Civilization VI；本机 Steam 进程不存在，不能将其记为已取得主动离线回执。GPU 亦仍未枚举，新的游戏界面验收未完成。
+
+后续复查已确认空闲，并按用户实时确认继续必要在线操作：两个条目的元数据均修复，实际订阅/下载标志为 5；旧启动器原生 `getModInformation` 同时返回两个条目，`subscribed=true`、`up_to_date=true`、`conflicted=false`，路径均来自工坊订阅目录。刷新 0.2.1 新包亦已发布，完整[修复回执](launcher-repair-20261031.json)和新鲜离线证据保留；此前待验及占用描述不代表最终状态。

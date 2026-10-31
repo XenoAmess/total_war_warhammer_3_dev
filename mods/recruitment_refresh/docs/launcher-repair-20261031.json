@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "recorded_at_utc": "2026-10-31T15:01:45.652516+00:00",
+  "metadata": {
+    "item_id": "3830548217",
+    "status": "SKIPPED",
+    "before": {
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    },
+    "after": {
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    },
+    "mod_id": "recruitment_refresh",
+    "observed_at_utc": "2026-10-31T14:30:58.822626+00:00",
+    "published_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481"
+  },
+  "subscription_download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+    "bytes": 41622,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-10-31T14:56:33.026406+00:00"
+  },
+  "metadata_only_public_content_unchanged": true,
+  "legacy_backend_offline_attempt": {
+    "status": "FAILED",
+    "error": "[object Object]",
+    "fields": {
+      "error_message": "Steam returned result '3' while retrieving mod details, please see Steam API for possible causes:\nhttps://partner.steamgames.com/doc/api/ISteamUGC#SendQueryUGCRequest",
+      "error_code": 32,
+      "steam_error_code": 0
+    }
+  },
+  "legacy_backend_online_validation": {
+    "mod_id": "xatw3_campaign_utilities.pack",
+    "title": "招募候选刷新 | Recruitment Refresh",
+    "owner": "76561198273714027",
+    "workshop_id": "3830548217",
+    "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830548217/xatw3_campaign_utilities.pack",
+    "category": "campaign",
+    "subscribed": true,
+    "up_to_date": true,
+    "conflicted": false,
+    "sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+    "bytes": 41622,
+    "observed_at_utc": "2026-10-31T14:56:36.276Z",
+    "status": "PASS",
+    "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
+  },
+  "fresh_stable_offline_receipt": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-10-31T15:00:22.962460+00:00",
+    "nonce": "1c641c91af0015ddec011332671f7638",
+    "reason": "observed",
+    "steam": {
+      "pid": 7512,
+      "birth_filetime": "134379323536087099",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-10-31T15:00:22.962460+00:00",
+      "nonce": "1c641c91af0015ddec011332671f7638",
+      "module_base": "140707975856128",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140707994291911",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 7512,
+        "birth_filetime": "134379323536087099",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 7512,
+        "birth_filetime": "134379323536087099",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "2310219702400",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z",
+  "common_tool_tests": 72,
+  "final_offline_evidence": {
+    "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+    "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
+  },
+  "evidence": [
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\recruitment_refresh-metadata.json",
+      "sha256": "283ae2f7bdd281a2e6d329d9d9a1302dbc007b80866a17ba76c844adfd55163e"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\recruitment_refresh-subscription-download.json",
+      "sha256": "5ba86bc1abc133bb9540a5dbda8ff6417f13ceacf2f02b011310c4c6abde3b5e"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\publish-0.2.1\\legacy-backend-online.json",
+      "sha256": "9e98e7818b333c0a7b3e7b330709ae4fc5021d48df35771d6c597a98139dff53"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+      "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\publish-0.2.1\\verification.json",
+      "sha256": "17f3f86781fd219a9fc858ed6ff47319ca571aca4541c6a9f7c98b5779327c82"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\publish-0.2.1\\subscription-download.json",
+      "sha256": "db19a004852c50505178cca5e05b71aa3213b5f17329ad173340d1b561082ed6"
+    }
+  ],
+  "invalidated_mode_receipts": "Early reused filenames or initialization-stage samples were not final evidence. Unique fresh, stable samples above supersede them."
+}

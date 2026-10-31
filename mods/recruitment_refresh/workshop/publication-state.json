@@ -1,61 +1,104 @@
 {
   "account_activity_before_sdk_init": {
     "owner": "76561198273714027",
-    "status": "PUBLIC_PRESENCE_IDLE",
-    "game": null,
-    "online_state": "online",
-    "observed_at_utc": "2026-10-31T06:52:06.002867+00:00",
-    "server_date": "Sat, 31 Oct 2026 06:52:06 GMT",
-    "source": "steam_community_public_presence",
-    "response_sha256": "ad7c0329e4aff3a35c51f9875cc6c067d71f06c2e83423f04dfd8d598d39f27a"
+    "status": "USER_CONFIRMED_IDLE",
+    "source": "user_current_session_statement",
+    "observed_at_utc": "2026-10-31T14:45:53.733864+00:00",
+    "checked_at_utc": "2026-10-31T14:56:13.973510+00:00",
+    "statement": "已全部退出，当前账号空闲",
+    "authorized_by": "user",
+    "schema_version": 1
   },
   "owner": "76561198273714027",
   "app_id": 1142710,
-  "status": "PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
+  "status": "PUBLIC_SUBSCRIBED_LEGACY_BACKEND_VERIFIED_NATIVE_DEFERRED",
   "item_id": "3830548217",
   "required_items": [
     "3811098873"
   ],
-  "pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
+  "pack_sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
-  "version": "0.2.0",
-  "uploaded_at_utc": "2026-10-31T06:52:26.044505+00:00",
-  "verified_at_utc": "2026-10-31T06:53:41.111834+00:00",
+  "version": "0.2.1",
+  "uploaded_at_utc": "2026-10-31T14:56:25.513808+00:00",
+  "verified_at_utc": "2026-10-31T14:56:34.255754+00:00",
   "visibility": "public",
   "anonymous_metadata_verification": "PASS",
   "anonymous_page_verification": "PASS",
   "dependency_verification": "PASS",
-  "changelog_verification": "PASS",
+  "changelog_verification": "PENDING_SEPARATE_WEB_CHECK",
   "preview_hash_verification": "PASS",
   "download_hash_verification": "PASS",
-  "downloaded_pack_bytes": 39458,
-  "downloaded_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
+  "downloaded_pack_bytes": 41622,
+  "downloaded_pack_sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
   "steam_final_mode": "offline",
   "mod_id": "recruitment_refresh",
   "release_acceptance": {
     "L0": "PASS",
     "L1": "PASS",
-    "L2": "IN_PROGRESS",
-    "L3": "IN_PROGRESS",
+    "L2": "NOT_RUN",
+    "L3": "NOT_RUN",
     "native_test_waiver": {
-      "file": "D:\\workspace\\total_war_warhammer_3_dev\\mods\\recruitment_refresh\\docs\\publication-waiver-20261031.json",
-      "sha256": "f72f0c73215335a36d12b0150d100d7026e3cac88128b4c7cefbecb14870e62d",
+      "file": "D:\\workspace\\total_war_warhammer_3_dev\\mods\\recruitment_refresh\\docs\\publication-waiver-0.2.1-20261031.json",
+      "sha256": "6612491577d492dd0750033003befe72be540c433dca79678d612acbe5aa4abe",
       "deferred_checks": [
         "L2",
         "L3"
       ],
-      "instruction": "先发布这两个模组，修改logo和商店页面信息；同时查阅资料研究如何使用显卡进入这个游戏。不要阻塞发布了。发布完成后，另行补图上传。"
+      "instruction": "0.2.1 先发布，实机测试后补"
     }
   },
-  "uploaded_version": "0.2.0",
+  "uploaded_version": "0.2.1",
   "uploaded_title": "招募候选刷新 | Recruitment Refresh",
-  "description_sha256": "d4ea2dce9284362c536daecba261c9323682238f5d403e154d03cd1b13ae1e4e",
+  "description_sha256": "37ea89e140d7ea661df7e41eb42d3789ece40c05b59864d4f92e1c709ff06242",
   "preview_sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
-  "verification_for_version": "0.2.0",
-  "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
+  "verification_for_version": "0.2.1",
+  "screenshots_status": "DEFERRED_BY_USER",
   "final_offline_receipt": {
-    "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline-before-commit.json",
-    "sha256": "54643c2a853982806b35216fc3df8625856b5246bb50eaba229d77731456f284"
+    "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
+    "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
   },
-  "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9"
+  "source_code_commit": "1c836ba7ec56f2b7c424137b742230663bb152b3",
+  "launcher_metadata": {
+    "pack_name": "xatw3_campaign_utilities.pack",
+    "game_version": "589824"
+  },
+  "launcher_metadata_verification": "PASS",
+  "launcher_metadata_verified_at_utc": "2026-10-31T14:56:36.276Z",
+  "actual_subscription_download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+    "bytes": 41622,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-10-31T14:56:33.026406+00:00"
+  },
+  "launcher_repair_record": "docs/launcher-repair-20261031.json",
+  "legacy_launcher_backend_verification": "PASS",
+  "legacy_launcher_backend": {
+    "mod_id": "xatw3_campaign_utilities.pack",
+    "title": "招募候选刷新 | Recruitment Refresh",
+    "owner": "76561198273714027",
+    "workshop_id": "3830548217",
+    "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830548217/xatw3_campaign_utilities.pack",
+    "category": "campaign",
+    "subscribed": true,
+    "up_to_date": true,
+    "conflicted": false,
+    "sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+    "bytes": 41622,
+    "observed_at_utc": "2026-10-31T14:56:36.276Z",
+    "status": "PASS",
+    "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
+  },
+  "anonymous_description_verification": "PASS",
+  "launcher_metadata_remote": {
+    "PACK_NAME": [
+      "xatw3_campaign_utilities.pack"
+    ],
+    "game_version": [
+      "589824"
+    ]
+  }
 }

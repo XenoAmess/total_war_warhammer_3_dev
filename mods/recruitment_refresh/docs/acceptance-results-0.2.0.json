@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "recorded_at_utc": "2026-10-31T06:57:02.389054+00:00",
+  "release_status": "PUBLISHED_PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
+  "release_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
+  "release_pack_bytes": 39458,
+  "L0": "PASS",
+  "L1": "PASS",
+  "L2": "IN_PROGRESS",
+  "L3": "IN_PROGRESS",
+  "L4": "PASS",
+  "offline": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "lua_version": [
+      5,
+      1
+    ],
+    "compiled_lua_files": 5,
+    "production_logic_tests": [
+      "protect_unique",
+      "protect_immortal",
+      "protect_leader",
+      "protect_wounded",
+      "protect_starting",
+      "protect_recruited",
+      "protect_special",
+      "protect_unknown_history",
+      "protect_wrong_scope",
+      "pool_order_independent_fingerprint",
+      "successful_replacement_preserves_protected",
+      "ten_refreshes_do_not_accumulate",
+      "duplicate_does_not_mutate",
+      "stale_pool_does_not_mutate",
+      "native_layout_failure_rejects_before_spawning",
+      "past_turn_rejected",
+      "wrong_faction_rejected",
+      "invalid_action_rejected",
+      "unsupported_subtype_rejected",
+      "spawn_failure_never_deletes_old",
+      "uncertain_invalid_new_locks_operation",
+      "uncertain_overflow_evicts_locks_operation",
+      "uncertain_remove_fail_locks_operation",
+      "uncertain_remove_lies_locks_operation",
+      "partial_success_is_not_full_success",
+      "unverified_refresh_never_mutates_or_consumes_sequence",
+      "oversized_pool_never_creates_another_candidate",
+      "four_candidates_preserve_protected_entry",
+      "removed_capital_action_never_changes_state"
+    ],
+    "production_ui_tests": [
+      "candidate_click_selects_its_subtype",
+      "category_switch_clears_previous_refresh_target",
+      "opening_and_closing_recruitment_clear_selection",
+      "cancel_confirmation_never_dispatches",
+      "confirm_dispatches_frozen_request_once",
+      "result_dialog_cannot_replay_previous_request",
+      "visible_recruitment_panel_blocks_dispatch",
+      "refresh_dispatch_waits_until_native_panel_is_closed"
+    ],
+    "native_bridge_rejection_tests": [
+      "missing_extension_fails_without_engine_calls",
+      "ambiguous_signatures_never_call_engine",
+      "changed_expiry_call_site_never_calls_engine"
+    ],
+    "runtime_metadata_tests": [
+      "discover_ordinary_subtype_from_engine_metadata",
+      "special_training_and_legendary_subtypes_are_not_auto_generated",
+      "unknown_agent_and_unreadable_metadata_are_rejected",
+      "subtype_key_is_validated_before_context_evaluation",
+      "discovered_types_do_not_leak_between_campaign_instances"
+    ],
+    "test_count": 45,
+    "fixture_pre_world_created": true,
+    "fixture_command_environment": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "release_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
+    "release_pack_bytes": 39458,
+    "native_game_acceptance": "NOT_RUN"
+  },
+  "native": {
+    "standalone_only": true,
+    "combined_enablement_test": "NOT_REQUESTED",
+    "status": "DEFERRED_BY_USER_PRIORITY_AFTER_GRAPHICS_DIAGNOSTICS"
+  },
+  "workshop": {
+    "item_id": "3830548217",
+    "upload_called_for_this_version": true,
+    "public_verification": "PASS",
+    "screenshots": "DEFERRED_BY_USER_AFTER_PUBLICATION",
+    "publication_record": "workshop-publication.json"
+  },
+  "evidence": [
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\before-online.json",
+      "sha256": "5a7edcf9f949a34c9c3a21606f47ab8c55d1d7e2a16490b6e59c7686fc7b7280"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\upload.json",
+      "sha256": "218fd127698149d8f56b2fb0de3161ed038a4e56b3c6558cc1bb13b338603ea5"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\download.json",
+      "sha256": "4b124d5e1acb41631ef227ecb959a9fcffe03f15a8d149b110ef94854e5861b7"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-metadata.json",
+      "sha256": "cef954d3038569e28b7025d375c32681010faa670f35a89663332882b97f2e40"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-page.html",
+      "sha256": "f99e47dce8cf080f2acb28a59a14b760e4dc0b5d0694f494ee3240bcca0a68bc"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-changelog.html",
+      "sha256": "3f00b24daea9ca0bedffb9e4d47b1ad0f8e04c800853784ae5816d7aa6ab1500"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\public-preview.png",
+      "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-verification.json",
+      "sha256": "1801be143bcc29f566a342a2b35f9825de1153714cbdfb2af55a384294db45c1"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline.json",
+      "sha256": "b76a5f8497013bf1898ad3c5b7fbc620cd87b2f350cdfe6f1ad41396a37d3944"
+    }
+  ],
+  "publication_waiver": "publication-waiver-20261031.json"
+}
