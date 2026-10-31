@@ -14,6 +14,7 @@
 | [抄录来源清单](local-model-import.json) | 固定上游版本、原文校验值和历史附件边界 |
 | [本机调用与采用记录](local-model-onboarding-2026-10-31.json) | 本机实际请求、编码故障、修复后返回及文档采用范围 |
 | [Steam 操作约定](steam-operation.md) | 主动离线、账号占用检查、必要在线阶段和状态读回 |
+| [工坊图文与实机截图](workshop-media.md) | 各 Mod 的 BBCode、截图清单、图库上传和发布验证 |
 | [仓库工作约定](../AGENTS.md) | Steam 与 Git 提交推送规则 |
 
 各 Mod 的资料入口：

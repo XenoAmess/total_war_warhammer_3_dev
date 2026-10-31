@@ -17,6 +17,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from project import ModProject, add_mod_argument, selected_project
+from workshop_media import apply_gallery, prepare_gallery
 
 APP_ID = 1142710
 
@@ -154,6 +155,7 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
     if state and state.get('mod_id') != project.id:
         raise RuntimeError('Stored Workshop state belongs to a different Mod')
+    gallery = prepare_gallery(project, state)
     owner = expected_owner or state.get('owner')
     if not owner:
         raise RuntimeError('Specify --owner before creating a Workshop item')
@@ -223,11 +225,23 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
         set_tags = steam.bind('SteamAPI_ISteamUGC_SetItemTags', C.c_bool, C.c_void_p, C.c_uint64, C.POINTER(Tags))
         if not set_tags(steam.ugc, update, C.byref(tags)):
             raise RuntimeError('Workshop tags were rejected')
+        apply_gallery(steam, update, gallery)
         submit = steam.bind('SteamAPI_ISteamUGC_SubmitItemUpdate', C.c_uint64, C.c_void_p, C.c_uint64, C.c_char_p)
         notes = (project.root / 'workshop/change-notes.txt').read_text(encoding='utf-8')
         state.update(status='UPLOADING', pack_sha256=sha)
+        confirmed_gallery = [{key: value for key, value in record.items()
+                              if key not in ('absolute_path', 'operation')} for record in gallery]
+        if any(record['operation'] != 'skip' for record in gallery):
+            state['gallery_pending'] = confirmed_gallery
         save()
         steam.wait(submit(steam.ugc, update, notes.encode('utf-8')), UpdateResult, 3404)
+        if gallery:
+            state['gallery'] = confirmed_gallery
+        state.pop('gallery_pending', None)
+        state.update(uploaded_version=project.metadata['version'], uploaded_title=project.metadata['title'],
+                     description_sha256=hashlib.sha256(fields['SetItemDescription'].encode('utf-8')).hexdigest())
+        if preview:
+            state['preview_sha256'] = hashlib.sha256(preview.read_bytes()).hexdigest()
         state.update(status='UPLOADED_PUBLIC_VERIFICATION_PENDING', url='https://steamcommunity.com/sharedfiles/filedetails/?id=' + state['item_id'])
         save()
         return state

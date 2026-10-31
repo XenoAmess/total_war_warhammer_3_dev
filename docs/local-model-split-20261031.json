@@ -1,28 +1,33 @@
 {
   "schema": "wh3.local-model-split/v1",
   "machine_id": "pc-20260924rtuf-f11af23c08",
-  "recorded_at_utc": "2026-10-31T04:30:11.873643+00:00",
+  "recorded_at_utc": "2026-10-31T05:12:46.507067+00:00",
   "base_url": "http://192.168.1.11:8080/v1",
   "model": "qwen38-coder",
   "real_initial_tasks": 12,
-  "post_count": 13,
+  "post_count": 14,
   "actual_client_peak_in_flight": 12,
   "server_inference_concurrency_observed": false,
-  "complete_candidate_count": 13,
+  "complete_candidate_count": 14,
   "owner_corrections": [
     "Refresh invalid action must not consume sequence or persist.",
     "Capital channel prefix length 9, not 8; entry explicitly filters capital action.",
     "Capital panel reopen event restored.",
     "Rejected two runtime/UI test candidates; owner uses injected production modules.",
-    "Refresh cover icon centered; unsupported completed-publication wording removed from docs."
+    "Refresh cover icon centered; unsupported completed-publication wording removed from docs.",
+    "Gallery candidate missed ctypes import, bound APIs for skip-only input, and had a missing test directory. Owner fixed these, tightened manifest/slot checks, integrated pending/confirmed state and added real publisher callback/timeout tests. Initial candidate 23 tests had six errors; after owner corrections and integration all 39 shared tests pass."
   ],
   "offline_checks": {
-    "shared": 14,
+    "shared": 39,
     "recruitment_refresh": 45,
     "move_capital": 47,
-    "total": 106
+    "total": 131
   },
-  "native_smoke": "IN_PROGRESS_STANDALONE_ONLY",
+  "native_smoke": {
+    "move_capital": "PASS_STANDALONE_MINIMUM",
+    "recruitment_refresh": "IN_PROGRESS_STANDALONE_MINIMUM",
+    "combined_enablement": "NOT_REQUESTED"
+  },
   "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\split-models-20261031",
   "requests": [
     {
@@ -180,6 +185,27 @@
         "total_tokens": 12588
       },
       "total_ms": 52139.44
+    },
+    {
+      "task": "workshop-gallery",
+      "attempt": 1,
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "started_at_utc": "2026-10-31T05:08:19.728492+00:00",
+      "http_status": 200,
+      "http_headers_ms": 1418.52,
+      "first_nonempty_content_delta_ms": 1419.56,
+      "usage": {
+        "prompt_tokens": 8832,
+        "completion_tokens": 7623,
+        "total_tokens": 16455
+      },
+      "finish_reason": "stop",
+      "sse_done": true,
+      "candidate_complete": true,
+      "adoption": "OWNER_MODIFIED",
+      "total_ms": 71577.55,
+      "finished_at_utc": "2026-10-31T05:09:31.306050+00:00",
+      "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\split-media-model-20261031"
     }
   ],
   "adoptions": [
@@ -382,6 +408,23 @@
           "path": "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/ui.lua",
           "candidate_sha256": "6da9456cadd3669c7c0ceed106bb3d4a58af6806f3cfd8f5ddaf91c785b50be9",
           "current_sha256": "330c3eda8a89b2b55beb6679fd834f878ced8285ac83d4c4d52afa50ff82e4ce",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "workshop-gallery",
+      "files": [
+        {
+          "path": "tools/workshop_media.py",
+          "candidate_sha256": "09317f7c6be416fe20942c5e64d815b49186c9b87d73e7889937102686f82f30",
+          "current_sha256": "e5956da048aab16d5bc0cf3cb6884541e3ba86682e4da0abf5448c2260a8fb34",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "tests/test_workshop_media.py",
+          "candidate_sha256": "6ad1a7f9b3688b6cc93b88983d0535bed020ed0de7193a2a55ef19b12a291c71",
+          "current_sha256": "a5f1bf67d0620966733541ff4ac3ae15178950d116b1e464f3daf98106700508",
           "disposition": "OWNER_MODIFIED"
         }
       ]
