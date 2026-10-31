@@ -1,0 +1,6 @@
+Version 0.1.0
+- Initial release of the standalone Move Capital mod.
+- Provides UI and logic for moving the faction capital to a selected settlement.
+- No dependencies on memreader Plus or Recruitment Refresh.
+- Uses dedicated save key `xatw3_move_capital_state`.
+- Localization prefix `xatw3mc_`.

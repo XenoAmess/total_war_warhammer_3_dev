@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "move_capital",
+  "title": "迁移首都 | Move Capital",
+  "version": "0.1.0",
+  "pack_name": "xatw3_move_capital.pack",
+  "languages": ["zh-CN", "en"],
+  "default_language": "zh-CN",
+  "localisation_pack_path": "text/db/xatw3_move_capital.loc",
+  "workshop": {
+    "required_items": [],
+    "tags": ["mod", "campaign"]
+  }
+}

@@ -1,0 +1,10 @@
+xatw3mc_capital	迁都
+xatw3mc_capital_tooltip	将派系首都迁至选中的自有城镇。免费，不改变省会或建筑等级。
+xatw3mc_confirm_title	迁移首都
+xatw3mc_confirm_capital	确认将首都迁至此城镇？不改变建筑等级和省会位置。
+xatw3mc_error	操作未完成
+xatw3mc_success	操作完成
+xatw3mc_done	已读回游戏模型并确认操作完成。
+xatw3mc_failed	操作未完成，请查看日志。结果不明时不会自动重试。
+xatw3mc_stale	首都已在确认期间改变。未执行本次操作，请重新选择。
+xatw3mc_uncertain	操作未完整完成，已停止继续修改。请载入操作前的存档；详情见日志。

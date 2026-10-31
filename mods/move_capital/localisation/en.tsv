@@ -1,0 +1,10 @@
+xatw3mc_capital	Move capital
+xatw3mc_capital_tooltip	Move the faction capital to the selected owned settlement for free. Does not change province capitals or building levels.
+xatw3mc_confirm_title	Move Capital
+xatw3mc_confirm_capital	Move the capital to this settlement? Building levels and province capital status stay unchanged.
+xatw3mc_error	Operation incomplete
+xatw3mc_success	Operation complete
+xatw3mc_done	The game model confirms the operation completed.
+xatw3mc_failed	Operation incomplete. Check the log. Uncertain operations are never retried automatically.
+xatw3mc_stale	The capital changed while confirming. Nothing was changed by this request. Please select again.
+xatw3mc_uncertain	The operation could not be fully verified. Further changes are stopped. Load the save from before the operation; see the log for details.

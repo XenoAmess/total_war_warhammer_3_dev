@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "mod_id": "move_capital",
+  "recorded_at_utc": "2026-10-31T04:30:11.857294+00:00",
+  "release_status": "STANDALONE_NATIVE_SMOKE_PENDING",
+  "release_pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+  "release_pack_bytes": 15128,
+  "L0": "PASS",
+  "L1": "PASS",
+  "L2": "IN_PROGRESS",
+  "L3": "IN_PROGRESS",
+  "L4": "NOT_RUN",
+  "offline": {
+    "status": "PASS",
+    "mod_id": "move_capital",
+    "lua_version": [
+      5,
+      1
+    ],
+    "compiled_lua_files": 4,
+    "tests": {
+      "logic": [
+        "valid_key_accepts_normal",
+        "valid_key_rejects_empty",
+        "valid_key_rejects_non_string",
+        "valid_key_rejects_too_long",
+        "valid_key_rejects_invalid_chars",
+        "capital_eligible_normal",
+        "capital_eligible_not_owned",
+        "capital_eligible_already_capital",
+        "capital_eligible_no_capital",
+        "capital_eligible_besieged",
+        "capital_eligible_abandoned",
+        "capital_eligible_no_settlement",
+        "capital_eligible_not_exists",
+        "capital_eligible_nil_target",
+        "move_capital_success",
+        "move_capital_stale_expected",
+        "move_capital_not_owned",
+        "move_capital_already_capital",
+        "move_capital_besieged",
+        "move_capital_readback_capital_mismatch",
+        "move_capital_readback_level_changed",
+        "move_capital_readback_owner_changed",
+        "move_capital_readback_province_capital_changed",
+        "execute_success_capital",
+        "execute_invalid_action",
+        "execute_duplicate_sequence",
+        "execute_stale_expected",
+        "execute_wrong_faction",
+        "execute_past_turn",
+        "execute_locked_state",
+        "execute_invalid_version",
+        "execute_invalid_faction_key",
+        "execute_invalid_target_key",
+        "execute_can_act_false",
+        "execute_engine_error_locks",
+        "execute_readback_failure_locks",
+        "execute_preserves_attributes_on_success"
+      ],
+      "runtime": [
+        "independent_save_key_preserves_legacy_state",
+        "interrupted_move_locks_without_replay",
+        "runtime_moves_once_and_reads_back_model",
+        "multiplayer_is_rejected_before_mutation"
+      ],
+      "ui": [
+        "cancel_never_dispatches",
+        "confirm_uses_new_channel_once_and_frozen_target",
+        "settlement_selection_updates_target"
+      ],
+      "entry": [
+        "new_channel_dispatches_capital",
+        "refresh_action_rejected",
+        "wrong_faction_rejected"
+      ]
+    },
+    "test_count": 47,
+    "no_native_dependency": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "release_pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+    "release_pack_bytes": 15128,
+    "native_game_acceptance": "NOT_RUN"
+  },
+  "native": {
+    "standalone_only": true,
+    "combined_enablement_test": "NOT_REQUESTED"
+  },
+  "workshop": {
+    "item_id": null,
+    "upload_called_for_this_version": false
+  },
+  "evidence": []
+}

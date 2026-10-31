@@ -1,0 +1,394 @@
+{
+  "schema": "wh3.local-model-split/v1",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "recorded_at_utc": "2026-10-31T04:30:11.873643+00:00",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "model": "qwen38-coder",
+  "real_initial_tasks": 12,
+  "post_count": 13,
+  "actual_client_peak_in_flight": 12,
+  "server_inference_concurrency_observed": false,
+  "complete_candidate_count": 13,
+  "owner_corrections": [
+    "Refresh invalid action must not consume sequence or persist.",
+    "Capital channel prefix length 9, not 8; entry explicitly filters capital action.",
+    "Capital panel reopen event restored.",
+    "Rejected two runtime/UI test candidates; owner uses injected production modules.",
+    "Refresh cover icon centered; unsupported completed-publication wording removed from docs."
+  ],
+  "offline_checks": {
+    "shared": 14,
+    "recruitment_refresh": 45,
+    "move_capital": 47,
+    "total": 106
+  },
+  "native_smoke": "IN_PROGRESS_STANDALONE_ONLY",
+  "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\split-models-20261031",
+  "requests": [
+    {
+      "task": "capital-cover",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 11711,
+        "completion_tokens": 1498,
+        "total_tokens": 13209
+      },
+      "total_ms": 39224.61
+    },
+    {
+      "task": "capital-docs-locales",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 10945,
+        "completion_tokens": 1511,
+        "total_tokens": 12456
+      },
+      "total_ms": 41308.28
+    },
+    {
+      "task": "capital-logic-entry",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 9962,
+        "completion_tokens": 1342,
+        "total_tokens": 11304
+      },
+      "total_ms": 36123.61
+    },
+    {
+      "task": "capital-logic-tests",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 12667,
+        "completion_tokens": 4285,
+        "total_tokens": 16952
+      },
+      "total_ms": 63716.55
+    },
+    {
+      "task": "capital-runtime",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 9953,
+        "completion_tokens": 958,
+        "total_tokens": 10911
+      },
+      "total_ms": 28122.62
+    },
+    {
+      "task": "capital-runtime-ui-tests",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 11978,
+        "completion_tokens": 4979,
+        "total_tokens": 16957
+      },
+      "total_ms": 69355.35
+    },
+    {
+      "task": "capital-runtime-ui-tests-r2",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 6709,
+        "completion_tokens": 8034,
+        "total_tokens": 14743
+      },
+      "total_ms": 47138.25
+    },
+    {
+      "task": "capital-ui",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 9952,
+        "completion_tokens": 1776,
+        "total_tokens": 11728
+      },
+      "total_ms": 43822.84
+    },
+    {
+      "task": "refresh-cover",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 11746,
+        "completion_tokens": 1483,
+        "total_tokens": 13229
+      },
+      "total_ms": 38870.81
+    },
+    {
+      "task": "refresh-docs-locales",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 12389,
+        "completion_tokens": 2677,
+        "total_tokens": 15066
+      },
+      "total_ms": 54659.35
+    },
+    {
+      "task": "refresh-logic",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 9939,
+        "completion_tokens": 1614,
+        "total_tokens": 11553
+      },
+      "total_ms": 40438.46
+    },
+    {
+      "task": "refresh-runtime",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 9932,
+        "completion_tokens": 2459,
+        "total_tokens": 12391
+      },
+      "total_ms": 50496.33
+    },
+    {
+      "task": "refresh-ui",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "sse_done": true,
+      "usage": {
+        "prompt_tokens": 9942,
+        "completion_tokens": 2646,
+        "total_tokens": 12588
+      },
+      "total_ms": 52139.44
+    }
+  ],
+  "adoptions": [
+    {
+      "task": "capital-cover",
+      "files": [
+        {
+          "path": "mods/move_capital/tools/preview.py",
+          "candidate_sha256": "1ee8d2a9edb60f60e8f414c36ade599a7fcad66838bc61ee31bb322a1443fc56",
+          "current_sha256": "fc6b3c6f26561b697fb38334c9be14e630c447b26b224536d06b35b05536af8c",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/workshop/preview.svg",
+          "candidate_sha256": "1a8d389ab198367b67dda2968c7ada2115752c292406d62e57da22f8a1ac967e",
+          "current_sha256": "04806c479d5fe5096fefc0e1ccf14a8cd59608e6e4b5b17cddd8766b2a48378b",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "capital-docs-locales",
+      "files": [
+        {
+          "path": "mods/move_capital/README.md",
+          "candidate_sha256": "77122acb00fca5407aceebe4d7cd8c7b2eaba6bfcc453666702df3fab348747e",
+          "current_sha256": "504710b77a361d5e202d785fc977dd461923508d4db8e39a426679f855bfdd3e",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/mod.json",
+          "candidate_sha256": "d7ec8f77b31bb415f347b0f4b65277eff8bda4ee8a30583e9ad8c311b2abea1c",
+          "current_sha256": "f61884a9b1493b1f053bd95eec25f09bdd5f849147f2de0c91aa94d682e37177",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/workshop/description.bbcode",
+          "candidate_sha256": "f51bbe8d34f24b3192563bc4339f0e442fe0cc6de7a62cb4334757319716c4bb",
+          "current_sha256": "25cacfa6230b62aa5e8e23e18a02ffb262da899e1f2073127458bc69859d7e20",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/workshop/change-notes.txt",
+          "candidate_sha256": "2d8d4ff01011626624c1f411f6fdd2b6c1b1f19b20632a3c2c67bd8a29d93bd8",
+          "current_sha256": "fec2abb53c262cb82f7c8f8b55e24c2271b3f94cf19889a388f4a990b3871e42",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/localisation/zh-CN.tsv",
+          "candidate_sha256": "d7a4585fb97d8d25ddae3a010f95f36c77d6fcb8eb4fbe4beb613af51ddc1af7",
+          "current_sha256": "6e7b24ed3b779cf8ef0ebb5e14c7382729c560cb999537d28f132157a6939c9b",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/localisation/en.tsv",
+          "candidate_sha256": "e930ec92020bc5c60bfed2e86907953fba0e77c8ffa0174406db1ee856c92ac9",
+          "current_sha256": "d9191662af0f4fccf34f165db7dde343508c9100910181432e53f59b2bcd7c61",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "capital-logic-entry",
+      "files": [
+        {
+          "path": "mods/move_capital/src/script/campaign/xatw3_move_capital/logic.lua",
+          "candidate_sha256": "388737ddedca2e977a7addda6d13655b601ec55dea174dd046b7b6a9dd8a4bfa",
+          "current_sha256": "772ca511bc1d3a2bc852928435d76eace0ff5d9d46360c3778db501f53efe815",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/move_capital/src/script/campaign/mod/xatw3_move_capital.lua",
+          "candidate_sha256": "c149cd69d96b58f54454178a0e2f938da7f48962da4cc608cb2873b4c76cf324",
+          "current_sha256": "cd17b1dce33843333130e4306753ae9c16f982bf40d593edd74bbcf1a995bdf3",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "capital-logic-tests",
+      "files": [
+        {
+          "path": "mods/move_capital/tests/test_logic.lua",
+          "candidate_sha256": "b63bb5053ae9a4ac0119e7505c7878f457ec912a4f1fd561519d8dae4d5e13ce",
+          "current_sha256": "8c66f697b2350d9ca249f8df9cf23e87d97a44cd4392f2715b6f4e828097f75c",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "capital-runtime",
+      "files": [
+        {
+          "path": "mods/move_capital/src/script/campaign/xatw3_move_capital/runtime.lua",
+          "candidate_sha256": "dfbc2e200a27181a2b81346c5155836f6d0893d6cf8ed754d2f1470c84e746bd",
+          "current_sha256": "8e4cff4af5179d523b6d866ed6c3382c4c19d10f86cd432e9f04ce08327b6724",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "capital-runtime-ui-tests",
+      "disposition": "REJECTED",
+      "reason": "Invalid mock contracts in first round; repair duplicated production code and conditionally counted assertions. Owner implemented real-module tests."
+    },
+    {
+      "task": "capital-runtime-ui-tests-r2",
+      "disposition": "REJECTED",
+      "reason": "Invalid mock contracts in first round; repair duplicated production code and conditionally counted assertions. Owner implemented real-module tests."
+    },
+    {
+      "task": "capital-ui",
+      "files": [
+        {
+          "path": "mods/move_capital/src/script/campaign/xatw3_move_capital/ui.lua",
+          "candidate_sha256": "7c9f4626adab1a35232040d59262d7d043979850e264afd0feab8e0661681a79",
+          "current_sha256": "b96f2431d0624567c8e126e69c8a12556008ab1df66e2d568dd2d172b0562aa0",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "refresh-cover",
+      "files": [
+        {
+          "path": "mods/recruitment_refresh/tools/preview.py",
+          "candidate_sha256": "3263f9a50c1a959256b2b9d64a44a6cf3b610fb2f623ea4db78261ccaabaa3e0",
+          "current_sha256": "91e8ba3f28ba36e1a7c1ae49be5afd29f49989cc89a9d0717568b30eb862e8b4",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/recruitment_refresh/workshop/preview.svg",
+          "candidate_sha256": "8c35db5e81fd1c3bcccef19e4a621e8a87a54a032cefe98c3ae81a34f26de1a5",
+          "current_sha256": "52da48fd6d6ac00e41e7602d70a73f9776af1a223cd7286e8f09ae92bab89a40",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "refresh-docs-locales",
+      "files": [
+        {
+          "path": "mods/recruitment_refresh/README.md",
+          "candidate_sha256": "48dd122208c9dab00047c6c9f0989efed187a7344c1317f21269f7781f6176e6",
+          "current_sha256": "b20e43395fd63cd343e18e1e4df6ec3ad7831d1711c6b08483b820b9f76f340c",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/recruitment_refresh/workshop/description.bbcode",
+          "candidate_sha256": "5e849403022b695bddbc7881050290cc688d259cf63cdb5eb93a0e43f09bb3b5",
+          "current_sha256": "28cf51c412cff732e5af062b09bd40e8639a7fa7b355454f2f5d344974c57d54",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/recruitment_refresh/workshop/change-notes.txt",
+          "candidate_sha256": "15fd7b01e0f7ca60a8a3336066c973ec0f23f72aeb404567cabb0e34e42ed667",
+          "current_sha256": "fbf0f094c5e1e9956f2b49aa9daf7a8daa1ee3b67137badb8bfc3b0574ab10fc",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/recruitment_refresh/localisation/zh-CN.tsv",
+          "candidate_sha256": "7ec98e9721131a3ce630f4d866f028d6f8b02d09cad7b8d31b8dfdccdd3026c1",
+          "current_sha256": "4a8146623ec2f8061d63a0454b9eb956b6b6d24c75c7307debd6d47f0268358a",
+          "disposition": "OWNER_MODIFIED"
+        },
+        {
+          "path": "mods/recruitment_refresh/localisation/en.tsv",
+          "candidate_sha256": "d238c0ef94acc3769038401dcda85ab2d9bbe9714435a3bea6bb709d3a5a1e51",
+          "current_sha256": "591219ed16e5758a117f4384ee84064d82de3ff42813112e11b4510f149a0312",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "refresh-logic",
+      "files": [
+        {
+          "path": "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/logic.lua",
+          "candidate_sha256": "5ac4ed2c0edf4b730f468281883c5f46b66dd36d03ba73e6b744a20fbc56a95e",
+          "current_sha256": "adda93f92ce2f5c5b931f76b4a4d6ea8aa1f5b7773a500e56c4f8936a5d7493c",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "refresh-runtime",
+      "files": [
+        {
+          "path": "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/runtime.lua",
+          "candidate_sha256": "b31561c93e180c49e49c3f2cf9e4acd91eaad34e437fb185b8a0ff2349bf31ad",
+          "current_sha256": "4cc2ec2608825bef3b973a8ef23acc2d279e3c8143e2852f9b5ba0276a134d3f",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    },
+    {
+      "task": "refresh-ui",
+      "files": [
+        {
+          "path": "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/ui.lua",
+          "candidate_sha256": "6da9456cadd3669c7c0ceed106bb3d4a58af6806f3cfd8f5ddaf91c785b50be9",
+          "current_sha256": "330c3eda8a89b2b55beb6679fd834f878ced8285ac83d4c4d52afa50ff82e4ce",
+          "disposition": "OWNER_MODIFIED"
+        }
+      ]
+    }
+  ],
+  "owner_errors": [
+    "A PowerShell stdin pipeline initially damaged newly written Chinese documentation; rewritten with explicit UTF-8 and checked before staging. Model request files remained UTF-8.",
+    "Repair dispatcher overwrote its summary filename; initial concurrency summary reconstructed from preserved initial attempt timestamps and event records."
+  ]
+}

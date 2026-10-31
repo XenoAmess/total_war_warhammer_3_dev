@@ -1,0 +1,35 @@
+{
+  "account_activity_before_sdk_init": {
+    "owner": "76561198273714027",
+    "status": "PUBLIC_PRESENCE_IDLE",
+    "game": null,
+    "online_state": "online",
+    "observed_at_utc": "2026-10-31T02:05:12.050333+00:00",
+    "server_date": "Sat, 31 Oct 2026 02:05:13 GMT",
+    "source": "steam_community_public_presence",
+    "response_sha256": "bf9b71e32b18b80b4c03a4dd9a36f510de9377047751736d011c2a1410dad956"
+  },
+  "owner": "76561198273714027",
+  "app_id": 1142710,
+  "status": "PREPARING_SPLIT_UPDATE",
+  "item_id": "3830548217",
+  "required_items": [
+    "3811098873"
+  ],
+  "pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "version": "0.1.0-alpha",
+  "uploaded_at_utc": "2026-10-31T02:05:34.984088+00:00",
+  "verified_at_utc": "2026-10-31T02:08:10.840859+00:00",
+  "visibility": "public",
+  "anonymous_metadata_verification": "PASS",
+  "anonymous_page_verification": "PASS",
+  "dependency_verification": "PASS",
+  "changelog_verification": "PASS",
+  "preview_hash_verification": "PASS",
+  "download_hash_verification": "PASS",
+  "downloaded_pack_bytes": 42899,
+  "downloaded_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+  "steam_final_mode": "offline",
+  "mod_id": "recruitment_refresh"
+}

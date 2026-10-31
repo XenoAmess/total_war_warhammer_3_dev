@@ -18,5 +18,6 @@
 
 各 Mod 的资料入口：
 
-- [征募与迁都](../mods/recruitment_and_capitals/docs/README.md)：实现、原生研究、离线/实机验收和公开工坊发布记录。
+- [招募候选刷新](../mods/recruitment_refresh/docs/README.md)：刷新实现、原生研究、拆分验收及原合并版本的历史证据。
+- [迁移首都](../mods/move_capital/docs/design-and-acceptance.md)：独立迁都设计与最简验收。
 - [顾问换声](../mods/advisor_voice/README.md)：资源可行性预研及机器可读证据，尚无可构建 Mod。
