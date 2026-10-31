@@ -10,10 +10,10 @@
 | Windows 当前设备状态 | `Present=False`、`CM_PROB_PHANTOM`；仅枚举当前设备时找不到任何 NVIDIA PCI 设备 |
 | 该记录的上游 PCIe 端口 | Intel PCI Express Root Port 2，`VEN_8086&DEV_2F04`，同样 `Present=False`；不能据此认定主板物理槽位编号 |
 | 当前显示设备 | 四个 ToDesk / Virtual Display 适配器 |
-| 已安装驱动 | 历史绑定版本 `32.0.15.9174`，驱动文件存在；`nvlddmkm` 内核驱动未运行，NVIDIA Display Container 服务运行中 |
+| 已安装驱动 | 历史绑定版本 `32.0.15.9174`，驱动文件存在；重启前后 `nvlddmkm` 内核驱动均未运行 |
 | NVIDIA 查询 | 已安装的 `nvidia-smi` 返回无法与 NVIDIA 驱动通信 |
 | 硬件重扫 | `pnputil /scan-devices` 成功执行，随后当前设备列表仍没有 NVIDIA |
-| 游戏实际适配器 | 本次 WH3 `gfx.log.txt` 仅列出 Microsoft Basic Render Driver；战役画面不完整，未取得可接受的功能截图 |
+| 游戏实际适配器 | 重启前的 WH3 `gfx.log.txt` 仅列出 Microsoft Basic Render Driver；战役画面不完整，未取得可接受的功能截图；重启后未启动游戏 |
 
 这些结果说明“Windows 当前没有把这块 NVIDIA 卡枚举为可用设备”，不等于机器没有装显卡，也不能直接判定显卡损坏。微软将 `CM_PROB_PHANTOM` 定义为设备当前不在场的 Code 45；它与普通的设备禁用、缺少驱动不是同一种状态。[微软 Code 45 文档](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/cm-prob-phantom)
 
@@ -33,11 +33,31 @@
 
 本轮已保留原始设备快照、扫描回执、PnP/启动历史、WHEA 事件和签名检查结果，目录为 `D:/workspace/.codex-wh3-runtime/gpu-diagnosis-20261031/`，仅代表本机。使用配置中的本地模型做了一次独立诊断分析：HTTP 200、完整 SSE、`finish_reason=stop`、JSON 可解析；主执行者仅采纳经本机证据复核的方向，拒绝其不存在的 `pnputil /reinstall` 命令和“重启即可确定物理故障”等过度结论。原始请求、响应和用量保存在该目录的 `model-analysis/`，审阅记录见 `review.json`。本轮后台 Steam 回执为主动离线，没有启动游戏。
 
+## 获准重启后的复查
+
+用户批准重启后，后台记录确认 Windows 已完成新一次启动，启动时间为 **2026-10-31 17:02:31（北京时间，09:02:31 UTC）**，取代此前 10 月 22 日的启动现场。一次性启动任务在 17:03:22–17:04:17 进行了 6 次检查：
+
+- 每次当前 NVIDIA PCI 设备数均为 0；RTX 3060 和历史父端口 `2F04` 均仍为 `Present=False`、Code 45。
+- 6 次 `nvidia-smi` 均退出 9，报告无法与驱动通信；`nvlddmkm` 始终停止。`repair_confirmed=false`，任务保存回执后已自行移除。
+- 19:21–19:22 的实时复查与开机检查一致。再次执行硬件重扫返回 0，之后仍没有 NVIDIA PCI 设备或该父端口。
+
+本轮额外核对了软件配置和本次启动日志：
+
+- `pci.sys` 为 Boot 启动且正在运行；PCI Express 根复合体正常；CPU 侧其他 `2F02`、`2F03`、`2F08` 端口在场且无问题码。没有当前处于错误状态的 PCI 设备或 NVIDIA 新实例。
+- 显卡及历史父端口仍 `ConfigFlags=0`，没有设备级 Upper/LowerFilters；System 和 Display 类也没有 Upper/LowerFilters。当前及已读取的继承引导设置未见 PCIe 禁用项；`HypervisorPresent=false`，未发现 Hyper-V 的 `vmms`、`vmcompute` 服务。
+- 本次启动以来查询到的相关 System 日志为 4 条 Kernel-PnP 219，均指向 `ROOT\DISPLAY\0000` 至 `0003` 虚拟显示设备；这些设备当前状态正常。未发现本次启动中的 NVIDIA / `2F04` PnP 配置事件、NVIDIA 驱动错误或 WHEA 事件。日志缺席不能单独证明具体根因，也不能将虚拟显示器的启动日志当作 RTX 3060 加载失败。
+
+**当前判断：重启未恢复，仍需优先验证供电、PCIe 链路和固件初始化；尚不能确定是哪一个部件或设置导致。** 显示优先级或 ToDesk 的虚拟屏幕不能代替解释“当前 PCI 设备树中没有显卡及其历史父端口”。Windows 的 PCI 总线驱动负责设备枚举；当前没有支持通过改游戏显卡选项或重装 NVIDIA 驱动修复上游端口缺席的证据。[微软 PCI 驱动职责说明](https://learn.microsoft.com/en-us/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
+
+开机原始回执在 `D:/workspace/.codex-wh3-runtime/gpu-diagnosis-20261031/restart-20261031/post-restart.json`，本轮实时设备、配置、日志、重扫和模型审阅材料在同级 `post-restart-followup-20261031/`。本轮对新证据调用本地模型两次：第一次 `finish_reason=length` 的候选完整丢弃；缩小输出范围后第二次为 HTTP 200、完整 SSE、`finish_reason=stop`，仅采纳复核后的分析方向，未执行候选命令。后台 Steam 查询返回 `steam_not_found`；客户端没有运行，未声称其处于主动离线，也没有启动 Steam 或游戏。
+
+用户随后确认**暂时无人现场，只能远程操作**。本机当前设备、服务和常见厂商 WMI 类中未发现可用的 IPMI/BMC、Intel AMT 或厂商固件管理入口；这不证明不存在另行配置的外部远程电源设备。本轮保持正常开机与 ToDesk 连接，未继续关机、切换 BIOS 启动或修改固件。当前可用入口不足以完成实体供电、插槽或 BIOS 检测的交叉验证，后续现场步骤仍待安排，显卡仍未修复。
+
 ## 后续处理与成功标准
 
-1. 本轮已完成父设备链、新实例和重扫后的当前设备核对。后续优先协调一次普通重启，重新执行 `Get-PnpDevice -PresentOnly -Class Display`、父设备查询及 `nvidia-smi`。重启会中断当前远程会话，须先协调时间、保存工作并确认可重新连接；本轮未执行重启。[微软 PnPUtil 文档](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/pnputil-command-syntax)
-2. 若重启仍无设备，安排现场冷启动并检查显卡是否插紧、独立供电连接，以及 BIOS 的 PCIe 检测与相关设置；不根据历史端口名称推断物理槽位，不盲目恢复 BIOS 默认值或刷固件。必要时由现场人员在断电条件下换槽、换卡交叉验证。重启或冷启动恢复也不能单独证明具体根因。
+1. Windows 重启及重启后的设备核对已完成，均未恢复。下一项有区分价值的操作是**有现场人员配合的完全断电冷启动**：正常关机，切断机箱电源，再接电开机；现场须能重新开机，不能在无人现场时远程关机后期待自动恢复。若恢复，只说明与电源/固件/链路状态有关的可能性增加，不能单独确定根因。恢复连接后重新查询当前 PCI 设备、问题码和 `nvidia-smi`，不把扫描命令成功当作修复成功。[微软 PnPUtil 文档](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/pnputil-command-syntax)
+2. 冷启动仍无设备时，在关机并断开电源后检查显卡是否插紧、独立供电和转接/延长线（如有）。若 BIOS 提供 PCIe 设备或链路状态页，读取其实际检测结果；没有该页面就记为未知。BIOS 能看到设备而 Windows 看不到时，再集中检查 Windows；两边均检测不到时，优先现场换槽或换卡交叉验证。不根据历史端口名称推断物理槽位，不盲目恢复 BIOS 默认值或刷固件。
 3. 设备重新出现后，检查其问题码和驱动绑定；再用 `nvidia-smi`、DXGI 枚举核实 NVIDIA 已可用。只有存在实际驱动绑定或加载错误时，才针对错误处理驱动。[NVIDIA 查询工具说明](https://docs.nvidia.com/deploy/nvidia-smi/)
 4. NVIDIA 正常枚举后，再核对 Windows 图形首选项和 WH3 的适配器选择。在 Steam 主动离线状态取得新鲜回执后启动游戏，以新生成的 `gfx.log.txt` 中实际选中的 NVIDIA 适配器及正常主菜单、战役画面作为成功证据，随后分别补做两个 Mod 的功能截图。
 
-保留当前远程连接使用的 ToDesk / Virtual Display 设备。当前没有移除或禁用显示设备、卸载驱动、修改 BIOS、重启机器，也没有将软件渲染器标为独显修复。微软新版 WARP 1.0.22 已下载并通过 Microsoft 签名检查，但未安装；先前 DXVK / Lavapipe 测试文件和临时注册项已恢复。BasicRender/WARP 仍属于 CPU 软件渲染。[微软 BasicDisplay / BasicRender 说明](https://learn.microsoft.com/en-us/windows-hardware/drivers/display/microsoft-basic-display-driver)
+保留当前远程连接使用的 ToDesk / Virtual Display 设备。除已获准并完成的重启外，没有移除或禁用显示设备、卸载驱动、修改 BIOS，也没有将软件渲染器标为独显修复。微软新版 WARP 1.0.22 在此前已下载并通过 Microsoft 签名检查，但未安装；先前 DXVK / Lavapipe 测试文件和临时注册项已恢复。BasicRender/WARP 仍属于 CPU 软件渲染。[微软 BasicDisplay / BasicRender 说明](https://learn.microsoft.com/en-us/windows-hardware/drivers/display/microsoft-basic-display-driver)
