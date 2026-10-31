@@ -1,5 +1,9 @@
 # 工坊图文与实机截图
 
+2026-10-31 用户调整优先级：先发布两个拆分模组的内容、标题、封面和各自 BBCode；显卡修复、实机截图、图库和正文内嵌图片作为发布后的独立工作继续。当前不上传无法展示功能的异常画面。
+
+默认发布仍要求精确包哈希与 L0–L3 通过。用户明确要求先发布时，可显式传入 `--native-waiver mods/<mod_id>/docs/publication-waiver-20261031.json`，仅延期该 Mod、该包的 L2/L3；L0/L1 和包身份检查始终强制。发布状态保存原始验收结果与延期记录哈希，不把未完成检查标记为通过。
+
 每个 Mod 独立维护 `mods/<mod_id>/workshop/description.bbcode`、更新说明、封面及 `screenshots/`。正文 BBCode 和展示用截图都提交到 Git；封面不代替实机截图。截图须展示该 Mod 单独启用时的按钮或效果，记录实际游戏版本、包哈希和采集时间；黑图、空白图、示意图不能冒充实机画面。
 
 `workshop/screenshots.json` 使用以下结构，`file` 相对于同级 `screenshots/`：

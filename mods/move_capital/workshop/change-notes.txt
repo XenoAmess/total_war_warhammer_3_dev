@@ -1,6 +1,9 @@
-Version 0.1.0
-- Initial release of the standalone Move Capital mod.
-- Provides UI and logic for moving the faction capital to a selected settlement.
-- No dependencies on memreader Plus or Recruitment Refresh.
-- Uses dedicated save key `xatw3_move_capital_state`.
-- Localization prefix `xatw3mc_`.
+0.1.0 Alpha
+
+- 独立迁都 Mod 首次发布。选中自有城镇，在城镇面板点击“迁移首都”并确认。
+- 单人超凡帝国，免费；不改变城市归属、等级或省会标记。
+- 无需 memreader Plus 或招募候选刷新 Mod。
+
+- Initial standalone release. Select an owned settlement and confirm Move Capital in its settlement panel.
+- Free in single-player Immortal Empires. Ownership, settlement level and province-capital status are preserved.
+- No dependency on memreader Plus or Recruitment Refresh.

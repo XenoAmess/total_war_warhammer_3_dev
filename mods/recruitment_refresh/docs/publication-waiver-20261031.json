@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "release_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
+  "authorized_by": "user",
+  "recorded_at_utc": "2026-10-31T06:42:00Z",
+  "deferred_checks": ["L2", "L3"],
+  "instruction": "先发布这两个模组，修改logo和商店页面信息；同时查阅资料研究如何使用显卡进入这个游戏。不要阻塞发布了。发布完成后，另行补图上传。",
+  "reason": "用户明确调整发布优先级。离线测试和编译已通过；当前拆分版的完整实机招募流程尚未完成，保留 IN_PROGRESS，不改写为 PASS。",
+  "follow_up": "修复显卡识别与游戏显示，分别完成单独启用验收、功能截图、工坊图库及 BBCode 内嵌图片。"
+}

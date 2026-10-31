@@ -7,13 +7,14 @@ import struct
 import sys
 import tempfile
 import unittest
+from urllib.error import HTTPError
 from io import BytesIO
 from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from pack import read_pack, write_loc, write_pack
-from workshop import publish, Steam, DependencyResult, account_activity
+from workshop import publish, Steam, DependencyResult, account_activity, validate_acceptance
 from project import ModProject, load_project
 from build import build
 
@@ -128,6 +129,28 @@ class PublicationGateTests(unittest.TestCase):
         with patch('workshop.urllib.request.urlopen', side_effect=[mini, private]):
             self.assertEqual(account_activity('76561198273714027')['status'], 'UNAVAILABLE')
 
+    def test_rate_limited_xml_uses_fresh_official_profile_html(self):
+        for state, recent, owner, age, expected in [
+                ('online', True, '76561198273714027', '0', 'PUBLIC_PRESENCE_IDLE'),
+                ('offline', True, '76561198273714027', '0', 'PUBLIC_PRESENCE_IDLE'),
+                ('in-game', True, '76561198273714027', '0', 'BUSY'),
+                ('online', False, '76561198273714027', '0', 'UNAVAILABLE'),
+                ('online', True, '76561198273714028', '0', 'ERROR'),
+                ('online', True, '76561198273714027', '120', 'ERROR')]:
+            mini = BytesIO(b'{}'); mini.headers = {'Age': '0'}
+            html = ('g_rgProfileData = {"steamid":"' + owner + '"};'
+                    '<div class="profile_in_game persona ' + state + '"></div>'
+                    + ('<div class="recent_games"></div>' if recent else ''))
+            page = BytesIO(html.encode()); page.headers = {'Age': age}
+            limited = HTTPError('https://steamcommunity.com/', 429, 'limited', {}, None)
+            with self.subTest(state=state, recent=recent, owner=owner, age=age), patch(
+                    'workshop.urllib.request.urlopen', side_effect=[mini, limited, page]):
+                if expected == 'ERROR':
+                    with self.assertRaises(RuntimeError):
+                        account_activity('76561198273714027')
+                else:
+                    self.assertEqual(account_activity('76561198273714027')['status'], expected)
+
     def test_busy_or_unknown_account_never_initializes_game_sdk(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
@@ -160,11 +183,38 @@ class PublicationGateTests(unittest.TestCase):
             pack = root / 'test.pack'
             pack.write_bytes(b'fixture')
             acceptance = root / 'acceptance.json'
-            acceptance.write_text(json.dumps({'L0': 'PASS', 'L1': 'PASS', 'L2': 'BLOCKED', 'L3': 'NOT_RUN',
+            acceptance.write_text(json.dumps({'mod_id': 'test_mod', 'L0': 'PASS', 'L1': 'PASS', 'L2': 'BLOCKED', 'L3': 'NOT_RUN',
                                               'release_pack_sha256': hashlib.sha256(pack.read_bytes()).hexdigest()}))
             with patch('workshop.Steam') as steam, self.assertRaisesRegex(RuntimeError, 'requires L0/L1/L2/L3 PASS'):
                 publish(root / 'missing.dll', pack, acceptance, root / 'state.json', None, project=publication_project(root))
             steam.assert_not_called()
+
+    def test_explicit_matching_waiver_preserves_pending_native_results(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); pack = root / 'test.pack'; pack.write_bytes(b'fixture')
+            sha = hashlib.sha256(pack.read_bytes()).hexdigest()
+            acceptance = root / 'acceptance.json'
+            acceptance.write_text(json.dumps(dict(mod_id='test_mod', release_pack_sha256=sha,
+                                                  L0='PASS', L1='PASS', L2='IN_PROGRESS', L3='NOT_RUN')))
+            waiver = root / 'waiver.json'
+            waiver.write_text(json.dumps(dict(schema_version=1, mod_id='test_mod', release_pack_sha256=sha,
+                                              authorized_by='user', deferred_checks=['L2', 'L3'],
+                                              instruction='Publish now; complete native testing later.')))
+            result = validate_acceptance(pack, acceptance, publication_project(root), waiver)
+            self.assertEqual((result['L2'], result['L3']), ('IN_PROGRESS', 'NOT_RUN'))
+            self.assertEqual(result['native_test_waiver']['sha256'], hashlib.sha256(waiver.read_bytes()).hexdigest())
+            for field, value in [('mod_id', 'other_mod'), ('release_pack_sha256', '0' * 64),
+                                 ('deferred_checks', ['L2']), ('deferred_checks', ['L0', 'L2', 'L3']),
+                                 ('authorized_by', 'tool'), ('instruction', '')]:
+                with self.subTest(field=field, value=value):
+                    original = waiver.read_text()
+                    changed = json.loads(original); changed[field] = value; waiver.write_text(json.dumps(changed))
+                    with self.assertRaises(RuntimeError):
+                        validate_acceptance(pack, acceptance, publication_project(root), waiver)
+                    waiver.write_text(original)
+            failed = json.loads(acceptance.read_text()); failed['L1'] = 'FAIL'; acceptance.write_text(json.dumps(failed))
+            with self.assertRaisesRegex(RuntimeError, 'L0/L1 PASS'):
+                validate_acceptance(pack, acceptance, publication_project(root), waiver)
 
     def test_unaccepted_pack_hash_never_contacts_steam(self):
         with tempfile.TemporaryDirectory() as folder:

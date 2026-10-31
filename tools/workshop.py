@@ -13,6 +13,7 @@ import os
 import re
 import time
 import urllib.request
+import urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,6 +21,35 @@ from project import ModProject, add_mod_argument, selected_project
 from workshop_media import apply_gallery, prepare_gallery
 
 APP_ID = 1142710
+
+
+def _html_account_activity(owner: str, observed: str) -> dict:
+    request = urllib.request.Request(
+        f'https://steamcommunity.com/profiles/{owner}/?l=english&presence_check={time.time_ns()}',
+        headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
+    with urllib.request.urlopen(request, timeout=15) as response:
+        raw = response.read(512001)
+        age = response.headers.get('Age', '0')
+        server_date = response.headers.get('Date')
+    if len(raw) > 512000 or not age.isdecimal() or int(age) > 5:
+        raise RuntimeError('Steam account activity response is stale or invalid')
+    html = raw.decode('utf-8')
+    identity = re.search(r'g_rgProfileData\s*=\s*(\{.*?\});', html)
+    if not identity or json.loads(identity[1]).get('steamid') != owner:
+        raise RuntimeError('Steam returned another account profile')
+    presence = re.findall(r'class="profile_in_game persona ([a-z_ -]+)"', html)
+    status = 'UNAVAILABLE'
+    if len(presence) == 1:
+        classes = set(presence[0].split())
+        if 'in-game' in classes or 'ingame' in classes:
+            status = 'BUSY'
+        elif (classes in ({'online'}, {'offline'}) and 'class="recent_games"' in html
+              and 'profile_private_info' not in html):
+            status = 'PUBLIC_PRESENCE_IDLE'
+    return dict(owner=owner, status=status, online_state=presence[0] if presence else None,
+                observed_at_utc=observed, server_date=server_date,
+                source='steam_community_public_profile_html',
+                response_sha256=hashlib.sha256(raw).hexdigest())
 
 
 def account_activity(owner: str) -> dict:
@@ -54,10 +84,15 @@ def account_activity(owner: str) -> dict:
     request = urllib.request.Request(
         f'https://steamcommunity.com/profiles/{owner}/?xml=1&l=english&presence_check={time.time_ns()}',
         headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
-    with urllib.request.urlopen(request, timeout=15) as response:
-        raw = response.read(512001)
-        age = response.headers.get('Age', '0')
-        server_date = response.headers.get('Date')
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            raw = response.read(512001)
+            age = response.headers.get('Age', '0')
+            server_date = response.headers.get('Date')
+    except urllib.error.HTTPError as error:
+        if error.code != 429:
+            raise
+        return _html_account_activity(owner, observed)
     if len(raw) > 512000 or not age.isdecimal() or int(age) > 5:
         raise RuntimeError('Steam account activity response is stale or invalid')
     profile = ET.fromstring(raw)
@@ -144,14 +179,39 @@ class Steam:
         raise TimeoutError('Steam API call did not complete before timeout; preserve the saved item ID')
 
 
-def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: Path | None,
-            expected_owner: str | None = None, *, project: ModProject):
+def validate_acceptance(pack: Path, acceptance: Path, project: ModProject,
+                        native_waiver: Path | None = None) -> dict:
     sha = hashlib.sha256(pack.read_bytes()).hexdigest()
     results = json.loads(acceptance.read_text(encoding='utf-8'))
-    if results.get('release_pack_sha256') != sha or any(results.get(key) != 'PASS' for key in ('L0', 'L1', 'L2', 'L3')):
-        raise RuntimeError('Publication requires L0/L1/L2/L3 PASS for this exact pack SHA-256')
     if results.get('mod_id') != project.id or pack.name != project.pack_name:
         raise RuntimeError('Pack or acceptance record belongs to a different Mod')
+    if results.get('release_pack_sha256') != sha or any(results.get(key) != 'PASS' for key in ('L0', 'L1')):
+        raise RuntimeError('Publication requires L0/L1 PASS for this exact pack SHA-256')
+    pending = [key for key in ('L2', 'L3') if results.get(key) != 'PASS']
+    record = {key: results.get(key) for key in ('L0', 'L1', 'L2', 'L3')}
+    if pending:
+        if native_waiver is None:
+            raise RuntimeError('Publication requires L0/L1/L2/L3 PASS or an explicit native-test waiver')
+        waiver = json.loads(native_waiver.read_text(encoding='utf-8'))
+        checks = waiver.get('deferred_checks')
+        if (waiver.get('schema_version') != 1 or waiver.get('mod_id') != project.id
+                or waiver.get('release_pack_sha256') != sha or waiver.get('authorized_by') != 'user'
+                or not isinstance(checks, list) or not checks
+                or any(key not in ('L2', 'L3') for key in checks)
+                or not set(pending).issubset(checks)
+                or not isinstance(waiver.get('instruction'), str) or not waiver['instruction'].strip()):
+            raise RuntimeError('Native-test waiver must match this Mod, pack and deferred checks')
+        record['native_test_waiver'] = {'file': str(native_waiver.resolve()),
+                                      'sha256': hashlib.sha256(native_waiver.read_bytes()).hexdigest(),
+                                      'deferred_checks': checks, 'instruction': waiver['instruction']}
+    return record
+
+
+def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: Path | None,
+            expected_owner: str | None = None, *, project: ModProject,
+            native_waiver: Path | None = None):
+    acceptance_record = validate_acceptance(pack, acceptance, project, native_waiver)
+    sha = hashlib.sha256(pack.read_bytes()).hexdigest()
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
     if state and state.get('mod_id') != project.id:
         raise RuntimeError('Stored Workshop state belongs to a different Mod')
@@ -173,6 +233,7 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
         if steam.steam_id != owner:
             raise RuntimeError('The active Steam account differs from the checked account')
         state['account_activity_before_sdk_init'] = activity
+        state['release_acceptance'] = acceptance_record
         if state.get('owner') and state['owner'] != steam.steam_id:
             raise RuntimeError('Stored Workshop item belongs to a different Steam account')
         if not state.get('item_id'):
@@ -258,10 +319,11 @@ if __name__ == '__main__':
     parser.add_argument('--state', type=Path)
     parser.add_argument('--preview', type=Path)
     parser.add_argument('--owner', help='Expected Steam account ID; required for the first publication')
+    parser.add_argument('--native-waiver', type=Path, help='Explicit user authorization to defer L2/L3 for this exact Mod and pack')
     args = parser.parse_args()
     project = selected_project(parser, args.mod)
     preview = args.preview or project.build_dir / 'preview.png'
     print(json.dumps(publish(args.dll, args.pack or project.pack_path,
                              args.acceptance or project.root / 'docs/acceptance-results.json',
                              args.state or project.root / 'workshop/publication-state.json',
-                             preview, args.owner, project=project), indent=2))
+                             preview, args.owner, project=project, native_waiver=args.native_waiver), indent=2))

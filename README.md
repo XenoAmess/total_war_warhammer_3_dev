@@ -33,7 +33,8 @@ py -3.13 -m venv .venv
 ## 文档
 
 - [共性文档索引](docs/README.md)
-- [征募与迁都文档](mods/recruitment_refresh/docs/README.md)
+- [招募候选刷新文档](mods/recruitment_refresh/docs/README.md)
+- [迁移首都设计与验收](mods/move_capital/docs/design-and-acceptance.md)
 - [顾问换声预研](mods/advisor_voice/docs/advisor-voice-research.md)
 
 发布工具根据各 Mod 的 `mod.json` 和专属验收、工坊状态选择目标，拒绝混用其他 Mod 的记录。Steam 平时保持主动离线，必要发布前须检查其他机器账号占用，完成后立即恢复离线。完整约定见 [AGENTS.md](AGENTS.md)。

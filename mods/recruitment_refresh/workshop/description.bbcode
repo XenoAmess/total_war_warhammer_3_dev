@@ -11,16 +11,16 @@
 
 传奇、唯一、不朽、受伤和已招募过的人物受到保护；履历不明的人物不会被猜测删除。冰雪宫廷训练、仪式及其他特殊来源不在刷新范围内。旧存档候选可能受未知履历保护，后续自然生成的普通候选才会获得可刷新履历。
 
-本机完整流程实测：基斯里夫波耶老爷、牧首，包括刷新后正常招募、受保护人物保留和连续刷新。其他普通类型按引擎元数据识别；不宣称全种族或特殊机制兼容。
+旧组合版已实测基斯里夫波耶老爷、牧首的刷新、招募、受保护人物保留和连续刷新。本次 0.2.0 拆分包已通过编译与离线测试；完整实机回归及功能截图将在显卡显示问题解决后补充。其他普通类型按引擎元数据识别，不宣称全种族或特殊机制兼容。
 
 [h2]使用范围与限制[/h2]
 [list]
 [*]单人超凡帝国战役，玩家自己的派系。
-[*]初期版本，特殊派系首都机制和其他 Mod 的候选生成不保证兼容。
+[*]初期版本，其他 Mod 的候选生成不保证兼容。
 [*]不支持联机、序章、教程、特殊训练和仪式招募。
 [*]旧存档中无法确认履历的候选可能被保护；建议使用独立存档并保留操作前的保存。
-[*]与其他刷新招募池或自动迁都 Mod 叠加时可能冲突。
-[*]禁用 Mod 不会自动撤销已经保存的首和人物变化。
+[*]与其他修改招募池的 Mod 叠加时可能冲突。
+[*]禁用 Mod 不会自动撤销已经保存的候选刷新和招募结果。
 [/list]
 
 默认提供简体中文。可取消确认；执行结果不明时会停止继续修改，不自动重复操作。刷新前会关闭招募面板以释放旧卡片，完成后重开。缺少前置、引擎函数签名或候选结构无法验证时停止刷新。
@@ -28,6 +28,6 @@
 [h2]English[/h2]
 Requires memreader Plus, enabled alongside this mod. Tested on Windows x64, game 9.0.4. Adds free candidate refresh to single-player Immortal Empires. Ordinary automatically generated subtypes are identified from engine metadata. Select a candidate to choose its subtype. Legendary, unique, immortal, wounded, previously recruited and unknown-history characters are protected. Special training and ritual recruitment are unsupported. Existing-save candidates without recorded history remain protected until natural replacements appear.
 
-The full player flow was tested with Kislev Boyars and Patriarchs. Other ordinary subtypes use the same metadata checks; universal faction or overhaul compatibility is not claimed. Recruitment still requires the game's normal buildings, capacity, gold and content ownership.
+The previous combined release was tested with Kislev Boyars and Patriarchs. This standalone 0.2.0 pack passed compilation and offline tests; its full native regression and gameplay screenshots are pending resolution of this machine's graphics issue. Other ordinary subtypes use the same metadata checks; universal faction or overhaul compatibility is not claimed. Recruitment still requires the game's normal buildings, capacity, gold and content ownership.
 
 [url=https://github.com/XenoAmess/total_war_warhammer_3_dev]源码、设计与验收记录 / Source and acceptance records[/url]
