@@ -4,8 +4,8 @@
 
 | Mod | 状态 | 入口 |
 | --- | --- | --- |
-| 招募候选刷新 | `0.2.0 Alpha` 拆分验收中，保留原工坊条目 | [项目说明](mods/recruitment_refresh/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
-| 迁移首都 | `0.1.0 Alpha` 独立验收中，无辅助 Mod 依赖 | [项目说明](mods/move_capital/README.md) |
+| 招募候选刷新 | `0.2.0 Alpha` 已公开更新；完整实机回归与截图后补 | [项目说明](mods/recruitment_refresh/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
+| 迁移首都 | `0.1.0 Alpha` 已公开发布，独立最简实机通过 | [项目说明](mods/move_capital/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933) |
 | 顾问换声 | 原版资源预研完成，尚无实现或可发布包 | [预研入口](mods/advisor_voice/README.md) |
 
 目录约定与新增 Mod 步骤见 [项目结构](docs/project-structure.md)，Steam 离线及账号占用规则见 [Steam 操作约定](docs/steam-operation.md)。

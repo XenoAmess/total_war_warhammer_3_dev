@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
-  "recorded_at_utc": "2026-10-31T04:30:11.856329+00:00",
-  "release_status": "STANDALONE_NATIVE_SMOKE_PENDING",
+  "recorded_at_utc": "2026-10-31T06:57:02.389054+00:00",
+  "release_status": "PUBLISHED_PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
   "release_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
   "release_pack_bytes": 39458,
   "L0": "PASS",
   "L1": "PASS",
   "L2": "IN_PROGRESS",
   "L3": "IN_PROGRESS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "offline": {
     "status": "PASS",
     "mod_id": "recruitment_refresh",
@@ -82,11 +82,53 @@
   },
   "native": {
     "standalone_only": true,
-    "combined_enablement_test": "NOT_REQUESTED"
+    "combined_enablement_test": "NOT_REQUESTED",
+    "status": "DEFERRED_BY_USER_PRIORITY_AFTER_GRAPHICS_DIAGNOSTICS"
   },
   "workshop": {
     "item_id": "3830548217",
-    "upload_called_for_this_version": false
+    "upload_called_for_this_version": true,
+    "public_verification": "PASS",
+    "screenshots": "DEFERRED_BY_USER_AFTER_PUBLICATION",
+    "publication_record": "workshop-publication.json"
   },
-  "evidence": []
+  "evidence": [
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\before-online.json",
+      "sha256": "5a7edcf9f949a34c9c3a21606f47ab8c55d1d7e2a16490b6e59c7686fc7b7280"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\upload.json",
+      "sha256": "218fd127698149d8f56b2fb0de3161ed038a4e56b3c6558cc1bb13b338603ea5"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\download.json",
+      "sha256": "4b124d5e1acb41631ef227ecb959a9fcffe03f15a8d149b110ef94854e5861b7"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-metadata.json",
+      "sha256": "cef954d3038569e28b7025d375c32681010faa670f35a89663332882b97f2e40"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-page.html",
+      "sha256": "f99e47dce8cf080f2acb28a59a14b760e4dc0b5d0694f494ee3240bcca0a68bc"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-changelog.html",
+      "sha256": "3f00b24daea9ca0bedffb9e4d47b1ad0f8e04c800853784ae5816d7aa6ab1500"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\public-preview.png",
+      "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\recruitment_refresh-5fb213ff3e044f3493dc24e4993f63db\\anonymous-verification.json",
+      "sha256": "1801be143bcc29f566a342a2b35f9825de1153714cbdfb2af55a384294db45c1"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline.json",
+      "sha256": "b76a5f8497013bf1898ad3c5b7fbc620cd87b2f350cdfe6f1ad41396a37d3944"
+    }
+  ],
+  "publication_waiver": "publication-waiver-20261031.json"
 }

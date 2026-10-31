@@ -4,23 +4,23 @@
     "status": "PUBLIC_PRESENCE_IDLE",
     "game": null,
     "online_state": "online",
-    "observed_at_utc": "2026-10-31T02:05:12.050333+00:00",
-    "server_date": "Sat, 31 Oct 2026 02:05:13 GMT",
+    "observed_at_utc": "2026-10-31T06:52:06.002867+00:00",
+    "server_date": "Sat, 31 Oct 2026 06:52:06 GMT",
     "source": "steam_community_public_presence",
-    "response_sha256": "bf9b71e32b18b80b4c03a4dd9a36f510de9377047751736d011c2a1410dad956"
+    "response_sha256": "ad7c0329e4aff3a35c51f9875cc6c067d71f06c2e83423f04dfd8d598d39f27a"
   },
   "owner": "76561198273714027",
   "app_id": 1142710,
-  "status": "PREPARING_SPLIT_UPDATE",
+  "status": "PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
   "item_id": "3830548217",
   "required_items": [
     "3811098873"
   ],
-  "pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+  "pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
-  "version": "0.1.0-alpha",
-  "uploaded_at_utc": "2026-10-31T02:05:34.984088+00:00",
-  "verified_at_utc": "2026-10-31T02:08:10.840859+00:00",
+  "version": "0.2.0",
+  "uploaded_at_utc": "2026-10-31T06:52:26.044505+00:00",
+  "verified_at_utc": "2026-10-31T06:53:41.111834+00:00",
   "visibility": "public",
   "anonymous_metadata_verification": "PASS",
   "anonymous_page_verification": "PASS",
@@ -28,8 +28,34 @@
   "changelog_verification": "PASS",
   "preview_hash_verification": "PASS",
   "download_hash_verification": "PASS",
-  "downloaded_pack_bytes": 42899,
-  "downloaded_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+  "downloaded_pack_bytes": 39458,
+  "downloaded_pack_sha256": "a35b030c1dc1b5de7b72900d9ec25744bf3acbc6c4a5145879efa6a97cc48481",
   "steam_final_mode": "offline",
-  "mod_id": "recruitment_refresh"
+  "mod_id": "recruitment_refresh",
+  "release_acceptance": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "IN_PROGRESS",
+    "L3": "IN_PROGRESS",
+    "native_test_waiver": {
+      "file": "D:\\workspace\\total_war_warhammer_3_dev\\mods\\recruitment_refresh\\docs\\publication-waiver-20261031.json",
+      "sha256": "f72f0c73215335a36d12b0150d100d7026e3cac88128b4c7cefbecb14870e62d",
+      "deferred_checks": [
+        "L2",
+        "L3"
+      ],
+      "instruction": "先发布这两个模组，修改logo和商店页面信息；同时查阅资料研究如何使用显卡进入这个游戏。不要阻塞发布了。发布完成后，另行补图上传。"
+    }
+  },
+  "uploaded_version": "0.2.0",
+  "uploaded_title": "招募候选刷新 | Recruitment Refresh",
+  "description_sha256": "d4ea2dce9284362c536daecba261c9323682238f5d403e154d03cd1b13ae1e4e",
+  "preview_sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+  "verification_for_version": "0.2.0",
+  "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
+  "final_offline_receipt": {
+    "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline-before-commit.json",
+    "sha256": "54643c2a853982806b35216fc3df8625856b5246bb50eaba229d77731456f284"
+  },
+  "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9"
 }

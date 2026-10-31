@@ -1,14 +1,14 @@
 {
   "schema": "wh3.local-model-split/v1",
   "machine_id": "pc-20260924rtuf-f11af23c08",
-  "recorded_at_utc": "2026-10-31T06:05:31.697644+00:00",
+  "recorded_at_utc": "2026-10-31T06:57:46.479906+00:00",
   "base_url": "http://192.168.1.11:8080/v1",
   "model": "qwen38-coder",
   "real_initial_tasks": 12,
-  "post_count": 16,
+  "post_count": 17,
   "actual_client_peak_in_flight": 12,
   "server_inference_concurrency_observed": false,
-  "complete_candidate_count": 15,
+  "complete_candidate_count": 16,
   "owner_corrections": [
     "Refresh invalid action must not consume sequence or persist.",
     "Capital channel prefix length 9, not 8; entry explicitly filters capital action.",
@@ -18,14 +18,14 @@
     "Gallery candidate missed ctypes import, bound APIs for skip-only input, and had a missing test directory. Owner fixed these, tightened manifest/slot checks, integrated pending/confirmed state and added real publisher callback/timeout tests. Initial candidate 23 tests had six errors; after owner corrections and integration all 39 shared tests pass."
   ],
   "offline_checks": {
-    "shared": 39,
+    "shared": 42,
     "recruitment_refresh": 45,
     "move_capital": 47,
-    "total": 131
+    "total": 134
   },
   "native_smoke": {
     "move_capital": "PASS_STANDALONE_MINIMUM_SCREENSHOTS_PENDING",
-    "recruitment_refresh": "IN_PROGRESS_STANDALONE_MINIMUM",
+    "recruitment_refresh": "IN_PROGRESS_EXPLICITLY_DEFERRED_FOR_PUBLICATION",
     "combined_enablement": "NOT_REQUESTED"
   },
   "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\split-models-20261031",
@@ -251,6 +251,26 @@
       "finished_at_utc": "2026-10-31T06:01:31.411110+00:00",
       "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\split-render-model-20261031",
       "review_reason": "No verified new diagnosis. Unsupported Steam-offline causal hypothesis, invalid inference from two renderer failures, and a repeated suggestion of the already-failing native screenshot API. Do not publish the candidate as fact or rerun those suggestions."
+    },
+    {
+      "task": "gpu-research",
+      "attempt": 1,
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "started_at_utc": "2026-10-31T06:42:32.619193+00:00",
+      "http_status": 200,
+      "http_headers_ms": 469.98,
+      "first_nonempty_content_delta_ms": 470.92,
+      "usage": {
+        "prompt_tokens": 2301,
+        "completion_tokens": 1876,
+        "total_tokens": 4177
+      },
+      "finish_reason": "stop",
+      "sse_done": true,
+      "candidate_complete": true,
+      "adoption": "REJECTED_UNSUPPORTED_ACTIONS",
+      "total_ms": 12864.52,
+      "finished_at_utc": "2026-10-31T06:42:45.483722+00:00"
     }
   ],
   "adoptions": [
@@ -260,7 +280,7 @@
         {
           "path": "mods/move_capital/tools/preview.py",
           "candidate_sha256": "1ee8d2a9edb60f60e8f414c36ade599a7fcad66838bc61ee31bb322a1443fc56",
-          "current_sha256": "fc6b3c6f26561b697fb38334c9be14e630c447b26b224536d06b35b05536af8c",
+          "current_sha256": "aad3291be2a5811fd30c77cc0c537faeee9102a5e0d0ff3a838eccff80285924",
           "disposition": "OWNER_MODIFIED"
         },
         {
@@ -277,7 +297,7 @@
         {
           "path": "mods/move_capital/README.md",
           "candidate_sha256": "77122acb00fca5407aceebe4d7cd8c7b2eaba6bfcc453666702df3fab348747e",
-          "current_sha256": "504710b77a361d5e202d785fc977dd461923508d4db8e39a426679f855bfdd3e",
+          "current_sha256": "35c844621be26ec948a05ef333dcfb2179edb58344a569adae27bf94de48b898",
           "disposition": "OWNER_MODIFIED"
         },
         {
@@ -295,7 +315,7 @@
         {
           "path": "mods/move_capital/workshop/change-notes.txt",
           "candidate_sha256": "2d8d4ff01011626624c1f411f6fdd2b6c1b1f19b20632a3c2c67bd8a29d93bd8",
-          "current_sha256": "fec2abb53c262cb82f7c8f8b55e24c2271b3f94cf19889a388f4a990b3871e42",
+          "current_sha256": "a4733e7ab448e572039e2dd2814b404ec5a2fcf0501cfd9262b2dd3947f249fe",
           "disposition": "OWNER_MODIFIED"
         },
         {
@@ -378,7 +398,7 @@
         {
           "path": "mods/recruitment_refresh/tools/preview.py",
           "candidate_sha256": "3263f9a50c1a959256b2b9d64a44a6cf3b610fb2f623ea4db78261ccaabaa3e0",
-          "current_sha256": "91e8ba3f28ba36e1a7c1ae49be5afd29f49989cc89a9d0717568b30eb862e8b4",
+          "current_sha256": "37f2eba886a0fe061f55e3ab1c8e73c8ad9c2b781f30dc64fac67881cbeec763",
           "disposition": "OWNER_MODIFIED"
         },
         {
@@ -395,19 +415,19 @@
         {
           "path": "mods/recruitment_refresh/README.md",
           "candidate_sha256": "48dd122208c9dab00047c6c9f0989efed187a7344c1317f21269f7781f6176e6",
-          "current_sha256": "b20e43395fd63cd343e18e1e4df6ec3ad7831d1711c6b08483b820b9f76f340c",
+          "current_sha256": "0fff77218dad0958cf35ce4a8abcf7036308bfd621bf6d696d3b9b1b4aab0b20",
           "disposition": "OWNER_MODIFIED"
         },
         {
           "path": "mods/recruitment_refresh/workshop/description.bbcode",
           "candidate_sha256": "5e849403022b695bddbc7881050290cc688d259cf63cdb5eb93a0e43f09bb3b5",
-          "current_sha256": "28cf51c412cff732e5af062b09bd40e8639a7fa7b355454f2f5d344974c57d54",
+          "current_sha256": "fe40e52dd362c3406112347f6f65d09482acee1daa10df0e18eb2b128ab2e05d",
           "disposition": "OWNER_MODIFIED"
         },
         {
           "path": "mods/recruitment_refresh/workshop/change-notes.txt",
           "candidate_sha256": "15fd7b01e0f7ca60a8a3336066c973ec0f23f72aeb404567cabb0e34e42ed667",
-          "current_sha256": "fbf0f094c5e1e9956f2b49aa9daf7a8daa1ee3b67137badb8bfc3b0574ab10fc",
+          "current_sha256": "d66ae175e1f0ecbe00e22ae423e1bb34de0377d9f28da2b383e57f50ea720bcd",
           "disposition": "OWNER_MODIFIED"
         },
         {
@@ -491,6 +511,18 @@
           "disposition": "REJECTED_NOT_WRITTEN"
         }
       ]
+    },
+    {
+      "task": "gpu-research",
+      "disposition": "REJECTED_UNSUPPORTED_ACTIONS",
+      "reason": "Candidate ignored requested Chinese output, conflated PCIe port number with physical slot, suggested unrelated PnP classes and nonexistent reset-driver syntax, and overclaimed physical/BIOS intervention as necessary. Owner wrote the evidence-based Chinese note from actual probes and primary sources.",
+      "files": [
+        {
+          "path": "docs/gpu-rendering-investigation-20261031.md",
+          "candidate_sha256": "f32854e376f0b19101a4383d9b3398b6f11755d8977509984b950d3af131b5eb",
+          "disposition": "REJECTED_NOT_WRITTEN"
+        }
+      ]
     }
   ],
   "owner_errors": [
@@ -504,8 +536,14 @@
     "native_warp_explicit_memory": "INCOMPLETE_SCENE_UI_NO_REFRESH_EXECUTED",
     "dxvk_lavapipe": "DID_NOT_REACH_CAMPAIGN_FIRST_TICK_NO_REFRESH_EXECUTED",
     "test_renderer_cleanup": "PASS_WRAPPERS_AND_OWNED_ICD_VALUE_REMOVED",
-    "current_check": "CAPITAL_ONLY_NATIVE_WARP_SCALE_1_CAMERA_PAN",
+    "current_check": "CAPITAL_CAPTURE_SESSION_ENDED_PROFILE_RESTORED_SCREENSHOTS_DEFERRED_BY_USER",
     "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031",
-    "renderer_receipts": "D:\\workspace\\.codex-wh3-runtime\\render-fallback"
+    "renderer_receipts": "D:\\workspace\\.codex-wh3-runtime\\render-fallback",
+    "gpu_state": "RTX_3060_AND_HISTORICAL_PARENT_PORT_NONPRESENT_CODE_45",
+    "updated_warp": "DOWNLOADED_MICROSOFT_SIGNED_NOT_INSTALLED"
+  },
+  "publication": {
+    "move_capital": "3830651933",
+    "recruitment_refresh": "3830548217"
   }
 }

@@ -2,9 +2,9 @@
 
 《全面战争：战锤 3》“招募候选刷新”Mod：普通领主/事务官招募刷新。本目录是[多 Mod 仓库](../../README.md)中的独立项目。
 
-`0.2.0 Alpha` 为拆分后的刷新专属版本，离线检查已通过，正在执行最简实机验收，随后更新[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)。见 [拆分设计与验收](docs/split-release.md)。
+`0.2.0 Alpha` 已更新[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)，标题、封面、独立 BBCode 和发布包均已核对。离线检查通过；按用户最新优先级先发布，当前拆分包完整实机回归和截图后补，未把待办标记为通过。见 [拆分设计与验收](docs/split-release.md) 与 [发布记录](docs/workshop-publication.md)。
 
-此版本不再包含迁都功能；迁都已拆为[独立 Mod](../move_capital/README.md)，正在单独验收和发布。旧存档中已经迁移的首都保持现状，不会回滚。
+此版本不再包含迁都功能；迁都已拆为[独立 Mod](../move_capital/README.md)，已发布于[独立工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933)。旧存档中已经迁移的首都保持现状，不会回滚。
 
 原 0.1.0 合并版已完成离线真实按钮刷新、正常招募及各 10 次连续按钮操作通过；受伤、不朽、已招募和未知履历人物保护通过。类型由引擎的普通自动生成标记与实际候选职业共同识别，冰雪宫廷等特殊训练不启用。本机完整玩家流程实测为基斯里夫波耶老爷和牧首，另有帝国两类法师共用原生池的隔离实验；不据此宣称全种族兼容。见 [同类 Mod 调查与新实验](docs/similar-mods-research.md) 与 [验收报告](docs/acceptance-report.md)。
 
@@ -39,4 +39,4 @@ py -3.13 -m venv .venv
 - [设计文档](docs/mod-design.md)
 - [测试验收与发布方案](docs/test-acceptance-plan.md)
 
-根目录发布工具 `tools/workshop.py --mod recruitment_refresh` 只允许上传与本目录验收清单的 `mod_id`、包名、哈希一致，且 L0–L3 全部 PASS 的包。工坊资料和既有条目状态在 `workshop/`；工具重试更新同一个条目，上传回执与公开页面验证分别记录。
+根目录发布工具 `tools/workshop.py --mod recruitment_refresh` 默认要求本目录验收清单的 `mod_id`、包名、哈希一致且 L0–L3 全部 PASS。本次用户明确要求先发布，显式使用[延期记录](docs/publication-waiver-20261031.json)仅延期该包的 L2/L3，原始待验状态保留。工坊资料和既有条目状态在 `workshop/`；工具重试更新同一个条目，上传回执与公开页面验证分别记录。

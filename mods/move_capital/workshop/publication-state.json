@@ -1,0 +1,50 @@
+{
+  "account_activity_before_sdk_init": {
+    "owner": "76561198273714027",
+    "status": "PUBLIC_PRESENCE_IDLE",
+    "game": null,
+    "online_state": "online",
+    "observed_at_utc": "2026-10-31T06:44:45.425511+00:00",
+    "server_date": "Sat, 31 Oct 2026 06:44:45 GMT",
+    "source": "steam_community_public_presence",
+    "response_sha256": "c74cc0ddd943ae4cbd46466db278d45ecffd44f881b7a85ff61eb8f3e1e2b9fc"
+  },
+  "release_acceptance": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS"
+  },
+  "mod_id": "move_capital",
+  "owner": "76561198273714027",
+  "app_id": 1142710,
+  "status": "PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
+  "item_id": "3830651933",
+  "required_items": [],
+  "pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+  "uploaded_version": "0.1.0",
+  "uploaded_title": "迁移首都 | Move Capital",
+  "description_sha256": "cf5c5eaefe73a37d4d521ce9bf0a9aad76750785794db0cf09ae84ec648c6c3f",
+  "preview_sha256": "e60e49345ac675b277939338b38409c5182e246fd9b065339c5bd9b92a10fae9",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933",
+  "version": "0.1.0",
+  "uploaded_at_utc": "2026-10-31T06:45:00.068545+00:00",
+  "verified_at_utc": "2026-10-31T06:54:05.290734+00:00",
+  "visibility": "public",
+  "anonymous_metadata_verification": "PASS",
+  "anonymous_page_verification": "PASS",
+  "dependency_verification": "PASS",
+  "changelog_verification": "PASS",
+  "preview_hash_verification": "PASS",
+  "download_hash_verification": "PASS",
+  "downloaded_pack_bytes": 15128,
+  "downloaded_pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+  "steam_final_mode": "offline",
+  "verification_for_version": "0.1.0",
+  "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
+  "final_offline_receipt": {
+    "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline-before-commit.json",
+    "sha256": "54643c2a853982806b35216fc3df8625856b5246bb50eaba229d77731456f284"
+  },
+  "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9"
+}

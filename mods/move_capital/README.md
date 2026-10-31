@@ -24,5 +24,6 @@ This mod provides a dedicated UI and logic for moving the faction capital to a s
 
 ## Status
 - **Development:** Complete.
-- **Testing:** Pending minimal real-game acceptance.
-- **Release:** Pending workshop upload.
+- **Testing:** Standalone native button/confirmation smoke test passed on the exact release pack. No combined enablement test was requested.
+- **Release:** [Public Workshop item 3830651933](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933). Title, BBCode, cover, dependency list and downloaded pack hash verified. Gameplay screenshots are deferred by the user's publication-priority instruction.
+- **Evidence:** [Publication record](docs/workshop-publication.md) and [acceptance results](docs/acceptance-results.json).
