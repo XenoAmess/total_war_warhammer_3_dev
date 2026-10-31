@@ -1,0 +1,284 @@
+{
+  "schema": "wh3.local-model-onboarding/v1",
+  "recorded_at_utc": "2026-10-31T03:34:30.194470+00:00",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "model": "qwen38-coder",
+  "config_sha256": "fa854f62ae217b7012c93e5ba31b5b4f4914def7e2db9e7184feab7a47c0704c",
+  "post_count": 4,
+  "actual_client_peak_in_flight": 2,
+  "server_inference_concurrency_observed": false,
+  "accepted_candidate_count": 2,
+  "accepted_candidate_scope": "Project documentation and repository instructions only, with owner edits.",
+  "initial_owner_failure": "PowerShell default stdin pipeline replaced Chinese task string literals with question marks. Both initial results were discarded; the truncated result was not joined to later output.",
+  "correction": "Write the dispatcher as a UTF-8 file, verify task non-ASCII characters in the actual request JSON, and resend both complete tasks with the same configured message layout and fixed system template.",
+  "owner_edits": {
+    "agents-policy": [
+      "Removed one-off onboarding narration.",
+      "Made source links usable and strengthened persistent default delegation and conditional parallelism.",
+      "Kept existing multi-Mod, Steam and Git sections unchanged."
+    ],
+    "project-usage": [
+      "Adapted source links, historical-machine scope and caller independence.",
+      "Qualified concurrency targets and output-budget retry handling.",
+      "Added observed encoding failure and current-machine outcomes using actual receipts."
+    ]
+  },
+  "adopted_targets": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "c5ba7d940436323200b3f983891e871d4628fab37a60255117a868f562e06a3e"
+    },
+    {
+      "path": "docs/local-model-usage.md",
+      "sha256": "3c469e6fbb7313647824a025886ca30da290df16472f345e92d848e131f865a1"
+    }
+  ],
+  "steam_observations": [
+    {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-10-31T03:29:02.717097+00:00",
+      "status": "offline",
+      "offline_mode": true,
+      "observation_method": "native_current_user_byte",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "source_sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610"
+    },
+    {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-10-31T03:31:14.031582+00:00",
+      "status": "offline",
+      "offline_mode": true,
+      "observation_method": "native_current_user_byte",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "source_sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610"
+    }
+  ],
+  "requests": [
+    {
+      "generation": 1,
+      "task_id": "agents-policy",
+      "attempt": 1,
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "started_at_utc": "2026-10-31T03:29:02.757166+00:00",
+      "finished_at_utc": "2026-10-31T03:29:21.140945+00:00",
+      "request_bytes": 27855,
+      "request_sha256": "d1bd9815a620604baae6b7a0ba1782c7f5ef13a916d788ddba3e54e6aef61742",
+      "http_status": 200,
+      "response_id": "chatcmpl-b1ad55c312030e7f",
+      "sse_done": true,
+      "finish_reason": "length",
+      "candidate_contract_valid": false,
+      "task_non_ascii_characters": 0,
+      "task_question_marks": 241,
+      "http_headers_ms": 1930.5171000305563,
+      "first_nonempty_content_delta_ms": 1931.8597000092268,
+      "total_ms": 18383.798399940133,
+      "usage": {
+        "prompt_tokens": 6916,
+        "completion_tokens": 2000,
+        "total_tokens": 8916
+      },
+      "cached_prompt_tokens_if_reported": null,
+      "disposition": "discarded_owner_prompt_encoding_failure",
+      "artifact_directory": "D:\\workspace\\.codex-wh3-runtime\\local-model-onboarding-20261031T032902Z\\agents-policy",
+      "artifacts": {
+        "attempt-1.content.txt": {
+          "bytes": 7627,
+          "sha256": "7e593c1a49cecfebf18256be5a24ec11aa5e2519972481d40598f498c5ec379a"
+        },
+        "attempt-1.headers.txt": {
+          "bytes": 2561,
+          "sha256": "2dad93d86b99f785cbf70baa6495c6e1f5b01f220fc0857aa8650ee7af2d6271"
+        },
+        "attempt-1.receipt.json": {
+          "bytes": 811,
+          "sha256": "42adaa94250e590b4e2580f0c553f69fdae68f7516d79646d06cff4040ed61a2"
+        },
+        "attempt-1.sse": {
+          "bytes": 209095,
+          "sha256": "a34d92dc77e7f3b75a12b2ff5ff30c59b5ddd4b3216b5ce9b471987e07d7638d"
+        },
+        "request.json": {
+          "bytes": 27855,
+          "sha256": "d1bd9815a620604baae6b7a0ba1782c7f5ef13a916d788ddba3e54e6aef61742"
+        }
+      }
+    },
+    {
+      "generation": 1,
+      "task_id": "project-usage",
+      "attempt": 1,
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "started_at_utc": "2026-10-31T03:29:02.757857+00:00",
+      "finished_at_utc": "2026-10-31T03:29:26.047056+00:00",
+      "request_bytes": 27970,
+      "request_sha256": "29bd70807f392e8b16f665643adea3725313d248732779ae91a126e090047b21",
+      "http_status": 200,
+      "response_id": "chatcmpl-bc288fb7d0c069a0",
+      "sse_done": true,
+      "finish_reason": "stop",
+      "candidate_contract_valid": false,
+      "task_non_ascii_characters": 0,
+      "task_question_marks": 322,
+      "http_headers_ms": 1723.502799984999,
+      "first_nonempty_content_delta_ms": 1739.4841000204906,
+      "total_ms": 23289.207099936903,
+      "usage": {
+        "prompt_tokens": 6967,
+        "completion_tokens": 2792,
+        "total_tokens": 9759
+      },
+      "cached_prompt_tokens_if_reported": null,
+      "disposition": "discarded_owner_prompt_encoding_failure",
+      "artifact_directory": "D:\\workspace\\.codex-wh3-runtime\\local-model-onboarding-20261031T032902Z\\project-usage",
+      "artifacts": {
+        "attempt-1.content.txt": {
+          "bytes": 10843,
+          "sha256": "a4bb613f97bf1cd9dd13f186c640f36229900212baf66553e8f3166c4f6441d1"
+        },
+        "attempt-1.headers.txt": {
+          "bytes": 2562,
+          "sha256": "acca49a1cce35c4f1c2e1ef32121055d2c09e3da696d33878d2c7ab463b7052c"
+        },
+        "attempt-1.receipt.json": {
+          "bytes": 799,
+          "sha256": "ec0e5abc34ec08e93ac62894d7c521b55016507e642b1d56004167edf91d5fdf"
+        },
+        "attempt-1.sse": {
+          "bytes": 299093,
+          "sha256": "7ce24688d5c80c766810dc7f58c9589f1dbe517c98a53594ad2fe5c9f2645696"
+        },
+        "candidate.json": {
+          "bytes": 10867,
+          "sha256": "f9ced54e4e83e4a0b523e3ce6dfe0ed6651838f1ba366d63f47a3d7a763cfc3f"
+        },
+        "request.json": {
+          "bytes": 27970,
+          "sha256": "29bd70807f392e8b16f665643adea3725313d248732779ae91a126e090047b21"
+        }
+      }
+    },
+    {
+      "generation": 2,
+      "task_id": "agents-policy",
+      "attempt": 1,
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "started_at_utc": "2026-10-31T03:31:14.070860+00:00",
+      "finished_at_utc": "2026-10-31T03:31:23.829896+00:00",
+      "request_bytes": 28437,
+      "request_sha256": "b7d8b9df282bd7513c34fadc2a9388880320af21f68471a11d740221fe8def5a",
+      "http_status": 200,
+      "response_id": "chatcmpl-bcc6b1097a78cef9",
+      "sse_done": true,
+      "finish_reason": "stop",
+      "candidate_contract_valid": true,
+      "task_non_ascii_characters": 241,
+      "task_question_marks": 0,
+      "http_headers_ms": 1154.5771999517456,
+      "first_nonempty_content_delta_ms": 1157.5415999395773,
+      "total_ms": 9759.043299942277,
+      "usage": {
+        "prompt_tokens": 7016,
+        "completion_tokens": 372,
+        "total_tokens": 7388
+      },
+      "cached_prompt_tokens_if_reported": null,
+      "disposition": "adopted_with_owner_edits",
+      "artifact_directory": "D:\\workspace\\.codex-wh3-runtime\\local-model-onboarding-20261031T033114Z-utf8\\agents-policy",
+      "artifacts": {
+        "attempt-1.content.txt": {
+          "bytes": 1507,
+          "sha256": "f0350418a684d22b04be2fe487307fd227b4b1ce790c415be9134dd53ce2f0fe"
+        },
+        "attempt-1.headers.txt": {
+          "bytes": 2562,
+          "sha256": "619f4d30a8f15d9d0db40dcb0ba5beea422cf2109e20105b0695b46e4ca09114"
+        },
+        "attempt-1.receipt.json": {
+          "bytes": 798,
+          "sha256": "0bc37b0230eef24e8891be4d850bb5b8742e0f685876fbafc69659870bdd7c0e"
+        },
+        "attempt-1.sse": {
+          "bytes": 44932,
+          "sha256": "3fbdffaf1e662ac0fa092d272b1a6ac512b89cc0df66c63db70a26bc1b6a1546"
+        },
+        "candidate.json": {
+          "bytes": 1509,
+          "sha256": "d921d81418c4b0097d088ffa804f413dd80f15af15c07559acb42246f57440ae"
+        },
+        "request.json": {
+          "bytes": 28437,
+          "sha256": "b7d8b9df282bd7513c34fadc2a9388880320af21f68471a11d740221fe8def5a"
+        }
+      }
+    },
+    {
+      "generation": 2,
+      "task_id": "project-usage",
+      "attempt": 1,
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "started_at_utc": "2026-10-31T03:31:14.071559+00:00",
+      "finished_at_utc": "2026-10-31T03:31:31.191170+00:00",
+      "request_bytes": 28714,
+      "request_sha256": "52ad5e9d085bc195835a19877628e9cb677f3194fa839cf4543ca22833186ded",
+      "http_status": 200,
+      "response_id": "chatcmpl-9b8a7414567033ba",
+      "sse_done": true,
+      "finish_reason": "stop",
+      "candidate_contract_valid": true,
+      "task_non_ascii_characters": 322,
+      "task_question_marks": 0,
+      "http_headers_ms": 1362.9806999815628,
+      "first_nonempty_content_delta_ms": 1364.4085000269115,
+      "total_ms": 17119.619200006127,
+      "usage": {
+        "prompt_tokens": 7101,
+        "completion_tokens": 1460,
+        "total_tokens": 8561
+      },
+      "cached_prompt_tokens_if_reported": null,
+      "disposition": "adopted_with_owner_edits",
+      "artifact_directory": "D:\\workspace\\.codex-wh3-runtime\\local-model-onboarding-20261031T033114Z-utf8\\project-usage",
+      "artifacts": {
+        "attempt-1.content.txt": {
+          "bytes": 5324,
+          "sha256": "940f50fe59e9c1460d4cffc178091c79e1af9ca8307ec0c9859e63865747bd13"
+        },
+        "attempt-1.headers.txt": {
+          "bytes": 2562,
+          "sha256": "93944c61da7e0c95c08e7102c36e061ec1c05f14be9747f35d7b2ef13607759c"
+        },
+        "attempt-1.receipt.json": {
+          "bytes": 800,
+          "sha256": "fdf18139eea4808ef0e15c5f9d656f9b123ff89da96321c0ca84d0de9b0443fe"
+        },
+        "attempt-1.sse": {
+          "bytes": 177971,
+          "sha256": "248b2cce03ce71b339df4e4e0403bc2aa3c2eb9e4b8a368587cbd459b0988589"
+        },
+        "candidate.json": {
+          "bytes": 5326,
+          "sha256": "e7a557d2427a73648fc68d709c324135ae94ed06d6fb45524c72e225777f01b5"
+        },
+        "request.json": {
+          "bytes": 28714,
+          "sha256": "52ad5e9d085bc195835a19877628e9cb677f3194fa839cf4543ca22833186ded"
+        }
+      }
+    }
+  ],
+  "boundaries": {
+    "production_code_changed": false,
+    "game_launched": false,
+    "model_code_compiled_or_run": false,
+    "claimed_service_capacity": null,
+    "previous_machine_results_reused_as_local_evidence": false
+  }
+}

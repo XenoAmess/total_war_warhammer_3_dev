@@ -1,0 +1,208 @@
+# resume91 本地模型真实调用与能力边界
+
+machine_id: `xenoamess-full-tower-eb9d2c1186`。源码模型 HTTP 唯一协调为 `/root/models91`；运行期决策 HTTP 由 `/root/runtime91` 独占并预留至少一个请求位。用户本次明确续行并要求高并发使用本地模型，旧休假 STOP 只作历史保存，未改写旧队列或原件。
+
+本轮可复用经验已归入既有[可行性记录](../local-model-executor-feasibility-2026-10-28.md#2026-10-31-resume91高并发真实采用与审阅成本)与[能力边界记录](../local-model-capability-boundary-2026-10-28.md#2026-10-31-resume91方法与整图候选的实际对照)，并与此页互链。两全局文件只追加有原件的本轮结论，owner审阅勘误、schema冲突与真实模型错误分别归因。
+
+采用 `docs/local-model-executor-config.json` 的 `8080/qwen38-coder`、固定三消息源码前缀、temperature0、thinking=false、有限 max_tokens、SSE 有效内容 TTFT/headers/总耗时/usage 分记；cached 字段未报告时保持未知。复用旧 call90.py 的维护副本 `D:/ck3-state/model-dispatch91/call91.py`，未新增调度服务。每一实际请求的完整 body 为各任务目录 `REQUEST.json`，变化任务真实位于最后消息；不是仅 POST 路径或 manifest。
+
+## 19:06:52Z 后继观察与审阅勘误
+
+`2026-10-30T19:06:52.777474+00:00`：97个真实任务/121次HTTP尝试均已传输终态，82个stop/完整JSON、15个length截断；客户端峰值25，发生于18:58:27.389244Z。第三批24次首流ConnectionReset10054分别保留partial并按配置退避到第2尝试，不把接口中断计推理失败。该刻服务running0/waiting0；随后立即滚动派4个仍未闭的小任务（M6 helper/core-test、M0并发source review、M3 numeric oracle），不是固定配额补位。
+
+完整逐项审阅/归因持续写 [REVIEWS91.json](D:/ck3-state/model-dispatch91/REVIEWS91.json)。新增真实结果：M1 Context02原样guard及QueryFailure fixture在D采用、owner补反控后28P；liege17第二轮原样header strictCL0/原118B8分支通过；Surrender新方法原样严格编译0/新3参数3P；M7 special三Java raw-return方法原样严格编译0/36断言，解释metadata仍拒绝；M3 succession返工73行callback原样语义采用，owner提供映射/main后原184B2case/26检查通过。以上都是D软件范围，不能外推生产部署或Game行为。
+
+runtime-install104完整模型候选16.634s返回：factor activeGame与catalog末尾替换被接受；owner另修factory入口和helper可见性。2叶strictjavac0/6.911s，既有PhaseDeadline4P；S/Z采用由runtime记录，慢catalog真实正向留105，不把现成4P称实机通过。初次已发请求没有后来补到的Configuration整类，这个输入事实保留；owner后续结合其operationTimeout合同审阅，无需追认补发。
+
+审阅成本与勘误必须保留：
+
+- M2 random-Java首轮及Java JSON纠正包的字符串曾被owner误读外层JSON转义。真实提取源码核对后撤回该缺陷；M2第二轮因此逐字无diff，虽有真实HTTP也不是新修复。M2随后实际javac44/45字符字面量失败才是另一真实返工03。Court CASE的转义缺陷同样已撤回，其余确切拒绝仍保留。
+- Java material所用Binding/FrameLoader/Original getters/settled都真实存在，owner先前API发明分类已撤回。最终未编源审为INCOMPLETE_AUTHORITY_EVIDENCE：authority/journal、实际catalog/action/replay对象同一性及证据/producer closure不完整，原样0采用。不能将该项计不存在API失败。
+- 协调岗将hashJava任务后再接含另一Return schema的完整诊断，造成最终输出要求冲突；缺Java源码归封包错误，不能计Java编译失败。旧REQUEST保留；Java02整份替换末消息为唯一candidate_java schema，后续length及实际错误独立评审。
+- M2 GUI02稳定源缺少首轮已接受新selector正文，只给了响应路径而模型无文件工具；这是上下文设计缺口，不能据此判单语句能力上限。owner已接管，不事后重发追认。
+- 旧模型pair132本轮原样Java对原71B native12270例/0差异，接受D raw predicate但拒绝其几何命名；它属于resume90旧候选的本轮验证，不加到resume91 POST数。
+
+多个完整ASM/全图装配候选出现重复imports/正文直至length、ABI/指针和返回值错误。已在具体链重复失败后交owner接管，模型继续承担有完整声明的小方法/纯数值/实际诊断；不对已完成分析做第三次复述，也不将单项失败定为永久能力上限。静态拒绝与真实编译失败分别记录。部分较早exec session后继poll返回Unknown process id，工具OS退出码不可得，保UNKNOWN，不由HTTP SUMMARY反推exit0/1。
+
+## 真实并发与传输观察
+
+`2026-10-30T18:54:37.666637+00:00` 观察已实际启动 **42 个任务、42 次 HTTP 尝试**；18 个终态中12个 stop/完整 SSE/可解析 JSON、6个 length 截断。当前客户端在途24，客户端区间峰值24发生于18:53:53.998501Z。此数按本机 POST_BEGIN 至 ATTEMPT_END 区间计算，包含网络/服务等待，不能当作服务端推理数。
+
+同次 `/metrics` 实际报告 running24、waiting0、KV57.58%；这是独立服务指标。D盘余577.23GiB、可用物理内存20.18GiB、commit余65.27GiB。运行预留保持；后续按真实服务队列、终态、错误与真实待办滚动，不设每岗调用配额。
+
+持续机器索引：[STATUS91.json](D:/ck3-state/model-dispatch91/STATUS91.json)、[BATCH01-JOBS.json](D:/ck3-state/model-dispatch91/BATCH01-JOBS.json)、[BATCH02-JOBS.json](D:/ck3-state/model-dispatch91/BATCH02-JOBS.json)、[封包读回](D:/ck3-state/model-dispatch91/packets/PACKET-ASSEMBLY-READBACK01.json)。BATCH 是已封包清单，含未 POST/后取消意图；真实调用数仅取 EVENTS。每任务保留 REQUEST、原始 SSE、逐尝试 CONTENT/RESULT、SUMMARY；HTTP200或完整JSON均不授采用信用。
+
+## 已收到的真实审阅与采用
+
+| 任务 | 传输与实际审阅 | 编测/采用边界 |
+| --- | --- | --- |
+| runtime-sem103 | 首轮完整，headers14.445s/TTFT14.446s/总25.645s；完整SEM误用LEDGER小预算的两行typed parser/reference修复 | owner严格javac0；真实canonical102完整readSettledSameGame、529451B SEM实际transport与错Game guard 2P0F；S/Z采用，MB由runtime增编。模型源码候选不是运行期决策。 |
+| runtime-obligations-source | 首轮完整且编译0，但真实测试仍0P1F：raw SHA目标正确，大小写仍错 | owner补equalsIgnoreCase后1P0F；记MODEL_ASSISTED_OWNER_CORRECTED，不能记原样通过。接管时二轮尚未POST，已取消，不计模型调用。 |
+| m3-converter120 | 首轮完整，owner原样采用D方法 | 单TU compile0/run0，20 scenes、363总Check=263基础设施+100业务语义；没有Game信用。 |
+| m3-filter119 | 两轮完整候选仍含布局/数组拷贝/快照别名/未初始化错误，整候选拒绝 | owner重写unsafe fixture后29 scenes、1210总Check=931基础设施/fixture+279原生语义。模型13case表可留，不能将owner绿追认为完整候选采用。 |
+| m1-native-liege17 | 首轮完整；实际CL exit2/C2679：119B赋118B数组，且假造输入文件名 | 未采用；已提供真实编译诊断窄纠错。 |
+| m1-context-consumer | 首轮完整但4处捏造canonical API且byte[].equals身份比较 | 实际javac失败；第二轮按真实API窄纠错。 |
+| m0-queue-build-plan | 首轮完整但12 objects漏query mailbox、坏hunk抄未改C++且漏main接线 | 源审拒绝，未编测；第二轮要求四段完整小字符串而不输出整fixture。 |
+| m0-core-wrapper | 首轮完整但重复allocator、违规改Mapping、fallback pair宽度/offset错误和硬写未测计数 | 源审拒绝，未编跑；保留实际同前缀纠正请求。 |
+| m3-bank31 / m3-succession | 首轮分别5000/7000 length截断；另含明确ABI/dataflow与巨大重复布局错误 | 不拼接partial、不自动重试length；分别收窄五字段与<=100行回调/State返工。 |
+| M5四业务体 | 12FAD50完整但callee/alias错误拒绝；其余3项6000 length | owner缩短为target stores/args数组的1500–2400预算新任务；输出控制失败与语义错误分记。 |
+| M7 preload/special | preload6500 length且条件/参数错误；special完整但寄存器/返回分支错误 | 原候选均拒绝；新轮分别限五路径表与纯Java返回合同。 |
+
+主要采用原件：[SEM103 SUMMARY](D:/ck3-state/resume91-runtime/sem103-regression/SUMMARY.json)、[Family DELIVERY](D:/ck3-state/resume91-runtime/obligations/DELIVERY.json)、[M3 religious RESULT91](D:/ck3-state/resume91-m3-native/religious91/RESULT91.json)。其它原始响应和审阅留各D独占目录；未报告的状态保持未确认，不把静默当采用。
+
+## 本轮探索边界
+
+当前以真实新任务并行测试：小方法修复、实际编译诊断纠错、纯数值ASM重现、单TU typed fixture、多文件consumer合同及同World HELLO/fullSnapshot装配。提供输入大小仅说明上下文，不等于实际改写规模。完整ASM ABI/内存布局重建仍由owner主导；模型负责独立可核的小段，较大候选隔离验收，不阻塞同Game接续。
+
+尚未POST的worker launcher维护在runtime owner接管采用后取消，不能追认模型实现；已人工完成Ranking亦未重发。源码候选与运行期qwen selector分开计数，本岗没有Game动作或运行期决策HTTP。
+
+
+### 用户更新模型 IP：192.168.1.11 的实际首请求
+
+用户于 2026-10-31 本地日期两次指定新 IP 并要求记入运营；Root 已改唯一配置与 AGENTS。后续源码 HTTP 从配置读 `http://192.168.1.11:8080/v1` / `qwen38-coder`，不继续旧1.7重试、不回8000。旧 command106 五次503+一次reset保留原接口失败归属；未POST的 archive107 在 owner 完成后取消，不补调用。
+
+新地址首真实 P0 `runtime-storage-hotpath108`：UTC20:17:28.587641→20:17:38.031662，HTTP200stop/SSE DONE/JSON，headers3.612s、TTFT3.614s、总9.444s，25828in955out、cached未知、实际OSexit0。四完整源117152字符，末任务仅普通storage两方法；未授编测/采用/加速/Game信用。候选结束即直交Java writer，首答root-loop编辑可用但漏lock-path重复stat，owner已交窄纠错，未将漏项当接口失败。原件 `D:/ck3-state/model-dispatch91/runtime-storage-hotpath108/`；迁移receipt为同根 `NEW-IP-MIGRATION91.json`，call91事件自此显式记录base_url。
+
+此后新IP真实候选按到达独立派发：M5三叶只保留Unavailable/IOException原因，Storage第二方法纠错与M6自然START单方法曾并发，canonical108只删两个纯本地查询的旧deadline guard；各终态已立即直交原owner。运行期HTTP仍归runtime，本岗不调用Game。新地址首成功不是长期服务稳定性或模型能力上限结论，正式经验反链：[可行性](../local-model-executor-feasibility-2026-10-28.md)、[能力边界](../local-model-capability-boundary-2026-10-28.md)。
+
+Storage后继最终回执：第二轮8.943秒/481out，root/lock两hunk分别原语义采入，owner生产语义改0；三源strict0/3.664秒。首跑7P1F、owner修测试清理后仅失败1P/2.185秒，非同JVM8P。Runtime S/Z及正式FF `2377f74ccf` 分记；未授量化提速，MB109 loop/新增日另记。
+
+
+### 直接派发运营与规模递进（20:37Z冻结观察）
+
+用户再次要求加大力度后，Root已授权八M/Java/runtime源码owner独占taskid直接调用现有 `D:/ck3-state/model-dispatch91/call91.py`，models91继续统一配置/归总，results91即时交付；不再等中央逐包封审或ACK。不新增平台，不重复绿任务。调用器统一读取1.11/固定system/model/defaults；已有EVENTS目录拒重复，支持三消息body或现成source_files/task_path有限spec。运行决策仍runtime独占。
+
+UTC20:37:22.912新IP实际客户端峰8@20:36:59.164561、在途4，有限metrics running4/waiting0/KV原值0.1489899；20:37:31稍后快照39任务/41BEGIN39END、在途2。旧IP峰25不计新IP；24–32目标未达到，运行预留一位只是调度意图。29源闭包105690in6500out虽200但length，81.093秒；Focus95820in1698out完整54.942秒；ledger13源55611in3259out完整66.547秒但源审拒；NamedValue完整候选6249out/92.104秒仍源审拒未编。保真实大任务探索，不把输入规模写成改写规模或把完整输出当采用。
+
+canonical108原样两edit实际必要1P并正式FF `9f9728ecc7`，Storage两轮各一生产hunk原语义、owner生产改0，三源strict0、首7P1F后owner清理修正仅失败项1P，FF `2377f74ccf`，无加速/新增日推断。ledger纠错POST后Root取消fullproof重复审计，晚到scope另记。新IP首运营三append/config观察已正式FF `b1acb0d826`，旧观察保history；本节及两全局经验只EOF新增，不覆盖正式旧字节。
+
+
+后继 Army cohort04：52源/116097prompt4330out完整stop82.321秒，owner将12真undefined生产者/14obj模板配置物化D，实际编/链0，仍待验证，不授生产/Game。新服务实际接受120427总tokens，窗口声明上限仍未知。
+
+
+### resume91 真实未解诊断的 thinking 请求观察
+
+Root 明确授权在仍未解的M5端到端诊断上做一次单请求模式探索：`m5-end-to-end110-correct` 与 `m5-end-to-end110-thinking` 的实际三条messages逐条完全相等（稳定源475409字符、末诊断54267字符），只有 `enable_thinking=false/true` 与 `max_tokens=10000/16000` 不同；全局默认false未改。两者均真实HTTP200/stop/SSE完整、调用器实际OS0：前者113262prompt/2271out、34.852秒，后者113298prompt/2698out、39.214秒，均未触输出上限，cached未知。
+
+逐条读取最终原SSE：889/1115个JSON记录，delta键只有role/content，未见reasoning/reasoning_content/reasoning_tokens键或content中的think标记；usage仅prompt/completion/total。只能记录“未见可见reasoning”，不能凭请求flag认定真实内部模式已启用，也不能据字段缺席认定不存在内部推理。prompt差36的原因未知；输出预算不同、时序及并发未控制，不作速度、缓存或能力因果结论，语义采用另由owner按当前源审阅。本试验没有重发已解答案或授Game信用。可复核纯事实对照为 `D:/ck3-state/model-dispatch91/THINKING110-ACTUAL-COMPARISON.json` 与 `REVIEWS91.json` 的mode_comparison，原REQUEST/SSE保留。
+
+
+### resume91 111–112 的最终采用与新 IP 库存核实
+
+UTC `2026-10-30T21:50:32.134616+00:00` 新IP实际 **126任务/135次POST尝试**，当刻客户端在途1，峰值仍8@20:36:59.164561Z；目标24–32未达到，旧1.7峰25不计入新服务。数字来自EVENTS实际base_url，含登记的M1首任务外部输出路径，不用已封包清单代替HTTP。客户端区间含网络/服务等待，不是服务端推理数。runtime预留1为调度意图，不是服务端硬保留。完整库存与快照在 `D:/ck3-state/model-dispatch91/OPERATIONS-INVENTORY111.json`。
+
+八M逐项核实：M0/M2/M5/M6/M7无完整当前输入且尚未实现的未派READY；M1经理已阶段结束，新库存未知，不为补八队唤醒空岗。M3实际新slot/entry16B已取得并直接POST `m3-ef0-entry144`，后继完整producer原件待真实获取；M4新809B整方法首length、一次诊断纠错完整但语义拒绝，停止同组第三轮。已写候选等待验收与缺真实自然producer/body不是可重派实现，不以旧绿或确定性搜索补并发。后续真实输入仍由owner复用现call91直接并行，不等中央ACK。
+
+`java-read-durability111-scope02` 完整25源487832字符、101335prompt/751out，17.803秒stop却仅分类、没有实现，源码采用0。后续真实拆分 `java-read-binding111-narrow03`（9完整源125506字符，26365in/1345out，11.080秒）产生两方法与四caller，owner生产语义改0，strict2源0/2.050秒；`java-read-evidence111-body04`（11完整源及7片段130241字符，28509in/730out，7.809秒）方法部分采用，owner补廉价ExactRef角色/optional qualification解码，strict1源0/3.671秒。两者均已S/Z并由MB112装载；专门READ计数行为验证仍待完成，不授性能提升或游戏动作。证据在 `D:/ck3-state/resume91-java-delivery/read-durability111/{read-binding-narrow03,read-evidence-body04}/candidate/DELIVERY.json`。
+
+`runtime-no-progress111` 两轮均完整stop/实际OS0：101670in/2761out及102565in/4874out，但Optional嵌套、typed Controller观测、wall/pending/日期及测试API等整候选错误，最终模型生产采用0。owner接管3生产叶+1测试，严格编译0，17P0F0skip/1.881秒；后到的去>=2观察范围另记。运行岗S/Z采用及MB112六源增编0/9.409秒、21:47:50Z同Game LOOP_START/next29是独立运行事实，不追认为模型多叶闭合或运行期决策。原件为 `D:/ck3-state/resume91-runtime/no-progress111/{REVIEW111.md,RESULT111.json}`。
+
+body04封包实际执行PowerShell prepare/readback违反本轮cmd-only，owner已承认，作为操作审计单列；保留原件，不重跑模型/已绿，不将其当模型推理失败。逐项采用以owner最终回执覆盖raw RESULT默认 `adopted:false/NOT_YET_REVIEWED`；whole/fragment、配置/分析、隔离fixture/生产粒度不同，不拼成虚假的统一采用率。
+
+
+### resume91 再次扩大真实派发与 typed 合同后的采用边界
+
+本轮再次恢复运营的冻结窗口为UTC22:48:46→23:10:57：新IP188→246个真实逻辑任务、201→264次HTTP尝试，新增58任务/63尝试。末刻2个客户端在途，新IP实测峰仍8；目标超过8尚未达到，旧1.7峰25不混入。数字来自标准目录和三个显式external指针的POST_BEGIN/ATTEMPT_END，prepared或owner宣布将发不计BEGIN。有限metrics实际22:52:16 running0/waiting0/KV0、22:58:34 running4/waiting0/KV0.09469697；不能从客户端区间推服务端推理数，也没有证据将峰8视为服务容量上限。后到请求独立滚动，不覆盖此冻结事实。
+
+完整API前缀复用后，Archive三个真实场景、M1 late-cause生产/行为、M2 owner已闭135B typed合同后的C++fixture/Javaoracle、M3 LookupCaseApi的case方法、M6日志生产/测试与时钟负例等均owner直接并行POST；不经过models中央封审/ACK。多轮完整ASM/Host恢复错误的原任务停止，owner掌握语义后再派真正未写的typed方法；不让模型复述已经写完的答案，也不把未知原件包装成READY。M0拟Java物化器在POST前取消，普通Git准备不造模型任务。完整逐请求/库存/实际重试证据为 `D:/ck3-state/model-dispatch91/OPERATIONS-EXPAND115.json`、各任务EVENTS/REQUEST/SSE/RESULT和REVIEWS91。
+
+新增实际采用对照：M6 timeout113的十次真实POST后，owner提供harness、模型有限constructor/三测试方法经真实compiler诊断纠正，五生产源+host严格0/2.776秒，3个新JUnit方法3P0skip/1.501秒；六叶正式97914337c8/S-Z采用分记。unknown-method04请求未带完整直接NativeActionPort record，05补全后修正，不能把该上下文缺口算成“完整API已给仍发明”；完整测试候选失败与owner固定harness成本也保留。证据 `D:/ck3-state/resume91-m6-native/operation-timeout113/{MODEL-REVIEWS.json,MODEL-BOUNDARY-OBSERVATION.md}`。
+
+M0 portable04/05只部分模型配置/生成器加owner修正被采用；其后正式target首次configure0/4.532秒、24TU+link0/79.590秒、registeredCTest1P/0.319秒是新的构建交付验证，没有新增模型调用，也不是raw整候选原样成功。M7 publisher两个完整Host候选拒绝后owner接管Win32/FFM，Scenario/Code局部与owner修正组合，最终3Java严格0、受控RAM8case/146检查通过；不授CK3callee、生产、Game动作或新增日。输入完整源文件数/字符/token、实际改写方法、owner修正/缺上下文、编译与行为结果分别记，不据这些对照给通用能力上限或统一成功率。
+
+详见[可行性](../local-model-executor-feasibility-2026-10-28.md)与[能力边界](../local-model-capability-boundary-2026-10-28.md)。
+
+
+
+
+### resume91 117–118 真实运行决策与请求参数审计增量
+
+有限事件截止为UTC 2026-10-31T00:18:08.629162+00:00，窗口从2026-10-30 18:40开始，首个实际BEGIN为18:49:40.894697。源码候选共450个逻辑任务、499次尝试，截止时450项终态、在途0；其中新地址192.168.1.11为334项/353次，客户端区间峰仍8（20:36:59.164561），没有达到24–32。旧地址历史峰25另列；客户端区间不等于服务端同时推理数，也不能视为容量上限。此截止后的新BEGIN独立记录，不回填成截止时在途。
+
+旧REVIEWS91.json冻结cohort保持字节与SHA不变，新增来源/审阅放REVIEWS91-INCREMENT118.json；原RESULT默认NOT_YET_REVIEWED/adopted=false不能覆盖后到owner回执，未审仍unknown。各状态同时包含整稿、部分、配置、D隔离、生产采用，不能相加成统一成功率。五项Java小批的真实区间仅峰2：A/B在00:05:01–14重叠，bindings在00:05:25–40，lifecycle/finish在00:05:41–54重叠，并非五项同时。
+
+Root Stop4四项真实审阅已纳入：生产首稿为部分采用，真实strict首红BooleanSupplier.get()后，compiler02原样纠正为getAsBoolean、2生产源strict0/2.155秒；测试首轮真实0P1F保留。fixture02保留部分结构，owner补外部flag真实翻转及Wait分支断言后，1新方法+1既有手停恢复方法同JVM2P0F0skip/1.356秒。两生产叶正式5d5629653c/S-Z采用，不把四个HTTP完整回包算四次整稿原样成功，也不授实际在批停止/重启或游戏动作信用。原始raw终态与最终owner采用回执分别保留。
+
+117是本阶段首次真实普通运行期qwen：2026-10-30 23:40:24.2569706Z BEGIN，实际请求1,180,737B；HTTP200，headers43.635秒/有效内容TTFT43.636秒/total44.365秒，23:41:08进入婚姻ActionSelected。随后Cadence mutable head身份审计与callback完整JSON小预算阻断，Native提交0、新增日0。118于23:57:55.1841796Z再次真实请求1,187,609B，200/headers43.888秒/TTFT43.890秒/total44.633秒，仍选婚姻；callback预算已越过，但历史.class SHA审计再次阻断，真实23:58:42 END4/next36，提交/新增日仍0。这里只独立核实117/118两次业务HTTP，不把源码call91调用充作运行期决策，不覆盖后继worker现场，也不抹去此前开局FOCUS的历史决策。
+
+参数勘误：m6-http-progress116-iofailure-method04的minimal input spec虽声明frequency_penalty=0.3，但actual REQUEST.json没有该键；call91 minimal-spec白名单未转发。故该单不是已执行的0.3惩罚参数实验，服务默认值/效果未知。实际REQUEST SHA256为e383593c14deb0c59f16f9a51ca47b85c7e752917eefd4c51687b98ed502857d。只修正运营描述，没有为验证再POST、修改caller或全局配置。
+
+证据：`D:/ck3-state/model-dispatch91/OPERATIONS-INCREMENT118.json`、`REVIEWS91-INCREMENT118.json`、`RUNTIME-ORDINARY-QWEN117-118.json`、`FREQUENCY-PENALTY116-AUDIT.json`；Root四单REVIEW及`D:/ck3-state/resume91-root/stop117/ADOPTION-REVIEW.json`。采集仅标准任务目录、三个显式external事件入口和已知worker stdout，未扫描CAS、未新增模型HTTP。
+
+互链：[可行性](../local-model-executor-feasibility-2026-10-28.md)、[能力边界](../local-model-capability-boundary-2026-10-28.md)。
+
+
+
+
+### resume91 usage120 源审与真实运行 token 观测
+
+Root usage120四单审阅单列为REVIEWS91-USAGE120.json，不回写旧99任务/100尝试冻结cohort或原transport SUMMARY。生产首稿真实strict1/1.635秒为漏BigInteger import；compiler01原样import纠正后strict0/1.917秒、owner生产语义修改0。测试首编7错来自owner classpath漏既有PlanningFixtures，不计模型源码失败；补实际依赖后编译0。首行为1P1F的真实NoSuchFileException来自模型虚构attempt路径，保留失败；fixture02修真实文件引用及负例后，owner再补单次调用、exact-zero、两usage对象替换三组断言，最终2新method同JVM2P0skip/7次软件HTTP、Java0/2.131秒。此时共享采用/装载尚未获回执，不预授loaded、真实运行usage捕获或Game动作信用。
+
+已知worker117/118/119/120的原stdout分别记录1/1/4/1次完整ordinary HTTP END，共7次；Root/运行岗确认均返回SELECT、Native提交仍0。独立精确读取119末次与120的last_plan visit.evidence.model_decision_receipt→attempt，不枚举CAS，也未打开1.2MB request body；两份raw SSE各14,217B和15,598B，均小于20KiB。usage行实际choices非空但delta={}、没有有效content，因此仍应保留usage对象；不是只有choices=[]才可能带usage。
+
+| 运行样本 | request bytes | reported prompt | completion | total | cached |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 119第4次 | 1,207,885 | 341,236 | 142 | 341,378 | null，未报告 |
+| 120 | 1,213,368 | 342,785 | 142 | 342,927 | null，未报告 |
+
+这些数字来自两份原始SSE的reported usage，不由字节数估算token；cached缺字段保持null，不能当作0、缓存未命中或命中证据。也不从两个不同请求的耗时/大小推出缓存因果或能力上限。精确反链、原usage对象及每worker真实HTTP计数在`D:/ck3-state/model-dispatch91/RUNTIME-ORDINARY-REPORTED-USAGE120.json`；四项REVIEW与`D:/ck3-state/resume91-root/usage120/DELIVERY.json`另列源采用事实。本次仅只读已知记录，无新增HTTP、API探测、Native查询或CAS扫描。
+
+
+### resume91 rolling122 冻结运营、后到回执与运行采用
+
+固定快照为UTC 2026-10-31T01:07:39.156291+00:00，原件`D:/ck3-state/model-dispatch91/ROLLING122-010739.json`。源码候选累计507个逻辑任务/557次尝试，新地址192.168.1.11为391项/411次，截止当刻客户端在途4，历史区间峰8。同期metrics为running4、waiting0、KV0.0845959596；这些均为该时点观察，客户端POST区间不等于服务端同时推理数，也不表示容量上限或后续永久状态。后继BEGIN/END不回填此窗口。
+
+源审另有较早截止：`REVIEWS91-INCREMENT122.json`冻结至00:58:45.140819，新增审阅32任务/33尝试，分组为raw method/body5、owner纠正测试4、owner纠正源码3、拒绝18、部分研究分析1、未选用诊断原型1。旧118 cohort的10项unknown获得后到回执，仅追加补记；`REVIEWS91.json`、`REVIEWS91-INCREMENT118.json`与`REVIEWS91-USAGE120.json`三个基线未改。分组包含不同采用粒度，不能合成整稿成功率，HTTP终态也不能替代owner审阅。
+
+后到M4原件单列，未并入上述源审截止。329首384例Native差分0失败、核对44,051个完整40B backing slots；边界为原329到标准copy及opaque776，未执行原776/copy1653完整body。producer R2原样采用，core两轮拒绝后owner接管（相对被拒稿+41/−73行），consumer保留模型stream/codec并由owner修补+31/−40行。新776 producer R2经owner仅score-prefix修补+21/−47行，单源strict0/0.675秒、首次512例生成0/0.271秒、44,600 slots；809 producer R2零Java修改，单源strict0/0.685秒、首次384例生成0/0.293秒、65,312 slots。这两项是生成回执，尚非Native差分；776 core/窄forward截断及809 pairphase两轮源拒、owner core/wrapper接管成本分别保留，不授full809、正式部署或Game信用。原件为`D:/ck3-state/resume91-m4-native/merge329-single91/ACTUAL-ACCEPTANCE01.json`及`merge776-single91/INPUTS-ACTUAL03.json`、`sort809-single91/INPUTS-ACTUAL03.json`与各SOURCE-REVIEW。
+
+时间勘误按实际`EVENTS.jsonl`：`m4-merge776-inputs91`的ATTEMPT_END为01:04:51.813943，早于`m4-sort809-inputs91`的POST_BEGIN 01:05:07.144992；这两个首轮producer请求没有重叠。未poll标签或宣布将发不计在途。
+
+usage120后到正式采用回执为`D:/ck3-state/resume91-root/usage120/LIVE-ADOPTION122.json`：正式commit `6d7f6a74f6`已实际装载MB121，补充此前“尚未获回执”的历史时点。worker121/122各新增一次完整ordinary HTTP，与117–120已核实的7次合为9次；业务请求与上述源码候选数分别统计。
+
+| 运行样本 | reported prompt | completion | total | cached |
+| --- | ---: | ---: | ---: | --- |
+| 121 | 344,340 | 137 | 344,477 | null，未报告 |
+| 122 | 345,900 | 139 | 346,039 | null，未报告 |
+
+这些是实际运行的reported usage；缺cached字段不作0或命中判断。正式源码采用、MB装载、运行期HTTP已分别有回执，usage本身授予的Native提交信用仍0，不外推APPLIED、SAVE或新增游戏日。本文档编写仅读取上述已有原件，未额外新增模型POST或编测。
+
+
+### resume91 rolling126 冻结运营与后到采用
+
+UTC 2026-10-31T01:43:10.791756快照（`D:/ck3-state/model-dispatch91/STATUS-ROLL126-014310.json`、`ROLLING126-014310.json`）：新IP累计432任务/454尝试、当刻在途0；00:58:45之后64任务/66尝试全部终态，该阶段客户端区间峰6（01:12:02.295081），新IP历史峰仍8（20:36:59.164561）。旧IP峰25另列，客户端区间不等于服务端推理并发；运营监视不计模型任务，后继POST不扩此窗口。
+
+`REVIEWS91-LATE-ALIAS-M7-123.json`补记Root alias五单：compiler纠正原样strict0、owner生产语义修改0；两项独立新测试均绿，分次调用，非同JVM2P。第三次fixture候选代码拒绝后，owner仅重跑此前失败负例1P，不能算三份测试整稿采用。实际122归档样本离线从1,224,362降至800,340B，833行完整typed还原；该离线样本/本包当时尚未获自然加载回执，无token、cache或速度实测结论。旧冻结review与raw transport记录保留。
+
+M7正式Java `d17b7d9580`、Native `c703f434d2`分记：两C++ core函数原样、owner算法修改0；同commit header/core/test/module的minimal CMake wrapper完成2TU/link/CTest，14case/781checks。Java6生产源、2JUnit、7P覆盖14scenarios；其他CI/adapter测试多处为部分采用加owner修补。15次POST的包内峰4并非全服务峰，不授fullRoot/runtime/Bridge archive或hosted CI通过。精确回执为`production-idler91/FINAL-BINDINGS03.json`。
+
+冷回放整稿源拒与M4有限producer/源审范围见[可行性](../local-model-executor-feasibility-2026-10-28.md)、[能力边界](../local-model-capability-boundary-2026-10-28.md)。本次文档交付0POST、0编测，不否认此前真实运营观察；未改配置，后继review分布待实际回执补记。
+
+
+### resume91 review126 后到审阅补记
+
+此前“分布待收”现获补记：`REVIEWS91-INCREMENT126.json`固定01:43:10截止，21任务/21尝试均stop、21项owner审阅齐；原OS18项0/Root3项未知，未知非拒绝。
+
+异质分组：raw纠正2/scope3、owner test4/source1/Native fixture1、reject6、model helper纠正1、analysis/code拒1、cast cleanup1、direction部分1，合21，不算统一采用率。增量客户端峰3@01:32:59，阶段6/新IP历史8另列；旧5份SHA及Root旧unknown/M7后到补记不回写，后继HTTP不扩窗。本包0POST/编测。
+
+
+### resume91 parallel128 实际并发要求与串行空档
+
+用户反复要求更多真实同时请求，累计调用数、参数、未poll会话或准备任务不能代替。Root承认准备/审阅串行空档：服务余量观察下峰8仍不足，须改进组织，不能用“服务不支持”解释；观察也非最大容量证明。
+
+完整源齐后owner复用call91立即直POST，无需中央ACK；implementation与独立consumer/probe并行，审阅时下一未写方法继续。source_files+task_path自动三消息，免手工巨大body/额外索引前置；MB HOLD只编测，不挡HTTP。12–16为真实积压时初始在途目标，非已达/已实现scheduler，非quota，不凑数。复用caller、不建平台、不造任务/重绿，监视/总结不计模型请求。
+
+`STATUS-PARALLEL128-021352.json`固定02:13:52.729045：源在途1项m7-captured79e-cells92；server running1/wait0/KV0.0214646。新IP历史峰8尚未达目标，旧IP25不混；源码与运行期HTTP分记。后到两root-clock REVIEW为raw D采用、owner语义0、合并strict2src0，不授runtime/Game信用。本包0POST/编测/CAS，不阻128运行。
+
+
+### resume91 portable128 跨机复用与实际并发规则
+
+用户要求将新心得、经验与规则提交GitHub供其他机器worker复用。入口为[worker指南](../local-model-worker-guide.md)与[统一配置](../local-model-executor-config.json)。本页D路径仅是本机证据/caller记录，不是跨机依赖；其他机器使用自己的machine_id、获准数据根及caller，不复制本机state/账本，不据文档操作Game。
+
+完整直接API与当前源码置前，唯一任务、真实诊断及返工要求置末，保持配置三消息。source_files+task_path复用caller自动封包，避免手工巨大body或额外索引前置；owner源齐即可直POST，无需中央ACK。实现与独立consumer/probe并行，审阅时继续下一未写方法；MB HOLD限编测。累计调用、参数、准备队列、未poll标签和监视不能代替实际请求并发，不造任务/重绿凑数。
+
+`D:/ck3-state/model-dispatch91/WINDOW128-022010.json`固定02:10:10→02:20:10：27新任务/27真实POST、28 END，客户端区间峰4、末刻源0/服务running0/wait0/KV0；END可含窗前已在途请求，不等于28新任务。新IP历史峰8仍不足，旧IP峰25另列；该观察不证明服务最大容量。源码候选与实际运行期HTTP分账。
+
+两个root-clock REVIEW均原样D采用，owner生产语义修改0，同次strict2源0；首命令把-J选项误放argfile、尚未编源就退出，是owner命令成本，不算模型源码失败。记录入口为两`root-clock-*-audit128/REVIEW.json`，不授运行装载/Game信用。源审分组仍以`REVIEWS91-INCREMENT126.json`及后到回执为准，异质结果不合成统一采用率；本包0POST/编测/CAS，不等待大cohort。
+
+运行owner后到报告：worker129于02:31:16.0517311Z实际请求342,745B，200完整返回13.633秒（headers12.872/TTFT12.873）；reported101066/142/101208，cached=null。seq276普通qwen CROWN于02:31:39.332提交，02:31:44.093独立确认law0→1/prestige220m→200m、APPLIED；本轮新增普通APPLIED1，与旧FOCUS分开，新增日0。末plan pendingwait/brief票空不否此前HTTP；后继replay合同故障END/next47不重放已应用动作。证据`D:/ck3-state/resume90-runtime/worker129.stdout.log`；不同请求的payload/token/时延不推alias或cache因果，本文未另读CAS。

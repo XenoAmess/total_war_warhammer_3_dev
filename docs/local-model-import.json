@@ -1,0 +1,102 @@
+{
+  "schema": "wh3.local-model-doc-import/v1",
+  "imported_at_utc": "2026-10-31T03:30:15.497477+00:00",
+  "source_repository": "XenoAmess/ck3_eternal_recurrence",
+  "requested_links": [
+    "https://github.com/XenoAmess/ck3_eternal_recurrence/blob/master/docs/local-model-worker-guide.md",
+    "https://github.com/XenoAmess/ck3_eternal_recurrence/commit/531bf67d77c6f35e8e4478f7050ad6acbda73ab9"
+  ],
+  "guide_and_config_ref": "05c82cfdd5e25746a96773cb6c518989abf5b7e4",
+  "experience_ref": "531bf67d77c6f35e8e4478f7050ad6acbda73ab9",
+  "copy_policy": "Verbatim UTF-8 copies; preserve historical facts and source relative links. Project instructions and current-machine observations are recorded separately.",
+  "files": [
+    {
+      "path": "docs/local-model-worker-guide.md",
+      "ref": "05c82cfdd5e25746a96773cb6c518989abf5b7e4",
+      "git_blob_sha1": "acadc74ac658300adb4ccbc3c71fc94a5d6d2bde",
+      "source_url": "https://github.com/XenoAmess/ck3_eternal_recurrence/blob/05c82cfdd5e25746a96773cb6c518989abf5b7e4/docs/local-model-worker-guide.md",
+      "bytes": 9977,
+      "sha256": "d69a48c27b382afd0954541c9281d0c7626eff7930f5fc1474655081e6bfe40e"
+    },
+    {
+      "path": "docs/local-model-executor-config.json",
+      "ref": "05c82cfdd5e25746a96773cb6c518989abf5b7e4",
+      "git_blob_sha1": "9626c4aa8e3bc553d0db5b5467bb02dd0d6c7e7d",
+      "source_url": "https://github.com/XenoAmess/ck3_eternal_recurrence/blob/05c82cfdd5e25746a96773cb6c518989abf5b7e4/docs/local-model-executor-config.json",
+      "bytes": 7379,
+      "sha256": "fa854f62ae217b7012c93e5ba31b5b4f4914def7e2db9e7184feab7a47c0704c"
+    },
+    {
+      "path": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "ref": "531bf67d77c6f35e8e4478f7050ad6acbda73ab9",
+      "git_blob_sha1": "46ca0ec693f60a4791ffd24aed4fa547c98b67c8",
+      "source_url": "https://github.com/XenoAmess/ck3_eternal_recurrence/blob/531bf67d77c6f35e8e4478f7050ad6acbda73ab9/docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "bytes": 34735,
+      "sha256": "e844d5133e3922c27a6b885ffafb3e0796aa3fb52167eea4ab51bdcc58a53240"
+    },
+    {
+      "path": "docs/local-model-capability-boundary-2026-10-28.md",
+      "ref": "531bf67d77c6f35e8e4478f7050ad6acbda73ab9",
+      "git_blob_sha1": "e9cc09757e5eea9007e2838eba91631f1592e834",
+      "source_url": "https://github.com/XenoAmess/ck3_eternal_recurrence/blob/531bf67d77c6f35e8e4478f7050ad6acbda73ab9/docs/local-model-capability-boundary-2026-10-28.md",
+      "bytes": 25178,
+      "sha256": "c0856660954d08234a9c56b5bbbb69074ec5c24424471df64ace841c091c658b"
+    },
+    {
+      "path": "docs/local-model-executor-feasibility-2026-10-28.md",
+      "ref": "531bf67d77c6f35e8e4478f7050ad6acbda73ab9",
+      "git_blob_sha1": "43a6fbadf2bdc282933ab5032cf44224706e85f5",
+      "source_url": "https://github.com/XenoAmess/ck3_eternal_recurrence/blob/531bf67d77c6f35e8e4478f7050ad6acbda73ab9/docs/local-model-executor-feasibility-2026-10-28.md",
+      "bytes": 35238,
+      "sha256": "9ed530ef711c68f9dfba824105936cf8e3207fc85644ef0cf7195a62f9547f8d"
+    }
+  ],
+  "unavailable_local_historical_links": [
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/model-dispatch91/REVIEWS91.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/model-dispatch91/STATUS91.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/model-dispatch91/BATCH01-JOBS.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/model-dispatch91/BATCH02-JOBS.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/model-dispatch91/packets/PACKET-ASSEMBLY-READBACK01.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/resume91-runtime/sem103-regression/SUMMARY.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/resume91-runtime/obligations/DELIVERY.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/autonomous-agent-progress/2026-10-31-resume91-models.md",
+      "relative_target": "D:/ck3-state/resume91-m3-native/religious91/RESULT91.json",
+      "kind": "machine_local_reference"
+    },
+    {
+      "document": "docs/local-model-executor-feasibility-2026-10-28.md",
+      "relative_target": "storage-retention-policy.md",
+      "kind": "unimported_repository_document"
+    }
+  ],
+  "historical_links_policy": "Resolve unimported repository-relative documents in the source repository. Absolute machine-local references identify the original machine only and are not guaranteed to exist in GitHub or on this machine. No placeholder evidence files were created."
+}
