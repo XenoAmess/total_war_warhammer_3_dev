@@ -177,6 +177,18 @@ class PublicationGateTests(unittest.TestCase):
         result = steam.wait(1, DependencyResult, 3412, check_agreement=False)
         self.assertEqual((result.item_id, result.child_id), (12, 34))
 
+    def test_existing_dependency_is_explicitly_accepted_but_other_callbacks_stay_strict(self):
+        steam = Steam.__new__(Steam); steam.utils = 1; steam.pump = lambda: None
+        def get_result(utils, handle, output, size, callback, failed):
+            result = C.cast(output, C.POINTER(DependencyResult)).contents
+            result.result, result.item_id, result.child_id = 29, 12, 34
+            return True
+        steam.bind = lambda name, *args: (get_result if name.endswith('GetAPICallResult') else lambda *args: True)
+        result = steam.wait(1, DependencyResult, 3412, check_agreement=False, accepted_results=(1, 29))
+        self.assertEqual((result.item_id, result.child_id), (12, 34))
+        with self.assertRaisesRegex(RuntimeError, 'EResult=29'):
+            steam.wait(1, DependencyResult, 3412, check_agreement=False)
+
     def test_failed_native_acceptance_never_contacts_steam(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

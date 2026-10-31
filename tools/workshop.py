@@ -156,7 +156,8 @@ class Steam:
         fn.restype, fn.argtypes = result, list(args)
         return fn
 
-    def wait(self, handle: int, result_type, callback: int, timeout: float = 180, check_agreement: bool = True):
+    def wait(self, handle: int, result_type, callback: int, timeout: float = 180,
+             check_agreement: bool = True, accepted_results: tuple[int, ...] = (1,)):
         completed = self.bind('SteamAPI_ISteamUtils_IsAPICallCompleted', C.c_bool, C.c_void_p, C.c_uint64, C.POINTER(C.c_bool))
         get = self.bind('SteamAPI_ISteamUtils_GetAPICallResult', C.c_bool, C.c_void_p, C.c_uint64,
                         C.c_void_p, C.c_int32, C.c_int32, C.POINTER(C.c_bool))
@@ -170,7 +171,7 @@ class Steam:
                 result = result_type()
                 if failed.value or not get(self.utils, handle, C.byref(result), C.sizeof(result), callback, C.byref(failed)) or failed.value:
                     raise RuntimeError('Steam API call failed')
-                if result.result != 1:
+                if result.result not in accepted_results:
                     raise RuntimeError(f'Steam returned EResult={result.result}')
                 if check_agreement and result.needs_agreement:
                     raise RuntimeError('Steam requires the account owner to accept the Workshop legal agreement')
@@ -251,7 +252,7 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
                                     C.c_void_p, C.c_uint64, C.c_uint64)
         for child in project.required_items:
             result = steam.wait(add_dependency(steam.ugc, int(state['item_id']), child),
-                                DependencyResult, 3412, check_agreement=False)
+                                DependencyResult, 3412, check_agreement=False, accepted_results=(1, 29))
             if result.item_id != int(state['item_id']) or result.child_id != child:
                 raise RuntimeError('Steam returned a dependency result for the wrong item')
         state['required_items'] = [str(item) for item in project.required_items]
