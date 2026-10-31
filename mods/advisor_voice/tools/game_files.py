@@ -151,7 +151,7 @@ def read_advice(data: bytes) -> list[Advice]:
     return rows
 
 
-def read_advice_text(data: bytes) -> dict[str, str]:
+def read_loc(data: bytes) -> dict[str, str]:
     reader = Reader(data)
     if reader.take(6) != b'\xff\xfeLOC\0' or reader.number('<I') != 1:
         raise ValueError('Unsupported LOC header')
@@ -161,12 +161,16 @@ def read_advice_text(data: bytes) -> dict[str, str]:
         key, value = reader.string(utf16=True), reader.string(utf16=True)
         if reader.number('<B') not in (0, 1):
             raise ValueError('Invalid LOC flag')
-        if key.startswith('advice_levels_onscreen_text_'):
-            if key in result:
-                raise ValueError(f'Duplicate LOC key: {key}')
-            result[key] = value
+        if key in result:
+            raise ValueError(f'Duplicate LOC key: {key}')
+        result[key] = value
     reader.end()
     return result
+
+
+def read_advice_text(data: bytes) -> dict[str, str]:
+    return {key: value for key, value in read_loc(data).items()
+            if key.startswith('advice_levels_onscreen_text_')}
 
 
 def fnv1(name: str) -> int:

@@ -141,9 +141,11 @@ def main() -> int:
             selected.append(name)
             covered.update(found)
     nodes: dict[int, AudioNode] = {}
+    all_bank_roots: set[int] = set()
     conflicts: set[int] = set()
     bank_errors: list[dict[str, str]] = []
     for name in selected:
+        all_bank_roots.update(event_ids(bank_pack.read(name)))
         target = output / 'banks' / Path(name).name
         target.parent.mkdir(exist_ok=True)
         target.write_bytes(bank_pack.read(name))
@@ -164,7 +166,7 @@ def main() -> int:
                     nodes.pop(key)
                     continue
             nodes[key] = node
-    resolutions = {event: resolve_event(event, nodes) for event in requested | initial_roots}
+    resolutions = {event: resolve_event(event, nodes) for event in requested | all_bank_roots}
     all_media: set[int] = set()
     for row in rows:
         resolved = []
@@ -185,6 +187,8 @@ def main() -> int:
         result = resolutions[event]
         unbound.append({'event_id': event, 'event': name_by_id.get(event), **asdict(result)})
         all_media.update(result.media_ids)
+    extra_events = [{'event_id': event, 'event': name_by_id.get(event), **asdict(resolutions[event])}
+                    for event in sorted(all_bank_roots - initial_roots - requested)]
     # Also inventory sound leaves that have no discovered event/DB root.
     bank_leaf_media = {node.media_id for node in nodes.values()
                        if node.kind == 'CAkSound' and node.media_id is not None}
@@ -249,6 +253,7 @@ def main() -> int:
         'requested_event_ids': len(requested), 'initial_advice_banks': initial,
         'selected_banks': selected, 'bank_errors': bank_errors,
         'conflicting_object_ids': sorted(conflicts), 'unbound_advice_bank_events': len(unbound),
+        'extra_selected_bank_events': len(extra_events),
         'unique_media_ids': len(media), 'available_media_ids': sum(m['selected'] is not None for m in media.values()),
         'media_per_scope': {'db_advice': len(db_media), 'advice_bank_event': len(advice_bank_media),
                             'selected_bank_leaf': len(bank_leaf_media)},
@@ -263,7 +268,8 @@ def main() -> int:
                    'Text is paired by DB localization key, not by speech recognition or listening.']}
     for pack in packs.values():
         pack.verify_unchanged()
-    for name, value in [('catalog.json', {'summary': summary, 'advice': rows, 'media': media, 'unbound_events': unbound}),
+    for name, value in [('catalog.json', {'summary': summary, 'advice': rows, 'media': media,
+                                         'unbound_events': unbound, 'extra_bank_events': extra_events}),
                         ('summary.json', summary)]:
         (output / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     with (output / 'advice-media-text.tsv').open('w', encoding='utf-8', newline='') as stream:

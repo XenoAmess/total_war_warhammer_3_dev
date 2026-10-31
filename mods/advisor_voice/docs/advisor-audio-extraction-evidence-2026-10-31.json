@@ -1,0 +1,2037 @@
+{
+  "schema": "wh3.advisor-extraction-research/v1",
+  "observed_at_utc": "2026-10-31T04:15:46.664201+00:00",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "initial_tooling_commit": "5500cc31cb28c8a7c8664db586d473fa241a73b1",
+  "steam": {
+    "observed_at_utc": "2026-10-31T04:11:36.623684+00:00",
+    "status": "offline",
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte"
+  },
+  "steam_native_samples": [
+    1,
+    1
+  ],
+  "english_audio": {
+    "schema": "wh3.advisor-audio-catalog/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-10-31T04:11:49.545045+00:00",
+    "steam_observation": {
+      "observed_at_utc": "2026-10-31T04:11:36.623684+00:00",
+      "status": "offline",
+      "offline_mode": true
+    },
+    "audio_language": "english(uk)",
+    "text_languages": [
+      "cn",
+      "en"
+    ],
+    "advice_rows": 2969,
+    "rows_with_named_events": 2748,
+    "advice_level_counts": {
+      "1": 2969
+    },
+    "rows_with_multiple_event_candidates": 4,
+    "rows_with_complete_graph": 2740,
+    "rows_with_available_media": 2740,
+    "rows_with_text": {
+      "cn": 2926,
+      "en": 2969
+    },
+    "text_source_members": {
+      "cn": [
+        "text/localisation__.loc"
+      ],
+      "en": [
+        "text/db/advice_levels__.loc"
+      ]
+    },
+    "requested_event_ids": 2724,
+    "initial_advice_banks": [
+      "audio/wwise/english(uk)/battle_advice__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_1385955645__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_1927722379__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_2173257825__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_909104986__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice__core.bnk"
+    ],
+    "selected_banks": [
+      "audio/wwise/english(uk)/battle_advice__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_1385955645__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_1927722379__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_2173257825__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice_909104986__core.bnk",
+      "audio/wwise/english(uk)/campaign_advice__core.bnk",
+      "audio/wwise/english(uk)/battle_vo_generals_speech__core.bnk",
+      "audio/wwise/english(uk)/loading_screen_vo__core.bnk"
+    ],
+    "bank_errors": [],
+    "conflicting_object_ids": [
+      514915729,
+      517250292,
+      546360355,
+      886244504,
+      950249763,
+      1038170684
+    ],
+    "unbound_advice_bank_events": 510,
+    "extra_selected_bank_events": 1211,
+    "unique_media_ids": 4988,
+    "available_media_ids": 4988,
+    "media_per_scope": {
+      "db_advice": 2717,
+      "advice_bank_event": 3171,
+      "selected_bank_leaf": 4988
+    },
+    "planned_stored_media_bytes": 492236317,
+    "media_extracted": false,
+    "extracted_media_files": 0,
+    "dat_section_counts": {
+      "events": 49769,
+      "state_groups_0": 324,
+      "state_groups_1": 131,
+      "dialogue_events": 288,
+      "settings": 279,
+      "unknown": 60
+    },
+    "event_dat_sha256": "31064efab81f7df33d35786fe11231a80159a1a1f57e779e16c4f859e5996583",
+    "source_packs": {
+      "db.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\db.pack",
+        "bytes": 8667644,
+        "entries": 1603,
+        "header_and_index_sha256": "fb08c93465e42b3f538483d74c64b20caab45f0b7ebad486c7998507c481e500"
+      },
+      "audio_base_bnk.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_base_bnk.pack",
+        "bytes": 50613813,
+        "entries": 265,
+        "header_and_index_sha256": "39d99cdc6a888fd5dbe224931adb2792fbfbeb5a9a5f17e63c6ac60c68463888"
+      },
+      "audio_en_bnk.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_en_bnk.pack",
+        "bytes": 31113372,
+        "entries": 648,
+        "header_and_index_sha256": "fb8a171e475316a29de18d2a0666b22390b49ea9b456415154a53bed9fd13987"
+      },
+      "audio_en.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_en.pack",
+        "bytes": 4913267327,
+        "entries": 184662,
+        "header_and_index_sha256": "fb62c4333fab27eb4318901df3253a5a4fe0593bad4952db600f60c4d5889583"
+      },
+      "audio_base.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_base.pack",
+        "bytes": 5721032969,
+        "entries": 163350,
+        "header_and_index_sha256": "a5d24fb95d0a3131b486e282eac8d1aea70e0fd8b2cadd80b932ffb13da3687b"
+      },
+      "local_cn.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_cn.pack",
+        "bytes": 30944785,
+        "entries": 40,
+        "header_and_index_sha256": "6839c40f614c71582d996198f77131ddbb83983185780f07c0a314233a8b179e"
+      },
+      "local_en.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_en.pack",
+        "bytes": 33437470,
+        "entries": 388,
+        "header_and_index_sha256": "68144883972bfb264e698d531f3d24c50a650100bd60eb6f01d6ac74d9ece50f"
+      }
+    },
+    "limits": [
+      "Explicit vanilla pack inputs, not verified live engine/mod load order.",
+      "DB advice and selected advice-bank scope; external sources and movies require separate auditing.",
+      "Unmatched names, unsupported graph types and object conflicts remain unresolved.",
+      "Text is paired by DB localization key, not by speech recognition or listening."
+    ]
+  },
+  "chinese_audio": {
+    "schema": "wh3.advisor-audio-catalog/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-10-31T04:04:11.626115+00:00",
+    "steam_observation": {
+      "observed_at_utc": "2026-10-31T04:03:58.764019+00:00",
+      "status": "offline",
+      "offline_mode": true
+    },
+    "audio_language": "chinese",
+    "text_languages": [
+      "cn",
+      "en"
+    ],
+    "advice_rows": 2969,
+    "rows_with_named_events": 2748,
+    "advice_level_counts": {
+      "1": 2969
+    },
+    "rows_with_multiple_event_candidates": 4,
+    "rows_with_complete_graph": 2740,
+    "rows_with_available_media": 1478,
+    "rows_with_text": {
+      "cn": 2926,
+      "en": 2969
+    },
+    "text_source_members": {
+      "cn": [
+        "text/localisation__.loc"
+      ],
+      "en": [
+        "text/db/advice_levels__.loc"
+      ]
+    },
+    "requested_event_ids": 2724,
+    "initial_advice_banks": [
+      "audio/wwise/chinese/battle_advice__core.bnk",
+      "audio/wwise/chinese/campaign_advice_1385955645__core.bnk",
+      "audio/wwise/chinese/campaign_advice_1927722379__core.bnk",
+      "audio/wwise/chinese/campaign_advice_2173257825__core.bnk",
+      "audio/wwise/chinese/campaign_advice_909104986__core.bnk",
+      "audio/wwise/chinese/campaign_advice__core.bnk"
+    ],
+    "selected_banks": [
+      "audio/wwise/chinese/battle_advice__core.bnk",
+      "audio/wwise/chinese/campaign_advice_1385955645__core.bnk",
+      "audio/wwise/chinese/campaign_advice_1927722379__core.bnk",
+      "audio/wwise/chinese/campaign_advice_2173257825__core.bnk",
+      "audio/wwise/chinese/campaign_advice_909104986__core.bnk",
+      "audio/wwise/chinese/campaign_advice__core.bnk",
+      "audio/wwise/chinese/battle_vo_generals_speech__core.bnk",
+      "audio/wwise/chinese/loading_screen_vo__core.bnk"
+    ],
+    "bank_errors": [],
+    "conflicting_object_ids": [
+      514915729,
+      517250292,
+      546360355,
+      886244504,
+      950249763,
+      1038170684
+    ],
+    "unbound_advice_bank_events": 510,
+    "unique_media_ids": 4988,
+    "available_media_ids": 1649,
+    "media_per_scope": {
+      "db_advice": 2717,
+      "advice_bank_event": 3171,
+      "selected_bank_leaf": 4988
+    },
+    "planned_stored_media_bytes": 203250802,
+    "media_extracted": false,
+    "extracted_media_files": 0,
+    "dat_section_counts": {
+      "events": 49769,
+      "state_groups_0": 324,
+      "state_groups_1": 131,
+      "dialogue_events": 288,
+      "settings": 279,
+      "unknown": 60
+    },
+    "event_dat_sha256": "31064efab81f7df33d35786fe11231a80159a1a1f57e779e16c4f859e5996583",
+    "source_packs": {
+      "db.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\db.pack",
+        "bytes": 8667644,
+        "entries": 1603,
+        "header_and_index_sha256": "fb08c93465e42b3f538483d74c64b20caab45f0b7ebad486c7998507c481e500"
+      },
+      "audio_base_bnk.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_base_bnk.pack",
+        "bytes": 50613813,
+        "entries": 265,
+        "header_and_index_sha256": "39d99cdc6a888fd5dbe224931adb2792fbfbeb5a9a5f17e63c6ac60c68463888"
+      },
+      "audio_cn_bnk.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_cn_bnk.pack",
+        "bytes": 31110804,
+        "entries": 648,
+        "header_and_index_sha256": "ecfd15cead0b548919a9f594add5d3c32569f07f4abc3738ae86ccab102c15c3"
+      },
+      "audio_cn.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_cn.pack",
+        "bytes": 203226096,
+        "entries": 1642,
+        "header_and_index_sha256": "a2ed5ac84d95361c09e8ca0b1f63e18797d9ab9fccd31d73806c85db9b0ee986"
+      },
+      "audio_en.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_en.pack",
+        "bytes": 4913267327,
+        "entries": 184662,
+        "header_and_index_sha256": "fb62c4333fab27eb4318901df3253a5a4fe0593bad4952db600f60c4d5889583"
+      },
+      "audio_base.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\audio_base.pack",
+        "bytes": 5721032969,
+        "entries": 163350,
+        "header_and_index_sha256": "a5d24fb95d0a3131b486e282eac8d1aea70e0fd8b2cadd80b932ffb13da3687b"
+      },
+      "local_cn.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_cn.pack",
+        "bytes": 30944785,
+        "entries": 40,
+        "header_and_index_sha256": "6839c40f614c71582d996198f77131ddbb83983185780f07c0a314233a8b179e"
+      },
+      "local_en.pack": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_en.pack",
+        "bytes": 33437470,
+        "entries": 388,
+        "header_and_index_sha256": "68144883972bfb264e698d531f3d24c50a650100bd60eb6f01d6ac74d9ece50f"
+      }
+    },
+    "limits": [
+      "Explicit vanilla pack inputs, not verified live engine/mod load order.",
+      "DB advice and selected advice-bank scope; external sources and movies require separate auditing.",
+      "Unmatched names, unsupported graph types and object conflicts remain unresolved.",
+      "Text is paired by DB localization key, not by speech recognition or listening."
+    ]
+  },
+  "chinese_text": {
+    "schema": "wh3.advisor-chinese-text-catalog/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "steam_observation": {
+      "observed_at_utc": "2026-10-31T04:11:36.623684+00:00",
+      "status": "offline",
+      "offline_mode": true
+    },
+    "audio_catalog_sha256": "73cc3c63cacb3cedae8b97131734df3ea3aa02aa6d18d1ac4f81a340d84d77fc",
+    "audio_catalog": "D:\\workspace\\.codex-wh3-runtime\\advisor-audio-research\\audit-en-a05\\catalog.json",
+    "media_files": 4988,
+    "media_with_cn_candidate": 3394,
+    "media_with_traditional_only_candidate": 0,
+    "media_without_chinese_candidate": 1594,
+    "media_with_multiple_distinct_cn_candidates": 27,
+    "advice_text_found": {
+      "cn": 2926,
+      "zh": 2926,
+      "en": 2969
+    },
+    "advice_text_with_han": {
+      "cn": 2925,
+      "zh": 2925,
+      "en": 0
+    },
+    "replacement_references": {
+      "cn": 1,
+      "zh": 1,
+      "en": 1
+    },
+    "unresolved_replacement_references": {
+      "cn": 0,
+      "zh": 0,
+      "en": 0
+    },
+    "unmatched_advice_text_keys": {
+      "cn": [
+        "advice_levels_onscreen_text_1012530609",
+        "advice_levels_onscreen_text_1017916923",
+        "advice_levels_onscreen_text_1037390624",
+        "advice_levels_onscreen_text_1091820390",
+        "advice_levels_onscreen_text_1092229878",
+        "advice_levels_onscreen_text_114953719",
+        "advice_levels_onscreen_text_1162956597",
+        "advice_levels_onscreen_text_126816619",
+        "advice_levels_onscreen_text_1307190165",
+        "advice_levels_onscreen_text_1353353725",
+        "advice_levels_onscreen_text_1412434840",
+        "advice_levels_onscreen_text_1507511056",
+        "advice_levels_onscreen_text_1511952213",
+        "advice_levels_onscreen_text_1571222438",
+        "advice_levels_onscreen_text_1585596626",
+        "advice_levels_onscreen_text_165944266",
+        "advice_levels_onscreen_text_1666705907",
+        "advice_levels_onscreen_text_1704432663",
+        "advice_levels_onscreen_text_1806367463",
+        "advice_levels_onscreen_text_1871962849",
+        "advice_levels_onscreen_text_1881635775",
+        "advice_levels_onscreen_text_1886756074",
+        "advice_levels_onscreen_text_1975907681",
+        "advice_levels_onscreen_text_2073083473",
+        "advice_levels_onscreen_text_258324211",
+        "advice_levels_onscreen_text_279197684",
+        "advice_levels_onscreen_text_327354460",
+        "advice_levels_onscreen_text_331962124",
+        "advice_levels_onscreen_text_376767814",
+        "advice_levels_onscreen_text_48439041",
+        "advice_levels_onscreen_text_485406942",
+        "advice_levels_onscreen_text_502583046",
+        "advice_levels_onscreen_text_558353667",
+        "advice_levels_onscreen_text_68395899",
+        "advice_levels_onscreen_text_749844431",
+        "advice_levels_onscreen_text_77967356",
+        "advice_levels_onscreen_text_825749103",
+        "advice_levels_onscreen_text_830705929",
+        "advice_levels_onscreen_text_884335102",
+        "advice_levels_onscreen_text_894092559",
+        "advice_levels_onscreen_text_919516407",
+        "advice_levels_onscreen_text_937207671",
+        "advice_levels_onscreen_text_969300180"
+      ],
+      "zh": [
+        "advice_levels_onscreen_text_1012530609",
+        "advice_levels_onscreen_text_1017916923",
+        "advice_levels_onscreen_text_1037390624",
+        "advice_levels_onscreen_text_1091820390",
+        "advice_levels_onscreen_text_1092229878",
+        "advice_levels_onscreen_text_114953719",
+        "advice_levels_onscreen_text_1162956597",
+        "advice_levels_onscreen_text_126816619",
+        "advice_levels_onscreen_text_1307190165",
+        "advice_levels_onscreen_text_1353353725",
+        "advice_levels_onscreen_text_1412434840",
+        "advice_levels_onscreen_text_1507511056",
+        "advice_levels_onscreen_text_1511952213",
+        "advice_levels_onscreen_text_1571222438",
+        "advice_levels_onscreen_text_1585596626",
+        "advice_levels_onscreen_text_165944266",
+        "advice_levels_onscreen_text_1666705907",
+        "advice_levels_onscreen_text_1704432663",
+        "advice_levels_onscreen_text_1806367463",
+        "advice_levels_onscreen_text_1871962849",
+        "advice_levels_onscreen_text_1881635775",
+        "advice_levels_onscreen_text_1886756074",
+        "advice_levels_onscreen_text_1975907681",
+        "advice_levels_onscreen_text_2073083473",
+        "advice_levels_onscreen_text_258324211",
+        "advice_levels_onscreen_text_279197684",
+        "advice_levels_onscreen_text_327354460",
+        "advice_levels_onscreen_text_331962124",
+        "advice_levels_onscreen_text_376767814",
+        "advice_levels_onscreen_text_48439041",
+        "advice_levels_onscreen_text_485406942",
+        "advice_levels_onscreen_text_502583046",
+        "advice_levels_onscreen_text_558353667",
+        "advice_levels_onscreen_text_68395899",
+        "advice_levels_onscreen_text_749844431",
+        "advice_levels_onscreen_text_77967356",
+        "advice_levels_onscreen_text_825749103",
+        "advice_levels_onscreen_text_830705929",
+        "advice_levels_onscreen_text_884335102",
+        "advice_levels_onscreen_text_894092559",
+        "advice_levels_onscreen_text_919516407",
+        "advice_levels_onscreen_text_937207671",
+        "advice_levels_onscreen_text_969300180"
+      ],
+      "en": []
+    },
+    "event_roots_checked": 4445,
+    "family_counts": {
+      "cn": {
+        "advice_levels_onscreen_text_": {
+          "keys": 2926,
+          "with_han": 2925
+        },
+        "aide_de_camp_speeches_text_": {
+          "keys": 61,
+          "with_han": 61
+        },
+        "scripted_subtitles_localised_text_": {
+          "keys": 1250,
+          "with_han": 1249
+        },
+        "vo_speech_texts_text_": {
+          "keys": 145,
+          "with_han": 145
+        },
+        "pre_battle_speeches_text_": {
+          "keys": 7,
+          "with_han": 0
+        },
+        "vo_fmv_texts_text_": {
+          "keys": 92,
+          "with_han": 92
+        }
+      },
+      "zh": {
+        "advice_levels_onscreen_text_": {
+          "keys": 2926,
+          "with_han": 2925
+        },
+        "aide_de_camp_speeches_text_": {
+          "keys": 61,
+          "with_han": 61
+        },
+        "scripted_subtitles_localised_text_": {
+          "keys": 1250,
+          "with_han": 1249
+        },
+        "vo_speech_texts_text_": {
+          "keys": 145,
+          "with_han": 145
+        },
+        "pre_battle_speeches_text_": {
+          "keys": 7,
+          "with_han": 0
+        },
+        "vo_fmv_texts_text_": {
+          "keys": 92,
+          "with_han": 92
+        }
+      },
+      "en": {
+        "advice_levels_onscreen_text_": {
+          "keys": 2969,
+          "with_han": 0
+        },
+        "aide_de_camp_speeches_text_": {
+          "keys": 61,
+          "with_han": 0
+        },
+        "scripted_subtitles_localised_text_": {
+          "keys": 1254,
+          "with_han": 0
+        },
+        "vo_speech_texts_text_": {
+          "keys": 0,
+          "with_han": 0
+        },
+        "pre_battle_speeches_text_": {
+          "keys": 7,
+          "with_han": 0
+        },
+        "vo_fmv_texts_text_": {
+          "keys": 92,
+          "with_han": 0
+        }
+      }
+    },
+    "source_packs": {
+      "cn": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_cn.pack",
+        "bytes": 30944785,
+        "entries": 40,
+        "header_and_index_sha256": "6839c40f614c71582d996198f77131ddbb83983185780f07c0a314233a8b179e"
+      },
+      "zh": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_zh.pack",
+        "bytes": 31421249,
+        "entries": 39,
+        "header_and_index_sha256": "9f01ca185dc65eb5fef56be749fdcaf067c666c6b597e2946e36dbdaf1ec3779"
+      },
+      "en": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\local_en.pack",
+        "bytes": 33437470,
+        "entries": 388,
+        "header_and_index_sha256": "68144883972bfb264e698d531f3d24c50a650100bd60eb6f01d6ac74d9ece50f"
+      }
+    },
+    "loc_members": {
+      "cn": [
+        {
+          "member": "text/localisation__.loc",
+          "loc_records": 212411
+        }
+      ],
+      "zh": [
+        {
+          "member": "text/localisation__.loc",
+          "loc_records": 212069
+        }
+      ],
+      "en": [
+        {
+          "member": "text/db/abilities__.loc",
+          "loc_records": 27
+        },
+        {
+          "member": "text/db/achievements__.loc",
+          "loc_records": 278
+        },
+        {
+          "member": "text/db/advice_info_texts__.loc",
+          "loc_records": 4299
+        },
+        {
+          "member": "text/db/advice_levels__.loc",
+          "loc_records": 5938
+        },
+        {
+          "member": "text/db/advisors__.loc",
+          "loc_records": 13
+        },
+        {
+          "member": "text/db/agent_ability_categories__.loc",
+          "loc_records": 3
+        },
+        {
+          "member": "text/db/agent_actions__.loc",
+          "loc_records": 406
+        },
+        {
+          "member": "text/db/agent_culture_details__.loc",
+          "loc_records": 414
+        },
+        {
+          "member": "text/db/agent_localisations__.loc",
+          "loc_records": 91
+        },
+        {
+          "member": "text/db/agent_recruitment_categories__.loc",
+          "loc_records": 182
+        },
+        {
+          "member": "text/db/agent_subtype_subculture_overrides__.loc",
+          "loc_records": 44
+        },
+        {
+          "member": "text/db/agent_subtypes__.loc",
+          "loc_records": 1324
+        },
+        {
+          "member": "text/db/aide_de_camp_speeches__.loc",
+          "loc_records": 61
+        },
+        {
+          "member": "text/db/ancillaries__.loc",
+          "loc_records": 8622
+        },
+        {
+          "member": "text/db/ancillaries_categories__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/ancillaries_subcategories__.loc",
+          "loc_records": 11
+        },
+        {
+          "member": "text/db/ancillary_sets__.loc",
+          "loc_records": 194
+        },
+        {
+          "member": "text/db/ancillary_uniqueness_groupings__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/armory_item_set_ui_infos__.loc",
+          "loc_records": 56
+        },
+        {
+          "member": "text/db/armory_item_ui_infos__.loc",
+          "loc_records": 724
+        },
+        {
+          "member": "text/db/armory_item_variant_ui_infos__.loc",
+          "loc_records": 944
+        },
+        {
+          "member": "text/db/armory_slot_type_ui_infos__.loc",
+          "loc_records": 13
+        },
+        {
+          "member": "text/db/battle_result_types__.loc",
+          "loc_records": 56
+        },
+        {
+          "member": "text/db/battle_secondary_currency_source_types__.loc",
+          "loc_records": 25
+        },
+        {
+          "member": "text/db/battle_secondary_currency_types__.loc",
+          "loc_records": 8
+        },
+        {
+          "member": "text/db/battle_set_piece_armies__.loc",
+          "loc_records": 1919
+        },
+        {
+          "member": "text/db/battle_set_pieces__.loc",
+          "loc_records": 960
+        },
+        {
+          "member": "text/db/battle_types__.loc",
+          "loc_records": 44
+        },
+        {
+          "member": "text/db/battle_ui_cheatsheet_items__.loc",
+          "loc_records": 86
+        },
+        {
+          "member": "text/db/battle_weather_types__.loc",
+          "loc_records": 4
+        },
+        {
+          "member": "text/db/battlefield_buildings_names__.loc",
+          "loc_records": 159
+        },
+        {
+          "member": "text/db/battlefield_siege_vehicles__.loc",
+          "loc_records": 102
+        },
+        {
+          "member": "text/db/battles__.loc",
+          "loc_records": 2640
+        },
+        {
+          "member": "text/db/books_of_nagash_details__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/bretonnia_vows__.loc",
+          "loc_records": 26
+        },
+        {
+          "member": "text/db/building_chains__.loc",
+          "loc_records": 6390
+        },
+        {
+          "member": "text/db/building_culture_variants__.loc",
+          "loc_records": 5858
+        },
+        {
+          "member": "text/db/building_description_texts__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/building_effect_context_expressions__.loc",
+          "loc_records": 497
+        },
+        {
+          "member": "text/db/building_flavour_texts__.loc",
+          "loc_records": 549
+        },
+        {
+          "member": "text/db/building_sets__.loc",
+          "loc_records": 634
+        },
+        {
+          "member": "text/db/building_short_description_texts__.loc",
+          "loc_records": 3590
+        },
+        {
+          "member": "text/db/campaign_areas_of_interest__.loc",
+          "loc_records": 118
+        },
+        {
+          "member": "text/db/campaign_border_display_modes__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/campaign_companion_army_details__.loc",
+          "loc_records": 2
+        },
+        {
+          "member": "text/db/campaign_decision_choices__.loc",
+          "loc_records": 52
+        },
+        {
+          "member": "text/db/campaign_decisions__.loc",
+          "loc_records": 26
+        },
+        {
+          "member": "text/db/campaign_effect_scope_categories__.loc",
+          "loc_records": 8
+        },
+        {
+          "member": "text/db/campaign_effect_scopes__.loc",
+          "loc_records": 545
+        },
+        {
+          "member": "text/db/campaign_factorial_ui_infos__.loc",
+          "loc_records": 9
+        },
+        {
+          "member": "text/db/campaign_ground_types__.loc",
+          "loc_records": 21
+        },
+        {
+          "member": "text/db/campaign_group_ritual_chains__.loc",
+          "loc_records": 86
+        },
+        {
+          "member": "text/db/campaign_group_rituals__.loc",
+          "loc_records": 1443
+        },
+        {
+          "member": "text/db/campaign_interactable_marker_infos__.loc",
+          "loc_records": 176
+        },
+        {
+          "member": "text/db/campaign_localised_strings__.loc",
+          "loc_records": 2472
+        },
+        {
+          "member": "text/db/campaign_map_attritions__.loc",
+          "loc_records": 186
+        },
+        {
+          "member": "text/db/campaign_map_playable_areas__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/campaign_map_tooltip_texts__.loc",
+          "loc_records": 91
+        },
+        {
+          "member": "text/db/campaign_map_winds_of_magic_areas__.loc",
+          "loc_records": 300
+        },
+        {
+          "member": "text/db/campaign_map_winds_of_magic_strengths__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/campaign_payload_ui_details__.loc",
+          "loc_records": 927
+        },
+        {
+          "member": "text/db/campaign_post_battle_captive_options__.loc",
+          "loc_records": 200
+        },
+        {
+          "member": "text/db/campaign_statistics_categories__.loc",
+          "loc_records": 19
+        },
+        {
+          "member": "text/db/campaign_statistics_strings__.loc",
+          "loc_records": 85
+        },
+        {
+          "member": "text/db/campaign_storms__.loc",
+          "loc_records": 10
+        },
+        {
+          "member": "text/db/campaign_streak_effects__.loc",
+          "loc_records": 10
+        },
+        {
+          "member": "text/db/campaign_unit_stat_bonuses__.loc",
+          "loc_records": 43
+        },
+        {
+          "member": "text/db/campaign_videos__.loc",
+          "loc_records": 68
+        },
+        {
+          "member": "text/db/campaigns__.loc",
+          "loc_records": 9
+        },
+        {
+          "member": "text/db/capture_point_category_types__.loc",
+          "loc_records": 5
+        },
+        {
+          "member": "text/db/capture_point_types__.loc",
+          "loc_records": 116
+        },
+        {
+          "member": "text/db/cdir_events_categories__.loc",
+          "loc_records": 75
+        },
+        {
+          "member": "text/db/cdir_events_dilemma_choice_details__.loc",
+          "loc_records": 5916
+        },
+        {
+          "member": "text/db/chaotic_plan_schemers_special_infos__.loc",
+          "loc_records": 4
+        },
+        {
+          "member": "text/db/chaotic_plan_shop_categories__.loc",
+          "loc_records": 10
+        },
+        {
+          "member": "text/db/chaotic_plan_token_flavor_text_descriptions__.loc",
+          "loc_records": 14
+        },
+        {
+          "member": "text/db/chaotic_plan_token_types__.loc",
+          "loc_records": 16
+        },
+        {
+          "member": "text/db/chaotic_plan_tokens__.loc",
+          "loc_records": 2592
+        },
+        {
+          "member": "text/db/chaotic_plans__.loc",
+          "loc_records": 8
+        },
+        {
+          "member": "text/db/character_skill_level_details__.loc",
+          "loc_records": 4716
+        },
+        {
+          "member": "text/db/character_skill_node_sets__.loc",
+          "loc_records": 594
+        },
+        {
+          "member": "text/db/character_skills__.loc",
+          "loc_records": 13090
+        },
+        {
+          "member": "text/db/character_training_dilemma_choice_agent_types__.loc",
+          "loc_records": 4
+        },
+        {
+          "member": "text/db/character_training_dilemma_choices__.loc",
+          "loc_records": 28
+        },
+        {
+          "member": "text/db/character_training_dilemmas__.loc",
+          "loc_records": 72
+        },
+        {
+          "member": "text/db/character_training_groups__.loc",
+          "loc_records": 2
+        },
+        {
+          "member": "text/db/character_trait_levels__.loc",
+          "loc_records": 4104
+        },
+        {
+          "member": "text/db/chat_shortcuts__.loc",
+          "loc_records": 9
+        },
+        {
+          "member": "text/db/commodity_unit_names__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/compass_directions__.loc",
+          "loc_records": 16
+        },
+        {
+          "member": "text/db/cooking_ingredient_groups__.loc",
+          "loc_records": 22
+        },
+        {
+          "member": "text/db/cooking_ingredients__.loc",
+          "loc_records": 129
+        },
+        {
+          "member": "text/db/cooking_recipes__.loc",
+          "loc_records": 164
+        },
+        {
+          "member": "text/db/culture_settlement_occupation_options__.loc",
+          "loc_records": 444
+        },
+        {
+          "member": "text/db/cultures__.loc",
+          "loc_records": 56
+        },
+        {
+          "member": "text/db/cultures_subcultures__.loc",
+          "loc_records": 132
+        },
+        {
+          "member": "text/db/custom_battle_settings__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/custom_loading_screen_components__.loc",
+          "loc_records": 320
+        },
+        {
+          "member": "text/db/daemon_ability_bar_descriptions__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/death_types__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/deployables__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/dilemmas__.loc",
+          "loc_records": 2334
+        },
+        {
+          "member": "text/db/diplomacy_quick_deal_offers__.loc",
+          "loc_records": 9
+        },
+        {
+          "member": "text/db/diplomacy_strings__.loc",
+          "loc_records": 25771
+        },
+        {
+          "member": "text/db/diplomatic_manipulation_categories__.loc",
+          "loc_records": 10
+        },
+        {
+          "member": "text/db/effect_bundles__.loc",
+          "loc_records": 13544
+        },
+        {
+          "member": "text/db/effects__.loc",
+          "loc_records": 17738
+        },
+        {
+          "member": "text/db/effects_additional_tooltip_details__.loc",
+          "loc_records": 430
+        },
+        {
+          "member": "text/db/encyclopedia_blocks__coc_.loc",
+          "loc_records": 0
+        },
+        {
+          "member": "text/db/encyclopedia_pages__coc_.loc",
+          "loc_records": 0
+        },
+        {
+          "member": "text/db/encyclopedia_template_strings__coc_.loc",
+          "loc_records": 0
+        },
+        {
+          "member": "text/db/end_game_settings__.loc",
+          "loc_records": 44
+        },
+        {
+          "member": "text/db/end_turn_notifications__.loc",
+          "loc_records": 78
+        },
+        {
+          "member": "text/db/episode_event_popup_elements__.loc",
+          "loc_records": 30
+        },
+        {
+          "member": "text/db/episode_event_popup_sections__.loc",
+          "loc_records": 4
+        },
+        {
+          "member": "text/db/event_feed_categories__.loc",
+          "loc_records": 9
+        },
+        {
+          "member": "text/db/event_feed_strings__.loc",
+          "loc_records": 910
+        },
+        {
+          "member": "text/db/event_feed_subcategories__.loc",
+          "loc_records": 31
+        },
+        {
+          "member": "text/db/event_feed_summary_events__.loc",
+          "loc_records": 71
+        },
+        {
+          "member": "text/db/event_feed_targeted_events__.loc",
+          "loc_records": 228
+        },
+        {
+          "member": "text/db/faction_character_tags__.loc",
+          "loc_records": 8
+        },
+        {
+          "member": "text/db/faction_groups__.loc",
+          "loc_records": 76
+        },
+        {
+          "member": "text/db/factions__.loc",
+          "loc_records": 3695
+        },
+        {
+          "member": "text/db/formations__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/frontend_faction_groups__.loc",
+          "loc_records": 4
+        },
+        {
+          "member": "text/db/frontend_faction_leaders__.loc",
+          "loc_records": 544
+        },
+        {
+          "member": "text/db/frontend_factions__.loc",
+          "loc_records": 330
+        },
+        {
+          "member": "text/db/graphics_settings__.loc",
+          "loc_records": 54
+        },
+        {
+          "member": "text/db/graphics_settings_options__.loc",
+          "loc_records": 25
+        },
+        {
+          "member": "text/db/ground_type_stat_effect_groups__.loc",
+          "loc_records": 10
+        },
+        {
+          "member": "text/db/ground_types__.loc",
+          "loc_records": 26
+        },
+        {
+          "member": "text/db/help_page_index_records__.loc",
+          "loc_records": 404
+        },
+        {
+          "member": "text/db/incidents__.loc",
+          "loc_records": 5496
+        },
+        {
+          "member": "text/db/initiative_set_categories__.loc",
+          "loc_records": 70
+        },
+        {
+          "member": "text/db/initiative_sets__.loc",
+          "loc_records": 282
+        },
+        {
+          "member": "text/db/initiative_unit_set_requirements__.loc",
+          "loc_records": 65
+        },
+        {
+          "member": "text/db/initiatives__.loc",
+          "loc_records": 2522
+        },
+        {
+          "member": "text/db/lab_settings__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/land_units__.loc",
+          "loc_records": 5358
+        },
+        {
+          "member": "text/db/loading_screen_quotes__.loc",
+          "loc_records": 5922
+        },
+        {
+          "member": "text/db/loyalty_factors__.loc",
+          "loc_records": 20
+        },
+        {
+          "member": "text/db/mercenary_unit_groups__.loc",
+          "loc_records": 800
+        },
+        {
+          "member": "text/db/message_event_strings__.loc",
+          "loc_records": 7
+        },
+        {
+          "member": "text/db/message_event_text__.loc",
+          "loc_records": 1
+        },
+        {
+          "member": "text/db/military_force_legacy_names__.loc",
+          "loc_records": 54
+        },
+        {
+          "member": "text/db/ministerial_positions_strings__.loc",
+          "loc_records": 82
+        },
+        {
+          "member": "text/db/ministerial_positition_to_subtype_restrictions__.loc",
+          "loc_records": 129
+        },
+        {
+          "member": "text/db/mission_issuers__.loc",
+          "loc_records": 19
+        },
+        {
+          "member": "text/db/mission_text__.loc",
+          "loc_records": 4314
+        },
+        {
+          "member": "text/db/missions__.loc",
+          "loc_records": 10050
+        },
+        {
+          "member": "text/db/mortuary_cult_categories__.loc",
+          "loc_records": 56
+        },
+        {
+          "member": "text/db/multiplayer_campaign_settings__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/multiplayer_campaign_settings_options__.loc",
+          "loc_records": 44
+        },
+        {
+          "member": "text/db/nakai_temples__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/names__.loc",
+          "loc_records": 7611
+        },
+        {
+          "member": "text/db/naval_units__.loc",
+          "loc_records": 1
+        },
+        {
+          "member": "text/db/ownership_products__.loc",
+          "loc_records": 68
+        },
+        {
+          "member": "text/db/pdlc__.loc",
+          "loc_records": 26
+        },
+        {
+          "member": "text/db/plague_components__.loc",
+          "loc_records": 114
+        },
+        {
+          "member": "text/db/pooled_resource_factors__.loc",
+          "loc_records": 956
+        },
+        {
+          "member": "text/db/pooled_resources__.loc",
+          "loc_records": 1112
+        },
+        {
+          "member": "text/db/pre_battle_speeches__.loc",
+          "loc_records": 7
+        },
+        {
+          "member": "text/db/projectile_shot_type_displays__.loc",
+          "loc_records": 44
+        },
+        {
+          "member": "text/db/projectile_shot_type_enum__.loc",
+          "loc_records": 30
+        },
+        {
+          "member": "text/db/prologue_chapters__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/prophecy_of_sotek_stages__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/province_automanagement_focuses__.loc",
+          "loc_records": 8
+        },
+        {
+          "member": "text/db/province_growth_factors__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/provinces__.loc",
+          "loc_records": 317
+        },
+        {
+          "member": "text/db/provincial_initiative_records__.loc",
+          "loc_records": 125
+        },
+        {
+          "member": "text/db/public_order_providers__.loc",
+          "loc_records": 56
+        },
+        {
+          "member": "text/db/quotes__.loc",
+          "loc_records": 359
+        },
+        {
+          "member": "text/db/quotes_people__.loc",
+          "loc_records": 280
+        },
+        {
+          "member": "text/db/random_localisation_strings__.loc",
+          "loc_records": 1687
+        },
+        {
+          "member": "text/db/region_groups__.loc",
+          "loc_records": 641
+        },
+        {
+          "member": "text/db/regions__.loc",
+          "loc_records": 1896
+        },
+        {
+          "member": "text/db/reign_of_chaos__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/resources__.loc",
+          "loc_records": 225
+        },
+        {
+          "member": "text/db/ritual_additional_ui_explanation_texts__.loc",
+          "loc_records": 32
+        },
+        {
+          "member": "text/db/ritual_categories__.loc",
+          "loc_records": 215
+        },
+        {
+          "member": "text/db/ritual_category_groups__.loc",
+          "loc_records": 12
+        },
+        {
+          "member": "text/db/ritual_chains__.loc",
+          "loc_records": 172
+        },
+        {
+          "member": "text/db/rituals__.loc",
+          "loc_records": 2940
+        },
+        {
+          "member": "text/db/scripted_objectives__.loc",
+          "loc_records": 3324
+        },
+        {
+          "member": "text/db/scripted_subtitles__.loc",
+          "loc_records": 1254
+        },
+        {
+          "member": "text/db/seasons__.loc",
+          "loc_records": 5
+        },
+        {
+          "member": "text/db/settlement_climate_types__.loc",
+          "loc_records": 24
+        },
+        {
+          "member": "text/db/settlement_types__.loc",
+          "loc_records": 50
+        },
+        {
+          "member": "text/db/shortcut_localisation__.loc",
+          "loc_records": 438
+        },
+        {
+          "member": "text/db/simultaneous_turns_multiplayer_options__.loc",
+          "loc_records": 3
+        },
+        {
+          "member": "text/db/spawnable_forces__.loc",
+          "loc_records": 31
+        },
+        {
+          "member": "text/db/special_ability_groups__.loc",
+          "loc_records": 126
+        },
+        {
+          "member": "text/db/special_ability_invalid_usage_flags__.loc",
+          "loc_records": 468
+        },
+        {
+          "member": "text/db/special_ability_phases__.loc",
+          "loc_records": 2526
+        },
+        {
+          "member": "text/db/stances__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/start_pos_factions__.loc",
+          "loc_records": 1676
+        },
+        {
+          "member": "text/db/start_pos_regions__.loc",
+          "loc_records": 1658
+        },
+        {
+          "member": "text/db/start_pos_settlements__.loc",
+          "loc_records": 830
+        },
+        {
+          "member": "text/db/technologies__.loc",
+          "loc_records": 6294
+        },
+        {
+          "member": "text/db/technology_node_sets__.loc",
+          "loc_records": 108
+        },
+        {
+          "member": "text/db/technology_nodes_to_ancillaries_junctions__.loc",
+          "loc_records": 42
+        },
+        {
+          "member": "text/db/technology_script_lock_reasons__.loc",
+          "loc_records": 112
+        },
+        {
+          "member": "text/db/technology_ui_groups__.loc",
+          "loc_records": 278
+        },
+        {
+          "member": "text/db/technology_ui_tabs__.loc",
+          "loc_records": 60
+        },
+        {
+          "member": "text/db/teleportation_node_templates__.loc",
+          "loc_records": 70
+        },
+        {
+          "member": "text/db/time_of_legends_campaigns__.loc",
+          "loc_records": 4
+        },
+        {
+          "member": "text/db/transported_military_forces__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/ui_colour_profiles__.loc",
+          "loc_records": 10
+        },
+        {
+          "member": "text/db/ui_colours__.loc",
+          "loc_records": 163
+        },
+        {
+          "member": "text/db/ui_faction_set_to_localised_names__.loc",
+          "loc_records": 16
+        },
+        {
+          "member": "text/db/ui_graph_node_clusters__.loc",
+          "loc_records": 102
+        },
+        {
+          "member": "text/db/ui_graph_node_superclusters__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/ui_info_ritual_target_criterias__.loc",
+          "loc_records": 65
+        },
+        {
+          "member": "text/db/ui_main_theme_options__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/ui_mercenary_recruitment_infos__.loc",
+          "loc_records": 275
+        },
+        {
+          "member": "text/db/ui_text_replacements__.loc",
+          "loc_records": 10152
+        },
+        {
+          "member": "text/db/ui_tooltip_components__.loc",
+          "loc_records": 16
+        },
+        {
+          "member": "text/db/ui_unit_bullet_point_enums__.loc",
+          "loc_records": 458
+        },
+        {
+          "member": "text/db/ui_unit_group_parents__.loc",
+          "loc_records": 12
+        },
+        {
+          "member": "text/db/ui_unit_groupings__.loc",
+          "loc_records": 1186
+        },
+        {
+          "member": "text/db/ui_unit_statuses__.loc",
+          "loc_records": 17
+        },
+        {
+          "member": "text/db/uied_component_texts__.loc",
+          "loc_records": 10410
+        },
+        {
+          "member": "text/db/unit_abilities__.loc",
+          "loc_records": 6358
+        },
+        {
+          "member": "text/db/unit_abilities_additional_ui_effects__.loc",
+          "loc_records": 502
+        },
+        {
+          "member": "text/db/unit_ability_source_types__.loc",
+          "loc_records": 46
+        },
+        {
+          "member": "text/db/unit_ability_types__.loc",
+          "loc_records": 60
+        },
+        {
+          "member": "text/db/unit_attributes__.loc",
+          "loc_records": 261
+        },
+        {
+          "member": "text/db/unit_castes__.loc",
+          "loc_records": 13
+        },
+        {
+          "member": "text/db/unit_category__.loc",
+          "loc_records": 9
+        },
+        {
+          "member": "text/db/unit_class__.loc",
+          "loc_records": 36
+        },
+        {
+          "member": "text/db/unit_description_historical_texts__.loc",
+          "loc_records": 1116
+        },
+        {
+          "member": "text/db/unit_description_short_texts__.loc",
+          "loc_records": 1564
+        },
+        {
+          "member": "text/db/unit_description_strengths_weaknesses_texts__.loc",
+          "loc_records": 1
+        },
+        {
+          "member": "text/db/unit_purchasable_effect_lock_reasons__.loc",
+          "loc_records": 36
+        },
+        {
+          "member": "text/db/unit_purchasable_effects_categories__.loc",
+          "loc_records": 34
+        },
+        {
+          "member": "text/db/unit_recruitment_queue_sets__.loc",
+          "loc_records": 3
+        },
+        {
+          "member": "text/db/unit_set_to_mp_unit_caps__.loc",
+          "loc_records": 1012
+        },
+        {
+          "member": "text/db/unit_stat_localisations__.loc",
+          "loc_records": 112
+        },
+        {
+          "member": "text/db/unit_weights__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/units_custom_battle_mounts__.loc",
+          "loc_records": 1478
+        },
+        {
+          "member": "text/db/units_custom_battle_permissions__.loc",
+          "loc_records": 2947
+        },
+        {
+          "member": "text/db/units_custom_battle_type_categories__.loc",
+          "loc_records": 20
+        },
+        {
+          "member": "text/db/units_custom_battle_types__.loc",
+          "loc_records": 674
+        },
+        {
+          "member": "text/db/victory_types__.loc",
+          "loc_records": 18
+        },
+        {
+          "member": "text/db/vo_fmv_texts__.loc",
+          "loc_records": 92
+        },
+        {
+          "member": "text/db/war_coordination_invalidation_reasons__.loc",
+          "loc_records": 6
+        },
+        {
+          "member": "text/db/wind_levels__.loc",
+          "loc_records": 5
+        },
+        {
+          "member": "text/db/winds_of_magic_compass_actions__.loc",
+          "loc_records": 5
+        }
+      ]
+    },
+    "limits": [
+      "Exact resource keys and event-name candidates, not verified spoken transcripts.",
+      "All media reachable from an event receive its candidate text; random/sequence variants may require manual segmentation.",
+      "Explicit {{tr:alias}} references resolve against UI text replacements, preserving raw text and source keys.",
+      "No fuzzy association, transcription, translation or automatic traditional-to-simplified conversion.",
+      "Missing candidate means unresolved in this explicit resource scope, not proof that no Chinese text exists anywhere."
+    ]
+  },
+  "advisor_coverage": {
+    "archaon": {
+      "db_rows": 4,
+      "complete_graph_rows": 4,
+      "en_media_available_rows": 4,
+      "cn_media_available_rows": 0
+    },
+    "faction_leader": {
+      "db_rows": 613,
+      "complete_graph_rows": 558,
+      "en_media_available_rows": 558,
+      "cn_media_available_rows": 12
+    },
+    "isabella": {
+      "db_rows": 1,
+      "complete_graph_rows": 1,
+      "en_media_available_rows": 1,
+      "cn_media_available_rows": 0
+    },
+    "nagash": {
+      "db_rows": 4,
+      "complete_graph_rows": 4,
+      "en_media_available_rows": 4,
+      "cn_media_available_rows": 0
+    },
+    "narrator": {
+      "db_rows": 140,
+      "complete_graph_rows": 49,
+      "en_media_available_rows": 49,
+      "cn_media_available_rows": 0
+    },
+    "prologue_advisor": {
+      "db_rows": 215,
+      "complete_graph_rows": 201,
+      "en_media_available_rows": 201,
+      "cn_media_available_rows": 0
+    },
+    "prologue_yuri_0": {
+      "db_rows": 23,
+      "complete_graph_rows": 23,
+      "en_media_available_rows": 23,
+      "cn_media_available_rows": 0
+    },
+    "prologue_yuri_1": {
+      "db_rows": 25,
+      "complete_graph_rows": 24,
+      "en_media_available_rows": 24,
+      "cn_media_available_rows": 0
+    },
+    "prologue_yuri_2": {
+      "db_rows": 7,
+      "complete_graph_rows": 7,
+      "en_media_available_rows": 7,
+      "cn_media_available_rows": 0
+    },
+    "prologue_yuri_3": {
+      "db_rows": 4,
+      "complete_graph_rows": 4,
+      "en_media_available_rows": 4,
+      "cn_media_available_rows": 0
+    },
+    "skreech": {
+      "db_rows": 5,
+      "complete_graph_rows": 5,
+      "en_media_available_rows": 5,
+      "cn_media_available_rows": 0
+    },
+    "standard_advisor": {
+      "db_rows": 1928,
+      "complete_graph_rows": 1860,
+      "en_media_available_rows": 1860,
+      "cn_media_available_rows": 1466
+    }
+  },
+  "mapping_samples": [
+    {
+      "key": "1001682303",
+      "thread": "wh2_dlc13.camp.advice.lzd.warmblood_invaders.001",
+      "advisor": "standard_advisor",
+      "loc_key": "advice_levels_onscreen_text_1001682303",
+      "events": [
+        "Play_wh2_dlc13_camp_advice_lzd_warmblood_invaders_001_1"
+      ],
+      "media_ids": [
+        245716803
+      ],
+      "event_resolutions": [
+        {
+          "event": "Play_wh2_dlc13_camp_advice_lzd_warmblood_invaders_001_1",
+          "event_id": 34042050,
+          "media_ids": [
+            245716803
+          ],
+          "missing_node_ids": [],
+          "unsupported_kinds": [],
+          "cycle_ids": []
+        }
+      ]
+    },
+    {
+      "key": "1001950543",
+      "thread": "wh3_main_camp_narrative_shared_increase_control_02",
+      "advisor": "standard_advisor",
+      "loc_key": "advice_levels_onscreen_text_1001950543",
+      "events": [
+        "Play_wh3_main_camp_narrative_shared_increase_control_02_1"
+      ],
+      "media_ids": [
+        907666168
+      ],
+      "event_resolutions": [
+        {
+          "event": "Play_wh3_main_camp_narrative_shared_increase_control_02_1",
+          "event_id": 1768141169,
+          "media_ids": [
+            907666168
+          ],
+          "missing_node_ids": [],
+          "unsupported_kinds": [],
+          "cycle_ids": []
+        }
+      ]
+    },
+    {
+      "key": "1180825077",
+      "thread": "Play_wh3_dlc29_endtimes_narrative_vermintide_skreech_007",
+      "advisor": "skreech",
+      "loc_key": "advice_levels_onscreen_text_1180825077",
+      "events": [
+        "Play_wh3_dlc29_endtimes_narrative_vermintide_skreech_007_1"
+      ],
+      "media_ids": [
+        830643825
+      ],
+      "event_resolutions": [
+        {
+          "event": "Play_wh3_dlc29_endtimes_narrative_vermintide_skreech_007_1",
+          "event_id": 909929468,
+          "media_ids": [
+            830643825
+          ],
+          "missing_node_ids": [],
+          "unsupported_kinds": [],
+          "cycle_ids": []
+        }
+      ]
+    },
+    {
+      "key": "2013388857",
+      "thread": "Play_wh3_dlc29_endtimes_narrative_nagash_nagash_004",
+      "advisor": "nagash",
+      "loc_key": "advice_levels_onscreen_text_2013388857",
+      "events": [
+        "Play_wh3_dlc29_endtimes_narrative_nagash_nagash_004_1"
+      ],
+      "media_ids": [
+        802095026
+      ],
+      "event_resolutions": [
+        {
+          "event": "Play_wh3_dlc29_endtimes_narrative_nagash_nagash_004_1",
+          "event_id": 1397752821,
+          "media_ids": [
+            802095026
+          ],
+          "missing_node_ids": [],
+          "unsupported_kinds": [],
+          "cycle_ids": []
+        }
+      ]
+    }
+  ],
+  "media_from_db_advice": 2717,
+  "db_media_with_chinese_candidate": 2717,
+  "unmatched_advice_rows": 221,
+  "empty_media_after_named_event_rows": [
+    {
+      "key": "1069718447",
+      "thread": "wh2_dlc13_camp_vortex_flyby_markus_wulfhart_001"
+    },
+    {
+      "key": "1077110324",
+      "thread": "wh2_dlc13_camp_vortex_flyby_gor_rok_004"
+    },
+    {
+      "key": "123477296",
+      "thread": "wh2_dlc13_camp_vortex_flyby_gor_rok_001"
+    },
+    {
+      "key": "1315515556",
+      "thread": "wh2_dlc13_camp_vortex_flyby_markus_wulfhart_003"
+    },
+    {
+      "key": "1326088323",
+      "thread": "wh2_dlc13_camp_vortex_flyby_gor_rok_002"
+    },
+    {
+      "key": "1493361414",
+      "thread": "wh2_dlc13_camp_vortex_flyby_gor_rok_003"
+    },
+    {
+      "key": "691591450",
+      "thread": "wh2_dlc13_camp_vortex_flyby_markus_wulfhart_002"
+    },
+    {
+      "key": "751467106",
+      "thread": "wh2_dlc13_camp_vortex_flyby_markus_wulfhart_004"
+    }
+  ],
+  "missing_cn_advice_hidden_counts": {
+    "visible": 17,
+    "hidden": 26
+  },
+  "wem_format_inspection": {
+    "format_counts": [
+      {
+        "codec": 65535,
+        "channels": 1,
+        "sample_rate": 48000,
+        "count": 4864
+      },
+      {
+        "codec": 65535,
+        "channels": 2,
+        "sample_rate": 48000,
+        "count": 124
+      }
+    ],
+    "errors": [],
+    "decoded_bytes": 492236317,
+    "samples": [
+      [
+        "922251",
+        "audio/wwise/english(uk)/922251.wem",
+        1,
+        48000,
+        [
+          {
+            "sound_id": 884684785,
+            "bank": "battle_advice__core.bnk",
+            "stream_type": 2,
+            "plugin_id": 262145
+          }
+        ]
+      ],
+      [
+        "1015035",
+        "audio/wwise/english(uk)/1015035.wem",
+        1,
+        48000,
+        [
+          {
+            "sound_id": 1057848675,
+            "bank": "campaign_advice__core.bnk",
+            "stream_type": 2,
+            "plugin_id": 262145
+          }
+        ]
+      ],
+      [
+        "1940057",
+        "audio/wwise/english(uk)/1940057.wem",
+        1,
+        48000,
+        [
+          {
+            "sound_id": 930852616,
+            "bank": "campaign_advice__core.bnk",
+            "stream_type": 2,
+            "plugin_id": 262145
+          }
+        ]
+      ],
+      [
+        "3436004",
+        "audio/wwise/english(uk)/3436004.wem",
+        1,
+        48000,
+        [
+          {
+            "sound_id": 365684865,
+            "bank": "campaign_advice__core.bnk",
+            "stream_type": 2,
+            "plugin_id": 262145
+          }
+        ]
+      ],
+      [
+        "3478169",
+        "audio/wwise/english(uk)/3478169.wem",
+        1,
+        48000,
+        [
+          {
+            "sound_id": 778031629,
+            "bank": "battle_advice__core.bnk",
+            "stream_type": 2,
+            "plugin_id": 262145
+          }
+        ]
+      ],
+      [
+        "4534566",
+        "audio/wwise/english(uk)/4534566.wem",
+        1,
+        48000,
+        [
+          {
+            "sound_id": 835754119,
+            "bank": "campaign_advice__core.bnk",
+            "stream_type": 2,
+            "plugin_id": 262145
+          }
+        ]
+      ]
+    ]
+  },
+  "decode_validation": {
+    "schema": "wh3.advisor-decode-check/v1",
+    "decoder": "vgmstream r2168",
+    "decoder_exe_sha256": "10fb0691538d3133f0115a071f89775fc99f32210b7e5991cfc3c2869247e4b2",
+    "catalog_sha256": "2b7226bb765d750f79ecbbdbd22d4946d15c48a1b07a659e984a95a7bb176e51",
+    "started_at_utc": "2026-10-31T04:02:59.768437+00:00",
+    "finished_at_utc": "2026-10-31T04:03:24.717292+00:00",
+    "total_s": 24.94888959999662,
+    "files": 4988,
+    "exit_zero": 4988,
+    "nonempty_stderr": 0,
+    "mode": "-i -O (decode fully, discard PCM, no listening or game playback)"
+  },
+  "native_swap_probe": {
+    "schema": "wh3.advisor-native-swap-probe/v1",
+    "pack": "D:\\workspace\\.codex-wh3-runtime\\advisor-audio-research\\native-swap-a04\\advisor_voice_native_swap_probe.pack",
+    "pack_sha256": "e132a1bbc5515a8ac76d8d0aebbf9b23bbef8736596338fce7fd3af4f0569b9b",
+    "pack_bytes": 27086,
+    "pack_type": 3,
+    "member": "audio/wwise/english(uk)/1015035.wem",
+    "target_media_id": 1015035,
+    "donor_media_id": 1940057,
+    "original_sha256": "53e291ffeec956a7ee3b2d7b34535e5c9b07adc960506969d4639603c0ee92ce",
+    "replacement_sha256": "2a2093e7ec8f8b0ed240d9766ef16b7a8fb20fced95d31bfc5853c8591620a61",
+    "original_format": {
+      "codec": 65535,
+      "channels": 1,
+      "sample_rate": 48000,
+      "format_signature": "af626379da253a9d5a3d83e8062fe0d99549425046055893769e9e3d7aec13f0"
+    },
+    "replacement_format": {
+      "codec": 65535,
+      "channels": 1,
+      "sample_rate": 48000,
+      "format_signature": "6014a603436436a4a50222c5bc2c984fd13f4ddf1cc205d513bc6388167b64a4"
+    },
+    "affected_db_advice": [
+      {
+        "key": "2051789675",
+        "thread": "wh3_main_camp_narrative_chs_daemon_prince_change_appendage_01",
+        "advisor": "standard_advisor"
+      }
+    ],
+    "catalog_sha256": "1d576987424e878b7931ff6b7535fea7367ec48b79c1e622103589e9a3243843",
+    "verification": {
+      "shared_pack_roundtrip": true,
+      "independent_pack_roundtrip": true,
+      "game_installed": false,
+      "game_playback_verified": false
+    },
+    "limits": [
+      "Native donor bytes only: no custom encoding was tested.",
+      "Matching headers and archive roundtrips do not prove engine playback or load priority.",
+      "Only the selected streamed media path is overridden; other languages and embedded/preloaded media need separate work."
+    ]
+  },
+  "dataset_integrity": {
+    "extracted_a04_equals_decoded_a03_media_manifest": true,
+    "audio_a05_equals_extracted_a04_media_ids_and_members": true,
+    "media_manifest_sha256": "a0c2285669921fac359f3877dd692a46473b1cf57decc062c03cc00f1267b123",
+    "catalog_a03_sha256": "2b7226bb765d750f79ecbbdbd22d4946d15c48a1b07a659e984a95a7bb176e51",
+    "catalog_a04_sha256": "1d576987424e878b7931ff6b7535fea7367ec48b79c1e622103589e9a3243843",
+    "catalog_a05_sha256": "73cc3c63cacb3cedae8b97131734df3ea3aa02aa6d18d1ac4f81a340d84d77fc"
+  },
+  "exports": {
+    "mods/advisor_voice/build/research-2026-10-31/texts/advice-texts.json": {
+      "bytes": 4200056,
+      "sha256": "5ad7a90233e6433e3fe70e5276b7d340f68b4f5bccc70fef572cdc76b65f24be"
+    },
+    "mods/advisor_voice/build/research-2026-10-31/texts/media-chinese-text.tsv": {
+      "bytes": 3427679,
+      "sha256": "517e978c36b9179ff86aa657dbad0196b09f2cb09db6b31596ae6b02f748fd40"
+    },
+    "mods/advisor_voice/build/research-2026-10-31/texts/media-texts.json": {
+      "bytes": 6835735,
+      "sha256": "f30a5bc69e8721d45348a915a08687527d45589864792fd9928eeee40b7e35d1"
+    },
+    "mods/advisor_voice/build/research-2026-10-31/texts/subtitle-resources.json": {
+      "bytes": 5347814,
+      "sha256": "9497ca8b974e5810b8367b1a29555120ff7a935e842f6ff621928b22f3a35b98"
+    },
+    "mods/advisor_voice/build/research-2026-10-31/texts/summary.json": {
+      "bytes": 34900,
+      "sha256": "d1f466ee3cbe1f7e082859e64e8ddee8607204a84856ac5fc6f629378d3387f0"
+    }
+  },
+  "dependencies": {
+    "wwiser": {
+      "repository": "https://github.com/bnnm/wwiser",
+      "commit": "08e937b649bc7007c234bbd59e34a41d5eef3b38",
+      "used_source_files": [
+        {
+          "path": "wwiser/__init__.py",
+          "sha256": "38c6c92ef1fe49a56df37892b2287edc85e31698aafaa6b29cfc6607f2810268"
+        },
+        {
+          "path": "wwiser/parser/__init__.py",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "wwiser/parser/wdefs.py",
+          "sha256": "8eb5e5450731d5e00f2e1cae9545c93381fc01a78c8aff27a2751841cd2d27d2"
+        },
+        {
+          "path": "wwiser/parser/wfinder.py",
+          "sha256": "a9239d2a43fa14fb87e0b6a65b33313f38bf3d68992ce8c3fa74ce83ec31d3d9"
+        },
+        {
+          "path": "wwiser/parser/wfmt.py",
+          "sha256": "e0a95668cbbeb4ff7fd65e74380bcd1362acec9093447630c95cb498421c473d"
+        },
+        {
+          "path": "wwiser/parser/wio.py",
+          "sha256": "d38c2d0fcca2113476c604098efcef7840a329e08f2b9d7a458b6a5c72962c94"
+        },
+        {
+          "path": "wwiser/parser/wmodel.py",
+          "sha256": "4c86a0f281d10a53b4b945674a1e82d9f89e6ba8143db56920c482bfdfc3ba64"
+        },
+        {
+          "path": "wwiser/parser/wparser.py",
+          "sha256": "64520fb36d6bb58b880fd6ef5ff8f2ecd909cbc7bdca54b7702f79c3ead35d57"
+        },
+        {
+          "path": "wwiser/parser/wparser_cls.py",
+          "sha256": "01f62dc3caba45c131568a3a00a622b71f167244a0726c91653cc1885327ebb1"
+        },
+        {
+          "path": "wwiser/parser/wparser_plg.py",
+          "sha256": "0ccf1b21b8ef3676a58c1f7f47487347c78d82ec98086ac3aa35cf928c04439c"
+        },
+        {
+          "path": "wwiser/wfnv.py",
+          "sha256": "e58d2c27c780302ab36755e655fdc6084c3e952d4ba7a99b72a852325a37d21a"
+        }
+      ]
+    },
+    "asset_editor_reference": {
+      "repository": "https://github.com/donkeyProgramming/TheAssetEditor",
+      "commit": "3ee43fc7460a8db8e64670d511f46060f3c436cc"
+    },
+    "rpfm_schema": {
+      "url": "https://github.com/Frodo45127/rpfm-schemas/blob/master/schema_wh3.ron",
+      "sha256": "bc78e1fc63f5c5d3bd942c0793adf07cbe2c9b328c68b1521115805321390768"
+    },
+    "vgmstream": {
+      "url": "https://github.com/vgmstream/vgmstream/releases/download/r2168/vgmstream-win64.zip",
+      "release": "r2168",
+      "sha256": "692d45070852a35c1fa42726aa3c9de528e44eec925d37d99b1074256b99a229",
+      "bytes": 4574355
+    }
+  },
+  "unit_tests": {
+    "command": "python mods/advisor_voice/tests/run.py --mod advisor_voice",
+    "passed": 47,
+    "failed": 0
+  },
+  "boundaries": {
+    "game_launched": false,
+    "audio_listened_to": false,
+    "game_playback_verified": false,
+    "game_installation_modified": false,
+    "custom_voice_encoded": false,
+    "dlc_ownership_checked": false,
+    "controlled_owned_unowned_comparison": false,
+    "all_advice_resolved": false,
+    "all_localized_audio_languages_verified": false,
+    "game_media_or_full_text_committed": false
+  },
+  "failed_experiments": [
+    {
+      "run": "audit-a01",
+      "failure": "English pack does not contain text/localisation__.loc; fixed by enumerating LOC members."
+    },
+    {
+      "pack": "audio_base_m.pack",
+      "failure": "PFH5 encrypted-data flag 0x10 and a dependency; rejected by the intentionally limited reader, not included in the advisor catalog."
+    }
+  ],
+  "runtime_artifact_root": "D:\\workspace\\.codex-wh3-runtime\\advisor-audio-research",
+  "steam_final": {
+    "observed_at_utc": "2026-10-31T04:19:14.197196+00:00",
+    "status": "offline",
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte"
+  }
+}
