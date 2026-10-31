@@ -1,16 +1,14 @@
-# 项目文档
+# 共性文档
+
+根目录文档只记录整个仓库通用的流程和约定，具体 Mod 的预研、设计、验收及发布记录保存在各自目录。
 
 | 文档 | 内容 |
 | --- | --- |
-| [可行性预研](feasibility-study.md) | 本机原版接口、候选池机制、技术路线、风险与原型验证计划 |
-| [Mod 设计](mod-design.md) | 招募刷新和迁都交互、模块结构、状态、兼容范围及验收标准 |
-| [同类 Mod 调查](similar-mods-research.md) | 作者说明、实际下载包源码/数据、原生清理路径及连续刷新实验 |
-| [顾问语音与 DLC 资源预研](advisor-voice-research.md) | 顾问共用范围、声音库与文案结构、DLC 资源发现边界及换声验证路线 |
-| [顾问语音研究证据](advisor-voice-research-evidence-2026-10-31.json) | 本机包与成员哈希、顾问提示计数、声音库目录及中文文案关联样本 |
-| [测试验收与发布方案](test-acceptance-plan.md) | 静态检查、业务测试、实机矩阵及创意工坊发布验收 |
-| [验收报告](acceptance-report.md) | 已执行的离线与实机实验、失败证据及当前功能限制 |
-| [验收结果 JSON](acceptance-results.json) | 构建哈希、分层状态及本机证据索引 |
-| [工坊发布记录](workshop-publication.md) | 尚未发布的原因及发布前置门槛 |
-| [研究证据清单](research-evidence-2026-10-30.json) | 2026-10-30 本机版本、文件哈希、包内证据位置与外部来源 |
+| [项目结构](project-structure.md) | 目录边界、Mod 配置、共用工具用法和新增 Mod 步骤 |
+| [Steam 操作约定](steam-operation.md) | 主动离线、账号占用检查、必要在线阶段和状态读回 |
+| [仓库工作约定](../AGENTS.md) | Steam 与 Git 提交推送规则 |
 
-当前阶段：新的原生清理路径已完成领主、事务官整批替换和各 10 次连续刷新；正在复验正式界面、真实招募与保存重载。完整验收和工坊发布尚未完成；旧验收报告保留了此前的失败证据。
+各 Mod 的资料入口：
+
+- [征募与迁都](../mods/recruitment_and_capitals/docs/README.md)：实现、原生研究、离线/实机验收和公开工坊发布记录。
+- [顾问换声](../mods/advisor_voice/README.md)：资源可行性预研及机器可读证据，尚无可构建 Mod。

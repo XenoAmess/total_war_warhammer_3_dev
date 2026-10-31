@@ -30,5 +30,6 @@
   "download_hash_verification": "PASS",
   "downloaded_pack_bytes": 42899,
   "downloaded_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
-  "steam_final_mode": "offline"
+  "steam_final_mode": "offline",
+  "mod_id": "recruitment_and_capitals"
 }

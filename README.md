@@ -1,40 +1,38 @@
-# 征募与迁都 / Recruitment and Capitals
+# Total War: WARHAMMER III Mod 项目集
 
-《全面战争：战锤 3》战役 Mod 的开发仓库：普通领主/事务官招募刷新，以及玩家迁移派系首都。
+《全面战争：战锤 3》多 Mod 开发仓库。根目录管理共用工具、共性文档和开发约定；每个 Mod 的源码、资源、测试、设计、验收与工坊资料均放在 `mods/<mod_id>/`。
 
-`0.1.0 Alpha` 已公开发布：[Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)。L0–L4 验收通过，工坊实际下载包与实机验收包的 SHA-256 一致。见 [发布记录](docs/workshop-publication.md)。
+| Mod | 状态 | 入口 |
+| --- | --- | --- |
+| 征募与迁都 | `0.1.0 Alpha` 已发布，提供普通人物招募刷新和迁都 | [项目说明](mods/recruitment_and_capitals/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
+| 顾问换声 | 原版资源预研完成，尚无实现或可发布包 | [预研入口](mods/advisor_voice/README.md) |
 
-领主和事务官已完成离线真实按钮刷新、正常招募及各 10 次连续按钮操作，迁都、过回合和退出后读档通过；受伤、不朽、已招募和未知履历人物保护通过。类型由引擎的普通自动生成标记与实际候选职业共同识别，冰雪宫廷等特殊训练不启用。本机完整玩家流程实测为基斯里夫波耶老爷和牧首，另有帝国两类法师共用原生池的隔离实验；不据此宣称全种族兼容。见 [同类 Mod 调查与新实验](docs/similar-mods-research.md) 与 [验收报告](docs/acceptance-report.md)。
-
-刷新功能需要启用 [memreader Plus](https://steamcommunity.com/sharedfiles/filedetails/?id=3811098873)。本项目通过它调用游戏自己的候选淘汰与列表清理函数，不直接改写人物或容器内存。当前验证基线为 Windows x64、WH3 `9.0.4.0`、单人超凡帝国；缺少依赖或函数签名/结构校验失败时，按钮与后台均停止刷新。迁都使用游戏脚本接口。
-
-在工坊订阅本 Mod 和 memreader Plus，并在启动器中同时启用。进入单人超凡帝国后，在普通人物招募页选择候选类别并点击“刷新候选”；在自己的城镇面板点击“迁都”。旧存档中履历不明的候选受到保护，后续自然生成的普通候选才会获得可刷新履历。
+目录约定与新增 Mod 步骤见 [项目结构](docs/project-structure.md)，Steam 离线及账号占用规则见 [Steam 操作约定](docs/steam-operation.md)。
 
 ## 开发
 
-构建只需要 Python 标准库：
+在仓库根目录执行，所有涉及 Mod 的入口必须显式传入 `--mod`：
 
 ```powershell
-python tools/build.py
-python tools/build.py --language en --output build/en
+python tools/build.py --mod recruitment_and_capitals
 ```
 
-产物为 `build/xatw3_campaign_utilities.pack` 和含 SHA-256 的 `manifest.json`。构建不会改动游戏安装；英文构建为替代语言版本，不与中文包同时启用。
+构建只需 Python 标准库，产物写入 `mods/recruitment_and_capitals/build/`。各 Mod 的构建目录独立，构建不修改游戏安装。
 
-离线检查使用 Python 3.13 与 Lupa 提供的 Lua 5.1：
+运行共用工具测试和所选 Mod 的离线测试，需要 Python 3.13、Lua 5.1 的 Lupa，以及预览图工具使用的 Pillow：
 
 ```powershell
 py -3.13 -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements-dev.txt
-.venv/Scripts/python.exe tools/test.py
+.venv/Scripts/python.exe tools/test.py --mod recruitment_and_capitals
 ```
 
-`tools/live_probe.py` 构建单独的引擎测试夹具；只在专用测试环境显式安装，正式包不会包含该夹具。它允许从指定本机目录执行可信测试命令，不能与正式包一起上传。
+共用工具分别负责 PFH5 打包、本地化编译、离线测试调度、实机测试夹具和 Steam 工坊上传。Mod 专属测试及预览图绘制逻辑由各自目录提供。详见 [工具用法与目录约定](docs/project-structure.md)。
 
 ## 文档
 
-- [预研报告](docs/feasibility-study.md)
-- [设计文档](docs/mod-design.md)
-- [测试验收与发布方案](docs/test-acceptance-plan.md)
+- [共性文档索引](docs/README.md)
+- [征募与迁都文档](mods/recruitment_and_capitals/docs/README.md)
+- [顾问换声预研](mods/advisor_voice/docs/advisor-voice-research.md)
 
-发布工具 `tools/workshop.py` 只允许上传与验收清单哈希一致、且 L0–L3 全部 PASS 的包。工具在创建条目后立即记录 ID，重试更新同一个条目。上传回执与公开页面验证分别记录。
+发布工具根据各 Mod 的 `mod.json` 和专属验收、工坊状态选择目标，拒绝混用其他 Mod 的记录。Steam 平时保持主动离线，必要发布前须检查其他机器账号占用，完成后立即恢复离线。完整约定见 [AGENTS.md](AGENTS.md)。

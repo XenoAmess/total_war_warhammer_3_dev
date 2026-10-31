@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "recruitment_and_capitals",
+  "title": "征募与迁都 | Recruitment Refresh & Move Capital",
+  "version": "0.1.0",
+  "pack_name": "xatw3_campaign_utilities.pack",
+  "languages": ["zh-CN", "en"],
+  "default_language": "zh-CN",
+  "localisation_pack_path": "text/db/xatw3_campaign_utilities.loc",
+  "workshop": {
+    "required_items": ["3811098873"],
+    "tags": ["mod", "campaign"]
+  }
+}

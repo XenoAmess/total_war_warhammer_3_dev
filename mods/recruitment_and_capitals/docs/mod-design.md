@@ -85,34 +85,30 @@ flowchart TD
 
 原版 `CampaignUI.TriggerCampaignScriptEvent` 与 `UITrigger` 的语义见 [CampaignUI 文档](https://chadvandy.github.io/tw_modding_resources/WH3/campaign/campaignui.html#function:CampaignUI:TriggerCampaignScriptEvent)。首版仍限制为单人；采用该入口只是为隔离 UI 与模型，不代表已经解决联机同步。
 
-### 3.1 拟定源码布局
+### 3.1 当前源码布局
 
 ```text
-mod/
-  script/campaign/mod/xatw3_campaign_utilities.lua
-  script/campaign/xatw3_campaign_utilities/
-    config.lua
-    requests.lua
-    state.lua
-    adapters.lua
-    recruitment.lua
-    capital.lua
+mods/recruitment_and_capitals/
+  mod.json
+  src/script/campaign/mod/xatw3_campaign_utilities.lua
+  src/script/campaign/xatw3_campaign_utilities/
+    logic.lua
+    runtime.lua
+    native_pool.lua
     ui.lua
-  ui/xatw3_campaign_utilities/
-    refresh_button.twui.xml
-    capital_button.twui.xml
-    confirm_dialog.twui.xml
-localisation/
-  zh-CN.tsv
-  en.tsv
-tools/
-  <构建与静态检查入口，实施时确定>
-tests/
-  <过滤、请求去重和失败处理的离线用例>
-docs/
-  feasibility-study.md
-  mod-design.md
-  research-evidence-2026-10-30.json
+  localisation/
+    zh-CN.tsv
+    en.tsv
+  tests/
+    run.py
+    test_logic.lua
+    test_ui.lua
+    test_native_pool.lua
+    test_runtime.lua
+  tools/preview.py
+  docs/
+  workshop/
+  build/                       # Git 忽略
 ```
 
 构建时将一个语言源编译为包内 `text/db/xatw3_campaign_utilities.loc`。首版中文包使用中文源；英文包作为替代构建，不与中文包同时启用。不能把具有相同 key 的两套译文直接打入同一加载空间，导致覆盖顺序决定语言。

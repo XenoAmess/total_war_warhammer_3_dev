@@ -7,26 +7,34 @@ import json
 from pathlib import Path
 
 from pack import read_pack, read_translations, write_loc, write_pack
+from project import ModProject, add_mod_argument, selected_project
 
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def build(language: str = 'zh-CN', output: Path | None = None) -> dict:
-    output = output or ROOT / 'build'
-    translations = read_translations(ROOT / 'localisation' / (language + '.tsv'))
-    other = read_translations(ROOT / 'localisation' / ('en.tsv' if language == 'zh-CN' else 'zh-CN.tsv'))
-    if translations.keys() != other.keys():
-        raise ValueError('Translation keys differ')
-    files = {p.relative_to(ROOT / 'mod').as_posix(): p.read_bytes()
-             for p in (ROOT / 'mod').rglob('*') if p.is_file()}
-    files['text/db/xatw3_campaign_utilities.loc'] = write_loc(translations)
+def build(project: ModProject, language: str | None = None, output: Path | None = None) -> dict:
+    output = output if output is not None else project.build_dir
+    files = {p.relative_to(project.source_dir).as_posix(): p.read_bytes()
+             for p in project.source_dir.rglob('*') if p.is_file()}
+    if not files:
+        raise ValueError(f'Mod {project.id!r} has no release files in src/')
+    languages = project.metadata.get('languages', [])
+    language = language or project.metadata.get('default_language')
+    if languages:
+        if language not in languages:
+            raise ValueError(f'Unsupported language: {language}')
+        translations = read_translations(project.root / 'localisation' / (language + '.tsv'))
+        for other_language in languages:
+            other = read_translations(project.root / 'localisation' / (other_language + '.tsv'))
+            if translations.keys() != other.keys():
+                raise ValueError('Translation keys differ')
+        files[project.metadata['localisation_pack_path']] = write_loc(translations)
+    elif language is not None:
+        raise ValueError('This Mod has no selectable localisation')
     raw = write_pack(files)
     if read_pack(raw) != files:
         raise ValueError('Pack round trip failed')
     output.mkdir(parents=True, exist_ok=True)
-    target = output / 'xatw3_campaign_utilities.pack'
+    target = output / project.pack_name
     target.write_bytes(raw)
-    manifest = {'version': '0.1.0', 'language': language, 'pack': target.name,
+    manifest = {'mod_id': project.id, 'version': project.metadata['version'], 'language': language, 'pack': target.name,
                 'sha256': hashlib.sha256(raw).hexdigest(), 'bytes': len(raw),
                 'files': [{'path': k, 'bytes': len(v), 'sha256': hashlib.sha256(v).hexdigest()}
                           for k, v in sorted(files.items())]}
@@ -36,7 +44,9 @@ def build(language: str = 'zh-CN', output: Path | None = None) -> dict:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--language', choices=('zh-CN', 'en'), default='zh-CN')
+    add_mod_argument(parser)
+    parser.add_argument('--language')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
-    print(json.dumps(build(args.language, args.output), indent=2))
+    project = selected_project(parser, args.mod)
+    print(json.dumps(build(project, args.language, args.output), indent=2))

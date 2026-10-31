@@ -2,7 +2,8 @@
 
 Install its movie pack explicitly, launch a disposable single-player campaign,
 and write a trusted Lua command to the runtime directory. The fixture records
-the actual engine result. Remove the fixture before testing the release pack.
+the actual engine result. Use dispatcher-only when loading the frozen release
+pack separately; remove all test fixtures before normal play or publication.
 """
 from __future__ import annotations
 
@@ -11,8 +12,7 @@ import json
 from pathlib import Path
 
 from pack import read_pack, write_pack
-
-ROOT = Path(__file__).resolve().parents[1]
+from project import add_mod_argument, selected_project
 LUA = r'''
 local root = __RUNTIME__
 xatw3_test = {}
@@ -79,9 +79,12 @@ core:get_tm():real_callback(poll, 1000, 'xatw3_acceptance_frontend')
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
+    add_mod_argument(p)
     p.add_argument('--runtime', type=Path, required=True)
-    p.add_argument('--output', type=Path, default=ROOT / 'build/zz_xatw3_acceptance.pack')
-    p.add_argument('--production-pack', type=Path, default=ROOT / 'build/xatw3_campaign_utilities.pack')
+    p.add_argument('--output', type=Path)
+    p.add_argument('--production-pack', type=Path)
     p.add_argument('--dispatcher-only', action='store_true', help='Load production through the real mod pack separately')
     args = p.parse_args()
-    print(fixture(args.output, args.runtime, args.production_pack, not args.dispatcher_only))
+    project = selected_project(p, args.mod)
+    print(fixture(args.output or project.build_dir / 'zz_xatw3_acceptance.pack', args.runtime,
+                  args.production_pack or project.pack_path, not args.dispatcher_only))

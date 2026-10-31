@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-31T02:10:58.816116+00:00",
+  "recorded_at_utc": "2026-10-31T03:20:57.081982+00:00",
   "source_commit": "cb43cc56f3cadbfaa6d652e3cadf6eb895dd6c90",
   "release_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
   "release_pack_bytes": 42899,
@@ -25,10 +25,11 @@
     "ui_controller_tests": 8,
     "native_bridge_rejection_tests": 3,
     "runtime_metadata_tests": 5,
-    "python_tool_tests": 10,
-    "total_tests": 61,
+    "python_tool_tests": 14,
+    "total_tests": 65,
     "deterministic_build": "PASS",
-    "pack_round_trip": "PASS"
+    "pack_round_trip": "PASS",
+    "revalidated_at_utc": "2026-10-31T03:20:57.081982+00:00"
   },
   "native": {
     "lord_and_hero_real_button_ten_refreshes_each": "PASS",
@@ -309,6 +310,44 @@
       "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-account-wait.jsonl",
       "bytes": 9641,
       "sha256": "61509c3b6fa803ea81d882394335aec1effee83e62d46e1430ba417010eac5f8"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\repo-restructure-baseline-20261031.json",
+      "bytes": 8003,
+      "sha256": "302a509ea461e58deef348f13b89a4da592e555a148fae00332eb4b578291989"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\repo-restructure-offline-tests-20261031.json",
+      "bytes": 2774,
+      "sha256": "deddb987a5986c687a6cf61d0bb28d327814c95e7007259c6c15dac687eabd26"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\repo-restructure-verification-20261031.json",
+      "bytes": 790,
+      "sha256": "9486751072c73be25b142b056004a3b5a8491fdc59ae4e18d7993959f804bbfd"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\steam-restructure-after-20261031-a01.json",
+      "bytes": 2335,
+      "sha256": "41d6a58f3019f08c069d02ca370e50643a95d50695edd87e52a99e7658d76774"
     }
-  ]
+  ],
+  "mod_id": "recruitment_and_capitals",
+  "repository_restructure": {
+    "status": "PASS",
+    "recorded_at_utc": "2026-10-31T03:20:57.081982+00:00",
+    "mod_id": "recruitment_and_capitals",
+    "shared_tool_tests": 14,
+    "mod_lua_tests": 51,
+    "total_tests": 65,
+    "missing_mod_and_research_cli_rejections": "PASS",
+    "dispatcher_only_cli": "PASS",
+    "local_markdown_links": "PASS",
+    "mod_payload_and_research_unchanged": "PASS",
+    "release_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+    "english_pack_sha256": "6c385aa740e7e728e8612d43132f40b491baa9f3ea8144a5ced17ec03c5af227",
+    "preview_sha256": "f1a7c581a34a8b076d4ed199e4cf7f9cec36dd30f8c65a3ecf126ea66d202dc5",
+    "steam_offline": true,
+    "steam_offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\research\\steam-restructure-after-20261031-a01.json"
+  }
 }

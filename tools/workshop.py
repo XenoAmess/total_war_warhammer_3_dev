@@ -16,10 +16,9 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
+from project import ModProject, add_mod_argument, selected_project
 
-ROOT = Path(__file__).resolve().parents[1]
 APP_ID = 1142710
-REQUIRED_WORKSHOP_ITEMS = (3811098873,)  # memreader Plus, published by its author
 
 
 def account_activity(owner: str) -> dict:
@@ -145,12 +144,16 @@ class Steam:
 
 
 def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: Path | None,
-            expected_owner: str | None = None):
+            expected_owner: str | None = None, *, project: ModProject):
     sha = hashlib.sha256(pack.read_bytes()).hexdigest()
     results = json.loads(acceptance.read_text(encoding='utf-8'))
     if results.get('release_pack_sha256') != sha or any(results.get(key) != 'PASS' for key in ('L0', 'L1', 'L2', 'L3')):
         raise RuntimeError('Publication requires L0/L1/L2/L3 PASS for this exact pack SHA-256')
+    if results.get('mod_id') != project.id or pack.name != project.pack_name:
+        raise RuntimeError('Pack or acceptance record belongs to a different Mod')
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
+    if state and state.get('mod_id') != project.id:
+        raise RuntimeError('Stored Workshop state belongs to a different Mod')
     owner = expected_owner or state.get('owner')
     if not owner:
         raise RuntimeError('Specify --owner before creating a Workshop item')
@@ -174,7 +177,7 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
             if state.get('status') == 'CREATING':
                 raise RuntimeError('An earlier CreateItem has an unknown result; resolve its item ID before retrying')
             create = steam.bind('SteamAPI_ISteamUGC_CreateItem', C.c_uint64, C.c_void_p, C.c_uint32, C.c_int32)
-            state.update(owner=steam.steam_id, app_id=APP_ID, status='CREATING')
+            state.update(mod_id=project.id, owner=steam.steam_id, app_id=APP_ID, status='CREATING')
             save()
             result = steam.wait(create(steam.ugc, APP_ID, 0), CreateResult, 3403, check_agreement=False)
             state.update(item_id=str(result.item_id), owner=steam.steam_id, app_id=APP_ID, status='CREATED')
@@ -183,14 +186,14 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
                 raise RuntimeError('Steam requires the account owner to accept the Workshop legal agreement; item ID has been saved')
         add_dependency = steam.bind('SteamAPI_ISteamUGC_AddDependency', C.c_uint64,
                                     C.c_void_p, C.c_uint64, C.c_uint64)
-        for child in REQUIRED_WORKSHOP_ITEMS:
+        for child in project.required_items:
             result = steam.wait(add_dependency(steam.ugc, int(state['item_id']), child),
                                 DependencyResult, 3412, check_agreement=False)
             if result.item_id != int(state['item_id']) or result.child_id != child:
                 raise RuntimeError('Steam returned a dependency result for the wrong item')
-        state['required_items'] = [str(item) for item in REQUIRED_WORKSHOP_ITEMS]
+        state['required_items'] = [str(item) for item in project.required_items]
         save()
-        stage = ROOT / 'build/workshop-content'
+        stage = project.build_dir / 'workshop-content'
         stage.mkdir(parents=True, exist_ok=True)
         leftovers = [p.name for p in stage.iterdir() if p.name != pack.name]
         if leftovers:
@@ -201,8 +204,8 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
         if update == (1 << 64) - 1:
             raise RuntimeError('Invalid Workshop update handle')
         fields = {
-            'SetItemTitle': '征募与迁都 | Recruitment Refresh & Move Capital',
-            'SetItemDescription': (ROOT / 'workshop/description.bbcode').read_text(encoding='utf-8'),
+            'SetItemTitle': project.metadata['title'],
+            'SetItemDescription': (project.root / 'workshop/description.bbcode').read_text(encoding='utf-8'),
             'SetItemContent': str(stage.resolve())
         }
         if preview:
@@ -214,13 +217,14 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
         visible = steam.bind('SteamAPI_ISteamUGC_SetItemVisibility', C.c_bool, C.c_void_p, C.c_uint64, C.c_int32)
         if not visible(steam.ugc, update, 0):
             raise RuntimeError('Public visibility was rejected')
-        tag_values = (C.c_char_p * 2)(b'mod', b'campaign')
-        tags = Tags(tag_values, 2)
+        tag_names = project.metadata.get('workshop', {}).get('tags', ['mod'])
+        tag_values = (C.c_char_p * len(tag_names))(*(tag.encode('utf-8') for tag in tag_names))
+        tags = Tags(tag_values, len(tag_names))
         set_tags = steam.bind('SteamAPI_ISteamUGC_SetItemTags', C.c_bool, C.c_void_p, C.c_uint64, C.POINTER(Tags))
         if not set_tags(steam.ugc, update, C.byref(tags)):
             raise RuntimeError('Workshop tags were rejected')
         submit = steam.bind('SteamAPI_ISteamUGC_SubmitItemUpdate', C.c_uint64, C.c_void_p, C.c_uint64, C.c_char_p)
-        notes = (ROOT / 'workshop/change-notes.txt').read_text(encoding='utf-8')
+        notes = (project.root / 'workshop/change-notes.txt').read_text(encoding='utf-8')
         state.update(status='UPLOADING', pack_sha256=sha)
         save()
         steam.wait(submit(steam.ugc, update, notes.encode('utf-8')), UpdateResult, 3404)
@@ -233,11 +237,17 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    add_mod_argument(parser)
     parser.add_argument('--dll', type=Path, required=True)
-    parser.add_argument('--pack', type=Path, default=ROOT / 'build/xatw3_campaign_utilities.pack')
-    parser.add_argument('--acceptance', type=Path, default=ROOT / 'docs/acceptance-results.json')
-    parser.add_argument('--state', type=Path, default=ROOT / 'workshop/publication-state.json')
+    parser.add_argument('--pack', type=Path)
+    parser.add_argument('--acceptance', type=Path)
+    parser.add_argument('--state', type=Path)
     parser.add_argument('--preview', type=Path)
     parser.add_argument('--owner', help='Expected Steam account ID; required for the first publication')
     args = parser.parse_args()
-    print(json.dumps(publish(args.dll, args.pack, args.acceptance, args.state, args.preview, args.owner), indent=2))
+    project = selected_project(parser, args.mod)
+    preview = args.preview or project.build_dir / 'preview.png'
+    print(json.dumps(publish(args.dll, args.pack or project.pack_path,
+                             args.acceptance or project.root / 'docs/acceptance-results.json',
+                             args.state or project.root / 'workshop/publication-state.json',
+                             preview, args.owner, project=project), indent=2))
