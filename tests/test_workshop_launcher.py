@@ -43,7 +43,7 @@ class FakeSteam:
     def wait(self, handle, result, callback, **kwargs):
         self.calls.append(('wait', (handle, callback)))
         if callback == 3401:
-            assert result == QueryCompleted and kwargs == {'check_agreement': False}
+            assert result == QueryCompleted and kwargs == {'check_agreement': False, 'timeout':45}
             return SimpleNamespace(handle=self.query+int(self.wrong_handle), returned=self.returned, cached=self.cached)
         assert callback == 3404
         if self.fail == 'submit_timeout': raise TimeoutError('Unknown submit outcome')
@@ -84,6 +84,17 @@ class LauncherRepairTests(unittest.TestCase):
         steam = FakeSteam([TAGS])
         self.assertEqual(repair_launcher_metadata(steam,123,EXPECTED)['status'],'SKIPPED')
         self.assertFalse(any('Update' in name or name.startswith(('Add','Remove')) for name,_ in steam.calls))
+
+    def test_server_canonical_key_case_is_accepted_without_republishing(self):
+        steam = FakeSteam([[(b'PACK_NAME',b'test.pack'),(b'game_version',b'589824')]])
+        receipt = repair_launcher_metadata(steam,123,EXPECTED)
+        self.assertEqual(receipt['status'],'SKIPPED')
+        self.assertIn('PACK_NAME',receipt['after'])
+        self.assertFalse(any(name=='StartItemUpdate' for name,_ in steam.calls))
+
+    def test_mixed_case_duplicates_are_repaired(self):
+        steam = FakeSteam([[*TAGS,(b'PACK_NAME',b'old.pack')],[(b'PACK_NAME',b'test.pack'),(b'game_version',b'589824')]])
+        self.assertEqual(repair_launcher_metadata(steam,123,EXPECTED)['status'],'REPAIRED')
 
     def test_repair_changes_only_owned_metadata_and_verifies_remote_values(self):
         steam = FakeSteam([[(b'other',b'keep')], [*TAGS,(b'other',b'keep')]])

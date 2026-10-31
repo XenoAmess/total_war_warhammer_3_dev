@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ctypes as C
+import json
 from workshop import APP_ID, UpdateResult, Steam
 from workshop_metadata import apply_launcher_metadata, validate_launcher_metadata
 
@@ -8,6 +9,13 @@ from workshop_metadata import apply_launcher_metadata, validate_launcher_metadat
 class QueryCompleted(C.Structure):
     _fields_ = [('handle', C.c_uint64), ('result', C.c_int32), ('returned', C.c_uint32),
                 ('total', C.c_uint32), ('cached', C.c_bool), ('cursor', C.c_char * 256)]
+
+
+def owned_values(tags: dict, key: str) -> list:
+    # Steam may return its canonical spelling (observed PACK_NAME). Preserve
+    # raw keys in receipts and combine variants when checking for duplicates.
+    return [value for name, values in tags.items() if name.casefold() == key
+            for value in values]
 
 
 def query_launcher_metadata(steam: Steam, item_id: int) -> dict:
@@ -36,7 +44,7 @@ def query_launcher_metadata(steam: Steam, item_id: int) -> dict:
         if handle in (0, (1 << 64) - 1):
             raise RuntimeError('Invalid send handle')
 
-        result = steam.wait(handle, QueryCompleted, 3401, check_agreement=False)
+        result = steam.wait(handle, QueryCompleted, 3401, timeout=45, check_agreement=False)
         if result.handle != query or result.returned != 1 or result.cached:
             raise RuntimeError('Query result mismatch or cached')
 
@@ -69,7 +77,7 @@ def repair_launcher_metadata(steam: Steam, item_id: int, expected: dict) -> dict
     validate_launcher_metadata(expected)
 
     before = query_launcher_metadata(steam, item_id)
-    owned = {k: before.get(k, []) for k in ('pack_name', 'game_version')}
+    owned = {k: owned_values(before,k) for k in ('pack_name', 'game_version')}
     if all(len(vals) == 1 and vals[0] == expected[k] for k, vals in owned.items()):
         return {'item_id': str(item_id), 'status': 'SKIPPED', 'before': before, 'after': before}
 
@@ -90,7 +98,8 @@ def repair_launcher_metadata(steam: Steam, item_id: int, expected: dict) -> dict
     steam.wait(handle, UpdateResult, 3404)
 
     after = query_launcher_metadata(steam, item_id)
-    if not all(after.get(k, []) == [expected[k]] for k in ('pack_name', 'game_version')):
-        raise RuntimeError('Post-repair verification failed')
+    if not all(owned_values(after,k) == [expected[k]] for k in ('pack_name', 'game_version')):
+        raise RuntimeError('Post-repair verification failed: ' + json.dumps(
+            {'item_id':str(item_id),'before':before,'after':after,'submit_handle':str(handle)}))
 
     return {'item_id': str(item_id), 'status': 'REPAIRED', 'before': before, 'after': after, 'submit_handle': str(handle)}
