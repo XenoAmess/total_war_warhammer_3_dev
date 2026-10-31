@@ -24,17 +24,17 @@ def render(output: Path):
     text(256, 63, 'WARHAMMER III · CAMPAIGN MOD', 17, gold)
     text(256, 132, '招募候选刷新', 45, chinese=True)
     line([(58, 186), (454, 186)], 1)
-    
+
     # Single centered person + refresh arrow icon
     # Person
     d.ellipse((468, 482, 556, 570), outline=gold, width=10)
     d.arc((422, 568, 602, 748), 180, 360, fill=gold, width=10)
-    
+
     # Refresh arrow (circular)
     d.arc((332, 410, 692, 770), 40, 325, fill=gold, width=12)
     line([(330, 243), (307, 243)], 6)
     line([(330, 243), (330, 266)], 6)
-    
+
     text(256, 440, 'RECRUITMENT REFRESH', 17, gold)
     text(256, 474, 'XenoAmess · 0.2.0 Alpha', 13, '#8999a5')
     output.parent.mkdir(parents=True, exist_ok=True)
