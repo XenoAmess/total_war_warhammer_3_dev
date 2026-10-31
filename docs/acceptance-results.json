@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-30T18:43:21.081582+00:00",
+  "recorded_at_utc": "2026-10-31T02:10:58.816116+00:00",
   "source_commit": "cb43cc56f3cadbfaa6d652e3cadf6eb895dd6c90",
   "release_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
   "release_pack_bytes": 42899,
-  "release_status": "FROZEN_OFFLINE_CORE_ACCEPTANCE_PASS",
+  "release_status": "PUBLISHED_PUBLIC_VERIFIED",
   "L0": "PASS",
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "machine_id": "pc-20260924rtuf-f11af23c08",
   "steam_app_id": 1142710,
   "steam_build_id": 25961564,
@@ -79,18 +79,29 @@
   "steam_mode": {
     "status": "offline",
     "offline_mode": true,
-    "observed_at_utc": "2026-10-30T18:37:50.608129+00:00",
+    "observed_at_utc": "2026-10-31T02:07:40.275584+00:00",
     "method": "native_current_user_byte",
     "prelaunch_fresh_probe_required": true,
-    "receipt": "D:\\workspace\\.codex-wh3-runtime\\research\\steam-post-final-acceptance-20261031-a01.json"
+    "receipt": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\ordinary-start-offline-a01.json",
+    "steam_pid": 13664
   },
   "workshop": {
-    "item_id": null,
-    "create_or_upload_api_called": false,
-    "anonymous_page_verification": "NOT_RUN",
-    "download_hash_verification": "NOT_RUN",
-    "blocker": "Another machine is playing Hearts of Iron IV; Steam remains intentionally offline; no publishing SDK initialized",
+    "item_id": "3830548217",
+    "create_or_upload_api_called": true,
+    "anonymous_page_verification": "PASS",
+    "download_hash_verification": "PASS",
+    "blocker": null,
     "account_activity_before_online": {
+      "owner": "76561198273714027",
+      "status": "PUBLIC_PRESENCE_IDLE",
+      "game": null,
+      "online_state": "offline",
+      "observed_at_utc": "2026-10-31T02:04:56.620569+00:00",
+      "server_date": "Sat, 31 Oct 2026 02:04:57 GMT",
+      "source": "steam_community_public_presence",
+      "response_sha256": "629e77376922218ee76633a6f834a5b1e2131b7ce3efd92ad7bbd11f32007fc7"
+    },
+    "previous_busy_activity": {
       "owner": "76561198273714027",
       "status": "BUSY",
       "game": "Hearts of Iron IV",
@@ -98,6 +109,29 @@
       "server_date": "Fri, 30 Oct 2026 18:43:20 GMT",
       "source": "steam_community_miniprofile",
       "response_sha256": "10b9fd75d116b022f2413801960b8768eff707169c21effe9845fd87c33cd4d7"
+    },
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+    "owner": "76561198273714027",
+    "visibility": "public",
+    "version": "0.1.0-alpha",
+    "uploaded_at_utc": "2026-10-31T02:05:34.984088+00:00",
+    "anonymous_metadata_verification": "PASS",
+    "dependency_verification": "PASS",
+    "changelog_verification": "PASS",
+    "preview_hash_verification": "PASS",
+    "downloaded_pack_sha256": "b25fd6a9d5ccbffcd3f18ac0e28d91276e2bafddd4dad597cb5b2ef61a3a01ce",
+    "required_items": [
+      "3811098873"
+    ],
+    "account_activity_before_sdk_init": {
+      "owner": "76561198273714027",
+      "status": "PUBLIC_PRESENCE_IDLE",
+      "game": null,
+      "online_state": "online",
+      "observed_at_utc": "2026-10-31T02:05:12.050333+00:00",
+      "server_date": "Sat, 31 Oct 2026 02:05:13 GMT",
+      "source": "steam_community_public_presence",
+      "response_sha256": "bf9b71e32b18b80b4c03a4dd9a36f510de9377047751736d011c2a1410dad956"
     }
   },
   "cleanup": {
@@ -151,7 +185,17 @@
       }
     ],
     "preferences_restored_sha256": "43560e114df88d3d2ece174150ec8efb650b3e43f665d0c6556acd267e763709",
-    "preexisting_steam_appid_preserved": true
+    "preexisting_steam_appid_preserved": true,
+    "cef_control_channel": {
+      "status": "PASS",
+      "observed_at_utc": "2026-10-31T02:10:58.814200+00:00",
+      "steam_pid": 13664,
+      "normal_shutdown": true,
+      "ordinary_start": true,
+      "cef_debug_arguments_absent": true,
+      "port_8080_not_listening": true,
+      "offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\ordinary-start-offline-a01.json"
+    }
   },
   "previous_failed_acceptance": "acceptance-results-2026-10-30.json",
   "not_verified": [
@@ -195,6 +239,76 @@
       "path": "D:\\workspace\\.codex-wh3-runtime\\research\\account-presence-before-publication-a03.json",
       "bytes": 332,
       "sha256": "feb614010c32c56c3977c785735560cd5969cdf2470e2fbe231bbc7f5eed6700"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\before-online.json",
+      "bytes": 367,
+      "sha256": "144012c3f37fa389d16759bebd37bfd8ec4854bb98e432661dcb34cd1ac950cd"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\upload.json",
+      "bytes": 834,
+      "sha256": "080bbf21921e0baa3a826da1c32e39d4be704536558dd9dd5aa5181a825ab3e6"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\download.json",
+      "bytes": 340,
+      "sha256": "9824c12a7e3617832f62363eb15184d6eb8dfeb88dc7693913bdcb32f450608b"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\anonymous-metadata.json",
+      "bytes": 4306,
+      "sha256": "e2299e22a7415328001a6baea3431a4d490472ef4785be245cf8496317c57662"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\anonymous-item-page.html",
+      "bytes": 59816,
+      "sha256": "975f2327cafbb9f1c15c36a5fd04c5f21adeed896ebab384749cd1d892377758"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\anonymous-verification.json",
+      "bytes": 976,
+      "sha256": "e2cc99650f8f636ac44ba8e2a9d6f5302b965bfec32c6eaac2eebf0d06e8e98b"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\anonymous-changelog.html",
+      "bytes": 50460,
+      "sha256": "bc04a473b1ca0afde4640c4bccb3baf7b334736ef40dc388b9408fe9aca2c12c"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\public-preview.png",
+      "bytes": 58154,
+      "sha256": "f1a7c581a34a8b076d4ed199e4cf7f9cec36dd30f8c65a3ecf126ea66d202dc5"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\preview-verification.json",
+      "bytes": 141,
+      "sha256": "9578b554bacfd872db3d84b8b838b64e62365de4123fd5bcad2ccdb28133452d"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\final-offline.json",
+      "bytes": 588,
+      "sha256": "9cacdbe17368583c1ff5c01d41727897acb5294aba2fab0a0e667badb0efb003"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\final-offline-recheck-a02.json",
+      "bytes": 2332,
+      "sha256": "c61c38d57645131995b5848dfa2833c7f853976e717f67e75f5e8709805cbf81"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\ordinary-start-offline-a01.json",
+      "bytes": 2335,
+      "sha256": "e066a766af1217ea362bb61decc7b42ad61601224c73c41569019637a9916528"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-7007c0d2be35453a8e28ee943c72496f\\cef-cleanup.json",
+      "bytes": 383,
+      "sha256": "01188b5d42814cd26864b53a8b4a4c39ecfcfe3750218d4b14e288f9ba0c6ea8"
+    },
+    {
+      "path": "D:\\workspace\\.codex-wh3-runtime\\research\\publication-account-wait.jsonl",
+      "bytes": 9641,
+      "sha256": "61509c3b6fa803ea81d882394335aec1effee83e62d46e1430ba417010eac5f8"
     }
   ]
 }
