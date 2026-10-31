@@ -21,7 +21,8 @@ from build import build
 
 def publication_project(root: Path) -> ModProject:
     return ModProject(root, {'id': 'test_mod', 'pack_name': 'test.pack',
-                             'title': 'Test Mod', 'version': '0.1.0'})
+                             'title': 'Test Mod', 'version': '0.1.0',
+                             'workshop': {'game_version': '9.0.4.0'}})
 
 
 class ProjectTests(unittest.TestCase):

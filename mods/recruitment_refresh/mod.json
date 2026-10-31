@@ -11,6 +11,7 @@
   "default_language": "zh-CN",
   "localisation_pack_path": "text/db/xatw3_campaign_utilities.loc",
   "workshop": {
+    "game_version": "9.0.4.0",
     "required_items": [
       "3811098873"
     ],

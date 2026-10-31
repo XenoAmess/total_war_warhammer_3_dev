@@ -20,7 +20,8 @@ from workshop import publish
 def make_project(root: Path) -> ModProject:
     (root / 'workshop').mkdir(exist_ok=True)
     return ModProject(root, {'id': 'test_mod', 'pack_name': 'test.pack',
-                             'title': 'Test Mod', 'version': '0.1.0'})
+                             'title': 'Test Mod', 'version': '0.1.0',
+                             'workshop': {'game_version': '9.0.4.0'}})
 
 
 def write_screenshot(root: Path, name: str, content: bytes = b'PNG') -> Path:
@@ -427,6 +428,8 @@ class PublicationGalleryTests(unittest.TestCase):
                         def invoke(*args):
                             calls.append(name)
                             if name.endswith('SubmitItemUpdate'):
+                                self_test.assertEqual(calls.count('SteamAPI_ISteamUGC_RemoveItemKeyValueTags'), 2)
+                                self_test.assertEqual(calls.count('SteamAPI_ISteamUGC_AddItemKeyValueTag'), 2)
                                 pending = json.loads(state_path.read_text())['gallery_pending']
                                 self_test.assertEqual(pending[0]['sha256'], manifest['screenshots'][0]['sha256'])
                             return 99
@@ -461,6 +464,7 @@ class PublicationGalleryTests(unittest.TestCase):
                     self.assertNotIn('gallery_pending', state)
                     self.assertEqual(state['gallery'][0]['sha256'], manifest['screenshots'][0]['sha256'])
                     self.assertEqual(state['uploaded_version'], '0.1.0')
+                    self.assertEqual(state['launcher_metadata'], {'pack_name': 'test.pack', 'game_version': '589824'})
 
     def test_empty_manifest_cannot_remove_confirmed_gallery(self):
         with tempfile.TemporaryDirectory() as folder:
