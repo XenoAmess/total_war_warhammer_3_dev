@@ -20,6 +20,7 @@ from pathlib import Path
 from project import ModProject, add_mod_argument, selected_project
 from workshop_media import apply_gallery, prepare_gallery
 from workshop_metadata import apply_launcher_metadata, build_launcher_metadata
+from account_confirmation import confirmed_idle
 
 APP_ID = 1142710
 
@@ -211,7 +212,7 @@ def validate_acceptance(pack: Path, acceptance: Path, project: ModProject,
 
 def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: Path | None,
             expected_owner: str | None = None, *, project: ModProject,
-            native_waiver: Path | None = None):
+            native_waiver: Path | None = None, account_confirmation: dict | None = None):
     acceptance_record = validate_acceptance(pack, acceptance, project, native_waiver)
     sha = hashlib.sha256(pack.read_bytes()).hexdigest()
     state = json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else {}
@@ -222,8 +223,9 @@ def publish(dll: Path, pack: Path, acceptance: Path, state_path: Path, preview: 
     owner = expected_owner or state.get('owner')
     if not owner:
         raise RuntimeError('Specify --owner before creating a Workshop item')
-    activity = account_activity(owner)
-    if activity['status'] != 'PUBLIC_PRESENCE_IDLE':
+    activity = (confirmed_idle(owner, account_confirmation) if account_confirmation is not None
+                else account_activity(owner))
+    if activity['status'] not in ('PUBLIC_PRESENCE_IDLE', 'USER_CONFIRMED_IDLE'):
         raise RuntimeError('Account is busy or its activity is unavailable; keep Steam offline and wait: '
                            + json.dumps(activity))
     steam = Steam(dll)
@@ -325,10 +327,13 @@ if __name__ == '__main__':
     parser.add_argument('--preview', type=Path)
     parser.add_argument('--owner', help='Expected Steam account ID; required for the first publication')
     parser.add_argument('--native-waiver', type=Path, help='Explicit user authorization to defer L2/L3 for this exact Mod and pack')
+    parser.add_argument('--account-confirmation', type=Path, help='Fresh explicit user statement that no other machine is running a Steam game')
     args = parser.parse_args()
     project = selected_project(parser, args.mod)
     preview = args.preview or project.build_dir / 'preview.png'
     print(json.dumps(publish(args.dll, args.pack or project.pack_path,
                              args.acceptance or project.root / 'docs/acceptance-results.json',
                              args.state or project.root / 'workshop/publication-state.json',
-                             preview, args.owner, project=project, native_waiver=args.native_waiver), indent=2))
+                             preview, args.owner, project=project, native_waiver=args.native_waiver,
+                             account_confirmation=json.loads(args.account_confirmation.read_text(encoding='utf-8'))
+                             if args.account_confirmation else None), indent=2))
