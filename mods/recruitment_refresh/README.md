@@ -4,6 +4,8 @@
 
 `0.2.0 Alpha` 已更新[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)，标题、封面、独立 BBCode 和发布包均已核对。离线检查通过；按用户最新优先级先发布，当前拆分包完整实机回归和截图后补，未把待办标记为通过。见 [拆分设计与验收](docs/split-release.md) 与 [发布记录](docs/workshop-publication.md)。
 
+当前源码为 `0.2.1` 待发布修复：按钮移到“招募”右侧，单击直接刷新，成功后返回招募页；保留错误提示、执行中防重和关闭面板保护。已补齐老启动器发布元数据写入。新包尚未上传，订阅端和实机界面仍待验，见[修复验收](docs/ui-launcher-fix-0.2.1.md)。
+
 此版本不再包含迁都功能；迁都已拆为[独立 Mod](../move_capital/README.md)，已发布于[独立工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933)。旧存档中已经迁移的首都保持现状，不会回滚。
 
 原 0.1.0 合并版已完成离线真实按钮刷新、正常招募及各 10 次连续按钮操作通过；受伤、不朽、已招募和未知履历人物保护通过。类型由引擎的普通自动生成标记与实际候选职业共同识别，冰雪宫廷等特殊训练不启用。本机完整玩家流程实测为基斯里夫波耶老爷和牧首，另有帝国两类法师共用原生池的隔离实验；不据此宣称全种族兼容。见 [同类 Mod 调查与新实验](docs/similar-mods-research.md) 与 [验收报告](docs/acceptance-report.md)。

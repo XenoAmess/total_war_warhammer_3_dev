@@ -30,6 +30,7 @@ def run() -> dict:
     tests = list(lua.execute((ROOT / 'tests/test_logic.lua').read_text(encoding='utf-8')).values())
     lua.globals().ui_module = lua.execute((ROOT / 'src/script/campaign/xatw3_campaign_utilities/ui.lua').read_text(encoding='utf-8'))
     ui_tests = list(lua.execute((ROOT / 'tests/test_ui.lua').read_text(encoding='utf-8')).values())
+    ui_tests += list(lua.execute((ROOT / 'tests/test_ui_layout.lua').read_text(encoding='utf-8')).values())
     lua.globals().native_pool_module = lua.execute(
         (ROOT / 'src/script/campaign/xatw3_campaign_utilities/native_pool.lua').read_text(encoding='utf-8'))
     native_tests = list(lua.execute((ROOT / 'tests/test_native_pool.lua').read_text(encoding='utf-8')).values())

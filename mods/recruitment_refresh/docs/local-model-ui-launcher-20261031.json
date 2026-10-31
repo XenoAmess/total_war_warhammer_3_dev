@@ -1,0 +1,254 @@
+{
+  "schema": "wh3.local-model-review/v1",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-10-31T13:51:17.507736+00:00",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "model": "qwen38-coder",
+  "actual_post_count": 8,
+  "peak_overlapping_client_post_intervals": 2,
+  "server_inference_concurrency": "UNKNOWN",
+  "retry_layout_lua_compilation": {
+    "success": false,
+    "error": "[string \"local M = {}...\"]:61: function arguments expected near '='"
+  },
+  "steam": "Client absent; no client mode change, SDK initialization or game launch. Absence is not an intentional-offline receipt.",
+  "entries": [
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\audit-model\\consumer-audit",
+      "decision": "REJECTED",
+      "review": "Useful chain observations independently checked by owner; candidate mislabels state bit2 as Installed. No adoption of wrong flag.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "consumer-audit",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:15:55.955544+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 40997,
+        "request_sha256": "0c3f5d9cd3bfeabc9dd6cf32e556210edc06f8c06e483705d065d479173d4a17",
+        "http_status": 200,
+        "http_headers_ms": 2364.797299998827,
+        "first_nonempty_content_delta_ms": 2367.8301999989344,
+        "usage": {
+          "prompt_tokens": 14887,
+          "completion_tokens": 288,
+          "total_tokens": 15175
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-877a671bb9fc2859",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-10-31T13:16:00.863079+00:00",
+        "total_ms": 4907.535399999688,
+        "error": null
+      },
+      "content_sha256": "7ed3d8f3752035c1782ea26affd0be37201d843fb2275fa1a69ea2f168bc0865"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\fix-candidates-ui\\ui",
+      "decision": "REJECTED",
+      "review": "Full returned ui.lua and test_ui.lua repeat supplied old source unchanged. Owner validator also incorrectly required markdown although request asked files/notes; HTTP/SSE/JSON transport was complete.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "ui",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:28:47.855242+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 97574,
+        "request_sha256": "dde69130bb2aefcf0aba0c879871e5f2d04798a65e4408d23a827fa33c20c879",
+        "http_status": 200,
+        "http_headers_ms": 3941.9200000011188,
+        "first_nonempty_content_delta_ms": 3944.363100001283,
+        "usage": {
+          "prompt_tokens": 29386,
+          "completion_tokens": 4669,
+          "total_tokens": 34055
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-adbd9b52294d7080",
+        "finished_at_utc": "2026-10-31T13:29:18.186626+00:00",
+        "total_ms": 30331.38400000098,
+        "error": "ValueError('candidate missing required nonempty markdown')"
+      },
+      "content_sha256": "25c7c15223b5a0b2aad7af95f2040b1d7ed52ea9717f94ab727c49271e7a0c2b"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\fix-candidates-launcher-analysis\\launcher-analysis",
+      "decision": "REJECTED",
+      "review": "Invented mod=true/campaign=true key-value tags and misread cleanup guard bits. Required markdown absent. Owner input omitted decoded literals in compact contract; corrected later.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "launcher-analysis",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:29:42.087984+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 124986,
+        "request_sha256": "01334b3a7795097b0b8d0630da13874d3d5a0a8e4911ea2d93b37115c0ed0a8b",
+        "http_status": 200,
+        "http_headers_ms": 6097.5442999988445,
+        "first_nonempty_content_delta_ms": 6100.0655999996525,
+        "usage": {
+          "prompt_tokens": 46807,
+          "completion_tokens": 2378,
+          "total_tokens": 49185
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-829667c76fd9137c",
+        "finished_at_utc": "2026-10-31T13:30:03.071860+00:00",
+        "total_ms": 20983.87459999867,
+        "error": "ValueError('candidate missing required nonempty markdown')"
+      },
+      "content_sha256": "17456daa75b6ffa617df68e7972762c91959597fe191b5cdb0cad50d158ea505"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\narrow-layout\\layout",
+      "decision": "REJECTED",
+      "review": "Real edits but prohibited fallback to top/list remains; missing footer/label guards, measurement-failure and geometry checks incomplete. Owner took over layout.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "layout",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:37:34.567755+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 21548,
+        "request_sha256": "f38e7cb246d08d605d8fe743b76e512ef4fba2c2b5af9d509af9605f6cf66acb",
+        "http_status": 200,
+        "http_headers_ms": 1337.1291000003112,
+        "first_nonempty_content_delta_ms": 1364.4867000002705,
+        "usage": {
+          "prompt_tokens": 4582,
+          "completion_tokens": 1627,
+          "total_tokens": 6209
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-852b4a808cf8a8b5",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-10-31T13:37:48.876562+00:00",
+        "total_ms": 14308.810900001845,
+        "error": null
+      },
+      "content_sha256": "922757ec2443bdc2ccadd728097bf72ea4c08d012d9f7c0e010f61013a43030e"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\narrow-flow\\flow",
+      "decision": "PARTIAL_ADOPTION_WITH_OWNER_CHANGES",
+      "review": "Adopt request argument and prepare-to-submit pattern. Owner completed dialog dismissal and no-success-modal refresh. Candidate tests rejected: runtime not initialized for actions, missing plan/pool, synchronous/shared fixtures and inconsistent assertions. Owner wrote actual queued tests.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "flow",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:37:34.566856+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 21936,
+        "request_sha256": "0bcf44a88534499cae1b686964b3a6393f6a1203c12d4e5b4e25fb40dbb976da",
+        "http_status": 200,
+        "http_headers_ms": 1570.3294999984792,
+        "first_nonempty_content_delta_ms": 1573.293500001455,
+        "usage": {
+          "prompt_tokens": 4649,
+          "completion_tokens": 3889,
+          "total_tokens": 8538
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-bf758de44491cae4",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-10-31T13:38:00.326493+00:00",
+        "total_ms": 25759.63799999954,
+        "error": null
+      },
+      "content_sha256": "16e20384d7953b10414297a146a4369e81acb4a704eb29a426df97f382389032"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\contract-metadata\\metadata",
+      "decision": "ADOPTED_WITH_OWNER_CHANGES",
+      "review": "Adopt helper and initial tests. Owner corrected negative/bool/invalid-sentinel handles, canonical ASCII version/size validation; added exact-signature, idempotency, each-failure-stop and pre-SDK/integration tests.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "metadata",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:41:20.812585+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 50141,
+        "request_sha256": "0e5c4d17f2c1993630460b195772075f05f813cd06cb724253411b7d5dcb5cff",
+        "http_status": 200,
+        "http_headers_ms": 2631.9602000003215,
+        "first_nonempty_content_delta_ms": 2635.0464999995893,
+        "usage": {
+          "prompt_tokens": 12258,
+          "completion_tokens": 2202,
+          "total_tokens": 14460
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-b970a1f539fa4328",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-10-31T13:41:47.064976+00:00",
+        "total_ms": 26252.394099999947,
+        "error": null
+      },
+      "content_sha256": "485483b81b63246c2b571c8bafeba4ee86ad9a112c84c2ecb8c292e5846f9be7"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\contract-layout-tests\\layout-tests",
+      "decision": "DISCARDED_TRUNCATED",
+      "review": "finish_reason=length; no candidate code used or stitched.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "layout-tests",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:41:20.812478+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 22476,
+        "request_sha256": "3f17c076e77d84f8efd79a43bc2a3074587f650a9132241bc30af5c77e336cc7",
+        "http_status": 200,
+        "http_headers_ms": 1462.421299998823,
+        "first_nonempty_content_delta_ms": 1465.5216999999539,
+        "usage": {
+          "prompt_tokens": 4858,
+          "completion_tokens": 5500,
+          "total_tokens": 10358
+        },
+        "finish_reason": "length",
+        "sse_done": true,
+        "response_id": "chatcmpl-b9bd6bbb923acb6c",
+        "finished_at_utc": "2026-10-31T13:42:07.150431+00:00",
+        "total_ms": 46337.95199999804,
+        "error": "ValueError('candidate not complete: length')"
+      },
+      "content_sha256": "a7aebe161a300c9725b0a8e523a647857f9c4f4c73eba2254f7fc15cd433f8c8"
+    },
+    {
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\workshop-consumer-audit-20261031\\contract-retry-layout-tests\\layout-tests",
+      "decision": "REJECTED",
+      "review": "Complete JSON but invalid Lua colon assignment syntax, undefined make_comp, missing runtime/core methods, ignored varargs/scale; owner took over tests.",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "layout-tests",
+        "attempt": 1,
+        "started_at_utc": "2026-10-31T13:45:57.112100+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 22741,
+        "request_sha256": "0a5b54c2d6798a6dcee8a7af6fb7e481c7f9a910a04a8423f4f357b9cc6066ad",
+        "http_status": 200,
+        "http_headers_ms": 803.2281000014336,
+        "first_nonempty_content_delta_ms": 805.8500000006461,
+        "usage": {
+          "prompt_tokens": 4917,
+          "completion_tokens": 2058,
+          "total_tokens": 6975
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-91631d1a07bf20f0",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-10-31T13:46:10.279788+00:00",
+        "total_ms": 13167.68729999967,
+        "error": null
+      },
+      "content_sha256": "dce9102fc3fc2faf151101ded4a6e1a15158a77ee85f14d2359143faf9412e2f"
+    }
+  ]
+}

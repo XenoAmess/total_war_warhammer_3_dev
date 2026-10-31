@@ -6,20 +6,74 @@ function M.new(runtime, logic, environment)
     local core, cm, common = environment.core, environment.cm, environment.common
     local find_uicomponent, UIComponent, CampaignUI = environment.find_uicomponent,
         environment.UIComponent, environment.CampaignUI
-    local self = {pending = nil, selected_subtype = nil}
+    local self = {selected_subtype = nil}
     local function text(key) return common.get_localised_string(PREFIX .. key) end
     local function after(callback) cm:callback(callback, 0.1) end
 
-    local function button(id, parent, label, anchor)
+    local function button(id, panel, label)
         local component = core:get_or_create_component(PREFIX .. id,
-            'ui/templates/square_medium_text_button.twui.xml', parent)
-        component:SetStateText(text(label))
+            'ui/templates/square_medium_text_button.twui.xml', panel)
+        component:SetVisible(false)
+        local footer = find_uicomponent(panel, 'character_panel_info_holder', 'footer')
+        if not footer or not footer:Visible() then return component end
+        local anchor = find_uicomponent(footer, 'button_raise')
+        if not anchor or not anchor:Visible() then anchor = find_uicomponent(footer, 'button_confirm') end
+        if not anchor or not anchor:Visible() then return component end
+        local label_component = find_uicomponent(component, 'button_txt')
+        if not label_component then return component end
+        local flame = find_uicomponent(component, 'button_flame')
+        if flame then flame:SetVisible(false) end
+
+        -- Dimensions excludes children: the template label is wider than this button.
+        local px, py = panel:Position()
+        local pw, ph = panel:Dimensions()
+        local fx, fy = footer:Position()
+        local fw, fh = footer:Dimensions()
+        local ax, ay = anchor:Position()
+        local aw, ah = anchor:Dimensions()
+        if ah <= 0 or aw <= 0 then return component end
+        local scale = ah / 51
+        local gap, padding = math.ceil(8 * scale), math.ceil(4 * scale)
+        local h = math.floor(34 * scale)
+        local x, y = ax + aw + gap, math.floor(ay + (ah - h) / 2)
+        local left, top = math.max(px, fx), math.max(py, fy)
+        local right, bottom = math.min(px + pw, fx + fw), math.min(py + ph, fy + fh)
+        if x < left + padding or y < top or y + h > bottom then return component end
+        right = right - gap
+        for _, name in ipairs({'button_load_character', 'province_cycle'}) do
+            local obstacle = find_uicomponent(footer, name)
+            if obstacle and obstacle:Visible() then
+                local ox, oy = obstacle:Position()
+                local ow, oh = obstacle:Dimensions()
+                if oy < y + h and oy + oh > y and ox + ow > x then
+                    right = math.min(right, ox - gap)
+                end
+            end
+        end
+        label_component:SetStateText(text(label))
+        local ok, tw, th = pcall(function() return label_component:TextDimensionsForText(text(label)) end)
+        if not ok or type(tw) ~= 'number' or type(th) ~= 'number'
+            or tw <= 0 or th <= 0 then return component end
+        local w = math.min(math.max(math.ceil(170 * scale), tw + padding * 4), right - x)
+        if w < tw + padding * 4 or h < th + padding * 2 then return component end
         component:SetTooltipText(text(label .. '_tooltip'), true)
         component:SetCanResizeWidth(true)
-        component:Resize(170, 34)
+        component:SetCanResizeHeight(true)
+        component:SetDockingPoint(0)
+        component:SetDockOffset(0, 0)
+        component:Resize(w, h)
+        component:MoveTo(x, y)
+        label_component:SetCanResizeWidth(true)
+        label_component:SetCanResizeHeight(true)
+        label_component:SetDockingPoint(0)
+        label_component:SetDockOffset(0, 0)
+        label_component:Resize(w - padding * 2, h - padding * 2)
+        label_component:SetTextHAlign('centre')
+        label_component:SetTextVAlign('centre')
+        label_component:SetTextXOffset(0, 0)
+        label_component:SetTextYOffset(0, 0)
+        label_component:MoveTo(x + padding, y + padding)
         component:SetVisible(true)
-        local x, y = anchor:Position()
-        component:MoveTo(x, y - 45)
         return component
     end
 
@@ -69,41 +123,32 @@ function M.new(runtime, logic, environment)
                     end
                 end
             end
-            local anchor = find_uicomponent(panel, 'character_list') or panel
-            local b = button('refresh_candidates', panel, 'refresh', anchor)
+            local b = button('refresh_candidates', panel, 'refresh')
             if not runtime.refresh_verified then b:SetTooltipText(text('refresh_unavailable'), true) end
             b:SetInteractive(runtime.refresh_verified == true and self.selected_subtype ~= nil and runtime.supported(self.selected_subtype)
-                and runtime.can_act(faction) and not runtime.state.locked)
+                and runtime.can_act(faction) and not runtime.state.locked and not self.submitting)
         end
     end
 
-    local function show_dialog(message, confirmation)
+    local function show_dialog(message)
         local dialog = core:get_or_create_component(PREFIX .. 'confirm_action',
             'ui/common ui/dialogue_box.twui.xml', core:get_ui_root())
         local label = find_uicomponent(dialog, 'DY_text')
         if not label then error('The native confirmation dialog text component is unavailable') end
         label:SetStateText(message)
         find_uicomponent(dialog, 'purchase_options'):SetVisible(false)
-        find_uicomponent(dialog, 'both_group'):SetVisible(confirmation)
-        find_uicomponent(dialog, 'ok_group'):SetVisible(not confirmation)
+        find_uicomponent(dialog, 'both_group'):SetVisible(false)
+        find_uicomponent(dialog, 'ok_group'):SetVisible(true)
         dialog:PropagatePriority(1000)
         dialog:SetVisible(true)
         self.dialog = dialog
     end
 
     function self.message(title, message)
-        self.pending = nil
-        show_dialog(text(title) .. '\n\n' .. message, false)
+        show_dialog(text(title) .. '\n\n' .. message)
     end
 
-    function self.confirm(request, description)
-        self.pending = request
-        show_dialog(text('confirm_title') .. '\n\n' .. description, true)
-    end
-
-    function self.submit()
-        local request = self.pending
-        self.pending = nil
+    function self.submit(request)
         if not request or request.action ~= 'refresh' or self.submitting then return end
         self.submitting = true
         -- SP-only: no UI-dependent data is evaluated by remote clients.
@@ -152,7 +197,7 @@ function M.new(runtime, logic, environment)
         local plan = logic.plan(pool, faction, request.target)
         if #plan.replace == 0 then self.message('error', text('no_candidates')); return end
         request.expected = plan.fingerprint
-        self.confirm(request, text('confirm_refresh') .. ' ' .. tostring(#plan.replace))
+        self.submit(request)
     end
 
     function self.install()
@@ -170,8 +215,7 @@ function M.new(runtime, logic, environment)
                 local ancestor = UIComponent(context.component)
                 for _ = 1, 12 do
                     if ancestor:Id() == PREFIX .. 'confirm_action' then
-                        self.dialog:SetVisible(false)
-                        if context.string == 'button_tick' then self.submit() else self.pending = nil end
+                        if self.dialog then self.dialog:SetVisible(false) end
                         return
                     end
                     local parent = ancestor:Parent()
@@ -197,15 +241,14 @@ function M.new(runtime, logic, environment)
         runtime.on_result = function(result)
             self.submitting = false
             local message = text('failed')
-            if result.status == 'SUCCEEDED' then message = text('done')
-            elseif result.reason == 'refresh_unverified' then message = text('refresh_unavailable')
+            if result.reason == 'refresh_unverified' then message = text('refresh_unavailable')
             elseif result.reason == 'stale' then message = text('stale')
             elseif result.reason == 'no_candidates' then message = text('no_candidates')
             elseif result.status == 'UNKNOWN' or result.status == 'PARTIAL' then message = text('uncertain') end
             local reopen = self.reopen
             self.reopen = nil
             local function finish()
-                self.message(result.status == 'SUCCEEDED' and 'success' or 'error', message)
+                if result.status ~= 'SUCCEEDED' then self.message('error', message) end
                 after(self.refresh_buttons)
             end
             if reopen and (result.status == 'SUCCEEDED' or result.status == 'REJECTED') then

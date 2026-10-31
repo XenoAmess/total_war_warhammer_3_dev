@@ -137,10 +137,10 @@ class ApplyLauncherMetadataTests(unittest.TestCase):
                     calls.append((name, a))
                     return True
                 return fn
-        
+
         steam = FakeSteam()
         apply_launcher_metadata(steam, 99, {'pack_name': 'test.pack', 'game_version': '589824'})
-        
+
         self.assertEqual(len(calls), 4)
         self.assertEqual(calls[0][0], 'SteamAPI_ISteamUGC_RemoveItemKeyValueTags')
         self.assertEqual(calls[1][0], 'SteamAPI_ISteamUGC_RemoveItemKeyValueTags')
@@ -154,7 +154,7 @@ class ApplyLauncherMetadataTests(unittest.TestCase):
                 if 'Remove' in name:
                     return lambda *a: False
                 return lambda *a: True
-        
+
         with self.assertRaises(RuntimeError):
             apply_launcher_metadata(FakeSteam(), 99, {'pack_name': 'test.pack', 'game_version': '589824'})
 
@@ -165,7 +165,7 @@ class ApplyLauncherMetadataTests(unittest.TestCase):
                 if 'Add' in name:
                     return lambda *a: False
                 return lambda *a: True
-        
+
         with self.assertRaises(RuntimeError):
             apply_launcher_metadata(FakeSteam(), 99, {'pack_name': 'test.pack', 'game_version': '589824'})
 
