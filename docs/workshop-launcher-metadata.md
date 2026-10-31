@@ -14,3 +14,5 @@
 2026-10-31 对本机旧启动器 3.25.3 的只读分析发现，其 greenworks 使用 `STEAMUGC_INTERFACE_VERSION010` 查询这两个键，原生上传路径也删除并重写这两个键。原发布工具只设置普通 tags，没有执行该步骤。旧启动器的 JavaScript 还会排除已发布但未订阅的条目，因此仅下载文件不能代替订阅验证。
 
 API 语义见 [Valve ISteamUGC](https://partner.steamgames.com/doc/api/ISteamUGC#AddItemKeyValueTag)。本修复的离线测试验证调用参数、重复更新、失败中止和发布前校验；并不证明客户端已经显示条目。完成发布后仍需检查远端 key-value、订阅状态、客户端下载及启动器列表。
+
+已发布条目可使用 `tools/workshop_launcher.py` 的查询与修复函数只更新这两个键，无需重新上传游戏包。查询禁止使用缓存，保留重复键值以便发现旧值未清理；修改后再次查询并严格核对。已匹配的条目不再提交；提交结果不明时不自动重放。该模块不初始化 SDK、不切 Steam 模式，调用方必须显式选择 Mod、核对现有条目作者及 app ID、取得新鲜账号空闲证据，并在必要在线阶段结束后恢复主动离线。

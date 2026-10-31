@@ -33,8 +33,8 @@ def build_launcher_metadata(project: ModProject) -> dict:
     return {'pack_name': pack, 'game_version': str(ms)}
 
 
-def apply_launcher_metadata(steam, update: int, metadata: dict) -> None:
-    """Remove and re-add pack_name and game_version tags."""
+def validate_launcher_metadata(metadata: dict) -> None:
+    """Validate the two owned keys before starting a remote update."""
     if not isinstance(metadata, dict) or set(metadata) != {'pack_name', 'game_version'}:
         raise ValueError('metadata must contain exactly pack_name and game_version')
 
@@ -47,6 +47,10 @@ def apply_launcher_metadata(steam, update: int, metadata: dict) -> None:
             or not 65536 <= int(ver_val) <= 0xFFFFFFFF):
         raise ValueError('Invalid game_version value')
 
+
+def apply_launcher_metadata(steam, update: int, metadata: dict) -> None:
+    """Remove and re-add pack_name and game_version tags."""
+    validate_launcher_metadata(metadata)
     if type(update) is not int or not 0 < update < (1 << 64) - 1:
         raise ValueError('Invalid update handle')
 
@@ -58,7 +62,7 @@ def apply_launcher_metadata(steam, update: int, metadata: dict) -> None:
 
     # Add new values
     add = steam.bind('SteamAPI_ISteamUGC_AddItemKeyValueTag', C.c_bool, C.c_void_p, C.c_uint64, C.c_char_p, C.c_char_p)
-    if not add(steam.ugc, update, b'pack_name', pack_val.encode('utf-8')):
+    if not add(steam.ugc, update, b'pack_name', metadata['pack_name'].encode('utf-8')):
         raise RuntimeError('AddItemKeyValueTag failed for pack_name')
-    if not add(steam.ugc, update, b'game_version', ver_val.encode('utf-8')):
+    if not add(steam.ugc, update, b'game_version', metadata['game_version'].encode('utf-8')):
         raise RuntimeError('AddItemKeyValueTag failed for game_version')
