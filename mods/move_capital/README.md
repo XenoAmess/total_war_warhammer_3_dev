@@ -1,7 +1,9 @@
 # Move Capital
 
 **ID:** `move_capital`
-**Version:** `0.1.0`
+**Source candidate:** `0.1.1` (Workshop remains `0.1.0`)
+
+The candidate fixes the native button label rendering outside its bounds. Shared tests (73) and Mod tests (48) pass. Final native regression and Workshop screenshots are pending an unlocked Windows desktop; this candidate has not been published. See the [fix record](docs/button-label-fix-20261101.md) and [candidate acceptance](docs/acceptance-results-0.1.1.json).
 
 This mod provides a dedicated UI and logic for moving the faction capital to a selected settlement in the main Warhammer campaign.
 
