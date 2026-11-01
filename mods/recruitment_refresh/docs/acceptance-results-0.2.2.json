@@ -2,14 +2,14 @@
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
   "version": "0.2.2",
-  "recorded_at_utc": "2026-11-01T10:37:52.905711+00:00",
-  "release_status": "CANDIDATE_AWAITING_UNLOCKED_DESKTOP",
+  "recorded_at_utc": "2026-11-01T13:48:32.809573+00:00",
+  "release_status": "NATIVE_ACCEPTED_AWAITING_PUBLICATION",
   "release_pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
   "release_pack_bytes": 43225,
   "L0": "PASS",
   "L1": "PASS",
-  "L2": "NOT_RUN",
-  "L3": "NOT_RUN",
+  "L2": "PASS",
+  "L3": "PASS",
   "L4": "NOT_RUN",
   "offline": {
     "status": "PASS",
@@ -91,7 +91,236 @@
     "release_pack_bytes": 43225,
     "native_game_acceptance": "NOT_RUN"
   },
-  "blocker": "Windows interactive desktop unavailable: foreground HWND NULL, OpenInputDesktop failed, LogonUI present. Final frozen candidate native rendering, gameplay regression and screenshots remain pending. No publication or old native waiver reused.",
+  "blocker": null,
   "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101",
-  "machine_id": "pc-20260924rtuf-f11af23c08"
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "native": {
+    "game_version": "9.0.4.0",
+    "session_pid": 2256,
+    "ui_scale": 1,
+    "logical_resolution": [
+      1920,
+      1080
+    ],
+    "physical_capture_resolution": [
+      2400,
+      1350
+    ],
+    "scope": "Single-player Kislev native controls only; incremental UI release regression, not all factions or rendering scales",
+    "checks": [
+      "NATIVE_LAYOUT_PASS",
+      "NATIVE_REFRESH_PASS",
+      "HERO_PAGE_SCOPE_PASS",
+      "NORMAL_RECRUIT_PASS"
+    ],
+    "offline_before_launch": {
+      "schema": "xar.steam-offline-state-probe/v2",
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-01T12:49:14.933877+00:00",
+      "nonce": "5e2f0a15bec865f9f71c33e035826d46",
+      "reason": "observed",
+      "steam": {
+        "pid": 10152,
+        "birth_filetime": "134380030779276241",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "endpoint": null,
+      "diagnostics": [],
+      "observation_method": "native_current_user_byte",
+      "native_evidence": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "observed_at_utc": "2026-11-01T12:49:14.933877+00:00",
+        "nonce": "5e2f0a15bec865f9f71c33e035826d46",
+        "module_base": "140711393361920",
+        "module_size": 19730432,
+        "value_rva": "18435783",
+        "value_address": "140711411797703",
+        "producer_rva": "6548332",
+        "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+        "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+        "raw_samples": [
+          1,
+          1
+        ],
+        "steam_before": {
+          "pid": 10152,
+          "birth_filetime": "134380030779276241",
+          "exe": "D:\\steam\\steam.exe",
+          "file_version": "11.15.70.27"
+        },
+        "steam_after": {
+          "pid": 10152,
+          "birth_filetime": "134380030779276241",
+          "exe": "D:\\steam\\steam.exe",
+          "file_version": "11.15.70.27"
+        },
+        "source_before": {
+          "path": "D:\\steam\\SteamUI.dll",
+          "bytes": 19452568,
+          "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+          "file_id": "281474977134280",
+          "mtime_ns": "1792620918000000000"
+        },
+        "source_after": {
+          "path": "D:\\steam\\SteamUI.dll",
+          "bytes": 19452568,
+          "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+          "file_id": "281474977134280",
+          "mtime_ns": "1792620918000000000"
+        },
+        "tray_manager_pointer_rva": "18428640",
+        "tray_manager_address": "2741432819840",
+        "tray_state_offset": "340",
+        "tray_state_samples": [
+          4,
+          4
+        ]
+      },
+      "status": "offline",
+      "offline_mode": true
+    },
+    "runtime_log": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\native\\native.log",
+    "runtime_log_sha256": "6a08426e1c609c5900a01ff7921ec7ffbafeb34cc7367c60107c11cecc015e81",
+    "fixture_diagnostics": [
+      "Initial fixture asserted CurrentState inactive, which is not the interaction flag; a proposed Interactive getter is absent in this engine. Corrected verification attempts native click and controller prepare, requiring no submission and unchanged transaction sequence. Both diagnostic failures are retained verbatim."
+    ],
+    "main_regression_session": {
+      "pid": 2252,
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "log": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh-final-main-regression\\native\\native.log",
+      "log_sha256": "749907a7ce5ebbcdff4226d6056e2c93dcaa581dcf21f872e887d0108f9a55b4",
+      "offline_before_launch": {
+        "schema": "xar.steam-offline-state-probe/v2",
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "observed_at_utc": "2026-11-01T11:45:02.056712+00:00",
+        "nonce": "b8d4fa446e28043244cbf789dd47869c",
+        "reason": "observed",
+        "steam": {
+          "pid": 10152,
+          "birth_filetime": "134380030779276241",
+          "exe": "D:\\steam\\steam.exe",
+          "file_version": "11.15.70.27"
+        },
+        "source": {
+          "path": "D:\\steam\\SteamUI.dll",
+          "bytes": 19452568,
+          "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+          "file_id": "281474977134280",
+          "mtime_ns": "1792620918000000000"
+        },
+        "endpoint": null,
+        "diagnostics": [],
+        "observation_method": "native_current_user_byte",
+        "native_evidence": {
+          "machine_id": "pc-20260924rtuf-f11af23c08",
+          "observed_at_utc": "2026-11-01T11:45:02.056712+00:00",
+          "nonce": "b8d4fa446e28043244cbf789dd47869c",
+          "module_base": "140711393361920",
+          "module_size": 19730432,
+          "value_rva": "18435783",
+          "value_address": "140711411797703",
+          "producer_rva": "6548332",
+          "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+          "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+          "raw_samples": [
+            1,
+            1
+          ],
+          "steam_before": {
+            "pid": 10152,
+            "birth_filetime": "134380030779276241",
+            "exe": "D:\\steam\\steam.exe",
+            "file_version": "11.15.70.27"
+          },
+          "steam_after": {
+            "pid": 10152,
+            "birth_filetime": "134380030779276241",
+            "exe": "D:\\steam\\steam.exe",
+            "file_version": "11.15.70.27"
+          },
+          "source_before": {
+            "path": "D:\\steam\\SteamUI.dll",
+            "bytes": 19452568,
+            "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+            "file_id": "281474977134280",
+            "mtime_ns": "1792620918000000000"
+          },
+          "source_after": {
+            "path": "D:\\steam\\SteamUI.dll",
+            "bytes": 19452568,
+            "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+            "file_id": "281474977134280",
+            "mtime_ns": "1792620918000000000"
+          },
+          "tray_manager_pointer_rva": "18428640",
+          "tray_manager_address": "2741432819840",
+          "tray_state_offset": "340",
+          "tray_state_samples": [
+            4,
+            4
+          ]
+        },
+        "status": "offline",
+        "offline_mode": true
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "file": "lord-refresh-icon.jpg",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "caption": "实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg",
+      "captured_at_utc": "2026-11-01T12:06:36.881084+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "source_png_sha256": "21f3dc7e42a8f2f739a4ba67b44a83cd56bed80247f1305b4cf82e559164ca8c",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\captures\\lord-refresh-icon.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    },
+    {
+      "file": "lord-refreshed.jpg",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "caption": "实机：单击刷新后的领主候选 / Lord candidates after one-click refresh",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg",
+      "captured_at_utc": "2026-11-01T12:08:02.154544+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "source_png_sha256": "a0437f48b5d641a7ac9b22ac601e720b9705acc73b1f9d1060e571b6711a1b19",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\captures\\lord-refreshed.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    },
+    {
+      "file": "hero-final.jpg",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "caption": "实机：牧首招募页刷新图标 / Native Patriarch recruitment icon",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg",
+      "captured_at_utc": "2026-11-01T12:17:23.681635+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "source_png_sha256": "5527a8561622c9fe1a72c743d820309e56337c0149aa28b9e3db4c76f1e5a9f7",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\captures\\hero-final.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    }
+  ]
 }

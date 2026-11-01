@@ -1,19 +1,19 @@
 [h1]招募候选刷新 / Recruitment Refresh[/h1]
 
-[b]0.2.1 Alpha · 单人超凡帝国[/b]
+[b]0.2.2 Alpha · 单人超凡帝国[/b]
 
 原“征募与迁都”条目现仅保留招募刷新。迁都功能已拆为独立模组：[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]迁移首都 | Move Capital[/url]，按需订阅，两者互不依赖。
 
 [b]必需物品：memreader Plus。请订阅并在启动器中同时启用它与本 Mod。当前实测环境为 Windows x64、游戏 9.0.4。[/b]
 
 [h2]招募刷新[/h2]
-在普通人物招募页选择类别后，可使用底部“招募”右侧的“刷新候选”按钮替换当前类别中的普通候选，无需结束回合。单击直接刷新，不再弹出确认框；成功后返回招募页，无需额外确认。
+在普通人物招募页选择类别后，可使用底部“招募”右侧的刷新图标替换当前类别中的普通候选，无需结束回合。单击直接刷新，不再弹出确认框；成功后返回招募页，无需额外确认。
 
 免费，无额外回合冷却。刷新当前选中人物的子类型，成功后候选人数保持。允许引擎标记为普通自动生成的领主和事务官；同一职业页内的不同法师派系分别处理。新人物仍须通过原版建筑、容量、费用与内容所有权检查才能招募。
 
 传奇、唯一、不朽、受伤和已招募过的人物受到保护；履历不明的人物不会被猜测删除。冰雪宫廷训练、仪式及其他特殊来源不在刷新范围内。旧存档候选可能受未知履历保护，后续自然生成的普通候选才会获得可刷新履历。
 
-旧组合版已实测基斯里夫波耶老爷、牧首的刷新、招募、受保护人物保留和连续刷新。本次 0.2.1 已通过编译与离线测试；完整实机回归及功能截图将在显卡显示问题解决后补充。其他普通类型按引擎元数据识别，不宣称全种族或特殊机制兼容。
+旧组合版已实测基斯里夫波耶老爷、牧首的刷新、招募、受保护人物保留和连续刷新。本次 0.2.2 已通过编译、离线测试与基斯里夫单人实机回归；图标避让原生招募、载入人物及省份切换控件。其他普通类型按引擎元数据识别，不宣称全种族或特殊机制兼容。
 
 [h2]使用范围与限制[/h2]
 [list]
@@ -30,8 +30,17 @@
 [h2]English[/h2]
 Requires memreader Plus, enabled alongside this mod. Tested on Windows x64, game 9.0.4. Adds free candidate refresh to single-player Immortal Empires. Ordinary automatically generated subtypes are identified from engine metadata. Select a candidate to choose its subtype. Legendary, unique, immortal, wounded, previously recruited and unknown-history characters are protected. Special training and ritual recruitment are unsupported. Existing-save candidates without recorded history remain protected until natural replacements appear.
 
-The refresh button is beside Recruit at the bottom. Clicking refreshes directly, without a confirmation or success popup. The panel closes before replacing candidates and reopens afterward. Repeated clicks during the operation are ignored; errors still display a message. The button hides when there is insufficient space.
+The small native refresh icon is beside Recruit at the bottom and avoids native footer controls. Clicking refreshes directly, without a confirmation or success popup. The panel closes before replacing candidates and reopens afterward. Repeated clicks during the operation are ignored; errors still display a message. The button hides when there is insufficient space.
 
-The previous combined release was tested with Kislev Boyars and Patriarchs. This standalone 0.2.1 pack passed compilation and offline tests; its full native regression and gameplay screenshots are pending resolution of this machine's graphics issue. Other ordinary subtypes use the same metadata checks; universal faction or overhaul compatibility is not claimed. Recruitment still requires the game's normal buildings, capacity, gold and content ownership.
+The previous combined release was tested with Kislev Boyars and Patriarchs. This standalone 0.2.2 pack passed compilation, offline tests and Kislev native regression, including Boyar/Patriarch refresh, protected candidate preservation and normal recruitment. Actual gameplay screenshots are included below. Other ordinary subtypes use the same metadata checks; universal faction or overhaul compatibility is not claimed. Recruitment still requires the game's normal buildings, capacity, gold and content ownership.
 
 [url=https://github.com/XenoAmess/total_war_warhammer_3_dev]源码、设计与验收记录 / Source and acceptance records[/url]
+
+[h2]实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon[/h2]
+[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg[/img]
+
+[h2]实机：单击刷新后的领主候选 / Lord candidates after one-click refresh[/h2]
+[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg[/img]
+
+[h2]实机：牧首招募页刷新图标 / Native Patriarch recruitment icon[/h2]
+[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg[/img]

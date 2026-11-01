@@ -1,0 +1,52 @@
+{
+  "screenshots": [
+    {
+      "file": "lord-refresh-icon.jpg",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "caption": "实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg",
+      "captured_at_utc": "2026-11-01T12:06:36.881084+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "source_png_sha256": "21f3dc7e42a8f2f739a4ba67b44a83cd56bed80247f1305b4cf82e559164ca8c",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\captures\\lord-refresh-icon.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    },
+    {
+      "file": "lord-refreshed.jpg",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "caption": "实机：单击刷新后的领主候选 / Lord candidates after one-click refresh",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg",
+      "captured_at_utc": "2026-11-01T12:08:02.154544+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "source_png_sha256": "a0437f48b5d641a7ac9b22ac601e720b9705acc73b1f9d1060e571b6711a1b19",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\captures\\lord-refreshed.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    },
+    {
+      "file": "hero-final.jpg",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "caption": "实机：牧首招募页刷新图标 / Native Patriarch recruitment icon",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg",
+      "captured_at_utc": "2026-11-01T12:17:23.681635+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+      "source_png_sha256": "5527a8561622c9fe1a72c743d820309e56337c0149aa28b9e3db4c76f1e5a9f7",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\recruitment_refresh\\captures\\hero-final.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    }
+  ]
+}

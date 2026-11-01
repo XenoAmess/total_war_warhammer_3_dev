@@ -1,0 +1,101 @@
+FRONTEND_READY
+CONTINUE_CAMPAIGN_CLICKED
+COMMAND_RESULT ok=true result=nil
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+SPLIT_REFRESH_LEGACY_HISTORY_PRESERVED_PASS next_sequence=57
+COMMAND_RESULT ok=true result=nil
+SPLIT_CAPTURE_READY wh3_main_ksl_patriarch before
+NATIVE_LAYOUT.panel.y.430
+NATIVE_LAYOUT.panel.x.550
+NATIVE_LAYOUT.panel.w.820
+NATIVE_LAYOUT.panel.h.650
+NATIVE_LAYOUT.footer.y.964
+NATIVE_LAYOUT.footer.x.550
+NATIVE_LAYOUT.footer.w.820
+NATIVE_LAYOUT.footer.h.50
+NATIVE_LAYOUT.button.y.971
+NATIVE_LAYOUT.button.x.1118
+NATIVE_LAYOUT.button.w.36
+NATIVE_LAYOUT.button.h.36
+NATIVE_LAYOUT.native.button_confirm.y.964
+NATIVE_LAYOUT.native.button_confirm.x.810
+NATIVE_LAYOUT.native.button_confirm.w.300
+NATIVE_LAYOUT.native.button_confirm.h.51
+NATIVE_LAYOUT.native.button_load_character.y.971
+NATIVE_LAYOUT.native.button_load_character.x.1324
+NATIVE_LAYOUT.native.button_load_character.w.36
+NATIVE_LAYOUT.native.button_load_character.h.36
+NATIVE_LAYOUT.native.province_cycle.y.974
+NATIVE_LAYOUT.native.province_cycle.x.563
+NATIVE_LAYOUT.native.province_cycle.w.100
+NATIVE_LAYOUT.native.province_cycle.h.49
+NATIVE_LAYOUT.icon.y.977
+NATIVE_LAYOUT.icon.x.1124
+NATIVE_LAYOUT.icon.w.24
+NATIVE_LAYOUT.icon.h.24
+NATIVE_LAYOUT_PASS subtype=wh3_main_ksl_patriarch state=active candidates=5 replaceable=3 sequence=57
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+NATIVE_REFRESH_PASS wh3_main_ksl_patriarch sequence=57 replaced=3 count=5
+SPLIT_CAPTURE_READY wh3_main_ksl_boyar before
+NATIVE_LAYOUT.panel.y.430
+NATIVE_LAYOUT.panel.x.550
+NATIVE_LAYOUT.panel.w.820
+NATIVE_LAYOUT.panel.h.650
+NATIVE_LAYOUT.footer.y.964
+NATIVE_LAYOUT.footer.x.550
+NATIVE_LAYOUT.footer.w.820
+NATIVE_LAYOUT.footer.h.50
+NATIVE_LAYOUT.button.y.971
+NATIVE_LAYOUT.button.x.1118
+NATIVE_LAYOUT.button.w.36
+NATIVE_LAYOUT.button.h.36
+NATIVE_LAYOUT.native.button_load_character.y.971
+NATIVE_LAYOUT.native.button_load_character.x.1324
+NATIVE_LAYOUT.native.button_load_character.w.36
+NATIVE_LAYOUT.native.button_load_character.h.36
+NATIVE_LAYOUT.native.province_cycle.y.974
+NATIVE_LAYOUT.native.province_cycle.x.563
+NATIVE_LAYOUT.native.province_cycle.w.100
+NATIVE_LAYOUT.native.province_cycle.h.49
+NATIVE_LAYOUT.native.button_raise.y.964
+NATIVE_LAYOUT.native.button_raise.x.810
+NATIVE_LAYOUT.native.button_raise.w.300
+NATIVE_LAYOUT.native.button_raise.h.51
+NATIVE_LAYOUT.icon.y.977
+NATIVE_LAYOUT.icon.x.1124
+NATIVE_LAYOUT.icon.w.24
+NATIVE_LAYOUT.icon.h.24
+NATIVE_LAYOUT_PASS subtype=wh3_main_ksl_boyar state=active candidates=3 replaceable=3 sequence=58
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+NATIVE_REFRESH_PASS wh3_main_ksl_boyar sequence=58 replaced=3 count=3
+SPLIT_CAPTURE_READY wh3_main_ksl_boyar after
+COMMAND_RESULT ok=true result=nil
+NORMAL_RECRUIT_PASS family_member=17194 actor=1411 gold=6250->5500
+SPLIT_RECRUITMENT_STANDALONE_SMOKE_COMPLETE_PASS
+COMMAND_RESULT ok=true result=nil
+HERO_SCOPE_READY
+COMMAND_RESULT ok=true result=nil
+HERO_QUERY time=1793535488 children=2
+agent_parent true NewState
+lord_parent false NewState
+TARGET nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=false result=[string "xatw3_acceptance_command"]:4: Unsupported special page enabled refresh
+
+FINAL SCOPE SESSION PID 2256
+FRONTEND_READY
+CONTINUE_CAMPAIGN_CLICKED
+COMMAND_RESULT ok=true result=nil
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+COMMAND_RESULT ok=true result=nil
+HERO_SCOPE_READY
+COMMAND_RESULT ok=false result=[string "xatw3_acceptance_command"]:3: attempt to call method 'Interactive' (a nil value)
+BUTTON_INTERACTION visible=true state=active
+HERO_PAGE_SCOPE_PASS special_target=nil no_submission=true sequence=57
+COMMAND_RESULT ok=true result=nil
