@@ -47,11 +47,8 @@ def fixture(output: Path, runtime: Path, production_pack: Path, include_producti
     script = LUA.replace('__RUNTIME__', json.dumps(runtime.resolve().as_posix()))
     campaign = script + '''
 xatw3_test.record('CAMPAIGN_SCRIPTS_LOADED')
--- campaign mods load before WorldCreated constructs the timer manager.
-core:add_listener('xatw3_acceptance_real', 'RealTimeTrigger',
-    function(context) return context.string == 'xatw3_acceptance_campaign' end,
-    fixture.tick, true)
-real_timer.register_repeating('xatw3_acceptance_campaign', 500)
+-- Campaign commands read model interfaces, so consume them only through the
+-- campaign model timer after the first tick, never through RealTimeTrigger.
 core:add_ui_created_callback(function()
     xatw3_test.record('CAMPAIGN_UI_CREATED')
 end)

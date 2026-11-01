@@ -67,7 +67,7 @@ def run() -> dict:
             return env
         end''')
         probe_env = load_probe(probe)
-        if not probe_lua.eval('timer_registered and type(first_tick) == "function" and type(ui_created) == "function"'):
+        if not probe_lua.eval('type(first_tick) == "function" and type(ui_created) == "function"'):
             raise RuntimeError('Native acceptance fixture failed before WorldCreated')
         (Path(temporary) / 'runtime/command.lua').write_text(
             "xatw3_test.record('ISOLATED_COMMAND_ENV')", encoding='utf-8')
