@@ -1,0 +1,36 @@
+{
+  "screenshots": [
+    {
+      "file": "capital-button.jpg",
+      "sha256": "4c293e61d16cfa71cad6f3459a0484cb923232347cb1198d97ba1159be213aea",
+      "caption": "实机：城镇面板中的迁都按钮 / Native settlement button",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-button.jpg",
+      "captured_at_utc": "2026-11-01T11:29:00.666784+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "4d86e9ee1c2ffe12ab13fd9c2da1be5ad8c2bc20c30caf464dbe3e2415ff59f8",
+      "source_png_sha256": "f7347e8dab7c224ae2f5a9d76e75fe0afb734c8119f5e835cd7c1d9f38ebf546",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\move_capital\\captures\\capital-button.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    },
+    {
+      "file": "capital-confirmation.jpg",
+      "sha256": "b81a7c61d4b891e6712a5f8710444883634d8c58cbf4ed7c79cbb1764fa6772b",
+      "caption": "实机：迁都确认窗口 / Native confirmation dialog",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-confirmation.jpg",
+      "captured_at_utc": "2026-11-01T11:31:07.017122+00:00",
+      "game_version": "9.0.4.0",
+      "pack_sha256": "4d86e9ee1c2ffe12ab13fd9c2da1be5ad8c2bc20c30caf464dbe3e2415ff59f8",
+      "source_png_sha256": "64ed7791f8c859c26ac9b2cd84252b1b57eb95a5699ee6621843ef62accc142e",
+      "source_png_path": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101\\move_capital\\captures\\capital-confirmation.png",
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "jpeg_quality": 90
+    }
+  ]
+}
