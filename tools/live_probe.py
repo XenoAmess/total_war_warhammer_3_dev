@@ -58,7 +58,9 @@ cm:add_first_tick_callback(function()
     cm:repeat_callback(xatw3_test.tick, 0.5, 'xatw3_acceptance_model')
 end)
 '''
-    frontend = script + '''
+    # The frontend timer can survive scene transitions. It must never consume
+    # campaign commands using its stale frontend cm/core environment.
+    frontend = script.replace('/command.lua', '/frontend-command.lua') + '''
 _G.suppress_intro_movie = true
 local function poll()
     xatw3_test.tick()
