@@ -1,13 +1,13 @@
 {
   "account_activity_before_sdk_init": {
     "owner": "76561198273714027",
-    "status": "PUBLIC_PRESENCE_IDLE",
-    "game": null,
-    "online_state": "online",
-    "observed_at_utc": "2026-10-31T06:44:45.425511+00:00",
-    "server_date": "Sat, 31 Oct 2026 06:44:45 GMT",
-    "source": "steam_community_public_presence",
-    "response_sha256": "c74cc0ddd943ae4cbd46466db278d45ecffd44f881b7a85ff61eb8f3e1e2b9fc"
+    "status": "USER_CONFIRMED_IDLE",
+    "source": "user_current_session_statement",
+    "observed_at_utc": "2026-11-01T14:31:28.446573+00:00",
+    "checked_at_utc": "2026-11-01T14:32:01.631803+00:00",
+    "statement": "已全部退出，当前账号空闲",
+    "authorized_by": "user",
+    "schema_version": 1
   },
   "release_acceptance": {
     "L0": "PASS",
@@ -18,77 +18,222 @@
   "mod_id": "move_capital",
   "owner": "76561198273714027",
   "app_id": 1142710,
-  "status": "PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
+  "status": "PUBLISHED_PUBLIC_VERIFIED",
   "item_id": "3830651933",
   "required_items": [],
-  "pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
-  "uploaded_version": "0.1.0",
+  "pack_sha256": "4d86e9ee1c2ffe12ab13fd9c2da1be5ad8c2bc20c30caf464dbe3e2415ff59f8",
+  "uploaded_version": "0.1.1",
   "uploaded_title": "迁移首都 | Move Capital",
-  "description_sha256": "cf5c5eaefe73a37d4d521ce9bf0a9aad76750785794db0cf09ae84ec648c6c3f",
+  "description_sha256": "b7fbe3027341cf6eb220764e821c5003e5fb3864ed86e3bd87e48373ed9422af",
   "preview_sha256": "e60e49345ac675b277939338b38409c5182e246fd9b065339c5bd9b92a10fae9",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933",
   "version": "0.1.0",
   "uploaded_at_utc": "2026-10-31T06:45:00.068545+00:00",
-  "verified_at_utc": "2026-10-31T06:54:05.290734+00:00",
+  "verified_at_utc": "2026-11-01T15:01:42.988127+00:00",
   "visibility": "public",
-  "anonymous_metadata_verification": "PASS",
-  "anonymous_page_verification": "PASS",
-  "dependency_verification": "PASS",
-  "changelog_verification": "PASS",
-  "preview_hash_verification": "PASS",
-  "download_hash_verification": "PASS",
   "downloaded_pack_bytes": 15128,
   "downloaded_pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
   "steam_final_mode": "offline",
-  "verification_for_version": "0.1.0",
-  "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
   "final_offline_receipt": {
     "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
     "sha256": "f6c5d2a5b74a7151a19a05798db053f35690a217c44b81ceaaa1b3e0a2b70fe5"
   },
-  "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9",
   "launcher_metadata": {
     "pack_name": "xatw3_move_capital.pack",
     "game_version": "589824"
   },
+  "launcher_repair_record": "docs/launcher-repair-20261031.json",
+  "gallery": [
+    {
+      "file": "capital-button.jpg",
+      "sha256": "4c293e61d16cfa71cad6f3459a0484cb923232347cb1198d97ba1159be213aea",
+      "caption": "实机：城镇面板中的迁都按钮 / Native settlement button",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-button.jpg",
+      "index": 0
+    },
+    {
+      "file": "capital-confirmation.jpg",
+      "sha256": "b81a7c61d4b891e6712a5f8710444883634d8c58cbf4ed7c79cbb1764fa6772b",
+      "caption": "实机：迁都确认窗口 / Native confirmation dialog",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-confirmation.jpg",
+      "index": 1
+    }
+  ],
+  "previous_release_verification": {
+    "anonymous_metadata_verification": "PASS",
+    "anonymous_page_verification": "PASS",
+    "dependency_verification": "PASS",
+    "changelog_verification": "PASS",
+    "preview_hash_verification": "PASS",
+    "download_hash_verification": "PASS",
+    "verification_for_version": "0.1.0",
+    "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
+    "source_code_commit": "b388ac748c816c943d2a0d1a88a21d3fdb9ef3a9",
+    "launcher_metadata_verification": "PASS",
+    "launcher_metadata_verified_at_utc": "2026-10-31T14:56:36.276Z",
+    "actual_subscription_download": {
+      "mod_id": "move_capital",
+      "item_id": "3830651933",
+      "initial_flags": 4,
+      "flags": 5,
+      "subscribed": true,
+      "installed": true,
+      "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830651933\\xatw3_move_capital.pack",
+      "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+      "bytes": 15128,
+      "observed_at_utc": "2026-10-31T14:31:21.450665+00:00"
+    },
+    "legacy_launcher_backend_verification": "PASS",
+    "legacy_launcher_backend": {
+      "mod_id": "xatw3_move_capital.pack",
+      "title": "迁移首都 | Move Capital",
+      "owner": "76561198273714027",
+      "workshop_id": "3830651933",
+      "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830651933/xatw3_move_capital.pack",
+      "category": "campaign",
+      "subscribed": true,
+      "up_to_date": true,
+      "conflicted": false,
+      "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
+      "bytes": 15128,
+      "observed_at_utc": "2026-10-31T14:56:36.276Z",
+      "status": "PASS",
+      "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
+    },
+    "launcher_metadata_remote": {
+      "PACK_NAME": [
+        "xatw3_move_capital.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    }
+  },
+  "verification_for_version": "0.1.1",
+  "source_code_commit": "0a13e332b10dd514d94e3cc0273fd7bf7e19c720",
+  "screenshots_status": "UPLOADED_GALLERY_AND_INLINE_BBCODE_VERIFIED",
+  "anonymous_description_verification": "PASS",
+  "download_hash_verification": "PASS",
   "launcher_metadata_verification": "PASS",
-  "launcher_metadata_verified_at_utc": "2026-10-31T14:56:36.276Z",
+  "launcher_metadata_remote": {
+    "game_version": [
+      "589824"
+    ],
+    "PACK_NAME": [
+      "xatw3_move_capital.pack"
+    ]
+  },
   "actual_subscription_download": {
     "mod_id": "move_capital",
     "item_id": "3830651933",
-    "initial_flags": 4,
     "flags": 5,
     "subscribed": true,
     "installed": true,
     "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830651933\\xatw3_move_capital.pack",
-    "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
-    "bytes": 15128,
-    "observed_at_utc": "2026-10-31T14:31:21.450665+00:00"
+    "sha256": "4d86e9ee1c2ffe12ab13fd9c2da1be5ad8c2bc20c30caf464dbe3e2415ff59f8",
+    "observed_at_utc": "2026-11-01T14:32:39.852899+00:00"
   },
-  "launcher_repair_record": "docs/launcher-repair-20261031.json",
-  "legacy_launcher_backend_verification": "PASS",
-  "legacy_launcher_backend": {
-    "mod_id": "xatw3_move_capital.pack",
-    "title": "迁移首都 | Move Capital",
-    "owner": "76561198273714027",
-    "workshop_id": "3830651933",
-    "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830651933/xatw3_move_capital.pack",
-    "category": "campaign",
-    "subscribed": true,
-    "up_to_date": true,
-    "conflicted": false,
-    "sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
-    "bytes": 15128,
-    "observed_at_utc": "2026-10-31T14:56:36.276Z",
+  "gallery_readback": {
+    "mod_id": "move_capital",
+    "item_id": "3830651933",
     "status": "PASS",
-    "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
-  },
-  "launcher_metadata_remote": {
-    "PACK_NAME": [
-      "xatw3_move_capital.pack"
+    "images": [
+      {
+        "slot": 0,
+        "file": "capital-button.jpg",
+        "url": "https://images.steamusercontent.com/ugc/17325634550637785978/F56604F4C4FDAD66AAFA73FE8A367F5299597787/",
+        "sha256": "4c293e61d16cfa71cad6f3459a0484cb923232347cb1198d97ba1159be213aea"
+      },
+      {
+        "slot": 1,
+        "file": "capital-confirmation.jpg",
+        "url": "https://images.steamusercontent.com/ugc/14584529659161916296/0155ABF5B5E4F04448EA78519A39B67FBE71B5DC/",
+        "sha256": "b81a7c61d4b891e6712a5f8710444883634d8c58cbf4ed7c79cbb1764fa6772b"
+      }
     ],
-    "game_version": [
-      "589824"
-    ]
-  }
+    "launcher_metadata": {
+      "game_version": [
+        "589824"
+      ],
+      "PACK_NAME": [
+        "xatw3_move_capital.pack"
+      ]
+    },
+    "observed_at_utc": "2026-11-01T14:32:46.392817+00:00"
+  },
+  "steam_final_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-01T15:00:51.826022+00:00",
+    "nonce": "f461b0b2c45080016e6c7a9565f482fb",
+    "reason": "observed",
+    "steam": {
+      "pid": 6188,
+      "birth_filetime": "134380188129027648",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-01T15:00:51.826022+00:00",
+      "nonce": "f461b0b2c45080016e6c7a9565f482fb",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 6188,
+        "birth_filetime": "134380188129027648",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 6188,
+        "birth_filetime": "134380188129027648",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "2109288292480",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "temporary_cef_endpoint": "CLOSED"
 }

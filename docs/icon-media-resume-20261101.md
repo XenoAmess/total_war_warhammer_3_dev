@@ -1,4 +1,6 @@
-# Native UI and media work awaiting desktop access
+# Native UI and media work, completed
+
+**Completed after desktop access resumed:** final refresh 0.2.2 and capital 0.1.1 passed native regression and were published to the existing items. Five actual gameplay images are committed, uploaded as gallery previews and embedded in each description. Public Web API descriptions, uncached Steamworks gallery records, exact Steam CDN image hashes and real subscribed package hashes were verified. Ordinary Steam was restored to confirmed active offline mode, with temporary CEF debugging closed. See each Mod's versioned publication receipt. The remaining text records the earlier blocked state and the procedure used; it is historical, not an open task list.
 
 The user's current scope is native button/icon avoidance only. Both existing Workshop items must receive actual gameplay gallery images and matching inline BBCode embeds. No final candidate has been uploaded in this work package.
 

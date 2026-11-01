@@ -3,14 +3,14 @@
   "mod_id": "move_capital",
   "version": "0.1.1",
   "recorded_at_utc": "2026-11-01T11:45:01.135753+00:00",
-  "release_status": "NATIVE_ACCEPTED_AWAITING_PUBLICATION",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_GALLERY_VERIFIED",
   "release_pack_sha256": "4d86e9ee1c2ffe12ab13fd9c2da1be5ad8c2bc20c30caf464dbe3e2415ff59f8",
   "release_pack_bytes": 15944,
   "L0": "PASS",
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "offline": {
     "status": "PASS",
     "mod_id": "move_capital",
@@ -215,5 +215,6 @@
       ],
       "jpeg_quality": 90
     }
-  ]
+  ],
+  "publication_record": "workshop-publication-0.1.1.json"
 }

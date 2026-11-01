@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.2.2",
+  "item_id": "3830548217",
+  "status": "PASS",
+  "recorded_at_utc": "2026-11-01T15:01:42.983771+00:00",
+  "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+  "source_commit": "0a13e332b10dd514d94e3cc0273fd7bf7e19c720",
+  "public_metadata": {
+    "creator": "76561198273714027",
+    "creator_app_id": 1142710,
+    "consumer_app_id": 1142710,
+    "visibility": 0,
+    "title": "招募候选刷新 | Recruitment Refresh",
+    "time_updated": 1793541364,
+    "file_size": "43225",
+    "hcontent_file": "7303406150339183690",
+    "children": null,
+    "tags": [
+      {
+        "tag": "mod"
+      },
+      {
+        "tag": "campaign"
+      }
+    ]
+  },
+  "description_sha256": "d96ce5af540d01c43e55326f1cc6a75885b414c34233e4b0bdc4ded2867d3692",
+  "inline_image_count": 3,
+  "gallery_readback": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "status": "PASS",
+    "images": [
+      {
+        "slot": 0,
+        "file": "lord-refresh-icon.jpg",
+        "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+        "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78"
+      },
+      {
+        "slot": 1,
+        "file": "lord-refreshed.jpg",
+        "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+        "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c"
+      },
+      {
+        "slot": 2,
+        "file": "hero-final.jpg",
+        "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+        "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345"
+      }
+    ],
+    "launcher_metadata": {
+      "game_version": [
+        "589824"
+      ],
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ]
+    },
+    "observed_at_utc": "2026-11-01T14:32:35.436848+00:00"
+  },
+  "subscribed_download": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+    "observed_at_utc": "2026-11-01T14:32:26.576579+00:00"
+  },
+  "steam_final_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-01T15:00:51.826022+00:00",
+    "nonce": "f461b0b2c45080016e6c7a9565f482fb",
+    "reason": "observed",
+    "steam": {
+      "pid": 6188,
+      "birth_filetime": "134380188129027648",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-01T15:00:51.826022+00:00",
+      "nonce": "f461b0b2c45080016e6c7a9565f482fb",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 6188,
+        "birth_filetime": "134380188129027648",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 6188,
+        "birth_filetime": "134380188129027648",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "2109288292480",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "temporary_cef_endpoint": "CLOSED",
+  "limits": [
+    "Native gameplay used the frozen local pack with this exact SHA; subscriber package identity was verified after publication.",
+    "Native rendering tested at 100% UI scale on Kislev. Other scales are offline controller tests.",
+    "Anonymous Workshop HTML returned HTTP 429; public Web API description and uncached Steamworks gallery readback plus exact CDN payload hashes were verified."
+  ],
+  "native_acceptance": "acceptance-results-0.2.2.json",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\icon-media-20261101"
+}

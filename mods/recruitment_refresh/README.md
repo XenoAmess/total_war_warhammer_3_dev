@@ -2,7 +2,7 @@
 
 《全面战争：战锤 3》“招募候选刷新”Mod：普通领主/事务官招募刷新。本目录是[多 Mod 仓库](../../README.md)中的独立项目。
 
-源码候选 `0.2.2` 已改为原生刷新图标，并修复隐藏领主页导致的类别残留；73 项共用测试、55 项 Mod 测试及基斯里夫实机回归通过。已核对领主/牧首刷新、保护人物保留、正常招募、原生控件避让及特殊训练页不提交刷新；3 张实机图片已入库，工坊上传待执行。见[实现记录](docs/icon-ui-implementation-20261101.md)及[验收状态](docs/acceptance-results-0.2.2.json)。以下 `0.2.1` 为当前工坊版本。
+`0.2.2` 已发布至[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)：原生刷新图标、可见分类页识别修复及 3 张实机图片，图库和正文均已更新。73 项共用测试、55 项 Mod 测试及基斯里夫领主/牧首实机回归通过，订阅下载包哈希一致。实机范围为 100% UI 缩放、原生控件避让；不宣称其他 Mod 兼容。见[验收状态](docs/acceptance-results-0.2.2.json)和[发布回执](docs/workshop-publication-0.2.2.json)。以下为旧版本历史。
 
 `0.2.1 Alpha` 已更新[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)，正文、发布包、远端启动器元数据和真实订阅下载均已核对。旧启动器自身的原生读取接口已返回本 Mod；完整游戏内回归和截图按用户授权后补。见[发布记录](docs/workshop-publication.md)。
 
