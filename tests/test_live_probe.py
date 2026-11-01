@@ -30,17 +30,22 @@ class ProbeSceneTests(unittest.TestCase):
             end''')
             frontend = load(files['script/frontend/mod/zz_xatw3_acceptance.lua'].decode())
             campaign = load(files['script/campaign/mod/zz_xatw3_acceptance.lua'].decode())
+            front_tick = frontend['xatw3_test']['tick']
+            campaign_tick = campaign['xatw3_test']['tick']
+            # A new scene may replace the public namespace while an old timer
+            # still holds its original callback. Its private channel must stay.
+            frontend['xatw3_test'] = campaign['xatw3_test']
             command = root / 'runtime/command.lua'
             command.write_text("xatw3_test.record('CAMPAIGN_ONLY_EXECUTED')", encoding='utf-8')
-            frontend['xatw3_test']['tick']()
+            front_tick()
             self.assertTrue(command.exists())
-            campaign['xatw3_test']['tick']()
+            campaign_tick()
             self.assertFalse(command.exists())
             front_command = root / 'runtime/frontend-command.lua'
             front_command.write_text("xatw3_test.record('FRONTEND_ONLY_EXECUTED')", encoding='utf-8')
-            campaign['xatw3_test']['tick']()
+            campaign_tick()
             self.assertTrue(front_command.exists())
-            frontend['xatw3_test']['tick']()
+            front_tick()
             self.assertFalse(front_command.exists())
             log = (root / 'runtime/native.log').read_text(encoding='utf-8')
             self.assertEqual(log.count('CAMPAIGN_ONLY_EXECUTED'), 1)
