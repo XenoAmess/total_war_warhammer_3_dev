@@ -3,7 +3,7 @@ local environment = getfenv(1)
 local runtime = require('script.campaign.xatw3_move_capital.runtime').new(logic, environment)
 local ui = require('script.campaign.xatw3_move_capital.ui').new(runtime, logic, environment)
 
-xatw3_move_capital = {logic = logic, runtime = runtime, ui = ui, version = '0.1.0'}
+xatw3_move_capital = {logic = logic, runtime = runtime, ui = ui, version = '0.1.1'}
 
 core:add_listener('xatw3mc_requests', 'UITrigger', function(context)
     return type(context:trigger()) == 'string' and context:trigger():sub(1, 9) == 'xatw3mc|1'
@@ -20,5 +20,5 @@ end, true)
 cm:add_first_tick_callback(function()
     runtime.initialize()
     if runtime.campaign_supported() and not cm:is_multiplayer() then ui.install() end
-    runtime.log('loaded version=0.1.0 campaign=' .. cm:get_campaign_name())
+    runtime.log('loaded version=0.1.1 campaign=' .. cm:get_campaign_name())
 end)

@@ -66,4 +66,38 @@ test('settlement_selection_updates_target', function()
     assert(ui.selected_region == 'new_home')
     ui.prepare('capital'); assert(ui.pending and ui.pending.target == 'new_home')
 end)
+test('native_button_label_stays_inside_reused_button', function()
+    local function c(id,x,y,w,h)
+        local t={id=id,x=x or 0,y=y or 0,w=w or 0,h=h or 0,children={},visible=true}
+        function t:Visible() return self.visible end
+        function t:SetVisible(v) self.visible=v end
+        function t:Position() return self.x,self.y end
+        function t:Dimensions() return self.w,self.h end
+        function t:SetStateText(v) self.text=v end
+        function t:SetTooltipText(v) self.tooltip=v end
+        function t:SetInteractive(v) self.interactive=v end
+        function t:SetCanResizeWidth() end
+        function t:SetCanResizeHeight() end
+        function t:SetDockingPoint(v) self.dock=v end
+        function t:SetDockOffset(x,y) self.dx,self.dy=x,y end
+        function t:Resize(w,h) self.w,self.h=w,h end
+        function t:MoveTo(x,y) self.x,self.y=x,y end
+        function t:SetTextHAlign(v) self.halign=v end
+        function t:SetTextVAlign(v) self.valign=v end
+        function t:SetTextXOffset(x,y) self.tx,self.tx2=x,y end
+        function t:SetTextYOffset(x,y) self.ty,self.ty2=x,y end
+        return t
+    end
+    local root,panel,anchor,b,label,flame=c('root'),c('settlement_panel'),c('button_rename',640,780),c('xatw3mc_move_capital'),c('button_txt'),c('button_flame')
+    root.children.settlement_panel=panel;panel.children.button_rename=anchor;b.children.button_txt=label;b.children.button_flame=flame
+    local rt={initialized=true,state={locked=false},can_act=function() return true end,capital=function() return 'old' end,region=function() return {key='new',exists=true,settlement=true,owner='player'} end}
+    local ui=ui_module.new(rt,logic,{core={get_ui_root=function() return root end,get_or_create_component=function() return b end},cm={get_local_faction_name=function() return 'player' end},common={get_localised_string=function(k) return k end},find_uicomponent=function(p,id) return p.children[id] end})
+    ui.selected_region='new';ui.refresh_buttons()
+    assert(b.visible and b.interactive and b.text==nil and label.text=='xatw3mc_capital' and not flame.visible)
+    assert(b.x==640 and b.y==735 and b.w==170 and b.h==34)
+    assert(label.x>=b.x and label.y>=b.y and label.x+label.w<=b.x+b.w and label.y+label.h<=b.y+b.h)
+    assert(label.halign=='centre' and label.valign=='centre' and label.dock==0 and label.dx==0 and label.dy==0)
+    anchor.x=900;anchor.y=850;ui.refresh_buttons();assert(b.x==900 and b.y==805 and label.x>=900 and label.y>=805)
+    b.children.button_txt=nil;ui.refresh_buttons();assert(not b.visible)
+end)
 return passed

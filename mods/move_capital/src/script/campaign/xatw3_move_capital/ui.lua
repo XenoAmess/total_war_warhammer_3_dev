@@ -14,13 +14,31 @@ function M.new(runtime, logic, environment)
     local function button(id, parent, label, anchor)
         local component = core:get_or_create_component(PREFIX .. id,
             'ui/templates/square_medium_text_button.twui.xml', parent)
-        component:SetStateText(text(label))
+        component:SetVisible(false)
+        local text_child = find_uicomponent(component, 'button_txt')
+        if not text_child then return component end
+        local flame = find_uicomponent(component, 'button_flame')
+        if flame then flame:SetVisible(false) end
         component:SetTooltipText(text(label .. '_tooltip'), true)
         component:SetCanResizeWidth(true)
+        component:SetCanResizeHeight(true)
+        component:SetDockingPoint(0)
+        component:SetDockOffset(0, 0)
         component:Resize(170, 34)
-        component:SetVisible(true)
         local x, y = anchor:Position()
         component:MoveTo(x, y - 45)
+        text_child:SetStateText(text(label))
+        text_child:SetCanResizeWidth(true)
+        text_child:SetCanResizeHeight(true)
+        text_child:SetDockingPoint(0)
+        text_child:SetDockOffset(0, 0)
+        text_child:Resize(162, 26)
+        text_child:SetTextHAlign('centre')
+        text_child:SetTextVAlign('centre')
+        text_child:SetTextXOffset(0, 0)
+        text_child:SetTextYOffset(0, 0)
+        text_child:MoveTo(x + 4, y - 41)
+        component:SetVisible(true)
         return component
     end
 

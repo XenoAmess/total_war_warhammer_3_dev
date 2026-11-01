@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "move_capital",
   "title": "迁移首都 | Move Capital",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "pack_name": "xatw3_move_capital.pack",
   "languages": ["zh-CN", "en"],
   "default_language": "zh-CN",
