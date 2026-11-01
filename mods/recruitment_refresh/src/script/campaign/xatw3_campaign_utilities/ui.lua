@@ -12,19 +12,18 @@ function M.new(runtime, logic, environment)
 
     local function button(id, panel, label)
         local component = core:get_or_create_component(PREFIX .. id,
-            'ui/templates/square_medium_text_button.twui.xml', panel)
+            'ui/templates/square_small_button.twui.xml', panel)
         component:SetVisible(false)
         local footer = find_uicomponent(panel, 'character_panel_info_holder', 'footer')
         if not footer or not footer:Visible() then return component end
         local anchor = find_uicomponent(footer, 'button_raise')
         if not anchor or not anchor:Visible() then anchor = find_uicomponent(footer, 'button_confirm') end
         if not anchor or not anchor:Visible() then return component end
-        local label_component = find_uicomponent(component, 'button_txt')
-        if not label_component then return component end
+        local icon = find_uicomponent(component, 'icon')
+        if not icon then return component end
         local flame = find_uicomponent(component, 'button_flame')
         if flame then flame:SetVisible(false) end
 
-        -- Dimensions excludes children: the template label is wider than this button.
         local px, py = panel:Position()
         local pw, ph = panel:Dimensions()
         local fx, fy = footer:Position()
@@ -33,46 +32,61 @@ function M.new(runtime, logic, environment)
         local aw, ah = anchor:Dimensions()
         if ah <= 0 or aw <= 0 then return component end
         local scale = ah / 51
-        local gap, padding = math.ceil(8 * scale), math.ceil(4 * scale)
-        local h = math.floor(34 * scale)
-        local x, y = ax + aw + gap, math.floor(ay + (ah - h) / 2)
+        local size = math.floor(36 * scale)
+        local gap = math.ceil(8 * scale)
+        local icon_size = math.floor(24 * scale)
         local left, top = math.max(px, fx), math.max(py, fy)
         local right, bottom = math.min(px + pw, fx + fw), math.min(py + ph, fy + fh)
-        if x < left + padding or y < top or y + h > bottom then return component end
-        right = right - gap
-        for _, name in ipairs({'button_load_character', 'province_cycle'}) do
-            local obstacle = find_uicomponent(footer, name)
-            if obstacle and obstacle:Visible() then
-                local ox, oy = obstacle:Position()
-                local ow, oh = obstacle:Dimensions()
-                if oy < y + h and oy + oh > y and ox + ow > x then
-                    right = math.min(right, ox - gap)
-                end
+        if right - left < size or bottom - top < size then return component end
+
+        -- Only native footer controls: candidate-card trees are rebuilt by the
+        -- engine while recruitment opens, so do not enumerate their descendants.
+        local blockers = {}
+        for _, name in ipairs({'button_raise', 'button_confirm', 'button_load_character', 'province_cycle'}) do
+            local native = find_uicomponent(footer, name)
+            if native and native:Visible() then
+                local x, y = native:Position()
+                local w, h = native:Dimensions()
+                if w > 0 and h > 0 then blockers[#blockers + 1] = {x = x, y = y, w = w, h = h} end
             end
         end
-        label_component:SetStateText(text(label))
-        local ok, tw, th = pcall(function() return label_component:TextDimensionsForText(text(label)) end)
-        if not ok or type(tw) ~= 'number' or type(th) ~= 'number'
-            or tw <= 0 or th <= 0 then return component end
-        local w = math.min(math.max(math.ceil(170 * scale), tw + padding * 4), right - x)
-        if w < tw + padding * 4 or h < th + padding * 2 then return component end
-        component:SetTooltipText(text(label .. '_tooltip'), true)
+        local function overlaps(x, y, w, h)
+            for _, b in ipairs(blockers) do
+                if x < b.x + b.w + gap and x + w + gap > b.x and
+                   y < b.y + b.h + gap and y + h + gap > b.y then
+                    return true
+                end
+            end
+            return false
+        end
+
+        local cy = math.floor(ay + (ah - size) / 2)
+        if cy < top or cy + size > bottom then return component end
+        local x
+        for position = math.ceil(ax + aw + gap), math.floor(right - size) do
+            if position >= left and not overlaps(position, cy, size, size) then x = position; break end
+        end
+        if not x then
+            for position = math.floor(ax - size - gap), math.ceil(left), -1 do
+                if position + size <= right and not overlaps(position, cy, size, size) then x = position; break end
+            end
+        end
+        if not x then return component end
+
         component:SetCanResizeWidth(true)
         component:SetCanResizeHeight(true)
         component:SetDockingPoint(0)
         component:SetDockOffset(0, 0)
-        component:Resize(w, h)
-        component:MoveTo(x, y)
-        label_component:SetCanResizeWidth(true)
-        label_component:SetCanResizeHeight(true)
-        label_component:SetDockingPoint(0)
-        label_component:SetDockOffset(0, 0)
-        label_component:Resize(w - padding * 2, h - padding * 2)
-        label_component:SetTextHAlign('centre')
-        label_component:SetTextVAlign('centre')
-        label_component:SetTextXOffset(0, 0)
-        label_component:SetTextYOffset(0, 0)
-        label_component:MoveTo(x + padding, y + padding)
+        component:Resize(size, size)
+        component:MoveTo(x, cy)
+        icon:SetCanResizeWidth(true)
+        icon:SetCanResizeHeight(true)
+        icon:SetDockingPoint(0)
+        icon:SetDockOffset(0, 0)
+        icon:Resize(icon_size, icon_size)
+        icon:MoveTo(x + math.floor((size - icon_size) / 2), cy + math.floor((size - icon_size) / 2))
+        icon:SetImagePath('ui/skins/default/dev/refresh_icon.png')
+        component:SetTooltipText(text(label .. '_tooltip'), true)
         component:SetVisible(true)
         return component
     end
@@ -84,6 +98,18 @@ function M.new(runtime, logic, environment)
         local panel = find_uicomponent(root, 'character_panel')
         if panel and panel:Visible() then
             local categories = find_uicomponent(panel, 'lords_and_agents_holder')
+            local previous_subtype = self.selected_subtype
+            self.selected_subtype = nil
+            if categories then
+                -- Hidden native pages retain selected child tabs. Search only
+                -- the currently visible page, never the recursive whole holder.
+                local agents = find_uicomponent(categories, 'agent_parent')
+                local lords = find_uicomponent(categories, 'lord_parent')
+                if agents or lords then
+                    categories = agents and agents:Visible() and agents
+                        or lords and lords:Visible() and lords or nil
+                end
+            end
             if categories then
                 for subtype in pairs(runtime.subtypes or {}) do
                     local tab = find_uicomponent(categories, subtype)
@@ -100,11 +126,19 @@ function M.new(runtime, logic, environment)
                         end
                     end
                     if matches == 1 then self.selected_subtype = selected end
+                    -- Several known subtypes can share one native agent tab.
+                    -- A clicked subtype is reusable only on that active tab.
+                    local agent = runtime.subtypes and runtime.subtypes[previous_subtype]
+                    local tab = agent and find_uicomponent(categories, agent)
+                    if not self.selected_subtype and tab and tab:Visible()
+                        and tab:CurrentState() == 'selected' then
+                        self.selected_subtype = previous_subtype
+                    end
                 end
             end
-            if not self.selected_subtype then
+            if categories and not self.selected_subtype then
                 local list = find_uicomponent(panel, 'character_list', 'listview', 'list_clip', 'list_box')
-                if list then
+                if list and list:Visible() then
                     local fallback
                     for index = 0, list:ChildCount() - 1 do
                         local card = UIComponent(list:Find(index))
