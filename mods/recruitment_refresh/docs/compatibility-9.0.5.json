@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.2.3",
+  "recorded_at_utc": "2026-11-04T14:41:36.475231+00:00",
+  "release_status": "NATIVE_VERIFIED_NOT_PUBLISHED",
+  "release_pack_sha256": "2b643bce2a34344897749bc15175ec3b8c6733d5712314624276086382e7a583",
+  "release_pack_bytes": 45561,
+  "L0": "PASS",
+  "L1": "PASS",
+  "L2": "PASS",
+  "L3": "PASS",
+  "game": {
+    "version": "9.0.5.0",
+    "StateFlags": "4",
+    "buildid": "26403568",
+    "BytesToDownload": "352526112",
+    "BytesDownloaded": "352526112",
+    "BytesToStage": "31017005138",
+    "BytesStaged": "31017005138",
+    "TargetBuildID": "26403568",
+    "observed_at_utc": "2026-11-04T09:59:34.448663+00:00"
+  },
+  "offline_tests": {
+    "shared": 73,
+    "mod": 60,
+    "compiled_lua_files": 5,
+    "deterministic_build": true,
+    "round_trip": true,
+    "plain_find_rejected": true
+  },
+  "native": {
+    "log": "native-9.0.5.log",
+    "baseline": "Kislev single-player Immortal Empires turn 3 disposable legacy save",
+    "legacy_sequence": 57,
+    "hero": {
+      "before": 5,
+      "after": 5,
+      "replaced": 3
+    },
+    "lord": {
+      "before": 3,
+      "after": 3,
+      "replaced": 3
+    },
+    "recruited_family_member": 17194,
+    "recruited_actor": 1411,
+    "gold_before": 6250,
+    "gold_after": 5500,
+    "protected_preserved": true,
+    "normal_recruitment": true,
+    "ui_native_clearance": true,
+    "verified_engine_profile": "9.0.5.0",
+    "special_subtype_admission_and_spawn_rejected": [
+      "wh3_main_cth_lord_caravan_master",
+      "wh3_cp1_cth_sawai_caravan",
+      "mod_convoy_leader"
+    ]
+  },
+  "limitations": [
+    "User original ordinary-error scene not reproduced under this clean baseline.",
+    "Special recruitment is blocked; no Cathay caravan campaign UI/crash replay is claimed.",
+    "No universal faction/other-Mod or multiplayer compatibility claim."
+  ],
+  "captures": [
+    {
+      "captured_at_utc": "2026-11-04T14:33:45.441212+00:00",
+      "hwnd": 4064672,
+      "game_pid": 14936,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\update-20261104\\native\\recruitment_refresh\\captures\\refresh-9.0.5-hero-before.png",
+      "sha256": "0acbf07975169cd1cb02aa1ce9292feee126971d4f239c39e4a06a0620a56112",
+      "pack_sha256": "2b643bce2a34344897749bc15175ec3b8c6733d5712314624276086382e7a583",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    },
+    {
+      "captured_at_utc": "2026-11-04T14:33:52.762528+00:00",
+      "hwnd": 4064672,
+      "game_pid": 14936,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\update-20261104\\native\\recruitment_refresh\\captures\\refresh-9.0.5-lord-after.png",
+      "sha256": "98f9a0255e108d19361a6c5331a8bdff5e03ce28736c5c5242d11025604226be",
+      "pack_sha256": "2b643bce2a34344897749bc15175ec3b8c6733d5712314624276086382e7a583",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    },
+    {
+      "captured_at_utc": "2026-11-04T14:33:50.102939+00:00",
+      "hwnd": 4064672,
+      "game_pid": 14936,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\update-20261104\\native\\recruitment_refresh\\captures\\refresh-9.0.5-lord-before.png",
+      "sha256": "22d01c4601af714d6275f0d8c3a830c56b2dabbcee01a530183f3f552f2588dc",
+      "pack_sha256": "2b643bce2a34344897749bc15175ec3b8c6733d5712314624276086382e7a583",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    },
+    {
+      "captured_at_utc": "2026-11-04T14:33:55.962738+00:00",
+      "hwnd": 4064672,
+      "game_pid": 14936,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\update-20261104\\native\\recruitment_refresh\\captures\\refresh-9.0.5-recruited.png",
+      "sha256": "e9c9a420b8522e3facf96739c469fa75f20fdd4b54af5eaf4376c1bb17b82635",
+      "pack_sha256": "2b643bce2a34344897749bc15175ec3b8c6733d5712314624276086382e7a583",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    }
+  ],
+  "steam_offline_before_launch": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-04T14:24:09.147874+00:00",
+    "nonce": "5875e244aab51d8e77916f7903ac806d",
+    "reason": "observed",
+    "steam": {
+      "pid": 18184,
+      "birth_filetime": "134382619791030326",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-04T14:24:09.147874+00:00",
+      "nonce": "5875e244aab51d8e77916f7903ac806d",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 18184,
+        "birth_filetime": "134382619791030326",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 18184,
+        "birth_filetime": "134382619791030326",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "2246828302464",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  }
+}

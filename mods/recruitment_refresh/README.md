@@ -1,5 +1,7 @@
 # 招募候选刷新 / Recruitment Refresh
 
+当前候选 `0.2.3` 已在 Windows x64、游戏 `9.0.5.0` / Steam build `26403568` 离线实机通过波耶与牧首刷新、受保护候选保留、刷新后的正常招募及图标避让。新增精确引擎构建校验，禁止商队/车队特殊类型进入普通刷新。原始反馈场景未完整复现，不宣称全种族兼容；此候选尚未发布。见[9.0.5 验收](docs/compatibility-9.0.5.json)与[调查记录](docs/update-9.0.5-investigation.md)。
+
 《全面战争：战锤 3》“招募候选刷新”Mod：普通领主/事务官招募刷新。本目录是[多 Mod 仓库](../../README.md)中的独立项目。
 
 `0.2.2` 已发布至[原工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)：原生刷新图标、可见分类页识别修复及 3 张实机图片，图库和正文均已更新。73 项共用测试、55 项 Mod 测试及基斯里夫领主/牧首实机回归通过，订阅下载包哈希一致。实机范围为 100% UI 缩放、原生控件避让；不宣称其他 Mod 兼容。见[验收状态](docs/acceptance-results-0.2.2.json)和[发布回执](docs/workshop-publication-0.2.2.json)。以下为旧版本历史。

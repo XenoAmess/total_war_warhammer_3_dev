@@ -7,8 +7,9 @@ function M.valid_key(value)
 end
 
 function M.special_subtype(value)
-    return type(value) == 'string' and (value:find('caravan', 1, true) ~= nil
-        or value:find('convoy', 1, true) ~= nil)
+    -- Avoid the engine Lua's broken plain-find path (observed on 9.0.5).
+    return type(value) == 'string' and (value:match('caravan') ~= nil
+        or value:match('convoy') ~= nil)
 end
 
 function M.eligible(candidate, faction, subtype)

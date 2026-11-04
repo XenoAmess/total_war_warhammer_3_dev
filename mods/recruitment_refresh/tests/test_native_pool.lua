@@ -93,9 +93,9 @@ test('special_details_rejected_before_native_object_dereference', function()
     for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh3_cp1_cth_sawai_caravan','mod_convoy_leader'}) do
         local details={is_null_interface=function() return false end,character_subtype_key=function() return key end}
         local allowed,why=bridge.can_remove(details)
-        check(not allowed and why:find('special recruitment is unsupported',1,true))
+        check(not allowed and why:match('special recruitment is unsupported'))
         local removed,reason=bridge.remove(details)
-        check(not removed and reason:find('special recruitment is unsupported',1,true))
+        check(not removed and reason:match('special recruitment is unsupported'))
     end
 end)
 

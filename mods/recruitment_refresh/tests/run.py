@@ -22,6 +22,15 @@ PROJECT = load_project(ROOT.name)
 
 def run() -> dict:
     lua = LuaRuntime(unpack_returned_tuples=True)
+    # The 9.0.5 engine's plain-find branch damaged subsequent Lua C results
+    # in native isolation. Reject that path throughout the production suite.
+    lua.execute('''
+        local find = string.find
+        string.find = function(value, pattern, start, plain)
+            assert(not plain, 'Unqualified engine Lua plain-find path')
+            return find(value, pattern, start)
+        end
+    ''')
     compile_lua = lua.eval('function(source, name) local f,e=loadstring(source,name); if not f then error(e) end; return true end')
     sources = sorted((ROOT / 'src').rglob('*.lua'))
     for path in sources:

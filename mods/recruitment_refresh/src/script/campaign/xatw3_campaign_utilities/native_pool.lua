@@ -1,6 +1,6 @@
 -- Uses the engine's own candidate expiry cleanup, followed by its vector cleanup.
 -- No object bytes, names, skill trees, or allocator-owned pointers are written by Lua.
--- The signatures and layouts below were verified on WH3 9.0.4, Windows x64.
+-- The signatures and layouts below were verified on WH3 9.0.4/9.0.5, Windows x64.
 local M = {}
 
 local EXPIRY = '48 89 5C 24 18 88 54 24 10 55 56 57 41 54 41 55 41 56 41 57 '
@@ -11,7 +11,10 @@ local PURGE = '48 8B C4 48 89 58 08 48 89 68 10 48 89 70 18 48 89 78 20 '
 local NULL = string.rep('\0', 8)
 -- Exact PE timestamp + SizeOfImage bytes, read without float conversion.
 -- A matching function signature alone does not qualify object layouts.
-local BUILDS = {['\244\198\206\106\0\144\2\14'] = '9.0.4.0'}
+local BUILDS = {
+    ['\244\198\206\106\0\144\2\14'] = '9.0.4.0',
+    ['\11\160\226\106\0\160\83\14'] = '9.0.5.0'
+}
 
 function M.new(environment)
     environment = environment or getfenv(2)
@@ -69,8 +72,8 @@ function M.new(environment)
     local function locate(details)
         assert(details and not details:is_null_interface(), 'missing character details')
         local subtype_key = details:character_subtype_key()
-        assert(type(subtype_key) == 'string' and not subtype_key:find('caravan', 1, true)
-            and not subtype_key:find('convoy', 1, true), 'special recruitment is unsupported')
+        assert(type(subtype_key) == 'string' and not subtype_key:match('caravan')
+            and not subtype_key:match('convoy'), 'special recruitment is unsupported')
         assert(not details:is_unique() and not details:is_immortal(), 'protected character')
         local actor = details:character()
         assert(not actor or actor:is_null_interface(), 'character was already recruited')
