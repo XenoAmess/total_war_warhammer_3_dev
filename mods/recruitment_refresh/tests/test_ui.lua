@@ -73,7 +73,8 @@ local function fixture()
                 assert(not f.panel.visible,'Native cards must close before dispatch')
                 f.dispatched[#f.dispatched+1]={cqi,payload}
             end}}
-    local logic_mock={plan=function() return {replace=f.replace_count>0 and {1} or {},fingerprint=f.fingerprint} end}
+    local logic_mock={plan=function() return {replace=f.replace_count>0 and {1} or {},
+        add=f.add_count or 0,fingerprint=f.fingerprint} end}
     f.ui=ui_module.new(f.runtime,logic_mock,environment)
     function f.emit(event,context)
         for _,listener in pairs(f.listeners) do
@@ -152,6 +153,12 @@ test('native_layout_rejection_explains_compatibility_without_replaying',function
     assert(f.dialog.children.DY_text.text=='xatw3_error\n\nxatw3_native_pool_unavailable')
     f.click(component('button_tick',f.dialog));assert(#f.dispatched==1)
 end)
+test('small_protected_pool_can_submit_additions_without_confirmation',function()
+    local f=fixture();f.replace_count=0;f.add_count=2
+    f.start();f.panel.visible=false;f.drain()
+    assert(f.closed==1 and #f.dispatched==1 and f.dialogs==0)
+end)
+
 test('unsafe_actions_and_unavailable_pool_do_not_close_panel',function()
     for _,reason in ipairs({'locked','disallowed','unverified','pool','empty','unsupported'}) do
         local f=fixture()

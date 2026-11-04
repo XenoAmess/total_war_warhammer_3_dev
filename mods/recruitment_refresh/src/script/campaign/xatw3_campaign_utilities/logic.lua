@@ -1,5 +1,6 @@
 -- Pure business rules. This module also runs under Lua 5.1 in offline tests.
 local M = {}
+M.minimum_candidates = 3
 
 function M.valid_key(value)
     return type(value) == 'string' and #value > 0 and #value <= 160
@@ -34,14 +35,21 @@ function M.fingerprint(pool)
 end
 
 function M.plan(pool, faction, subtype)
-    local plan = {replace = {}, protected = {}, fingerprint = M.fingerprint(pool)}
+    local plan = {replace = {}, protected = {}, fingerprint = M.fingerprint(pool), add = 0}
     for _, candidate in ipairs(pool) do
+        if not plan.seed and candidate.faction == faction and candidate.subtype == subtype
+            and candidate.in_pool and not candidate.special and not M.special_subtype(subtype)
+            and type(candidate.male) == 'boolean' then
+            -- Only gender is inherited; protected characters are never removed.
+            plan.seed = {male = candidate.male}
+        end
         if M.eligible(candidate, faction, subtype) then
             plan.replace[#plan.replace + 1] = candidate
         else
             plan.protected[#plan.protected + 1] = candidate.id
         end
     end
+    if plan.seed then plan.add = math.max(0, M.minimum_candidates - #pool) end
     table.sort(plan.replace, function(a, b) return a.id < b.id end)
     return plan
 end
@@ -59,7 +67,9 @@ function M.refresh(adapter, faction, subtype, expected)
     if plan.fingerprint ~= expected then
         return {status = 'REJECTED', reason = 'stale', completed = 0}
     end
-    if #plan.replace == 0 then return {status = 'REJECTED', reason = 'no_candidates', completed = 0} end
+    if #plan.replace == 0 and plan.add == 0 then
+        return {status = 'REJECTED', reason = 'no_candidates', completed = 0}
+    end
     if adapter.can_remove_candidate then
         for _, candidate in ipairs(plan.replace) do
             local allowed, detail = adapter.can_remove_candidate(candidate.id)
@@ -68,7 +78,8 @@ function M.refresh(adapter, faction, subtype, expected)
             end
         end
     end
-    local result = {status = 'SUCCEEDED', completed = 0, total = #plan.replace, pairs = {}}
+    local result = {status = 'SUCCEEDED', completed = 0, total = #plan.replace, pairs = {},
+        added = 0, new_ids = {}, target_count = math.max(#before, M.minimum_candidates)}
     for _, old in ipairs(plan.replace) do
         local new, reason = adapter.spawn_candidate(faction, subtype, old)
         if not new then
@@ -102,6 +113,36 @@ function M.refresh(adapter, faction, subtype, expected)
         if not safe then result.status, result.reason = 'UNKNOWN', 'readback_failed'; return result end
         result.completed = result.completed + 1
         result.pairs[#result.pairs + 1] = {old = old.id, new = new.id}
+        result.pending_new_id = nil
+        before = current
+    end
+    for _ = 1, plan.add do
+        local new, reason = adapter.spawn_candidate(faction, subtype, plan.seed)
+        if not new then
+            local current = adapter.read_pool(faction, subtype)
+            if not current or M.fingerprint(current) ~= M.fingerprint(before) then
+                result.status, result.reason = 'UNKNOWN', 'spawn_readback_failed'
+            else
+                result.status = result.completed + result.added == 0 and 'REJECTED' or 'PARTIAL'
+                result.reason = reason or 'spawn_failed'
+            end
+            return result
+        end
+        result.pending_new_id = new.id
+        local current = adapter.read_pool(faction, subtype)
+        local safe = current and #current == #before + 1 and contains(current, new.id)
+            and not contains(before, new.id)
+        if safe then
+            for _, candidate in ipairs(before) do
+                if not contains(current, candidate.id) then safe = false end
+            end
+        end
+        if not safe or not M.eligible(new, faction, subtype) or not adapter.verify_candidate(new) then
+            result.status, result.reason = 'UNKNOWN', 'invalid_generated_candidate'
+            return result
+        end
+        result.added = result.added + 1
+        result.new_ids[#result.new_ids + 1] = new.id
         result.pending_new_id = nil
         before = current
     end

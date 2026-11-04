@@ -229,7 +229,9 @@ function M.new(runtime, logic, environment)
         local pool = runtime.read_pool(faction, request.target)
         if not pool then self.message('error', text('pool_unavailable')); return end
         local plan = logic.plan(pool, faction, request.target)
-        if #plan.replace == 0 then self.message('error', text('no_candidates')); return end
+        if #plan.replace == 0 and (plan.add or 0) == 0 then
+            self.message('error', text('no_candidates')); return
+        end
         request.expected = plan.fingerprint
         self.submit(request)
     end

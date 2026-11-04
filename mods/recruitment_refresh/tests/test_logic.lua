@@ -8,26 +8,28 @@ end
 
 local function candidate(id, overrides)
     local value = {id = id, faction = 'empire', subtype = 'general', in_pool = true,
-        provenance = 'ordinary_generated', recruited = false, wounded = false}
+        provenance = 'ordinary_generated', recruited = false, wounded = false, male = true}
     for key, item in pairs(overrides or {}) do value[key] = item end
     return value
 end
 
 local function fixture(options)
     options = options or {}
-    local pool = {candidate(1), candidate(2), candidate(3, {unique = true})}
+    local pool = options.pool or {candidate(1), candidate(2), candidate(3, {unique = true})}
     local calls = {spawn = 0, remove = 0, capital = 0, persist = 0}
     local a = {}
     function a.read_pool() if options.unreadable then return nil end; return pool end
-    function a.spawn_candidate(faction, subtype)
+    function a.spawn_candidate(faction, subtype, seed)
         calls.spawn = calls.spawn + 1
+        calls.male = seed.male
         if options.spawn_fail or (options.fail_second and calls.spawn == 2) then return nil end
-        local item = candidate(100 + calls.spawn)
+        local item = candidate(100 + calls.spawn, {male = seed.male})
         local copy = {}
         for _, v in ipairs(pool) do copy[#copy + 1] = v end
         copy[#copy + 1] = item
         pool = copy
         if options.overflow_evicts then table.remove(pool, 3) end
+        if options.evict_on_second and calls.spawn == 2 then table.remove(pool, 1) end
         return item
     end
     function a.verify_candidate() return not options.invalid_new end
@@ -166,6 +168,57 @@ test('four_candidates_preserve_protected_entry', function()
     for _, c in ipairs(a.read_pool()) do if c.id == 3 then protected = true end end
     check(protected)
 end)
+test('one_candidate_refresh_grows_to_three_and_stops', function()
+    local a, state, request, calls = fixture({pool = {candidate(1, {male = false})}})
+    local result = logic.execute(state, request, a)
+    check(result.status == 'SUCCEEDED' and result.completed == 1 and result.added == 2)
+    check(#result.pairs == 1 and #result.new_ids == 2 and #a.read_pool() == 3)
+    check(calls.male == false and calls.spawn == 3 and calls.remove == 1)
+    for _ = 1, 3 do
+        request.sequence, request.expected = state.next_sequence, logic.fingerprint(a.read_pool())
+        result = logic.execute(state, request, a)
+        check(result.status == 'SUCCEEDED' and result.added == 0 and #a.read_pool() == 3)
+    end
+end)
+
+test('protected_only_small_pool_adds_without_deleting_unknown_character', function()
+    local a, state, request, calls = fixture({pool = {candidate(1, {provenance = 'unknown'})}})
+    local result = logic.execute(state, request, a)
+    check(result.status == 'SUCCEEDED' and result.completed == 0 and result.added == 2)
+    check(#a.read_pool() == 3 and a.read_pool()[1].id == 1 and calls.remove == 0)
+end)
+
+test('two_candidates_add_one_without_deleting_protected', function()
+    local a, state, request, calls = fixture({pool = {candidate(1), candidate(2, {unique = true})}})
+    local result = logic.execute(state, request, a)
+    check(result.status == 'SUCCEEDED' and result.completed == 1 and result.added == 1)
+    check(#a.read_pool() == 3 and calls.remove == 1)
+    local found = false; for _, c in ipairs(a.read_pool()) do if c.id == 2 then found = true end end
+    check(found)
+end)
+
+test('empty_and_special_pools_never_grow', function()
+    for _, pool in ipairs({{}, {candidate(1, {special = true})},
+        {candidate(1, {subtype = 'mod_convoy_leader'})}}) do
+        local a, state, request, calls = fixture({pool = pool})
+        check(logic.execute(state, request, a).status == 'REJECTED')
+        check(calls.spawn == 0 and calls.remove == 0)
+    end
+end)
+
+test('addition_failure_after_replacement_locks_partial_operation', function()
+    local a, state, request = fixture({pool = {candidate(1)}, fail_second = true})
+    local result = logic.execute(state, request, a)
+    check(result.status == 'PARTIAL' and result.completed == 1 and result.added == 0 and state.locked)
+end)
+
+test('addition_eviction_is_unknown_and_stops_without_more_deletions', function()
+    local a, state, request, calls = fixture({pool = {candidate(1)}, evict_on_second = true})
+    local result = logic.execute(state, request, a)
+    check(result.status == 'UNKNOWN' and state.locked and result.pending_new_id == 102)
+    check(calls.spawn == 2 and calls.remove == 1)
+end)
+
 test('removed_capital_action_never_changes_state', function()
     local a, state, request, calls = fixture()
     request.action = 'capital'

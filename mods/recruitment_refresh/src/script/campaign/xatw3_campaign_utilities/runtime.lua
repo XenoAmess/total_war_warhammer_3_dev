@@ -204,7 +204,7 @@ function M.new(logic, environment)
     function self.report(result)
         self.log('RESULT sequence=' .. tostring(result.sequence) .. ' action=' .. tostring(result.action)
             .. ' status=' .. result.status .. ' reason=' .. tostring(result.reason)
-            .. ' completed=' .. tostring(result.completed))
+            .. ' completed=' .. tostring(result.completed) .. ' added=' .. tostring(result.added))
         if result.detail then self.log('DETAIL ' .. tostring(result.detail)) end
         if self.on_result then self.on_result(result) end
     end
