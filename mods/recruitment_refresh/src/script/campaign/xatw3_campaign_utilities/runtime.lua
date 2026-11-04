@@ -67,6 +67,8 @@ function M.new(logic, environment)
         end
         self.initialized = true
         self.refresh_verified = self.native_pool.initialize()
+        self.log('NATIVE build=' .. tostring(self.native_pool.build) .. ' ready=' .. tostring(self.refresh_verified)
+            .. ' reason=' .. tostring(self.native_pool.reason))
         for _, id in ipairs(self.pending_entries) do
             local fm = cm:get_family_member_by_cqi(id)
             if fm then self.observe_entry(fm:character_details()) end
@@ -203,6 +205,7 @@ function M.new(logic, environment)
         self.log('RESULT sequence=' .. tostring(result.sequence) .. ' action=' .. tostring(result.action)
             .. ' status=' .. result.status .. ' reason=' .. tostring(result.reason)
             .. ' completed=' .. tostring(result.completed))
+        if result.detail then self.log('DETAIL ' .. tostring(result.detail)) end
         if self.on_result then self.on_result(result) end
     end
 

@@ -61,8 +61,9 @@ function M.refresh(adapter, faction, subtype, expected)
     if #plan.replace == 0 then return {status = 'REJECTED', reason = 'no_candidates', completed = 0} end
     if adapter.can_remove_candidate then
         for _, candidate in ipairs(plan.replace) do
-            if not adapter.can_remove_candidate(candidate.id) then
-                return {status = 'REJECTED', reason = 'native_pool_unavailable', completed = 0}
+            local allowed, detail = adapter.can_remove_candidate(candidate.id)
+            if not allowed then
+                return {status = 'REJECTED', reason = 'native_pool_unavailable', detail = detail, completed = 0}
             end
         end
     end

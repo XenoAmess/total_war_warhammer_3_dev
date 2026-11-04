@@ -2,6 +2,8 @@ xatw3_refresh	Refresh candidates
 xatw3_refresh_tooltip	Replace ordinary automatically generated candidates of the selected subtype for free. Legendary, immortal, wounded, previously recruited and unknown-history characters stay. Special training is unsupported.
 xatw3_error	Operation incomplete
 xatw3_failed	Operation incomplete. Check the log. Uncertain operations are never retried automatically.
+xatw3_native_pool_unavailable	The candidate pool failed native layout checks. No candidates were changed. A game update may require compatibility changes; see the log for the exact cause.
+xatw3_panel_close_failed	The recruitment panel did not close. Refresh was cancelled without changing candidates. Close and reopen recruitment before trying again.
 xatw3_pool_unavailable	The recruitment pool cannot be read. No candidates were changed.
 xatw3_no_candidates	No ordinary candidates can be safely replaced. Special characters and characters with unknown history are protected.
 xatw3_stale	The candidate list changed before the operation. No refresh was performed. Please select again.

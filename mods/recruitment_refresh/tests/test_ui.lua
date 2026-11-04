@@ -145,6 +145,13 @@ test('uncertain_result_keeps_error_and_does_not_reopen',function(f)
     assert(f.reopened==nil and f.dialog.visible and f.dialog.children.DY_text.text=='xatw3_error\n\nxatw3_uncertain')
     f.click(component('button_cancel',f.dialog)); assert(#f.dispatched==1)
 end)
+
+test('native_layout_rejection_explains_compatibility_without_replaying',function(f)
+    f.start();f.panel.visible=false;f.drain()
+    f.runtime.on_result({status='REJECTED',reason='native_pool_unavailable'});f.drain()
+    assert(f.dialog.children.DY_text.text=='xatw3_error\n\nxatw3_native_pool_unavailable')
+    f.click(component('button_tick',f.dialog));assert(#f.dispatched==1)
+end)
 test('unsafe_actions_and_unavailable_pool_do_not_close_panel',function()
     for _,reason in ipairs({'locked','disallowed','unverified','pool','empty','unsupported'}) do
         local f=fixture()

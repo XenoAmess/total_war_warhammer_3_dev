@@ -2,6 +2,8 @@ xatw3_refresh	刷新候选
 xatw3_refresh_tooltip	替换当前子类型的普通自动生成候选，免费。传奇、不朽、受伤、已招募和履历不明人物保留；不支持特殊训练。
 xatw3_error	操作未完成
 xatw3_failed	操作未完成，请查看日志。结果不明时不会自动重试。
+xatw3_native_pool_unavailable	当前候选池未通过原生布局校验，未修改候选。游戏更新后可能需要适配；具体原因已记录到日志。
+xatw3_panel_close_failed	招募面板未能关闭，已取消刷新，未修改候选。请关闭招募界面后重新打开再试。
 xatw3_pool_unavailable	暂时无法读取当前招募池，未修改候选。
 xatw3_no_candidates	当前没有可安全替换的普通候选；特殊人物和履历不明的人物将保留。
 xatw3_stale	候选列表已在操作前改变。未执行本次刷新，请重新选择。

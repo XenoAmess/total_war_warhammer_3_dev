@@ -207,7 +207,7 @@ function M.new(runtime, logic, environment)
                     if attempts < 30 then after(wait_until_closed)
                     else
                         self.submitting, self.reopen = false, nil
-                        self.message('error', text('failed'))
+                        self.message('error', text('panel_close_failed'))
                     end
                     return
                 end
@@ -276,6 +276,8 @@ function M.new(runtime, logic, environment)
             self.submitting = false
             local message = text('failed')
             if result.reason == 'refresh_unverified' then message = text('refresh_unavailable')
+            elseif result.reason == 'native_pool_unavailable' then message = text('native_pool_unavailable')
+            elseif result.reason == 'unresolved_operation' then message = text('uncertain')
             elseif result.reason == 'stale' then message = text('stale')
             elseif result.reason == 'no_candidates' then message = text('no_candidates')
             elseif result.status == 'UNKNOWN' or result.status == 'PARTIAL' then message = text('uncertain') end
