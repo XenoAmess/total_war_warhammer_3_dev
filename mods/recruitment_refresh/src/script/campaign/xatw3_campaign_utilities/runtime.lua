@@ -29,7 +29,7 @@ function M.new(logic, environment)
         engineer = true, runesmith = true, spy = true}
 
     function self.supported(subtype, faction_key)
-        if not logic.valid_key(subtype) then return false end
+        if not logic.valid_key(subtype) or logic.special_subtype(subtype) then return false end
         if self.subtypes[subtype] then return true end
         local generated = safe(function()
             return common.get_context_value('CcoAgentSubtypeRecord', subtype, 'AutoGenerate')
@@ -132,6 +132,7 @@ function M.new(logic, environment)
             wounded = valid(actor) and actor:is_wounded() or false,
             leader = valid(actor) and actor:is_faction_leader() or false,
             recruited = history.recruited == true,
+            special = logic.special_subtype(details:character_subtype_key()),
             provenance = history.provenance or 'unknown',
             male = details:is_male(), forename = details:get_forename(), surname = details:get_surname(),
             background = details:background_skill()
@@ -163,6 +164,7 @@ function M.new(logic, environment)
     end
 
     function self.spawn_candidate(faction, subtype, old)
+        if not self.supported(subtype, faction) then return nil, 'unsupported_subtype' end
         local details = cm:spawn_character_to_pool(faction, '', '', '', '', 30, old.male,
             self.subtypes[subtype], subtype, false, '')
         if not valid(details) then return nil, 'spawn_failed' end

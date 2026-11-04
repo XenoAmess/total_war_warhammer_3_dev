@@ -9,6 +9,9 @@ local EXPIRY = '48 89 5C 24 18 88 54 24 10 55 56 57 41 54 41 55 41 56 41 57 '
 local PURGE = '48 8B C4 48 89 58 08 48 89 68 10 48 89 70 18 48 89 78 20 '
     .. '41 54 41 56 41 57 48 83 EC 20 4C 8B F1 48 8B F2 48 8B 0A 48 85 C9'
 local NULL = string.rep('\0', 8)
+-- Exact PE timestamp + SizeOfImage bytes, read without float conversion.
+-- A matching function signature alone does not qualify object layouts.
+local BUILDS = {['\244\198\206\106\0\144\2\14'] = '9.0.4.0'}
 
 function M.new(environment)
     environment = environment or getfenv(2)
@@ -35,6 +38,15 @@ function M.new(environment)
         if functions then return self.ready end
         if type(mr) ~= 'table' or type(mr.call) ~= 'function' or type(mr.find_pattern) ~= 'function'
             or type(mr.ud_topointer) ~= 'function' then return false end
+        local identified, build = pcall(function()
+            assert(mr.base and mr.read(mr.base, 0, 2) == 'MZ')
+            local pe = mr.read_uint32(mr.base, 0x3c)
+            assert(type(pe) == 'number' and pe >= 64 and pe <= 4096 and pe == math.floor(pe))
+            assert(mr.read(mr.base, pe, 4) == 'PE\0\0')
+            return BUILDS[mr.read(mr.base, pe + 8, 4) .. mr.read(mr.base, pe + 80, 4)]
+        end)
+        if not identified or not build then self.reason = 'native_build_unverified'; return false end
+        self.build = build
         local ok, result = pcall(function()
             local expiry, expiry_count = mr.find_pattern(EXPIRY)
             local purge, purge_count = mr.find_pattern(PURGE)
@@ -56,6 +68,9 @@ function M.new(environment)
     -- Reacquire these after every creation/removal: native vectors can be reallocated.
     local function locate(details)
         assert(details and not details:is_null_interface(), 'missing character details')
+        local subtype_key = details:character_subtype_key()
+        assert(type(subtype_key) == 'string' and not subtype_key:find('caravan', 1, true)
+            and not subtype_key:find('convoy', 1, true), 'special recruitment is unsupported')
         assert(not details:is_unique() and not details:is_immortal(), 'protected character')
         local actor = details:character()
         assert(not actor or actor:is_null_interface(), 'character was already recruited')

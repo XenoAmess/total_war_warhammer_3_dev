@@ -6,10 +6,15 @@ function M.valid_key(value)
         and value:match('^[%w_]+$') ~= nil
 end
 
+function M.special_subtype(value)
+    return type(value) == 'string' and (value:find('caravan', 1, true) ~= nil
+        or value:find('convoy', 1, true) ~= nil)
+end
+
 function M.eligible(candidate, faction, subtype)
     if candidate.faction ~= faction or candidate.subtype ~= subtype then return false, 'wrong_scope' end
     if not candidate.in_pool then return false, 'not_in_pool' end
-    if candidate.unique or candidate.immortal or candidate.leader or candidate.wounded
+    if M.special_subtype(candidate.subtype) or candidate.unique or candidate.immortal or candidate.leader or candidate.wounded
         or candidate.starting or candidate.recruited or candidate.special then
         return false, 'protected'
     end

@@ -40,6 +40,19 @@ test('subtype_key_is_validated_before_context_evaluation', function()
     assert(not runtime.supported('bad"key'))
     assert(not runtime.supported(nil) and calls == before)
 end)
+
+test('caravan_and_convoy_rejected_before_cache_metadata_or_spawn', function()
+    local runtime=runtime_module.new(logic,env)
+    for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh3_cp1_cth_sawai_caravan',
+        'wh3_dlc23_chd_lord_convoy_overseer','other_mod_caravan_general'}) do
+        runtime.subtypes[key]='general'
+        local before=calls
+        assert(not runtime.supported(key) and calls==before)
+        local candidate,why=runtime.spawn_candidate('empire',key,{male=true})
+        assert(candidate==nil and why=='unsupported_subtype' and calls==before)
+        assert(not logic.eligible({faction='empire',subtype=key,in_pool=true,provenance='ordinary_generated'},'empire',key))
+    end
+end)
 test('discovered_types_do_not_leak_between_campaign_instances', function()
     assert(not runtime_module.new(logic, env).subtypes.test_fire_wizard)
 end)

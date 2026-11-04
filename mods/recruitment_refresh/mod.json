@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "recruitment_refresh",
   "title": "招募候选刷新 | Recruitment Refresh",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "pack_name": "xatw3_campaign_utilities.pack",
   "languages": [
     "zh-CN",
