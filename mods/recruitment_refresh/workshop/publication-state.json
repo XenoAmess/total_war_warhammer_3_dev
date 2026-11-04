@@ -1,13 +1,13 @@
 {
   "account_activity_before_sdk_init": {
     "owner": "76561198273714027",
-    "status": "PUBLIC_PRESENCE_IDLE",
-    "game": null,
-    "online_state": "online",
-    "observed_at_utc": "2026-11-01T13:55:42.942743+00:00",
-    "server_date": "Sun, 01 Nov 2026 13:55:45 GMT",
-    "source": "steam_community_public_presence",
-    "response_sha256": "15860136ed057771fbfc3245260c336f6f4582ca2b3612f870fab575f2ff3a6c"
+    "status": "USER_CONFIRMED_IDLE",
+    "source": "user_current_session_statement",
+    "observed_at_utc": "2026-11-04T17:59:56.529557+00:00",
+    "checked_at_utc": "2026-11-04T18:00:26.938992+00:00",
+    "statement": "User confirms no games are currently running and requests online-publish-offline.",
+    "authorized_by": "user",
+    "schema_version": 1
   },
   "owner": "76561198273714027",
   "app_id": 1142710,
@@ -16,11 +16,11 @@
   "required_items": [
     "3811098873"
   ],
-  "pack_sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+  "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
   "version": "0.2.1",
   "uploaded_at_utc": "2026-10-31T14:56:25.513808+00:00",
-  "verified_at_utc": "2026-11-01T15:01:42.983229+00:00",
+  "verified_at_utc": "2026-11-04T18:18:32.269085+00:00",
   "visibility": "public",
   "downloaded_pack_bytes": 41622,
   "downloaded_pack_sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
@@ -32,9 +32,9 @@
     "L2": "PASS",
     "L3": "PASS"
   },
-  "uploaded_version": "0.2.2",
+  "uploaded_version": "0.2.4",
   "uploaded_title": "招募候选刷新 | Recruitment Refresh",
-  "description_sha256": "d96ce5af540d01c43e55326f1cc6a75885b414c34233e4b0bdc4ded2867d3692",
+  "description_sha256": "248171773db1b2c3354e3dfb69ea6477287aab294fc4efb2aa0114c740b2edfa",
   "preview_sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
   "final_offline_receipt": {
     "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
@@ -249,5 +249,6 @@
     "status": "offline",
     "offline_mode": true
   },
-  "temporary_cef_endpoint": "CLOSED"
+  "temporary_cef_endpoint": "CLOSED",
+  "change_notes_sha256": "4a9cd8e2b3b3a626a1305a3c3685bbb4e3489b4e19cd3ac70c512a380e020df2"
 }

@@ -3,7 +3,7 @@
   "mod_id": "recruitment_refresh",
   "version": "0.2.4",
   "recorded_at_utc": "2026-11-04T17:33:40.184279+00:00",
-  "release_status": "VERIFIED_PUBLICATION_PENDING",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "release_pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
   "release_pack_bytes": 47758,
   "minimum_candidates": 3,
@@ -252,5 +252,7 @@
   "L0": "PASS",
   "L1": "PASS",
   "L2": "PASS",
-  "L3": "PASS"
+  "L3": "PASS",
+  "L4": "PASS",
+  "publication_record": "workshop-publication-0.2.4.json"
 }

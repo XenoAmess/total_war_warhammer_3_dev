@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.2.4",
+  "item_id": "3830548217",
+  "status": "PASS",
+  "recorded_at_utc": "2026-11-04T18:18:32.269085+00:00",
+  "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+  "pack_bytes": 47758,
+  "source_commit": "799462c",
+  "public_metadata": {
+    "creator": "76561198273714027",
+    "creator_app_id": 1142710,
+    "consumer_app_id": 1142710,
+    "visibility": 0,
+    "title": "招募候选刷新 | Recruitment Refresh",
+    "time_updated": 1793815234,
+    "file_size": "47758",
+    "hcontent_file": "2885857603104780796",
+    "tags": [
+      {
+        "tag": "mod"
+      },
+      {
+        "tag": "campaign"
+      }
+    ]
+  },
+  "description_sha256": "248171773db1b2c3354e3dfb69ea6477287aab294fc4efb2aa0114c740b2edfa",
+  "change_notes_sha256": "4a9cd8e2b3b3a626a1305a3c3685bbb4e3489b4e19cd3ac70c512a380e020df2",
+  "changelog_readback": {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=english&release_check=1793816072622442500",
+    "sha256": "729255875a64d573777a96916d04da88b83125a1739b247f68633cec2e51b145",
+    "has_0_2_4": true,
+    "has_new_count_tests": true
+  },
+  "download": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+    "observed_at_utc": "2026-11-04T18:00:41.171374+00:00"
+  },
+  "gallery_readback": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "status": "PASS",
+    "images": [
+      {
+        "slot": 0,
+        "file": "lord-refresh-icon.jpg",
+        "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+        "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78"
+      },
+      {
+        "slot": 1,
+        "file": "lord-refreshed.jpg",
+        "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+        "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c"
+      },
+      {
+        "slot": 2,
+        "file": "hero-final.jpg",
+        "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+        "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345"
+      }
+    ],
+    "launcher_metadata": {
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    },
+    "observed_at_utc": "2026-11-04T18:00:48.109054+00:00"
+  },
+  "account_activity_before_sdk_init": {
+    "owner": "76561198273714027",
+    "status": "USER_CONFIRMED_IDLE",
+    "source": "user_current_session_statement",
+    "observed_at_utc": "2026-11-04T17:59:56.529557+00:00",
+    "checked_at_utc": "2026-11-04T18:00:26.938992+00:00",
+    "statement": "User confirms no games are currently running and requests online-publish-offline.",
+    "authorized_by": "user",
+    "schema_version": 1
+  },
+  "native_acceptance": "candidate-count-0.2.4.json",
+  "final_steam_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-04T18:15:05.531678+00:00",
+    "nonce": "fc0332ba3b4deb533ea0f6fdbd43d6b9",
+    "reason": "observed",
+    "steam": {
+      "pid": 9512,
+      "birth_filetime": "134382896665849556",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-04T18:15:05.531678+00:00",
+      "nonce": "fc0332ba3b4deb533ea0f6fdbd43d6b9",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 9512,
+        "birth_filetime": "134382896665849556",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 9512,
+        "birth_filetime": "134382896665849556",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "1555866722432",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "offline_restoration": "First GoOffline requests while the publisher Python process was still registered as an app did not yield offline proof. After that process exited, a new GoOffline request succeeded; native offline proof and normal-client restart confirmed. No game was launched."
+}
