@@ -1,5 +1,7 @@
 # Move Capital
 
+Game update check: 0.1.1 also passed isolated Kislev native UI/transaction checks on **9.0.5.0 / build 26403568**, with the package unchanged. See [compatibility evidence](docs/compatibility-9.0.5.json).
+
 **ID:** `move_capital`
 **Version:** `0.1.1` (published)
 
