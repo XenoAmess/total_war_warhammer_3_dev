@@ -1,0 +1,63 @@
+{
+  "move_capital_current_receiver_same_event_local_cqis_11_22": [
+    1,
+    0
+  ],
+  "recruitment_refresh_current_receiver_same_event_local_cqis_11_22": [
+    1,
+    0
+  ],
+  "same_fingerprint_different_addition_gender_seed_with_reversed_pool_order": [
+    true,
+    false,
+    true
+  ],
+  "same_global_sequence_two_factions_not_both_accepted": [
+    "SUCCEEDED",
+    "duplicate_or_invalid_sequence",
+    2
+  ],
+  "scope": "Offline Lua5.1 diagnostic using actual entry handlers and business modules; mocks are not multiplayer network/game evidence",
+  "multiplayer_game_test": "NOT_RUN",
+  "production_changes": false,
+  "source_commit": "aa274856b5655297584efc37c756db0a9309407e",
+  "production_source_sha256": {
+    "mods/move_capital/src/script/campaign/mod/xatw3_move_capital.lua": "e156667181c10e7fedde9f9fb78fdf0576b2f5a9688d464cbc77d2eefa38fdde",
+    "mods/move_capital/src/script/campaign/xatw3_move_capital/logic.lua": "772ca511bc1d3a2bc852928435d76eace0ff5d9d46360c3778db501f53efe815",
+    "mods/move_capital/src/script/campaign/xatw3_move_capital/runtime.lua": "8e4cff4af5179d523b6d866ed6c3382c4c19d10f86cd432e9f04ce08327b6724",
+    "mods/move_capital/src/script/campaign/xatw3_move_capital/ui.lua": "441daf8613019d1be1f021f9ece34513c5d73a3857ee1f2795a65386d6d6b85b",
+    "mods/recruitment_refresh/src/script/campaign/mod/xatw3_campaign_utilities.lua": "e5f3474e86028fa0975edc79e0e00201e4c011223cc52e52835a3fb459938139",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/logic.lua": "501e06ddedf6575470ce6db580b644cc334fadcc7b3304b303043c9cf2941e79",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/native_pool.lua": "b66d5adc83880269655e6932f29b1c3442fdf50cd07ad57a3ebdb267348a594a",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/runtime.lua": "2cfd02b923bf69c8c0247e0b80bb86eb322704c83efc1ffe42e9a88514744731",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/ui.lua": "133461d67ad29f0a024477f99b2c5404715b9c3b7cb6d2b95e5b3425d0a21022"
+  },
+  "local_model_review": {
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "requests": 2,
+    "actual_peak_in_flight": 2,
+    "transport": "Both HTTP200, complete SSE, finish_reason stop",
+    "format": "Both omitted mandatory markdown; retained raw JSON content/notes as unvalidated analysis, no candidate code adopted",
+    "rejected": [
+      "Both claim local native pointers make multiplayer intrinsically impossible. Upstream primary documentation explicitly allows same semantic changes on all clients; pointers need not be sent.",
+      "Capital audit misses concrete receiver local-faction event drop, overstates simply removing guard, and suggests remote success dialogs.",
+      "Refresh audit proposes change_home_region_of_faction as pool alternative; unrelated API, rejected.",
+      "Local UI selection before sending a complete command is not intrinsically an MP bug.",
+      "Local lock after one peer crashes does not mean every peer is safely locked or rolled back."
+    ],
+    "retained_after_owner_verification": [
+      "Local UI/model separation",
+      "Shared sequence collision",
+      "UI panel precondition asymmetry",
+      "Need consistent spawn order and semantic comparisons"
+    ],
+    "owner_added": [
+      "Verified vanilla sender resolution and all-client barrier implementation",
+      "Offline actual-entry two-peer event-drop diagnostic",
+      "Same fingerprint but different gender seed under reversed enumeration",
+      "Staged readiness/preflight/commit/results; no claim failure atomicity"
+    ],
+    "upstream_readme_url": "https://raw.githubusercontent.com/PKozdra/memreader_plus/master/README.md",
+    "upstream_readme_sha256": "41b5210a410ca1b99f5f5fb878abd32b2c5060bd964e04aef43e279b0ccd08ae"
+  }
+}
