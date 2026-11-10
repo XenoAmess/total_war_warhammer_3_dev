@@ -3,7 +3,7 @@
   "mod_id": "recruitment_refresh",
   "version": "0.3.0",
   "recorded_at_utc": "2026-11-10T17:54:03.259721+00:00",
-  "release_status": "VERIFIED_NOT_PUBLISHED",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
   "pack_bytes": 68665,
   "offline_tests": {
@@ -329,7 +329,8 @@
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "acceptance_scope": "Incremental single-player regression only. Native multiplayer excluded by user, not credited as PASS.",
-  "publication_instruction": "User explicitly requested Workshop publication after experimental MP implementation and SP-only native acceptance."
+  "publication_instruction": "User explicitly requested Workshop publication after experimental MP implementation and SP-only native acceptance.",
+  "publication_record": "workshop-publication-0.3.0.json"
 }

@@ -3,7 +3,7 @@
   "mod_id": "move_capital",
   "version": "0.2.0",
   "recorded_at_utc": "2026-11-10T18:05:31.814036+00:00",
-  "release_status": "VERIFIED_NOT_PUBLISHED",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
   "pack_bytes": 34053,
   "offline_tests": {
@@ -258,7 +258,8 @@
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "acceptance_scope": "Incremental single-player regression only. Native multiplayer excluded by user, not credited as PASS.",
-  "publication_instruction": "User explicitly requested Workshop publication after experimental MP implementation and SP-only native acceptance."
+  "publication_instruction": "User explicitly requested Workshop publication after experimental MP implementation and SP-only native acceptance.",
+  "publication_record": "workshop-publication-0.2.0.json"
 }

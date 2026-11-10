@@ -1,30 +1,42 @@
 {
   "account_activity_before_sdk_init": {
     "owner": "76561198273714027",
-    "status": "USER_CONFIRMED_IDLE",
-    "source": "user_current_session_statement",
-    "observed_at_utc": "2026-11-01T14:31:28.446573+00:00",
-    "checked_at_utc": "2026-11-01T14:32:01.631803+00:00",
-    "statement": "已全部退出，当前账号空闲",
-    "authorized_by": "user",
-    "schema_version": 1
+    "offline": false,
+    "server_connected": true,
+    "server_logged_on": true,
+    "initial_connection_complete": true,
+    "initialized": true,
+    "statusInitialized": true,
+    "persona": 1,
+    "app": 0,
+    "gameid": "0",
+    "game": "",
+    "updated": 72706.89999997616,
+    "age_ms": 517.3999999761581,
+    "observed_at_utc": "2026-11-10T19:53:55.997Z",
+    "schema_version": 1,
+    "source": "live_own_account_persona_on_authenticated_server_connection",
+    "status": "CLIENT_PERSONA_IDLE",
+    "checked_at_utc": "2026-11-10T19:53:56.224512+00:00"
   },
   "release_acceptance": {
     "L0": "PASS",
     "L1": "PASS",
     "L2": "PASS",
-    "L3": "PASS"
+    "L3": "PASS",
+    "scope": "Single-player only",
+    "native_multiplayer": "NOT_RUN_USER_REQUEST"
   },
   "mod_id": "move_capital",
   "owner": "76561198273714027",
   "app_id": 1142710,
-  "status": "PUBLISHED_PUBLIC_VERIFIED",
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "item_id": "3830651933",
   "required_items": [],
-  "pack_sha256": "4d86e9ee1c2ffe12ab13fd9c2da1be5ad8c2bc20c30caf464dbe3e2415ff59f8",
-  "uploaded_version": "0.1.1",
+  "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "uploaded_version": "0.2.0",
   "uploaded_title": "迁移首都 | Move Capital",
-  "description_sha256": "b7fbe3027341cf6eb220764e821c5003e5fb3864ed86e3bd87e48373ed9422af",
+  "description_sha256": "e43101c017201541af1d6872721ac0f4f901b7ff5ec76a0101dee223e8855c0e",
   "preview_sha256": "e60e49345ac675b277939338b38409c5182e246fd9b065339c5bd9b92a10fae9",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933",
   "version": "0.1.0",
@@ -235,5 +247,124 @@
     "status": "offline",
     "offline_mode": true
   },
-  "temporary_cef_endpoint": "CLOSED"
+  "temporary_cef_endpoint": "CLOSED",
+  "public_details": {
+    "publishedfileid": "3830651933",
+    "result": 1,
+    "creator": "76561198273714027",
+    "creator_app_id": 1142710,
+    "consumer_app_id": 1142710,
+    "filename": "",
+    "file_size": "34053",
+    "file_url": "",
+    "hcontent_file": "556224820715262526",
+    "preview_url": "https://images.steamusercontent.com/ugc/10738982565004685515/5B977D38298F96B7670CC2BF55E83CC86607F4D5/",
+    "hcontent_preview": "10738982565004685515",
+    "title": "迁移首都 | Move Capital",
+    "description": "[h1]迁移首都 | Move Capital[/h1]\n[b]0.2.0 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]\n\n在自有城镇面板点击“迁都”，确认后将派系首都移到该城镇。免费，省会或小城均可作为普通目标；不改变省会位置、建筑等级或城市归属，不额外添加收入加成。\n\n独立模组：[b]无需 memreader Plus，也无需招募刷新 Mod。[/b] 目标必须为玩家自有、未被围攻、非废墟的常规城镇，不能重复选择当前首都。序章及特殊首都机制不支持，未做全种族或组合 Mod 兼容验收。\n\n[h2]实验性联机支持[/h2]\n[b]已实现多人同步，但按用户要求未做联机实机验收；不保证无失步。[/b] 所有玩家须安装完全相同的本 Mod 包（包括语言版本），启用的其他 Mod 与依赖也应一致。每次请求在各端比对版本和前置状态后执行，再核对结果。混用版本、缺少 Mod、成员变化或断线可能拒绝操作或持续等待；无法自动回滚单端原生失败。操作前保留独立存档，异常后回到操作前存档，不要反复点击或手动清除锁。\n\n单机已通过 Windows x64 / 9.0.5 基斯里夫实机：迁都、城镇属性保持、旧招募状态保持和按钮文字边界。禁用本 Mod 不会撤销已保存的首都变化。\n\n[h2]English[/h2]\nAdds a free Move Capital button to owned settlement panels in Immortal Empires. Confirm to move your faction capital. Ownership, building levels and province-capital status stay unchanged; no income bonus. Standalone, with no memreader Plus or Recruitment Refresh dependency. Targets must be owned, inhabited, not besieged and different from the current capital. Special capital systems and the prologue are unsupported.\n\n[b]0.2.0 adds EXPERIMENTAL multiplayer synchronization. Native multiplayer has NOT been tested; OOS-free operation is not guaranteed.[/b] All players need identical Mod packages, including language, and matching other Mods/dependencies. Requests compare versions and model state across peers, then compare results. Missing Mods, mixed versions or disconnects may reject or stall operations. Asymmetric engine failure cannot be rolled back automatically. Keep a pre-operation save and restore it after uncertainty.\n\nSingle-player native regression passed with Kislev on Windows x64 / game 9.0.5. Universal faction/overhaul compatibility is not claimed. Disabling this Mod does not undo saved changes.\n\n[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/move_capital]源码与验收记录 / Source and acceptance[/url]\n\n[h2]实机：城镇面板中的迁都按钮 / Native settlement button[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-button.jpg[/img]\n\n[h2]实机：迁都确认窗口 / Native confirmation dialog[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-confirmation.jpg[/img]\n",
+    "time_created": 1793429097,
+    "time_updated": 1794340439,
+    "visibility": 0,
+    "banned": 0,
+    "ban_reason": "",
+    "subscriptions": 140,
+    "favorited": 18,
+    "lifetime_subscriptions": 162,
+    "lifetime_favorited": 20,
+    "views": 381,
+    "tags": [
+      {
+        "tag": "mod"
+      },
+      {
+        "tag": "campaign"
+      }
+    ]
+  },
+  "download_verification": {
+    "mod_id": "move_capital",
+    "item_id": "3830651933",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830651933\\xatw3_move_capital.pack",
+    "sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+    "observed_at_utc": "2026-11-10T19:57:01.684816+00:00"
+  },
+  "change_notes_sha256": "2cd50f79aa3b8cfb34077212d552f770c83cced78863acd562dd2a02368d7372",
+  "final_steam_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+    "nonce": "6f08b936244e304e8734bffb156e5fb7",
+    "reason": "observed",
+    "steam": {
+      "pid": 5604,
+      "birth_filetime": "134388142408000726",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+      "nonce": "6f08b936244e304e8734bffb156e5fb7",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "1853688717440",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "native_multiplayer": "NOT_RUN_USER_REQUEST"
 }

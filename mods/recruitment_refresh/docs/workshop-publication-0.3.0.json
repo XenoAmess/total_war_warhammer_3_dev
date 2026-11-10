@@ -1,0 +1,162 @@
+{
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.0",
+  "item_id": "3830548217",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+  "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+  "pack_bytes": 68665,
+  "uploaded_at_utc": "2026-11-10T19:50:09+00:00",
+  "release_scope": "Experimental MP; native SP accepted; native MP deliberately not tested",
+  "native_multiplayer": "NOT_RUN_USER_REQUEST",
+  "acceptance_file": "acceptance-results-0.3.0.json",
+  "description_sha256": "df3889f18ca4ed3166e12636d54f893b6725eef387daf7e96954a14fa0bc2ff3",
+  "change_notes_sha256": "6a7ea650837bf8715d9e6963e71119707db8c2594a0efd4a8a66a3b422cc361d",
+  "public_changelog": {
+    "status": "PASS",
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=english",
+    "version": "0.3.0",
+    "response_sha256": "1a78277631cd984e60d082b8b3f0f2ce604294dbed0dbcfc96d19965e9941110",
+    "observed_at_utc": "2026-11-10T19:57:34.872948+00:00"
+  },
+  "download": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+    "observed_at_utc": "2026-11-10T19:56:50.063479+00:00"
+  },
+  "gallery_and_launcher": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "status": "PASS",
+    "images": [
+      {
+        "slot": 0,
+        "file": "lord-refresh-icon.jpg",
+        "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+        "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78"
+      },
+      {
+        "slot": 1,
+        "file": "lord-refreshed.jpg",
+        "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+        "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c"
+      },
+      {
+        "slot": 2,
+        "file": "hero-final.jpg",
+        "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+        "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345"
+      }
+    ],
+    "launcher_metadata": {
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    },
+    "observed_at_utc": "2026-11-10T19:56:56.465036+00:00"
+  },
+  "account_activity_before_sdk_init": {
+    "owner": "76561198273714027",
+    "offline": false,
+    "server_connected": true,
+    "server_logged_on": true,
+    "initial_connection_complete": true,
+    "initialized": true,
+    "statusInitialized": true,
+    "persona": 1,
+    "app": 0,
+    "gameid": "0",
+    "game": "",
+    "updated": 20752.400000095367,
+    "age_ms": 235.79999995231628,
+    "observed_at_utc": "2026-11-10T19:50:05.109Z",
+    "schema_version": 1,
+    "source": "live_own_account_persona_on_authenticated_server_connection",
+    "status": "CLIENT_PERSONA_IDLE",
+    "checked_at_utc": "2026-11-10T19:50:05.146736+00:00"
+  },
+  "final_steam_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+    "nonce": "6f08b936244e304e8734bffb156e5fb7",
+    "reason": "observed",
+    "steam": {
+      "pid": 5604,
+      "birth_filetime": "134388142408000726",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+      "nonce": "6f08b936244e304e8734bffb156e5fb7",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "1853688717440",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "temporary_cef_endpoint": "CLOSED",
+  "operational_notes": "Public presence returned429. SDK init used trusted fresh authenticated own-client idle receipts. Initial long-lived SDK helper exited after upload; subsequent SDK work ran in child processes. Verification initially stopped on strict presence-age validation and was retried using an original fresh receipt within the unchanged30s validator bound. No user confirmation or stale receipt fabricated."
+}

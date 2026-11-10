@@ -1,91 +1,156 @@
 {
-  "schema_version": 1,
   "mod_id": "move_capital",
+  "version": "0.2.0",
   "item_id": "3830651933",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933",
-  "version": "0.1.0",
-  "machine_id": "pc-20260924rtuf-f11af23c08",
-  "recorded_at_utc": "2026-10-31T06:57:02.389054+00:00",
-  "status": "PUBLIC_VERIFIED_SCREENSHOTS_DEFERRED",
-  "verification": {
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+  "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "pack_bytes": 34053,
+  "uploaded_at_utc": "2026-11-10T19:53:59+00:00",
+  "release_scope": "Experimental MP; native SP accepted; native MP deliberately not tested",
+  "native_multiplayer": "NOT_RUN_USER_REQUEST",
+  "acceptance_file": "acceptance-results-0.2.0.json",
+  "description_sha256": "45545ce59690ba8c0f564b464cc1724760e8b4a2cd7b5d7f19adf0a45c26d80e",
+  "change_notes_sha256": "2cd50f79aa3b8cfb34077212d552f770c83cced78863acd562dd2a02368d7372",
+  "public_changelog": {
     "status": "PASS",
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830651933?l=english",
+    "version": "0.2.0",
+    "response_sha256": "672c4a8dd52a4c28f2bfcb5520b0ec7c1894c7362c3c4f727d50f1faa3bcda00",
+    "observed_at_utc": "2026-11-10T19:57:33.715633+00:00"
+  },
+  "download": {
     "mod_id": "move_capital",
     "item_id": "3830651933",
-    "title": "迁移首都 | Move Capital",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830651933\\xatw3_move_capital.pack",
+    "sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+    "observed_at_utc": "2026-11-10T19:57:01.684816+00:00"
+  },
+  "gallery_and_launcher": {
+    "mod_id": "move_capital",
+    "item_id": "3830651933",
+    "status": "PASS",
+    "images": [
+      {
+        "slot": 0,
+        "file": "capital-button.jpg",
+        "url": "https://images.steamusercontent.com/ugc/17325634550637785978/F56604F4C4FDAD66AAFA73FE8A367F5299597787/",
+        "sha256": "4c293e61d16cfa71cad6f3459a0484cb923232347cb1198d97ba1159be213aea"
+      },
+      {
+        "slot": 1,
+        "file": "capital-confirmation.jpg",
+        "url": "https://images.steamusercontent.com/ugc/14584529659161916296/0155ABF5B5E4F04448EA78519A39B67FBE71B5DC/",
+        "sha256": "b81a7c61d4b891e6712a5f8710444883634d8c58cbf4ed7c79cbb1764fa6772b"
+      }
+    ],
+    "launcher_metadata": {
+      "PACK_NAME": [
+        "xatw3_move_capital.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    },
+    "observed_at_utc": "2026-11-10T19:57:05.993665+00:00"
+  },
+  "account_activity_before_sdk_init": {
     "owner": "76561198273714027",
-    "app_id": 1142710,
-    "visibility": "public",
-    "required_items": [],
-    "metadata_server_date": "Sat, 31 Oct 2026 06:53:59 GMT",
-    "page_server_date": "Sat, 31 Oct 2026 06:54:00 GMT",
-    "changelog_server_date": "Sat, 31 Oct 2026 06:54:02 GMT",
-    "verified_at_utc": "2026-10-31T06:54:05.290734+00:00",
-    "pack_sha256": "ec85a9689efe42d4e0435157a952fd1a5fe8247d7743878f18195669064399c4",
-    "preview_sha256": "e60e49345ac675b277939338b38409c5182e246fd9b065339c5bd9b92a10fae9",
-    "description_matches": true,
-    "changelog_verified": true,
-    "anonymous_metadata_sha256": "6c7127efa173b0157159d915d8120486801e5a95fc062601e0b387f3eaf58f5b",
-    "anonymous_page_sha256": "d2b53a7261de16927bd69dda35cd3c54494fab5ad1cb733811163dbb00b9de25",
-    "gallery_count": 0,
-    "inline_images_rendered": false,
-    "screenshots": [],
-    "screenshots_status": "DEFERRED_BY_USER_AFTER_PUBLICATION",
-    "page_verification": "PASS",
-    "changelog_verification": "PASS",
-    "dependency_page_verification": "PASS"
+    "offline": false,
+    "server_connected": true,
+    "server_logged_on": true,
+    "initial_connection_complete": true,
+    "initialized": true,
+    "statusInitialized": true,
+    "persona": 1,
+    "app": 0,
+    "gameid": "0",
+    "game": "",
+    "updated": 72706.89999997616,
+    "age_ms": 517.3999999761581,
+    "observed_at_utc": "2026-11-10T19:53:55.997Z",
+    "schema_version": 1,
+    "source": "live_own_account_persona_on_authenticated_server_connection",
+    "status": "CLIENT_PERSONA_IDLE",
+    "checked_at_utc": "2026-11-10T19:53:56.224512+00:00"
   },
-  "uploaded_at_utc": "2026-10-31T06:45:00.068545+00:00",
-  "release_acceptance": {
-    "L0": "PASS",
-    "L1": "PASS",
-    "L2": "PASS",
-    "L3": "PASS"
+  "final_steam_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+    "nonce": "6f08b936244e304e8734bffb156e5fb7",
+    "reason": "observed",
+    "steam": {
+      "pid": 5604,
+      "birth_filetime": "134388142408000726",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+      "nonce": "6f08b936244e304e8734bffb156e5fb7",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "1853688717440",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
   },
-  "steam_final_mode": "offline",
-  "game_profile_restored_sha256": "43560e114df88d3d2ece174150ec8efb650b3e43f665d0c6556acd267e763709",
-  "pending": [
-    "Gameplay screenshots, Workshop gallery and inline BBCode images after GPU recovery"
-  ],
-  "evidence": [
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\before-online.json",
-      "sha256": "c1d9cf500eedf31fee7f055e5d05ac052d458d319a73fd149171ae90cd4556a9"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\upload.json",
-      "sha256": "6413c9e7fa1851ab309a65e4ba9aefc3dbb192fd9d67a89fbab99b458213a053"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\download.json",
-      "sha256": "6f7006be045f4ff15442e467bfc839fb8d8c0da91c59b64852813b870f40f24b"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\anonymous-metadata.json",
-      "sha256": "6c7127efa173b0157159d915d8120486801e5a95fc062601e0b387f3eaf58f5b"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\anonymous-page.html",
-      "sha256": "d2b53a7261de16927bd69dda35cd3c54494fab5ad1cb733811163dbb00b9de25"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\anonymous-changelog.html",
-      "sha256": "624ee6331c6a670aa58002d96236a73b78b6ede87ce850f9a945daf62feddabd"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\public-preview.png",
-      "sha256": "e60e49345ac675b277939338b38409c5182e246fd9b065339c5bd9b92a10fae9"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\move_capital-fbc6f61e9b564babb7184c2351c2fd91\\anonymous-verification.json",
-      "sha256": "3aa2ad5ec3299f9c69c39a7ef23a50385fb5be252c3d05a69b4058fc931f9167"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline.json",
-      "sha256": "b76a5f8497013bf1898ad3c5b7fbc620cd87b2f350cdfe6f1ad41396a37d3944"
-    },
-    {
-      "path": "D:\\workspace\\.codex-wh3-runtime\\split-smoke-20261031\\publication\\final-ordinary-offline-before-commit.json",
-      "sha256": "54643c2a853982806b35216fc3df8625856b5246bb50eaba229d77731456f284"
-    }
-  ]
+  "temporary_cef_endpoint": "CLOSED",
+  "operational_notes": "Public presence returned429. SDK init used trusted fresh authenticated own-client idle receipts. Initial long-lived SDK helper exited after upload; subsequent SDK work ran in child processes. Verification initially stopped on strict presence-age validation and was retried using an original fresh receipt within the unchanged30s validator bound. No user confirmation or stale receipt fabricated."
 }

@@ -3,7 +3,7 @@
   "mod_id": "move_capital",
   "version": "0.2.0",
   "recorded_at_utc": "2026-11-10T18:05:31.814036+00:00",
-  "release_status": "VERIFIED_SP_NOT_PUBLISHED",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
   "pack_bytes": 34053,
   "offline_tests": {
@@ -252,5 +252,6 @@
     "settlement_attributes_preserved": true,
     "legacy_refresh_sequence_preserved": 57,
     "label_within_button": true
-  }
+  },
+  "publication_record": "workshop-publication-0.2.0.json"
 }

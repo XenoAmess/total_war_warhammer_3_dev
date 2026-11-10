@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0 — 2026-11-11 (unpublished candidate)
+## 0.2.0 — 2026-11-11
 
 - Add experimental all-peer campaign requests, preflight/result agreement and interrupted-operation protection.
 - Separate local UI permission from synchronized model execution; keep settlement safety checks and confirmation.

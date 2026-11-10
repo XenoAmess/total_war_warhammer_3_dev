@@ -1,6 +1,6 @@
 # 两个 Mod 的实验性联机传输
 
-2026-11-11：用户授权实现，但只做单机实机验收；联机只做离线模拟。候选版本为迁都 0.2.0、招募刷新 0.3.0，尚未发布。历史研究见 [调查](multiplayer-research-2026-11-11.md)。
+2026-11-11：用户授权实现，但只做单机实机验收；联机只做离线模拟。迁都 0.2.0、招募刷新 0.3.0 已于本日更新原工坊条目，发布与订阅核验通过。历史研究见 [调查](multiplayer-research-2026-11-11.md)。
 
 ## 实现合同
 
@@ -34,3 +34,5 @@ UI 提交权限属于本机派系，模型执行权限则属于事件中 CQI 解
 最终候选已分别通过 Windows x64 / 9.0.5 的单机回归：迁都实际改变首都且保持目标城属性及旧招募状态；刷新验证牧首 5→5、波耶 1→3、保护人物保留、正常招募和原生按钮避让。证据见[迁都](../mods/move_capital/docs/multiplayer-implementation.json)与[招募](../mods/recruitment_refresh/docs/multiplayer-implementation.json)。共用测试 90 项（其中传输模拟 13 项）、迁都专属 49 项、招募专属 72 项通过。这里只证明所测单机范围，不扩大为联机、全种族或其他 Mod 兼容验收。
 
 游戏已退出，测试包/存档/脚本和生成的依赖 DLL 已清理，原偏好已恢复；Steam 主动离线的最终后台读回见[收尾回执](multiplayer-implementation-cleanup.json)。本地模型候选的传输、截断及拒绝记录见[执行账本](local-model-multiplayer-implementation-20261111.json)，没有将不完整候选拼接为生产实现。
+
+后续发布已按用户指令完成：[迁都发布回执](../mods/move_capital/docs/workshop-publication-0.2.0.json)、[招募发布回执](../mods/recruitment_refresh/docs/workshop-publication-0.3.0.json)。此前“本次未更新工坊”描述属于实现验收阶段，后续发布未增加联机实机验收范围。

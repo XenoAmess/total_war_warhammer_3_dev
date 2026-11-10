@@ -1,0 +1,70 @@
+{
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "requests": 2,
+  "actual_client_peak_in_flight": 2,
+  "results": [
+    {
+      "task": "refresh-notes",
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\mp-release-20261111\\models\\refresh-notes",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "refresh-notes",
+        "attempt": 1,
+        "started_at_utc": "2026-11-10T19:45:34.972777+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 47605,
+        "request_sha256": "374f9f23105c20f9c2280a1525328b12d69875aab3bd300c0e79c9c7a2e9a503",
+        "http_status": 200,
+        "http_headers_ms": 2637.0102999499068,
+        "first_nonempty_content_delta_ms": 2641.011199913919,
+        "usage": {
+          "prompt_tokens": 14774,
+          "completion_tokens": 293,
+          "total_tokens": 15067
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-bf2be649912dd013",
+        "finished_at_utc": "2026-11-10T19:45:40.151037+00:00",
+        "total_ms": 5178.266599890776,
+        "error": "ValueError('candidate missing required nonempty markdown')"
+      },
+      "success": false
+    },
+    {
+      "task": "capital-notes",
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\mp-release-20261111\\models\\capital-notes",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "capital-notes",
+        "attempt": 1,
+        "started_at_utc": "2026-11-10T19:45:34.972546+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 47552,
+        "request_sha256": "a48ae0f924edfd4812ff933c072b77c1c5554721bf5303ee00710d0a2399cd69",
+        "http_status": 200,
+        "http_headers_ms": 2637.1040999656543,
+        "first_nonempty_content_delta_ms": 2641.025000018999,
+        "usage": {
+          "prompt_tokens": 14764,
+          "completion_tokens": 563,
+          "total_tokens": 15327
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-951529373cc201bf",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-10T19:45:41.898596+00:00",
+        "total_ms": 6926.050700014457,
+        "error": null
+      },
+      "success": true
+    }
+  ],
+  "candidate_code_adopted": false,
+  "review": {
+    "capital-notes": "Complete JSON; owner rewrote bilingual text and rejected claim that voting prevents desyncs/partial mutation. No false OOS guarantee published.",
+    "refresh-notes": "HTTP200 stop but mandatory markdown/content/notes omitted; not adopted as complete candidate. Owner wrote final notes against accepted evidence."
+  },
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\mp-release-20261111\\models"
+}

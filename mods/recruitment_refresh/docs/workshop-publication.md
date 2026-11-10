@@ -1,3 +1,7 @@
+# 0.3.0 已公开发布（2026-11-11）
+
+已更新原工坊条目 [3830548217](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)，中英更新说明、公开正文、图库、启动器元数据及真实订阅下载包哈希均已核对。联机为实验性实现，按用户要求未做联机实机验收；单机验收见对应精确包记录。Steam 已恢复普通客户端主动离线，临时调试端口关闭。[发布回执](workshop-publication-0.3.0.json)。以下为历史记录。
+
 # 0.2.4 候选人数与兼容性更新
 
 2026-11-05 已在[既有工坊条目](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217)公开发布 0.2.4，包含此前未单独发布的 0.2.3 修复。[中英双语更新说明](../workshop/change-notes.txt)已通过 SubmitItemUpdate 提交，公开 changelog 页面可读到 0.2.4 和新增候选测试说明。正文逐字核对、启动器元数据及原有三张图片核对通过；真实订阅包 47758 字节，SHA256 `a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa` 与实机验收包一致。
