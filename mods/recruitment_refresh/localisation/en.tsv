@@ -9,3 +9,6 @@ xatw3_no_candidates	No ordinary candidates can be safely replaced. Special chara
 xatw3_stale	The candidate list changed before the operation. No refresh was performed. Please select again.
 xatw3_uncertain	The operation could not be fully verified. Further changes are stopped. Load the save from before the operation; see the log for details.
 xatw3_refresh_unavailable	Enable memreader Plus (required Workshop item) and use a supported game version. The native recruitment pool interface could not be verified.
+
+xatw3_multiplayer_unavailable	Multiplayer synchronization is unavailable, busy or locked. Wait for all players; after an interrupted operation reload a pre-operation save. Multiplayer has not been tested in game.
+xatw3_request_too_large	This candidate pool is too large to verify safely. No candidates were changed.

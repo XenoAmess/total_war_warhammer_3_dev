@@ -26,9 +26,18 @@ end
 
 function M.fingerprint(pool)
     local entries = {}
+    local fields = {'id', 'faction', 'subtype', 'in_pool', 'recruited', 'wounded', 'provenance',
+        'male', 'unique', 'immortal', 'special', 'leader', 'starting', 'forename', 'surname', 'background'}
     for _, candidate in ipairs(pool) do
-        entries[#entries + 1] = tostring(candidate.id) .. ':' .. tostring(candidate.recruited)
-            .. ':' .. tostring(candidate.wounded) .. ':' .. tostring(candidate.provenance)
+        local record = {}
+        for _, field in ipairs(fields) do
+            local value = candidate[field]
+            local encoded = type(value):sub(1, 1) .. tostring(value)
+            -- Percent-escape wire delimiters as well as the escape itself.
+            encoded = encoded:gsub('[^%w_%-%.]', function(c) return string.format('%%%02x', string.byte(c)) end)
+            record[#record + 1] = #encoded .. ':' .. encoded
+        end
+        entries[#entries + 1] = table.concat(record, '')
     end
     table.sort(entries)
     return table.concat(entries, ',')
@@ -36,7 +45,10 @@ end
 
 function M.plan(pool, faction, subtype)
     local plan = {replace = {}, protected = {}, fingerprint = M.fingerprint(pool), add = 0}
-    for _, candidate in ipairs(pool) do
+    local sorted = {}
+    for i, candidate in ipairs(pool) do sorted[i] = candidate end
+    table.sort(sorted, function(a, b) return a.id < b.id end)
+    for _, candidate in ipairs(sorted) do
         if not plan.seed and candidate.faction == faction and candidate.subtype == subtype
             and candidate.in_pool and not candidate.special and not M.special_subtype(subtype)
             and type(candidate.male) == 'boolean' then
@@ -167,7 +179,7 @@ function M.execute(state, request, adapter)
     state.last = {status = 'EXECUTING', sequence = request.sequence, action = request.action}
     adapter.persist(state)
     local ok, result = pcall(function()
-        if not adapter.supported(request.target) then return {status = 'REJECTED', reason = 'unsupported'} end
+        if not adapter.supported(request.target, request.faction) then return {status = 'REJECTED', reason = 'unsupported'} end
         return M.refresh(adapter, request.faction, request.target, request.expected)
     end)
     if not ok then result = {status = 'UNKNOWN', reason = 'engine_error', detail = tostring(result)} end

@@ -1,0 +1,131 @@
+{
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "model": "qwen38-coder",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\models",
+  "post_count": 4,
+  "actual_client_peak_in_flight": 2,
+  "server_inference_concurrency_observed": false,
+  "candidate_code_adopted": false,
+  "owner_review": {
+    "deterministic-plan": "HTTP200 but length-truncated; rejected, not spliced or adopted. Deterministic implementation is owner-authored.",
+    "transport-design": "Complete JSON candidate; rejected as production implementation: conceptual skeleton, invented cm:get_factions API, incomplete vote transport. Owner independently implements protocol against supplied vanilla sources.",
+    "implementation-review": "HTTP200 but length-truncated; rejected, no findings or code adopted from partial output.",
+    "transport-bounded-review": "Narrow retry also length-truncated; rejected, no findings adopted. Owner performed review, tests and native SP regression."
+  },
+  "results": [
+    {
+      "task": "deterministic-plan",
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\models\\deterministic-plan",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "deterministic-plan",
+        "attempt": 1,
+        "started_at_utc": "2026-11-10T16:37:09.206924+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 69598,
+        "request_sha256": "81247247ac5d7a243855b476f54f01a7d6a27fa41ccc94a3cd690b591d578eab",
+        "http_status": 200,
+        "http_headers_ms": 1584.4373999862,
+        "first_nonempty_content_delta_ms": 1588.4261999744922,
+        "usage": {
+          "prompt_tokens": 16122,
+          "completion_tokens": 4500,
+          "total_tokens": 20622
+        },
+        "finish_reason": "length",
+        "sse_done": true,
+        "response_id": "chatcmpl-af9cc7fba3c85567",
+        "finished_at_utc": "2026-11-10T16:37:43.828532+00:00",
+        "total_ms": 34621.61010003183,
+        "error": "ValueError('candidate not complete: length')"
+      },
+      "success": false
+    },
+    {
+      "task": "transport-design",
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\models\\transport-design",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "transport-design",
+        "attempt": 1,
+        "started_at_utc": "2026-11-10T16:37:09.207143+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 69648,
+        "request_sha256": "06244d575caf9067eace2884b1ef0abf797746c31ef9b5d3393de6c13ae62fd1",
+        "http_status": 200,
+        "http_headers_ms": 1584.0553999878466,
+        "first_nonempty_content_delta_ms": 1588.00800004974,
+        "usage": {
+          "prompt_tokens": 16137,
+          "completion_tokens": 4768,
+          "total_tokens": 20905
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-b56e0a2f355dcfc4",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-10T16:37:46.352477+00:00",
+        "total_ms": 37145.34080005251,
+        "error": null
+      },
+      "success": true
+    },
+    {
+      "task": "implementation-review",
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\models\\implementation-review",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "implementation-review",
+        "attempt": 1,
+        "started_at_utc": "2026-11-10T17:10:57.336982+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 102125,
+        "request_sha256": "22ef74fa6a878f8b66e064bab400782acf25a83997bd7faef70cb26aafea500e",
+        "http_status": 200,
+        "http_headers_ms": 3357.0083000231534,
+        "first_nonempty_content_delta_ms": 3364.000999950804,
+        "usage": {
+          "prompt_tokens": 24113,
+          "completion_tokens": 6000,
+          "total_tokens": 30113
+        },
+        "finish_reason": "length",
+        "sse_done": true,
+        "response_id": "chatcmpl-b62f7810ec675ebf",
+        "finished_at_utc": "2026-11-10T17:11:37.235279+00:00",
+        "total_ms": 39898.29459995963,
+        "error": "ValueError('candidate not complete: length')"
+      },
+      "success": false
+    },
+    {
+      "task": "transport-bounded-review",
+      "directory": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\models\\transport-bounded-review",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "transport-bounded-review",
+        "attempt": 1,
+        "started_at_utc": "2026-11-10T17:15:47.278576+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 39554,
+        "request_sha256": "fd325afb820d5b9fddcedd032eae5041b0b59cd494e2115a57ee992bb15b2364",
+        "http_status": 200,
+        "http_headers_ms": 1483.0514000495896,
+        "first_nonempty_content_delta_ms": 1485.5543000157923,
+        "usage": {
+          "prompt_tokens": 9293,
+          "completion_tokens": 2500,
+          "total_tokens": 11793
+        },
+        "finish_reason": "length",
+        "sse_done": true,
+        "response_id": "chatcmpl-a9d262dd515444de",
+        "finished_at_utc": "2026-11-10T17:16:04.821226+00:00",
+        "total_ms": 17542.644100030884,
+        "error": "ValueError('candidate not complete: length')"
+      },
+      "success": false
+    }
+  ]
+}

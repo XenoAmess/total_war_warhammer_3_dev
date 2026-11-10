@@ -75,6 +75,7 @@ local function fixture()
             end}}
     local logic_mock={plan=function() return {replace=f.replace_count>0 and {1} or {},
         add=f.add_count or 0,fingerprint=f.fingerprint} end}
+    f.environment=environment
     f.ui=ui_module.new(f.runtime,logic_mock,environment)
     function f.emit(event,context)
         for _,listener in pairs(f.listeners) do
@@ -109,14 +110,17 @@ test('single_click_closes_without_confirmation_and_dispatches_once',function(f)
     f.click(component('xatw3_refresh_candidates')); assert(f.closed==1)
     f.panel.visible=false; f.drain()
     assert(#f.dispatched==1 and f.dispatched[1][1]==17)
-    assert(f.dispatched[1][2]=='xatw3|1|refresh|8|3|supported|snapshot')
+    assert(f.dispatched[1][2]=='xatw3|1|refresh|8|3|supported|sp1')
     f.click(component('xatw3_refresh_candidates')); assert(#f.dispatched==1)
 end)
 test('delayed_close_uses_frozen_request',function(f)
     f.start(); f.step(); f.step(); assert(#f.dispatched==0)
     f.ui.selected_subtype,f.turn,f.runtime.state.next_sequence,f.fingerprint='other',99,99,'changed'
     f.panel.visible=false; f.drain()
-    assert(#f.dispatched==1 and f.dispatched[1][2]=='xatw3|1|refresh|8|3|supported|snapshot')
+    assert(#f.dispatched==1 and f.dispatched[1][2]=='xatw3|1|refresh|8|3|supported|sp1')
+    local request=f.ui.consume_request({version=1,action='refresh',sequence=8,turn=3,
+        target='supported',faction='test_faction'},'sp1')
+    assert(request and request.expected=='snapshot')
 end)
 test('closure_timeout_never_dispatches_or_replays',function(f)
     f.start(); f.drain()
@@ -171,5 +175,33 @@ test('unsafe_actions_and_unavailable_pool_do_not_close_panel',function()
         f.start(); f.drain(); assert(f.closed==0 and #f.dispatched==0)
         assert(f.dialogs==((reason=='unverified' or reason=='pool' or reason=='empty') and 1 or 0))
     end
+end)
+test('large_single_player_snapshot_stays_local_and_reference_consumes_once', function()
+    local f=fixture()
+    local r={version=1, faction='test_faction', action='refresh', sequence=8, turn=3,
+        target='supported', expected=string.rep('x',4096)}
+    f.ui.submit(r); r.expected='changed'; f.panel.visible=false; f.drain()
+    assert(#f.dispatched==1 and #f.dispatched[1][2]<240)
+    assert(f.ui.consume_request(r,'wrong')==nil)
+    for _,field in ipairs({'version','action','sequence','turn','target','faction'}) do
+        local value=r[field]; r[field]='different'
+        assert(f.ui.consume_request(r,'sp1')==nil)
+        r[field]=value
+    end
+    local frozen=f.ui.consume_request(r,'sp1')
+    assert(frozen.expected==string.rep('x',4096))
+    assert(f.ui.consume_request(r,'sp1')==nil)
+end)
+test('multiplayer_single_click_uses_shared_channel_without_local_model_dispatch', function()
+    local f=fixture(); f.environment.cm.is_multiplayer=function() return true end
+    local submitted
+    f.runtime.multiplayer={submit=function(owner,r)
+        assert(owner=='xatw3_campaign_utilities' and r.faction=='test_faction')
+        submitted=r; return true
+    end}
+    f.start()
+    assert(submitted.target=='supported' and f.closed==0 and #f.dispatched==0 and f.dialogs==0)
+    assert(f.ui.submitting); f.runtime.on_result({status='SUCCEEDED'}); f.drain()
+    assert(not f.ui.submitting and f.reopened==nil)
 end)
 return passed

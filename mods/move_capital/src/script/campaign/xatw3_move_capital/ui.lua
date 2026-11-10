@@ -87,6 +87,13 @@ function M.new(runtime, logic, environment)
         self.pending = nil
         if not request or self.submitting then return end
         self.submitting = true
+        if cm.is_multiplayer and cm:is_multiplayer() then
+            if not runtime.multiplayer or not runtime.multiplayer.submit('xatw3_move_capital', request) then
+                self.submitting = false
+                self.message('error', text('multiplayer_unavailable'))
+            end
+            return
+        end
         -- SP-only: no UI-dependent data is evaluated by remote clients.
         local payload = table.concat({'xatw3mc', '1', request.action, tostring(request.sequence),
             tostring(request.turn), request.target, request.expected}, '|')

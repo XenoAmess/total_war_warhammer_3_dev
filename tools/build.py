@@ -15,6 +15,10 @@ def build(project: ModProject, language: str | None = None, output: Path | None 
              for p in project.source_dir.rglob('*') if p.is_file()}
     if not files:
         raise ValueError(f'Mod {project.id!r} has no release files in src/')
+    if project.metadata.get('multiplayer_transport') == 1:
+        files['script/xatw3_multiplayer.lua'] = (Path(__file__).parent / 'lua/multiplayer.lua').read_bytes()
+        files['script/xatw3_transport_identity.lua'] = (
+            "return '" + hashlib.sha256(files['script/xatw3_multiplayer.lua']).hexdigest() + "'\n").encode('ascii')
     languages = project.metadata.get('languages', [])
     language = language or project.metadata.get('default_language')
     if languages:
@@ -28,6 +32,12 @@ def build(project: ModProject, language: str | None = None, output: Path | None 
         files[project.metadata['localisation_pack_path']] = write_loc(translations)
     elif language is not None:
         raise ValueError('This Mod has no selectable localisation')
+    if project.metadata.get('multiplayer_transport') == 1:
+        digest = hashlib.sha256()
+        for name, content in sorted(files.items()):
+            digest.update(name.encode('utf-8') + b'\0' + str(len(content)).encode() + b'\0' + content)
+        files[f'script/xatw3_release_{project.id}.lua'] = (
+            "return '" + digest.hexdigest() + "'\n").encode('ascii')
     raw = write_pack(files)
     if read_pack(raw) != files:
         raise ValueError('Pack round trip failed')

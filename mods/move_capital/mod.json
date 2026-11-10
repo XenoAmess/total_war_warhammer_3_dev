@@ -2,14 +2,21 @@
   "schema_version": 1,
   "id": "move_capital",
   "title": "迁移首都 | Move Capital",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "pack_name": "xatw3_move_capital.pack",
-  "languages": ["zh-CN", "en"],
+  "languages": [
+    "zh-CN",
+    "en"
+  ],
   "default_language": "zh-CN",
   "localisation_pack_path": "text/db/xatw3_move_capital.loc",
   "workshop": {
     "game_version": "9.0.4.0",
     "required_items": [],
-    "tags": ["mod", "campaign"]
-  }
+    "tags": [
+      "mod",
+      "campaign"
+    ]
+  },
+  "multiplayer_transport": 1
 }

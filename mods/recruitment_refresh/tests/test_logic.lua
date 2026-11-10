@@ -225,4 +225,27 @@ test('removed_capital_action_never_changes_state', function()
     assert(logic.execute(state, request, a).reason == 'invalid_action')
     assert(state.next_sequence == 1 and calls.persist == 0 and calls.spawn == 0 and calls.remove == 0)
 end)
+test('fingerprint_covers_all_mutation_relevant_fields', function()
+    local baseline = candidate(1)
+    local before = logic.fingerprint({baseline})
+    for _, field in ipairs({'id', 'faction', 'subtype', 'in_pool', 'recruited', 'wounded',
+        'provenance', 'male', 'unique', 'immortal', 'special', 'leader', 'starting',
+        'forename', 'surname', 'background'}) do
+        local changed = candidate(1)
+        changed[field] = changed[field] == true and false or 'changed|,%:value'
+        check(logic.fingerprint({changed}) ~= before, field)
+    end
+    check(logic.fingerprint({candidate(1, {forename = 'a', surname = 'bc'})})
+        ~= logic.fingerprint({candidate(1, {forename = 'ab', surname = 'c'})}))
+    check(not before:match('|'))
+end)
+
+test('pool_order_never_changes_gender_seed_or_plan', function()
+    local a, b = candidate(1, {male = false}), candidate(2, {male = true})
+    local first = logic.plan({a, b}, 'empire', 'general')
+    local second = logic.plan({b, a}, 'empire', 'general')
+    check(first.fingerprint == second.fingerprint)
+    check(first.seed.male == false and second.seed.male == false)
+    check(first.replace[1].id == second.replace[1].id and first.add == second.add)
+end)
 return passed

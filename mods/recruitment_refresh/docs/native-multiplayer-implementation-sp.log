@@ -1,0 +1,55 @@
+FRONTEND_READY
+CONTINUE_CAMPAIGN_CLICKED
+COMMAND_RESULT ok=true result=nil
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+SP_SHARED_MODULE_LOAD_PASS dependency=0.15.2 transport=c31e44a8dbe06902f31c00836a668a5bd06617ac554eefa608f6a7ca980c079c
+COMMAND_RESULT ok=true result=nil
+SP_WIRE_LENGTH_OBSERVED 240
+SP_WIRE_LENGTH_OBSERVED 255
+SP_WIRE_LENGTH_OBSERVED 255
+DISPOSABLE_POOL_REDUCED_3_TO_1
+COMMAND_RESULT ok=true result=nil
+SPLIT_REFRESH_LEGACY_HISTORY_PRESERVED_PASS next_sequence=57
+COMMAND_RESULT ok=true result=nil
+SPLIT_CAPTURE_READY wh3_main_ksl_patriarch before
+COMMAND_RESULT ok=true result=nil
+NATIVE_REFRESH_PASS wh3_main_ksl_patriarch sequence=57 replaced=3 before=5 added=0 count=5
+SPLIT_CAPTURE_READY wh3_main_ksl_boyar before
+NATIVE_LAYOUT.panel.y.430
+NATIVE_LAYOUT.panel.x.550
+NATIVE_LAYOUT.panel.w.820
+NATIVE_LAYOUT.panel.h.650
+NATIVE_LAYOUT.footer.y.964
+NATIVE_LAYOUT.footer.x.550
+NATIVE_LAYOUT.footer.w.820
+NATIVE_LAYOUT.footer.h.50
+NATIVE_LAYOUT.button.y.971
+NATIVE_LAYOUT.button.x.1118
+NATIVE_LAYOUT.button.w.36
+NATIVE_LAYOUT.button.h.36
+NATIVE_LAYOUT.native.button_load_character.y.971
+NATIVE_LAYOUT.native.button_load_character.x.1324
+NATIVE_LAYOUT.native.button_load_character.w.36
+NATIVE_LAYOUT.native.button_load_character.h.36
+NATIVE_LAYOUT.native.province_cycle.y.974
+NATIVE_LAYOUT.native.province_cycle.x.563
+NATIVE_LAYOUT.native.province_cycle.w.100
+NATIVE_LAYOUT.native.province_cycle.h.49
+NATIVE_LAYOUT.native.button_raise.y.964
+NATIVE_LAYOUT.native.button_raise.x.810
+NATIVE_LAYOUT.native.button_raise.w.300
+NATIVE_LAYOUT.native.button_raise.h.51
+NATIVE_LAYOUT.icon.y.977
+NATIVE_LAYOUT.icon.x.1124
+NATIVE_LAYOUT.icon.w.24
+NATIVE_LAYOUT.icon.h.24
+NATIVE_LAYOUT_PASS subtype=wh3_main_ksl_boyar state=active candidates=1 replaceable=1 sequence=58
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+NATIVE_REFRESH_PASS wh3_main_ksl_boyar sequence=58 replaced=1 before=1 added=2 count=3
+SPLIT_CAPTURE_READY wh3_main_ksl_boyar after
+COMMAND_RESULT ok=true result=nil
+NORMAL_RECRUIT_PASS family_member=17194 actor=1411 gold=6250->5500
+SPLIT_RECRUITMENT_STANDALONE_SMOKE_COMPLETE_PASS

@@ -43,7 +43,7 @@ local function fixture()
         end
     end
     local function click(id) emit('ComponentLClickUp', {string = id, component = component(id, dialog)}) end
-    return ui, runtime, dispatched, emit, click
+    return ui, runtime, dispatched, emit, click, env
 end
 local function request() return {action = 'capital', sequence = 1, turn = 3, target = 'new_home', expected = 'old_home'} end
 
@@ -65,6 +65,19 @@ test('settlement_selection_updates_target', function()
     end} end})
     assert(ui.selected_region == 'new_home')
     ui.prepare('capital'); assert(ui.pending and ui.pending.target == 'new_home')
+end)
+
+test('multiplayer_confirm_dispatches_only_voted_channel', function()
+    local ui, rt, sent, _, click, env=fixture()
+    env.cm.is_multiplayer=function() return true end
+    local submitted
+    rt.multiplayer={submit=function(owner,r)
+        assert(owner=='xatw3_move_capital' and r.faction=='player')
+        submitted=r; return true
+    end}
+    ui.selected_region='new_home'; ui.prepare('capital'); click('button_tick')
+    assert(submitted.target=='new_home' and #sent==0 and ui.submitting)
+    rt.on_result({status='SUCCEEDED'}); assert(not ui.submitting)
 end)
 test('native_button_label_stays_inside_reused_button', function()
     local function c(id,x,y,w,h)

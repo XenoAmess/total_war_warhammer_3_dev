@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "mod_id": "move_capital",
+  "version": "0.2.0",
+  "release_status": "OFFLINE_VERIFIED_FINAL_SP_IN_PROGRESS_NOT_PUBLISHED",
+  "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "pack_bytes": 34053,
+  "offline_tests": {
+    "status": "PASS",
+    "mod_id": "move_capital",
+    "lua_version": [
+      5,
+      1
+    ],
+    "compiled_lua_files": 4,
+    "tests": {
+      "logic": [
+        "valid_key_accepts_normal",
+        "valid_key_rejects_empty",
+        "valid_key_rejects_non_string",
+        "valid_key_rejects_too_long",
+        "valid_key_rejects_invalid_chars",
+        "capital_eligible_normal",
+        "capital_eligible_not_owned",
+        "capital_eligible_already_capital",
+        "capital_eligible_no_capital",
+        "capital_eligible_besieged",
+        "capital_eligible_abandoned",
+        "capital_eligible_no_settlement",
+        "capital_eligible_not_exists",
+        "capital_eligible_nil_target",
+        "move_capital_success",
+        "move_capital_stale_expected",
+        "move_capital_not_owned",
+        "move_capital_already_capital",
+        "move_capital_besieged",
+        "move_capital_readback_capital_mismatch",
+        "move_capital_readback_level_changed",
+        "move_capital_readback_owner_changed",
+        "move_capital_readback_province_capital_changed",
+        "execute_success_capital",
+        "execute_invalid_action",
+        "execute_duplicate_sequence",
+        "execute_stale_expected",
+        "execute_wrong_faction",
+        "execute_past_turn",
+        "execute_locked_state",
+        "execute_invalid_version",
+        "execute_invalid_faction_key",
+        "execute_invalid_target_key",
+        "execute_can_act_false",
+        "execute_engine_error_locks",
+        "execute_readback_failure_locks",
+        "execute_preserves_attributes_on_success"
+      ],
+      "runtime": [
+        "independent_save_key_preserves_legacy_state",
+        "interrupted_move_locks_without_replay",
+        "runtime_moves_once_and_reads_back_model",
+        "unvoted_multiplayer_is_rejected_before_mutation"
+      ],
+      "ui": [
+        "cancel_never_dispatches",
+        "confirm_uses_new_channel_once_and_frozen_target",
+        "settlement_selection_updates_target",
+        "multiplayer_confirm_dispatches_only_voted_channel",
+        "native_button_label_stays_inside_reused_button"
+      ],
+      "entry": [
+        "new_channel_dispatches_capital",
+        "refresh_action_rejected",
+        "wrong_faction_rejected"
+      ]
+    },
+    "test_count": 49,
+    "no_native_dependency": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "release_pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+    "release_pack_bytes": 34053,
+    "native_game_acceptance": "NOT_RUN"
+  },
+  "shared_tests": 90,
+  "multiplayer_transport_simulations": 13,
+  "native_single_player": "FINAL_PACKAGE_IN_PROGRESS",
+  "native_multiplayer": "NOT_RUN_USER_REQUEST",
+  "prior_native_pass": "Initial candidate passed SP; shared wire transport subsequently corrected to 240-byte frames. Initial package acceptance is not credited to final hash."
+}

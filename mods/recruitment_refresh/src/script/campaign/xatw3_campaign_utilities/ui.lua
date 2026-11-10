@@ -182,12 +182,43 @@ function M.new(runtime, logic, environment)
         show_dialog(text(title) .. '\n\n' .. message)
     end
 
+    function self.consume_request(request, token)
+        local pending = self.single_player_request
+        if not pending or pending.token ~= token then return nil end
+        for _, field in ipairs({'version', 'action', 'sequence', 'turn', 'target', 'faction'}) do
+            if request[field] ~= pending.request[field] then return nil end
+        end
+        self.single_player_request = nil
+        return pending.request
+    end
+
     function self.submit(request)
         if not request or request.action ~= 'refresh' or self.submitting then return end
         self.submitting = true
-        -- SP-only: no UI-dependent data is evaluated by remote clients.
+        if cm.is_multiplayer and cm:is_multiplayer() then
+            if not runtime.multiplayer or not runtime.multiplayer.submit('xatw3_campaign_utilities', request) then
+                self.submitting = false
+                self.message('error', text('multiplayer_unavailable'))
+            end
+            return
+        end
+        -- The engine truncates UITrigger strings at 256 bytes. In SP the frozen
+        -- complete request stays local; the event carries a one-use reference.
+        self.single_player_counter = (self.single_player_counter or 0) + 1
+        if self.single_player_counter >= 16000000 then self.submitting = false; return end
+        local token = 'sp' .. tostring(self.single_player_counter)
         local payload = table.concat({'xatw3', '1', request.action, tostring(request.sequence),
-            tostring(request.turn), request.target, request.expected}, '|')
+            tostring(request.turn), request.target, token}, '|')
+        if #payload > 240 then
+            self.submitting = false
+            self.message('error', text('request_too_large'))
+            return
+        end
+        local frozen = {}
+        for _, field in ipairs({'version', 'action', 'sequence', 'turn', 'target', 'faction', 'expected'}) do
+            frozen[field] = request[field]
+        end
+        self.single_player_request = {token = token, request = frozen}
         local function dispatch()
             CampaignUI.TriggerCampaignScriptEvent(cm:get_local_faction():command_queue_index(), payload)
         end

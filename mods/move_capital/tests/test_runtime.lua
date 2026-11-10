@@ -60,7 +60,7 @@ test('runtime_moves_once_and_reads_back_model', function()
     assert(rt.execute(request).reason == 'duplicate_or_invalid_sequence' and moves() == 1)
 end)
 
-test('multiplayer_is_rejected_before_mutation', function()
+test('unvoted_multiplayer_is_rejected_before_mutation', function()
     local rt, _, _, _, moves, cm = fixture(); rt.initialize()
     cm.is_multiplayer = function() return true end
     local result = rt.execute({version = 1, action = 'capital', faction = 'player', sequence = 1,

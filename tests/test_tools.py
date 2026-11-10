@@ -26,6 +26,29 @@ def publication_project(root: Path) -> ModProject:
 
 
 class ProjectTests(unittest.TestCase):
+    def test_multiplayer_identity_changes_with_content_and_shared_transport_is_identical(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root / 'src/script/example.lua'
+            source.parent.mkdir(parents=True)
+            source.write_text('return 1', encoding='utf-8')
+            metadata = {'id': 'first', 'title': 'First', 'version': '1.0.0',
+                        'pack_name': 'first.pack', 'multiplayer_transport': 1}
+            project = ModProject(root, metadata)
+            build(project)
+            first = read_pack(project.pack_path.read_bytes())
+            source.write_text('return 2', encoding='utf-8')
+            build(project)
+            changed = read_pack(project.pack_path.read_bytes())
+            self.assertNotEqual(first['script/xatw3_release_first.lua'], changed['script/xatw3_release_first.lua'])
+            other = ModProject(root, {**metadata, 'id': 'second', 'pack_name': 'second.pack'})
+            build(other)
+            second = read_pack(other.pack_path.read_bytes())
+            for path in ('script/xatw3_multiplayer.lua', 'script/xatw3_transport_identity.lua'):
+                self.assertEqual(first[path], second[path])
+            self.assertIn(hashlib.sha256(first['script/xatw3_multiplayer.lua']).hexdigest().encode(),
+                          first['script/xatw3_transport_identity.lua'])
+
     def test_two_mods_with_the_same_pack_name_build_independently(self):
         with tempfile.TemporaryDirectory() as folder:
             repository = Path(folder)

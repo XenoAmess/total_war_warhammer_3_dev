@@ -8,3 +8,5 @@ xatw3mc_done	The game model confirms the operation completed.
 xatw3mc_failed	Operation incomplete. Check the log. Uncertain operations are never retried automatically.
 xatw3mc_stale	The capital changed while confirming. Nothing was changed by this request. Please select again.
 xatw3mc_uncertain	The operation could not be fully verified. Further changes are stopped. Load the save from before the operation; see the log for details.
+
+xatw3mc_multiplayer_unavailable	Multiplayer synchronization is unavailable, busy or locked. Wait for all players; after an interrupted operation reload a pre-operation save. Multiplayer has not been tested in game.

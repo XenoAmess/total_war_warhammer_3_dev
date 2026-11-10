@@ -56,5 +56,21 @@ end)
 test('discovered_types_do_not_leak_between_campaign_instances', function()
     assert(not runtime_module.new(logic, env).subtypes.test_fire_wizard)
 end)
+test('multiplayer_metadata_uses_request_faction_and_bypasses_ui_cache', function()
+    local mp_env = {out = env.out, cm = {is_multiplayer = function() return true end,
+        get_local_faction_name = function() return 'observer' end,
+        get_faction = function(_, key)
+            assert(key == 'remote_player', 'Local UI faction leaked into preflight')
+            return faction
+        end}, common = env.common}
+    local runtime = runtime_module.new(logic, mp_env)
+    runtime.subtypes.test_fire_wizard = 'general'
+    agent = 'wizard'; local before = calls
+    assert(runtime.supported('test_fire_wizard', 'remote_player'))
+    assert(calls == before + 2 and runtime.subtypes.test_fire_wizard == 'wizard')
+    generated = false
+    assert(not runtime.supported('test_fire_wizard', 'remote_player'))
+    generated = true
+end)
 package.loaded['script.campaign.xatw3_campaign_utilities.native_pool'] = original
 return passed

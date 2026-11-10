@@ -30,7 +30,7 @@ function M.new(logic, environment)
 
     function self.supported(subtype, faction_key)
         if not logic.valid_key(subtype) or logic.special_subtype(subtype) then return false end
-        if self.subtypes[subtype] then return true end
+        if self.subtypes[subtype] and not (cm.is_multiplayer and cm:is_multiplayer()) then return true end
         local generated = safe(function()
             return common.get_context_value('CcoAgentSubtypeRecord', subtype, 'AutoGenerate')
         end, false)
@@ -112,11 +112,22 @@ function M.new(logic, environment)
     function self.turn() return cm:model():turn_number() end
     function self.campaign_supported() return cm:get_campaign_name() == 'main_warhammer' end
 
-    function self.can_act(faction_key)
-        if cm:is_multiplayer() or not self.campaign_supported() then return false end
+    function self.model_can_act(faction_key)
+        if not self.campaign_supported() then return false end
         local faction = cm:get_faction(faction_key)
-        return faction and faction:is_human() and faction:name() == cm:get_local_faction_name()
-            and faction:is_factions_turn() and not cm:model():pending_battle():is_active()
+        return faction and faction:is_human() and faction:is_factions_turn()
+            and not cm:model():pending_battle():is_active()
+    end
+
+    function self.can_act(faction_key)
+        if not self.model_can_act(faction_key) then return false end
+        if self.multiplayer_executing then return true end
+        if faction_key ~= cm:get_local_faction_name() then return false end
+        return not cm:is_multiplayer() or (self.multiplayer and self.multiplayer.available()) or false
+    end
+
+    function self.install_multiplayer()
+        require('script.xatw3_multiplayer').install(environment, PREFIX, self, true)
     end
 
     function self.describe(id, in_pool)
@@ -189,7 +200,7 @@ function M.new(logic, environment)
 
     function self.can_remove_candidate(id)
         local panel = environment.find_uicomponent(environment.core:get_ui_root(), 'character_panel')
-        if panel and panel:Visible() then return false, 'recruitment_panel_open' end
+        if not self.multiplayer_executing and panel and panel:Visible() then return false, 'recruitment_panel_open' end
         local fm = cm:get_family_member_by_cqi(id)
         if not fm then return false end
         return self.native_pool.can_remove(fm:character_details())
@@ -210,9 +221,40 @@ function M.new(logic, environment)
     end
 
     function self.execute(request)
+        if cm:is_multiplayer() and not self.multiplayer_executing then
+            return {status = 'REJECTED', reason = 'multiplayer_protocol_required'}
+        end
         local result = logic.execute(self.state, request, self)
-        self.report(result)
+        if not self.multiplayer_executing then self.report(result) end
         return result
+    end
+
+    function self.multiplayer_check(request)
+        local sync = require('script.xatw3_multiplayer')
+        if request.action ~= 'refresh' or request.turn ~= self.turn() or not self.refresh_verified
+            or not self.model_can_act(request.faction) or self.state.locked
+            or not self.supported(request.target, request.faction) then return false, 'not_available' end
+        local panel = environment.find_uicomponent(environment.core:get_ui_root(), 'character_panel')
+        if panel and panel:Visible() then return false, 'recruitment_panel_open' end
+        local pool = self.read_pool(request.faction, request.target)
+        if not pool or #pool >= 100 then return false, 'pool_unavailable' end
+        local plan = logic.plan(pool, request.faction, request.target)
+        if plan.fingerprint ~= request.expected or (#plan.replace == 0 and plan.add == 0) then
+            return false, 'stale_or_empty'
+        end
+        for _, candidate in ipairs(plan.replace) do
+            if not self.can_remove_candidate(candidate.id) then return false, 'native_pool_unavailable' end
+        end
+        local mr = (environment._G or _G).memreader_plus
+        return true, sync.fields({'0.3.0', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
+            self.state.next_sequence, self.subtypes[request.target], plan.fingerprint})
+    end
+
+    function self.multiplayer_after(request, result)
+        local sync = require('script.xatw3_multiplayer')
+        local pool = self.read_pool(request.faction, request.target)
+        return sync.fields({self.state.next_sequence, tostring(self.state.locked),
+            result.completed or 0, result.added or 0, pool and logic.fingerprint(pool) or 'unreadable'})
     end
 
     return self

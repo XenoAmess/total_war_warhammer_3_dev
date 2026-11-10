@@ -39,7 +39,7 @@ def run():
             return {}
         end
         core = {add_listener = function(_,n,e,condition,callback) listener = {condition,callback} end}
-        cm = {add_first_tick_callback = function() end,
+        cm = {is_multiplayer = function() return false end, add_first_tick_callback = function() end,
             get_local_faction_name = function() return 'player' end,
             get_local_faction = function() return {command_queue_index = function() return 17 end} end}
         assert(loadstring(entry_source))()
@@ -58,7 +58,13 @@ def run():
     assert build(project) == first
     raw = project.pack_path.read_bytes()
     files = read_pack(raw)
-    assert len(files) == 5 and not project.required_items
+    assert len(files) == 8 and not project.required_items
+    assert 'script/xatw3_multiplayer.lua' in files
+    assert 'script/xatw3_transport_identity.lua' in files
+    assert 'script/xatw3_release_move_capital.lua' in files
+    for path, content in files.items():
+        if path.endswith('.lua'):
+            compile_lua(content.decode('utf-8'), path)
     assert not any('xatw3_campaign_utilities' in path or 'acceptance' in path or 'test' in path for path in files)
     assert not any('native_pool' in content.decode('utf-8') or 'spawn_character_to_pool' in content.decode('utf-8') for path, content in files.items() if path.endswith('.lua'))
     rows = read_translations(ROOT / 'localisation/zh-CN.tsv')
