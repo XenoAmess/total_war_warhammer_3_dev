@@ -1,1 +1,6 @@
-0.1.1: 修复迁都按钮文字错位，补充实机截图。 / Fix native button label bounds and add gameplay screenshots.
+0.2.0 — 实验性联机同步 / Experimental multiplayer
+- 全端请求、版本/状态比对、执行结果核对及中断保护；单机迁都流程保持，无新增依赖。
+- 全部玩家需要完全相同的 Mod 包。操作前保留存档；部分执行或失步不能自动回滚。
+- 已通过 9.0.5 基斯里夫单机迁都与 UI 回归。联机仅做离线模拟，未做联机实机验收，不保证无失步。
+
+Adds experimental all-peer requests, version/state voting, result checks and interruption guards. SP workflow and dependency-free installation remain. Every player needs the same package. Kislev single-player native regression passed on 9.0.5; multiplayer native acceptance was NOT performed. No OOS-prevention or automatic rollback guarantee; keep a pre-operation save.

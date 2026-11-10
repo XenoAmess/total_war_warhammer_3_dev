@@ -1,20 +1,23 @@
 [h1]迁移首都 | Move Capital[/h1]
-[b]0.1.1 Alpha · 单人超凡帝国 · Windows x64 / WH3 9.0.4[/b]
+[b]0.2.0 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]
 
-在自有城镇面板点击“迁都”，确认后将派系首都移到该城镇。省会或小城均可作为普通目标；免费，不改变省会位置、建筑等级或城市归属，不额外添加收入加成。
+在自有城镇面板点击“迁都”，确认后将派系首都移到该城镇。免费，省会或小城均可作为普通目标；不改变省会位置、建筑等级或城市归属，不额外添加收入加成。
 
-这是从“征募与迁都”拆出的独立 Mod。[b]无需 memreader Plus，也无需招募刷新 Mod。[/b]
+独立模组：[b]无需 memreader Plus，也无需招募刷新 Mod。[/b] 目标必须为玩家自有、未被围攻、非废墟的常规城镇，不能重复选择当前首都。序章及特殊首都机制不支持，未做全种族或组合 Mod 兼容验收。
 
-只能迁往玩家自有、未被围攻、不是废墟的常规城镇；当前首都不重复处理。仅支持单人超凡帝国，不支持联机、序章或特殊首都机制。其他组合 Mod 和种族的完整兼容性未做广泛验证。
+[h2]实验性联机支持[/h2]
+[b]已实现多人同步，但按用户要求未做联机实机验收；不保证无失步。[/b] 所有玩家须安装完全相同的本 Mod 包（包括语言版本），启用的其他 Mod 与依赖也应一致。每次请求在各端比对版本和前置状态后执行，再核对结果。混用版本、缺少 Mod、成员变化或断线可能拒绝操作或持续等待；无法自动回滚单端原生失败。操作前保留独立存档，异常后回到操作前存档，不要反复点击或手动清除锁。
 
-操作前保留存档。禁用本 Mod 不会撤销已经保存的首都变化。结果未明时停止继续修改，不自动重试。
+单机已通过 Windows x64 / 9.0.5 基斯里夫实机：迁都、城镇属性保持、旧招募状态保持和按钮文字边界。禁用本 Mod 不会撤销已保存的首都变化。
 
 [h2]English[/h2]
-Adds a free Move Capital button to owned settlement panels in single-player Immortal Empires. Province capitals and minor settlements can be regular targets. Ownership, building levels and province capital status stay unchanged. No additional income bonus.
+Adds a free Move Capital button to owned settlement panels in Immortal Empires. Confirm to move your faction capital. Ownership, building levels and province-capital status stay unchanged; no income bonus. Standalone, with no memreader Plus or Recruitment Refresh dependency. Targets must be owned, inhabited, not besieged and different from the current capital. Special capital systems and the prologue are unsupported.
 
-Standalone: requires neither memreader Plus nor Recruitment Refresh. Targets must be owned, inhabited, not besieged, and different from the current capital. Windows x64, game 9.0.4. Multiplayer and special capital systems are unsupported. Keep a save before making changes; disabling the mod does not undo saved changes.
+[b]0.2.0 adds EXPERIMENTAL multiplayer synchronization. Native multiplayer has NOT been tested; OOS-free operation is not guaranteed.[/b] All players need identical Mod packages, including language, and matching other Mods/dependencies. Requests compare versions and model state across peers, then compare results. Missing Mods, mixed versions or disconnects may reject or stall operations. Asymmetric engine failure cannot be rolled back automatically. Keep a pre-operation save and restore it after uncertainty.
 
-[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/move_capital]源码、设计与验收记录 / Source and acceptance[/url]
+Single-player native regression passed with Kislev on Windows x64 / game 9.0.5. Universal faction/overhaul compatibility is not claimed. Disabling this Mod does not undo saved changes.
+
+[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/move_capital]源码与验收记录 / Source and acceptance[/url]
 
 [h2]实机：城镇面板中的迁都按钮 / Native settlement button[/h2]
 [img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/move_capital/workshop/screenshots/capital-button.jpg[/img]

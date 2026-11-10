@@ -1,59 +1,123 @@
 {
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
-  "version": "0.2.4",
-  "recorded_at_utc": "2026-11-04T17:33:40.184279+00:00",
-  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
-  "release_pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
-  "release_pack_bytes": 47758,
-  "minimum_candidates": 3,
-  "trigger": "Manual refresh of selected nonempty ordinary subtype",
+  "version": "0.3.0",
+  "recorded_at_utc": "2026-11-10T17:54:03.259721+00:00",
+  "release_status": "VERIFIED_NOT_PUBLISHED",
+  "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+  "pack_bytes": 68665,
   "offline_tests": {
-    "shared": 73,
-    "mod": 67
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "lua_version": [
+      5,
+      1
+    ],
+    "compiled_lua_files": 5,
+    "production_logic_tests": [
+      "protect_unique",
+      "protect_immortal",
+      "protect_leader",
+      "protect_wounded",
+      "protect_starting",
+      "protect_recruited",
+      "protect_special",
+      "protect_unknown_history",
+      "protect_wrong_scope",
+      "pool_order_independent_fingerprint",
+      "successful_replacement_preserves_protected",
+      "ten_refreshes_do_not_accumulate",
+      "duplicate_does_not_mutate",
+      "stale_pool_does_not_mutate",
+      "native_layout_failure_rejects_before_spawning",
+      "past_turn_rejected",
+      "wrong_faction_rejected",
+      "invalid_action_rejected",
+      "unsupported_subtype_rejected",
+      "spawn_failure_never_deletes_old",
+      "uncertain_invalid_new_locks_operation",
+      "uncertain_overflow_evicts_locks_operation",
+      "uncertain_remove_fail_locks_operation",
+      "uncertain_remove_lies_locks_operation",
+      "partial_success_is_not_full_success",
+      "unverified_refresh_never_mutates_or_consumes_sequence",
+      "oversized_pool_never_creates_another_candidate",
+      "four_candidates_preserve_protected_entry",
+      "one_candidate_refresh_grows_to_three_and_stops",
+      "protected_only_small_pool_adds_without_deleting_unknown_character",
+      "two_candidates_add_one_without_deleting_protected",
+      "empty_and_special_pools_never_grow",
+      "addition_failure_after_replacement_locks_partial_operation",
+      "addition_eviction_is_unknown_and_stops_without_more_deletions",
+      "removed_capital_action_never_changes_state",
+      "fingerprint_covers_all_mutation_relevant_fields",
+      "pool_order_never_changes_gender_seed_or_plan"
+    ],
+    "production_ui_tests": [
+      "candidate_selection_and_category_switch",
+      "panel_events_clear_previous_target",
+      "single_click_closes_without_confirmation_and_dispatches_once",
+      "delayed_close_uses_frozen_request",
+      "closure_timeout_never_dispatches_or_replays",
+      "success_reopens_lord_tab_without_modal",
+      "success_reopens_hero_panel_without_modal",
+      "rejected_result_reopens_then_shows_dismiss_only_error",
+      "uncertain_result_keeps_error_and_does_not_reopen",
+      "native_layout_rejection_explains_compatibility_without_replaying",
+      "small_protected_pool_can_submit_additions_without_confirmation",
+      "unsafe_actions_and_unavailable_pool_do_not_close_panel",
+      "large_single_player_snapshot_stays_local_and_reference_consumes_once",
+      "multiplayer_single_click_uses_shared_channel_without_local_model_dispatch",
+      "hidden_lord_page_cannot_supply_hero_target",
+      "icon_scales_and_offsets",
+      "native_controls_avoided_without_enumerating_rebuilt_cards",
+      "narrow_gap_left_fallback_and_no_space",
+      "hidden_controls_ignored_disabled_controls_reserved",
+      "alternate_anchor_reflow_and_reuse",
+      "missing_anchors_icon_and_bounds_hide",
+      "busy_locked_unverified_unsupported_disable"
+    ],
+    "native_bridge_rejection_tests": [
+      "missing_extension_fails_without_engine_calls",
+      "ambiguous_signatures_never_call_engine",
+      "changed_expiry_call_site_never_calls_engine",
+      "unknown_build_never_scans_functions_or_reads_objects",
+      "missing_or_malformed_image_identity_never_scans",
+      "special_details_rejected_before_native_object_dereference"
+    ],
+    "runtime_metadata_tests": [
+      "discover_ordinary_subtype_from_engine_metadata",
+      "special_training_and_legendary_subtypes_are_not_auto_generated",
+      "unknown_agent_and_unreadable_metadata_are_rejected",
+      "subtype_key_is_validated_before_context_evaluation",
+      "caravan_and_convoy_rejected_before_cache_metadata_or_spawn",
+      "discovered_types_do_not_leak_between_campaign_instances",
+      "multiplayer_metadata_uses_request_faction_and_bypasses_ui_cache"
+    ],
+    "test_count": 72,
+    "fixture_pre_world_created": true,
+    "fixture_command_environment": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "release_pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+    "release_pack_bytes": 68665,
+    "native_game_acceptance": "NOT_RUN"
   },
-  "native": {
-    "game_version": "9.0.5.0",
-    "log": "native-candidate-count-0.2.4.log",
-    "fixture": "Disposable Kislev turn3 legacy save; test setup reduced ordinary Boyar pool from3 to1 before testing production button",
-    "first_refresh": {
-      "before": 1,
-      "replaced": 1,
-      "added": 2,
-      "after": 3
-    },
-    "after_recruit_refresh": {
-      "before": 2,
-      "replaced": 2,
-      "added": 1,
-      "after": 3
-    },
-    "larger_pool": {
-      "before": 5,
-      "added": 0,
-      "after": 5
-    },
-    "protected_candidates_preserved": true,
-    "added_candidate_recruited": 17199,
-    "gold_before": 5500,
-    "gold_after": 4750,
-    "ui_native_clearance": true,
-    "fixture_correction": "Second recruitment in occupied Kislev had native Recruit disabled. No gameplay success credited to that attempt. Selecting unoccupied Zavastra allowed the added candidate to be recruited."
-  },
-  "limitations": [
-    "Exact Nurgle hero from user screenshot was not tested in its own campaign.",
-    "Empty pools without a seed remain unchanged.",
-    "Special recruitment stays unsupported; no increase to hero capacity or army limits."
-  ],
+  "shared_tests": 90,
+  "multiplayer_transport_simulations": 13,
+  "native_single_player": "PASS",
+  "native_multiplayer": "NOT_RUN_USER_REQUEST",
+  "game_version": "9.0.5.0",
+  "game_exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
   "steam_offline_before_launch": {
     "schema": "xar.steam-offline-state-probe/v2",
     "machine_id": "pc-20260924rtuf-f11af23c08",
-    "observed_at_utc": "2026-11-04T17:23:22.501138+00:00",
-    "nonce": "4b6218254cbdd69a6e30dcbf6e10f8f2",
+    "observed_at_utc": "2026-11-10T17:42:53.060581+00:00",
+    "nonce": "50317cfe6b5ea977018bcb8d8f2b8991",
     "reason": "observed",
     "steam": {
-      "pid": 14888,
-      "birth_filetime": "134382773775198460",
+      "pid": 9512,
+      "birth_filetime": "134382896665849556",
       "exe": "D:\\steam\\steam.exe",
       "file_version": "11.15.70.27"
     },
@@ -69,8 +133,8 @@
     "observation_method": "native_current_user_byte",
     "native_evidence": {
       "machine_id": "pc-20260924rtuf-f11af23c08",
-      "observed_at_utc": "2026-11-04T17:23:22.501138+00:00",
-      "nonce": "4b6218254cbdd69a6e30dcbf6e10f8f2",
+      "observed_at_utc": "2026-11-10T17:42:53.060581+00:00",
+      "nonce": "50317cfe6b5ea977018bcb8d8f2b8991",
       "module_base": "140711393361920",
       "module_size": 19730432,
       "value_rva": "18435783",
@@ -83,14 +147,14 @@
         1
       ],
       "steam_before": {
-        "pid": 14888,
-        "birth_filetime": "134382773775198460",
+        "pid": 9512,
+        "birth_filetime": "134382896665849556",
         "exe": "D:\\steam\\steam.exe",
         "file_version": "11.15.70.27"
       },
       "steam_after": {
-        "pid": 14888,
-        "birth_filetime": "134382773775198460",
+        "pid": 9512,
+        "birth_filetime": "134382896665849556",
         "exe": "D:\\steam\\steam.exe",
         "file_version": "11.15.70.27"
       },
@@ -109,7 +173,7 @@
         "mtime_ns": "1792620918000000000"
       },
       "tray_manager_pointer_rva": "18428640",
-      "tray_manager_address": "1381602959488",
+      "tray_manager_address": "1555866722432",
       "tray_state_offset": "340",
       "tray_state_samples": [
         4,
@@ -119,140 +183,153 @@
     "status": "offline",
     "offline_mode": true
   },
+  "native_log": "native-multiplayer-implementation-sp.log",
+  "native_markers": [
+    "DISPOSABLE_POOL_REDUCED_3_TO_1",
+    "NATIVE_REFRESH_PASS",
+    "NORMAL_RECRUIT_PASS",
+    "NATIVE_LAYOUT_PASS",
+    "SPLIT_RECRUITMENT_STANDALONE_SMOKE_COMPLETE_PASS"
+  ],
+  "cleanup": {
+    "closed_at_utc": "2026-11-10T17:52:54.853099+00:00",
+    "removed": [
+      "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_acceptance.pack",
+      "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+      "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+      "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\scripts\\user.script.txt",
+      "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\xatw3_icon_media_20261101.save"
+    ],
+    "preferences_sha256": "84263128ce22010114381eb380d7310d01da4df9896f70d474ecfdf29207adc1"
+  },
   "captures": [
     {
-      "captured_at_utc": "2026-11-04T17:32:37.648850+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
+      "captured_at_utc": "2026-11-10T17:47:00.021005+00:00",
+      "hwnd": 1705418,
+      "game_pid": 23012,
       "bbox": [
         80,
         45,
         2480,
         1395
       ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\added-candidate-recruited.png",
-      "sha256": "657c30e02c05b920bc3032c2fe72345adaf7d61ce4bdc7c801486d08f6580bce",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\recruitment_refresh\\captures\\final-load-check.png",
+      "sha256": "74b7f3955b204b5392f54b9c4444587008152d10b3b097d351575555d01ffcdf",
+      "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
       "game_version": "9.0.5.0",
       "method": "foreground_game_client_pixels"
     },
     {
-      "captured_at_utc": "2026-11-04T17:29:37.076374+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
+      "captured_at_utc": "2026-11-10T17:48:19.783796+00:00",
+      "hwnd": 1705418,
+      "game_pid": 23012,
       "bbox": [
         80,
         45,
         2480,
         1395
       ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\refresh-9.0.5-hero-before.png",
-      "sha256": "86c886c034f4deaeb55837b3aedf252e05f00bdb5afcfd6dfbd616a698e317fa",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\recruitment_refresh\\captures\\ready-ui.png",
+      "sha256": "4a59a28db1461e62d276afabc86e1ff3a381335bbbb2067335d9a6d9f7b4fa4e",
+      "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
       "game_version": "9.0.5.0",
       "method": "foreground_game_client_pixels"
     },
     {
-      "captured_at_utc": "2026-11-04T17:29:44.343613+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
+      "captured_at_utc": "2026-11-10T17:51:58.739000+00:00",
+      "hwnd": 1705418,
+      "game_pid": 23012,
       "bbox": [
         80,
         45,
         2480,
         1395
       ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\refresh-9.0.5-lord-after.png",
-      "sha256": "d7de4c1259b13098cd111f6b207d0a8222c033010dcbca14e416522dac4eff6d",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\recruitment_refresh\\captures\\refresh-9.0.5-hero-before.png",
+      "sha256": "aa349ce441691231dde90c606efd37e57b277faadedd0e192b04aa763db7bde7",
+      "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
       "game_version": "9.0.5.0",
       "method": "foreground_game_client_pixels"
     },
     {
-      "captured_at_utc": "2026-11-04T17:29:41.697075+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
+      "captured_at_utc": "2026-11-10T17:52:06.050665+00:00",
+      "hwnd": 1705418,
+      "game_pid": 23012,
       "bbox": [
         80,
         45,
         2480,
         1395
       ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\refresh-9.0.5-lord-before.png",
-      "sha256": "26b0ac16dc0fee7373dbf66e779787f2a8f139f66057212ded3a7d65c3d0c0e6",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\recruitment_refresh\\captures\\refresh-9.0.5-lord-after.png",
+      "sha256": "34b5edc4cbd98c37faaf3d468fafadacd24f699cea058e384e3dda16e80d93a2",
+      "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
       "game_version": "9.0.5.0",
       "method": "foreground_game_client_pixels"
     },
     {
-      "captured_at_utc": "2026-11-04T17:29:47.551690+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
+      "captured_at_utc": "2026-11-10T17:52:03.374718+00:00",
+      "hwnd": 1705418,
+      "game_pid": 23012,
       "bbox": [
         80,
         45,
         2480,
         1395
       ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\refresh-9.0.5-recruited.png",
-      "sha256": "f0e4354a2a44d33fd66d3aed0cdc96a6b371e1109129a432ca77a619a7d8e278",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\recruitment_refresh\\captures\\refresh-9.0.5-lord-before.png",
+      "sha256": "b7845078731d9ce100665a474dca60157e9f3cdbdc9708ecc6b0781a5832e3e0",
+      "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
       "game_version": "9.0.5.0",
       "method": "foreground_game_client_pixels"
     },
     {
-      "captured_at_utc": "2026-11-04T17:31:07.123314+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
+      "captured_at_utc": "2026-11-10T17:52:09.280078+00:00",
+      "hwnd": 1705418,
+      "game_pid": 23012,
       "bbox": [
         80,
         45,
         2480,
         1395
       ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\second-growth-after.png",
-      "sha256": "b5381885190cddb7938dbd0412f8a9d4cef35a62b98c7daed8a2c5f78b5958d2",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
-      "game_version": "9.0.5.0",
-      "method": "foreground_game_client_pixels"
-    },
-    {
-      "captured_at_utc": "2026-11-04T17:31:04.971173+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
-      "bbox": [
-        80,
-        45,
-        2480,
-        1395
-      ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\second-growth-before.png",
-      "sha256": "72ddaea528ceb4f4cdfac5a51629ed32a1eb8ce563adf523e3068e90d33ad8b8",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
-      "game_version": "9.0.5.0",
-      "method": "foreground_game_client_pixels"
-    },
-    {
-      "captured_at_utc": "2026-11-04T17:29:00.731124+00:00",
-      "hwnd": 1705586,
-      "game_pid": 19668,
-      "bbox": [
-        80,
-        45,
-        2480,
-        1395
-      ],
-      "file": "D:\\workspace\\.codex-wh3-runtime\\candidate-count-20261105\\native\\recruitment_refresh\\captures\\world.png",
-      "sha256": "38cf9d0345f9182cf082b3b91264185ea33cabccf2dc8fb9f27ee2d4d573a08f",
-      "pack_sha256": "a2bbf8e5ed3e69fe9f115ec5f56c2b2d5795811c24ea2e0d7120ca23c685a2aa",
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\recruitment_refresh\\captures\\refresh-9.0.5-recruited.png",
+      "sha256": "c6ce5eb0a603ea94f575c774772b6f7babc7d5a84e9cdea8585a1d6108e32a32",
+      "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
       "game_version": "9.0.5.0",
       "method": "foreground_game_client_pixels"
     }
   ],
+  "limitations": [
+    "Multiplayer remains experimental; no actual multiplayer session tested.",
+    "No atomic recovery from asymmetric engine/native failure; pre-operation save required.",
+    "No Workshop upload was requested for this implementation task."
+  ],
+  "native_scope": {
+    "faction": "Kislev",
+    "ordinary_lord_pool": "1 -> 3",
+    "hero_pool": "5 -> 5",
+    "protected_preserved": true,
+    "normal_recruitment": true,
+    "native_control_clearance": true,
+    "ui_scale": "100%",
+    "dependency_pack_sha256": "0c751ae032bb51718c267cd06b67c648035367c13338763edf9a689be4ce9ae1",
+    "dependency_version": "0.15.2"
+  },
+  "pre_fix_failure": {
+    "status": "FAIL_NOT_CREDITED",
+    "pack_sha256": "e55cca71eae7dea52048eb695d2b2d148bbe84fafa82fe4cbc3fa1ea2c66d405",
+    "diagnostic_log": "native-event-truncation-diagnostic.log",
+    "diagnosis": "Identical full snapshots, UITrigger truncated complete request from 1254 to 255 bytes (expected fingerprint 1210 -> 211 bytes). Rejected stale before spawning; no candidate mutation. Explicit 240/256/257-byte probe observed 240/255/255.",
+    "fix": "SP one-use frozen-request references; MP 240-byte wire frames with 90-byte chunks.",
+    "final_package_retested": true
+  },
+  "release_pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
   "L0": "PASS",
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "PASS",
-  "publication_record": "workshop-publication-0.2.4.json"
+  "L4": "NOT_RUN",
+  "acceptance_scope": "Incremental single-player regression only. Native multiplayer excluded by user, not credited as PASS.",
+  "publication_instruction": "User explicitly requested Workshop publication after experimental MP implementation and SP-only native acceptance."
 }

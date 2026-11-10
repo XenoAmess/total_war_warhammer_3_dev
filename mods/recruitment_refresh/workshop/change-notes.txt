@@ -1,15 +1,8 @@
-0.2.4（包含未单独发布的 0.2.3 修复）
-- 点击刷新时，选中的非空普通招募类别不足 3 名候选就补足到 3 名；已有更多候选时不缩减，重复刷新不持续累加。
-- 传奇、不朽、受伤、已招募和履历不明人物继续受到保护；补充候选不会绕过原版招募费用、容量或解锁条件。空池不自动生成。
-- 新增精确引擎构建校验，已验证 Windows x64 游戏 9.0.4 / 9.0.5；未知构建停止原生刷新。
-- 明确禁止商队、车队等特殊招募类型进入普通刷新；这不是特殊招募兼容支持。
-- 改善原生候选池校验失败和招募面板关闭失败的错误提示；保留结果不明时停止重试的保护。
-- 9.0.5 基斯里夫离线实机通过 1→3、2→3、5→5、保护人物保留、新增候选正常招募和原版按钮避让。不宣称全种族或其他 Mod 兼容。
+0.3.0 — 实验性联机同步 / Experimental multiplayer
+- 新增全端版本/候选状态比对与执行结果核对；联机会关闭所有端人物面板，完成后手动重开。
+- 类型检查使用请求派系，保护资格及生成参数完整比对，性别模板按稳定 ID 选取。
+- 修复游戏事件字符串截断导致的 stale 误判；单机使用一次性短引用，联机使用小分片。
+- 保留单击直接刷新、非空普通池至少 3 人和保护人物规则；商队/车队及特殊招募仍不支持。
+- 9.0.5 基斯里夫单机实测通过。联机仅离线模拟、未实机验收；全部玩家须相同包和依赖，不保证无失步或自动回滚。
 
-0.2.4 (includes the previously unpublished 0.2.3 fixes)
-- Refresh fills a selected nonempty ordinary subtype pool to at least 3 candidates. Larger pools retain their size; repeated refreshes do not keep adding candidates.
-- Protected characters remain. Normal recruitment costs, capacity and unlock requirements still apply. Empty pools are not automatically filled.
-- Exact engine-build validation for verified Windows x64 9.0.4 / 9.0.5 builds; unverified builds disable native refresh.
-- Caravan and convoy recruitment is explicitly excluded from ordinary refresh.
-- Clearer errors for native pool validation and panel closure failures; uncertain operations remain locked against automatic retries.
-- Verified offline on Kislev in 9.0.5: 1-to-3, 2-to-3, 5-to-5, protected characters, recruitment of added candidates and native button clearance. Universal faction or other-Mod compatibility is not claimed.
+Adds experimental all-peer synchronization with matching package/dependency and candidate-state checks. MP closes character panels on every peer; reopen manually afterward. Deterministic eligibility and gender planning, plus an event-truncation fix. SP one-click refresh, min-3 ordinary pools and character protections remain. Special caravan/convoy recruitment stays excluded. Kislev SP native regression passed on 9.0.5; native MP was NOT tested. No OOS or rollback guarantee.
