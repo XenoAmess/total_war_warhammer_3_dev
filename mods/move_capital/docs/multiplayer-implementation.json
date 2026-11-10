@@ -2,7 +2,8 @@
   "schema_version": 1,
   "mod_id": "move_capital",
   "version": "0.2.0",
-  "release_status": "OFFLINE_VERIFIED_FINAL_SP_IN_PROGRESS_NOT_PUBLISHED",
+  "recorded_at_utc": "2026-11-10T18:05:31.814036+00:00",
+  "release_status": "VERIFIED_SP_NOT_PUBLISHED",
   "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
   "pack_bytes": 34053,
   "offline_tests": {
@@ -82,7 +83,174 @@
   },
   "shared_tests": 90,
   "multiplayer_transport_simulations": 13,
-  "native_single_player": "FINAL_PACKAGE_IN_PROGRESS",
+  "native_single_player": "PASS",
   "native_multiplayer": "NOT_RUN_USER_REQUEST",
-  "prior_native_pass": "Initial candidate passed SP; shared wire transport subsequently corrected to 240-byte frames. Initial package acceptance is not credited to final hash."
+  "game_version": "9.0.5.0",
+  "game_exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
+  "steam_offline_before_launch": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-10T17:53:26.807775+00:00",
+    "nonce": "e678319c83f825a910f884a6d9b3cca8",
+    "reason": "observed",
+    "steam": {
+      "pid": 9512,
+      "birth_filetime": "134382896665849556",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-10T17:53:26.807775+00:00",
+      "nonce": "e678319c83f825a910f884a6d9b3cca8",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 9512,
+        "birth_filetime": "134382896665849556",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 9512,
+        "birth_filetime": "134382896665849556",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "1555866722432",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "native_log": "native-multiplayer-implementation-sp.log",
+  "native_markers": [
+    "SPLIT_CAPITAL_CAPTURE_NATIVE_PASS",
+    "CAPITAL_LAYOUT_PASS"
+  ],
+  "cleanup": {
+    "closed_at_utc": "2026-11-10T18:02:27.236244+00:00",
+    "removed": [
+      "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_acceptance.pack",
+      "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_move_capital.pack",
+      "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\scripts\\user.script.txt",
+      "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\xatw3_icon_media_20261101.save"
+    ],
+    "preferences_sha256": "84263128ce22010114381eb380d7310d01da4df9896f70d474ecfdf29207adc1"
+  },
+  "captures": [
+    {
+      "captured_at_utc": "2026-11-10T17:58:17.109826+00:00",
+      "hwnd": 2557348,
+      "game_pid": 14780,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\move_capital\\captures\\capital-9.0.5-before.png",
+      "sha256": "1aa8ac158b339bf355b110bbafa2e2a02883bddfeb119f2d4b65376d6e7b9cc5",
+      "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    },
+    {
+      "captured_at_utc": "2026-11-10T17:58:18.804368+00:00",
+      "hwnd": 2557348,
+      "game_pid": 14780,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\move_capital\\captures\\capital-9.0.5-confirmation.png",
+      "sha256": "06264a544f0a90daf075db2339acd91dac21077d70b3869fc0b8974090d6dfbd",
+      "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    },
+    {
+      "captured_at_utc": "2026-11-10T18:02:15.158017+00:00",
+      "hwnd": 2557348,
+      "game_pid": 14780,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\move_capital\\captures\\capital-final-after.png",
+      "sha256": "92c23826aaf2646ffcfcb7d23ee0189d8b721a8d94a2cfc18e7f36f2adaf73bc",
+      "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    },
+    {
+      "captured_at_utc": "2026-11-10T17:57:09.811794+00:00",
+      "hwnd": 2557348,
+      "game_pid": 14780,
+      "bbox": [
+        80,
+        45,
+        2480,
+        1395
+      ],
+      "file": "D:\\workspace\\.codex-wh3-runtime\\mp-implementation-20261111\\native\\move_capital\\captures\\final-ready-state.png",
+      "sha256": "a822642dd7f566ef5f648b8961f305967276494ad0003dc6edc8460119260c12",
+      "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+      "game_version": "9.0.5.0",
+      "method": "foreground_game_client_pixels"
+    }
+  ],
+  "limitations": [
+    "Multiplayer remains experimental; no actual multiplayer session tested.",
+    "No atomic recovery from asymmetric engine/native failure; pre-operation save required.",
+    "No Workshop upload was requested for this implementation task."
+  ],
+  "native_scope": {
+    "capital": "Zavastra -> Kislev",
+    "settlement_attributes_preserved": true,
+    "legacy_refresh_sequence_preserved": 57,
+    "label_within_button": true
+  }
 }

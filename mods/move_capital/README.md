@@ -2,6 +2,8 @@
 
 Development candidate **0.2.0** adds experimental multiplayer synchronization. Public Workshop remains **0.1.1**. Multiplayer native acceptance is deliberately excluded by the user; see [protocol, offline coverage and recovery limits](../../docs/multiplayer-transport.md) and [changelog](CHANGELOG.md). The published-version evidence below is historical.
 
+The final 0.2.0 package passed offline tests and isolated Kislev single-player UI/transaction regression on 9.0.5; see [candidate evidence](docs/multiplayer-implementation.json). This does not establish native multiplayer compatibility.
+
 Game update check: 0.1.1 also passed isolated Kislev native UI/transaction checks on **9.0.5.0 / build 26403568**, with the package unchanged. See [compatibility evidence](docs/compatibility-9.0.5.json).
 
 **ID:** `move_capital`

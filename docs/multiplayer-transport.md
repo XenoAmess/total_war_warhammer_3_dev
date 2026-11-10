@@ -30,3 +30,7 @@ UI 提交权限属于本机派系，模型执行权限则属于事件中 CQI 解
 `tests/test_multiplayer.py` 用独立 Lua 5.1 实例和一个有序广播日志，覆盖全端恰好一次、慢端屏障、负票、快照差异、并发、缺 Mod、取消、成员变化、分片、重放、异常锁定，以及真实迁都运行模块的远端执行和本地反馈。它没有连接多人游戏。专属回归另覆盖刷新指纹、稳定性别模板和请求派系元数据。
 
 单机实机结果和包哈希分别保存在各 Mod 的 `docs/multiplayer-implementation.json`。联机实机状态必须保持 `NOT_RUN_USER_REQUEST`；本次未更新工坊。
+
+最终候选已分别通过 Windows x64 / 9.0.5 的单机回归：迁都实际改变首都且保持目标城属性及旧招募状态；刷新验证牧首 5→5、波耶 1→3、保护人物保留、正常招募和原生按钮避让。证据见[迁都](../mods/move_capital/docs/multiplayer-implementation.json)与[招募](../mods/recruitment_refresh/docs/multiplayer-implementation.json)。共用测试 90 项（其中传输模拟 13 项）、迁都专属 49 项、招募专属 72 项通过。这里只证明所测单机范围，不扩大为联机、全种族或其他 Mod 兼容验收。
+
+游戏已退出，测试包/存档/脚本和生成的依赖 DLL 已清理，原偏好已恢复；Steam 主动离线的最终后台读回见[收尾回执](multiplayer-implementation-cleanup.json)。本地模型候选的传输、截断及拒绝记录见[执行账本](local-model-multiplayer-implementation-20261111.json)，没有将不完整候选拼接为生产实现。
