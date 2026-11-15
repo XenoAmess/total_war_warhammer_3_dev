@@ -1,0 +1,168 @@
+{
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.1",
+  "candidate_only": true,
+  "published": false,
+  "pack_sha256": "1aa8500497b3d2234a77a365794a47f73f11c668a49a1217a0fefe4e95c2ab9a",
+  "pack_bytes": 70163,
+  "offline": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "lua_version": [
+      5,
+      1
+    ],
+    "compiled_lua_files": 5,
+    "production_logic_tests": [
+      "protect_unique",
+      "protect_immortal",
+      "protect_leader",
+      "protect_wounded",
+      "protect_starting",
+      "protect_recruited",
+      "protect_special",
+      "protect_unknown_history",
+      "protect_wrong_scope",
+      "pool_order_independent_fingerprint",
+      "successful_replacement_preserves_protected",
+      "ten_refreshes_do_not_accumulate",
+      "duplicate_does_not_mutate",
+      "stale_pool_does_not_mutate",
+      "native_layout_failure_rejects_before_spawning",
+      "past_turn_rejected",
+      "wrong_faction_rejected",
+      "invalid_action_rejected",
+      "unsupported_subtype_rejected",
+      "spawn_failure_never_deletes_old",
+      "uncertain_invalid_new_locks_operation",
+      "uncertain_overflow_evicts_locks_operation",
+      "uncertain_remove_fail_locks_operation",
+      "uncertain_remove_lies_locks_operation",
+      "partial_success_is_not_full_success",
+      "unverified_refresh_never_mutates_or_consumes_sequence",
+      "oversized_pool_never_creates_another_candidate",
+      "four_candidates_preserve_protected_entry",
+      "one_candidate_refresh_grows_to_three_and_stops",
+      "protected_only_small_pool_adds_without_deleting_unknown_character",
+      "two_candidates_add_one_without_deleting_protected",
+      "empty_and_special_pools_never_grow",
+      "addition_failure_after_replacement_locks_partial_operation",
+      "addition_eviction_is_unknown_and_stops_without_more_deletions",
+      "removed_capital_action_never_changes_state",
+      "fingerprint_covers_all_mutation_relevant_fields",
+      "pool_order_never_changes_gender_seed_or_plan"
+    ],
+    "production_ui_tests": [
+      "candidate_selection_and_category_switch",
+      "panel_events_clear_previous_target",
+      "single_click_closes_without_confirmation_and_dispatches_once",
+      "delayed_close_uses_frozen_request",
+      "closure_timeout_never_dispatches_or_replays",
+      "success_reopens_lord_tab_without_modal",
+      "success_reopens_hero_panel_without_modal",
+      "rejected_result_reopens_then_shows_dismiss_only_error",
+      "uncertain_result_keeps_error_and_does_not_reopen",
+      "native_layout_rejection_explains_compatibility_without_replaying",
+      "small_protected_pool_can_submit_additions_without_confirmation",
+      "unsafe_actions_and_unavailable_pool_do_not_close_panel",
+      "large_single_player_snapshot_stays_local_and_reference_consumes_once",
+      "multiplayer_single_click_uses_shared_channel_without_local_model_dispatch",
+      "hidden_lord_page_cannot_supply_hero_target",
+      "icon_scales_and_offsets",
+      "native_controls_avoided_without_enumerating_rebuilt_cards",
+      "narrow_gap_left_fallback_and_no_space",
+      "hidden_controls_ignored_disabled_controls_reserved",
+      "alternate_anchor_reflow_and_reuse",
+      "missing_anchors_icon_and_bounds_hide",
+      "busy_locked_unverified_unsupported_disable",
+      "selected_lore_overrides_shared_agent_cache_and_previous_target",
+      "hovered_selected_subtype_and_agent_tabs_remain_selected",
+      "unsupported_or_unreadable_selected_candidate_blocks_agent_inference",
+      "unselected_cards_require_one_unambiguous_visible_subtype",
+      "hidden_candidate_parent_cannot_override_current_lore"
+    ],
+    "native_bridge_rejection_tests": [
+      "missing_extension_fails_without_engine_calls",
+      "ambiguous_signatures_never_call_engine",
+      "changed_expiry_call_site_never_calls_engine",
+      "unknown_build_never_scans_functions_or_reads_objects",
+      "missing_or_malformed_image_identity_never_scans",
+      "special_details_rejected_before_native_object_dereference"
+    ],
+    "runtime_metadata_tests": [
+      "discover_ordinary_subtype_from_engine_metadata",
+      "special_training_and_legendary_subtypes_are_not_auto_generated",
+      "unknown_agent_and_unreadable_metadata_are_rejected",
+      "subtype_key_is_validated_before_context_evaluation",
+      "caravan_and_convoy_rejected_before_cache_metadata_or_spawn",
+      "discovered_types_do_not_leak_between_campaign_instances",
+      "multiplayer_metadata_uses_request_faction_and_bypasses_ui_cache",
+      "startup_observations_survive_unavailable_pool_metadata_without_losing_protections"
+    ],
+    "test_count": 78,
+    "fixture_pre_world_created": true,
+    "fixture_command_environment": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "release_pack_sha256": "1aa8500497b3d2234a77a365794a47f73f11c668a49a1217a0fefe4e95c2ab9a",
+    "release_pack_bytes": 70163,
+    "native_game_acceptance": "NOT_RUN"
+  },
+  "game_sources": [
+    {
+      "pack": "db.pack",
+      "entry": "db/agent_subtypes_tables/data__",
+      "bytes": 146728,
+      "sha256": "057ab6c0169764bf0fb6b0041dd8e8459dee6d60ac3bfa7cbaa3e65907e3ad0e"
+    },
+    {
+      "pack": "db.pack",
+      "entry": "db/agents_tables/data__",
+      "bytes": 396,
+      "sha256": "11e1c7635b8c02fc4599a95e47a0751597b5652f809774d729d41e783ebb7e88"
+    },
+    {
+      "pack": "data_script.pack",
+      "entry": "script/campaign/wh3_campaign_caravans_core.lua",
+      "bytes": 65827,
+      "sha256": "8f16b3ce60bcb85f32818f1164aa260d934868a00dcddead28b9cfc89c5c69d7"
+    },
+    {
+      "pack": "data_script.pack",
+      "entry": "script/campaign/wh3_campaign_ivory_road_events.lua",
+      "bytes": 50658,
+      "sha256": "9e1d10dd5f042275d8b9abf830a1619b38efa8df7b403038dd6e269fd99c7286"
+    },
+    {
+      "pack": "ui3.pack",
+      "entry": "ui/campaign ui/character_panel.twui.xml",
+      "bytes": 208411,
+      "sha256": "758c402ab3be48d99cff671e94e98109376e609291e9f86e78f924830bfc2839"
+    }
+  ],
+  "native_installed_baseline_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+  "native_experiment": {
+    "shared_wizard_refresh": "1->3; one replaced, two added",
+    "other_wizard_pool": "3 retained, fingerprint identical",
+    "hovered_tab_state": "selected_hover",
+    "clawspeaker_life_beasts_shadows": "empty pool, direct spawn returned null; no native refresh claim"
+  },
+  "workshop_feedback": {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217#comment_562547345756046753",
+    "comment": "震旦爪语者生命系这类刷新无效",
+    "timestamp": 1794405078,
+    "html_sha256": "b2f2820b70eb45f1ade6cd5c66281ad037adaa27c52b6157ddfd21107b0ea604"
+  },
+  "cleanup": {
+    "game_exited": true,
+    "owned_packs_removed": true,
+    "user_script_restored": true,
+    "quit_for_script_returned_to_frontend": true,
+    "owned_frontend_process_terminated": true,
+    "preferences_restored": true,
+    "offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\steam-after-cleanup-1794764002466861900.json",
+    "steam_status": "offline",
+    "offline_mode": true,
+    "cleanup_attempt_notes": "QuitForScript returned to frontend; owned process terminated after bounded exit wait. First cleanup stopped after pack removal due to CRLF byte comparison of own user script. Re-read normalized UTF-16 text matched exact owned mod list; subsequent cleanup restored original absent script and preferences."
+  }
+}

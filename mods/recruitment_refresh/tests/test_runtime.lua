@@ -72,5 +72,50 @@ test('multiplayer_metadata_uses_request_faction_and_bypasses_ui_cache', function
     assert(not runtime.supported('test_fire_wizard', 'remote_player'))
     generated = true
 end)
+test('startup_observations_survive_unavailable_pool_metadata_without_losing_protections', function()
+    local ready, metadata_calls, saved = false, 0, nil
+    local owner = {is_null_interface = function() return false end, is_human = function() return true end,
+        name = function() return 'empire' end, command_queue_index = function() return 12 end}
+    local null = {is_null_interface = function() return true end}
+    local details = {}
+    for id = 101, 106 do
+        local cqi = id
+        details[id] = {is_null_interface = function() return false end,
+            faction = function() return owner end, character_subtype_key = function() return 'test_startup_wizard' end,
+            family_member = function() return {command_queue_index = function() return cqi end} end,
+            start_pos_key = function() return cqi == 102 and 'startpos_character' or '' end,
+            character = function() return null end,
+            is_unique = function() return cqi == 103 end, is_immortal = function() return cqi == 104 end}
+    end
+    local startup_env = {out = env.out, common = {get_context_value = function(kind)
+        metadata_calls = metadata_calls + 1
+        if not ready then error('Pool not queryable before first tick') end
+        return kind == 'CcoAgentSubtypeRecord' and true or 'wizard'
+    end}, cm = {
+        get_faction = function() return owner end, get_local_faction_name = function() return 'empire' end,
+        get_family_member_by_cqi = function(_, id)
+            return {character_details = function() return details[id] end}
+        end,
+        get_saved_value = function() return saved end, set_saved_value = function(_, _, value) saved = value end}}
+    package.loaded['script.campaign.xatw3_campaign_utilities.native_pool'] = {new = function()
+        return {initialize = function() return true end}
+    end}
+    local runtime = runtime_module.new(logic, startup_env)
+    for id = 101, 106 do runtime.observe_entry(details[id]) end
+    runtime.mark_recruited(105)
+    assert(#runtime.pending_entries == 6 and metadata_calls == 0)
+    ready = true
+    runtime.initialize()
+    assert(runtime.initialized and runtime.refresh_verified and #runtime.pending_entries == 0)
+    assert(runtime.state.history['101'].provenance == 'ordinary_generated')
+    for _, id in ipairs({102, 103, 104}) do assert(runtime.state.history[tostring(id)].provenance == 'unknown') end
+    assert(runtime.state.history['105'].recruited)
+    local existing = runtime.state.history['106']
+    runtime.mark_recruited(106); runtime.observe_entry(details[106])
+    assert(runtime.state.history['106'] == existing and existing.recruited)
+    -- Loading an old save does not invent provenance for unobserved characters.
+    local reloaded = runtime_module.new(logic, startup_env); reloaded.initialize()
+    assert(reloaded.state.history['999'] == nil and reloaded.state.history['105'].recruited)
+end)
 package.loaded['script.campaign.xatw3_campaign_utilities.native_pool'] = original
 return passed

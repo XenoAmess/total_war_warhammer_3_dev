@@ -1,0 +1,249 @@
+{
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "model": "qwen38-coder",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116",
+  "post_count": 7,
+  "actual_client_peak_in_flight": 2,
+  "server_inference_concurrency_observed": false,
+  "results": [
+    {
+      "task": "final-review",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "final-review",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:25:36.949040+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 86956,
+        "request_sha256": "b9ee626106a2dad509d78d218ae3df7f91d4ffb32891abb0fccc8b186c6bfeba",
+        "http_status": 200,
+        "http_headers_ms": 2805.6101999245584,
+        "first_nonempty_content_delta_ms": 2808.085900032893,
+        "usage": {
+          "prompt_tokens": 21029,
+          "completion_tokens": 1081,
+          "total_tokens": 22110
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-a6b5142d65ac8d6b",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:25:46.963452+00:00",
+        "total_ms": 10014.405200025067,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "rejected",
+        "notes": "No actionable proven new finding. Runtime spawn requires supported which fills agent mapping; gender-only generation intentional. Card traversal already existed, remains bounded to fallback without exact subtype tabs."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\final-review"
+    },
+    {
+      "task": "native-selected-states",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "native-selected-states",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:27:01.999042+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 87153,
+        "request_sha256": "429b85a59b404cd91cdba348ea7b472a2006ac4a337f2800d29e901d9acba0fa",
+        "http_status": 200,
+        "http_headers_ms": 849.5617001317441,
+        "first_nonempty_content_delta_ms": 852.0394000224769,
+        "usage": {
+          "prompt_tokens": 21080,
+          "completion_tokens": 1524,
+          "total_tokens": 22604
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-9a1ab2ba60d2e34c",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:27:12.448608+00:00",
+        "total_ms": 10449.561200104654,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "production_helper_adopted",
+        "notes": "Exact selected/selected_hover helper and applicable replacements adopted, owner also fixes previous-target check. Test suggestions incomplete; owner tests both states and both card levels."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\native-selected-states"
+    },
+    {
+      "task": "runtime-investigation",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "runtime-investigation",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:13:39.419627+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 79376,
+        "request_sha256": "9c7142a8e76a4506036d41930aaa37212be6e39784437906c19fa82e0b5997e3",
+        "http_status": 200,
+        "http_headers_ms": 3231.845000060275,
+        "first_nonempty_content_delta_ms": 3236.4290000405163,
+        "usage": {
+          "prompt_tokens": 19151,
+          "completion_tokens": 3231,
+          "total_tokens": 22382
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-a34bf175f65ebcd7",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:14:06.911778+00:00",
+        "total_ms": 27492.160100024194,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "rejected",
+        "notes": "Unsupported cache/layout hypotheses and proposed starting-character protection removal rejected."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\runtime-investigation"
+    },
+    {
+      "task": "startup-observation-fix",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "startup-observation-fix",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:18:50.889232+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 79851,
+        "request_sha256": "160b9d0b9d88b0668f74818498ee9b5aacfdd8fa3a66faf6c4877bef71e26bea",
+        "http_status": 200,
+        "http_headers_ms": 2124.68420015648,
+        "first_nonempty_content_delta_ms": 2125.919200014323,
+        "usage": {
+          "prompt_tokens": 19229,
+          "completion_tokens": 1129,
+          "total_tokens": 20358
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-9ca7624cfb2f7fc3",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:19:01.950566+00:00",
+        "total_ms": 11061.337599996477,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "production_hunk_adopted",
+        "notes": "Queue-before-supported production hunk adopted; incomplete mock test rejected and replaced by owner tests."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\startup-observation-fix"
+    },
+    {
+      "task": "ui-investigation",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "ui-investigation",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:13:39.419108+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 79461,
+        "request_sha256": "7a28e95bbebd42c71c2f0281135f988432292153af8c7d40cb74a23dbdfca527",
+        "http_status": 200,
+        "http_headers_ms": 3232.1838999632746,
+        "first_nonempty_content_delta_ms": 3236.698599997908,
+        "usage": {
+          "prompt_tokens": 19167,
+          "completion_tokens": 2246,
+          "total_tokens": 21413
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-bdcb4889bae3bef3",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:14:00.586688+00:00",
+        "total_ms": 21167.578999884427,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "rejected",
+        "notes": "Initial analysis confused agent/subtype mappings and existing hidden-page guard; no code adopted."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\ui-investigation"
+    },
+    {
+      "task": "ui-selection-fix",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "ui-selection-fix",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:18:50.888712+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 80054,
+        "request_sha256": "c7facf02abdf874c1db055647cd15c23e9595f6b2e1941d55af212b0f22be69e",
+        "http_status": 200,
+        "http_headers_ms": 1943.5119999106973,
+        "first_nonempty_content_delta_ms": 1945.9418999031186,
+        "usage": {
+          "prompt_tokens": 19258,
+          "completion_tokens": 2005,
+          "total_tokens": 21263
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-9e383ae4e0a5bb3f",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:19:07.176044+00:00",
+        "total_ms": 16287.32889983803,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "owner_modified",
+        "notes": "Adopted card-before-agent direction; owner adds real ambiguity/unsupported blocking, visibility and outer-card checks missing from candidate."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\ui-selection-fix"
+    },
+    {
+      "task": "ui-selection-regressions",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "ui-selection-regressions",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:21:15.794009+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 79913,
+        "request_sha256": "43c9ee0874f44f95c39ded237846cc45d555b977dc6baf54ec3ebb7aad9b99b2",
+        "http_status": 200,
+        "http_headers_ms": 1182.9451001249254,
+        "first_nonempty_content_delta_ms": 1185.4910000693053,
+        "usage": {
+          "prompt_tokens": 19253,
+          "completion_tokens": 2009,
+          "total_tokens": 21262
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-b669e4425ac6d06d",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:21:29.256598+00:00",
+        "total_ms": 13462.583400076255,
+        "error": null
+      },
+      "candidate_complete": true,
+      "review": {
+        "decision": "rejected",
+        "notes": "Wrong spy/general mapping, missing listview/button_wh3 and cached types polluting fixture; owner implemented tests."
+      },
+      "raw_directory": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-20261116\\models\\ui-selection-regressions"
+    }
+  ],
+  "verification": {
+    "shared_tests": 90,
+    "mod_tests": 78,
+    "candidate_native_game_acceptance": "NOT_RUN",
+    "baseline_native_shared_agent_pool_experiment": "PASS",
+    "clawspeaker_native_refresh": "NOT_REPRODUCED"
+  }
+}

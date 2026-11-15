@@ -1,5 +1,6 @@
 # 招募候选刷新文档
 
+- [0.3.1 爪语者反馈与同类刷新问题排查](clawspeaker-refresh-0.3.1.md)
 - [0.2.0 拆分设计与最简验收](split-release.md)
 - [当前验收摘要](acceptance-results.json)
 - [当前验收报告](acceptance-report.md)

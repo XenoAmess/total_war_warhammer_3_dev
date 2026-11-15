@@ -1,4 +1,7 @@
 local M = {}
+local function is_selected(state)
+    return state == 'selected' or state == 'selected_hover'
+end
 local PREFIX = 'xatw3_'
 
 function M.new(runtime, logic, environment)
@@ -110,18 +113,58 @@ function M.new(runtime, logic, environment)
                         or lords and lords:Visible() and lords or nil
                 end
             end
+            local exact_matches = 0
             if categories then
                 for subtype in pairs(runtime.subtypes or {}) do
                     local tab = find_uicomponent(categories, subtype)
-                    if tab and tab:Visible() and tab:CurrentState() == 'selected' then
+                    if tab and tab:Visible() and is_selected(tab:CurrentState()) then
                         self.selected_subtype = subtype
+                        exact_matches = exact_matches + 1
                     end
                 end
-                if not self.selected_subtype then
+                if exact_matches > 1 then self.selected_subtype = nil end
+            end
+            local has_list = false
+            if categories and exact_matches == 0 then
+                -- Shared agent tabs do not identify a lore. Read the current
+                -- cards before consulting the incomplete subtype discovery cache.
+                local list = find_uicomponent(panel, 'character_list')
+                has_list = list ~= nil and list ~= false
+                for _, id in ipairs({'listview', 'list_clip', 'list_box'}) do
+                    list = list and list:Visible() and find_uicomponent(list, id) or nil
+                end
+                if list and list:Visible() then
+                    local ok, subtype = pcall(function()
+                        local selected, selected_count, only, mixed, count = nil, 0, nil, false, 0
+                        for index = 0, list:ChildCount() - 1 do
+                            local card = UIComponent(list:Find(index))
+                            local candidate = card:Visible() and find_uicomponent(card, 'button_wh3')
+                            if candidate and candidate:Visible() then
+                                local read, key = pcall(function()
+                                    local context = candidate:GetContextObject('CcoCampaignCharacter')
+                                    return context and context:Call('AgentSubtypeRecordContext.Key')
+                                end)
+                                if not read or type(key) ~= 'string' or key == '' then key = nil end
+                                count = count + 1
+                                if count == 1 then only = key end
+                                if not key or key ~= only then mixed = true end
+                                if is_selected(card:CurrentState()) or is_selected(candidate:CurrentState()) then
+                                    selected, selected_count = key, selected_count + 1
+                                end
+                            end
+                        end
+                        if selected_count == 1 then return selected end
+                        if selected_count == 0 and not mixed then return only end
+                    end)
+                    if ok and runtime.supported(subtype) then self.selected_subtype = subtype end
+                end
+                -- An unreadable, unsupported or ambiguous list must not fall
+                -- back to a different cached subtype on the same agent tab.
+                if not has_list then
                     local selected, matches = nil, 0
                     for subtype, agent in pairs(runtime.subtypes or {}) do
                         local tab = find_uicomponent(categories, agent)
-                        if tab and tab:Visible() and tab:CurrentState() == 'selected' then
+                        if tab and tab:Visible() and is_selected(tab:CurrentState()) then
                             selected, matches = subtype, matches + 1
                         end
                     end
@@ -131,29 +174,8 @@ function M.new(runtime, logic, environment)
                     local agent = runtime.subtypes and runtime.subtypes[previous_subtype]
                     local tab = agent and find_uicomponent(categories, agent)
                     if not self.selected_subtype and tab and tab:Visible()
-                        and tab:CurrentState() == 'selected' then
+                        and is_selected(tab:CurrentState()) then
                         self.selected_subtype = previous_subtype
-                    end
-                end
-            end
-            if categories and not self.selected_subtype then
-                local list = find_uicomponent(panel, 'character_list', 'listview', 'list_clip', 'list_box')
-                if list and list:Visible() then
-                    local fallback
-                    for index = 0, list:ChildCount() - 1 do
-                        local card = UIComponent(list:Find(index))
-                        local candidate = find_uicomponent(card, 'button_wh3')
-                        if candidate and candidate:Visible() then
-                            fallback = fallback or candidate
-                            if candidate:CurrentState() == 'selected' then fallback = candidate; break end
-                        end
-                    end
-                    if fallback then
-                        local ok, subtype = pcall(function()
-                            local context = fallback:GetContextObject('CcoCampaignCharacter')
-                            return context and context:Call('AgentSubtypeRecordContext.Key')
-                        end)
-                        if ok and runtime.supported(subtype) then self.selected_subtype = subtype end
                     end
                 end
             end

@@ -80,12 +80,12 @@ function M.new(logic, environment)
 
     function self.observe_entry(details)
         if not valid(details) or not valid(details:faction()) or not details:faction():is_human() then return end
-        local subtype = details:character_subtype_key()
-        if not self.supported(subtype, details:faction():name()) then return end
         if not self.initialized then
             self.pending_entries[#self.pending_entries + 1] = details:family_member():command_queue_index()
             return
         end
+        local subtype = details:character_subtype_key()
+        if not self.supported(subtype, details:faction():name()) then return end
         local id = details:family_member():command_queue_index()
         local key = tostring(id)
         if self.state.history[key] then return end
@@ -246,7 +246,7 @@ function M.new(logic, environment)
             if not self.can_remove_candidate(candidate.id) then return false, 'native_pool_unavailable' end
         end
         local mr = (environment._G or _G).memreader_plus
-        return true, sync.fields({'0.3.0', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
+        return true, sync.fields({'0.3.1', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
             self.state.next_sequence, self.subtypes[request.target], plan.fingerprint})
     end
 

@@ -1,0 +1,211 @@
+FRONTEND_READY
+COMMAND_RESULT ok=true result=nil
+1 campaign_select_new NewState
+3 tab_campaign default
+4 campaign_holder default
+5 campaign_button_holder NewState
+6 prologue_campaign_holder default
+8 campaign_image active
+7 CcoCampaignMapPlayableAreaRecord1247591265 default
+8 button_campaign_entry active
+7 CcoCampaignMapPlayableAreaRecord1589270586 default
+8 button_campaign_entry active
+5 campaign_select_holder default
+6 button_select_campaign selected
+7 campaign_text active
+7 choose_campaign_text active
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+CATHAY_LORD list true
+LORD_ENTRY list_clip true
+LORD_ENTRY vslider false
+COMMAND_RESULT ok=true result=nil
+START_CATHAY active
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+LOCAL_FACTION wh3_main_cth_the_northern_provinces initialized=true native=true
+SUBTYPE wh3_cp1_cth_clawspeaker_life supported=false agent=nil count=0
+SUBTYPE wh3_cp1_cth_clawspeaker_beasts supported=false agent=nil count=0
+SUBTYPE wh3_cp1_cth_clawspeaker_shadows supported=false agent=nil count=0
+SUBTYPE wh3_main_cth_alchemist supported=true agent=engineer count=3
+CANDIDATE wh3_main_cth_alchemist id=1646 history=ordinary_generated background=wh3_main_skill_innate_cth_fleet_footed_hero forename=names_name_1750473056 start= remove=true detail=nil
+CANDIDATE wh3_main_cth_alchemist id=1647 history=ordinary_generated background=wh3_main_skill_innate_cathay_1_hero forename=names_name_2038808067 start= remove=true detail=nil
+CANDIDATE wh3_main_cth_alchemist id=1648 history=ordinary_generated background=wh3_main_skill_innate_cth_disciplined_hero forename=names_name_362886112 start= remove=true detail=nil
+SUBTYPE wh3_main_cth_astromancer supported=true agent=wizard count=3
+CANDIDATE wh3_main_cth_astromancer id=1649 history=ordinary_generated background=wh3_main_skill_innate_cathay_3_hero forename=names_name_1449183142 start= remove=true detail=nil
+CANDIDATE wh3_main_cth_astromancer id=1650 history=ordinary_generated background=wh3_main_skill_innate_cathay_5_hero forename=names_name_958899167 start= remove=true detail=nil
+CANDIDATE wh3_main_cth_astromancer id=1651 history=ordinary_generated background=wh3_main_skill_innate_cathay_1_hero forename=names_name_1986349855 start= remove=true detail=nil
+COMMAND_RESULT ok=true result=nil
+ISOLATION_SPAWN wh3_cp1_cth_clawspeaker_life null=true
+ISOLATION_SPAWN wh3_cp1_cth_clawspeaker_beasts null=true
+ISOLATION_SPAWN wh3_cp1_cth_clawspeaker_shadows null=true
+COMMAND_RESULT ok=true result=nil
+SHARED_WIZARD_SPAWN null=false
+SHARED_WIZARD 16851 background=wh2_main_skill_innate_all_aggressive
+COMMAND_RESULT ok=true result=nil
+HERO_BUTTON active
+COMMAND_RESULT ok=false result=[string "xatw3_acceptance_command"]:1: assertion failed!
+LIVE_UI 0 root NewState
+LIVE_UI 1 ai_attack_targets_parent default
+LIVE_UI 1 3d_ui_parent NewState
+LIVE_UI 1 watermark_square NewState
+LIVE_UI 1 panel_manager NewState
+LIVE_UI 1 black_fade NewState
+LIVE_UI 1 cinematic_bars NewState
+LIVE_UI 1 under_advisor_docker NewState
+LIVE_UI 1 custom_loading_screen NewState
+LIVE_UI 3 button_continue active
+LIVE_UI 4 button_txt active
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+HERO_PANEL_OPEN_AFTER_LOADING_CONTINUE
+COMMAND_RESULT ok=false result=[string "xatw3_acceptance_command"]:1: No character panel
+LIVE_UI 0 root NewState
+LIVE_UI 1 ai_attack_targets_parent default
+LIVE_UI 1 3d_ui_parent NewState
+LIVE_UI 1 watermark_square NewState
+LIVE_UI 1 panel_manager NewState
+LIVE_UI 1 cinematic_bars NewState
+LIVE_UI 1 advice_interface NewState
+LIVE_UI 4 maximised_button_docker NewState
+LIVE_UI 4 button_toggle_options active
+LIVE_UI 2 minimised_button_docker NewState
+LIVE_UI 1 under_advisor_docker NewState
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+OPEN_HEROES_AFTER_SKIP
+CATEGORY lords_and_agents_holder true wh3
+CATEGORY  agent_parent true NewState
+CATEGORY   list_box true NewState
+CATEGORY    engineer true inactive
+CATEGORY     button_flame false default
+CATEGORY     icon_building_required true active
+CATEGORY     icon_tech_required false active
+CATEGORY     icon_pooled_resource_set_required false active
+CATEGORY     label true inactive
+CATEGORY     icon true active
+CATEGORY    wizard true inactive
+CATEGORY     button_flame false default
+CATEGORY     icon_building_required true active
+CATEGORY     icon_tech_required false active
+CATEGORY     icon_pooled_resource_set_required false active
+CATEGORY     label true inactive
+CATEGORY     icon true active
+CATEGORY   dy_agent_cap false NewState
+CATEGORY    icon_agent false dignitary
+CATEGORY  lord_parent false NewState
+CATEGORY   list_box true NewState
+COMMAND_RESULT ok=true result=nil
+TARGET_BEFORE nil
+LIVE_UI 0 root NewState
+LIVE_UI 1 ai_attack_targets_parent default
+LIVE_UI 1 3d_ui_parent NewState
+LIVE_UI 1 mission_indicator_parent NewState
+LIVE_UI 1 watermark_square NewState
+LIVE_UI 1 character_panel NewState
+LIVE_UI 4 button_info active
+LIVE_UI 5 button_cycle_right inactive
+LIVE_UI 5 button_cycle_left inactive
+LIVE_UI 4 button_load_character inactive
+LIVE_UI 4 button_confirm inactive
+LIVE_UI 5 button_txt inactive
+LIVE_UI 1 hud_campaign NewState
+LIVE_UI 5 button_subpanel_parent default
+LIVE_UI 6 button_subpanel NewState
+LIVE_UI 7 button_group_settlement NewState
+LIVE_UI 8 button_show_province active
+LIVE_UI 8 button_show_garrison active
+LIVE_UI 8 button_building_browser active
+LIVE_UI 8 button_create_army active
+LIVE_UI 8 button_agents selected
+LIVE_UI 8 button_instant_open_settings active
+LIVE_UI 5 button_flame default
+LIVE_UI 3 button_factions active
+LIVE_UI 3 war_coordination_button_holder default
+LIVE_UI 4 button_open_war_coordination inactive
+LIVE_UI 2 faction_buttons_docker NewState
+LIVE_UI 3 button_group_management NewState
+LIVE_UI 4 button_missions active
+LIVE_UI 4 button_diplomacy active
+LIVE_UI 4 button_technology active
+LIVE_UI 4 button_caravan active
+LIVE_UI 4 button_compass active
+LIVE_UI 5 cycle_button_arrow_previous active
+LIVE_UI 5 cycle_button_arrow_next active
+LIVE_UI 6 button_notification active
+LIVE_UI 5 button_skip_frame default
+LIVE_UI 5 button_skip active
+LIVE_UI 5 button_notification_settings_frame default
+LIVE_UI 5 button_notification_settings active
+LIVE_UI 4 button_end_turn active
+LIVE_UI 7 button_finance active
+LIVE_UI 1 menu_bar NewState
+LIVE_UI 2 buttongroup NewState
+LIVE_UI 3 button_menu active
+LIVE_UI 3 button_show_advice inactive
+LIVE_UI 3 button_help_panel active
+LIVE_UI 3 button_spell_browser active
+LIVE_UI 3 button_settings active
+LIVE_UI 3 button_search_panel active
+LIVE_UI 1 panel_manager NewState
+LIVE_UI 1 events none
+LIVE_UI 2 button_set NewState
+LIVE_UI 4 button_accept active
+LIVE_UI 4 button_zoom active
+LIVE_UI 1 advice_interface NewState
+LIVE_UI 4 maximised_button_docker NewState
+LIVE_UI 5 button_close active
+LIVE_UI 4 button_toggle_options active
+LIVE_UI 5 button_previous active
+LIVE_UI 5 button_next inactive
+LIVE_UI 2 minimised_button_docker NewState
+LIVE_UI 1 under_advisor_docker NewState
+COMMAND_RESULT ok=true result=nil
+ISOLATED_TAB_FORCED selected_hover
+COMMAND_RESULT ok=true result=nil
+ISOLATED_CARDS count=0
+COMMAND_RESULT ok=true result=nil
+SHARED_BACKEND_BEFORE count=1 eligible=1
+SHARED_BACKEND_RESULT REJECTED reason=native_pool_unavailable completed=0 added=nil
+COMMAND_RESULT ok=true result=nil
+CLOSED_PANEL visible=false
+NATIVE_SHARED_PREFLIGHT ok=true reason=nil
+COMMAND_RESULT ok=true result=nil
+SHARED_BACKEND_BEFORE count=1 eligible=1
+SHARED_BACKEND_RESULT SUCCEEDED reason=nil completed=1 added=2
+SHARED_BACKEND_REFRESH_PASS count=1->3 other_wizard_unchanged=3
+OWNED_TEST_SESSION_QUIT
+COMMAND_RESULT ok=true result=nil
+FRONTEND_READY
+CURRENT_UI 0 root NewState
+CURRENT_UI 1 hud_frontend NewState
+CURRENT_UI 1 watermark_square NewState
+CURRENT_UI 1 main NewState
+CURRENT_UI 2 theme_button_parent active
+CURRENT_UI 3 button_next_theme active
+CURRENT_UI 3 button_prev_theme active
+CURRENT_UI 3 buttons_holder default
+CURRENT_UI 4 buttons_list default
+CURRENT_UI 6 button_campaign active
+CURRENT_UI 7 button_txt active
+CURRENT_UI 6 button_battle active
+CURRENT_UI 7 button_txt active
+CURRENT_UI 6 button_multiplayer active
+CURRENT_UI 7 button_txt active
+CURRENT_UI 6 button_options active
+CURRENT_UI 7 button_txt active
+CURRENT_UI 5 buttons_holder default
+CURRENT_UI 6 button_narrative_viewer active
+CURRENT_UI 6 button_credits active
+CURRENT_UI 1 sp_frame NewState
+CURRENT_UI 3 button_quit active
+CURRENT_UI 1 frontend NewState
+CURRENT_UI 2 loading_screen_common NewState
+CURRENT_UI 4 loading_bar_parent NewState
+CURRENT_UI 5 loading_bar NewState
+CURRENT_UI 7 buttons_list default
+CURRENT_UI 8 button_previous_holder default
+CURRENT_UI 8 button_next_holder default
+COMMAND_RESULT ok=true result=nil

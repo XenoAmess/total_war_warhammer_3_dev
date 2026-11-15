@@ -11,6 +11,11 @@ local function fixture(scale,dx,dy)
   function c:CurrentState() return self.state or 'active' end
   function c:ChildCount() return #self.children end
   function c:Find(i) return self.children[i+1] end
+  function c:GetContextObject(kind)
+   if kind=='CcoCampaignCharacter' and self.subtype then
+    return {Call=function(_,key) assert(key=='AgentSubtypeRecordContext.Key');return self.subtype end}
+   end
+  end
   function c:SetVisible(v) self.visible=v end
   function c:SetTooltipText(v) self.tooltip=v end
   function c:SetInteractive(v) self.interactive=v end
@@ -129,5 +134,79 @@ test('busy_locked_unverified_unsupported_disable',function()
   elseif k=='unverified' then f.runtime.refresh_verified=false else f.ui.selected_subtype='other';f.lord_tab.state='active' end
   f.ui.refresh_buttons();assert(f.button.visible and not f.button.interactive)
  end
+end)
+local function candidate_list(f, agent)
+ f.lords.visible=false;f.agents.visible=true
+ local tab=f.comp(agent,f.agents);tab.state='selected'
+ local holder=f.comp('character_list',f.panel)
+ local view=f.comp('listview',holder);local clip=f.comp('list_clip',view);local box=f.comp('list_box',clip)
+ local types={wh_main_emp_bright_wizard='wizard',wh_main_emp_light_wizard='wizard',
+  wh3_cp1_cth_clawspeaker_life='spy',wh3_cp1_cth_clawspeaker_beasts='spy',wh3_cp1_cth_clawspeaker_shadows='spy'}
+ f.runtime.subtypes.cached=agent
+ f.runtime.supported=function(k)
+  if types[k] then f.runtime.subtypes[k]=types[k];return true end
+  return k=='cached'
+ end
+ local function card(subtype, selected, outer)
+  local c=f.comp('card_'..#box.children,box);local b=f.comp('button_wh3',c);b.subtype=subtype
+  if selected then
+   local state=type(selected)=='string' and selected or 'selected'
+   if outer then c.state=state else b.state=state end
+  end
+  return c,b
+ end
+ return card,box,clip
+end
+
+test('selected_lore_overrides_shared_agent_cache_and_previous_target',function()
+ for _,s in ipairs({'wh_main_emp_bright_wizard','wh3_cp1_cth_clawspeaker_life',
+  'wh3_cp1_cth_clawspeaker_beasts','wh3_cp1_cth_clawspeaker_shadows'}) do
+  for _,outer in ipairs({false,true}) do
+   for _,state in ipairs({'selected','selected_hover'}) do
+    local f=fixture();local add=candidate_list(f,s:match('clawspeaker') and 'spy' or 'wizard')
+    add('cached');add(s,state,outer);f.ui.selected_subtype='cached'
+    f.ui.refresh_buttons();assert(f.ui.selected_subtype==s and f.button.interactive)
+    -- Discovery of more subtypes must not change the current target.
+    f.runtime.subtypes.another=f.runtime.subtypes.cached
+    f.ui.refresh_buttons();assert(f.ui.selected_subtype==s and f.button.interactive)
+   end
+  end
+ end
+end)
+
+test('hovered_selected_subtype_and_agent_tabs_remain_selected',function()
+ local f=fixture();f.lord_tab.state='selected_hover';f.ui.refresh_buttons()
+ assert(f.ui.selected_subtype=='supported' and f.button.interactive)
+ f.lords.visible=false;f.agents.visible=true
+ f.runtime.subtypes.hero='wizard';f.runtime.supported=function(k) return k=='hero' end
+ local tab=f.comp('wizard',f.agents);tab.state='selected_hover';f.ui.refresh_buttons()
+ assert(f.ui.selected_subtype=='hero' and f.button.interactive)
+ f.runtime.subtypes.second='wizard';f.ui.refresh_buttons()
+ assert(f.ui.selected_subtype=='hero' and f.button.interactive)
+end)
+
+test('unsupported_or_unreadable_selected_candidate_blocks_agent_inference',function()
+ for _,subtype in ipairs({'special_training',false}) do
+  local f=fixture();local add=candidate_list(f,'wizard');add('cached');add(subtype,true)
+  f.ui.selected_subtype='cached';f.ui.refresh_buttons()
+  assert(f.ui.selected_subtype==nil and not f.button.interactive)
+ end
+end)
+
+test('unselected_cards_require_one_unambiguous_visible_subtype',function()
+ local f=fixture();local add=candidate_list(f,'spy')
+ add('wh3_cp1_cth_clawspeaker_life');add('wh3_cp1_cth_clawspeaker_life')
+ f.ui.refresh_buttons();assert(f.ui.selected_subtype=='wh3_cp1_cth_clawspeaker_life')
+ add('wh3_cp1_cth_clawspeaker_beasts')
+ f.ui.refresh_buttons();assert(f.ui.selected_subtype==nil and not f.button.interactive)
+end)
+
+test('hidden_candidate_parent_cannot_override_current_lore',function()
+ local f=fixture();local add,box,clip=candidate_list(f,'spy')
+ add('wh3_cp1_cth_clawspeaker_life');local hidden=add('wh3_cp1_cth_clawspeaker_beasts',true)
+ hidden.visible=false;f.ui.refresh_buttons();assert(f.ui.selected_subtype=='wh3_cp1_cth_clawspeaker_life')
+ clip.visible=false;f.ui.refresh_buttons();assert(f.ui.selected_subtype==nil and not f.button.interactive)
+ clip.visible=true
+ f.agents.visible=false;f.ui.refresh_buttons();assert(f.ui.selected_subtype==nil)
 end)
 return passed
