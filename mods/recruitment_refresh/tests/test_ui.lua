@@ -11,6 +11,11 @@ local function component(id, parent, subtype)
     function c:SetInteractive(v) self.interactive=v end
     function c:PropagatePriority() end
     function c:CurrentState() return self.state end
+    function c:ChildCount() local n=0;for _ in pairs(self.children) do n=n+1 end;return n end
+    function c:Find(index)
+        local keys={};for key in pairs(self.children) do keys[#keys+1]=key end;table.sort(keys)
+        return self.children[keys[index+1]]
+    end
     function c:GetContextObject(kind)
         if kind=='CcoAgentSubtypeRecord' and self.subtype then
             return {Call=function() return self.subtype end}
@@ -180,6 +185,36 @@ test('missing_or_hidden_lore_does_not_force_remembered_subtype',function()
         f.runtime.on_result({status='SUCCEEDED'});f.drain()
         assert(not clicked and f.dialogs==0)
     end
+end)
+test('reopen_preserves_native_category_alias_instead_of_inferring_from_subtype',function()
+    for _,state in ipairs({'selected','selected_hover'}) do
+        local f=fixture();local categories=f.panel.children.lords_and_agents_holder
+        categories.children.supported=nil
+        local page=component('lord_parent',categories);local list=component('list_box',page)
+        local legendary=component('legendary_lords',list);local alias=component('native_alias',list);alias.state=state
+        local clicked=false
+        function alias:SimulateLClick() self.state='selected_hover';legendary.state='active';clicked=true end
+        local hud=f.root.children.hud_campaign.children.hud_center_docker.children.button_create_army
+        function hud:SimulateLClick()
+            f.reopened=self.id;f.root.children.character_panel=f.panel;f.panel.visible=true
+            alias.state='active';legendary.state='selected'
+        end
+        f.start();f.panel.visible=false;f.drain()
+        f.ui.refresh_buttons=function() assert(clicked,'Native category alias was not restored') end
+        f.runtime.on_result({status='SUCCEEDED'});f.drain()
+        assert(clicked and f.reopened=='button_create_army')
+    end
+end)
+test('category_capture_uses_visible_page_and_never_changes_wire_request',function()
+    local f=fixture();f.runtime.subtypes.supported='spy'
+    local categories=f.panel.children.lords_and_agents_holder;categories.children.supported=nil
+    local lords=component('lord_parent',categories);lords.visible=false
+    local stale=component('hidden_lord',component('list_box',lords));stale.state='selected'
+    local agents=component('agent_parent',categories)
+    local current=component('native_agent_alias',component('list_box',agents));current.state='selected_hover'
+    f.start();assert(f.ui.reopen.category=='native_agent_alias')
+    f.panel.visible=false;f.drain()
+    assert(f.dispatched[1][2]=='xatw3|1|refresh|8|3|supported|sp1')
 end)
 test('rejected_result_reopens_then_shows_dismiss_only_error',function(f)
     f.start(); f.panel.visible=false; f.drain(); f.runtime.on_result({status='REJECTED',reason='stale'}); f.drain()

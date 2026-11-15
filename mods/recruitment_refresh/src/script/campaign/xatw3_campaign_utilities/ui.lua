@@ -13,6 +13,36 @@ function M.new(runtime, logic, environment)
     local function text(key) return common.get_localised_string(PREFIX .. key) end
     local function after(callback) cm:callback(callback, 0.1) end
 
+    local function active_categories(panel)
+        local holder = panel and find_uicomponent(panel, 'lords_and_agents_holder')
+        if not holder then return nil end
+        local agents = find_uicomponent(holder, 'agent_parent')
+        local lords = find_uicomponent(holder, 'lord_parent')
+        if agents or lords then
+            return agents and agents:Visible() and agents
+                or lords and lords:Visible() and lords or nil
+        end
+        return holder
+    end
+
+    local function selected_category(panel)
+        local ok, id = pcall(function()
+            local categories = active_categories(panel)
+            if not categories then return nil end
+            local list = find_uicomponent(categories, 'list_box') or categories
+            if not list:Visible() then return nil end
+            local selected, count = nil, 0
+            for index = 0, list:ChildCount() - 1 do
+                local child = UIComponent(list:Find(index))
+                if child and child:Visible() and is_selected(child:CurrentState()) then
+                    selected, count = child:Id(), count + 1
+                end
+            end
+            if count == 1 and type(selected) == 'string' and selected ~= '' then return selected end
+        end)
+        if ok then return id end
+    end
+
     local function button(id, panel, label)
         local component = core:get_or_create_component(PREFIX .. id,
             'ui/templates/square_small_button.twui.xml', panel)
@@ -100,19 +130,9 @@ function M.new(runtime, logic, environment)
         local root = core:get_ui_root()
         local panel = find_uicomponent(root, 'character_panel')
         if panel and panel:Visible() then
-            local categories = find_uicomponent(panel, 'lords_and_agents_holder')
+            local categories = active_categories(panel)
             local previous_subtype = self.selected_subtype
             self.selected_subtype = nil
-            if categories then
-                -- Hidden native pages retain selected child tabs. Search only
-                -- the currently visible page, never the recursive whole holder.
-                local agents = find_uicomponent(categories, 'agent_parent')
-                local lords = find_uicomponent(categories, 'lord_parent')
-                if agents or lords then
-                    categories = agents and agents:Visible() and agents
-                        or lords and lords:Visible() and lords or nil
-                end
-            end
             local exact_matches = 0
             if categories then
                 for subtype in pairs(runtime.subtypes or {}) do
@@ -246,6 +266,7 @@ function M.new(runtime, logic, environment)
         end
         if request.action == 'refresh' then
             self.reopen = {subtype = request.target,
+                category = selected_category(find_uicomponent(core:get_ui_root(), 'character_panel')),
                 button = runtime.subtypes and runtime.subtypes[request.target] == 'general'
                     and 'button_create_army' or 'button_agents'}
             -- Native recruitment cards cache the old character details. Let the
@@ -349,9 +370,10 @@ function M.new(runtime, logic, environment)
                     if b and b:Visible() and b:CurrentState() == 'active' then b:SimulateLClick() end
                     after(function()
                         local panel = find_uicomponent(root, 'character_panel')
-                        local tab = panel and find_uicomponent(panel, 'lords_and_agents_holder', reopen.subtype)
-                        if not tab and panel and runtime.subtypes then
-                            tab = find_uicomponent(panel, 'lords_and_agents_holder', runtime.subtypes[reopen.subtype])
+                        local categories = active_categories(panel)
+                        local tab = categories and find_uicomponent(categories, reopen.category or reopen.subtype)
+                        if not reopen.category and not tab and categories and runtime.subtypes then
+                            tab = find_uicomponent(categories, runtime.subtypes[reopen.subtype])
                         end
                         if tab and tab:Visible() and not is_selected(tab:CurrentState()) then tab:SimulateLClick() end
                         after(function()
