@@ -1,23 +1,13 @@
 {
   "account_activity_before_sdk_init": {
     "owner": "76561198273714027",
-    "offline": false,
-    "server_connected": true,
-    "server_logged_on": true,
-    "initial_connection_complete": true,
-    "initialized": true,
-    "statusInitialized": true,
-    "persona": 1,
-    "app": 0,
-    "gameid": "0",
-    "game": "",
-    "updated": 20752.400000095367,
-    "age_ms": 235.79999995231628,
-    "observed_at_utc": "2026-11-10T19:50:05.109Z",
-    "schema_version": 1,
-    "source": "live_own_account_persona_on_authenticated_server_connection",
-    "status": "CLIENT_PERSONA_IDLE",
-    "checked_at_utc": "2026-11-10T19:50:05.146736+00:00"
+    "status": "PUBLIC_PRESENCE_IDLE",
+    "game": null,
+    "online_state": "online",
+    "observed_at_utc": "2026-11-15T19:05:42.157406+00:00",
+    "server_date": "Sun, 15 Nov 2026 19:05:43 GMT",
+    "source": "steam_community_public_presence",
+    "response_sha256": "6fc39a41cdbb191d017d8ededd966d5fb3e297c41cbf97cd329f36321c08937d"
   },
   "owner": "76561198273714027",
   "app_id": 1142710,
@@ -26,14 +16,14 @@
   "required_items": [
     "3811098873"
   ],
-  "pack_sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+  "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
-  "version": "0.2.1",
-  "uploaded_at_utc": "2026-10-31T14:56:25.513808+00:00",
-  "verified_at_utc": "2026-11-04T18:18:32.269085+00:00",
+  "version": "0.3.1",
+  "uploaded_at_utc": "2026-11-15T19:05:50+00:00",
+  "verified_at_utc": "2026-11-15T19:14:08.089297+00:00",
   "visibility": "public",
-  "downloaded_pack_bytes": 41622,
-  "downloaded_pack_sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+  "downloaded_pack_bytes": 72103,
+  "downloaded_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
   "steam_final_mode": "offline",
   "mod_id": "recruitment_refresh",
   "release_acceptance": {
@@ -41,12 +31,13 @@
     "L1": "PASS",
     "L2": "PASS",
     "L3": "PASS",
-    "scope": "Single-player only",
-    "native_multiplayer": "NOT_RUN_USER_REQUEST"
+    "L4": "PASS",
+    "scope": "Incremental single-player regression of the exact cold-mounted final package on High Elves/Eataine. Equivalent shared multi-lore mechanism approved by user. No native Clawspeaker or multiplayer credit.",
+    "release_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62"
   },
-  "uploaded_version": "0.3.0",
+  "uploaded_version": "0.3.1",
   "uploaded_title": "招募候选刷新 | Recruitment Refresh",
-  "description_sha256": "26828256ff936a1bba7632f1495bd3d53e34c4bf78b1b701f9c70610b616903b",
+  "description_sha256": "14e2439fbef8ed82894e8ba4a9e279e8581669e2e6f16285bde5233177ebf84a",
   "preview_sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
   "final_offline_receipt": {
     "path": "D:\\workspace\\.codex-wh3-runtime\\launcher-both-followup-20261031T141338Z\\final-stable-after-publication-a01.json",
@@ -270,23 +261,23 @@
     "creator_app_id": 1142710,
     "consumer_app_id": 1142710,
     "filename": "",
-    "file_size": "68665",
+    "file_size": "72103",
     "file_url": "",
-    "hcontent_file": "9178893357148448106",
+    "hcontent_file": "8555866039596537043",
     "preview_url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
     "hcontent_preview": "13984720066538470627",
     "title": "招募候选刷新 | Recruitment Refresh",
-    "description": "[h1]招募候选刷新 / Recruitment Refresh[/h1]\n[b]0.3.0 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]\n\n[b]必需物品：memreader Plus，请订阅并同时启用。此次单机实测依赖版本 0.15.2。[/b] 迁都为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]独立 Mod[/url]，两者互不依赖。\n\n在普通领主/事务官招募页选择类别，点击底部“招募”右侧的刷新图标。免费，无额外回合冷却，单击直接刷新、不弹确认；选中的非空普通子类型不足 3 人时补足到 3 人，更多候选保持人数，不会持续累加。原版建筑、容量、费用和内容解锁条件保持。\n\n传奇、唯一、不朽、受伤、已招募及未知履历人物受到保护。商队、车队、冰雪宫廷训练、仪式及特殊来源不支持。空池不补员，旧档未知履历人物可能被保护，后续自然生成的普通候选才会获得可刷新履历。其他修改候选生成/招募池的 Mod 可能冲突，不宣称全种族或组合 Mod 兼容。\n\n[h2]实验性联机支持[/h2]\n[b]0.3.0 已加入多人同步，但未做联机实机验收，不保证无失步。[/b] 全部玩家须启用完全相同的本 Mod 包（包括语言）、memreader Plus 及其他 Mod/依赖版本。各端先关闭人物面板、比对版本/候选计划后执行，再核对结果。联机刷新会关闭所有端的人物面板，完成后需手动重开；单机仍自动返回招募页。\n\n混用版本、缺少 Mod、断线或成员变化可能拒绝或持续等待。原生调用单端失败不能自动回滚；结果不明或部分完成时停止操作，不自动重试。保留操作前独立存档，异常后读回该档，不手动清除锁。\n\n单机已在 9.0.5 基斯里夫通过牧首 5→5、波耶 1→3、保护人物保留、正常招募与原生控件避让。此次同时修复事件字符串截断造成的快照失效误判；候选保护和生成参数完整校验，补员性别模板按稳定人物 ID 选择。空间不足时隐藏图标。缺少依赖或引擎构建/原生结构未通过验证时停止刷新。禁用 Mod 不会撤销已保存的刷新和招募。\n\n[h2]English[/h2]\nRequires memreader Plus enabled alongside this Mod (SP tested with 0.15.2). Free one-click ordinary lord/hero candidate refresh in Immortal Empires, using the small icon beside Recruit. A selected nonempty ordinary subtype fills to at least 3; larger pools retain their size and repeated refreshes do not accumulate candidates. Normal buildings, capacity, gold and content requirements remain. Legendary, unique, immortal, wounded, recruited and unknown-history characters are protected. Empty pools, caravans/convoys, special training and ritual recruitment are excluded.\n\n[b]0.3.0 adds EXPERIMENTAL multiplayer synchronization; native multiplayer has NOT been tested. OOS-free operation is not guaranteed.[/b] All players need identical Mod packages (including language), memreader Plus and matching other Mods/dependencies. All peers close character panels, compare versions/candidate plans, execute and compare results. MP panels must be reopened manually afterward; SP still reopens automatically. Mixed versions, missing Mods, disconnects or membership changes may reject or stall operations. Native failure on one peer cannot be rolled back automatically. Keep a pre-operation save; restore it after uncertainty instead of retrying or clearing locks.\n\nSingle-player regression passed with Kislev on Windows x64 / game 9.0.5: Patriarch 5→5, Boyar 1→3, protected candidates, normal recruitment and native-control clearance. This update fixes event-string truncation and makes eligibility/gender planning deterministic. No universal faction or overhaul compatibility claim.\n\n[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/recruitment_refresh]源码与验收记录 / Source and acceptance[/url]\n\n[h2]实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg[/img]\n\n[h2]实机：单击刷新后的领主候选 / Lord candidates after one-click refresh[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg[/img]\n\n[h2]实机：牧首招募页刷新图标 / Native Patriarch recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg[/img]\n",
+    "description": "[h1]招募候选刷新 / Recruitment Refresh[/h1]\n[b]0.3.1 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]\n\n[b]必需物品：memreader Plus，请订阅并同时启用。此次单机实测依赖版本 0.15.2。[/b] 迁都为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]独立 Mod[/url]，两者互不依赖。\n\n在普通领主/事务官招募页选择类别，点击底部“招募”右侧的刷新图标。免费，无额外回合冷却，单击直接刷新、不弹确认；选中的非空普通子类型不足 3 人时补足到 3 人，更多候选保持人数，不会持续累加。原版建筑、容量、费用和内容解锁条件保持。\n\n传奇、唯一、不朽、受伤、已招募及未知履历人物受到保护。商队、车队、冰雪宫廷训练、仪式及特殊来源不支持。空池不补员，旧档未知履历人物可能被保护，后续自然生成的普通候选才会获得可刷新履历。其他修改候选生成/招募池的 Mod 可能冲突，不宣称全种族或组合 Mod 兼容。\n\n[h2]实验性联机支持[/h2]\n[b]0.3.0 已加入多人同步，但未做联机实机验收，不保证无失步。[/b] 全部玩家须启用完全相同的本 Mod 包（包括语言）、memreader Plus 及其他 Mod/依赖版本。各端先关闭人物面板、比对版本/候选计划后执行，再核对结果。联机刷新会关闭所有端的人物面板，完成后需手动重开；单机仍自动返回招募页。\n\n混用版本、缺少 Mod、断线或成员变化可能拒绝或持续等待。原生调用单端失败不能自动回滚；结果不明或部分完成时停止操作，不自动重试。保留操作前独立存档，异常后读回该档，不手动清除锁。\n\n0.3.1 修复同职业多法术系可能选错刷新目标、鼠标悬停选中态未识别、刷新后返回默认法术系/分类，以及开局普通候选履历观察遗漏。9.0.5 高精单机实测：生命系 1→3、高等系 6→6、王子分类刷新、未知履历人物保留、正常招募及按钮避让；其他法术系候选保持不变。[b]本机没有巴什瓦角色包授权，爪语者未直接实测；按用户确认，以同机制多法术系验收后发布。联机仍未实机验收。[/b] 空间不足时隐藏图标。缺少依赖或引擎构建/原生结构未通过验证时停止刷新。禁用 Mod 不会撤销已保存的刷新和招募。\n\n[h2]English[/h2]\nRequires memreader Plus enabled alongside this Mod (SP tested with 0.15.2). Free one-click ordinary lord/hero candidate refresh in Immortal Empires, using the small icon beside Recruit. A selected nonempty ordinary subtype fills to at least 3; larger pools retain their size and repeated refreshes do not accumulate candidates. Normal buildings, capacity, gold and content requirements remain. Legendary, unique, immortal, wounded, recruited and unknown-history characters are protected. Empty pools, caravans/convoys, special training and ritual recruitment are excluded.\n\n[b]0.3.0 adds EXPERIMENTAL multiplayer synchronization; native multiplayer has NOT been tested. OOS-free operation is not guaranteed.[/b] All players need identical Mod packages (including language), memreader Plus and matching other Mods/dependencies. All peers close character panels, compare versions/candidate plans, execute and compare results. MP panels must be reopened manually afterward; SP still reopens automatically. Mixed versions, missing Mods, disconnects or membership changes may reject or stall operations. Native failure on one peer cannot be rolled back automatically. Keep a pre-operation save; restore it after uncertainty instead of retrying or clearing locks.\n\n0.3.1 fixes wrong-lore targeting on shared agent tabs, selected-hover detection, restoring the native lore/category after refresh, and startup candidate-history observation. High Elf SP regression on Windows x64 / 9.0.5 covers Life 1→3, High Magic 6→6, Prince category refresh, protected unknown-history candidates, normal recruitment and native-control clearance; other lore pools remain unchanged. [b]Clawspeakers were NOT directly tested because this machine lacks the Bhashiva Character Pack license. Release uses equivalent multi-lore native acceptance with the user's explicit approval. Native multiplayer remains untested.[/b] No universal faction or overhaul compatibility claim.\n\n[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/recruitment_refresh]源码与验收记录 / Source and acceptance[/url]\n\n[h2]实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg[/img]\n\n[h2]实机：单击刷新后的领主候选 / Lord candidates after one-click refresh[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg[/img]\n\n[h2]实机：牧首招募页刷新图标 / Native Patriarch recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg[/img]\n",
     "time_created": 1793412332,
-    "time_updated": 1794340209,
+    "time_updated": 1794769550,
     "visibility": 0,
     "banned": 0,
     "ban_reason": "",
-    "subscriptions": 121,
-    "favorited": 12,
-    "lifetime_subscriptions": 148,
-    "lifetime_favorited": 15,
-    "views": 445,
+    "subscriptions": 147,
+    "favorited": 14,
+    "lifetime_subscriptions": 186,
+    "lifetime_favorited": 17,
+    "views": 517,
     "tags": [
       {
         "tag": "mod"
@@ -380,5 +371,90 @@
     "status": "offline",
     "offline_mode": true
   },
-  "native_multiplayer": "NOT_RUN_USER_REQUEST"
+  "native_multiplayer": "NOT_RUN_USER_REQUEST",
+  "pack_bytes": 72103,
+  "last_download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
+    "bytes": 72103,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-11-15T19:05:58.667899+00:00"
+  },
+  "last_publication_record": "docs/workshop-publication-0.3.1.json",
+  "steam_final_offline_receipt": {
+    "schema": "wh3.release-steam-offline/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-15T19:12:45.316303+00:00",
+    "nonce": "a65b0d45159dd1e2d9519265610a1ef1",
+    "status": "offline",
+    "steam": {
+      "pid": 25480,
+      "birth_filetime": "134392435266208063",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.23.65.88"
+    },
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19675800,
+      "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+      "file_id": "1125899908071526",
+      "mtime_ns": "1794535550000000000"
+    },
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-15T19:12:45.555850+00:00",
+      "nonce": "a65b0d45159dd1e2d9519265610a1ef1",
+      "module_base": "140711352926208",
+      "module_size": 19959808,
+      "value_rva": "18653399",
+      "value_address": "140711371579607",
+      "producer_rva": "6691596",
+      "producer_anchor_hex": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "producer_anchor_sha256": "e2ee13da1019c3cb41a999d4fda37bde192574390690cb2328c903de7fdd54c2",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 25480,
+        "birth_filetime": "134392435266208063",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "steam_after": {
+        "pid": 25480,
+        "birth_filetime": "134392435266208063",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "tray_manager_pointer_rva": "18645800",
+      "tray_manager_address": "1897145376896",
+      "tray_state_offset": "352",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    }
+  }
 }

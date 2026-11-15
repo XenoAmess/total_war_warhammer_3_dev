@@ -1,0 +1,2 @@
+{"steam_pid": 24124, "port": 8080, "target": "F3C4E04073C6A693E67125C5F33B3671", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "direct": true, "getterSource": "BIsOfflineMode(){return this.m_CurrentUser?.bIsOfflineMode}", "userGetterSource": "GetCurrentUser(){return this.m_CurrentUser}", "title": "SharedJSContext", "steamid": "76561198273714027"}}
+

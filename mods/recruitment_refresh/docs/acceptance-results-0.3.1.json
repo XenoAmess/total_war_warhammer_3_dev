@@ -3,7 +3,7 @@
   "mod_id": "recruitment_refresh",
   "version": "0.3.1",
   "recorded_at_utc": "2026-11-15T18:57:36.713689+00:00",
-  "release_status": "NATIVE_ACCEPTED_PUBLICATION_PENDING",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "release_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
   "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
   "pack_bytes": 72103,
@@ -13,7 +13,7 @@
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "acceptance_scope": "Incremental single-player regression of the exact cold-mounted final package on High Elves/Eataine. Equivalent shared multi-lore mechanism approved by user. No native Clawspeaker or multiplayer credit.",
   "user_instruction": "同机制实测并披露后发布",
   "offline_tests": {
@@ -258,18 +258,18 @@
     },
     {
       "file": "acceptance-0.3.1/cleanup.json",
-      "sha256": "47842869eedc2262919acc452ca64b07643e2d2e93bad9f09a53c6d64af72532",
-      "bytes": 693
+      "sha256": "b8d5a8449e8e20dc57ef22ee3e96aed6b3d503dd3e085637caaf72b19166e81c",
+      "bytes": 681
     },
     {
       "file": "acceptance-0.3.1/dlc-entitlement.json",
-      "sha256": "532629230b0ef77258d65ee58ae37f110da69166df07a639029ccef4e74d2cf2",
-      "bytes": 536
+      "sha256": "c1cbf16044c390880cdb3df1162812ce089593481fe07b48ffbbcc58a67dd8ea",
+      "bytes": 510
     },
     {
       "file": "acceptance-0.3.1/expected.json",
-      "sha256": "b84c58e8ec509f2ea45b045746f34b9c12668e4277c5eb5254c223e09572ac59",
-      "bytes": 222
+      "sha256": "ddcaebf0aa9a46a1bb1c6555466de3573e7b73c5b6c6bce4ff944cf6597e9220",
+      "bytes": 217
     },
     {
       "file": "acceptance-0.3.1/layout.json",
@@ -278,8 +278,8 @@
     },
     {
       "file": "acceptance-0.3.1/native-final.log",
-      "sha256": "3c7c0de9bb8a1949abe4e45f873696f460978c6cf6eb8e8587bbb001c4b0737d",
-      "bytes": 16
+      "sha256": "242b221542f9fd20a232af2eb36379d05b098c8b3289be9ed0d0426b2824bda8",
+      "bytes": 15
     },
     {
       "file": "acceptance-0.3.1/normal-recruitment.json",
@@ -288,18 +288,18 @@
     },
     {
       "file": "acceptance-0.3.1/steam-after-native-cleanup.json",
-      "sha256": "688c59cffad6850329dc0655458c02043fcd4cbd179f95f728783effa3cfde88",
-      "bytes": 2406
+      "sha256": "278e76395e02f3c3a26b38eb0e232487114485d1ea690bbb47995b49a9f2f794",
+      "bytes": 2332
     },
     {
       "file": "acceptance-0.3.1/steam-before-native-launch.json",
-      "sha256": "ea7462096debafb5f922261d7542ff37869531fd7c9b48e7eefa768a973064cf",
-      "bytes": 2406
+      "sha256": "0cbf23b69db33f78f58f7b1760b4ecdc5bc7c93c101a9119a0bdb7e24d6ced0c",
+      "bytes": 2332
     },
     {
       "file": "acceptance-0.3.1/verification.json",
-      "sha256": "7ddcc46ed19fc3f34197effcecf14c36486c632b5cffa245dab182498b681268",
-      "bytes": 1369
+      "sha256": "365dad3f22a029f692df6f303367ba1153f8f5ee5d906f29299223a4a5cd2a36",
+      "bytes": 1319
     }
   ],
   "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116",
@@ -315,5 +315,7 @@
     "offline_mode": true,
     "recovery": "Initial cleanup terminated owned game, removed temporary packs and restored settings, then UTF-8 save receipt was read with Windows GBK. Corrected explicit UTF-8; resumed cleanup verified save hashes and removed only owned saves. No acceptance result changed."
   },
-  "publication_record": "workshop-publication-0.3.1.json"
+  "publication_record": "workshop-publication-0.3.1.json",
+  "published_at_utc": "2026-11-15T19:05:50+00:00",
+  "verified_at_utc": "2026-11-15T19:14:08.089297+00:00"
 }

@@ -1,0 +1,29 @@
+{
+  "receipt": {
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "task_id": "steam1123-profile-review",
+    "attempt": 1,
+    "started_at_utc": "2026-11-15T19:03:21.387118+00:00",
+    "url": "http://192.168.1.11:8080/v1/chat/completions",
+    "request_bytes": 60455,
+    "request_sha256": "393dc46395bc72b207f5996f8a175e7500175439839275cf8202c9315d5693ce",
+    "http_status": 200,
+    "http_headers_ms": 2282.7522999141365,
+    "first_nonempty_content_delta_ms": 2285.6534998863935,
+    "usage": {
+      "prompt_tokens": 16551,
+      "completion_tokens": 1453,
+      "total_tokens": 18004
+    },
+    "finish_reason": "stop",
+    "sse_done": true,
+    "response_id": "chatcmpl-abed407b6af9e670",
+    "candidate_json_valid": true,
+    "finished_at_utc": "2026-11-15T19:03:31.828650+00:00",
+    "total_ms": 10441.532399971038,
+    "error": null
+  },
+  "candidate": "REJECTED_AS_EXECUTABLE: model put disassembly text into bytes.fromhex for final anchor. Findings about changed 0x160 tray offset and source joins used as review guidance only. Owner built actual byte anchors from PE, verified file/memory before/after and paired CEF getters.",
+  "request_sha256": "393dc46395bc72b207f5996f8a175e7500175439839275cf8202c9315d5693ce",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\models\\steam1123-profile-review"
+}

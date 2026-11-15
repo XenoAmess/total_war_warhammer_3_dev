@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "observed_at_utc": "2026-11-15T19:14:08.089297+00:00",
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.1",
+  "item_id": "3830548217",
+  "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
+  "public_description": "PASS",
+  "launcher_metadata": "PASS",
+  "preview_hash": "PASS",
+  "gallery_hashes": "PASS_UNCHANGED_EXISTING_IMAGES",
+  "subscription_download": "PASS",
+  "changelog": "PASS",
+  "steam_final_mode": "offline",
+  "native_scope": "Single-player equivalent multi-lore mechanism; Clawspeaker not directly tested, user-approved and publicly disclosed."
+}

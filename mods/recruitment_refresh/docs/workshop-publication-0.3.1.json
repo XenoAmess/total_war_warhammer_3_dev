@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.1",
+  "item_id": "3830548217",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+  "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
+  "pack_bytes": 72103,
+  "uploaded_at_utc": "2026-11-15T19:05:50+00:00",
+  "verified_at_utc": "2026-11-15T19:14:08.089297+00:00",
+  "release_scope": "Incremental single-player regression of the exact cold-mounted final package on High Elves/Eataine. Equivalent shared multi-lore mechanism approved by user. No native Clawspeaker or multiplayer credit.",
+  "user_instruction": "同机制实测并披露后发布",
+  "native_clawspeaker": "NOT_TESTED_MISSING_DLC_PUBLICLY_DISCLOSED",
+  "native_multiplayer": "NOT_TESTED",
+  "acceptance_file": "acceptance-results-0.3.1.json",
+  "description_sha256": "de3ad78dc60b62e130704b01b149832e54ebee21b816e978858ee2f30b642132",
+  "change_notes_sha256": "a487a83063a28756828f37fbc3ed3fd3544f8b2f84f355a92f7d240bbdb01f48",
+  "download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
+    "bytes": 72103,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-11-15T19:05:58.667899+00:00"
+  },
+  "public_changelog": {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=english",
+    "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\publication\\public-page-1794769809524092000-1.html",
+    "sha256": "01ae6ec0e48aa62da0f23e4d39e2803bf07f332e942f2bcd6ba7326a0b905a9f",
+    "bytes": 60547,
+    "contains_031": true,
+    "title": "Steam Community :: 招募候选刷新 | Recruitment Refresh :: Change Notes",
+    "changelog_links": [
+      "https://steamcommunity.com/login/home/?goto=sharedfiles%2Ffiledetails%2Fchangelog%2F3830548217%3Fl%3Denglish",
+      "https://steamcommunity.com/login/home/?goto=sharedfiles%2Ffiledetails%2Fchangelog%2F3830548217%3Fl%3Denglish",
+      "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217",
+      "https://steamcommunity.com/login/home/?goto=sharedfiles%2Ffiledetails%2Fchangelog%2F3830548217%3Fl%3Denglish%26insideModal%3D0%26requirelogin%3D1"
+    ]
+  },
+  "public_page": {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217&l=english",
+    "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\publication\\public-page-1794769809710736000-2.html",
+    "sha256": "458d7adce4019328f2c5e50828523082b06a2ad01032030339867864a0ced062",
+    "bytes": 93609,
+    "contains_031": true,
+    "title": "Steam Workshop::招募候选刷新 | Recruitment Refresh",
+    "changelog_links": [
+      "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217",
+      "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217"
+    ]
+  },
+  "launcher_metadata": {
+    "PACK_NAME": [
+      "xatw3_campaign_utilities.pack"
+    ],
+    "game_version": [
+      "589824"
+    ]
+  },
+  "images": [
+    {
+      "file": "preview.png",
+      "url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+      "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+      "status": "PASS",
+      "bytes": 49827
+    },
+    {
+      "slot": 0,
+      "file": "lord-refresh-icon.jpg",
+      "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "status": "PASS",
+      "bytes": 904363
+    },
+    {
+      "slot": 1,
+      "file": "lord-refreshed.jpg",
+      "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "status": "PASS",
+      "bytes": 904683
+    },
+    {
+      "slot": 2,
+      "file": "hero-final.jpg",
+      "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "status": "PASS",
+      "bytes": 887983
+    }
+  ],
+  "steam_final_mode": "offline",
+  "steam_final_receipt": {
+    "schema": "wh3.release-steam-offline/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-15T19:12:45.316303+00:00",
+    "nonce": "a65b0d45159dd1e2d9519265610a1ef1",
+    "status": "offline",
+    "steam": {
+      "pid": 25480,
+      "birth_filetime": "134392435266208063",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.23.65.88"
+    },
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19675800,
+      "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+      "file_id": "1125899908071526",
+      "mtime_ns": "1794535550000000000"
+    },
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-15T19:12:45.555850+00:00",
+      "nonce": "a65b0d45159dd1e2d9519265610a1ef1",
+      "module_base": "140711352926208",
+      "module_size": 19959808,
+      "value_rva": "18653399",
+      "value_address": "140711371579607",
+      "producer_rva": "6691596",
+      "producer_anchor_hex": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "producer_anchor_sha256": "e2ee13da1019c3cb41a999d4fda37bde192574390690cb2328c903de7fdd54c2",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 25480,
+        "birth_filetime": "134392435266208063",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "steam_after": {
+        "pid": 25480,
+        "birth_filetime": "134392435266208063",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "tray_manager_pointer_rva": "18645800",
+      "tray_manager_address": "1897145376896",
+      "tray_state_offset": "352",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    }
+  },
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116",
+  "evidence": [
+    {
+      "file": "publication-0.3.1/account-before-child.json",
+      "sha256": "31b4c82337740c20e87eb9f2434a35391bc77391f6838db3ae0e79b0b3f42a31",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.1/account-before-online.json",
+      "sha256": "80f0091e7991dd8c011773230939acf482961f1b538eb34d4358d94d6bff373a",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.1/account-before-publisher-sdk.json",
+      "sha256": "53c7bff6832a76915f06d985dedc652de58b2200bcfef6e4d8fac4f04b901b19",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.1/final-offline.json",
+      "sha256": "979bc0d02fe31e7e0ac2f7e5c2d361c04f35a457d1a2799804da827656c6f593",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.1/public-after.json",
+      "sha256": "399f7fcc80b4e76cd5c6b35e9a5d3c29c6e99ba4459de0efecc532bd9a8a9070",
+      "bytes": 6193
+    },
+    {
+      "file": "publication-0.3.1/public-pages-check.json",
+      "sha256": "d170f44f80a06dd5cd8cd7406e19bffa9702f761c5cdccf67bc62f82fb54dccc",
+      "bytes": 2502
+    },
+    {
+      "file": "publication-0.3.1/qualify_steam_1123.py",
+      "sha256": "2f7ce9124f57a16b1109834d2329a6a70fb4894478412cdf4ae06dd8d4259663",
+      "bytes": 2372
+    },
+    {
+      "file": "publication-0.3.1/recovery.json",
+      "sha256": "031b48a5a69de946cf14283c2757542c317fcfae55f14a42d8ed1a6a2d7b9b56",
+      "bytes": 1031
+    },
+    {
+      "file": "publication-0.3.1/remote-launcher-metadata.json",
+      "sha256": "e8c42d1ebf014a18789b8da076785a40da650e9472ab0f81cf680a3478567fa6",
+      "bytes": 99
+    },
+    {
+      "file": "publication-0.3.1/steam1123-controlled-offline.json",
+      "sha256": "eca2cc4abde2012847aa1d5f9f44cba3e574e17c15efd448441585a9bb2a00cb",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.1/steam1123-getters.txt",
+      "sha256": "c495e6ae9718aac26f6af1896c41db5f0fdba8796ab7d317b6e984849756c07e",
+      "bytes": 375
+    },
+    {
+      "file": "publication-0.3.1/steam1123-local-model-review.json",
+      "sha256": "b5dd2b04af8bd99e3c2b270a388a23566c79a258f7982df92b5c25fb44d2a258",
+      "bytes": 1355
+    },
+    {
+      "file": "publication-0.3.1/steam1123-native-first.json",
+      "sha256": "03e322ad13a25b94252377ec46c29044dfe1f0a9449ed3ad0e084c1971679a1e",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.1/steam1123-online-negative.json",
+      "sha256": "c022411417fe0fefbeebdc29ee39ac5b0f538d6c83283056d2b5d04f57da18f4",
+      "bytes": 480
+    },
+    {
+      "file": "publication-0.3.1/steam1123-static.json",
+      "sha256": "4a7491d6290b0d77d4de92f4cebe5bde0cc2e9368beeefbc2797e57ae3755837",
+      "bytes": 2204
+    },
+    {
+      "file": "publication-0.3.1/steam_release_probe.py",
+      "sha256": "8764e0da151d32024350e4053bb1bc1b3c3a30d83624d37834146cfe19a72c7c",
+      "bytes": 2698
+    },
+    {
+      "file": "publication-0.3.1/subscription-download.json",
+      "sha256": "d5cd8cbf8a5e8d7e2543349944299720a4a298641b6109507028775f7369668e",
+      "bytes": 409
+    },
+    {
+      "file": "publication-0.3.1/verification.json",
+      "sha256": "3a5b352a85670a85cfdd964436ef11dcb4af89e43e29b539a461a4777aa87347",
+      "bytes": 622
+    }
+  ]
+}

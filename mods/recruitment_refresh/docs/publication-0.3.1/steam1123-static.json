@@ -1,0 +1,38 @@
+{
+  "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+  "bytes": 19675800,
+  "image_size": 19959808,
+  "producers": [
+    {
+      "rva": 6691596,
+      "value_rva": 18653399,
+      "bytes": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "asm": "661b0c movzx r8d, byte ptr [rip + 0xb685c3]\n661b14 lea rdx, [rip + 0x7829c5]\n661b1b mov rcx, rbx\n661b1e call 0xa42600"
+    }
+  ],
+  "getters": [
+    {
+      "rva": 6395968,
+      "bytes": "40534883ec20488bd9e862ebf1ff488bc8488b10ff92880000008883870100004883c4205bc3",
+      "offset": 391
+    }
+  ],
+  "tray": [
+    {
+      "rva": 6685828,
+      "bytes": "803d4c9cb600007419488b0d947eb6004533c0ba04000000e83f0bf6ff",
+      "manager_rva": 18645800,
+      "asm": "660484 cmp byte ptr [rip + 0xb69c4c], 0\n66048b je 0x6604a6\n66048d mov rcx, qword ptr [rip + 0xb67e94]\n660494 xor r8d, r8d\n660497 mov edx, 4\n66049c call 0x5c0fe0"
+    }
+  ],
+  "callers": [
+    {
+      "rva": 7179695,
+      "bytes": "488d0d9a11af00e8850af4ff",
+      "object_rva": 18653008,
+      "asm": "6d8daf lea rcx, [rip + 0xaf119a]\n6d8db6 call 0x619840"
+    }
+  ],
+  "tray_callee_rva": 6033376,
+  "tray_asm": "5c0fe0 mov qword ptr [rsp + 0x18], rsi\n5c0fe5 mov qword ptr [rsp + 0x20], rdi\n5c0fea push r12\n5c0fec push r14\n5c0fee push r15\n5c0ff0 sub rsp, 0x30\n5c0ff4 lea r15, [rip + 0x6f93a5]\n5c0ffb mov rsi, r8\n5c0ffe mov edi, edx\n5c1000 mov r14, rcx\n5c1003 cmp edx, dword ptr [rcx + 0x160]\n5c1009 jne 0x5c1029\n5c100b test r8, r8\n5c100e lea rdx, [r14 + 0x164]\n5c1015 mov rcx, r15\n5c1018 cmovne rcx, r8\n5c101c call 0xaef610\n5c1021 test eax, eax\n5c1023 je 0x5c1196\n5c1029 mov qword ptr [rsp + 0x50], rbx\n5c102e mov dword ptr [r14 + 0x160], edi\n5c1035 dec edi\n5c1037 mov qword ptr [rsp + 0x58], rbp\n5c103c lea rbp, [rip + 0x806905]\n5c1043 mov rbx, rbp\n5c1046 cmp edi, 5\n5c1049 ja 0x5c10de\n5c104f lea rdx, [rip - 0x5c1056]\n5c1056 movsxd rax, edi\n5c1059 mov ecx, dword ptr [rdx + rax*4 + 0x5c11ac]\n5c1060 add rcx, rdx\n5c1063 jmp rcx\n5c1065 lea rbx, [rip + 0x8068f4]\n5c106c test rsi, rsi\n5c106f jne 0x5c10de\n5c1071 call 0xa44250\n5c1076 lea rdx, [rip + 0x8068fb]\n5c107d jmp 0x5c10d1\n5c107f lea rbx, [rip + 0x80690a]"
+}

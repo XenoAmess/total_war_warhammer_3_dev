@@ -1,0 +1,7 @@
+{
+  "initial_attempt": "No upload: Steam auto-update invalidated old exact source profile. Unknown never reported as offline.",
+  "profile": "Owner derived exact11.23.65.88 native profile from installed PE, including changed tray offset0x160. Task-local new receipt schema preserves canonical immutable source checks; canonical sibling repository unchanged.",
+  "published_attempt": "Upload, public description/preview/metadata and exact subscription passed. Initial changelog GET returned transient hidden/permission page; canonical anonymous GET later returned0.3.1. No reupload.",
+  "offline_recovery": "Post-SDK SharedJSContext stopped answering CDP; owned release controller interrupted after child exited. Graceful normal restart with -offline did not read back offline and was rejected. Fresh controlled client, verified current owner, GoOffline produced native(1,1)/tray(4,4) and direct/getter true. Graceful ordinary restart confirmed offline twice; temporary CEF endpoint removed.",
+  "game_or_account_takeover": false
+}

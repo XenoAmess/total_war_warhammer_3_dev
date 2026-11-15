@@ -1,0 +1,15 @@
+{
+  "schema": "wh3.release-steam-offline/v1",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-11-15T19:06:22.096541+00:00",
+  "nonce": "b0e25e78162517aa598a2f22060d5147",
+  "status": "unavailable",
+  "steam": {
+    "pid": 25672,
+    "birth_filetime": "134392427999019104",
+    "exe": "D:\\steam\\steam.exe",
+    "file_version": "11.23.65.88"
+  },
+  "reason": "native_online_not_qualified",
+  "detail": "native zero does not qualify current online mode"
+}
