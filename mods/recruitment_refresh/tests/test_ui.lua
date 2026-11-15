@@ -139,6 +139,48 @@ test('success_reopens_hero_panel_without_modal',function(f)
     f.start(); f.panel.visible=false; f.drain(); f.runtime.on_result({status='SUCCEEDED'}); f.drain()
     assert(f.reopened=='button_agents' and f.dialogs==0)
 end)
+test('success_restores_shared_agent_lore_after_native_rebuild',function(f)
+    f.runtime.subtypes.supported='spy'
+    local categories=f.panel.children.lords_and_agents_holder
+    categories.children.supported=nil
+    local agent=component('spy',categories)
+    function agent:SimulateLClick()
+        self.state='selected'
+        f.queue[#f.queue+1]=function()
+            local selection=component('general_selection_panel',f.panel)
+            local holder=component('main_holder',selection)
+            local lores=component('lore_select_parent',holder)
+            local types=component('type_list',component('wizard_type',lores))
+            local lore=component('supported',types)
+            function lore:SimulateLClick()
+                self.state='selected_hover';f.lore_clicked=true
+                f.queue[#f.queue+1]=function() f.lore_native_ready=true end
+            end
+        end
+    end
+    f.start();f.panel.visible=false;f.drain()
+    f.ui.refresh_buttons=function() assert(f.lore_native_ready,'Read cards before restoring the native lore') end
+    f.runtime.on_result({status='SUCCEEDED'});f.drain()
+    assert(f.reopened=='button_agents' and f.lore_clicked and f.dialogs==0)
+end)
+test('missing_or_hidden_lore_does_not_force_remembered_subtype',function()
+    for _,hidden in ipairs({false,true}) do
+        local f=fixture();f.runtime.subtypes.supported='spy'
+        local clicked=false
+        if hidden then
+            local selection=component('general_selection_panel',f.panel);selection.visible=false
+            local holder=component('main_holder',selection)
+            local lores=component('lore_select_parent',holder)
+            local types=component('type_list',component('wizard_type',lores))
+            local lore=component('supported',types)
+            function lore:SimulateLClick() clicked=true end
+        end
+        f.start();f.panel.visible=false;f.drain()
+        f.ui.refresh_buttons=function() assert(f.ui.selected_subtype==nil) end
+        f.runtime.on_result({status='SUCCEEDED'});f.drain()
+        assert(not clicked and f.dialogs==0)
+    end
+end)
 test('rejected_result_reopens_then_shows_dismiss_only_error',function(f)
     f.start(); f.panel.visible=false; f.drain(); f.runtime.on_result({status='REJECTED',reason='stale'}); f.drain()
     assert(f.reopened and f.dialog.visible and f.dialog.children.DY_text.text=='xatw3_error\n\nxatw3_stale')

@@ -353,9 +353,21 @@ function M.new(runtime, logic, environment)
                         if not tab and panel and runtime.subtypes then
                             tab = find_uicomponent(panel, 'lords_and_agents_holder', runtime.subtypes[reopen.subtype])
                         end
-                        if tab and tab:Visible() and tab:CurrentState() ~= 'selected' then tab:SimulateLClick() end
-                        self.selected_subtype = reopen.subtype
-                        finish()
+                        if tab and tab:Visible() and not is_selected(tab:CurrentState()) then tab:SimulateLClick() end
+                        after(function()
+                            -- Native lore tabs live outside the main agent tabs
+                            -- and are rebuilt after selecting their shared class.
+                            local panel = find_uicomponent(root, 'character_panel')
+                            local lore = panel and panel:Visible() and find_uicomponent(panel, 'general_selection_panel')
+                            local holder = lore and find_uicomponent(lore, 'main_holder')
+                            if holder then lore = lore:Visible() and holder or nil end
+                            for _, id in ipairs({'lore_select_parent', 'wizard_type', 'type_list', reopen.subtype}) do
+                                lore = lore and lore:Visible() and find_uicomponent(lore, id) or nil
+                            end
+                            if lore and lore:Visible() and not is_selected(lore:CurrentState()) then lore:SimulateLClick() end
+                            self.selected_subtype = nil
+                            after(finish)
+                        end)
                     end)
                 end)
             else finish() end
