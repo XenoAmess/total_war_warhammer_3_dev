@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
+  "cases": [
+    {
+      "target": "wh2_main_hef_mage_life",
+      "before": 1,
+      "after": 3,
+      "replaced": 1,
+      "added": 2,
+      "other_pools_unchanged": 8,
+      "returned_ui_target": "wh2_main_hef_mage_life",
+      "status": "PASS"
+    },
+    {
+      "target": "wh2_main_hef_mage_high",
+      "before": 6,
+      "after": 6,
+      "replaced": 6,
+      "added": 0,
+      "other_pools_unchanged": 8,
+      "returned_ui_target": "wh2_main_hef_mage_high",
+      "status": "PASS"
+    },
+    {
+      "target": "wh2_main_hef_prince",
+      "before": 4,
+      "after": 4,
+      "replaced": 3,
+      "added": 0,
+      "other_pools_unchanged": 5,
+      "returned_ui_target": "wh2_main_hef_prince",
+      "status": "PASS"
+    }
+  ],
+  "adversarial_checks_per_case": 6,
+  "normal_recruitment": {
+    "package_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
+    "actor": 1065,
+    "forces_before": 2,
+    "forces_after": 3,
+    "status": "PASS",
+    "id": 16863,
+    "gold_before": 6000,
+    "gold_after": 5150
+  },
+  "layout": "PASS",
+  "layout_scale": "100%",
+  "native_multiplayer": "NOT_TESTED",
+  "clawspeaker_direct": "NOT_TESTED_MISSING_DLC_USER_APPROVED_EQUIVALENT_SCOPE"
+}

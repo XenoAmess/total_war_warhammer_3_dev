@@ -1,0 +1,27 @@
+{
+  "observed_at_utc": "2026-11-15T17:54:34.955281+00:00",
+  "owner": "76561198273714027",
+  "operation": "read_only_offline_DLC_entitlement",
+  "dlc": [
+    {
+      "appid": 4399460,
+      "subscribed": false,
+      "installed": false
+    },
+    {
+      "appid": 2398540,
+      "subscribed": false,
+      "installed": false
+    },
+    {
+      "appid": 364360,
+      "subscribed": false,
+      "installed": false
+    },
+    {
+      "appid": 594570,
+      "subscribed": true,
+      "installed": true
+    }
+  ]
+}

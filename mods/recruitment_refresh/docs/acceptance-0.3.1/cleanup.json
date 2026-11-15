@@ -1,0 +1,12 @@
+{
+  "game_exited": true,
+  "owned_packs_removed": true,
+  "user_script_restored": true,
+  "quit_for_script_returned_to_frontend": true,
+  "owned_frontend_process_terminated": true,
+  "preferences_restored": true,
+  "offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\steam-after-cleanup-1794768999771161300.json",
+  "steam_status": "offline",
+  "offline_mode": true,
+  "recovery": "Initial cleanup terminated owned game, removed temporary packs and restored settings, then UTF-8 save receipt was read with Windows GBK. Corrected explicit UTF-8; resumed cleanup verified save hashes and removed only owned saves. No acceptance result changed."
+}

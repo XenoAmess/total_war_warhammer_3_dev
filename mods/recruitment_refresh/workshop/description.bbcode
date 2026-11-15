@@ -1,5 +1,5 @@
 [h1]招募候选刷新 / Recruitment Refresh[/h1]
-[b]0.3.0 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]
+[b]0.3.1 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]
 
 [b]必需物品：memreader Plus，请订阅并同时启用。此次单机实测依赖版本 0.15.2。[/b] 迁都为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]独立 Mod[/url]，两者互不依赖。
 
@@ -12,14 +12,14 @@
 
 混用版本、缺少 Mod、断线或成员变化可能拒绝或持续等待。原生调用单端失败不能自动回滚；结果不明或部分完成时停止操作，不自动重试。保留操作前独立存档，异常后读回该档，不手动清除锁。
 
-单机已在 9.0.5 基斯里夫通过牧首 5→5、波耶 1→3、保护人物保留、正常招募与原生控件避让。此次同时修复事件字符串截断造成的快照失效误判；候选保护和生成参数完整校验，补员性别模板按稳定人物 ID 选择。空间不足时隐藏图标。缺少依赖或引擎构建/原生结构未通过验证时停止刷新。禁用 Mod 不会撤销已保存的刷新和招募。
+0.3.1 修复同职业多法术系可能选错刷新目标、鼠标悬停选中态未识别、刷新后返回默认法术系/分类，以及开局普通候选履历观察遗漏。9.0.5 高精单机实测：生命系 1→3、高等系 6→6、王子分类刷新、未知履历人物保留、正常招募及按钮避让；其他法术系候选保持不变。[b]本机没有巴什瓦角色包授权，爪语者未直接实测；按用户确认，以同机制多法术系验收后发布。联机仍未实机验收。[/b] 空间不足时隐藏图标。缺少依赖或引擎构建/原生结构未通过验证时停止刷新。禁用 Mod 不会撤销已保存的刷新和招募。
 
 [h2]English[/h2]
 Requires memreader Plus enabled alongside this Mod (SP tested with 0.15.2). Free one-click ordinary lord/hero candidate refresh in Immortal Empires, using the small icon beside Recruit. A selected nonempty ordinary subtype fills to at least 3; larger pools retain their size and repeated refreshes do not accumulate candidates. Normal buildings, capacity, gold and content requirements remain. Legendary, unique, immortal, wounded, recruited and unknown-history characters are protected. Empty pools, caravans/convoys, special training and ritual recruitment are excluded.
 
 [b]0.3.0 adds EXPERIMENTAL multiplayer synchronization; native multiplayer has NOT been tested. OOS-free operation is not guaranteed.[/b] All players need identical Mod packages (including language), memreader Plus and matching other Mods/dependencies. All peers close character panels, compare versions/candidate plans, execute and compare results. MP panels must be reopened manually afterward; SP still reopens automatically. Mixed versions, missing Mods, disconnects or membership changes may reject or stall operations. Native failure on one peer cannot be rolled back automatically. Keep a pre-operation save; restore it after uncertainty instead of retrying or clearing locks.
 
-Single-player regression passed with Kislev on Windows x64 / game 9.0.5: Patriarch 5→5, Boyar 1→3, protected candidates, normal recruitment and native-control clearance. This update fixes event-string truncation and makes eligibility/gender planning deterministic. No universal faction or overhaul compatibility claim.
+0.3.1 fixes wrong-lore targeting on shared agent tabs, selected-hover detection, restoring the native lore/category after refresh, and startup candidate-history observation. High Elf SP regression on Windows x64 / 9.0.5 covers Life 1→3, High Magic 6→6, Prince category refresh, protected unknown-history candidates, normal recruitment and native-control clearance; other lore pools remain unchanged. [b]Clawspeakers were NOT directly tested because this machine lacks the Bhashiva Character Pack license. Release uses equivalent multi-lore native acceptance with the user's explicit approval. Native multiplayer remains untested.[/b] No universal faction or overhaul compatibility claim.
 
 [url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/recruitment_refresh]源码与验收记录 / Source and acceptance[/url]
 

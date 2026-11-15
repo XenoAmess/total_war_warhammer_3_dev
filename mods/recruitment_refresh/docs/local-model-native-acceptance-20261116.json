@@ -1,0 +1,158 @@
+{
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "model": "qwen38-coder",
+  "actual_posts": 5,
+  "actual_client_peak_in_flight": 1,
+  "transport_is_not_acceptance": true,
+  "tasks": [
+    {
+      "task_id": "clawspeaker-native-preflight",
+      "request_sha256": "48e1ccb56b085ed7fe2652d6b911cbad566a97bb9722af1fefb06e0ef561d71e",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "clawspeaker-native-preflight",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:43:28.568275+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 67110,
+        "request_sha256": "48e1ccb56b085ed7fe2652d6b911cbad566a97bb9722af1fefb06e0ef561d71e",
+        "http_status": 200,
+        "http_headers_ms": 2217.217900091782,
+        "first_nonempty_content_delta_ms": 2220.1281001325697,
+        "usage": {
+          "prompt_tokens": 15895,
+          "completion_tokens": 482,
+          "total_tokens": 16377
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-b12a88f479f77e8e",
+        "finished_at_utc": "2026-11-15T17:43:33.728999+00:00",
+        "total_ms": 5160.7482000254095,
+        "error": "ValueError('candidate missing required nonempty content')"
+      },
+      "review": "REJECTED: complete transport but executable preflight contract not fulfilled; owner performed entitlement and native DB probes.",
+      "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\models\\clawspeaker-native-preflight"
+    },
+    {
+      "task_id": "native-result-verifier",
+      "request_sha256": "8206a56ebc7d24ed461220cd77442ebecbc209b9c581ef153522d78b486e92c8",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "native-result-verifier",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T17:46:57.543859+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 68123,
+        "request_sha256": "8206a56ebc7d24ed461220cd77442ebecbc209b9c581ef153522d78b486e92c8",
+        "http_status": 200,
+        "http_headers_ms": 1186.7037999909371,
+        "first_nonempty_content_delta_ms": 1189.0934999100864,
+        "usage": {
+          "prompt_tokens": 16098,
+          "completion_tokens": 1792,
+          "total_tokens": 17890
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-af51beee8d4dd9f2",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T17:47:09.388481+00:00",
+        "total_ms": 11844.619399867952,
+        "error": null
+      },
+      "review": "ADOPTED_WITH_OWNER_CORRECTIONS: fixed reversed duplicate-old membership check, strict scope/positive ID checks and full protected-record equality; passed 18 adversarial mutations across 3 native cases.",
+      "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\models\\native-result-verifier"
+    },
+    {
+      "task_id": "restore-native-lore-after-refresh",
+      "request_sha256": "f933359a33313ca80ca36986da2bad324a222459eea72abc16e4f3707783c53c",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "restore-native-lore-after-refresh",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T18:13:13.723513+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 68089,
+        "request_sha256": "f933359a33313ca80ca36986da2bad324a222459eea72abc16e4f3707783c53c",
+        "http_status": 200,
+        "http_headers_ms": 1177.2628999315202,
+        "first_nonempty_content_delta_ms": 1179.784799925983,
+        "usage": {
+          "prompt_tokens": 16077,
+          "completion_tokens": 1139,
+          "total_tokens": 17216
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-adcadf3a071af958",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T18:13:22.212484+00:00",
+        "total_ms": 8488.966299919412,
+        "error": null
+      },
+      "review": "DIRECTION_ADOPTED_WITH_OWNER_IMPLEMENTATION: owner added asynchronous class/lore rebuild waits and actual visible-card re-resolution; removed unjustified agent exclusions.",
+      "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\models\\restore-native-lore-after-refresh"
+    },
+    {
+      "task_id": "restore-native-category-alias",
+      "request_sha256": "4b45ff6bdb7a0d1c48c0d2a0d35c703af6d99c0b3ea44c665a77827df3702abc",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "restore-native-category-alias",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T18:43:41.786892+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 82399,
+        "request_sha256": "4b45ff6bdb7a0d1c48c0d2a0d35c703af6d99c0b3ea44c665a77827df3702abc",
+        "http_status": 200,
+        "http_headers_ms": 2863.847800064832,
+        "first_nonempty_content_delta_ms": 2866.351699922234,
+        "usage": {
+          "prompt_tokens": 19600,
+          "completion_tokens": 4000,
+          "total_tokens": 23600
+        },
+        "finish_reason": "length",
+        "sse_done": true,
+        "response_id": "chatcmpl-b21b1f1dbef0d65c",
+        "finished_at_utc": "2026-11-15T18:44:07.298597+00:00",
+        "total_ms": 25511.700300034136,
+        "error": "ValueError('candidate not complete: length')"
+      },
+      "review": "REJECTED_TRUNCATED: finish_reason length; no truncated candidate adopted or spliced.",
+      "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\models\\restore-native-category-alias"
+    },
+    {
+      "task_id": "native-category-helper",
+      "request_sha256": "be4788e1629e32ccfc8cc70aba69d7b8fe7e4bae0634c752941be6920b160ad7",
+      "receipt": {
+        "machine_id": "pc-20260924rtuf-f11af23c08",
+        "task_id": "native-category-helper",
+        "attempt": 1,
+        "started_at_utc": "2026-11-15T18:48:51.038638+00:00",
+        "url": "http://192.168.1.11:8080/v1/chat/completions",
+        "request_bytes": 84169,
+        "request_sha256": "be4788e1629e32ccfc8cc70aba69d7b8fe7e4bae0634c752941be6920b160ad7",
+        "http_status": 200,
+        "http_headers_ms": 2565.8688000403345,
+        "first_nonempty_content_delta_ms": 2568.4969001449645,
+        "usage": {
+          "prompt_tokens": 20030,
+          "completion_tokens": 320,
+          "total_tokens": 20350
+        },
+        "finish_reason": "stop",
+        "sse_done": true,
+        "response_id": "chatcmpl-8c937d23e1964272",
+        "candidate_json_valid": true,
+        "finished_at_utc": "2026-11-15T18:48:55.395849+00:00",
+        "total_ms": 4357.203399995342,
+        "error": null
+      },
+      "review": "ADOPTED_WITH_OWNER_CORRECTIONS: hide inactive pages instead of returning holder; wrap whole capture in pcall; hidden list blocks capture; require nonempty string unique ID; capture frozen local category at SP submit, scoped restore; no wire change.",
+      "evidence_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\models\\native-category-helper"
+    }
+  ]
+}

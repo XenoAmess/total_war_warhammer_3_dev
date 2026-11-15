@@ -1,8 +1,8 @@
-0.3.0 — 实验性联机同步 / Experimental multiplayer
-- 新增全端版本/候选状态比对与执行结果核对；联机会关闭所有端人物面板，完成后手动重开。
-- 类型检查使用请求派系，保护资格及生成参数完整比对，性别模板按稳定 ID 选取。
-- 修复游戏事件字符串截断导致的 stale 误判；单机使用一次性短引用，联机使用小分片。
-- 保留单击直接刷新、非空普通池至少 3 人和保护人物规则；商队/车队及特殊招募仍不支持。
-- 9.0.5 基斯里夫单机实测通过。联机仅离线模拟、未实机验收；全部玩家须相同包和依赖，不保证无失步或自动回滚。
+0.3.1 — 多法术系刷新修复 / Multi-lore refresh fixes
+- 修复同职业多法术系可能选错刷新目标；以当前可见候选为准，识别鼠标悬停选中态。
+- 刷新后恢复原生法术系及分类，覆盖分类名与人物类型不同的领主页。
+- 修复开局普通候选履历观察遗漏，保留特殊、已招募与未知履历人物保护。
+- 9.0.5 高精单机实测：生命系 1→3、高等系 6→6、王子分类刷新、未知履历保护、正常招募及按钮避让；其他法术系候选不变。
+- 本机缺少巴什瓦角色包授权，爪语者未直接实测；经用户确认，以同机制多法术系实测并披露后发布。联机仍未实机验收。
 
-Adds experimental all-peer synchronization with matching package/dependency and candidate-state checks. MP closes character panels on every peer; reopen manually afterward. Deterministic eligibility and gender planning, plus an event-truncation fix. SP one-click refresh, min-3 ordinary pools and character protections remain. Special caravan/convoy recruitment stays excluded. Kislev SP native regression passed on 9.0.5; native MP was NOT tested. No OOS or rollback guarantee.
+Fixes wrong-lore targeting on shared agent tabs, selected-hover detection, native lore/category restoration and startup candidate-history observation. High Elf SP native regression on 9.0.5 covers Life 1→3, High Magic 6→6, Prince category refresh, protected unknown-history candidates, normal recruitment and button clearance; other lore pools remain unchanged. Clawspeakers were NOT directly tested: this machine lacks the Bhashiva Character Pack license. The user approved release after equivalent multi-lore native acceptance with this disclosure. Native multiplayer remains untested.
