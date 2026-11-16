@@ -94,7 +94,13 @@ function M.new(logic, environment)
             return
         end
         local subtype = details:character_subtype_key()
-        if not self.supported(subtype, details:faction():name()) then return end
+        if policy.caravan(subtype) or policy.finite(subtype) then
+            -- Pool-entry events run inside the engine's insertion transaction.
+            -- Inspect the supplied details, never enumerate a transient pool here.
+            local agent = safe(function() return details:character_type_key() end, nil)
+            if not ordinary_agents[agent] then return end
+            self.subtypes[subtype] = agent
+        elseif not self.supported(subtype, details:faction():name()) then return end
         local id = details:family_member():command_queue_index()
         local key = tostring(id)
         if self.state.history[key] then return end
@@ -116,6 +122,14 @@ function M.new(logic, environment)
         self.state.history[key] = self.state.history[key] or {provenance = 'unknown'}
         self.state.history[key].recruited = true
         self.persist(self.state)
+    end
+
+    function self.observe_recruited(character)
+        -- Creation/recruitment can fire before caravan-list migration completes.
+        -- Recording history needs no candidate-pool discovery or enumeration.
+        if valid(character) and valid(character:faction()) and character:faction():is_human() then
+            self.mark_recruited(character:family_member():command_queue_index())
+        end
     end
 
     function self.turn() return cm:model():turn_number() end

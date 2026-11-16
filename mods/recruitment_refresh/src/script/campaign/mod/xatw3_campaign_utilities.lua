@@ -10,17 +10,11 @@ core:add_listener('xatw3_pool_entries', 'ScriptEventNewCharacterEnteredRecruitme
     function(context) runtime.observe_entry(context:character_details()) end, true)
 
 core:add_listener('xatw3_recruited', 'CharacterRecruited', true, function(context)
-    local character = context:character()
-    if character:faction():is_human() and runtime.supported(character:character_subtype_key(), character:faction():name()) then
-        runtime.mark_recruited(character:family_member():command_queue_index())
-    end
+    runtime.observe_recruited(context:character())
 end, true)
 
 core:add_listener('xatw3_created', 'CharacterCreated', true, function(context)
-    local character = context:character()
-    if character:faction():is_human() and runtime.supported(character:character_subtype_key(), character:faction():name()) then
-        runtime.mark_recruited(character:family_member():command_queue_index())
-    end
+    runtime.observe_recruited(context:character())
 end, true)
 
 core:add_listener('xatw3_requests', 'UITrigger', function(context)

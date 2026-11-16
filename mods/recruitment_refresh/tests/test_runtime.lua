@@ -142,5 +142,24 @@ test('finite_generation_copies_training_points_and_reports_created_but_unreadabl
     assert(#added==3 and added[1]=='training_one' and added[2]=='training_two' and added[3]=='training_two')
     assert(runtime.state.history['501'].provenance=='ordinary_generated')
 end)
+test('special_entry_and_recruit_events_never_query_transient_candidate_lists',function()
+    local owner={is_null_interface=function() return false end,is_human=function() return true end,name=function() return 'cathay' end}
+    local null={is_null_interface=function() return true end}
+    local env={out=function() end,cm={model=function() error('must not inspect transient pool') end},
+        common={get_context_value=function() error('must not query recruitment during lifecycle event') end}}
+    local runtime=runtime_module.new(logic,env);runtime.state={history={}};runtime.initialized=true;runtime.persist=function() end
+    local id=700
+    for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh3_main_ksl_ice_witch_ice'}) do
+        id=id+1;local cqi=id
+        local fm={command_queue_index=function() return cqi end}
+        local details={is_null_interface=function() return false end,faction=function() return owner end,
+            character_subtype_key=function() return key end,character_type_key=function() return 'general' end,
+            family_member=function() return fm end,start_pos_key=function() return '' end,character=function() return null end,
+            is_unique=function() return false end,is_immortal=function() return false end}
+        runtime.observe_entry(details);assert(runtime.state.history[tostring(cqi)].provenance=='ordinary_generated')
+        local actor={is_null_interface=function() return false end,faction=function() return owner end,family_member=function() return fm end}
+        runtime.observe_recruited(actor);assert(runtime.state.history[tostring(cqi)].recruited)
+    end
+end)
 package.loaded['script.campaign.xatw3_campaign_utilities.native_pool'] = original
 return passed
