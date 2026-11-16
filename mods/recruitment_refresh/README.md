@@ -51,6 +51,7 @@ py -3.13 -m venv .venv
 
 - [预研报告](docs/feasibility-study.md)
 - [设计文档](docs/mod-design.md)
+- [商队与其他特殊招募的支持范围分析](docs/special-recruitment-scope-20261116.md)
 - [测试验收与发布方案](docs/test-acceptance-plan.md)
 
 根目录发布工具 `tools/workshop.py --mod recruitment_refresh` 默认要求本目录验收清单的 `mod_id`、包名、哈希一致且 L0–L3 全部 PASS。本次用户明确要求 0.2.1 先发布，显式使用[新包专用延期记录](docs/publication-waiver-0.2.1-20261031.json)仅延期该包的 L2/L3，原始待验状态保留。工坊资料和既有条目状态在 `workshop/`；工具更新同一个条目，上传回执与公开查询验证分别记录。
