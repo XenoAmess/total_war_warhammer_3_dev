@@ -100,45 +100,66 @@ function M.refresh(adapter, faction, subtype, expected)
     local result = {status = 'SUCCEEDED', completed = 0, total = #plan.replace, pairs = {},
         added = 0, new_ids = {}, target_count = math.max(#before, policy.minimum(subtype))}
     for _, old in ipairs(plan.replace) do
-        local new, reason, created_id = adapter.spawn_candidate(faction, subtype, old)
-        if not new then
-            if created_id then
-                result.status, result.reason, result.pending_new_id = 'UNKNOWN', reason or 'spawn_readback_failed', created_id
+        if policy.caravan(subtype) then
+            local background, reason = adapter.refresh_caravan_candidate(faction, subtype, old)
+            local current = adapter.read_pool(faction, subtype)
+            local expected_pool = {}
+            for i, candidate in ipairs(before) do
+                local expected_candidate = {}
+                for key, value in pairs(candidate) do expected_candidate[key] = value end
+                if candidate.id == old.id then expected_candidate.background = background end
+                expected_pool[i] = expected_candidate
+            end
+            if type(background) ~= 'string' or background == '' or background == old.background
+                or not current or M.fingerprint(current) ~= M.fingerprint(expected_pool) then
+                result.status, result.reason = 'UNKNOWN', reason or 'caravan_background_readback_failed'
                 return result
             end
-            result.status = result.completed == 0 and 'REJECTED' or 'PARTIAL'
-            result.reason = reason or 'spawn_failed'
-            return result
-        end
-        result.pending_new_id = new.id
-        local current = adapter.read_pool(faction, subtype)
-        local safe = current and #current == #before + 1 and contains(current, new.id)
-        if safe then
-            for _, candidate in ipairs(before) do
-                if not contains(current, candidate.id) then safe = false end
+            result.completed = result.completed + 1
+            result.pairs[#result.pairs + 1] = {old = old.id, new = old.id, mode = 'background',
+                old_background = old.background, new_background = background}
+            before = current
+        else
+            local new, reason, created_id = adapter.spawn_candidate(faction, subtype, old)
+            if not new then
+                if created_id then
+                    result.status, result.reason, result.pending_new_id = 'UNKNOWN', reason or 'spawn_readback_failed', created_id
+                    return result
+                end
+                result.status = result.completed == 0 and 'REJECTED' or 'PARTIAL'
+                result.reason = reason or 'spawn_failed'
+                return result
             end
-        end
-        if policy.finite(subtype) and new.trait_signature ~= old.trait_signature then safe = false end
-        if not safe or not adapter.verify_candidate(new) then
-            result.status, result.reason = 'UNKNOWN', 'invalid_generated_candidate'
-            return result
-        end
-        if not adapter.remove_candidate(old.id) then
-            result.status, result.reason = 'UNKNOWN', 'remove_failed'
-            return result
-        end
-        current = adapter.read_pool(faction, subtype)
-        safe = current and #current == #before and not contains(current, old.id) and contains(current, new.id)
-        if safe then
-            for _, candidate in ipairs(before) do
-                if candidate.id ~= old.id and not contains(current, candidate.id) then safe = false end
+            result.pending_new_id = new.id
+            local current = adapter.read_pool(faction, subtype)
+            local safe = current and #current == #before + 1 and contains(current, new.id)
+            if safe then
+                for _, candidate in ipairs(before) do
+                    if not contains(current, candidate.id) then safe = false end
+                end
             end
+            if policy.finite(subtype) and new.trait_signature ~= old.trait_signature then safe = false end
+            if not safe or not adapter.verify_candidate(new) then
+                result.status, result.reason = 'UNKNOWN', 'invalid_generated_candidate'
+                return result
+            end
+            if not adapter.remove_candidate(old.id) then
+                result.status, result.reason = 'UNKNOWN', 'remove_failed'
+                return result
+            end
+            current = adapter.read_pool(faction, subtype)
+            safe = current and #current == #before and not contains(current, old.id) and contains(current, new.id)
+            if safe then
+                for _, candidate in ipairs(before) do
+                    if candidate.id ~= old.id and not contains(current, candidate.id) then safe = false end
+                end
+            end
+            if not safe then result.status, result.reason = 'UNKNOWN', 'readback_failed'; return result end
+            result.completed = result.completed + 1
+            result.pairs[#result.pairs + 1] = {old = old.id, new = new.id}
+            result.pending_new_id = nil
+            before = current
         end
-        if not safe then result.status, result.reason = 'UNKNOWN', 'readback_failed'; return result end
-        result.completed = result.completed + 1
-        result.pairs[#result.pairs + 1] = {old = old.id, new = new.id}
-        result.pending_new_id = nil
-        before = current
     end
     for _ = 1, plan.add do
         local new, reason, created_id = adapter.spawn_candidate(faction, subtype, plan.seed)

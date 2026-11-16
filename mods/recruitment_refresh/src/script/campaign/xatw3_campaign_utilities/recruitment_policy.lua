@@ -11,9 +11,7 @@ function M.caravan(key) return caravans[key] == true end
 -- deliberately absent: their innate skills are part of their unique identity.
 function M.finite(key)
     if type(key) ~= 'string' then return false end
-    return key:match('^wh3_main_ksl_ice_witch_') ~= nil
-        or key:match('^wh3_main_ksl_frost_maiden_') ~= nil
-        or key:match('^wh2_dlc11_vmp_bloodline_') ~= nil
+    return key:match('^wh2_dlc11_vmp_bloodline_') ~= nil
         or key:match('^wh2_dlc13_lzd_slann_mage_priest_') ~= nil
         or key == 'wh2_main_lzd_slann_mage_priest' or key == 'wh2_main_lzd_slann_mage_priest_horde'
         or key:match('^wh3_dlc20_chs_daemon_prince_') ~= nil
@@ -56,6 +54,75 @@ function M.caravan_candidates(cm, faction, subtype)
     end)
     if ok then return result end
     return nil, tostring(result)
+end
+
+-- Vanilla 9.0.5 background weights. Unknown backgrounds are protected.
+local caravan_backgrounds = {
+    wh3_main_cth_lord_caravan_master = {
+        {'wh3_main_skill_innate_cth_caravan_master_Dragon-Blooded', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_Former-Artillery-Officer', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_Humble-Born', 2},
+        {'wh3_main_skill_innate_cth_caravan_master_Longma-Whisperer', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_Nan-Gau', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_Ogre-Ally', 2},
+        {'wh3_main_skill_innate_cth_caravan_master_Shang-Yang', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_Western-Idealist', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_cavalry', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_gunner', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_royalty', 1},
+        {'wh3_main_skill_innate_cth_caravan_master_stealth', 2},
+    },
+    wh3_dlc23_chd_lord_convoy_overseer = {
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_bull_centaur_master', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_cannonry_experience', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_connected', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_covert', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_hobgoblin_favour', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_kdaai_domination', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_metallic_resilience', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_monster_commander', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_ogre_controller', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_retired_daemonsmither', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_sharpshooter', 1},
+        {'wh3_dlc23_skill_innate_chd_convoy_overseer_war_machinist', 1},
+    },
+    wh3_cp1_cth_sawai_caravan = {
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_alchemy', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_artillery', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_cavalry', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_celestial', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_clawspeaker', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_gunpowder', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_jade', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_peasants', 2},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_ranged', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_sky', 1},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_tigers', 2},
+        {'wh3_cp1_skill_innate_cth_caravan_sawai_veteran', 2},
+    },
+}
+
+function M.caravan_background_known(key, background)
+    for _, item in ipairs(caravan_backgrounds[key] or {}) do
+        if item[1] == background then return true end
+    end
+    return false
+end
+
+function M.choose_caravan_background(key, old, random)
+    if not M.caravan_background_known(key, old) then return nil end
+    local total = 0
+    for _, item in ipairs(caravan_backgrounds[key]) do
+        if item[1] ~= old then total = total + item[2] end
+    end
+    local roll = random(total)
+    if type(roll) ~= 'number' or roll < 1 or roll > total or roll ~= math.floor(roll) then return nil end
+    for _, item in ipairs(caravan_backgrounds[key]) do
+        if item[1] ~= old then
+            roll = roll - item[2]
+            if roll <= 0 then return item[1] end
+        end
+    end
 end
 
 return M

@@ -226,6 +226,7 @@ function M.new(logic, environment)
     end
 
     function self.spawn_candidate(faction, subtype, old)
+        if policy.caravan(subtype) then return nil, 'caravan_identity_is_preserved' end
         if not self.supported(subtype, faction) then return nil, 'unsupported_subtype' end
         local details = cm:spawn_character_to_pool(faction, '', '', '', '', 30, old.male,
             self.subtypes[subtype], subtype, false, '')
@@ -240,6 +241,25 @@ function M.new(logic, environment)
         local candidate = self.describe(id, true)
         if not candidate then return nil, 'spawn_readback_failed', id end
         return candidate
+    end
+
+    function self.refresh_caravan_candidate(faction, subtype, old)
+        local fm = cm:get_family_member_by_cqi(old.id)
+        if not fm then return nil, 'caravan_unavailable' end
+        local details = fm:character_details()
+        if not policy.caravan(subtype) or details:faction():name() ~= faction
+            or details:character_subtype_key() ~= subtype or details:background_skill() ~= old.background then
+            return nil, 'caravan_changed'
+        end
+        local background = policy.choose_caravan_background(subtype, old.background,
+            function(total) return cm:random_number(total, 1) end)
+        if not background then return nil, 'caravan_background_unverified' end
+        local ok, reason = self.native_pool.reset_background(details)
+        if not ok then return nil, reason end
+        cm:character_details_add_skill_point(details, background)
+        if details:background_skill() ~= background or details:has_skill(old.background)
+            or not details:has_skill(background) then return nil, 'caravan_background_readback_failed' end
+        return background
     end
 
     function self.verify_candidate(candidate)
@@ -261,6 +281,12 @@ function M.new(logic, environment)
         end
         local fm = cm:get_family_member_by_cqi(id)
         if not fm then return false end
+        if policy.caravan(fm:character_details():character_subtype_key()) then
+            if not policy.caravan_background_known(fm:character_details():character_subtype_key(), fm:character_details():background_skill()) then
+                return false, 'caravan_background_unverified'
+            end
+            return self.native_pool.can_reset_background(fm:character_details())
+        end
         return self.native_pool.can_remove(fm:character_details())
     end
 

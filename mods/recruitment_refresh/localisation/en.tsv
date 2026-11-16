@@ -13,3 +13,4 @@ xatw3_refresh_unavailable	Enable memreader Plus (required Workshop item) and use
 xatw3_multiplayer_unavailable	Multiplayer synchronization is unavailable, busy or locked. Wait for all players; after an interrupted operation reload a pre-operation save. Multiplayer has not been tested in game.
 xatw3_request_too_large	This candidate pool is too large to verify safely. No candidates were changed.
 xatw3_refresh_limited_tooltip	Refresh unhired candidates while preserving their count and special unlocks. No minimum of 3. Training traits are retained; hired, travelling and other protected characters remain unchanged.
+xatw3_refresh_caravan_tooltip	Reroll the background of an unhired caravan leader while keeping their identity, name and recruitment slot. No minimum of 3. Trained, hired and travelling leaders are protected.

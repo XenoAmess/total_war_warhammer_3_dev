@@ -49,7 +49,7 @@ test('caravan_and_convoy_rejected_before_cache_metadata_or_spawn', function()
         local before=calls
         assert(not runtime.supported(key) and calls==before)
         local candidate,why=runtime.spawn_candidate('empire',key,{male=true})
-        assert(candidate==nil and why=='unsupported_subtype' and calls==before)
+        assert(candidate==nil and why==(policy_module.caravan(key) and 'caravan_identity_is_preserved' or 'unsupported_subtype') and calls==before)
         assert(not logic.eligible({faction='empire',subtype=key,in_pool=true,provenance='ordinary_generated'},'empire',key))
     end
 end)
@@ -120,10 +120,10 @@ end)
 test('finite_candidate_discovery_requires_a_live_pool_and_never_fixed_identity',function()
     generated=false;agent='general'
     local runtime=runtime_module.new(logic,env)
-    assert(runtime.supported('wh3_main_ksl_ice_witch_ice'))
+    assert(runtime.supported('wh2_main_lzd_slann_mage_priest'))
     assert(runtime.supported('wh2_dlc11_vmp_bloodline_blood_dragon'))
     assert(not runtime.supported('wh2_dlc09_tmb_tomb_king_alkhazzar_ii'))
-    agent=nil;assert(not runtime.supported('wh3_main_ksl_ice_witch_ice'))
+    agent=nil;assert(not runtime.supported('wh2_main_lzd_slann_mage_priest'))
     generated=true;agent='wizard'
 end)
 test('finite_generation_copies_training_points_and_reports_created_but_unreadable',function()
@@ -136,7 +136,7 @@ test('finite_generation_copies_training_points_and_reports_created_but_unreadabl
     local runtime=runtime_module.new(logic,fixture);runtime.state={history={}}
     runtime.supported=function() return true end;runtime.persist=function() end
     runtime.describe=function() return nil end
-    local c,why,id=runtime.spawn_candidate('kislev','wh3_main_ksl_ice_witch_ice',
+    local c,why,id=runtime.spawn_candidate('kislev','wh2_main_lzd_slann_mage_priest',
         {male=false,traits={{key='training_one',points=1},{key='training_two',points=2}}})
     assert(c==nil and why=='spawn_readback_failed' and id==501)
     assert(#added==3 and added[1]=='training_one' and added[2]=='training_two' and added[3]=='training_two')
@@ -149,7 +149,7 @@ test('special_entry_and_recruit_events_never_query_transient_candidate_lists',fu
         common={get_context_value=function() error('must not query recruitment during lifecycle event') end}}
     local runtime=runtime_module.new(logic,env);runtime.state={history={}};runtime.initialized=true;runtime.persist=function() end
     local id=700
-    for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh3_main_ksl_ice_witch_ice'}) do
+    for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh2_main_lzd_slann_mage_priest'}) do
         id=id+1;local cqi=id
         local fm={command_queue_index=function() return cqi end}
         local details={is_null_interface=function() return false end,faction=function() return owner end,
@@ -159,6 +159,13 @@ test('special_entry_and_recruit_events_never_query_transient_candidate_lists',fu
         runtime.observe_entry(details);assert(runtime.state.history[tostring(cqi)].provenance=='ordinary_generated')
         local actor={is_null_interface=function() return false end,faction=function() return owner end,family_member=function() return fm end}
         runtime.observe_recruited(actor);assert(runtime.state.history[tostring(cqi)].recruited)
+    end
+end)
+test('approved_caravans_never_use_generic_character_spawn',function()
+    local runtime=runtime_module.new(logic,env)
+    for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh3_dlc23_chd_lord_convoy_overseer','wh3_cp1_cth_sawai_caravan'}) do
+        local candidate,reason=runtime.spawn_candidate('cathay',key,{male=true})
+        assert(candidate==nil and reason=='caravan_identity_is_preserved')
     end
 end)
 package.loaded['script.campaign.xatw3_campaign_utilities.native_pool'] = original

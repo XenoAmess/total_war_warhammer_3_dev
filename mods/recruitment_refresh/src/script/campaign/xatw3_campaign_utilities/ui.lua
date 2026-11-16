@@ -209,7 +209,9 @@ function M.new(runtime, logic, environment)
                 end
             end
             local b = button('refresh_candidates', panel, 'refresh')
-            if self.selected_subtype and policy.minimum(self.selected_subtype) == 0 then
+            if policy.caravan(self.selected_subtype) then
+                b:SetTooltipText(text('refresh_caravan_tooltip'), true)
+            elseif self.selected_subtype and policy.minimum(self.selected_subtype) == 0 then
                 b:SetTooltipText(text('refresh_limited_tooltip'), true)
             end
             if not runtime.refresh_verified then b:SetTooltipText(text('refresh_unavailable'), true) end

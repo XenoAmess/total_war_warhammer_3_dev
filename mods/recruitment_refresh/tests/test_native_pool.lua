@@ -101,10 +101,32 @@ end)
 
 test('approved_caravan_requires_live_special_pool_before_native_dereference', function()
     local bridge=native_pool_module.new({_G={memreader_plus={}}});bridge.ready=true
+    bridge.build='9.0.5.0'
     local details={is_null_interface=function() return false end,
         character_subtype_key=function() return 'wh3_main_cth_lord_caravan_master' end}
-    local allowed,why=bridge.can_remove(details)
+    local allowed,why=bridge.can_reset_background(details)
     check(not allowed and why:match('caravan candidate unavailable'))
+end)
+
+test('caravan_identity_cannot_be_deleted_even_on_a_verified_build', function()
+    local bridge=native_pool_module.new({_G={memreader_plus={}}});bridge.ready=true;bridge.build='9.0.5.0'
+    local details={character_subtype_key=function() return 'wh3_main_cth_lord_caravan_master' end}
+    check(not bridge.can_remove(details) and not bridge.remove(details))
+end)
+test('older_build_cannot_reset_caravan_skills_or_inspect_native_objects', function()
+    local bridge=native_pool_module.new({_G={memreader_plus={ud_topointer=function() error('must not inspect') end}}})
+    bridge.ready=true;bridge.build='9.0.4.0'
+    local ok,reason=bridge.can_reset_background({})
+    check(not ok and reason:match('build unverified'))
+    check(not bridge.reset_background({}))
+end)
+test('finite_candidate_progress_requires_verified_skill_layout_before_object_reads', function()
+    local bridge=native_pool_module.new({_G={memreader_plus={ud_topointer=function() error('must not inspect') end}}})
+    bridge.ready=true;bridge.build='9.0.4.0'
+    local details={character_subtype_key=function() return 'wh2_main_lzd_slann_mage_priest' end}
+    local ok,why=bridge.can_remove(details)
+    check(not ok and why:match('special skill build unverified'))
+    check(not bridge.remove(details))
 end)
 
 -- Native memory is not simulated as proof that removal works. The real-engine
