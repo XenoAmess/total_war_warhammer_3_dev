@@ -1,4 +1,5 @@
 local M = {}
+local policy = require('script.campaign.xatw3_campaign_utilities.recruitment_policy')
 local PREFIX = 'xatw3_campaign_utilities'
 
 -- Seed types also let the UI identify an empty recruitment category.
@@ -30,11 +31,19 @@ function M.new(logic, environment)
 
     function self.supported(subtype, faction_key)
         if not logic.valid_key(subtype) or logic.special_subtype(subtype) then return false end
-        if self.subtypes[subtype] and not (cm.is_multiplayer and cm:is_multiplayer()) then return true end
+        if policy.caravan(subtype) then
+            local faction = cm:get_faction(faction_key or cm:get_local_faction_name())
+            local ids = policy.caravan_candidates(cm, faction, subtype)
+            if not ids or not next(ids) then return false end
+            self.subtypes[subtype] = 'general'
+            return true
+        end
+        if self.subtypes[subtype] and not policy.finite(subtype)
+            and not (cm.is_multiplayer and cm:is_multiplayer()) then return true end
         local generated = safe(function()
             return common.get_context_value('CcoAgentSubtypeRecord', subtype, 'AutoGenerate')
         end, false)
-        if generated ~= true then return false end
+        if generated ~= true and not policy.finite(subtype) then return false end
         local faction = cm:get_faction(faction_key or cm:get_local_faction_name())
         if not valid(faction) then return false end
         local agent = safe(function()
@@ -138,7 +147,7 @@ function M.new(logic, environment)
         local actor = fm:character()
         local history = self.state.history[tostring(id)] or {}
         local start = details:start_pos_key()
-        return {
+        local candidate = {
             id = id, faction = details:faction():name(), subtype = details:character_subtype_key(),
             in_pool = in_pool, unique = details:is_unique(), immortal = details:is_immortal(),
             starting = start ~= nil and start ~= '' and tostring(start) ~= '0',
@@ -150,12 +159,34 @@ function M.new(logic, environment)
             male = details:is_male(), forename = details:get_forename(), surname = details:get_surname(),
             background = details:background_skill()
         }
+        if policy.finite(candidate.subtype) then
+            local ok, traits, signatures = pcall(function()
+                local traits, signatures = {}, {}
+                for _, key in ipairs(details:all_traits()) do
+                    assert(logic.valid_key(key) and #traits < 64)
+                    local points = details:trait_points(key)
+                    assert(type(points) == 'number' and points >= 0 and points <= 100 and points == math.floor(points))
+                    traits[#traits + 1] = {key = key, points = points}
+                    signatures[#signatures + 1] = key .. ':' .. tostring(points)
+                end
+                table.sort(signatures)
+                return traits, table.concat(signatures, ',')
+            end)
+            if not ok then return nil end
+            candidate.traits, candidate.trait_signature = traits, signatures
+        end
+        return candidate
     end
 
     function self.read_pool(faction_key, subtype)
         if not logic.valid_key(faction_key) or not logic.valid_key(subtype) then return nil end
         local faction = cm:get_faction(faction_key)
         if not faction then return nil end
+        local available
+        if policy.caravan(subtype) then
+            available = policy.caravan_candidates(cm, faction, subtype)
+            if not available then return nil end
+        end
         local expression = 'CharacterRecruitmentPoolEntriesForAgentSubtype(DatabaseRecordContext("CcoAgentSubtypeRecord","'
             .. subtype .. '"))'
         local count = safe(function()
@@ -171,6 +202,10 @@ function M.new(logic, environment)
             if type(id) ~= 'number' or seen[id] then return nil end
             local candidate = self.describe(id, true)
             if not candidate then return nil end
+            if available then
+                candidate.caravan_available = available[id] == true
+                if candidate.caravan_available and not candidate.recruited then candidate.provenance = 'caravan_available' end
+            end
             seen[id], pool[#pool + 1] = true, candidate
         end
         return pool
@@ -181,11 +216,16 @@ function M.new(logic, environment)
         local details = cm:spawn_character_to_pool(faction, '', '', '', '', 30, old.male,
             self.subtypes[subtype], subtype, false, '')
         if not valid(details) then return nil, 'spawn_failed' end
+        for _, trait in ipairs(old.traits or {}) do
+            for _ = 1, trait.points do cm:force_add_trait_to_character_details(details, trait.key) end
+        end
         local id = details:family_member():command_queue_index()
         self.state.history[tostring(id)] = {faction = faction, subtype = subtype,
             provenance = 'ordinary_generated', recruited = false}
         self.persist(self.state)
-        return self.describe(id, true)
+        local candidate = self.describe(id, true)
+        if not candidate then return nil, 'spawn_readback_failed', id end
+        return candidate
     end
 
     function self.verify_candidate(candidate)
@@ -201,6 +241,10 @@ function M.new(logic, environment)
     function self.can_remove_candidate(id)
         local panel = environment.find_uicomponent(environment.core:get_ui_root(), 'character_panel')
         if not self.multiplayer_executing and panel and panel:Visible() then return false, 'recruitment_panel_open' end
+        for _, key in ipairs({'cathay_caravans', 'cp1_cth_bhashiva_caravans'}) do
+            local special = environment.find_uicomponent(environment.core:get_ui_root(), key)
+            if special and special:Visible() then return false, 'recruitment_panel_open' end
+        end
         local fm = cm:get_family_member_by_cqi(id)
         if not fm then return false end
         return self.native_pool.can_remove(fm:character_details())
@@ -246,7 +290,7 @@ function M.new(logic, environment)
             if not self.can_remove_candidate(candidate.id) then return false, 'native_pool_unavailable' end
         end
         local mr = (environment._G or _G).memreader_plus
-        return true, sync.fields({'0.3.1', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
+        return true, sync.fields({'0.3.2', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
             self.state.next_sequence, self.subtypes[request.target], plan.fingerprint})
     end
 

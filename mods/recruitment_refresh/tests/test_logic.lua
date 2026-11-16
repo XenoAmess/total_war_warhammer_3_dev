@@ -28,6 +28,7 @@ local function fixture(options)
         for _, v in ipairs(pool) do copy[#copy + 1] = v end
         copy[#copy + 1] = item
         pool = copy
+        if options.spawn_description_fail then return nil, 'spawn_readback_failed', item.id end
         if options.overflow_evicts then table.remove(pool, 3) end
         if options.evict_on_second and calls.spawn == 2 then table.remove(pool, 1) end
         return item
@@ -247,5 +248,13 @@ test('pool_order_never_changes_gender_seed_or_plan', function()
     check(first.fingerprint == second.fingerprint)
     check(first.seed.male == false and second.seed.male == false)
     check(first.replace[1].id == second.replace[1].id and first.add == second.add)
+end)
+test('created_candidate_with_failed_description_locks_without_removing_old',function()
+    for _,pool in ipairs({{candidate(1)}, {candidate(1,{unique=true})}}) do
+        local a,state,request,calls=fixture({pool=pool,spawn_description_fail=true})
+        local result=logic.execute(state,request,a)
+        check(result.status=='UNKNOWN' and result.reason=='spawn_readback_failed')
+        check(result.pending_new_id==101 and state.locked and calls.spawn==1 and calls.remove==0)
+    end
 end)
 return passed

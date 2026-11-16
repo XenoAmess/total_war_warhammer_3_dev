@@ -2,6 +2,7 @@
 -- No object bytes, names, skill trees, or allocator-owned pointers are written by Lua.
 -- The signatures and layouts below were verified on WH3 9.0.4/9.0.5, Windows x64.
 local M = {}
+local policy = require('script.campaign.xatw3_campaign_utilities.recruitment_policy')
 
 local EXPIRY = '48 89 5C 24 18 88 54 24 10 55 56 57 41 54 41 55 41 56 41 57 '
     .. '48 83 EC 30 48 8B 01 0F 57 C0 48 8B F9 4C 8B 80 A8 03 00 00 '
@@ -72,8 +73,13 @@ function M.new(environment)
     local function locate(details)
         assert(details and not details:is_null_interface(), 'missing character details')
         local subtype_key = details:character_subtype_key()
-        assert(type(subtype_key) == 'string' and not subtype_key:match('caravan')
-            and not subtype_key:match('convoy'), 'special recruitment is unsupported')
+        assert(type(subtype_key) == 'string' and (policy.caravan(subtype_key)
+            or not (subtype_key:match('caravan') or subtype_key:match('convoy'))), 'special recruitment is unsupported')
+        if policy.caravan(subtype_key) then
+            assert(environment.cm, 'caravan candidate unavailable')
+            local ids = policy.caravan_candidates(environment.cm, details:faction(), subtype_key)
+            assert(ids and ids[details:family_member():command_queue_index()], 'caravan candidate unavailable')
+        end
         assert(not details:is_unique() and not details:is_immortal(), 'protected character')
         local actor = details:character()
         assert(not actor or actor:is_null_interface(), 'character was already recruited')

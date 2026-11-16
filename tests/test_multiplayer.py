@@ -76,6 +76,8 @@ class MultiplayerTests(unittest.TestCase):
         w = World()
         folder = Path(__file__).resolve().parents[1] / 'mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities'
         for peer in w.peers:
+            peer.globals().policy = peer.execute((folder / 'recruitment_policy.lua').read_text(encoding='utf-8'))
+            peer.execute("package.loaded['script.campaign.xatw3_campaign_utilities.recruitment_policy'] = policy")
             peer.globals().logic = peer.execute((folder / 'logic.lua').read_text(encoding='utf-8'))
             peer.globals().runtime_module = peer.execute((folder / 'runtime.lua').read_text(encoding='utf-8'))
             peer.execute('''

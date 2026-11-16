@@ -90,13 +90,21 @@ test('special_details_rejected_before_native_object_dereference', function()
         ud_topointer=function() error('must not dereference special recruitment') end}
     local bridge=native_pool_module.new({_G={memreader_plus=mr}})
     bridge.ready=true -- Exercise the locator's independent guard after admission.
-    for _,key in ipairs({'wh3_main_cth_lord_caravan_master','wh3_cp1_cth_sawai_caravan','mod_convoy_leader'}) do
+    for _,key in ipairs({'mod_caravan_master','unqualified_convoy_leader','mod_convoy_leader'}) do
         local details={is_null_interface=function() return false end,character_subtype_key=function() return key end}
         local allowed,why=bridge.can_remove(details)
         check(not allowed and why:match('special recruitment is unsupported'))
         local removed,reason=bridge.remove(details)
         check(not removed and reason:match('special recruitment is unsupported'))
     end
+end)
+
+test('approved_caravan_requires_live_special_pool_before_native_dereference', function()
+    local bridge=native_pool_module.new({_G={memreader_plus={}}});bridge.ready=true
+    local details={is_null_interface=function() return false end,
+        character_subtype_key=function() return 'wh3_main_cth_lord_caravan_master' end}
+    local allowed,why=bridge.can_remove(details)
+    check(not allowed and why:match('caravan candidate unavailable'))
 end)
 
 -- Native memory is not simulated as proof that removal works. The real-engine

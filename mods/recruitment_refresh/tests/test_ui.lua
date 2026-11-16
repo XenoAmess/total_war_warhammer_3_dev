@@ -222,6 +222,30 @@ test('rejected_result_reopens_then_shows_dismiss_only_error',function(f)
     assert(not f.dialog.children.both_group.visible and f.dialog.children.ok_group.visible)
     f.click(component('button_tick',f.dialog)); f.drain(); assert(#f.dispatched==1 and not f.dialog.visible)
 end)
+
+test('caravan_refresh_waits_for_both_panels_and_reopens_through_caravan_purchase',function(f)
+    local key='wh3_main_cth_lord_caravan_master'
+    f.runtime.subtypes={[key]='general'};f.runtime.supported=function(k) return k==key end
+    local category=f.panel.children.lords_and_agents_holder;category.children.supported=nil
+    local alias=component('caravan_master',component('list_box',component('lord_parent',category)))
+    alias.state='selected'
+    local card_list=component('list_box',component('list_clip',component('listview',component('character_list',f.panel))))
+    local card=component('general_candidate_0_',card_list);local select=component('button_wh3',card)
+    function select:GetContextObject() return {Call=function() return key end} end
+    local caravan=component('cathay_caravans',f.root)
+    local purchase=component('button_purchase',component('add_caravan_button',component('reserves_listview',component('caravans_panel',caravan))))
+    function purchase:SimulateLClick() f.purchase_opened=true;f.panel.visible=true end
+    local hud=component('button_caravan',component('faction_buttons_docker',f.root.children.hud_campaign))
+    function hud:SimulateLClick() f.caravan_opened=true;caravan.visible=true end
+    f.closed_panels={}
+    f.environment.CampaignUI.ClosePanel=function(name) f.closed_panels[name]=true end
+    f.root.children.character_panel=f.panel;f.ui.selected_subtype=key
+    f.click(component('xatw3_refresh_candidates'));assert(f.closed_panels.character_panel and f.closed_panels.cathay_caravans)
+    f.panel.visible=false;f.step();assert(#f.dispatched==0,'Dispatched while special panel still held contexts')
+    caravan.visible=false;f.drain();assert(#f.dispatched==1)
+    f.runtime.on_result({status='SUCCEEDED'});f.drain()
+    assert(f.caravan_opened and f.purchase_opened and f.ui.selected_subtype==key)
+end)
 test('uncertain_result_keeps_error_and_does_not_reopen',function(f)
     f.start(); f.panel.visible=false; f.drain(); f.runtime.on_result({status='PARTIAL'}); f.drain()
     assert(f.reopened==nil and f.dialog.visible and f.dialog.children.DY_text.text=='xatw3_error\n\nxatw3_uncertain')

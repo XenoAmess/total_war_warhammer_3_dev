@@ -117,5 +117,30 @@ test('startup_observations_survive_unavailable_pool_metadata_without_losing_prot
     local reloaded = runtime_module.new(logic, startup_env); reloaded.initialize()
     assert(reloaded.state.history['999'] == nil and reloaded.state.history['105'].recruited)
 end)
+test('finite_candidate_discovery_requires_a_live_pool_and_never_fixed_identity',function()
+    generated=false;agent='general'
+    local runtime=runtime_module.new(logic,env)
+    assert(runtime.supported('wh3_main_ksl_ice_witch_ice'))
+    assert(runtime.supported('wh2_dlc11_vmp_bloodline_blood_dragon'))
+    assert(not runtime.supported('wh2_dlc09_tmb_tomb_king_alkhazzar_ii'))
+    agent=nil;assert(not runtime.supported('wh3_main_ksl_ice_witch_ice'))
+    generated=true;agent='wizard'
+end)
+test('finite_generation_copies_training_points_and_reports_created_but_unreadable',function()
+    local added={};local spawned={is_null_interface=function() return false end,
+        family_member=function() return {command_queue_index=function() return 501 end} end}
+    local fixture={out=function() end,cm={spawn_character_to_pool=function() return spawned end,
+        force_add_trait_to_character_details=function(_,details,key)
+            assert(details==spawned);added[#added+1]=key
+        end}}
+    local runtime=runtime_module.new(logic,fixture);runtime.state={history={}}
+    runtime.supported=function() return true end;runtime.persist=function() end
+    runtime.describe=function() return nil end
+    local c,why,id=runtime.spawn_candidate('kislev','wh3_main_ksl_ice_witch_ice',
+        {male=false,traits={{key='training_one',points=1},{key='training_two',points=2}}})
+    assert(c==nil and why=='spawn_readback_failed' and id==501)
+    assert(#added==3 and added[1]=='training_one' and added[2]=='training_two' and added[3]=='training_two')
+    assert(runtime.state.history['501'].provenance=='ordinary_generated')
+end)
 package.loaded['script.campaign.xatw3_campaign_utilities.native_pool'] = original
 return passed

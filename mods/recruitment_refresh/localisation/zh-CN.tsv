@@ -12,3 +12,4 @@ xatw3_refresh_unavailable	刷新需要启用 memreader Plus（创意工坊必需
 
 xatw3_multiplayer_unavailable	联机同步尚未就绪、正在处理其他请求或已锁定。请等待所有玩家完成检查；异常中断后从操作前存档重开。联机尚未实机验收。
 xatw3_request_too_large	候选池数据过大，无法安全校验；未改动任何候选。
+xatw3_refresh_limited_tooltip	刷新当前未雇用候选，保持人数及特殊解锁，不补足到 3 人。保留训练特性；已雇用、在途及其他受保护人物保持不变。

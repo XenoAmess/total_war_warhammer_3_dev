@@ -1,4 +1,5 @@
 local M = {}
+local policy = require('script.campaign.xatw3_campaign_utilities.recruitment_policy')
 local function is_selected(state)
     return state == 'selected' or state == 'selected_hover'
 end
@@ -12,6 +13,14 @@ function M.new(runtime, logic, environment)
     local self = {selected_subtype = nil}
     local function text(key) return common.get_localised_string(PREFIX .. key) end
     local function after(callback) cm:callback(callback, 0.1) end
+
+    local function caravan_panel()
+        local root = core:get_ui_root()
+        for _, key in ipairs({'cathay_caravans', 'cp1_cth_bhashiva_caravans'}) do
+            local panel = find_uicomponent(root, key)
+            if panel and panel:Visible() then return panel end
+        end
+    end
 
     local function active_categories(panel)
         local holder = panel and find_uicomponent(panel, 'lords_and_agents_holder')
@@ -200,6 +209,9 @@ function M.new(runtime, logic, environment)
                 end
             end
             local b = button('refresh_candidates', panel, 'refresh')
+            if self.selected_subtype and policy.minimum(self.selected_subtype) == 0 then
+                b:SetTooltipText(text('refresh_limited_tooltip'), true)
+            end
             if not runtime.refresh_verified then b:SetTooltipText(text('refresh_unavailable'), true) end
             b:SetInteractive(runtime.refresh_verified == true and self.selected_subtype ~= nil and runtime.supported(self.selected_subtype)
                 and runtime.can_act(faction) and not runtime.state.locked and not self.submitting)
@@ -269,14 +281,17 @@ function M.new(runtime, logic, environment)
                 category = selected_category(find_uicomponent(core:get_ui_root(), 'character_panel')),
                 button = runtime.subtypes and runtime.subtypes[request.target] == 'general'
                     and 'button_create_army' or 'button_agents'}
+            local caravan = policy.caravan(request.target) and caravan_panel()
+            if caravan then self.reopen.caravan = caravan:Id() end
             -- Native recruitment cards cache the old character details. Let the
             -- game close the panel and release those contexts before removing them.
             CampaignUI.ClosePanel('character_panel')
+            if caravan then CampaignUI.ClosePanel(caravan:Id()) end
             CampaignUI.CloseCurrentHUDPanel()
             local attempts = 0
             local function wait_until_closed()
                 local panel = find_uicomponent(core:get_ui_root(), 'character_panel')
-                if panel and panel:Visible() then
+                if (panel and panel:Visible()) or caravan_panel() then
                     attempts = attempts + 1
                     if attempts < 30 then after(wait_until_closed)
                     else
@@ -366,30 +381,40 @@ function M.new(runtime, logic, environment)
             if reopen and (result.status == 'SUCCEEDED' or result.status == 'REJECTED') then
                 after(function()
                     local root = core:get_ui_root()
-                    local b = find_uicomponent(root, 'hud_campaign', 'hud_center_docker', reopen.button)
-                    if b and b:Visible() and b:CurrentState() == 'active' then b:SimulateLClick() end
+                    local b = reopen.caravan
+                        and find_uicomponent(root, 'hud_campaign', 'faction_buttons_docker', 'button_caravan')
+                        or find_uicomponent(root, 'hud_campaign', 'hud_center_docker', reopen.button)
+                    if b and b:Visible() and (b:CurrentState() == 'active' or b:CurrentState() == 'hover') then b:SimulateLClick() end
                     after(function()
-                        local panel = find_uicomponent(root, 'character_panel')
-                        local categories = active_categories(panel)
-                        local tab = categories and find_uicomponent(categories, reopen.category or reopen.subtype)
-                        if not reopen.category and not tab and categories and runtime.subtypes then
-                            tab = find_uicomponent(categories, runtime.subtypes[reopen.subtype])
-                        end
-                        if tab and tab:Visible() and not is_selected(tab:CurrentState()) then tab:SimulateLClick() end
-                        after(function()
-                            -- Native lore tabs live outside the main agent tabs
-                            -- and are rebuilt after selecting their shared class.
+                        local function restore()
                             local panel = find_uicomponent(root, 'character_panel')
-                            local lore = panel and panel:Visible() and find_uicomponent(panel, 'general_selection_panel')
-                            local holder = lore and find_uicomponent(lore, 'main_holder')
-                            if holder then lore = lore:Visible() and holder or nil end
-                            for _, id in ipairs({'lore_select_parent', 'wizard_type', 'type_list', reopen.subtype}) do
-                                lore = lore and lore:Visible() and find_uicomponent(lore, id) or nil
+                            local categories = active_categories(panel)
+                            local tab = categories and find_uicomponent(categories, reopen.category or reopen.subtype)
+                            if not reopen.category and not tab and categories and runtime.subtypes then
+                                tab = find_uicomponent(categories, runtime.subtypes[reopen.subtype])
                             end
-                            if lore and lore:Visible() and not is_selected(lore:CurrentState()) then lore:SimulateLClick() end
-                            self.selected_subtype = nil
-                            after(finish)
-                        end)
+                            if tab and tab:Visible() and not is_selected(tab:CurrentState()) then tab:SimulateLClick() end
+                            after(function()
+                                -- Native lore tabs are rebuilt after their shared class.
+                                local panel = find_uicomponent(root, 'character_panel')
+                                local lore = panel and panel:Visible() and find_uicomponent(panel, 'general_selection_panel')
+                                local holder = lore and find_uicomponent(lore, 'main_holder')
+                                if holder then lore = lore:Visible() and holder or nil end
+                                for _, id in ipairs({'lore_select_parent', 'wizard_type', 'type_list', reopen.subtype}) do
+                                    lore = lore and lore:Visible() and find_uicomponent(lore, id) or nil
+                                end
+                                if lore and lore:Visible() and not is_selected(lore:CurrentState()) then lore:SimulateLClick() end
+                                self.selected_subtype = nil
+                                after(finish)
+                            end)
+                        end
+                        if reopen.caravan then
+                            local parent = find_uicomponent(root, reopen.caravan)
+                            local purchase = parent and parent:Visible() and find_uicomponent(parent,
+                                'caravans_panel', 'reserves_listview', 'add_caravan_button', 'button_purchase')
+                            if purchase and purchase:Visible() then purchase:SimulateLClick() end
+                            after(restore)
+                        else restore() end
                     end)
                 end)
             else finish() end

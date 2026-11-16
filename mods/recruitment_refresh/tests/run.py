@@ -35,8 +35,11 @@ def run() -> dict:
     sources = sorted((ROOT / 'src').rglob('*.lua'))
     for path in sources:
         compile_lua(path.read_text(encoding='utf-8'), path.relative_to(ROOT).as_posix())
+    lua.globals().policy_module = lua.execute((ROOT / 'src/script/campaign/xatw3_campaign_utilities/recruitment_policy.lua').read_text(encoding='utf-8'))
+    lua.execute("package.loaded['script.campaign.xatw3_campaign_utilities.recruitment_policy'] = policy_module")
     lua.globals().logic = lua.execute((ROOT / 'src/script/campaign/xatw3_campaign_utilities/logic.lua').read_text(encoding='utf-8'))
     tests = list(lua.execute((ROOT / 'tests/test_logic.lua').read_text(encoding='utf-8')).values())
+    tests += list(lua.execute((ROOT / 'tests/test_recruitment_policy.lua').read_text(encoding='utf-8')).values())
     lua.globals().ui_module = lua.execute((ROOT / 'src/script/campaign/xatw3_campaign_utilities/ui.lua').read_text(encoding='utf-8'))
     ui_tests = list(lua.execute((ROOT / 'tests/test_ui.lua').read_text(encoding='utf-8')).values())
     ui_tests += list(lua.execute((ROOT / 'tests/test_ui_layout.lua').read_text(encoding='utf-8')).values())

@@ -1,5 +1,6 @@
 -- Pure business rules. This module also runs under Lua 5.1 in offline tests.
 local M = {}
+local policy = require('script.campaign.xatw3_campaign_utilities.recruitment_policy')
 M.minimum_candidates = 3
 
 function M.valid_key(value)
@@ -8,6 +9,7 @@ function M.valid_key(value)
 end
 
 function M.special_subtype(value)
+    if policy.caravan(value) then return false end
     -- Avoid the engine Lua's broken plain-find path (observed on 9.0.5).
     return type(value) == 'string' and (value:match('caravan') ~= nil
         or value:match('convoy') ~= nil)
@@ -16,18 +18,23 @@ end
 function M.eligible(candidate, faction, subtype)
     if candidate.faction ~= faction or candidate.subtype ~= subtype then return false, 'wrong_scope' end
     if not candidate.in_pool then return false, 'not_in_pool' end
+    if policy.caravan(subtype) and not candidate.caravan_available then return false, 'protected' end
     if M.special_subtype(candidate.subtype) or candidate.unique or candidate.immortal or candidate.leader or candidate.wounded
         or candidate.starting or candidate.recruited or candidate.special then
         return false, 'protected'
     end
-    if candidate.provenance ~= 'ordinary_generated' then return false, 'unknown_history' end
+    if candidate.provenance ~= 'ordinary_generated'
+        and not (policy.caravan(subtype) and candidate.provenance == 'caravan_available') then
+        return false, 'unknown_history'
+    end
     return true
 end
 
 function M.fingerprint(pool)
     local entries = {}
     local fields = {'id', 'faction', 'subtype', 'in_pool', 'recruited', 'wounded', 'provenance',
-        'male', 'unique', 'immortal', 'special', 'leader', 'starting', 'forename', 'surname', 'background'}
+        'male', 'unique', 'immortal', 'special', 'leader', 'starting', 'forename', 'surname', 'background',
+        'caravan_available', 'trait_signature'}
     for _, candidate in ipairs(pool) do
         local record = {}
         for _, field in ipairs(fields) do
@@ -61,7 +68,7 @@ function M.plan(pool, faction, subtype)
             plan.protected[#plan.protected + 1] = candidate.id
         end
     end
-    if plan.seed then plan.add = math.max(0, M.minimum_candidates - #pool) end
+    if plan.seed then plan.add = math.max(0, policy.minimum(subtype) - #pool) end
     table.sort(plan.replace, function(a, b) return a.id < b.id end)
     return plan
 end
@@ -91,10 +98,14 @@ function M.refresh(adapter, faction, subtype, expected)
         end
     end
     local result = {status = 'SUCCEEDED', completed = 0, total = #plan.replace, pairs = {},
-        added = 0, new_ids = {}, target_count = math.max(#before, M.minimum_candidates)}
+        added = 0, new_ids = {}, target_count = math.max(#before, policy.minimum(subtype))}
     for _, old in ipairs(plan.replace) do
-        local new, reason = adapter.spawn_candidate(faction, subtype, old)
+        local new, reason, created_id = adapter.spawn_candidate(faction, subtype, old)
         if not new then
+            if created_id then
+                result.status, result.reason, result.pending_new_id = 'UNKNOWN', reason or 'spawn_readback_failed', created_id
+                return result
+            end
             result.status = result.completed == 0 and 'REJECTED' or 'PARTIAL'
             result.reason = reason or 'spawn_failed'
             return result
@@ -107,6 +118,7 @@ function M.refresh(adapter, faction, subtype, expected)
                 if not contains(current, candidate.id) then safe = false end
             end
         end
+        if policy.finite(subtype) and new.trait_signature ~= old.trait_signature then safe = false end
         if not safe or not adapter.verify_candidate(new) then
             result.status, result.reason = 'UNKNOWN', 'invalid_generated_candidate'
             return result
@@ -129,8 +141,12 @@ function M.refresh(adapter, faction, subtype, expected)
         before = current
     end
     for _ = 1, plan.add do
-        local new, reason = adapter.spawn_candidate(faction, subtype, plan.seed)
+        local new, reason, created_id = adapter.spawn_candidate(faction, subtype, plan.seed)
         if not new then
+            if created_id then
+                result.status, result.reason, result.pending_new_id = 'UNKNOWN', reason or 'spawn_readback_failed', created_id
+                return result
+            end
             local current = adapter.read_pool(faction, subtype)
             if not current or M.fingerprint(current) ~= M.fingerprint(before) then
                 result.status, result.reason = 'UNKNOWN', 'spawn_readback_failed'
