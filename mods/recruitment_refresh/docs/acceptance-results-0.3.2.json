@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.2",
+  "release_status": "ACCEPTED_FOR_SCOPED_PUBLICATION",
+  "recorded_at_utc": "2026-11-16T12:16:56.553290+00:00",
+  "source_commit": "fa1aa1008438e97261ff5934ecc4720205dd92e8",
+  "release_pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "pack_bytes": 93860,
+  "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87",
+  "L0": "PASS",
+  "L1": "PASS",
+  "L2": "PASS",
+  "L3": "PASS",
+  "L4": "NOT_RUN",
+  "acceptance_scope": "Incremental single-player acceptance of the exact cold-mounted 0.3.2 package on Cathay caravans and Hexoatl Slann. No all-faction, individual DLC, complete ritual/training, save-reload or native multiplayer credit.",
+  "user_instruction": "发布更新到创意工坊",
+  "offline_tests": {
+    "command": "D:/workspace/.codex-wh3-runtime/venv/Scripts/python.exe tools/test.py --mod recruitment_refresh",
+    "shared": 90,
+    "mod": 102,
+    "total": 192,
+    "status": "PASS",
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "tracked_payload_matches_pack": true
+  },
+  "native": {
+    "harness_corrections": [
+      "史兰页签最初使用了错误别名，操作夹具在发出刷新请求前被目标断言拦截；改用实际原生分类 lzd_slann_mage_priest 后验收通过。",
+      "开场过场期间第一次打开商队面板被原版忽略；只重试面板导航，未重放雇用或刷新操作。"
+    ],
+    "cold_package_verified": true,
+    "hot_reload_credited": false,
+    "verification": "acceptance-0.3.2/verification.json",
+    "caravan": {
+      "faction": "wh3_main_cth_the_northern_provinces",
+      "refreshes": [
+        {
+          "count": "1->1",
+          "mode": "background",
+          "identity_preserved": true
+        },
+        {
+          "count": "1->1",
+          "mode": "background",
+          "identity_preserved": true
+        }
+      ],
+      "owned_caravan_unchanged": true,
+      "other_pools_unchanged": true,
+      "native_hires": [
+        "original candidate 1640",
+        "refreshed candidate 1641"
+      ],
+      "escort_units_match_vanilla_background_template": true,
+      "treasury_deducted": true,
+      "experience_progress_guard": "PASS"
+    },
+    "slann": {
+      "faction": "wh2_main_lzd_hexoatl",
+      "count": "1->1",
+      "replaced": "16866->16867",
+      "native_hire": "PASS",
+      "treasury": "6000->4850",
+      "army_count": "2->3",
+      "additional_trait_points_preserved": true,
+      "default_skills_preserved": true,
+      "other_real_pools_unchanged": true,
+      "fixture": "调用原版 slann_spawn 仪式完成生成人物函数；附加三个已知训练特性作为点数保留夹具。不是完整仪式操作或冰雪宫廷训练流程验收。",
+      "random_result": "本次世代为第二代->第二代；新 ID 和姓名已替换。普通随机刷新允许重抽相同背景，此结果不计为世代改变。"
+    },
+    "rank_evidence": "未上地图候选的公开 CCO Rank 返回空值；空值比较不计为等级验收。培养保护依据原生经验、点数、技能创建点数和额外分配检查；经验保护实机通过。",
+    "not_directly_tested": [
+      "混沌矮人车队：本机无授权",
+      "巴什瓦商队：本机无授权",
+      "其余有限池逐类型实测",
+      "在途商队派遣流程：未通过探针，不计为验收",
+      "多人实机",
+      "完整仪式/训练解锁流程",
+      "其他 Mod 组合"
+    ]
+  },
+  "evidence_record": "special-recruitment-implementation-0.3.2.json",
+  "verification_file": "acceptance-0.3.2/verification.json",
+  "limitations": [
+    "混沌矮人车队：本机无授权",
+    "巴什瓦商队：本机无授权",
+    "其余有限池逐类型实测",
+    "在途商队派遣流程：未通过探针，不计为验收",
+    "多人实机",
+    "完整仪式/训练解锁流程",
+    "其他 Mod 组合"
+  ]
+}

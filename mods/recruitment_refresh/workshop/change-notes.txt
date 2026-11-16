@@ -1,8 +1,11 @@
-0.3.1 — 多法术系刷新修复 / Multi-lore refresh fixes
-- 修复同职业多法术系可能选错刷新目标；以当前可见候选为准，识别鼠标悬停选中态。
-- 刷新后恢复原生法术系及分类，覆盖分类名与人物类型不同的领主页。
-- 修复开局普通候选履历观察遗漏，保留特殊、已招募与未知履历人物保护。
-- 9.0.5 高精单机实测：生命系 1→3、高等系 6→6、王子分类刷新、未知履历保护、正常招募及按钮避让；其他法术系候选不变。
-- 本机缺少巴什瓦角色包授权，爪语者未直接实测；经用户确认，以同机制多法术系实测并披露后发布。联机仍未实机验收。
+0.3.2 — 商队与有限招募池 / Caravan and finite recruitment pools
+- 商队保留原领队、姓名及名额，只重抽为不同背景；已有、闲置或在途商队不刷新，成功后返回商队招募页。
+- 扩展有随机背景的史兰、血裔及部分晋升／召唤类型的现有候选池，不新增特殊名额或解锁；保留附加特性点数和默认技能。
+- 唯一、不朽、开局、已招募、受伤和未知履历等保护继续生效。额外培养进度会在预检时拒绝整次刷新。
+- 冰雪宫廷训练结果、王朝／科技专属人物、黑色方舟及龙舰提督等不重抽。
+- 192 项离线测试通过。9.0.5 最终包实测：震旦连续两次 1→1、正常雇用、护卫队兵种／数量匹配新背景及已有商队保护；史兰 1→1、附加特性点数／默认技能保留及正常雇用。
+- 史兰使用原版仪式生成人物函数及附加特性夹具，不算完整仪式／训练流程验收。本机无混矮和巴什瓦授权，两类商队未直接实测；其余有限池未逐类型实测，联机仍未实机验收。
 
-Fixes wrong-lore targeting on shared agent tabs, selected-hover detection, native lore/category restoration and startup candidate-history observation. High Elf SP native regression on 9.0.5 covers Life 1→3, High Magic 6→6, Prince category refresh, protected unknown-history candidates, normal recruitment and button clearance; other lore pools remain unchanged. Clawspeakers were NOT directly tested: this machine lacks the Bhashiva Character Pack license. The user approved release after equivalent multi-lore native acceptance with this disclosure. Native multiplayer remains untested.
+Caravans reroll an unhired leader's background while keeping their identity, name and slot. Owned, idle and travelling caravans are protected. Eligible existing Slann, bloodline and selected ascension/summoning pools retain their counts, extra trait points and default skills. Special unlocks are not granted. Existing identity/history protections remain; extra progression rejects the operation during preflight. Ice Court training choices and fixed dynasty, technology or ship characters are excluded.
+
+192 offline tests passed. Exact-package SP checks on WH3 9.0.5 passed Cathay refresh twice at 1->1, native hiring, background-specific escort units and owned-caravan protection; Slann at 1->1 retained extra trait points/default skills and could be hired. The Slann fixture uses the vanilla ritual spawn function with extra test traits, not a full ritual/training playthrough. Chaos Dwarf and Bhashiva caravans were NOT directly tested because this machine lacks those licenses. Other finite types were not individually tested. Native multiplayer remains untested.
