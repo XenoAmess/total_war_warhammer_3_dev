@@ -1,0 +1,29 @@
+FRONTEND_READY
+COMMAND_RESULT ok=true result=nil
+FINAL_LIZARDMEN_START
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+FINAL_COLD_PACKAGE 84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87 60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+SLANN_RITUAL_GENERATOR_FIXTURE id=16866 background=wh2_dlc13_skill_lzd_innate_slann_second_generation traits=wh3_main_trait_ice_training_economist,wh3_main_trait_ice_training_quartermaster,wh3_main_trait_ice_training_vanguard
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=false result=[string "local f=assert(io.open('D:/workspace/.codex-wh3-runtime/special-recruitment-implementation-20261116/escort_templates.lua','r'));local source=f:read('*a');f:close();local escort_templates=assert(loadstring(source))()..."]:85: Wrong UI target wh2_dlc13_lzd_kroxigor_ancient
+COMMAND_RESULT ok=false result=[string "xatw3_acceptance_command"]:1: assertion failed!
+SLANN_TAB /lords_and_agents_holder visible=true state=wh3
+SLANN_TAB /lords_and_agents_holder/agent_parent visible=false state=NewState
+SLANN_TAB /lords_and_agents_holder/agent_parent/list_box visible=true state=NewState
+SLANN_TAB /lords_and_agents_holder/agent_parent/dy_agent_cap visible=true state=NewState
+SLANN_TAB /lords_and_agents_holder/lord_parent visible=true state=NewState
+SLANN_TAB /lords_and_agents_holder/lord_parent/list_box visible=true state=NewState
+SLANN_TAB /lords_and_agents_holder/lord_parent/list_box/lzd_slann_mage_priest visible=true state=active
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+FINAL_READY_BEFORE slann-finite-traits
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+FINAL_REFRESH_PASS slann-finite-traits before=1 after=1 replaced=1
+COMMAND_RESULT ok=true result=nil
+FINAL_SLANN_HIRE_PASS 16867

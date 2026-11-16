@@ -1,0 +1,47 @@
+{
+  "default_skills_before": {
+    "1641": ""
+  },
+  "others_before": {
+    "wh2_dlc13_lzd_slann_mage_priest_fire": "",
+    "wh3_main_cth_alchemist_metal": "",
+    "wh3_main_ksl_patriarch": "",
+    "wh2_main_lzd_skink_priest_heavens": "",
+    "wh2_main_lzd_saurus_old_blood": "",
+    "wh2_dlc13_lzd_ancient_kroxigor": "",
+    "wh3_main_cth_lord_magistrate_yin": "5:n163636:swh3_main_cth_the_northern_provinces33:swh3_main_cth_lord_magistrate_yin5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_210288259722:snames_name_115458718136:swh3_main_skill_innate_cathay_4_lord4:nnil4:nnil,5:n163736:swh3_main_cth_the_northern_provinces33:swh3_main_cth_lord_magistrate_yin5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse21:snames_name_71797749122:snames_name_106562567239:swh3_main_skill_innate_cth_fleet_footed4:nnil4:nnil",
+    "wh2_main_lzd_skink_chief": "",
+    "wh3_main_ksl_boyar": "",
+    "wh3_main_ksl_ice_witch_tempest": "",
+    "wh2_main_lzd_skink_priest_beasts": "",
+    "wh3_main_cth_lord_magistrate_yang": "5:n164236:swh3_main_cth_the_northern_provinces34:swh3_main_cth_lord_magistrate_yang5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse21:snames_name_64204420921:snames_name_85041095831:swh3_main_skill_innate_cathay_54:nnil4:nnil,5:n164336:swh3_main_cth_the_northern_provinces34:swh3_main_cth_lord_magistrate_yang5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_120055359221:snames_name_45150598231:swh3_main_skill_innate_cathay_34:nnil4:nnil"
+  },
+  "request_target": "wh3_main_cth_lord_caravan_master",
+  "before": [
+    {
+      "recruited": false,
+      "special": false,
+      "leader": false,
+      "in_pool": true,
+      "unique": false,
+      "immortal": false,
+      "background": "wh3_main_skill_innate_cth_caravan_master_Dragon-Blooded",
+      "starting": false,
+      "male": true,
+      "subtype": "wh3_main_cth_lord_caravan_master",
+      "id": 1641,
+      "provenance": "caravan_available",
+      "faction": "wh3_main_cth_the_northern_provinces",
+      "caravan_available": true,
+      "wounded": false,
+      "forename": "names_name_1279063679",
+      "surname": "names_name_680860315"
+    }
+  ],
+  "package_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "faction": "wh3_main_cth_the_northern_provinces",
+  "target": "wh3_main_cth_lord_caravan_master",
+  "mode": "native_ui",
+  "owned_before": "idle_caravans:1640:949:0:false:false:wh3_main_cth_cha_lord_caravan_master,wh3_main_cth_inf_peasant_spearmen_1,wh3_main_cth_inf_peasant_spearmen_1,wh3_main_cth_inf_jade_warriors_1,wh3_main_cth_inf_jade_warriors_1,wh3_main_cth_inf_peasant_archers_0,wh3_main_cth_inf_peasant_archers_0,wh3_main_cth_inf_crane_gunners_0,wh3_main_cth_inf_crane_gunners_0,wh3_main_cth_art_fire_rain_rocket_battery_0",
+  "ranks_before": {}
+}

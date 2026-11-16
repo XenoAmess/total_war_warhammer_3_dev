@@ -1,0 +1,347 @@
+{
+  "exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
+  "initializer_rva": "0x297fc88",
+  "initializer_bytes": "48895c240848896c241048897424185741544155415641574883ec50458ae14d8bf84c8bf24c8be9e81721b7fde80e1ebdfd488bd8e80a21b7fde8011ebdfd488bf833ed498b86a8030000488bb0e0000000488b76104d897d384939ae880d0000741f498bcee8c5b6d2ff498bce488b5808e8b9b6d2ff488bb818030000488b7f08498b8ea80300004c8bce498b97f8010000498b87f001000040886c24384c8b81a0000000488b5208488b400840886c2430498b48204c8bc74889542428488bd34889442420e828c6ffff488be841c6456101e8671dbdfd498b96880d00004c8bcb48894424404c8bc5c644243800498bcd4488642430488974242848897c2420e855faffff498b87f80100004c8d5c2450498b5b30498b6b38498b73408a88cc01000041884d60498be3415f415e415d415c5fc3",
+  "nested_rva": "0x297f7e4",
+  "nested_prefix": "488bc44c8948204c8940184889501048894808555356574154415541564157488d68b94881ecb80000004533e4498bf94d8bf0488bf14438657f7418e883c0fdff488d4e18e86660e4fd4c8966404489664ceb0e4438a5870000007405e862c0fdff",
+  "clear_rva": "0x295b8a8",
+  "clear_bytes": "48895c24084889742410574883ec208b7904488bf1488b590848c1e7044803fbeb0c488bcbe8b64836ff4883c310483bdf75ef83660400488b742438488b5c24304883c4205fc3",
+  "db_backgrounds": {
+    "wh3_cp1_cth_sawai_caravan": [
+      {
+        "set": {
+          "agent_key": "general",
+          "for_army": false,
+          "faction_key": null,
+          "key": "wh3_cp1_skill_node_set_cth_sawai_caravan",
+          "subculture": null,
+          "for_navy": false,
+          "campaign_key": null,
+          "agent_subtype_key": "wh3_cp1_cth_sawai_caravan"
+        },
+        "backgrounds": [
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_alchemy",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_artillery",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_cavalry",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_celestial",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_clawspeaker",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_gunpowder",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_jade",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_peasants",
+            "weight": 2.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_ranged",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_sky",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_tigers",
+            "weight": 2.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_cp1_skill_innate_cth_caravan_sawai_veteran",
+            "weight": 2.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          }
+        ]
+      }
+    ],
+    "wh3_dlc23_chd_lord_convoy_overseer": [
+      {
+        "set": {
+          "agent_key": "general",
+          "for_army": false,
+          "faction_key": null,
+          "key": "wh3_dlc23_skill_node_set_chd_lord_convoy_overseer",
+          "subculture": null,
+          "for_navy": false,
+          "campaign_key": null,
+          "agent_subtype_key": "wh3_dlc23_chd_lord_convoy_overseer"
+        },
+        "backgrounds": [
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_bull_centaur_master",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_cannonry_experience",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_connected",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_covert",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_hobgoblin_favour",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_kdaai_domination",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_metallic_resilience",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_monster_commander",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_ogre_controller",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_retired_daemonsmither",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_sharpshooter",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_dlc23_skill_innate_chd_convoy_overseer_war_machinist",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          }
+        ]
+      }
+    ],
+    "wh3_main_cth_lord_caravan_master": [
+      {
+        "set": {
+          "agent_key": "general",
+          "for_army": false,
+          "faction_key": null,
+          "key": "wh3_main_skill_node_set_cth_lord_caravan_master",
+          "subculture": null,
+          "for_navy": false,
+          "campaign_key": null,
+          "agent_subtype_key": "wh3_main_cth_lord_caravan_master"
+        },
+        "backgrounds": [
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Dragon-Blooded",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Former-Artillery-Officer",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Humble-Born",
+            "weight": 2.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Longma-Whisperer",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Nan-Gau",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Ogre-Ally",
+            "weight": 2.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Shang-Yang",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_Western-Idealist",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_cavalry",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_gunner",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_royalty",
+            "weight": 1.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          },
+          {
+            "key": "wh3_main_skill_innate_cth_caravan_master_stealth",
+            "weight": 2.0,
+            "male_only": false,
+            "female_only": false,
+            "influence": 0,
+            "node_creation": 0
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "default_skills_before": {
+    "16866": "00007FF4F65C8FA8:1"
+  },
+  "others_before": {
+    "wh2_dlc13_lzd_slann_mage_priest_fire": "",
+    "wh3_main_cth_alchemist_metal": "",
+    "wh3_main_ksl_patriarch": "",
+    "wh2_main_lzd_skink_priest_heavens": "5:n280521:swh2_main_lzd_hexoatl34:swh2_main_lzd_skink_priest_heavens5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_150024602922:snames_name_139061245438:swh2_main_skill_innate_all_intelligent4:nnil4:nnil,5:n280621:swh2_main_lzd_hexoatl34:swh2_main_lzd_skink_priest_heavens5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_214735891822:snames_name_139061245433:swh2_main_skill_innate_lzd_humble4:nnil4:nnil",
+    "wh2_main_lzd_saurus_old_blood": "5:n279921:swh2_main_lzd_hexoatl30:swh2_main_lzd_saurus_old_blood5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_102217689822:snames_name_139061245437:swh2_main_skill_innate_all_perceptive4:nnil4:nnil,5:n280021:swh2_main_lzd_hexoatl30:swh2_main_lzd_saurus_old_blood5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse21:snames_name_80687658022:snames_name_139061245433:swh2_main_skill_innate_all_strong4:nnil4:nnil",
+    "wh2_dlc13_lzd_ancient_kroxigor": "",
+    "wh3_main_cth_lord_magistrate_yin": "",
+    "wh2_main_lzd_skink_chief": "5:n279621:swh2_main_lzd_hexoatl25:swh2_main_lzd_skink_chief5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_109079219522:snames_name_139061245437:swh2_main_skill_innate_all_perceptive4:nnil4:nnil,5:n279721:swh2_main_lzd_hexoatl25:swh2_main_lzd_skink_chief5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_104792420322:snames_name_139061245437:swh2_main_skill_innate_all_strategist4:nnil4:nnil,5:n279821:swh2_main_lzd_hexoatl25:swh2_main_lzd_skink_chief5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse21:snames_name_87346535422:snames_name_139061245434:swh2_main_skill_innate_lzd_pompous4:nnil4:nnil",
+    "wh3_main_ksl_boyar": "",
+    "wh3_main_ksl_ice_witch_tempest": "",
+    "wh2_main_lzd_skink_priest_beasts": "5:n280721:swh2_main_lzd_hexoatl33:swh2_main_lzd_skink_priest_beasts5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse21:snames_name_77978808622:snames_name_139061245435:swh2_main_skill_innate_lzd_arrogant4:nnil4:nnil,5:n280821:swh2_main_lzd_hexoatl33:swh2_main_lzd_skink_priest_beasts5:btrue6:bfalse6:bfalse19:sordinary_generated5:btrue6:bfalse6:bfalse6:bfalse6:bfalse6:bfalse22:snames_name_106532973022:snames_name_139061245437:swh2_main_skill_innate_all_aggressive4:nnil4:nnil",
+    "wh3_main_cth_lord_magistrate_yang": ""
+  },
+  "request_target": "wh2_main_lzd_slann_mage_priest",
+  "before": [
+    {
+      "recruited": false,
+      "special": false,
+      "leader": false,
+      "in_pool": true,
+      "unique": false,
+      "immortal": false,
+      "background": "wh2_dlc13_skill_lzd_innate_slann_second_generation",
+      "starting": false,
+      "male": true,
+      "subtype": "wh2_main_lzd_slann_mage_priest",
+      "id": 16866,
+      "traits": [
+        {
+          "key": "wh3_main_trait_ice_training_economist",
+          "points": 1
+        },
+        {
+          "key": "wh3_main_trait_ice_training_quartermaster",
+          "points": 1
+        },
+        {
+          "key": "wh3_main_trait_ice_training_vanguard",
+          "points": 1
+        }
+      ],
+      "provenance": "ordinary_generated",
+      "faction": "wh2_main_lzd_hexoatl",
+      "trait_signature": "wh3_main_trait_ice_training_economist:1,wh3_main_trait_ice_training_quartermaster:1,wh3_main_trait_ice_training_vanguard:1",
+      "wounded": false,
+      "forename": "names_name_81034968",
+      "surname": "names_name_2147360514"
+    }
+  ],
+  "package_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "faction": "wh2_main_lzd_hexoatl",
+  "target": "wh2_main_lzd_slann_mage_priest",
+  "mode": "native_ui",
+  "owned_before": "not_applicable",
+  "ranks_before": {}
+}

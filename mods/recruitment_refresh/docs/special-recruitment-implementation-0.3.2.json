@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.2",
+  "status": "IMPLEMENTED_WITH_SCOPED_NATIVE_ACCEPTANCE",
+  "recorded_at_utc": "2026-11-16T11:45:17.599178+00:00",
+  "source_commit": "fa1aa1008438e97261ff5934ecc4720205dd92e8",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116",
+  "pack": "xatw3_campaign_utilities.pack",
+  "pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "pack_bytes": 93860,
+  "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87",
+  "game": {
+    "version": "9.0.5.0",
+    "exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
+    "platform": "Windows x64",
+    "campaign": "main_warhammer",
+    "mode": "single_player"
+  },
+  "feedback_root_cause": "0.3.1 在类型发现、业务保护和原生资格检查中主动拒绝包含 caravan/convoy 的类型。其他部分特殊来源因 AutoGenerate=false 也被排除。此问题与此前多法术系目标识别问题不同。",
+  "implementation": {
+    "caravans": {
+      "keys": [
+        "wh3_main_cth_lord_caravan_master",
+        "wh3_dlc23_chd_lord_convoy_overseer",
+        "wh3_cp1_cth_sawai_caravan"
+      ],
+      "behavior": "只处理原版当前待雇用列表中的人物；排除 active/idle 已拥有商队。保留人物 ID、姓名、人数和解锁，调用精确校验的引擎技能初始化流程，再按原版背景权重排除旧背景重抽。通用生成人物和删除领队两条路径均禁止用于商队。",
+      "qualification": "仅 9.0.5；校验人物/派系/池归属、技能所有者、容器边界、原生初始化函数完整字节、嵌套重置及清理调用链。Lua 不直接写人物或容器内存。"
+    },
+    "finite_candidates": {
+      "families": [
+        "Slann",
+        "Vampire bloodlines",
+        "Chaos daemon princes",
+        "Exalted daemon lords",
+        "Verminlords"
+      ],
+      "behavior": "仅接入已有且通过履历、身份和培养进度检查的随机候选，不扩充名额或解锁。附加特性按原始点数复制并核验；默认自带技能允许保留，有经验、可分配点数或额外技能时拒绝替换。唯一、不朽、开局、已招募、受伤、未知履历等原有保护继续适用。",
+      "progression_guard": "任一待替换候选有额外培养进度时，预检拒绝整次刷新，该池尚未修改。"
+    },
+    "still_excluded": [
+      "冰雪宫廷训练结果重抽",
+      "固定王朝国王及科技专属人物",
+      "黑色方舟及龙舰提督等固定身份",
+      "食人魔营地专用领主",
+      "未批准的其他 Mod 商队类型",
+      "空池及未解锁内容"
+    ],
+    "uncertain_outcomes": "生成已发生但描述读回失败时记录新 ID 并锁定，不继续删除旧人。"
+  },
+  "offline_tests": {
+    "command": "D:/workspace/.codex-wh3-runtime/venv/Scripts/python.exe tools/test.py --mod recruitment_refresh",
+    "shared": 90,
+    "mod": 102,
+    "total": 192,
+    "status": "PASS",
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "tracked_payload_matches_pack": true
+  },
+  "native_acceptance": {
+    "harness_corrections": [
+      "史兰页签最初使用了错误别名，操作夹具在发出刷新请求前被目标断言拦截；改用实际原生分类 lzd_slann_mage_priest 后验收通过。",
+      "开场过场期间第一次打开商队面板被原版忽略；只重试面板导航，未重放雇用或刷新操作。"
+    ],
+    "cold_package_verified": true,
+    "hot_reload_credited": false,
+    "verification": "acceptance-0.3.2/verification.json",
+    "caravan": {
+      "faction": "wh3_main_cth_the_northern_provinces",
+      "refreshes": [
+        {
+          "count": "1->1",
+          "mode": "background",
+          "identity_preserved": true
+        },
+        {
+          "count": "1->1",
+          "mode": "background",
+          "identity_preserved": true
+        }
+      ],
+      "owned_caravan_unchanged": true,
+      "other_pools_unchanged": true,
+      "native_hires": [
+        "original candidate 1640",
+        "refreshed candidate 1641"
+      ],
+      "escort_units_match_vanilla_background_template": true,
+      "treasury_deducted": true,
+      "experience_progress_guard": "PASS"
+    },
+    "slann": {
+      "faction": "wh2_main_lzd_hexoatl",
+      "count": "1->1",
+      "replaced": "16866->16867",
+      "native_hire": "PASS",
+      "treasury": "6000->4850",
+      "army_count": "2->3",
+      "additional_trait_points_preserved": true,
+      "default_skills_preserved": true,
+      "other_real_pools_unchanged": true,
+      "fixture": "调用原版 slann_spawn 仪式完成生成人物函数；附加三个已知训练特性作为点数保留夹具。不是完整仪式操作或冰雪宫廷训练流程验收。",
+      "random_result": "本次世代为第二代->第二代；新 ID 和姓名已替换。普通随机刷新允许重抽相同背景，此结果不计为世代改变。"
+    },
+    "rank_evidence": "未上地图候选的公开 CCO Rank 返回空值；空值比较不计为等级验收。培养保护依据原生经验、点数、技能创建点数和额外分配检查；经验保护实机通过。",
+    "not_directly_tested": [
+      "混沌矮人车队：本机无授权",
+      "巴什瓦商队：本机无授权",
+      "其余有限池逐类型实测",
+      "在途商队派遣流程：未通过探针，不计为验收",
+      "多人实机",
+      "完整仪式/训练解锁流程",
+      "其他 Mod 组合"
+    ]
+  },
+  "rejected_prototypes": [
+    {
+      "approach": "通用 spawn_character_to_pool 创建并替换商队领队",
+      "result": "CRASH_ON_HIRE",
+      "published": false,
+      "isolation": "不删除旧人、只新增领队后调用 recruit_caravan 仍复现。出现在列表中不代表能够正常雇用。首次转储异常为 0xc0000005，Warhammer3.exe+0x295b014。未把未证明的内部缺失字段写作根因。"
+    },
+    {
+      "approach": "移除全部背景技能后直接公开加点",
+      "result": "REJECTED",
+      "reason": "移除函数删除技能节点；公开加点不能恢复缺失节点。"
+    },
+    {
+      "approach": "将冰雪宫廷作为随机背景有限池",
+      "result": "EXCLUDED_AFTER_INSPECTION",
+      "reason": "测试女巫只有默认法术技能和训练特性，没有普通随机背景；保留训练选择时没有同类背景可重抽。最终类型策略排除冰雪宫廷。"
+    }
+  ],
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "base_url": "http://192.168.1.11:8080/v1",
+    "diagnostic_models_get": "HTTP 200; only open-h3-2k listed",
+    "candidate_requests_this_implementation": 0,
+    "adopted_candidates": 0,
+    "fallback_used": false,
+    "implementation_owner": "primary agent"
+  },
+  "environment_cleanup": {
+    "status": "PASS",
+    "owned_test_packs_removed": true,
+    "preferences_restored": true,
+    "user_script_restored": true,
+    "steam_intentionally_offline": true,
+    "save_files_deleted": 0
+  },
+  "workshop": {
+    "uploaded_this_task": false,
+    "status": "UNPUBLISHED_SOURCE_CANDIDATE"
+  },
+  "evidence": [
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\before-caravan-owned-protection.json",
+      "source_sha256": "d360d01acce38aced0f9b9fe5ebadcc875a898addf869b75a820ed8bb7e4de43",
+      "file": "acceptance-0.3.2/before-caravan-owned-protection.json",
+      "sha256": "69009cc015d243ecd95252c26fe2a456223375b4dbc7ec6295fe7db9f8b5fbcb"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\before-caravan-repeat.json",
+      "source_sha256": "348c785dfdfb4f85c34069da4e37f0bf39ca01b90c5776a1bff42da3def5dd74",
+      "file": "acceptance-0.3.2/before-caravan-repeat.json",
+      "sha256": "afdd4cf81293d6b32fe0a8c0222dde4b193be17c0d8fd44901146c9ae267883f"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\before-slann-finite-traits.json",
+      "source_sha256": "d2c3c90232e9ab8f733d03b54cf16366eec9eaa3af9358404a83b6102f220d30",
+      "file": "acceptance-0.3.2/before-slann-finite-traits.json",
+      "sha256": "3806928cc7e9e4c27096d769e7a6c29065b7a670df49a21a02df5e6199ff3c83"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\caravan-initial-hire.json",
+      "source_sha256": "d3d2b1e769bfbfaae47e17228b3d281b46efc11a606024376304611fb6d219ea",
+      "file": "acceptance-0.3.2/caravan-initial-hire.json",
+      "sha256": "078d1d6db6c439e06fe2fea79891352dd3fb76822e1e7c486f2275ca1e1c79a9"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\caravan-progress-protection.json",
+      "source_sha256": "c3f03b2a03c648f5558d5911cddf55964976cc0105c12bab471e3cedec989a8b",
+      "file": "acceptance-0.3.2/caravan-progress-protection.json",
+      "sha256": "01936da9f23396c621d7595bb7a07d5e9646eb27b83ef1ea66c07a39e1e13ccf"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\caravan-refreshed-hire.json",
+      "source_sha256": "cbfbe2128b2293fb43b055b22ac7877dca5b8e4fd12ed57235d469594383200d",
+      "file": "acceptance-0.3.2/caravan-refreshed-hire.json",
+      "sha256": "605c6fd1caf316cc7a4ce8f1d8a129aa9e71f18c84d4d83f960bb21d6dc48fb4"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\case-caravan-owned-protection.json",
+      "source_sha256": "5d6ea722b49869f640d7fa7d2357b433557436c4a8ceb5670d8e36e651fb5be0",
+      "file": "acceptance-0.3.2/case-caravan-owned-protection.json",
+      "sha256": "d7f86edee605a431ac3f8d0d11c0bd56d0510fa765d06c099e43e697e7f77d68"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\case-caravan-repeat.json",
+      "source_sha256": "de46dc6b39c6b455388e9805a00d0a8d13c27d49152e6eed4c29b497afab7b69",
+      "file": "acceptance-0.3.2/case-caravan-repeat.json",
+      "sha256": "63700ba0d5fec492bfae52e453a0ae6003b25d1ac3a7aac9299c8d4a4e48687c"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\case-slann-finite-traits.json",
+      "source_sha256": "45d281ac66ee289112f0cb0be19839f5f25208ab07d0171fde6b077a14edc019",
+      "file": "acceptance-0.3.2/case-slann-finite-traits.json",
+      "sha256": "ac85f9a4183a8f1600ba5f1f8407107a643fef92ef830438bc86214672693721"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\expected.json",
+      "source_sha256": "ab043117353a2eaa584ecb28bea9cb1e15d8978800d61c839d54c2d77cd215e1",
+      "file": "acceptance-0.3.2/expected.json",
+      "sha256": "3eb86db280ecc4d183b0f57cb2ce00516497ae892e2b74247687e1750c57d265"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\slann-refreshed-hire.json",
+      "source_sha256": "bcfca67b9032be9a02015d7b6d7dc6850109fda4700657aa2caa0fa718f51b57",
+      "file": "acceptance-0.3.2/slann-refreshed-hire.json",
+      "sha256": "398f7810bd1849d3a4dd36fc9db3017998b4932cbe97f69d958bdd39bb15eb39"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\final\\verification.json",
+      "source_sha256": "50ad4b7ee678fe518f6d97161caa7e1e099c0722e032605e58b778990157b683",
+      "file": "acceptance-0.3.2/verification.json",
+      "sha256": "8b3f207d8cd2e7faead778df282ed13815dfce4e0d3b224b1e493e5cd99c1134"
+    },
+    {
+      "source": "D:\\workspace\\total_war_warhammer_3_dev\\mods\\recruitment_refresh\\build\\offline-test-results.json",
+      "source_sha256": "94f05801fd4e5d45662caecd9f9d8e6f19f2a63f17679ee8fb4bae7a8fb23eb3",
+      "file": "acceptance-0.3.2/offline-tests.json",
+      "sha256": "c3f6178cbecbed16be4df693e4de9ab0b1307ddfa4a1d0713a2aa67d6ab742f5"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\repository-payload-check.json",
+      "source_sha256": "e3f1cb538c1dcc2d85684103e0b5ffb22d7d8774f869666cb568c93b88c571b4",
+      "file": "acceptance-0.3.2/repository-payload-check.json",
+      "sha256": "6692ae8ed8671fe57e52069e3a2483dddfe648d01dc74d5c89027e5df25d5483"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\cleanup.json",
+      "source_sha256": "63f22641ab4902b36e11ebad84b2c12360871fe73ea90b807d945a6eae11ec9a",
+      "file": "acceptance-0.3.2/cleanup.json",
+      "sha256": "14eeb6adc0d9dab65126e596c2ae825d699601328093e19fd412a4c16de0a5ae"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\native-background-contract.json",
+      "source_sha256": "15e51fed9dab0b6a12f06e2cc8ed914236ef496c3a84248566c7b618cd4348a4",
+      "file": "acceptance-0.3.2/native-background-contract.json",
+      "sha256": "8301167af771666e7cb77a9f6bfefa7c5aadb47fe7385b5b3c9f024a6d9d0792"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\native\\native.log",
+      "source_sha256": "f0b65b3c09a4c34b2a37cbd358a60e6a1ca4d0fb60b7356cfbadb227536874f9",
+      "file": "acceptance-0.3.2/cathay-native.log",
+      "sha256": "19b2f0762534c70223d22aebf9b5e6321deb3d803cba79b36b87ef87dc07c05a"
+    },
+    {
+      "source": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\native-lizardmen-1794828797681069300.log",
+      "source_sha256": "52258173845a544a05e909172c7e8dc513781eae67376bea479e0d9f98e1b963",
+      "file": "acceptance-0.3.2/lizardmen-native.log",
+      "sha256": "d0613c3c255b828eda2b2366442e18c55316d2e9ca259be289b093739fa36fda"
+    }
+  ]
+}

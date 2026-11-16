@@ -1,0 +1,26 @@
+{
+  "owned_after": 1,
+  "id": 1640,
+  "owned_snapshot": "idle_caravans:1640:949:0:false:false:wh3_main_cth_cha_lord_caravan_master,wh3_main_cth_inf_peasant_spearmen_1,wh3_main_cth_inf_peasant_spearmen_1,wh3_main_cth_inf_jade_warriors_1,wh3_main_cth_inf_jade_warriors_1,wh3_main_cth_inf_peasant_archers_0,wh3_main_cth_inf_peasant_archers_0,wh3_main_cth_inf_crane_gunners_0,wh3_main_cth_inf_crane_gunners_0,wh3_main_cth_art_fire_rain_rocket_battery_0",
+  "escort_expected": {
+    "wh3_main_cth_inf_peasant_spearmen_1": 2,
+    "wh3_main_cth_art_fire_rain_rocket_battery_0": 1,
+    "wh3_main_cth_inf_jade_warriors_1": 2,
+    "wh3_main_cth_inf_peasant_archers_0": 2,
+    "wh3_main_cth_inf_crane_gunners_0": 2
+  },
+  "gold_before": 6000,
+  "package_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "owned_before": 0,
+  "status": "PASS",
+  "background": "wh3_main_skill_innate_cth_caravan_master_Nan-Gau",
+  "escort_actual": {
+    "wh3_main_cth_cha_lord_caravan_master": 1,
+    "wh3_main_cth_art_fire_rain_rocket_battery_0": 1,
+    "wh3_main_cth_inf_jade_warriors_1": 2,
+    "wh3_main_cth_inf_peasant_archers_0": 2,
+    "wh3_main_cth_inf_crane_gunners_0": 2,
+    "wh3_main_cth_inf_peasant_spearmen_1": 2
+  },
+  "gold_after": 5230
+}

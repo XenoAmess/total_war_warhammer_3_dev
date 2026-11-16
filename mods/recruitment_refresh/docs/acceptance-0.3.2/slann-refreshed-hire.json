@@ -1,0 +1,13 @@
+{
+  "forces_before": 2,
+  "forces_after": 3,
+  "id": 16867,
+  "background": "wh2_dlc13_skill_lzd_innate_slann_second_generation",
+  "traits_after": "wh3_main_trait_ice_training_economist:1,wh3_main_trait_ice_training_quartermaster:1,wh3_main_trait_ice_training_vanguard:1",
+  "package_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "gold_before": 6000,
+  "status": "PASS",
+  "kind": "finite",
+  "traits_before": "wh3_main_trait_ice_training_economist:1,wh3_main_trait_ice_training_quartermaster:1,wh3_main_trait_ice_training_vanguard:1",
+  "gold_after": 4850
+}

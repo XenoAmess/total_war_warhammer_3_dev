@@ -1,0 +1,61 @@
+{
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.2",
+  "language": "zh-CN",
+  "pack": "xatw3_campaign_utilities.pack",
+  "sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "bytes": 93860,
+  "files": [
+    {
+      "path": "script/campaign/mod/xatw3_campaign_utilities.lua",
+      "bytes": 2083,
+      "sha256": "6e700299ca0f6e98a06bd550e648213781170ae88df2c2d3a8bfb0864b0d9a50"
+    },
+    {
+      "path": "script/campaign/xatw3_campaign_utilities/logic.lua",
+      "bytes": 11268,
+      "sha256": "282c3b95b72f4284e86926c2a3566ce5cfa5d5356b2dbe1c5fc92dd05a2e13ac"
+    },
+    {
+      "path": "script/campaign/xatw3_campaign_utilities/native_pool.lua",
+      "bytes": 15842,
+      "sha256": "1eb30f63ac2134b720d8d61ce63e3223dcf6c725c4d69e0978a0dbd7a48e13ee"
+    },
+    {
+      "path": "script/campaign/xatw3_campaign_utilities/recruitment_policy.lua",
+      "bytes": 6217,
+      "sha256": "c64a511c05245ba5ab0cbaadadde9d0afb8678eb1eccb25d4f79b1804bb0ab00"
+    },
+    {
+      "path": "script/campaign/xatw3_campaign_utilities/runtime.lua",
+      "bytes": 17708,
+      "sha256": "50f064a153eb73d93858cf0bed444f16d81ac85b3548e54a659b4b7ce990da1b"
+    },
+    {
+      "path": "script/campaign/xatw3_campaign_utilities/ui.lua",
+      "bytes": 22896,
+      "sha256": "322fdb2928ef3de1bd5d923ca46311bca676d2f34846739d1ecdd2ca531446de"
+    },
+    {
+      "path": "script/xatw3_multiplayer.lua",
+      "bytes": 15324,
+      "sha256": "c31e44a8dbe06902f31c00836a668a5bd06617ac554eefa608f6a7ca980c079c"
+    },
+    {
+      "path": "script/xatw3_release_recruitment_refresh.lua",
+      "bytes": 74,
+      "sha256": "ad77b4f60835833b80201e3c2183ccb6a78c1579d8294f9ba22611d1fc3f1821"
+    },
+    {
+      "path": "script/xatw3_transport_identity.lua",
+      "bytes": 74,
+      "sha256": "1b8015bed0de86ab96af1833293c7fce5d7c5e83d47a4b5576260c44a4a93da6"
+    },
+    {
+      "path": "text/db/xatw3_campaign_utilities.loc",
+      "bytes": 1827,
+      "sha256": "4b430395c67455f6c45591d848687c14e798f9d1ab8deaad43d797b77f28628a"
+    }
+  ],
+  "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87"
+}

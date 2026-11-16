@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "tracked_payload_files": [
+    "mods/recruitment_refresh/src/script/campaign/mod/xatw3_campaign_utilities.lua",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/logic.lua",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/native_pool.lua",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/recruitment_policy.lua",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/runtime.lua",
+    "mods/recruitment_refresh/src/script/campaign/xatw3_campaign_utilities/ui.lua",
+    "tools/lua/multiplayer.lua"
+  ]
+}

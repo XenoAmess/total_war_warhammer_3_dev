@@ -1,0 +1,70 @@
+FRONTEND_READY
+COMMAND_RESULT ok=true result=nil
+CLEAN_HEF_START
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+FINAL_COLD_PACKAGE 84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87 60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9
+COMMAND_RESULT ok=true result=nil
+CARAVAN_PRISTINE_GUARD true nil points=0 level=0 xp=0
+CARAVAN_PROGRESS_PROTECTION_PASS
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+ROOT_VISIBLE ai_attack_targets_parent
+ROOT_VISIBLE 3d_ui_parent
+ROOT_VISIBLE mission_indicator_parent
+ROOT_VISIBLE watermark_square
+ROOT_VISIBLE hud_campaign
+ROOT_VISIBLE panel_manager
+ROOT_VISIBLE menu_bar
+ROOT_VISIBLE under_advisor_docker
+ROOT_VISIBLE tooltip_default
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=false result=[string "xatw3_acceptance_command"]:1: assertion failed!
+HIRE_BEGIN caravan-initial-hire
+HIRE_SELECT 1640
+COMMAND_RESULT ok=false result=[string "local f=assert(io.open('D:/workspace/.codex-wh3-runtime/special-recruitment-implementation-20261116/escort_templates.lua','r'));local source=f:read('*a');f:close();local escort_templates=assert(loadstring(source))()..."]:7: assertion failed!
+COMMAND_RESULT ok=true result=nil
+ROOT_VISIBLE ai_attack_targets_parent
+ROOT_VISIBLE 3d_ui_parent
+ROOT_VISIBLE mission_indicator_parent
+ROOT_VISIBLE highlight_dummy
+ROOT_VISIBLE watermark_square
+ROOT_VISIBLE cathay_caravans
+ROOT_VISIBLE panel_manager
+ROOT_VISIBLE hud_campaign
+ROOT_VISIBLE menu_bar
+ROOT_VISIBLE campaign_space_bar_options
+ROOT_VISIBLE under_advisor_docker
+ROOT_VISIBLE fullscreen_highlight
+ROOT_VISIBLE text_pointer_parent
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+HIRE_BEGIN caravan-initial-hire
+HIRE_SELECT 1640
+COMMAND_RESULT ok=true result=nil
+HIRE_CLICK 1640
+HIRE_CLICK_RETURN 1640
+HIRE_VERIFY_BEGIN 1640
+HIRE_OWNED_READ 1
+HIRE_ACTOR_READ 1640
+FINAL_HIRE_PASS caravan-initial-hire id=1640 owned=0->1
+COMMAND_RESULT ok=true result=nil
+FINAL_READY_BEFORE caravan-owned-protection
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+FINAL_REFRESH_PASS caravan-owned-protection before=1 after=1 replaced=1
+FINAL_READY_BEFORE caravan-repeat
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+FINAL_REFRESH_PASS caravan-repeat before=1 after=1 replaced=1
+HIRE_BEGIN caravan-refreshed-hire
+HIRE_SELECT 1641
+COMMAND_RESULT ok=true result=nil
+HIRE_CLICK 1641
+HIRE_CLICK_RETURN 1641
+HIRE_VERIFY_BEGIN 1641
+HIRE_OWNED_READ 2
+HIRE_ACTOR_READ 1641
+FINAL_HIRE_PASS caravan-refreshed-hire id=1641 owned=1->2

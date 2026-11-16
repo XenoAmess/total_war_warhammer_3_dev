@@ -1,0 +1,8 @@
+{
+  "schema": "wh3.release-steam-offline/v1",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-11-16T11:41:00.130165+00:00",
+  "status": "offline",
+  "offline_mode": true,
+  "observation_method": "native_current_user_byte"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "observed_at_utc": "2026-11-16T11:41:00.391913+00:00",
+  "removed_owned_packs": [
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_acceptance.pack",
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack"
+  ],
+  "preferences_restored": true,
+  "user_script_restored": true,
+  "offline": true,
+  "offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\steam-after-cleanup-1794829259860249600.json",
+  "game_stopped": true,
+  "save_files_deleted": 0
+}

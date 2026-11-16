@@ -1,0 +1,47 @@
+[
+  {
+    "observed_at_utc": "2026-11-16T11:38:36.230927+00:00",
+    "pid": 20400,
+    "hwnd": 24643066,
+    "client_bbox": [
+      480,
+      270,
+      2080,
+      1170
+    ],
+    "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\captures\\final-caravan-before-refresh.png",
+    "sha256": "79d6d1b9c0a8056bbe754202059790d9d4b1702778a70a047d68bcbf47c1bbe3",
+    "candidate_pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+    "method": "owned_game_client_pixels_no_activation"
+  },
+  {
+    "observed_at_utc": "2026-11-16T11:38:45.371699+00:00",
+    "pid": 20400,
+    "hwnd": 24643066,
+    "client_bbox": [
+      480,
+      270,
+      2080,
+      1170
+    ],
+    "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\captures\\final-caravan-after-refresh.png",
+    "sha256": "bc0e877ccbff9d0d09111d4f0c498930c7ddb989e80e83f3a8e721885b644d92",
+    "candidate_pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+    "method": "owned_game_client_pixels_no_activation"
+  },
+  {
+    "observed_at_utc": "2026-11-16T11:39:25.649705+00:00",
+    "pid": 20400,
+    "hwnd": 24643066,
+    "client_bbox": [
+      480,
+      270,
+      2080,
+      1170
+    ],
+    "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-implementation-20261116\\captures\\final-caravans-hired.png",
+    "sha256": "88ee20f6c2d13389838a1e40c000aaad0a5d1c778f68a170fbea6cf08d8d1a38",
+    "candidate_pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+    "method": "owned_game_client_pixels_no_activation"
+  }
+]

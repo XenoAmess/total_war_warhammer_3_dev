@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "cases": [
+    {
+      "file": "case-caravan-owned-protection.json",
+      "status": "PASS",
+      "before": 1,
+      "after": 1,
+      "replaced": 1
+    },
+    {
+      "file": "case-caravan-repeat.json",
+      "status": "PASS",
+      "before": 1,
+      "after": 1,
+      "replaced": 1
+    },
+    {
+      "file": "case-slann-finite-traits.json",
+      "status": "PASS",
+      "before": 1,
+      "after": 1,
+      "replaced": 1
+    }
+  ],
+  "hires": [
+    {
+      "file": "caravan-initial-hire.json",
+      "status": "PASS",
+      "id": 1640
+    },
+    {
+      "file": "caravan-refreshed-hire.json",
+      "status": "PASS",
+      "id": 1641
+    },
+    {
+      "file": "slann-refreshed-hire.json",
+      "status": "PASS",
+      "id": 16867
+    }
+  ],
+  "public_candidate_rank": "UNREADABLE_NOT_CREDITED"
+}
