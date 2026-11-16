@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "main",
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217&l=english",
+    "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-release-20261116\\public-main-0.html",
+    "sha256": "2fb33950b8e1c9558fb5d5b830bd4d2901b2ed3d6f71050d37eae587c2839b4c",
+    "bytes": 97774,
+    "status": "PASS"
+  },
+  {
+    "kind": "changelog",
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=english",
+    "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-release-20261116\\public-changelog-0.html",
+    "sha256": "ca555d61bbe8f2d3f2dc4a948d6d05b6f26cf4572e950a8bfc5288dbfc7d3690",
+    "bytes": 63366,
+    "status": "PASS"
+  }
+]

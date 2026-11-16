@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.2",
+  "item_id": "3830548217",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+  "source_commit": "fa1aa1008438e97261ff5934ecc4720205dd92e8",
+  "publication_input_commit": "875f3ae499da4af74531d90f1296fb7b06858281",
+  "pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "pack_bytes": 93860,
+  "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87",
+  "uploaded_at_utc": "2026-11-16T12:20:44+00:00",
+  "verified_at_utc": "2026-11-16T12:27:06.784337+00:00",
+  "user_instruction": "发布更新到创意工坊",
+  "release_scope": "Incremental single-player acceptance of the exact cold-mounted 0.3.2 package on Cathay caravans and Hexoatl Slann. No all-faction, individual DLC, complete ritual/training, save-reload or native multiplayer credit.",
+  "acceptance_file": "acceptance-results-0.3.2.json",
+  "description_sha256": "a31e93fa17d9f650134e4997e230f0bbe1e9bd74bf2cb659cf65b904bb94f8c9",
+  "change_notes_sha256": "7ff800ed2c993bddc87d637e4ec893f0830eb49b94b4f1d707155cbf088c865a",
+  "account_occupancy": "Fresh public idle checks before restart, online mode, child process and publisher SDK; no account takeover.",
+  "download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+    "bytes": 93860,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-11-16T12:20:51.420073+00:00"
+  },
+  "public_verification": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "version": "0.3.2",
+    "item_id": "3830548217",
+    "observed_at_utc": "2026-11-16T12:22:20.635003+00:00",
+    "pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+    "public_description": "PASS",
+    "public_changelog": "PASS",
+    "required_dependency": "PASS",
+    "launcher_metadata": "PASS",
+    "cover": "PASS",
+    "gallery": "PASS_UNCHANGED_3_IMAGES",
+    "real_subscribed_download": "PASS"
+  },
+  "public_pages": [
+    {
+      "kind": "main",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217&l=english",
+      "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-release-20261116\\public-main-0.html",
+      "sha256": "2fb33950b8e1c9558fb5d5b830bd4d2901b2ed3d6f71050d37eae587c2839b4c",
+      "bytes": 97774,
+      "status": "PASS"
+    },
+    {
+      "kind": "changelog",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=english",
+      "path": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-release-20261116\\public-changelog-0.html",
+      "sha256": "ca555d61bbe8f2d3f2dc4a948d6d05b6f26cf4572e950a8bfc5288dbfc7d3690",
+      "bytes": 63366,
+      "status": "PASS"
+    }
+  ],
+  "launcher_metadata": {
+    "PACK_NAME": [
+      "xatw3_campaign_utilities.pack"
+    ],
+    "game_version": [
+      "589824"
+    ]
+  },
+  "images": [
+    {
+      "file": "preview.png",
+      "url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+      "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+      "status": "PASS",
+      "bytes": 49827
+    },
+    {
+      "slot": 0,
+      "file": "lord-refresh-icon.jpg",
+      "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "status": "PASS",
+      "bytes": 904363
+    },
+    {
+      "slot": 1,
+      "file": "lord-refreshed.jpg",
+      "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "status": "PASS",
+      "bytes": 904683
+    },
+    {
+      "slot": 2,
+      "file": "hero-final.jpg",
+      "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "status": "PASS",
+      "bytes": 887983
+    }
+  ],
+  "subscriber_mount": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "source": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "source_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+    "installation_method": "byte-identical copy from verified real subscription folder",
+    "frontend_mount_only": true,
+    "business_retest": false,
+    "installed": [
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+        "sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_release_mount.pack",
+        "sha256": "c24fb1f8d41d611ed9518c472f6538a2e285b9515d8510e3ee93ca4b89e067a1"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+        "sha256": "0c751ae032bb51718c267cd06b67c648035367c13338763edf9a689be4ce9ae1"
+      }
+    ],
+    "pid": 25420,
+    "cleaned": true,
+    "preferences_restored": true,
+    "user_script_restored": true,
+    "steam_intentionally_offline": true,
+    "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87",
+    "completed_at_utc": "2026-11-16T12:24:34.160373+00:00"
+  },
+  "subscriber_mount_scope": "Frontend release identity loaded from a byte-identical copy of the actual Workshop subscription download; no repeat business acceptance credit.",
+  "limitations": [
+    "混沌矮人车队：本机无授权",
+    "巴什瓦商队：本机无授权",
+    "其余有限池逐类型实测",
+    "在途商队派遣流程：未通过探针，不计为验收",
+    "多人实机",
+    "完整仪式/训练解锁流程",
+    "其他 Mod 组合"
+  ],
+  "steam_final_mode": "offline",
+  "steam_final_receipt": {
+    "schema": "wh3.release-steam-offline/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-16T12:27:06.489862+00:00",
+    "nonce": "8dea9b3de7c9c99c7ff309e1f70f31eb",
+    "status": "offline",
+    "steam": {
+      "pid": 26208,
+      "birth_filetime": "134393052758363026",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.23.65.88"
+    },
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19675800,
+      "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+      "file_id": "1125899908071526",
+      "mtime_ns": "1794535550000000000"
+    },
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-16T12:27:06.737875+00:00",
+      "nonce": "8dea9b3de7c9c99c7ff309e1f70f31eb",
+      "module_base": "140711352926208",
+      "module_size": 19959808,
+      "value_rva": "18653399",
+      "value_address": "140711371579607",
+      "producer_rva": "6691596",
+      "producer_anchor_hex": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "producer_anchor_sha256": "e2ee13da1019c3cb41a999d4fda37bde192574390690cb2328c903de7fdd54c2",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 26208,
+        "birth_filetime": "134393052758363026",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "steam_after": {
+        "pid": 26208,
+        "birth_filetime": "134393052758363026",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "tray_manager_pointer_rva": "18645800",
+      "tray_manager_address": "2411786018944",
+      "tray_state_offset": "352",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    }
+  },
+  "temporary_steam_debugging_removed": true,
+  "test_files_and_preferences_restored": true,
+  "offline_probe_implementation": "publication-0.3.1/steam_release_probe.py",
+  "offline_probe_sha256": "8764e0da151d32024350e4053bb1bc1b3c3a30d83624d37834146cfe19a72c7c",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\special-recruitment-release-20261116",
+  "evidence": [
+    {
+      "file": "publication-0.3.2/account-before-child.json",
+      "sha256": "9b718f9c6e6a48eecbba9eb4016b20c822a13482783de6bd4d1d5dfc5a078eac",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.2/account-before-online.json",
+      "sha256": "9777bb6f5a528c2f6d0deda06174fe71a5b2c4fed5e1e978df244d43ecd32188",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.2/account-before-publisher-sdk.json",
+      "sha256": "4345b44e65ab0e74c4dfbb2d23ca6cff80a4d5f8793749dcecb49fecb401fefa",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.2/account-before-restart.json",
+      "sha256": "480419dabdc1375395b05817db7491bea3acffa208af4c7a331850ab2fb3b458",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.2/account-initial.json",
+      "sha256": "c40e77405f5bf5c6256612174665da17cde9c9931dd585dfe2af692e7f153e5f",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.2/final-after-all-checks.json",
+      "sha256": "33d0c92dbf852bc3b72f810e099ae41112fb4286e706e7a6bb65da99295d413d",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.2/final-offline.json",
+      "sha256": "db61d04976201d4fa2fe8563ab7b0d8ae409465d3d4228529808e5d958135e18",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.2/images.json",
+      "sha256": "614df3b2842e1c5e3707490a73d224fc1a0ae5d5180a5ecb658e2014a02a5bbf",
+      "bytes": 1174
+    },
+    {
+      "file": "publication-0.3.2/local-model-status.json",
+      "sha256": "c2ed1930448c2cb5d7a27bd208fbc9ba54966f4bb444d5ee8f16343e18846d1e",
+      "bytes": 213
+    },
+    {
+      "file": "publication-0.3.2/mount-session.json",
+      "sha256": "5c885b0353a5a598c813b8f0e7d9244f640a2783362615fd529d5450548923fc",
+      "bytes": 1333
+    },
+    {
+      "file": "publication-0.3.2/offline-after-subscriber-mount.json",
+      "sha256": "df164067b8d5a3ef62d707af8e52c57ab5c9981017272561f1899882194e3b17",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.2/offline-before-publication.json",
+      "sha256": "8e4b86bf139eb7dfff501d0de686441af56f00674af405028aee9f35298a7b47",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.2/prepared.json",
+      "sha256": "804372156e8527596dc9ea3d0c2cd56a03b73fd570f74854bd5b1b847c9401c0",
+      "bytes": 500
+    },
+    {
+      "file": "publication-0.3.2/public-after.json",
+      "sha256": "c021e7ed0bfadde1e07dc7b96bed40478e5a933e29b338cc0e4f3e0dd9543d59",
+      "bytes": 7479
+    },
+    {
+      "file": "publication-0.3.2/public-pages-check.json",
+      "sha256": "1dc7fa4f92d57059142a732859ad77ae17ace55c8535ea833d7431b49b06d6f3",
+      "bytes": 717
+    },
+    {
+      "file": "publication-0.3.2/public-verification.json",
+      "sha256": "b0f6324e2964a6c047c29c1adb5a64951d874a62cbb4d3bca505f85c14dca85b",
+      "bytes": 472
+    },
+    {
+      "file": "publication-0.3.2/publisher.log",
+      "sha256": "40151bedacee560059989ef8c6883315ce0833772eec626f6effb0ffe8de0381",
+      "bytes": 730
+    },
+    {
+      "file": "publication-0.3.2/remote-launcher-metadata.json",
+      "sha256": "e8c42d1ebf014a18789b8da076785a40da650e9472ab0f81cf680a3478567fa6",
+      "bytes": 99
+    },
+    {
+      "file": "publication-0.3.2/subscriber-mount.log",
+      "sha256": "8fc8f327c1cc7ee82c4d9252218517ab4f617ea959308f83fb14719ced9a11a1",
+      "bytes": 144
+    },
+    {
+      "file": "publication-0.3.2/subscription-download.json",
+      "sha256": "22fb121dace3ac55ae2794823d8376472075d9407fcc4c47076b1c4b8cfff57f",
+      "bytes": 409
+    }
+  ]
+}

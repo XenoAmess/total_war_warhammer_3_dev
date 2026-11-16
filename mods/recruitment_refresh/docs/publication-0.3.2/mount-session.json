@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "mod_id": "recruitment_refresh",
+  "source": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+  "source_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "installation_method": "byte-identical copy from verified real subscription folder",
+  "frontend_mount_only": true,
+  "business_retest": false,
+  "installed": [
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+      "sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_release_mount.pack",
+      "sha256": "c24fb1f8d41d611ed9518c472f6538a2e285b9515d8510e3ee93ca4b89e067a1"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+      "sha256": "0c751ae032bb51718c267cd06b67c648035367c13338763edf9a689be4ce9ae1"
+    }
+  ],
+  "pid": 25420,
+  "cleaned": true,
+  "preferences_restored": true,
+  "user_script_restored": true,
+  "steam_intentionally_offline": true,
+  "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87",
+  "completed_at_utc": "2026-11-16T12:24:34.160373+00:00"
+}

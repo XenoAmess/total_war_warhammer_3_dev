@@ -153,7 +153,9 @@
   },
   "workshop": {
     "uploaded_this_task": false,
-    "status": "UNPUBLISHED_SOURCE_CANDIDATE"
+    "status": "PUBLISHED_IN_FOLLOWUP_TASK",
+    "publication_record": "workshop-publication-0.3.2.json",
+    "followup_verified_at_utc": "2026-11-16T12:27:06.784337+00:00"
   },
   "evidence": [
     {

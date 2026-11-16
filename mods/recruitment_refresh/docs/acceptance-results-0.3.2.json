@@ -2,7 +2,7 @@
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
   "version": "0.3.2",
-  "release_status": "ACCEPTED_FOR_SCOPED_PUBLICATION",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "recorded_at_utc": "2026-11-16T12:16:56.553290+00:00",
   "source_commit": "fa1aa1008438e97261ff5934ecc4720205dd92e8",
   "release_pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
@@ -13,7 +13,7 @@
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PASS",
   "acceptance_scope": "Incremental single-player acceptance of the exact cold-mounted 0.3.2 package on Cathay caravans and Hexoatl Slann. No all-faction, individual DLC, complete ritual/training, save-reload or native multiplayer credit.",
   "user_instruction": "发布更新到创意工坊",
   "offline_tests": {
@@ -92,5 +92,9 @@
     "多人实机",
     "完整仪式/训练解锁流程",
     "其他 Mod 组合"
-  ]
+  ],
+  "publication_record": "workshop-publication-0.3.2.json",
+  "published_at_utc": "2026-11-16T12:20:44+00:00",
+  "verified_at_utc": "2026-11-16T12:27:06.784337+00:00",
+  "subscription_mount_scope": "Frontend release identity loaded from a byte-identical copy of the actual Workshop subscription download; no repeat business acceptance credit."
 }

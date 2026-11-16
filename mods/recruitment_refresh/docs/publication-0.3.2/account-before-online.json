@@ -1,0 +1,10 @@
+{
+  "owner": "76561198273714027",
+  "status": "PUBLIC_PRESENCE_IDLE",
+  "game": null,
+  "online_state": "offline",
+  "observed_at_utc": "2026-11-16T12:20:21.258832+00:00",
+  "server_date": "Mon, 16 Nov 2026 12:20:20 GMT",
+  "source": "steam_community_public_presence",
+  "response_sha256": "21bbdc50653e775377ef5f49ea66d997e6c4e880f8167b17830266c0e8a7fdf0"
+}

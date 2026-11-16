@@ -1,0 +1,10 @@
+{
+  "configured_model": "qwen38-coder",
+  "listed_models": [
+    "open-h3-2k"
+  ],
+  "candidate_requests": 0,
+  "adopted_candidates": 0,
+  "fallback_used": false,
+  "status": "CONFIGURED_CODE_MODEL_UNAVAILABLE"
+}

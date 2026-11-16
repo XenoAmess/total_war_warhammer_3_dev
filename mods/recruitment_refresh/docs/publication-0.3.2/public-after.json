@@ -1,0 +1,33 @@
+{
+  "publishedfileid": "3830548217",
+  "result": 1,
+  "creator": "76561198273714027",
+  "creator_app_id": 1142710,
+  "consumer_app_id": 1142710,
+  "filename": "",
+  "file_size": "93860",
+  "file_url": "",
+  "hcontent_file": "4075221536495493631",
+  "preview_url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+  "hcontent_preview": "13984720066538470627",
+  "title": "招募候选刷新 | Recruitment Refresh",
+  "description": "[h1]招募候选刷新 / Recruitment Refresh[/h1]\n[b]0.3.2 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]\n\n[b]必需物品：memreader Plus，请订阅并同时启用。单机实测依赖版本 0.15.2。[/b] 迁都为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]独立 Mod[/url]，两者互不依赖。\n\n在人物招募页选择类别，点击底部“招募”右侧的刷新图标。免费，无额外回合冷却，单击直接刷新、不弹确认。选中的非空普通领主／事务官子类型不足 3 人时补足到 3 人；更多候选保持人数，不会持续累加。原版建筑、容量、费用和内容解锁条件保持。\n\n[h2]商队与特殊候选[/h2]\n0.3.2 接入震旦督运总督、混矮车队监督与巴什瓦商队。只处理原版当前待雇用列表：保留领队身份、姓名及名额，按原版权重重抽为不同背景；已有、闲置或在途商队不刷新。单机成功后返回商队招募页。特殊池不补足到 3 人，不绕过解锁。\n\n有随机背景的史兰、血裔及部分晋升／召唤类型，可处理通过保护检查的现有候选，保留附加特性点数及默认技能。普通随机刷新可能再次抽到相同天赋或世代。唯一、传奇、不朽、开局、受伤、已招募等人物继续保护；普通及有限来源池继续保护未知履历。商队另以原版待雇用记录核实。任一待替换候选有额外经验、技能点或技能时，预检拒绝整次刷新。\n\n[b]冰雪宫廷训练结果、固定王朝／科技专属人物、黑色方舟、龙舰提督及营地专用领主不重抽。空池不补员。[/b] 其他修改人物生成或招募池的 Mod 可能冲突，不宣称全种族或组合 Mod 兼容。\n\n[h2]验收范围[/h2]\n192 项离线测试通过。0.3.2 精确最终包在 9.0.5 单机实测：震旦连续两次 1→1、正常雇用、护卫队兵种／数量匹配新背景及已有商队保护；史兰 1→1、附加特性点数／默认技能保留及正常雇用。史兰测试调用原版仪式生成人物函数并附加测试特性，[b]不算完整仪式或冰雪宫廷训练流程验收。[/b]\n\n[b]本机无混矮和巴什瓦授权，两类商队未直接实测；其余有限池未逐类型实测，联机仍未实机验收。[/b] 0.3.1 的多法术系目标识别、悬停选中态、分类恢复及开局履历修复保留；此前以高精同机制验收发布，爪语者没有直接实测。\n\n[h2]实验性联机支持[/h2]\n[b]0.3.0 已加入多人同步，未做联机实机验收，不保证无失步。[/b] 全部玩家须启用完全相同的本 Mod 包（包括语言）、memreader Plus 及其他 Mod／依赖版本。各端关闭人物面板，比对版本和候选计划后执行，再核对结果。联机完成后需手动重开面板；单机自动返回招募页。\n\n混用版本、缺少 Mod、断线或成员变化可能拒绝或持续等待。单端原生失败不能自动回滚；结果不明或部分完成时停止操作，不自动重试。[b]保留操作前独立存档，异常后读回该档，不手动清除锁。[/b] 缺少依赖、引擎构建或原生结构校验失败时停止对应刷新。空间不足时隐藏图标；禁用 Mod 不会撤销已保存的刷新与招募。\n\n[h2]English[/h2]\nRequires memreader Plus enabled alongside this Mod (SP tested with 0.15.2). Free one-click candidate refresh in Immortal Empires, using the small icon beside Recruit. Nonempty ordinary lord/hero pools fill to at least 3; larger pools retain their counts. Normal costs, capacity and unlock conditions remain.\n\n0.3.2 adds Cathay, Chaos Dwarf and Bhashiva caravan candidates. Only currently offered, unhired leaders are eligible. Their identity, name and slot stay intact while the background changes; owned, idle or travelling caravans are protected. Supported existing random-background Slann, bloodline and selected ascension/summoning candidates keep their counts, extra trait points and default skills. Special pools never fill to 3 or grant unlocks. Ordinary random rerolls can repeat a trait or generation.\n\nUnique, legendary, immortal, starting, wounded or previously recruited characters remain protected. Unknown history is protected in ordinary/finite pools; caravans use the vanilla offer list as additional proof. Extra progression rejects the operation during preflight. Ice Court training choices, fixed dynasty/technology characters, Black Arks, Dragonship Admirals, camp-only lords and empty pools are excluded.\n\n192 offline tests passed. Exact 0.3.2 package checks on WH3 9.0.5 cover Cathay twice at 1->1, native hiring, escorts matching the new background and owned-caravan protection; Slann at 1->1 retained extra trait points/default skills and could be hired. The Slann fixture uses the vanilla ritual spawn function with extra test traits, not a full ritual/training playthrough. [b]Chaos Dwarf and Bhashiva caravans were NOT directly tested because this machine lacks those licenses. Other finite types were not individually tested. Clawspeakers were not directly tested in the earlier shared-lore regression either.[/b]\n\n[b]Multiplayer synchronization is EXPERIMENTAL and has NOT been tested in a native multiplayer session. OOS-free operation is not guaranteed.[/b] All peers need identical packages (including language), memreader Plus and matching other Mods. Peers close panels, compare versions/plans, execute and compare results; reopen MP panels manually. Mixed versions, disconnects or membership changes may reject or stall. Native failure cannot automatically roll back. Keep a pre-operation save and reload after uncertainty instead of retrying or clearing locks. No universal faction or overhaul compatibility claim.\n\n[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/recruitment_refresh]源码与验收记录 / Source and acceptance[/url]\n\n[h2]实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg[/img]\n\n[h2]实机：单击刷新后的领主候选 / Lord candidates after one-click refresh[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg[/img]\n\n[h2]实机：牧首招募页刷新图标 / Native Patriarch recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg[/img]\n",
+  "time_created": 1793412332,
+  "time_updated": 1794831644,
+  "visibility": 0,
+  "banned": 0,
+  "ban_reason": "",
+  "subscriptions": 149,
+  "favorited": 14,
+  "lifetime_subscriptions": 190,
+  "lifetime_favorited": 17,
+  "views": 529,
+  "tags": [
+    {
+      "tag": "mod"
+    },
+    {
+      "tag": "campaign"
+    }
+  ]
+}

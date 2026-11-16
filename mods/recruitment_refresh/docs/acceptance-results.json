@@ -1,321 +1,100 @@
 {
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
-  "version": "0.3.1",
-  "recorded_at_utc": "2026-11-15T18:57:36.713689+00:00",
+  "version": "0.3.2",
   "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
-  "release_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-  "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-  "pack_bytes": 72103,
-  "release_identity": "5837a36c993e9ee21852bc5814df3b5e90d8a379a04a59411d186e2739a56f9f",
-  "source_commit": "92347429caedc2fcd4c8c04e28fcea195807edeb",
+  "recorded_at_utc": "2026-11-16T12:16:56.553290+00:00",
+  "source_commit": "fa1aa1008438e97261ff5934ecc4720205dd92e8",
+  "release_pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "pack_bytes": 93860,
+  "release_identity": "84b0a379edc13c6d5769d478aece2768a604b9d89d038577105699cd9bb10f87",
   "L0": "PASS",
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
   "L4": "PASS",
-  "acceptance_scope": "Incremental single-player regression of the exact cold-mounted final package on High Elves/Eataine. Equivalent shared multi-lore mechanism approved by user. No native Clawspeaker or multiplayer credit.",
-  "user_instruction": "同机制实测并披露后发布",
+  "acceptance_scope": "Incremental single-player acceptance of the exact cold-mounted 0.3.2 package on Cathay caravans and Hexoatl Slann. No all-faction, individual DLC, complete ritual/training, save-reload or native multiplayer credit.",
+  "user_instruction": "发布更新到创意工坊",
   "offline_tests": {
     "command": "D:/workspace/.codex-wh3-runtime/venv/Scripts/python.exe tools/test.py --mod recruitment_refresh",
+    "shared": 90,
+    "mod": 102,
+    "total": 192,
     "status": "PASS",
-    "shared_count": 90,
-    "mod_count": 82,
-    "lua": "5.1",
-    "compiled_production_files": 5,
     "deterministic_build": true,
-    "pack_round_trip": true
+    "pack_round_trip": true,
+    "tracked_payload_matches_pack": true
   },
   "native": {
-    "status": "PASS",
-    "pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-    "cases": [
-      {
-        "target": "wh2_main_hef_mage_life",
-        "before": 1,
-        "after": 3,
-        "replaced": 1,
-        "added": 2,
-        "other_pools_unchanged": 8,
-        "returned_ui_target": "wh2_main_hef_mage_life",
-        "status": "PASS"
-      },
-      {
-        "target": "wh2_main_hef_mage_high",
-        "before": 6,
-        "after": 6,
-        "replaced": 6,
-        "added": 0,
-        "other_pools_unchanged": 8,
-        "returned_ui_target": "wh2_main_hef_mage_high",
-        "status": "PASS"
-      },
-      {
-        "target": "wh2_main_hef_prince",
-        "before": 4,
-        "after": 4,
-        "replaced": 3,
-        "added": 0,
-        "other_pools_unchanged": 5,
-        "returned_ui_target": "wh2_main_hef_prince",
-        "status": "PASS"
-      }
+    "harness_corrections": [
+      "史兰页签最初使用了错误别名，操作夹具在发出刷新请求前被目标断言拦截；改用实际原生分类 lzd_slann_mage_priest 后验收通过。",
+      "开场过场期间第一次打开商队面板被原版忽略；只重试面板导航，未重放雇用或刷新操作。"
     ],
-    "adversarial_checks_per_case": 6,
-    "normal_recruitment": {
-      "package_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "actor": 1065,
-      "forces_before": 2,
-      "forces_after": 3,
-      "status": "PASS",
-      "id": 16863,
-      "gold_before": 6000,
-      "gold_after": 5150
+    "cold_package_verified": true,
+    "hot_reload_credited": false,
+    "verification": "acceptance-0.3.2/verification.json",
+    "caravan": {
+      "faction": "wh3_main_cth_the_northern_provinces",
+      "refreshes": [
+        {
+          "count": "1->1",
+          "mode": "background",
+          "identity_preserved": true
+        },
+        {
+          "count": "1->1",
+          "mode": "background",
+          "identity_preserved": true
+        }
+      ],
+      "owned_caravan_unchanged": true,
+      "other_pools_unchanged": true,
+      "native_hires": [
+        "original candidate 1640",
+        "refreshed candidate 1641"
+      ],
+      "escort_units_match_vanilla_background_template": true,
+      "treasury_deducted": true,
+      "experience_progress_guard": "PASS"
     },
-    "layout": "PASS",
-    "layout_scale": "100%",
-    "native_multiplayer": "NOT_TESTED",
-    "clawspeaker_direct": "NOT_TESTED_MISSING_DLC_USER_APPROVED_EQUIVALENT_SCOPE"
+    "slann": {
+      "faction": "wh2_main_lzd_hexoatl",
+      "count": "1->1",
+      "replaced": "16866->16867",
+      "native_hire": "PASS",
+      "treasury": "6000->4850",
+      "army_count": "2->3",
+      "additional_trait_points_preserved": true,
+      "default_skills_preserved": true,
+      "other_real_pools_unchanged": true,
+      "fixture": "调用原版 slann_spawn 仪式完成生成人物函数；附加三个已知训练特性作为点数保留夹具。不是完整仪式操作或冰雪宫廷训练流程验收。",
+      "random_result": "本次世代为第二代->第二代；新 ID 和姓名已替换。普通随机刷新允许重抽相同背景，此结果不计为世代改变。"
+    },
+    "rank_evidence": "未上地图候选的公开 CCO Rank 返回空值；空值比较不计为等级验收。培养保护依据原生经验、点数、技能创建点数和额外分配检查；经验保护实机通过。",
+    "not_directly_tested": [
+      "混沌矮人车队：本机无授权",
+      "巴什瓦商队：本机无授权",
+      "其余有限池逐类型实测",
+      "在途商队派遣流程：未通过探针，不计为验收",
+      "多人实机",
+      "完整仪式/训练解锁流程",
+      "其他 Mod 组合"
+    ]
   },
-  "game": {
-    "version": "9.0.5.0",
-    "exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
-    "machine_id": "pc-20260924rtuf-f11af23c08",
-    "dependency_version": "0.15.2",
-    "dependency_sha256": "0c751ae032bb51718c267cd06b67c648035367c13338763edf9a689be4ce9ae1",
-    "faction": "wh2_main_hef_eataine",
-    "ui_scale": "100%",
-    "launch": "Cold normal mod load; dispatcher-only test pack; no production hot reload in accepted session."
-  },
-  "fixtures": [
-    "Native verified empty-slot mage college construction unlocks ordinary Mage page.",
-    "Life pool reduced from 6 ordinary candidates to 1 while native panel closed; 8 other lore fingerprints unchanged.",
-    "Partial subtype-discovery cache reproduces old UI choosing Heavens while Life visible; current UI selects Life, cache restored before native refresh. Old module isolated as a read-only diagnostic object.",
-    "Prince candidate 1824 history marked unknown to verify preservation; native pool remains 4."
-  ],
+  "evidence_record": "special-recruitment-implementation-0.3.2.json",
+  "verification_file": "acceptance-0.3.2/verification.json",
   "limitations": [
-    "Clawspeaker NOT directly tested: Bhashiva DLC app4399460 subscription/installation false and campaign flag false. User explicitly approved equivalent multi-lore acceptance with disclosure.",
-    "Native multiplayer not tested.",
-    "Incremental scope only; no all-faction, other-Mod, save-reload or repeated-turn claim for this package."
+    "混沌矮人车队：本机无授权",
+    "巴什瓦商队：本机无授权",
+    "其余有限池逐类型实测",
+    "在途商队派遣流程：未通过探针，不计为验收",
+    "多人实机",
+    "完整仪式/训练解锁流程",
+    "其他 Mod 组合"
   ],
-  "excluded_diagnostics": [
-    "Old 0.3.0 baseline native probes.",
-    "Earlier 1aa850 and a2bdb3 native/hotfix sessions.",
-    "Invalid fixture session with failed string.sub integrity guard; discarded, never credited."
-  ],
-  "captures": [
-    {
-      "observed_at_utc": "2026-11-15T18:53:42.721660+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-life-before.png",
-      "sha256": "e474ae370c29d7010caf2e10c802cf04cbaa69e567188e71af052c6a971e8ebb",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    },
-    {
-      "observed_at_utc": "2026-11-15T18:53:53.790167+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-life-after.png",
-      "sha256": "f5587f9de07c54cd70957f896745d12a6b35480b59740a2c2e03413fc7c63029",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    },
-    {
-      "observed_at_utc": "2026-11-15T18:54:08.890825+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-high-before.png",
-      "sha256": "bddccb691c387e4415f181d7c4f427ab241e956bd669fc8b256dcafd01822c00",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    },
-    {
-      "observed_at_utc": "2026-11-15T18:54:39.202126+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-high-after.png",
-      "sha256": "856ef67e9d7091f9101dd46cedac694bf2dff8668f32334c60afcd05dce6574e",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    },
-    {
-      "observed_at_utc": "2026-11-15T18:55:19.317950+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-prince-before.png",
-      "sha256": "1591fe864f7c489841cc96fa828e953e7d518c268480c884492d397f7b2ca7dc",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    },
-    {
-      "observed_at_utc": "2026-11-15T18:55:29.722050+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-prince-after.png",
-      "sha256": "71cb11c94118fe70ce744d83e5f1720f645edbc427ba0ffa9fb4e38342039983",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    },
-    {
-      "observed_at_utc": "2026-11-15T18:55:46.933744+00:00",
-      "pid": 25656,
-      "hwnd": 12125934,
-      "client_bbox": [
-        480,
-        270,
-        2080,
-        1170
-      ],
-      "path": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\captures\\release-recruited.png",
-      "sha256": "a0e5603ee5242e86c8a06d53fd201c9a3aa8c763cd664d8744d211417ae337f0",
-      "candidate_pack_sha256": "d2d573bc2c550e5b22ec3bbd70381263e32a755261a4503da3595bf8be3a1c62",
-      "method": "owned_game_client_pixels_no_activation"
-    }
-  ],
-  "evidence": [
-    {
-      "file": "acceptance-0.3.1/before-wh2_main_hef_mage_high.json",
-      "sha256": "82a31f0d2599c878238bc9613017878c142cc13d7c0dde5f5218dd9c286a2c67",
-      "bytes": 12844
-    },
-    {
-      "file": "acceptance-0.3.1/before-wh2_main_hef_mage_life.json",
-      "sha256": "a491826f1b5e3f31fbca1427f0fc43003027f44524e9d168eca5ad24c8a1a2bb",
-      "bytes": 11701
-    },
-    {
-      "file": "acceptance-0.3.1/before-wh2_main_hef_prince.json",
-      "sha256": "efd2d0b124e9028d892b04e6441d582c3a04f696b2390d5cb043741e3e4a16b4",
-      "bytes": 7765
-    },
-    {
-      "file": "acceptance-0.3.1/cards-wh2_main_hef_mage_high.json",
-      "sha256": "28847691a95e08033c45cfc862aa147bbfb3e550fea3880831bb5a6f3e8a8ff7",
-      "bytes": 585
-    },
-    {
-      "file": "acceptance-0.3.1/cards-wh2_main_hef_mage_life.json",
-      "sha256": "060ee4a54f848f1716f82590539acf61bf033601ee05bbd3646fe8354fb2e7f0",
-      "bytes": 348
-    },
-    {
-      "file": "acceptance-0.3.1/cards-wh2_main_hef_prince.json",
-      "sha256": "883e88037a705eaf7bc75b12726dbe16dc2b7b70149a4f479ecd356187a616db",
-      "bytes": 414
-    },
-    {
-      "file": "acceptance-0.3.1/case-wh2_main_hef_mage_high.json",
-      "sha256": "a7970adce795925a5587978e9154d4686716fc5b513fcde7b3eeb1c83ae70560",
-      "bytes": 25723
-    },
-    {
-      "file": "acceptance-0.3.1/case-wh2_main_hef_mage_life.json",
-      "sha256": "dd3be1345d66133012e0d2c186e776ce1d368244104c2379c98042f61a72986d",
-      "bytes": 24039
-    },
-    {
-      "file": "acceptance-0.3.1/case-wh2_main_hef_prince.json",
-      "sha256": "6e2b69c5da4c50be8ff20d345b246e78bb8da956078e0ff82ad29cf332153180",
-      "bytes": 15548
-    },
-    {
-      "file": "acceptance-0.3.1/cleanup.json",
-      "sha256": "b8d5a8449e8e20dc57ef22ee3e96aed6b3d503dd3e085637caaf72b19166e81c",
-      "bytes": 681
-    },
-    {
-      "file": "acceptance-0.3.1/dlc-entitlement.json",
-      "sha256": "c1cbf16044c390880cdb3df1162812ce089593481fe07b48ffbbcc58a67dd8ea",
-      "bytes": 510
-    },
-    {
-      "file": "acceptance-0.3.1/expected.json",
-      "sha256": "ddcaebf0aa9a46a1bb1c6555466de3573e7b73c5b6c6bce4ff944cf6597e9220",
-      "bytes": 217
-    },
-    {
-      "file": "acceptance-0.3.1/layout.json",
-      "sha256": "65c21587ada91997aa6ecb17f3a01424ed0ddb61a8f05c1ff53a10f557e6e68a",
-      "bytes": 579
-    },
-    {
-      "file": "acceptance-0.3.1/native-final.log",
-      "sha256": "242b221542f9fd20a232af2eb36379d05b098c8b3289be9ed0d0426b2824bda8",
-      "bytes": 15
-    },
-    {
-      "file": "acceptance-0.3.1/normal-recruitment.json",
-      "sha256": "1d76ec74a957fde73021ebd03a2bbed11fb77d9e2068d22cd27167867acfc20c",
-      "bytes": 197
-    },
-    {
-      "file": "acceptance-0.3.1/steam-after-native-cleanup.json",
-      "sha256": "278e76395e02f3c3a26b38eb0e232487114485d1ea690bbb47995b49a9f2f794",
-      "bytes": 2332
-    },
-    {
-      "file": "acceptance-0.3.1/steam-before-native-launch.json",
-      "sha256": "0cbf23b69db33f78f58f7b1760b4ecdc5bc7c93c101a9119a0bdb7e24d6ced0c",
-      "bytes": 2332
-    },
-    {
-      "file": "acceptance-0.3.1/verification.json",
-      "sha256": "365dad3f22a029f692df6f303367ba1153f8f5ee5d906f29299223a4a5cd2a36",
-      "bytes": 1319
-    }
-  ],
-  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116",
-  "cleanup": {
-    "game_exited": true,
-    "owned_packs_removed": true,
-    "user_script_restored": true,
-    "quit_for_script_returned_to_frontend": true,
-    "owned_frontend_process_terminated": true,
-    "preferences_restored": true,
-    "offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\clawspeaker-acceptance-20261116\\steam-after-cleanup-1794768999771161300.json",
-    "steam_status": "offline",
-    "offline_mode": true,
-    "recovery": "Initial cleanup terminated owned game, removed temporary packs and restored settings, then UTF-8 save receipt was read with Windows GBK. Corrected explicit UTF-8; resumed cleanup verified save hashes and removed only owned saves. No acceptance result changed."
-  },
-  "publication_record": "workshop-publication-0.3.1.json",
-  "published_at_utc": "2026-11-15T19:05:50+00:00",
-  "verified_at_utc": "2026-11-15T19:14:08.089297+00:00"
+  "publication_record": "workshop-publication-0.3.2.json",
+  "published_at_utc": "2026-11-16T12:20:44+00:00",
+  "verified_at_utc": "2026-11-16T12:27:06.784337+00:00",
+  "subscription_mount_scope": "Frontend release identity loaded from a byte-identical copy of the actual Workshop subscription download; no repeat business acceptance credit."
 }

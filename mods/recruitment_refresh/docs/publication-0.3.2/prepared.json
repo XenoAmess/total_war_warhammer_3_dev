@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "mod_id": "recruitment_refresh",
+  "pack_sha256": "60ca089c4c5983592b5a181cdb0c8e618203fa7f5c0c7bee9ecadf7961d2bec9",
+  "bytes": 93860,
+  "acceptance": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS"
+  },
+  "description_bytes": 6622,
+  "description_sha256": "a31e93fa17d9f650134e4997e230f0bbe1e9bd74bf2cb659cf65b904bb94f8c9",
+  "change_notes_sha256": "7ff800ed2c993bddc87d637e4ec893f0830eb49b94b4f1d707155cbf088c865a",
+  "existing_gallery_count": 3
+}
