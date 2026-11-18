@@ -396,8 +396,8 @@
     },
     {
       "file": "publication-0.3.4/control.log",
-      "sha256": "0603dd8ad6efe0c3f539bfd1d1ef143eefa08110d6667e090ff9b3cd08e5aeb0",
-      "bytes": 9695
+      "sha256": "481f4c5a5777ace14ac0f92f05128b621b29171058b138d4b4b0eb3b80be9333",
+      "bytes": 9691
     },
     {
       "file": "publication-0.3.4/controller.py",
@@ -421,8 +421,8 @@
     },
     {
       "file": "publication-0.3.4/finalize_release.py",
-      "sha256": "c0064920ad40351b9e876f94d3cbbc6289f48a4584938dc0c7a2abf79ece6cb5",
-      "bytes": 6963
+      "sha256": "b646af69820f4f1ece6b0dcaf8539a9dcbe3b4e5258ff2eddf350064f627ec62",
+      "bytes": 7040
     },
     {
       "file": "publication-0.3.4/images.json",
@@ -511,8 +511,8 @@
     },
     {
       "file": "publication-0.3.4/record_public_release_pending.py",
-      "sha256": "47c7861abc317f30f1bb5cf0117a2a6383497e2fd5224ed39113501a668bdf1a",
-      "bytes": 6196
+      "sha256": "832bb5a8f8e86809c587cce0e98287d92ceb4c65cdf3a8a966b81181919c6ea5",
+      "bytes": 6272
     },
     {
       "file": "publication-0.3.4/update_public_release_pending_docs.py",
@@ -544,5 +544,10 @@
     "server_date": "Wed, 18 Nov 2026 13:49:17 GMT",
     "source": "steam_community_public_profile_html",
     "response_sha256": "ac5e6f59762d165f92e48892e5ce7cfe412e9412841f27dbf9e09e5f13aa4ef1"
+  },
+  "archived_log_normalization": "LF and trailing whitespace normalization on repository copies only; runtime originals retained.",
+  "raw_runtime_log_sha256": {
+    "control.log": "0603dd8ad6efe0c3f539bfd1d1ef143eefa08110d6667e090ff9b3cd08e5aeb0",
+    "child.log": "a197e0f840ea16c463112653308f4cdf00af444d33b3ecd0971410a9cbcd5ccf"
   }
 }

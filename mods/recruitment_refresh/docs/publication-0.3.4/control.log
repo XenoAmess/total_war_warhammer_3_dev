@@ -1,4 +1,4 @@
-2026-11-18T13:32:40.444015+00:00 inspect 
+2026-11-18T13:32:40.444015+00:00 inspect
 Traceback (most recent call last):
   File "D:\workspace\.codex-wh3-runtime\launcher-both-followup-20261031T141338Z\steam_control_force.py", line 20, in <module>
     assert ports,'No owned Steam CEF debugger available'
@@ -76,7 +76,7 @@ AssertionError: No owned Steam CEF debugger available
 {"requested": "GoOffline"}
 
 
-2026-11-18T13:34:50.097576+00:00 inspect 
+2026-11-18T13:34:50.097576+00:00 inspect
 Traceback (most recent call last):
   File "D:\workspace\.codex-wh3-runtime\launcher-both-followup-20261031T141338Z\steam_control_force.py", line 20, in <module>
     assert ports,'No owned Steam CEF debugger available'
@@ -121,5 +121,3 @@ AssertionError: No owned Steam CEF debugger available
 
 2026-11-18T13:35:06.092870+00:00 offline {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": "76561198273714027"}}
 {"requested": "GoOffline"}
-
-
