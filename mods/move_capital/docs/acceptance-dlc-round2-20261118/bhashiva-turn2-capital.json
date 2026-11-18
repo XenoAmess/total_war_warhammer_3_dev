@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "faction": "wh3_cp1_cth_tiger_warriors",
+  "turn": 2,
+  "capital": "wh3_main_combi_region_karak_azorn",
+  "capital_state": {
+    "next_sequence": 2,
+    "last": {
+      "action": "capital",
+      "previous": "wh3_main_combi_region_vale_of_titans",
+      "sequence": 1,
+      "status": "SUCCEEDED",
+      "target": "wh3_main_combi_region_karak_azorn"
+    },
+    "schema_version": 1,
+    "locked": false
+  },
+  "refresh_package_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "source_snapshot_sha256": "88088817ebee5c885606ed03fa430d9d28c9cfcc7f73ec7a77a8edaa4dc037a1"
+}

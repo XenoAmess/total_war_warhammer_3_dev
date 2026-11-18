@@ -1,0 +1,65 @@
+{
+  "mod_id": "move_capital",
+  "version": "0.2.0",
+  "status": "BHASHIVA_NATIVE_PASS",
+  "recorded_at_utc": "2026-11-18T12:54:13.627179+00:00",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "source_changed": false,
+  "workshop_upload_performed": false,
+  "package_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "joint_refresh_version": "0.3.4",
+  "joint_refresh_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "game_version": "9.0.5.0",
+  "build_id": 26403568,
+  "native": {
+    "faction": "wh3_cp1_cth_tiger_warriors",
+    "previous": "wh3_main_combi_region_vale_of_titans",
+    "target": "wh3_main_combi_region_karak_azorn",
+    "operation": "Actual Mod button and confirmation",
+    "result": "SUCCEEDED",
+    "building_keys_levels_ownership_province_capital_unchanged": true,
+    "caravan_offer_pool_and_owned_unchanged": true,
+    "other_pools_and_refresh_sequence_unchanged": true,
+    "capital_still_same_on_native_turn2": true,
+    "following_actions": [
+      "Sawai 1→1 refresh",
+      "Native refreshed Sawai hire with correct escorts",
+      "Native caravan dispatch cargo 500",
+      "Empty-pool protection",
+      "A real turn and another offer refresh protecting active/idle caravans"
+    ]
+  },
+  "fixture": {
+    "operation": "Transfer adjacent NPC settlement before native capital action",
+    "original_owner": "wh3_main_dwf_karak_azorn",
+    "full_siege_credited": false
+  },
+  "ordinary_hire": {
+    "status": "BLOCKED_BY_VANILLA_ARMY_CAP",
+    "native_header": "1 / 1",
+    "pool_refresh": "2→3 PASS",
+    "actual_hire_credited": false
+  },
+  "save_upgrade": {
+    "status": "PASS",
+    "operation": "Cold load actual refreshed/hired Bhashiva 0.3.3 save with Recruitment Refresh 0.3.4 and unchanged Move Capital",
+    "both_full_mod_states_unchanged": true,
+    "source_evidence": "../../recruitment_refresh/docs/acceptance-0.3.4/save-upgrade-033-to-034.json"
+  },
+  "evidence": [
+    {
+      "file": "acceptance-dlc-round2-20261118/bhashiva-turn2-capital.json",
+      "sha256": "c6d3a5ca83d6e419c59e5761b48616ae758249d86c7b1ae37ef9fa04f079baf9"
+    },
+    {
+      "file": "acceptance-dlc-round2-20261118/capital-wh3_cp1_cth_tiger_warriors.json",
+      "sha256": "6133025b0dcfef474c8e082e20af4faa6a9fe182fe39a0c1f9d3aaf7eb0f4031"
+    }
+  ],
+  "limits": [
+    "Other new DLC capitals are not individually tested.",
+    "No original complete caravan journey/return or native multiplayer credit.",
+    "Cleanup is pending completion of the shared native test session."
+  ],
+  "steam_mode": "intentional_offline"
+}
