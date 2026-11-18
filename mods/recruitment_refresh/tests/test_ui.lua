@@ -277,6 +277,49 @@ test('caravan_refresh_waits_for_both_panels_and_reopens_through_caravan_purchase
     f.runtime.on_result({status='SUCCEEDED'});f.drain()
     assert(f.caravan_opened and f.purchase_opened and f.ui.selected_subtype==key)
 end)
+local function bhashiva_caravan_fixture()
+    local f=fixture();local key='wh3_cp1_cth_sawai_caravan'
+    f.runtime.subtypes={[key]='general'};f.runtime.supported=function(k)return k==key end
+    local categories=f.panel.children.lords_and_agents_holder;categories.children.supported=nil
+    local tab=component('sawai',component('list_box',component('lord_parent',categories)));tab.state='selected'
+    local list=component('list_box',component('list_clip',component('listview',component('character_list',f.panel))))
+    local card=component('general_candidate_0_',list);local select=component('button_wh3',card)
+    function select:GetContextObject()return{Call=function()return key end}end
+    local road=component('cp1_cth_bhashiva_caravans',f.root)
+    local purchase=component('button_purchase',component('add_caravan_button',component('reserves_listview',component('caravans_panel',road))))
+    function purchase:SimulateLClick()f.purchase_opened=true;f.panel.visible=true end
+    local docker=component('faction_buttons_docker',f.root.children.hud_campaign)
+    local ordinary=component('button_caravan',docker);ordinary.visible=false
+    function ordinary:SimulateLClick()error('Bhashiva must not use the ordinary Cathay button')end
+    local native=component('button_bhashiva_caravan',docker)
+    function native:SimulateLClick()f.caravan_opened=true;road.visible=true end
+    f.closed_panels={};f.environment.CampaignUI.ClosePanel=function(name)f.closed_panels[name]=true end
+    f.root.children.character_panel=f.panel;f.ui.selected_subtype=key
+    return f,key,road,native,ordinary
+end
+
+test('bhashiva_caravan_restores_its_dedicated_hud_and_recruitment_page',function()
+    local f,key,road=bhashiva_caravan_fixture()
+    f.click(component('xatw3_refresh_candidates'))
+    assert(f.closed_panels.character_panel and f.closed_panels.cp1_cth_bhashiva_caravans)
+    f.panel.visible=false;f.step();assert(#f.dispatched==0)
+    road.visible=false;f.drain();assert(#f.dispatched==1)
+    f.runtime.on_result({status='SUCCEEDED'});f.drain()
+    assert(f.caravan_opened and f.purchase_opened and f.ui.selected_subtype==key)
+    assert(not f.reopened,'Must not reopen ordinary lord recruitment')
+end)
+
+test('unavailable_bhashiva_hud_never_falls_back_to_another_caravan_button',function()
+    for _,unavailable in ipairs({'hidden','inactive'})do
+        local f,key,road,native,ordinary=bhashiva_caravan_fixture()
+        if unavailable=='hidden'then native.visible=false else native.state='inactive'end
+        ordinary.visible=true
+        f.click(component('xatw3_refresh_candidates'));f.panel.visible=false;road.visible=false;f.drain()
+        f.runtime.on_result({status='SUCCEEDED'});f.drain()
+        assert(#f.dispatched==1 and not f.caravan_opened and not f.purchase_opened and not f.reopened)
+    end
+end)
+
 test('convoy_master_list_closes_before_dispatch_and_reopens_without_ordinary_recruitment',function(f)
     local key='wh3_dlc23_chd_lord_convoy_overseer'
     f.panel.visible=false

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source": "C:\\Users\\Administrator\\AppData\\Roaming\\The Creative Assembly\\Warhammer3\\save_games\\xatw3_round2_bhashiva_before034_20261118.11358394140.save",
+  "sha256": "6020be3359b8808add9e4064f3708b73631856d81fe42314e0bac533fd12273f",
+  "bytes": 10151942,
+  "native_ui_save": true,
+  "new_file_no_overwrite": true,
+  "state_snapshot": "evidence/before-034-upgrade.json"
+}

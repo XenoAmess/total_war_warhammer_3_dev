@@ -4,6 +4,11 @@ local function is_selected(state)
     return state == 'selected' or state == 'selected_hover'
 end
 local PREFIX = 'xatw3_'
+local CARAVAN_HUD_BUTTONS = {
+    cathay_caravans = 'button_caravan',
+    cp1_cth_bhashiva_caravans = 'button_bhashiva_caravan',
+    military_convoys = 'button_convoys'
+}
 
 function M.new(runtime, logic, environment)
     environment = environment or getfenv(2)
@@ -439,8 +444,8 @@ function M.new(runtime, logic, environment)
                     local root = core:get_ui_root()
                     local b
                     if reopen.caravan then
-                        b = find_uicomponent(root, 'hud_campaign', 'faction_buttons_docker',
-                            reopen.caravan == 'military_convoys' and 'button_convoys' or 'button_caravan')
+                        local id = CARAVAN_HUD_BUTTONS[reopen.caravan]
+                        b = id and find_uicomponent(root, 'hud_campaign', 'faction_buttons_docker', id)
                     else b = find_uicomponent(root, 'hud_campaign', 'hud_center_docker', reopen.button) end
                     if b and b:Visible() and (b:CurrentState() == 'active' or b:CurrentState() == 'hover') then b:SimulateLClick() end
                     after(function()

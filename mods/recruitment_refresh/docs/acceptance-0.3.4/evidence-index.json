@@ -1,0 +1,120 @@
+[
+  {
+    "file": "original-033-case-bhashiva-life.json",
+    "sha256": "eb72ed0996c1c7330d090b0dc721875cbebc5f7fa81cbce5261a1dc366d055de",
+    "source_phase": "evidence",
+    "bytes": 19205
+  },
+  {
+    "file": "original-033-clawspeaker-life-native-hire.json",
+    "sha256": "101653372967562ae85965c76c4692c970fdb4e624edc15403219caf51a2b982",
+    "source_phase": "evidence",
+    "bytes": 390
+  },
+  {
+    "file": "original-033-published-0.3.3-sawai-reopen-gap.json",
+    "sha256": "d18104134be1606455c8d938fda1e149582abb0888d45ede1a785ad24d16f050",
+    "source_phase": "evidence",
+    "bytes": 19731
+  },
+  {
+    "file": "original-033-startup-ui-recovery.json",
+    "sha256": "9792d90fa37ad1f75605e485997e4fafe2724b409a0f435b2870a5517013346f",
+    "source_phase": "evidence",
+    "bytes": 17939
+  },
+  {
+    "file": "save-upgrade-033-to-034.json",
+    "sha256": "ff721654baa2e0b07502041cd7070cc7b30dbff87f99ddb0469f15a777cebc82",
+    "source_phase": "evidence-034",
+    "bytes": 19240
+  },
+  {
+    "file": "case-sawai-idle-final.json",
+    "sha256": "aeef69d598b98adce2c1776dc285dfdfd5f8f6ca101cf1b028d59629c728ebd6",
+    "source_phase": "evidence-034",
+    "bytes": 19635
+  },
+  {
+    "file": "case-sawai-after-capital.json",
+    "sha256": "bbc8028582be4194fa2354a093c8f0902e1a50b57465b947333d1320ffba363f",
+    "source_phase": "evidence-034",
+    "bytes": 19635
+  },
+  {
+    "file": "sawai-refreshed-native-hire.json",
+    "sha256": "cece4e7a4204b3a7499e8e3e073b07acab42f29b0220db07e9f2d0f8038d2187",
+    "source_phase": "evidence-034",
+    "bytes": 1300
+  },
+  {
+    "file": "sawai-native-dispatch-after-capital.json",
+    "sha256": "ae9082030b52dcb8cd32bc07cab2375447c77aa17c02d930ce3d4043abfe7695",
+    "source_phase": "evidence-034",
+    "bytes": 2283
+  },
+  {
+    "file": "sawai-empty-pool.json",
+    "sha256": "439e223acd46b7e3960bdb9fd96a7beabc69e94dcb7d71e4a817acefcf9dc2e3",
+    "source_phase": "evidence-034",
+    "bytes": 1541
+  },
+  {
+    "file": "bhashiva-native-turn2.json",
+    "sha256": "d782cbec5a00fd77c20615c53f8b8a5f4f153deb2b3de633e9471a7ee3e44be7",
+    "source_phase": "evidence-034",
+    "bytes": 800
+  },
+  {
+    "file": "case-sawai-active-and-idle.json",
+    "sha256": "35d8aa46c21ccd1ada38581efca7a685fc828d18c8662c76485dd5c7147ebb07",
+    "source_phase": "evidence-034",
+    "bytes": 21715
+  },
+  {
+    "file": "case-clawspeaker-life-final.json",
+    "sha256": "a7d5f0840100e39486e389c0aefaea43e07a2a4821fb3e4887be582c310434e2",
+    "source_phase": "evidence-034",
+    "bytes": 21147
+  },
+  {
+    "file": "case-clawspeaker-beasts-final.json",
+    "sha256": "723cf08ca6fe98637fac389333bd86f3e7052931059fe1d87d1c8c6931bc6d44",
+    "source_phase": "evidence-034",
+    "bytes": 21539
+  },
+  {
+    "file": "case-clawspeaker-shadows-final.json",
+    "sha256": "8a9d8b157167d7b6cc48ad654a0ff762db1ea712b9c10dc03c36f2c923e32b26",
+    "source_phase": "evidence-034",
+    "bytes": 21549
+  },
+  {
+    "file": "case-ordinary-sawai-final.json",
+    "sha256": "eb314f50baf8f3228914220469e50e187498d16bbc58837b9c857a770864080d",
+    "source_phase": "evidence-034",
+    "bytes": 21012
+  },
+  {
+    "file": "bhashiva-final-snapshot.json",
+    "sha256": "88088817ebee5c885606ed03fa430d9d28c9cfcc7f73ec7a77a8edaa4dc037a1",
+    "source_phase": "evidence-034",
+    "bytes": 19809
+  },
+  {
+    "file": "offline-test-results.json",
+    "sha256": "d87c8b0a22621b63c0c314fe066bc6b3486436b129c2008c3b54002f4299a502"
+  },
+  {
+    "file": "checkpoint-034.json",
+    "sha256": "ac3a0befaca2b82b36df835c09c4e19255d79eb8b7c5900c6706180ce47e9700"
+  },
+  {
+    "file": "checkpoint-bhashiva-final.json",
+    "sha256": "9a3013ca7b6e586aa67c86ceb3ba332eb93e9cf79fc3df32a29ff62b86687782"
+  },
+  {
+    "file": "local-model-status.json",
+    "sha256": "d882a73e7711c83c0955320bb75f9954e0362db8b5510ae51dbb8b725ce09baf"
+  }
+]

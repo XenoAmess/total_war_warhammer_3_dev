@@ -1,0 +1,195 @@
+{
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.4",
+  "status": "BHASHIVA_NATIVE_PASS_THANQUOL_PENDING",
+  "recorded_at_utc": "2026-11-18T12:49:18.331606+00:00",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "source_parent_commit": "8b6e9b52a2a7169cb875a997d81760d06a029cc5",
+  "workshop_upload_performed": false,
+  "game": {
+    "version": "9.0.5.0",
+    "build_id": 26403568,
+    "exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f"
+  },
+  "pack_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "pack_bytes": 98307,
+  "release_identity": "5a958457fb30b620e246ee928b180244cb0ba5a148c41c4edb5cf16936e84bbe",
+  "jointly_enabled": {
+    "move_capital": "0.2.0",
+    "move_capital_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+    "memreader_plus": "0.15.2"
+  },
+  "offline_tests": {
+    "shared": 90,
+    "mod": 109,
+    "total": 199,
+    "status": "PASS",
+    "regressions_red_before_fix": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "lua_compile_files": 6
+  },
+  "defect": {
+    "reproduced_package": "0.3.3",
+    "reproduced_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+    "cause": "Bhashiva uses button_bhashiva_caravan; reopening incorrectly clicked the hidden ordinary Cathay button_caravan. The background mutation succeeded but recruitment stayed closed.",
+    "fix": "Map each of the three caravan panel families to its exact native HUD button. Never fall back to another caravan HUD.",
+    "scope": "Only reopening changed; pool/native mutation rules unchanged."
+  },
+  "native_cold_package": true,
+  "production_hot_reload_credited": false,
+  "cases": [
+    {
+      "case": "save-upgrade-033-to-034",
+      "evidence": "acceptance-0.3.4/save-upgrade-033-to-034.json",
+      "sha256": "ff721654baa2e0b07502041cd7070cc7b30dbff87f99ddb0469f15a777cebc82",
+      "status": "PASS"
+    },
+    {
+      "case": "case-sawai-idle-final",
+      "evidence": "acceptance-0.3.4/case-sawai-idle-final.json",
+      "sha256": "aeef69d598b98adce2c1776dc285dfdfd5f8f6ca101cf1b028d59629c728ebd6",
+      "status": "SUCCEEDED",
+      "before": 1,
+      "after": 1,
+      "returned_ui_target": "wh3_cp1_cth_sawai_caravan",
+      "requests_consumed": 1
+    },
+    {
+      "case": "case-sawai-after-capital",
+      "evidence": "acceptance-0.3.4/case-sawai-after-capital.json",
+      "sha256": "bbc8028582be4194fa2354a093c8f0902e1a50b57465b947333d1320ffba363f",
+      "status": "SUCCEEDED",
+      "before": 1,
+      "after": 1,
+      "returned_ui_target": "wh3_cp1_cth_sawai_caravan",
+      "requests_consumed": 1
+    },
+    {
+      "case": "sawai-refreshed-native-hire",
+      "evidence": "acceptance-0.3.4/sawai-refreshed-native-hire.json",
+      "sha256": "cece4e7a4204b3a7499e8e3e073b07acab42f29b0220db07e9f2d0f8038d2187",
+      "status": "PASS"
+    },
+    {
+      "case": "sawai-native-dispatch-after-capital",
+      "evidence": "acceptance-0.3.4/sawai-native-dispatch-after-capital.json",
+      "sha256": "ae9082030b52dcb8cd32bc07cab2375447c77aa17c02d930ce3d4043abfe7695",
+      "status": "PASS"
+    },
+    {
+      "case": "sawai-empty-pool",
+      "evidence": "acceptance-0.3.4/sawai-empty-pool.json",
+      "sha256": "439e223acd46b7e3960bdb9fd96a7beabc69e94dcb7d71e4a817acefcf9dc2e3",
+      "status": "PASS"
+    },
+    {
+      "case": "bhashiva-native-turn2",
+      "evidence": "acceptance-0.3.4/bhashiva-native-turn2.json",
+      "sha256": "d782cbec5a00fd77c20615c53f8b8a5f4f153deb2b3de633e9471a7ee3e44be7",
+      "status": "PASS_BY_ASSERTIONS_AND_NATIVE_LOG"
+    },
+    {
+      "case": "case-sawai-active-and-idle",
+      "evidence": "acceptance-0.3.4/case-sawai-active-and-idle.json",
+      "sha256": "35d8aa46c21ccd1ada38581efca7a685fc828d18c8662c76485dd5c7147ebb07",
+      "status": "SUCCEEDED",
+      "before": 1,
+      "after": 1,
+      "returned_ui_target": "wh3_cp1_cth_sawai_caravan",
+      "requests_consumed": 1
+    },
+    {
+      "case": "case-clawspeaker-life-final",
+      "evidence": "acceptance-0.3.4/case-clawspeaker-life-final.json",
+      "sha256": "a7d5f0840100e39486e389c0aefaea43e07a2a4821fb3e4887be582c310434e2",
+      "status": "SUCCEEDED",
+      "before": 3,
+      "after": 3,
+      "returned_ui_target": "wh3_cp1_cth_clawspeaker_life",
+      "requests_consumed": 1
+    },
+    {
+      "case": "case-clawspeaker-beasts-final",
+      "evidence": "acceptance-0.3.4/case-clawspeaker-beasts-final.json",
+      "sha256": "723cf08ca6fe98637fac389333bd86f3e7052931059fe1d87d1c8c6931bc6d44",
+      "status": "SUCCEEDED",
+      "before": 4,
+      "after": 4,
+      "returned_ui_target": "wh3_cp1_cth_clawspeaker_beasts",
+      "requests_consumed": 1
+    },
+    {
+      "case": "case-clawspeaker-shadows-final",
+      "evidence": "acceptance-0.3.4/case-clawspeaker-shadows-final.json",
+      "sha256": "8a9d8b157167d7b6cc48ad654a0ff762db1ea712b9c10dc03c36f2c923e32b26",
+      "status": "SUCCEEDED",
+      "before": 4,
+      "after": 4,
+      "returned_ui_target": "wh3_cp1_cth_clawspeaker_shadows",
+      "requests_consumed": 1
+    },
+    {
+      "case": "case-ordinary-sawai-final",
+      "evidence": "acceptance-0.3.4/case-ordinary-sawai-final.json",
+      "sha256": "eb314f50baf8f3228914220469e50e187498d16bbc58837b9c857a770864080d",
+      "status": "SUCCEEDED",
+      "before": 2,
+      "after": 3,
+      "returned_ui_target": "wh3_cp1_cth_sawai",
+      "requests_consumed": 1
+    },
+    {
+      "case": "bhashiva-final-snapshot",
+      "evidence": "acceptance-0.3.4/bhashiva-final-snapshot.json",
+      "sha256": "88088817ebee5c885606ed03fa430d9d28c9cfcc7f73ec7a77a8edaa4dc037a1",
+      "status": "PASS"
+    }
+  ],
+  "historical_033_credit": [
+    "All three Clawspeaker lores originally passed 2→3.",
+    "Life Clawspeaker 16866 was hired through native UI for 800, rank 1; preserved in the actual refreshed-state save and exact 0.3.4 reload.",
+    "Original Sawai 1738 was hired for 750 with original background escorts before upgrade."
+  ],
+  "final_034_credit": [
+    "Life 3→3, Beasts 4→4, Shadows 4→4 after a real turn; correct lore restored and other pools/default skills preserved.",
+    "Sawai offers refreshed before and after moving capital, preserving identities/count and owned caravans; dedicated recruitment UI restored.",
+    "Refreshed Sawai 1739 hired for 750; escort types/count match its vanilla background.",
+    "Native caravan 1738 dispatched with cargo 500 after moving capital; empty pool rejected without consuming a refresh sequence.",
+    "A real native turn refilled one offer. Its 1→1 refresh preserved one active and one idle caravan.",
+    "Ordinary Sawai 2→3 refresh passed independently of caravan subtype. Native hire remains blocked by vanilla army cap 1/1 and is not credited.",
+    "Actual 0.3.3 refreshed/hired save cold-loaded with 0.3.4: all pool fingerprints, owned roster and both Mods states match."
+  ],
+  "fixtures": [
+    "Original Tiger Den upgraded from tier 1 to tier 2 with cm:region_slot_instantly_upgrade_building to unlock the real native hero page.",
+    "Adjacent NPC Karak Azorn transferred with original engine API before native Move Capital confirmation; no siege credit.",
+    "Startup cinematic UI recovery and tutorial dismissal were acceptance setup; no refresh/pool mutation credited.",
+    "Caravan end-turn encounter used the real second dilemma choice (feed meat), which legitimately removed one escort; active/idle protection compares state after that native consequence.",
+    "Empty-pool guard was explicitly invoked by a test script; not credited as a click on a hidden control."
+  ],
+  "automation_limits": [
+    "Early navigation assertions and missing callbacks are preserved as failed harness attempts, not passing business cases.",
+    "The first ordinary hire attempt did not mutate the model; readback showed no Sawai army and all candidates remained. Header readback identified native army cap 1/1.",
+    "Native command dispatch uses atomic publication and unique execution ACK; asynchronous outcomes require separate semantic PASS evidence.",
+    "Raw game captures can have renderer artifacts; no image editing or inferred screenshot credit."
+  ],
+  "limits": [
+    "Thanquol/four Verminlords pending in this work package.",
+    "No complete caravan journey/return, full unlock construction, full ritual/training or native multiplayer credit.",
+    "Other newly owned DLC campaigns are not individually native-tested.",
+    "Final 0.3.4 refreshed-state save exists; its subsequent reload is not yet credited."
+  ],
+  "steam": "Intentional offline with fresh background receipt before each native launch.",
+  "cleanup": "IN_PROGRESS: same owned test session continues with Thanquol; no cleanup credit yet.",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-round2-20261118",
+  "native_log_sha256": "9136458c01c43b9c32ae511c0489e2a50f2339146a7cdd12b3e1d5682853e24d",
+  "old_native_log_sha256": "3781d8c195e579984754aadd7233b1823683b36a9684c50e8bc0728dbdece4b3",
+  "evidence_index": "acceptance-0.3.4/evidence-index.json",
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "candidate_posts": 0,
+    "adopted": 0,
+    "reason": "Configured service lists only open-h3-2k video model; no fallback or fabricated coding result.",
+    "evidence": "acceptance-0.3.4/local-model-status.json"
+  }
+}

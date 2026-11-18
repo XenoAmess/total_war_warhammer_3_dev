@@ -4,7 +4,7 @@ local runtime = require('script.campaign.xatw3_campaign_utilities.runtime').new(
 local ui = require('script.campaign.xatw3_campaign_utilities.ui').new(runtime, logic, environment)
 
 -- This namespace is also the explicit entry point used by the separate acceptance fixture.
-xatw3_campaign_utilities = {logic = logic, runtime = runtime, ui = ui, version = '0.3.3'}
+xatw3_campaign_utilities = {logic = logic, runtime = runtime, ui = ui, version = '0.3.4'}
 
 core:add_listener('xatw3_pool_entries', 'ScriptEventNewCharacterEnteredRecruitmentPool', true,
     function(context) runtime.observe_entry(context:character_details()) end, true)
@@ -35,5 +35,5 @@ cm:add_first_tick_callback(function()
     runtime.initialize()
     if cm:is_multiplayer() then runtime.install_multiplayer() end
     if runtime.campaign_supported() then ui.install() end
-    runtime.log('loaded version=0.3.3 campaign=' .. cm:get_campaign_name())
+    runtime.log('loaded version=0.3.4 campaign=' .. cm:get_campaign_name())
 end)

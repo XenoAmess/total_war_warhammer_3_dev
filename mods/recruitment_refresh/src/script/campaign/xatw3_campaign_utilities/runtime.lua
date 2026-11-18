@@ -330,7 +330,7 @@ function M.new(logic, environment)
             if not self.can_remove_candidate(candidate.id) then return false, 'native_pool_unavailable' end
         end
         local mr = (environment._G or _G).memreader_plus
-        return true, sync.fields({'0.3.3', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
+        return true, sync.fields({'0.3.4', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
             self.state.next_sequence, self.subtypes[request.target], plan.fingerprint})
     end
 
