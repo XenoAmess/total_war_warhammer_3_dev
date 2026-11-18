@@ -1,7 +1,7 @@
-0.3.3 — 混矮车队与法术系恢复 / Convoy UI and lore restoration
-- 修复混矮独立运输将领列表缺少刷新入口、关闭保护及返回路径。
-- 兼容领主法术系键与英雄亚种键，修复死亡系已刷新却返回默认哈苏特系的观感问题。
-- 197 项离线测试通过；精确冷启动包通过混矮车队、护卫、闲置／在途保护、派遣、空池及死亡系领主 2→3／正常招募验收，并与迁都 0.2.0 共同测试。
-- NPC 城镇转让和原版科技瞬时研究为夹具。巴什瓦未拥有，爪语者与巴什瓦运输将领未直接实测；其他 DLC／有限池未逐项实测，原生联机未验收。
+0.3.4 — 巴什瓦商队面板恢复与 DLC 补验 / Bhashiva caravan reopening and DLC validation
+- 修复巴什瓦长牙之路刷新后招募面板没有重新打开的问题，完成后恢复其专属商队招募页。
+- 199 项离线测试通过；最终冷启动包直接通过爪语者生命／野兽／阴影系刷新和法术系恢复，以及巴什瓦运输将领刷新、雇用与护卫、派遣、空池、在途／待命保护。
+- 四种灾祸领主（Verminlord）分别通过 1→1 刷新和正常雇用，各扣 1000、等级 1；其他池和默认技能保持。与迁都 0.2.0 共同验收巴什瓦和 Thanquol；实际刷新、雇用、迁都后的存档冷启动读取状态保持。
+- 原版解锁、费用与容量限制保持。科技瞬时研究、原版候选生成功能、NPC 城镇转让及一次人物移位为测试夹具，不算完整仪式、研究或攻城流程。其他 DLC 派系／有限池未逐项实测，完整商队往返、训练和原生联机未验收。
 
-Adds the missing Chaos Dwarf Military Convoys master-list icon, close guard and reopening path. Preserves the actual lord lore key or hero subtype tab, fixing a successful Death refresh reopening on Hashut. 197 offline tests passed; exact cold-package SP checks covered convoy identity/background, hiring/escorts, idle/active protection, dispatch, empty pools and Death-lore lord refresh/hiring with Move Capital 0.2.0 enabled. Settlement transfer and instant vanilla research were fixtures. Bhashiva/Clawspeakers remain unowned and untested directly; other DLC factions/finite types were not individually tested, and native multiplayer is untested.
+Fixes Bhashiva caravan recruitment staying closed after refresh by reopening its dedicated caravan page. 199 offline tests passed. Bhashiva and four Verminlord types now directly tested: Clawspeaker Life/Beasts/Shadows refresh and lore restoration; Bhashiva offer identity/background, native hiring and matching escorts, dispatch, empty pools and idle/active protection; each Verminlord refreshed at 1->1 and hired normally for 1000 at rank 1. Move Capital 0.2.0 was enabled for Bhashiva/Thanquol compatibility, and actual refreshed/hired/relocated state survived cold save/reload. Instant technology research, original candidate-generation functions, NPC settlement transfers and one lord move were fixtures, not full ritual/research/conquest playthroughs. Normal unlock/cost/capacity rules remain. Other DLC factions/finite types were not individually tested; full caravan return journeys, training and native multiplayer remain untested.
