@@ -1,0 +1,12 @@
+CampaignUI.ClosePanel('character_panel')
+CampaignUI.CloseCurrentHUDPanel()
+local b=assert(find_uicomponent(core:get_ui_root(),'hud_campaign','faction_buttons_docker','button_bhashiva_caravan'))
+assert(b:Visible(true)and(b:CurrentState()=='active'or b:CurrentState()=='hover'));b:SimulateLClick()
+cm:callback(function()
+ local ok,e=pcall(function()
+  local root=assert(find_uicomponent(core:get_ui_root(),'cp1_cth_bhashiva_caravans'))
+  assert(root:Visible(true))
+  xatw3_test.record('BHASHIVA_CARAVANS_OPEN owned='..tostring(select(2,xatw3_test.owned())))
+ end)
+ if not ok then xatw3_test.record('BHASHIVA_CARAVAN_OPEN_FAIL '..tostring(e))end
+end,.7)

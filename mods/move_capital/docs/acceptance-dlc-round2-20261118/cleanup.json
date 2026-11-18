@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "observed_at_utc": "2026-11-18T13:13:58.324422+00:00",
+  "mods": [
+    "recruitment_refresh",
+    "move_capital"
+  ],
+  "removed_owned_packs": [
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_acceptance.pack",
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+    "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_move_capital.pack"
+  ],
+  "preferences_restored": true,
+  "user_script_restored": true,
+  "game_stopped": true,
+  "save_files_deleted": 0,
+  "steam_offline": true,
+  "offline_receipt": "D:\\workspace\\.codex-wh3-runtime\\dlc-round2-20261118\\offline-final-1795007637806274800.json",
+  "preferences_original_sha256": "84263128ce22010114381eb380d7310d01da4df9896f70d474ecfdf29207adc1"
+}

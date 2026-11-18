@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "record_checks": {
+    "json": 53,
+    "lua_fixture": 20,
+    "python_fixture": 3
+  },
+  "exact_accepted_payload_matches_committed_source": true,
+  "both_pack_hashes_match": true,
+  "evidence_hashes_match": true,
+  "publication_gate_offline_validation": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS"
+  },
+  "steam_intentional_offline": true,
+  "game_stopped": true,
+  "scope": "Record integrity and fixture compilation; these checks do not add business native-test credit."
+}

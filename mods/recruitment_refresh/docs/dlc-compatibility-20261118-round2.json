@@ -1,7 +1,7 @@
 {
   "mod_id": "recruitment_refresh",
   "version": "0.3.4",
-  "status": "BHASHIVA_NATIVE_PASS_THANQUOL_PENDING",
+  "status": "NATIVE_PASS_WITH_FIXTURE_LIMITS",
   "recorded_at_utc": "2026-11-18T12:49:18.331606+00:00",
   "machine_id": "pc-20260924rtuf-f11af23c08",
   "source_parent_commit": "8b6e9b52a2a7169cb875a997d81760d06a029cc5",
@@ -165,7 +165,11 @@
     "Adjacent NPC Karak Azorn transferred with original engine API before native Move Capital confirmation; no siege credit.",
     "Startup cinematic UI recovery and tutorial dismissal were acceptance setup; no refresh/pool mutation credited.",
     "Caravan end-turn encounter used the real second dilemma choice (feed meat), which legitimately removed one escort; active/idle protection compares state after that native consequence.",
-    "Empty-pool guard was explicitly invoked by a test script; not credited as a click on a hidden control."
+    "Empty-pool guard was explicitly invoked by a test script; not credited as a click on a hidden control.",
+    "Thanquol technology wh3_dlc29_tech_skv_3_7_1 was researched instantly; each finite candidate was created once by the unchanged original verminlord_spawn function. No complete ritual, ritual cost/cooldown or normal research progression credit.",
+    "Additional NPC settlements were transferred for independent native recruitment locations. Same-province hire controls were unavailable after a hire; moving the first lord did not enable them. Different-province native hires succeeded. This is observed behavior, not a proven complete explanation of the original game restriction.",
+    "The already hired Corruptor 16870 was teleported once using original engine APIs to a valid nearby land location while diagnosing the unavailable hire control. No full native movement credit.",
+    "The last remaining Warbringer uses the native single-category list with its lore selector hidden. The hire fixture verifies the actual visible candidate subtype before clicking; no production fallback was added."
   ],
   "automation_limits": [
     "Early navigation assertions and missing callbacks are preserved as failed harness attempts, not passing business cases.",
@@ -174,13 +178,14 @@
     "Raw game captures can have renderer artifacts; no image editing or inferred screenshot credit."
   ],
   "limits": [
-    "Thanquol/four Verminlords pending in this work package.",
-    "No complete caravan journey/return, full unlock construction, full ritual/training or native multiplayer credit.",
-    "Other newly owned DLC campaigns are not individually native-tested.",
-    "Final 0.3.4 refreshed-state save exists; its subsequent reload is not yet credited."
+    "No complete caravan journey/return, full original ritual/training/research/unlock construction or native multiplayer credit.",
+    "Other newly owned DLC campaigns and finite families are not individually native-tested.",
+    "Verminlord extra-trait signatures were empty; no new nonempty trait-copy credit.",
+    "Ordinary Bhashiva Sawai hire was blocked by native army cap 1/1, not credited.",
+    "The final Bhashiva 0.3.4 save is retained but not reloaded in this session; Bhashiva actual 0.3.3 refreshed-state upgrade and Thanquol final 0.3.4 refreshed-state reload passed."
   ],
   "steam": "Intentional offline with fresh background receipt before each native launch.",
-  "cleanup": "IN_PROGRESS: same owned test session continues with Thanquol; no cleanup credit yet.",
+  "cleanup": "acceptance-0.3.4/cleanup.json",
   "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-round2-20261118",
   "native_log_sha256": "9136458c01c43b9c32ae511c0489e2a50f2339146a7cdd12b3e1d5682853e24d",
   "old_native_log_sha256": "3781d8c195e579984754aadd7233b1823683b36a9684c50e8bc0728dbdece4b3",
@@ -191,5 +196,243 @@
     "adopted": 0,
     "reason": "Configured service lists only open-h3-2k video model; no fallback or fabricated coding result.",
     "evidence": "acceptance-0.3.4/local-model-status.json"
+  },
+  "completed_at_utc": "2026-11-18T13:13:58.632369+00:00",
+  "source_commit": "6ce2c366ba202117e44c55dca894454a92238423",
+  "steam_final_offline": "acceptance-0.3.4/steam-final-offline.json",
+  "final_refreshed_save_reload": "acceptance-0.3.4/final-refreshed-save-reload.json",
+  "final_native_log_sha256": "93420875ca774398fc73d912020566c7d2d4d662a4829ab0ff9923f314fb5317",
+  "thanquol_native_log_sha256": "2fe9d4dde99feb933025a7853bd6e7b115c533647b4b022a0d17b50f76690661",
+  "thanquol": {
+    "faction": "wh3_dlc29_skv_clan_scruten",
+    "owned_native_selection": true,
+    "cold_same_final_pack": true,
+    "four_lore_refreshes": "1→1 each; no additional candidates; correct selected lore restored; other pools/default skills unchanged",
+    "four_native_hires": [
+      {
+        "forces_before": 7,
+        "cost": 1000,
+        "pool_before": [
+          {
+            "recruited": false,
+            "special": false,
+            "leader": false,
+            "in_pool": true,
+            "unique": false,
+            "immortal": false,
+            "background": "wh2_main_skill_innate_skv_warpstone_hoarder",
+            "starting": false,
+            "male": true,
+            "subtype": "wh3_dlc29_skv_verminlord_corruptor",
+            "id": 16870,
+            "traits": {},
+            "provenance": "ordinary_generated",
+            "faction": "wh3_dlc29_skv_clan_scruten",
+            "trait_signature": "",
+            "wounded": false,
+            "forename": "names_name_258602816",
+            "surname": ""
+          }
+        ],
+        "gold_before": 6000,
+        "package_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+        "status": "PASS",
+        "pool_after": {},
+        "gold_after": 5000,
+        "subtype": "wh3_dlc29_skv_verminlord_corruptor",
+        "id": 16870,
+        "default_skills": "00007FF4F6487090:1",
+        "refresh_sequence_unchanged": true,
+        "recruited_protected": true,
+        "other_pools_unchanged": true,
+        "forces_after": 8,
+        "region": "wh3_main_combi_region_swartzhafen",
+        "rank": 1
+      },
+      {
+        "forces_before": 8,
+        "cost": 1000,
+        "pool_before": [
+          {
+            "recruited": false,
+            "special": false,
+            "leader": false,
+            "in_pool": true,
+            "unique": false,
+            "immortal": false,
+            "background": "wh2_main_skill_innate_all_cunning",
+            "starting": false,
+            "male": true,
+            "subtype": "wh3_dlc29_skv_verminlord_deceiver",
+            "id": 16871,
+            "traits": {},
+            "provenance": "ordinary_generated",
+            "faction": "wh3_dlc29_skv_clan_scruten",
+            "trait_signature": "",
+            "wounded": false,
+            "forename": "names_name_1885973998",
+            "surname": ""
+          }
+        ],
+        "gold_before": 5000,
+        "package_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+        "status": "PASS",
+        "pool_after": {},
+        "gold_after": 4000,
+        "subtype": "wh3_dlc29_skv_verminlord_deceiver",
+        "id": 16871,
+        "default_skills": "00007FF4F658F528:1",
+        "refresh_sequence_unchanged": true,
+        "recruited_protected": true,
+        "other_pools_unchanged": true,
+        "forces_after": 9,
+        "region": "wh3_main_combi_region_karag_dromar",
+        "rank": 1
+      },
+      {
+        "forces_before": 11,
+        "cost": 1000,
+        "pool_before": [
+          {
+            "recruited": false,
+            "special": false,
+            "leader": false,
+            "in_pool": true,
+            "unique": false,
+            "immortal": false,
+            "background": "wh2_main_skill_innate_all_strategist",
+            "starting": false,
+            "male": true,
+            "subtype": "wh3_dlc29_skv_verminlord_warpseer",
+            "id": 16872,
+            "traits": {},
+            "provenance": "ordinary_generated",
+            "faction": "wh3_dlc29_skv_clan_scruten",
+            "trait_signature": "",
+            "wounded": false,
+            "forename": "names_name_319182890",
+            "surname": ""
+          }
+        ],
+        "gold_before": 4000,
+        "package_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+        "status": "PASS",
+        "pool_after": {},
+        "gold_after": 3000,
+        "subtype": "wh3_dlc29_skv_verminlord_warpseer",
+        "id": 16872,
+        "default_skills": "00007FF4F6455C98:1",
+        "refresh_sequence_unchanged": true,
+        "recruited_protected": true,
+        "other_pools_unchanged": true,
+        "forces_after": 12,
+        "region": "wh3_main_combi_region_grenzstadt",
+        "rank": 1
+      },
+      {
+        "forces_before": 13,
+        "cost": 1000,
+        "pool_before": [
+          {
+            "recruited": false,
+            "special": false,
+            "leader": false,
+            "in_pool": true,
+            "unique": false,
+            "immortal": false,
+            "background": "wh2_main_skill_innate_all_confident",
+            "starting": false,
+            "male": true,
+            "subtype": "wh3_dlc29_skv_verminlord_warbringer",
+            "id": 16873,
+            "traits": {},
+            "provenance": "ordinary_generated",
+            "faction": "wh3_dlc29_skv_clan_scruten",
+            "trait_signature": "",
+            "wounded": false,
+            "forename": "names_name_481906007",
+            "surname": ""
+          }
+        ],
+        "gold_before": 3000,
+        "package_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+        "status": "PASS",
+        "pool_after": {},
+        "gold_after": 2000,
+        "subtype": "wh3_dlc29_skv_verminlord_warbringer",
+        "id": 16873,
+        "default_skills": "00007FF4F6616078:1",
+        "refresh_sequence_unchanged": true,
+        "recruited_protected": true,
+        "other_pools_unchanged": true,
+        "forces_after": 14,
+        "region": "wh3_main_combi_region_akendorf",
+        "rank": 1
+      }
+    ],
+    "additional_traits_scope": "All four native vanilla candidates had empty extra-trait signatures before/after. Nonempty trait-copy credit is not added by these cases.",
+    "capital": {
+      "previous": "wh3_main_combi_region_karag_dromar",
+      "target": "wh3_main_combi_region_swartzhafen",
+      "native_button_and_confirmation": "PASS",
+      "buildings_levels_ownership_province_capital_and_all_pools_unchanged": true,
+      "native_refreshed_corruptor_hired_at_new_capital": true
+    },
+    "persistence": {
+      "both_full_mod_states_unchanged": true,
+      "turn": 1,
+      "source_save_sha256": "13cc9452ff1bdc1e7faea6b76a2c686b4dd09551abe9050ab551b4e454ca20ae",
+      "package_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+      "faction": "wh3_dlc29_skv_clan_scruten",
+      "status": "PASS",
+      "all_pool_fingerprints_unchanged": true,
+      "capital": "wh3_main_combi_region_swartzhafen",
+      "hired_verminlord_actors_preserved": {
+        "16870": {
+          "subtype": "wh3_dlc29_skv_verminlord_corruptor",
+          "id": 16870,
+          "y": 585,
+          "x": 670,
+          "default_skills": "00007FF4F6487090:1",
+          "region": "wh3_main_combi_region_swartzhafen",
+          "background": "wh2_main_skill_innate_skv_warpstone_hoarder",
+          "force": 950,
+          "rank": 1
+        },
+        "16871": {
+          "subtype": "wh3_dlc29_skv_verminlord_deceiver",
+          "id": 16871,
+          "y": 564,
+          "x": 677,
+          "default_skills": "00007FF4F658F528:1",
+          "region": "wh3_main_combi_region_karag_dromar",
+          "background": "wh2_main_skill_innate_all_cunning",
+          "force": 951,
+          "rank": 1
+        },
+        "16872": {
+          "subtype": "wh3_dlc29_skv_verminlord_warpseer",
+          "id": 16872,
+          "y": 575,
+          "x": 646,
+          "default_skills": "00007FF4F6455C98:1",
+          "region": "wh3_main_combi_region_grenzstadt",
+          "background": "wh2_main_skill_innate_all_strategist",
+          "force": 954,
+          "rank": 1
+        },
+        "16873": {
+          "subtype": "wh3_dlc29_skv_verminlord_warbringer",
+          "id": 16873,
+          "y": 542,
+          "x": 676,
+          "default_skills": "00007FF4F6616078:1",
+          "region": "wh3_main_combi_region_akendorf",
+          "background": "wh2_main_skill_innate_all_confident",
+          "force": 956,
+          "rank": 1
+        }
+      }
+    }
   }
 }

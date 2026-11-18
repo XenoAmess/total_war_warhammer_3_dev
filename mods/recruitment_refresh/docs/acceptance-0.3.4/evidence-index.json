@@ -1,120 +1,365 @@
 [
   {
-    "file": "original-033-case-bhashiva-life.json",
-    "sha256": "eb72ed0996c1c7330d090b0dc721875cbebc5f7fa81cbce5261a1dc366d055de",
-    "source_phase": "evidence",
-    "bytes": 19205
-  },
-  {
-    "file": "original-033-clawspeaker-life-native-hire.json",
-    "sha256": "101653372967562ae85965c76c4692c970fdb4e624edc15403219caf51a2b982",
-    "source_phase": "evidence",
-    "bytes": 390
-  },
-  {
-    "file": "original-033-published-0.3.3-sawai-reopen-gap.json",
-    "sha256": "d18104134be1606455c8d938fda1e149582abb0888d45ede1a785ad24d16f050",
-    "source_phase": "evidence",
-    "bytes": 19731
-  },
-  {
-    "file": "original-033-startup-ui-recovery.json",
-    "sha256": "9792d90fa37ad1f75605e485997e4fafe2724b409a0f435b2870a5517013346f",
-    "source_phase": "evidence",
-    "bytes": 17939
-  },
-  {
-    "file": "save-upgrade-033-to-034.json",
-    "sha256": "ff721654baa2e0b07502041cd7070cc7b30dbff87f99ddb0469f15a777cebc82",
-    "source_phase": "evidence-034",
-    "bytes": 19240
-  },
-  {
-    "file": "case-sawai-idle-final.json",
-    "sha256": "aeef69d598b98adce2c1776dc285dfdfd5f8f6ca101cf1b028d59629c728ebd6",
-    "source_phase": "evidence-034",
-    "bytes": 19635
-  },
-  {
-    "file": "case-sawai-after-capital.json",
-    "sha256": "bbc8028582be4194fa2354a093c8f0902e1a50b57465b947333d1320ffba363f",
-    "source_phase": "evidence-034",
-    "bytes": 19635
-  },
-  {
-    "file": "sawai-refreshed-native-hire.json",
-    "sha256": "cece4e7a4204b3a7499e8e3e073b07acab42f29b0220db07e9f2d0f8038d2187",
-    "source_phase": "evidence-034",
-    "bytes": 1300
-  },
-  {
-    "file": "sawai-native-dispatch-after-capital.json",
-    "sha256": "ae9082030b52dcb8cd32bc07cab2375447c77aa17c02d930ce3d4043abfe7695",
-    "source_phase": "evidence-034",
-    "bytes": 2283
-  },
-  {
-    "file": "sawai-empty-pool.json",
-    "sha256": "439e223acd46b7e3960bdb9fd96a7beabc69e94dcb7d71e4a817acefcf9dc2e3",
-    "source_phase": "evidence-034",
-    "bytes": 1541
+    "file": "bhashiva-final-snapshot.json",
+    "sha256": "88088817ebee5c885606ed03fa430d9d28c9cfcc7f73ec7a77a8edaa4dc037a1",
+    "bytes": 19809
   },
   {
     "file": "bhashiva-native-turn2.json",
     "sha256": "d782cbec5a00fd77c20615c53f8b8a5f4f153deb2b3de633e9471a7ee3e44be7",
-    "source_phase": "evidence-034",
     "bytes": 800
-  },
-  {
-    "file": "case-sawai-active-and-idle.json",
-    "sha256": "35d8aa46c21ccd1ada38581efca7a685fc828d18c8662c76485dd5c7147ebb07",
-    "source_phase": "evidence-034",
-    "bytes": 21715
-  },
-  {
-    "file": "case-clawspeaker-life-final.json",
-    "sha256": "a7d5f0840100e39486e389c0aefaea43e07a2a4821fb3e4887be582c310434e2",
-    "source_phase": "evidence-034",
-    "bytes": 21147
   },
   {
     "file": "case-clawspeaker-beasts-final.json",
     "sha256": "723cf08ca6fe98637fac389333bd86f3e7052931059fe1d87d1c8c6931bc6d44",
-    "source_phase": "evidence-034",
     "bytes": 21539
+  },
+  {
+    "file": "case-clawspeaker-life-final.json",
+    "sha256": "a7d5f0840100e39486e389c0aefaea43e07a2a4821fb3e4887be582c310434e2",
+    "bytes": 21147
   },
   {
     "file": "case-clawspeaker-shadows-final.json",
     "sha256": "8a9d8b157167d7b6cc48ad654a0ff762db1ea712b9c10dc03c36f2c923e32b26",
-    "source_phase": "evidence-034",
     "bytes": 21549
   },
   {
     "file": "case-ordinary-sawai-final.json",
     "sha256": "eb314f50baf8f3228914220469e50e187498d16bbc58837b9c857a770864080d",
-    "source_phase": "evidence-034",
     "bytes": 21012
   },
   {
-    "file": "bhashiva-final-snapshot.json",
-    "sha256": "88088817ebee5c885606ed03fa430d9d28c9cfcc7f73ec7a77a8edaa4dc037a1",
-    "source_phase": "evidence-034",
-    "bytes": 19809
+    "file": "case-sawai-active-and-idle.json",
+    "sha256": "35d8aa46c21ccd1ada38581efca7a685fc828d18c8662c76485dd5c7147ebb07",
+    "bytes": 21715
   },
   {
-    "file": "offline-test-results.json",
-    "sha256": "d87c8b0a22621b63c0c314fe066bc6b3486436b129c2008c3b54002f4299a502"
+    "file": "case-sawai-after-capital.json",
+    "sha256": "bbc8028582be4194fa2354a093c8f0902e1a50b57465b947333d1320ffba363f",
+    "bytes": 19635
+  },
+  {
+    "file": "case-sawai-idle-final.json",
+    "sha256": "aeef69d598b98adce2c1776dc285dfdfd5f8f6ca101cf1b028d59629c728ebd6",
+    "bytes": 19635
   },
   {
     "file": "checkpoint-034.json",
-    "sha256": "ac3a0befaca2b82b36df835c09c4e19255d79eb8b7c5900c6706180ce47e9700"
+    "sha256": "ac3a0befaca2b82b36df835c09c4e19255d79eb8b7c5900c6706180ce47e9700",
+    "bytes": 403
   },
   {
     "file": "checkpoint-bhashiva-final.json",
-    "sha256": "9a3013ca7b6e586aa67c86ceb3ba332eb93e9cf79fc3df32a29ff62b86687782"
+    "sha256": "9a3013ca7b6e586aa67c86ceb3ba332eb93e9cf79fc3df32a29ff62b86687782",
+    "bytes": 267
+  },
+  {
+    "file": "checkpoint-thanquol-final.json",
+    "sha256": "28332bacd7439f3c2cdfb09ed9517924361acc94e56e9f2029fdcc67d9d875a3",
+    "bytes": 266
+  },
+  {
+    "file": "cleanup.json",
+    "sha256": "2b08f544e83b877b79faa903cf83af718682f8adb4f6f74538fe017cc4caad95",
+    "bytes": 932,
+    "captured_sha256_before_lf_normalization": "7240687c69e89e22574784394d48e09ace017b52e78c8b2a84b6c095821150b3",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "final-refreshed-save-reload.json",
+    "sha256": "debd6987e61a480fe61d5d18eb243d4d3e3f0c8569b5e0505649826626c9e0a2",
+    "bytes": 1357
+  },
+  {
+    "file": "fixtures/acceptance_tools.lua",
+    "sha256": "720d7e2d681146d2f2abb467bf29500105f17fe0c154ee1f5d29e7cd4bbc7aed",
+    "bytes": 8209
+  },
+  {
+    "file": "fixtures/bootstrap_034.lua",
+    "sha256": "b2f097db9573d646de822239383b2ec5c9c399d5a4b466627b6c9e340d630688",
+    "bytes": 2655
+  },
+  {
+    "file": "fixtures/bootstrap_thanq.lua",
+    "sha256": "2dbc817388a1a6693245e0dd77fb1807b3186c338474d4f4ec3e47645dbf2932",
+    "bytes": 2470
+  },
+  {
+    "file": "fixtures/capital_bhashiva.lua",
+    "sha256": "3a2f0d285b7140820488dfe0bacd19b3640d117fbbebebca36e4df90cc478700",
+    "bytes": 4996
+  },
+  {
+    "file": "fixtures/capital_thanquol.lua",
+    "sha256": "a51bf2208fa315d5cb2252eda52c8f2b160e001c109ae37ab001b48ca547fa82",
+    "bytes": 5016,
+    "captured_sha256_before_lf_normalization": "ef8e4a2c3b6179e4ae60a7a67a9f3043ed368426bc171bbd443671272d0710cc",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/cleanup_session.py",
+    "sha256": "1bed1dd432414a46648fa1437d3ff73cd8ef712aa624167e0fb5429629d347e6",
+    "bytes": 2442,
+    "captured_sha256_before_lf_normalization": "474a22400001932e148fac30610e93a1c4db11941e32c18d6868d41668dbb5cb",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/clear_known_army_spawn_fixture.lua",
+    "sha256": "6c1e19826a6e78ce51993c2b2a1f7c6136c814621411afc18cfdc82804c39fb3",
+    "bytes": 1360,
+    "captured_sha256_before_lf_normalization": "373494455e02add77a6df7591737d09ab1aa2f571f3b53b7fd23a334c4516995",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/cold_reload_thanquol.py",
+    "sha256": "98eb86681cd40fe4aebbd160a751e2440c388ffe6caa5c81c23574a62ad15040",
+    "bytes": 4855
+  },
+  {
+    "file": "fixtures/evidence_helpers_034.lua",
+    "sha256": "483a7bc2d3ea9ddd81e161f6e8751545bebb46376a26c5da13a035c365cc58b2",
+    "bytes": 843
+  },
+  {
+    "file": "fixtures/evidence_helpers_thanq.lua",
+    "sha256": "b0fedeadb3a20f836eb680960397f9852bde2fd2243f15659db2dc8188697bed",
+    "bytes": 849
+  },
+  {
+    "file": "fixtures/final_thanquol_snapshot.lua",
+    "sha256": "f2642cbe98c218534636ecf13a190d34f7a43b302b8b24803131f9df209faa31",
+    "bytes": 1451
+  },
+  {
+    "file": "fixtures/hire_verminlord_tools.lua",
+    "sha256": "5d469f568f73f344ecec569166bdbbd70face94676c6fb8728a97608c320468d",
+    "bytes": 2839,
+    "captured_sha256_before_lf_normalization": "b05a44d87f2bc3a8f11d17127df7ea943ae4ab0f128bb0918f24c9a2bcf2c333",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/install_ui_dispatch.lua",
+    "sha256": "9fc26f72b3fce9c6652883e7248492ea37bb9cbde90aacb82e052579dcee63b7",
+    "bytes": 698
+  },
+  {
+    "file": "fixtures/native_ui_geometry.lua",
+    "sha256": "7c995bb77aeace29c68671542ee6ac494605290ca489d2cea4cc21cd0fe2fe9e",
+    "bytes": 881
+  },
+  {
+    "file": "fixtures/open_bhashiva_caravan_recruitment.lua",
+    "sha256": "b43795fc7281e5d4fc9dab62d9d1ce261e8a4a8a5d0646f3e8b6ef23f0e00637",
+    "bytes": 732
+  },
+  {
+    "file": "fixtures/open_bhashiva_caravans.lua",
+    "sha256": "5d14e72e096bb67e5bf1038efc98fa102eb25538f4551311f3e1df4ebbef7e1a",
+    "bytes": 651
+  },
+  {
+    "file": "fixtures/open_heroes_final.lua",
+    "sha256": "d198d25ca2136f44ef84c4114ef6fb2510816b982a14e18fb688b39b6b173018",
+    "bytes": 1711,
+    "captured_sha256_before_lf_normalization": "0c9d198a6ffbc680c8fe3cf7382574daee5c99b2387ab676c6ec56d9b589a582",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/open_verminlord_category.lua",
+    "sha256": "02541244dbfb63f147c7fbbd41d9da61d8c03936c909d4a4af40d0dbbeddcf25",
+    "bytes": 573,
+    "captured_sha256_before_lf_normalization": "f06a42144b570ddf2e3e7fdcc63fdf898dcc979a89efc670d1cee7936e46ddbe",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/prepare_next_hire_city_fixture.lua",
+    "sha256": "d17ed3c936972ab4c351e5c3545728604fbf5305f23578873d401e7a1738b6bc",
+    "bytes": 1487,
+    "captured_sha256_before_lf_normalization": "b52878de9f97c9c1f676a314f1c961307263ed48e3713a889ac8f09e3cf6f356",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/prepare_other_claw_cases.lua",
+    "sha256": "2ba4f116635a78d5ff0d438ab7a96e9b64e6886ad804de9dd3fcd913b74e2c92",
+    "bytes": 484
+  },
+  {
+    "file": "fixtures/prepare_verminlord_cases.lua",
+    "sha256": "b65f2cd8151d5d78ac17bf230a220930100593fa043e7fd31543589535080303",
+    "bytes": 530,
+    "captured_sha256_before_lf_normalization": "966e91616f1456d028bb7866b4ff9a9d307ddfed761c4fae0b295d444773588b",
+    "line_endings_normalized_to_lf_for_git": true
+  },
+  {
+    "file": "fixtures/send.py",
+    "sha256": "025223b37626865a105dead7dd1816df0f8cb068fe28834d9db9993908e0b012",
+    "bytes": 2612
+  },
+  {
+    "file": "fixtures/unlock_verminlords_fixture.lua",
+    "sha256": "c6648e7af344eb509e665deb206a86b350a47b27b451bfbda096d9317b62ae7f",
+    "bytes": 1569
   },
   {
     "file": "local-model-status.json",
-    "sha256": "d882a73e7711c83c0955320bb75f9954e0362db8b5510ae51dbb8b725ce09baf"
+    "sha256": "d882a73e7711c83c0955320bb75f9954e0362db8b5510ae51dbb8b725ce09baf",
+    "bytes": 762
+  },
+  {
+    "file": "offline-test-results.json",
+    "sha256": "d87c8b0a22621b63c0c314fe066bc6b3486436b129c2008c3b54002f4299a502",
+    "bytes": 6798
+  },
+  {
+    "file": "original-033-case-bhashiva-life.json",
+    "sha256": "eb72ed0996c1c7330d090b0dc721875cbebc5f7fa81cbce5261a1dc366d055de",
+    "bytes": 19205
+  },
+  {
+    "file": "original-033-clawspeaker-life-native-hire.json",
+    "sha256": "101653372967562ae85965c76c4692c970fdb4e624edc15403219caf51a2b982",
+    "bytes": 390
+  },
+  {
+    "file": "original-033-published-0.3.3-sawai-reopen-gap.json",
+    "sha256": "d18104134be1606455c8d938fda1e149582abb0888d45ede1a785ad24d16f050",
+    "bytes": 19731
+  },
+  {
+    "file": "original-033-startup-ui-recovery.json",
+    "sha256": "9792d90fa37ad1f75605e485997e4fafe2724b409a0f435b2870a5517013346f",
+    "bytes": 17939
+  },
+  {
+    "file": "save-upgrade-033-to-034.json",
+    "sha256": "ff721654baa2e0b07502041cd7070cc7b30dbff87f99ddb0469f15a777cebc82",
+    "bytes": 19240
+  },
+  {
+    "file": "sawai-empty-pool.json",
+    "sha256": "439e223acd46b7e3960bdb9fd96a7beabc69e94dcb7d71e4a817acefcf9dc2e3",
+    "bytes": 1541
+  },
+  {
+    "file": "sawai-native-dispatch-after-capital.json",
+    "sha256": "ae9082030b52dcb8cd32bc07cab2375447c77aa17c02d930ce3d4043abfe7695",
+    "bytes": 2283
+  },
+  {
+    "file": "sawai-refreshed-native-hire.json",
+    "sha256": "cece4e7a4204b3a7499e8e3e073b07acab42f29b0220db07e9f2d0f8038d2187",
+    "bytes": 1300
+  },
+  {
+    "file": "steam-final-offline.json",
+    "sha256": "e12f434598a1cf57f79ed32ebd0c4e8dadf3ac20e46ec6fd5686fb581c04846c",
+    "bytes": 2269
+  },
+  {
+    "file": "thanquol-capital-settlement-fixture-before-transfer.json",
+    "sha256": "84672e350f542d90b0617330983b81cc1dba77b398e34b558fda748137a67b68",
+    "bytes": 167
+  },
+  {
+    "file": "thanquol-capital-wh3_dlc29_skv_clan_scruten.json",
+    "sha256": "46a5536aa745e3c2f2c2c5a6dcbe9b0c96ac2bbfcb5df0180b97cc7c29865cc9",
+    "bytes": 19879
+  },
+  {
+    "file": "thanquol-case-verminlord-corruptor.json",
+    "sha256": "d79470e1bb6843c705937a288fe57bf33a0eaa1e95228de3cd39a03bcd8e8205",
+    "bytes": 18097
+  },
+  {
+    "file": "thanquol-case-verminlord-deceiver.json",
+    "sha256": "3e1a9d6e302fa56d1c646aab9832a0fde0aac7707f9b3952b049f66826ad2f89",
+    "bytes": 18103
+  },
+  {
+    "file": "thanquol-case-verminlord-warbringer.json",
+    "sha256": "f6186faa169648d6f7dd808bfdc877378fe2e1bbb78b15c969848f765360aec9",
+    "bytes": 18089
+  },
+  {
+    "file": "thanquol-case-verminlord-warpseer.json",
+    "sha256": "7bc011ac918f14ad45f46afb536a6655619786951095e536c02f46f7cc97d94f",
+    "bytes": 18103
+  },
+  {
+    "file": "thanquol-final-native-ui-geometry.json",
+    "sha256": "cd9e3f50498690e3b2c7e9030a64e1b23e8a1a1fd4f1f3cd523c24227934806a",
+    "bytes": 370
+  },
+  {
+    "file": "thanquol-native-hire-city-fixture-wh3_main_combi_region_akendorf.json",
+    "sha256": "629e90c991a7933e32138246221c562780744c5adfff1a03d52e0da0ae6a05bb",
+    "bytes": 291
+  },
+  {
+    "file": "thanquol-native-hire-city-fixture-wh3_main_combi_region_grenzstadt.json",
+    "sha256": "37176d1c38597a8bda3b18d563e9a58e32472b994acadebef7a4fb69cf3111a2",
+    "bytes": 287
+  },
+  {
+    "file": "thanquol-native-hire-city-fixture-wh3_main_combi_region_oakenhammer.json",
+    "sha256": "c64b88e18cb32833b9cf1fac013b283de5aa7918c061bd669082e1373f8a962e",
+    "bytes": 287
+  },
+  {
+    "file": "thanquol-native-save-request.json",
+    "sha256": "d21b6b902a484b9d6aa8117e04f559ca68db80b40cea99e31f445f93871107c5",
+    "bytes": 198
+  },
+  {
+    "file": "thanquol-owned-army-position-fixture-1.json",
+    "sha256": "5d0fd01f14e4cd08735247a77c8389b63db116ef65bdd2cb33ec83609256027b",
+    "bytes": 324
+  },
+  {
+    "file": "thanquol-startup-ui-recovery.json",
+    "sha256": "eba9de3c4e5519da1a1e4c38506525a5490ea88a7ba9e6e92c2e780ccb631d32",
+    "bytes": 17569
+  },
+  {
+    "file": "thanquol-thanquol-final-snapshot.json",
+    "sha256": "d36d58c44f5ec0031b48d91acc8b78a11f7a6ade8fc13e8d59858b48909ec283",
+    "bytes": 14327
+  },
+  {
+    "file": "thanquol-verminlord-native-hire-corruptor.json",
+    "sha256": "c6356d0d74c668caf6ad7b0d8729d9443042a40d174ae2baf8cda255f77a71d7",
+    "bytes": 870
+  },
+  {
+    "file": "thanquol-verminlord-native-hire-deceiver.json",
+    "sha256": "53d2038441754ca88635916cd00696ff1d7998dd84722e47de91763dda28be84",
+    "bytes": 860
+  },
+  {
+    "file": "thanquol-verminlord-native-hire-warbringer.json",
+    "sha256": "b407e84d7802a0abf1c9741d63643e9421e6efec09e8da09747e72b2892269e7",
+    "bytes": 863
+  },
+  {
+    "file": "thanquol-verminlord-native-hire-warpseer.json",
+    "sha256": "178001a8d12c0d4035ebe734ffebbf87eeb5a98facf6f444f017a7eb494dc98a",
+    "bytes": 862
+  },
+  {
+    "file": "thanquol-verminlord-second-hire-blocked-readonly.json",
+    "sha256": "d3ac423b0cba07734c1d89ac555d4c86d7b228a6914e3e5bcd081266f02ed567",
+    "bytes": 499
+  },
+  {
+    "file": "thanquol-verminlord-vanilla-generation-fixture.json",
+    "sha256": "fafa43b914c9cab3a535856b852b4a5ad47d435d5fec4181398a1ba64a0d64c7",
+    "bytes": 5306
+  },
+  {
+    "file": "vanilla-script-sources.json",
+    "sha256": "32e81dbf0b9393c9776993837705c17323254e2c66a30b3ec62fb0b7d664894b",
+    "bytes": 1276
   }
 ]

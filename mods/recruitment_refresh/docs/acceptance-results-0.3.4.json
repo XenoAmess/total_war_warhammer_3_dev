@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.4",
+  "release_status": "NATIVE_ACCEPTED_NOT_PUBLISHED",
+  "recorded_at_utc": "2026-11-18T13:13:58.634614+00:00",
+  "source_commit": "6ce2c366ba202117e44c55dca894454a92238423",
+  "source_parent_commit": "8b6e9b52a2a7169cb875a997d81760d06a029cc5",
+  "pack_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "release_pack_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "pack_bytes": 98307,
+  "release_identity": "5a958457fb30b620e246ee928b180244cb0ba5a148c41c4edb5cf16936e84bbe",
+  "L0": "PASS",
+  "L1": "PASS",
+  "L2": "PASS",
+  "L3": "PASS",
+  "L4": "NOT_RUN",
+  "offline_tests": {
+    "shared": 90,
+    "mod": 109,
+    "total": 199,
+    "status": "PASS",
+    "regressions_red_before_fix": true,
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "lua_compile_files": 6
+  },
+  "native_report": "dlc-compatibility-20261118-round2.json",
+  "native_cold_package": true,
+  "tracked_payload_matches_pack": true,
+  "cleanup": "acceptance-0.3.4/cleanup.json",
+  "steam_offline": true,
+  "workshop_upload_performed": false,
+  "acceptance_scope": "Incremental exact-package offline single-player DLC acceptance: Bhashiva Clawspeaker lores and Sawai caravan/ordinary pool; four Thanquol Verminlords, native hire and persistence; jointly enabled with unchanged Move Capital 0.2.0. Fixtures and scope limits remain explicit.",
+  "limitations": [
+    "No complete caravan journey/return, full original ritual/training/research/unlock construction or native multiplayer credit.",
+    "Other newly owned DLC campaigns and finite families are not individually native-tested.",
+    "Verminlord extra-trait signatures were empty; no new nonempty trait-copy credit.",
+    "Ordinary Bhashiva Sawai hire was blocked by native army cap 1/1, not credited.",
+    "The final Bhashiva 0.3.4 save is retained but not reloaded in this session; Bhashiva actual 0.3.3 refreshed-state upgrade and Thanquol final 0.3.4 refreshed-state reload passed."
+  ]
+}

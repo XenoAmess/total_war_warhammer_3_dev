@@ -160,7 +160,13 @@
     "Bhashiva/Clawspeaker/Sawai caravan",
     "Thanquol/four Verminlord subtypes"
   ],
-  "native_acceptance": "IN_PROGRESS; separate Mod reports will record actual outcomes. Ownership does not grant test credit.",
+  "native_acceptance": {
+    "status": "COMPLETED_WITH_EXPLICIT_SCOPE_LIMITS",
+    "recruitment_refresh": "../mods/recruitment_refresh/docs/dlc-compatibility-20261118-round2.json",
+    "move_capital": "../mods/move_capital/docs/dlc-compatibility-20261118-round2.json",
+    "recruitment_refresh_candidate": "0.3.4 NOT_PUBLISHED",
+    "steam_final_offline": "../mods/recruitment_refresh/docs/acceptance-0.3.4/steam-final-offline.json"
+  },
   "multiplayer": "NOT_RUN; still requires a second participant/environment.",
   "steam_final_mode": "intentional_offline",
   "offline_receipt": "dlc-activation-2026-11-18-round2/offline-after-inventory.json",

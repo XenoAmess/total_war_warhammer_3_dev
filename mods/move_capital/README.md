@@ -1,6 +1,6 @@
 # Move Capital
 
-第二批 DLC 补验：与招募刷新 0.3.4 共同启用，巴什瓦从泰坦谷迁往卡拉克·阿佐恩通过原生按钮及确认验收。建筑、等级、所有权、省会标志、候选与已有运输队保持；后续刷新、雇用、派遣及过回合首都保持通过。城镇转让是准备夹具；普通扫威雇用仍受原版军队上限 1/1 阻止，不计为雇用通过。本 Mod 源码与 0.2.0 包均未改变，见[第二批验收记录](docs/dlc-compatibility-20261118-round2.json)。
+第二批 DLC 补验：与招募刷新 0.3.4 共同启用，巴什瓦从泰坦谷迁往卡拉克·阿佐恩通过原生按钮及确认验收。建筑、等级、所有权、省会标志、候选与已有运输队保持；后续刷新、雇用、派遣及过回合首都保持通过。城镇转让是准备夹具；普通扫威雇用仍受原版军队上限 1/1 阻止，不计为雇用通过。Thanquol 迁都、新首都正常雇用及两个 Mod 的实际操作状态冷启动存读档也已通过；测试装载已恢复，Steam 主动离线。本 Mod 源码与 0.2.0 包均未改变，见[第二批验收记录](docs/dlc-compatibility-20261118-round2.json)。
 
 **DLC validation, 2026-11-18:** the unchanged 0.2.0 package passed Chaos Dwarf single-player checks with Recruitment Refresh 0.3.3 enabled. Moving Uzkulak's capital to the Great Skull Lakes factory preserved both settlements' buildings, levels, ownership and province-capital flags, recruitment pools and owned convoys. Native convoy dispatch and Death-lore lord hiring at the new capital also passed. The target settlement transfer and vanilla convoy-capacity technology are test fixtures, not conquest or full research acceptance. See [the DLC evidence and limits](docs/dlc-compatibility-20261118.json).
 

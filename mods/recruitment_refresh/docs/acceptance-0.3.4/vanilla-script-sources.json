@@ -1,0 +1,37 @@
+[
+  {
+    "entry": "script/campaign/main_warhammer/narratives/wh3_dlc29_episode_narrative_thanquol.lua",
+    "sha256": "487e9a1ac9da9165737ac312ce408a5741fffcd2e6f7c1cf39b1bd456a107d63",
+    "bytes": 31619
+  },
+  {
+    "entry": "script/campaign/wh3_cp1_bhashiva.lua",
+    "sha256": "2cbc5cd8a31740614a2d85ac2982267016c7612449242174ef93aa4248b779d9",
+    "bytes": 51758
+  },
+  {
+    "entry": "script/campaign/wh3_dlc29_thanquol_chaotic_plans.lua",
+    "sha256": "fe613daf9f3d2dc66bb42aae3144093259990e3fde260046db1e1035199dc34b",
+    "bytes": 31517
+  },
+  {
+    "entry": "script/campaign/wh3_dlc29_thanquol_chaotic_plans_missions.lua",
+    "sha256": "ceb8ee6aef97402e2d514098fa1365513da0cf0e11f1f1e05e48a3485bec401b",
+    "bytes": 28362
+  },
+  {
+    "entry": "script/campaign/wh3_dlc29_thanquol_chaotic_plans_token_payloads.lua",
+    "sha256": "3908a8b8ffe4d0404eca7a1281297c7efa408f34c3896ab76ef87ec4f172e16e",
+    "bytes": 36991
+  },
+  {
+    "entry": "script/campaign/wh3_dlc29_thanquol_schemers.lua",
+    "sha256": "9926e3f7a967e85bace0d353305c97b164e1ff4bef4710e1db014ed1e6da2611",
+    "bytes": 7497
+  },
+  {
+    "entry": "script/campaign/wh3_dlc29_verminlords.lua",
+    "sha256": "46b5c7a2506a1afbaab44fd910302813c637d583fbd7c47f0ff78f11075a1824",
+    "bytes": 9639
+  }
+]

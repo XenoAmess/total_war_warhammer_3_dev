@@ -1,0 +1,11 @@
+local b=assert(find_uicomponent(core:get_ui_root(),'cp1_cth_bhashiva_caravans','caravans_panel','reserves_listview','add_caravan_button','button_purchase'))
+assert(b:Visible(true)and(b:CurrentState()=='active'or b:CurrentState()=='hover'));b:SimulateLClick()
+cm:callback(function()
+ local ok,e=pcall(function()
+  local ui=xatw3_campaign_utilities.ui;ui.refresh_buttons()
+  assert(ui.selected_subtype=='wh3_cp1_cth_sawai_caravan','Wrong caravan recruitment subtype')
+  assert(find_uicomponent(core:get_ui_root(),'character_panel','xatw3_refresh_candidates'):Visible(true))
+  xatw3_test.record('BHASHIVA_CARAVAN_RECRUITMENT_READY')
+ end)
+ if not ok then xatw3_test.record('BHASHIVA_CARAVAN_RECRUITMENT_FAIL '..tostring(e))end
+end,.7)

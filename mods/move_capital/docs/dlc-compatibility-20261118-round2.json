@@ -1,7 +1,7 @@
 {
   "mod_id": "move_capital",
   "version": "0.2.0",
-  "status": "BHASHIVA_NATIVE_PASS",
+  "status": "BHASHIVA_AND_THANQUOL_NATIVE_PASS",
   "recorded_at_utc": "2026-11-18T12:54:13.627179+00:00",
   "machine_id": "pc-20260924rtuf-f11af23c08",
   "source_changed": false,
@@ -54,12 +54,41 @@
     {
       "file": "acceptance-dlc-round2-20261118/capital-wh3_cp1_cth_tiger_warriors.json",
       "sha256": "6133025b0dcfef474c8e082e20af4faa6a9fe182fe39a0c1f9d3aaf7eb0f4031"
+    },
+    {
+      "file": "acceptance-dlc-round2-20261118/capital-wh3_dlc29_skv_clan_scruten.json",
+      "sha256": "46a5536aa745e3c2f2c2c5a6dcbe9b0c96ac2bbfcb5df0180b97cc7c29865cc9"
+    },
+    {
+      "file": "acceptance-dlc-round2-20261118/cleanup.json",
+      "sha256": "2b08f544e83b877b79faa903cf83af718682f8adb4f6f74538fe017cc4caad95",
+      "captured_sha256_before_lf_normalization": "7240687c69e89e22574784394d48e09ace017b52e78c8b2a84b6c095821150b3",
+      "line_endings_normalized_to_lf_for_git": true
+    },
+    {
+      "file": "acceptance-dlc-round2-20261118/final-refreshed-save-reload.json",
+      "sha256": "debd6987e61a480fe61d5d18eb243d4d3e3f0c8569b5e0505649826626c9e0a2"
+    },
+    {
+      "file": "acceptance-dlc-round2-20261118/steam-final-offline.json",
+      "sha256": "e12f434598a1cf57f79ed32ebd0c4e8dadf3ac20e46ec6fd5686fb581c04846c"
     }
   ],
   "limits": [
     "Other new DLC capitals are not individually tested.",
-    "No original complete caravan journey/return or native multiplayer credit.",
-    "Cleanup is pending completion of the shared native test session."
+    "No complete caravan journey/return, original full ritual/research/training or native multiplayer credit.",
+    "Settlement transfers, instant technology research, original candidate generation and one original-API lord move are disclosed test fixtures."
   ],
-  "steam_mode": "intentional_offline"
+  "steam_mode": "intentional_offline",
+  "completed_at_utc": "2026-11-18T13:13:58.638905+00:00",
+  "thanquol": {
+    "previous": "wh3_main_combi_region_karag_dromar",
+    "target": "wh3_main_combi_region_swartzhafen",
+    "native_button_and_confirmation": "PASS",
+    "buildings_levels_ownership_province_capital_and_all_pools_unchanged": true,
+    "native_refreshed_corruptor_hired_at_new_capital": true
+  },
+  "refreshed_save_reload": "acceptance-dlc-round2-20261118/final-refreshed-save-reload.json",
+  "cleanup": "acceptance-dlc-round2-20261118/cleanup.json",
+  "steam_final_offline": "acceptance-dlc-round2-20261118/steam-final-offline.json"
 }
