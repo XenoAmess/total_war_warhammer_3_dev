@@ -15,6 +15,7 @@
 | [本机调用与采用记录](local-model-onboarding-2026-10-31.json) | 本机实际请求、编码故障、修复后返回及文档采用范围 |
 | [Steam 操作约定](steam-operation.md) | 主动离线、账号占用检查、必要在线阶段和状态读回 |
 | [DLC 授权同步](dlc-activation-2026-11-18.md) | 近期实际授权、安装读回及两个 Mod 的补验入口 |
+| [DLC 补验清单](dlc-acceptance-ledger.md) | 当前批次基线、两 Mod 已完成的原生补验，以及下一批 DLC 的待验场景 |
 | [工坊图文与实机截图](workshop-media.md) | 各 Mod 的 BBCode、截图清单、图库上传和发布验证 |
 | [显卡渲染排查](gpu-rendering-investigation-20261031.md) | RTX 3060 当前枚举状态、已完成检查与后续恢复判据 |
 | [仓库工作约定](../AGENTS.md) | Steam 与 Git 提交推送规则 |

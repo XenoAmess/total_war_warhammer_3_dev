@@ -23,4 +23,4 @@
 | 其他新增 DLC 与特殊招募家族 | 完成相关元数据与面板路径检查；未逐个运行完整战役或特殊解锁流程 |
 | 联机 | 购买 DLC 不替代第二端环境和原生联机验收，本次未进行 |
 
-具体修改与精确包验收：[招募刷新 0.3.3](../mods/recruitment_refresh/docs/dlc-compatibility-20261118.md)、[迁都 0.2.0](../mods/move_capital/docs/dlc-compatibility-20261118.json)。本次没有上传创意工坊。
+具体修改与精确包验收：[招募刷新 0.3.3](../mods/recruitment_refresh/docs/dlc-compatibility-20261118.md)、[迁都 0.2.0](../mods/move_capital/docs/dlc-compatibility-20261118.json)。授权同步和补验阶段没有上传创意工坊；后续发布状态以精确包验收及发布回执为准。[后续 DLC 补验清单](dlc-acceptance-ledger.md)保留本批基线、已验范围及下一批待验事项。
