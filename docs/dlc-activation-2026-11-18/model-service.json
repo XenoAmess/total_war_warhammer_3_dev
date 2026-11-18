@@ -1,0 +1,1 @@
+{"object":"list","data":[{"id":"open-h3-2k","object":"model","owned_by":"local","shared_gpu_queue":true,"root":"/home/ubuntu/workspace/xenoamess_bake_videos/models/Open-H3-Regenerate-2K-IC","sizes":["2560x1440","1440x2560","3840x2160"],"draft_generation":false,"native_resolutions":true,"four_k_max_windows_per_load":1}]}

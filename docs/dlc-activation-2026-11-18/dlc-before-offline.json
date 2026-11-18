@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-11-18T06:50:01.491996+00:00",
+  "owner": "76561198273714027",
+  "logged_on": false,
+  "current_app": 1142710,
+  "app_build_id": 26403568,
+  "enumerated_count": 45,
+  "install_requests": [],
+  "dlc": [
+    {
+      "appid": 364360,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 404010,
+      "name": "Chaos Warriors",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 404012,
+      "name": "Call of the Beastmen",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 404013,
+      "name": "Total War: WARHAMMER - The Grim and the Grave",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1518696294,
+      "downloading": false
+    },
+    {
+      "appid": 404014,
+      "name": "The King & The Warlord",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 404015,
+      "name": "Wurrzag",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 455040,
+      "name": "Norsca",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 455041,
+      "name": "Isabella von Carstein",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 455042,
+      "name": "Krell",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 506190,
+      "name": "Grombrindal",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 534330,
+      "name": "Bretonnia",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 534331,
+      "name": "Realm of the Wood Elves",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 551820,
+      "name": "Jade Wizard",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 551821,
+      "name": "Grey Wizard",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 594570,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 594591,
+      "name": "Blood for the Blood God II",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1518862022,
+      "downloading": false
+    },
+    {
+      "appid": 617810,
+      "name": "Mortal Empires",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364613,
+      "downloading": false
+    },
+    {
+      "appid": 617870,
+      "name": "Total War: WARHAMMER II - Rise of the Tomb Kings",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 635350,
+      "name": "Regiments of Renown",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 735420,
+      "name": "Tretch Craventail",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477843,
+      "downloading": false
+    },
+    {
+      "appid": 779880,
+      "name": "Total War: WARHAMMER II - The Queen & The Crone",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 781190,
+      "name": "Steps of Isha",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477842,
+      "downloading": false
+    },
+    {
+      "appid": 794110,
+      "name": "Alith Anar",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477841,
+      "downloading": false
+    },
+    {
+      "appid": 794111,
+      "name": "Bone Giant",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 835670,
+      "name": "Total War: WARHAMMER II - Curse of the Vampire Coast",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 835671,
+      "name": "Lokhir Fellheart",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477840,
+      "downloading": false
+    },
+    {
+      "appid": 965220,
+      "name": "Total War: WARHAMMER II - The Prophet & The Warlock",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1003160,
+      "name": "Tiktaq'to",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477839,
+      "downloading": false
+    },
+    {
+      "appid": 1074320,
+      "name": "Total War: WARHAMMER II - The Hunter and the Beast",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1142710,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1158180,
+      "name": "Total War: WARHAMMER II - The Shadow & The Blade",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1209120,
+      "name": "Total War: WARHAMMER II - The Warden & The Paunch",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1315750,
+      "name": "Total War: WARHAMMER II – The Twisted & The Twilight",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1374300,
+      "name": "Total War: WARHAMMER III - Blood for the Blood God III",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1518862022,
+      "downloading": false
+    },
+    {
+      "appid": 1556110,
+      "name": "Total War: WARHAMMER II – The Silence & The Fury ",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1670540,
+      "name": "Total War: WARHAMMER III - Ogre Kingdoms",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834023,
+      "name": "Total War: WARHAMMER III - The Grim and the Grave",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1518696294,
+      "downloading": false
+    },
+    {
+      "appid": 1834024,
+      "name": "Total War: WARHAMMER III - Wurrzag",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364671,
+      "downloading": false
+    },
+    {
+      "appid": 1834026,
+      "name": "Total War: WARHAMMER III - Grombrindal The White Dwarf",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364613,
+      "downloading": false
+    },
+    {
+      "appid": 1834030,
+      "name": "Total War: WARHAMMER III - Bretonnia",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364618,
+      "downloading": false
+    },
+    {
+      "appid": 1834031,
+      "name": "Total War: WARHAMMER III - Isabella von Carstein",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364670,
+      "downloading": false
+    },
+    {
+      "appid": 1834035,
+      "name": "Total War: WARHAMMER III - Jade Wizard",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364616,
+      "downloading": false
+    },
+    {
+      "appid": 1834036,
+      "name": "Total War: WARHAMMER III - Grey Wizard",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1619364615,
+      "downloading": false
+    },
+    {
+      "appid": 1834037,
+      "name": "Total War: WARHAMMER III - Rise of the Tomb Kings",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834038,
+      "name": "Total War: WARHAMMER III - Tretch Craventail",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477843,
+      "downloading": false
+    },
+    {
+      "appid": 1834039,
+      "name": "Total War: WARHAMMER III - The Queen & The Crone",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834040,
+      "name": "Total War: WARHAMMER III - Steps of Isha",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477842,
+      "downloading": false
+    },
+    {
+      "appid": 1834041,
+      "name": "Total War: WARHAMMER III - Alith Anar",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477841,
+      "downloading": false
+    },
+    {
+      "appid": 1834042,
+      "name": "Total War: WARHAMMER III - Bone Giant",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834043,
+      "name": "Total War: WARHAMMER III - Curse of the Vampire Coast",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834044,
+      "name": "Total War: WARHAMMER III - Lokhir Fellheart",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477840,
+      "downloading": false
+    },
+    {
+      "appid": 1834045,
+      "name": "Total War: WARHAMMER III - The Prophet & The Warlock",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834046,
+      "name": "Total War: WARHAMMER III - Tiktaq'to",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477839,
+      "downloading": false
+    },
+    {
+      "appid": 1834047,
+      "name": "Total War: WARHAMMER III - Amethyst Wizard",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834048,
+      "name": "Total War: WARHAMMER III - The Hunter and the Beast",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834049,
+      "name": "Total War: WARHAMMER III - Gor-Rok",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477837,
+      "downloading": false
+    },
+    {
+      "appid": 1834051,
+      "name": "Total War: WARHAMMER III - The Shadow & The Blade",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834052,
+      "name": "Total War: WARHAMMER III - Repanse de Lyonesse",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477834,
+      "downloading": false
+    },
+    {
+      "appid": 1834053,
+      "name": "Total War: WARHAMMER III - The Warden & The Paunch",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834054,
+      "name": "Total War: WARHAMMER III - Imrik",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477832,
+      "downloading": false
+    },
+    {
+      "appid": 1834055,
+      "name": "Total War: WARHAMMER III - Black Orc Big Boss",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834057,
+      "name": "Total War: WARHAMMER III – The Twisted & The Twilight",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834058,
+      "name": "Total War: WARHAMMER III - Skaven Chieftain",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477832,
+      "downloading": false
+    },
+    {
+      "appid": 1834061,
+      "name": "Total War: WARHAMMER III - Rakarth",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477829,
+      "downloading": false
+    },
+    {
+      "appid": 1834062,
+      "name": "Total War: WARHAMMER III – The Silence & The Fury",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643321281,
+      "downloading": false
+    },
+    {
+      "appid": 1834064,
+      "name": "Total War: WARHAMMER III - Thorek Ironbrow",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477828,
+      "downloading": false
+    },
+    {
+      "appid": 1834065,
+      "name": "Total War: WARHAMMER III - Great Bray Shaman",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477828,
+      "downloading": false
+    },
+    {
+      "appid": 1834066,
+      "name": "Total War: WARHAMMER III - Ogre Mercenaries",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1643477827,
+      "downloading": false
+    },
+    {
+      "appid": 1835360,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1937780,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1739035798,
+      "downloading": false
+    },
+    {
+      "appid": 2059190,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 2358720,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1724051919,
+      "downloading": false
+    },
+    {
+      "appid": 2398540,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 2891700,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 3858050,
+      "name": "Total War: WARHAMMER III - UPGRADE PACK",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1763139841,
+      "downloading": false
+    },
+    {
+      "appid": 4399460,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    }
+  ]
+}

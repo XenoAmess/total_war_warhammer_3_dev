@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "recorded_at_utc": "2026-11-18T06:56:06.793573+00:00",
+  "status": "LICENSES_SYNCED_INSTALLED_OFFLINE_VERIFIED",
+  "scope": [
+    "recruitment_refresh",
+    "move_capital"
+  ],
+  "steam_owner": "76561198273714027",
+  "game_version": "9.0.5.0",
+  "game_build_id": 26403568,
+  "game_exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
+  "steam_enumeration_before": 45,
+  "steam_enumeration_after": 70,
+  "ownership_rows_are_not_unique_paid_packs": true,
+  "recent_license_rows": [
+    {
+      "appid": 364360,
+      "name": null,
+      "listed_for_wh3": false,
+      "source": "prior_blocker_or_base_app",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 404010,
+      "name": "Total War: WARHAMMER - Chaos Warriors",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 404012,
+      "name": "Total War: WARHAMMER - Call of the Beastmen",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 404014,
+      "name": "Total War: WARHAMMER - The King and the Warlord",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 455040,
+      "name": "Total War: WARHAMMER - Norsca",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 455041,
+      "name": "Isabella von Carstein",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 455042,
+      "name": "Krell",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 534331,
+      "name": "Total War: WARHAMMER - Realm of The Wood Elves",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 635350,
+      "name": "Regiments of Renown",
+      "listed_for_wh3": false,
+      "source": "installed_game_pdlc_table",
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1670540,
+      "name": "Total War: WARHAMMER III - Ogre Kingdoms",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 1824060,
+      "name": "Total War: WARHAMMER III - Champions of Chaos",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 1834020,
+      "name": "Total War: WARHAMMER III - Chaos Warriors",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1834022,
+      "name": "Total War: WARHAMMER III - Call of the Beastmen",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1834025,
+      "name": "Total War: WARHAMMER III - The King and the Warlord",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1834027,
+      "name": "Total War: WARHAMMER III - Realm of The Wood Elves",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1834031,
+      "name": "Total War: WARHAMMER III - Isabella von Carstein",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1834032,
+      "name": "Total War: WARHAMMER III - Krell",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 1834033,
+      "name": "Total War: WARHAMMER III - Norsca",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945256,
+      "downloading": false
+    },
+    {
+      "appid": 2059190,
+      "name": "Total War: WARHAMMER III - Forge of the Chaos Dwarfs\t",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 2325832,
+      "name": "Total War: WARHAMMER III - Elspeth – Thrones of Decay",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 2574900,
+      "name": "Total War: WARHAMMER III - Gorbad – Omens of Destruction",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 2891700,
+      "name": "Total War: WARHAMMER III - Tamurkhan – Thrones of Decay",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 2891710,
+      "name": "Total War: WARHAMMER III - Malakai – Thrones of Decay",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3130740,
+      "name": "Total War: WARHAMMER III - Golgfag – Omens of Destruction",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3130750,
+      "name": "Total War: WARHAMMER III - Skulltaker – Omens of Destruction",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3301110,
+      "name": "Total War: WARHAMMER III - The Changeling – Shadows of Change",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3301120,
+      "name": "Total War: WARHAMMER III - Yuan Bo – Shadows of Change",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3301130,
+      "name": "Total War: WARHAMMER III - Mother Ostankya – Shadows of Change",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3450960,
+      "name": "Total War: WARHAMMER III - Aislinn – Tides of Torment",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3450970,
+      "name": "Total War: WARHAMMER III - Sayl – Tides of Torment",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    },
+    {
+      "appid": 3450980,
+      "name": "Total War: WARHAMMER III - Dechala – Tides of Torment",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1794945088,
+      "downloading": false
+    }
+  ],
+  "required_dlc_install_requests": [],
+  "base_app_pending_update": false,
+  "download_claim": "No required DLC or base-app transfer was observed; newly purchased content became installed after license sync and client restart. Existing game assets already contain this content.",
+  "transitional_online_sdk_result": "Both initial online SDK reads retained the old 45-entry catalog. Fresh SDK after ordinary client restart enumerated 70 entries and newly purchased licenses. Initial online reads were not accepted as final entitlement state.",
+  "remaining_blockers": [
+    {
+      "appid": 4399460,
+      "name": "Bhashiva Character Pack",
+      "owned": false,
+      "installed": false,
+      "cases": [
+        "Clawspeaker Life and other lores",
+        "Bhashiva Sawai caravan"
+      ]
+    },
+    {
+      "appid": 3589660,
+      "name": "Thanquol - Lords of the End Times",
+      "owned": false,
+      "installed": false,
+      "cases": [
+        "direct DLC Verminlord recruitment"
+      ]
+    }
+  ],
+  "not_dlc_resolved": [
+    "native multiplayer requires a second participant/environment"
+  ],
+  "steam_final_offline_receipt": "dlc-activation-2026-11-18/offline-after-inventory.json",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-activation-20261118",
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "available": false,
+    "reason": "GET /models exposes only open-h3-2k video model. No fallback or candidate POST was sent."
+  },
+  "native_mod_tests": "Recorded separately under each mod; this record claims license/install validation only."
+}
