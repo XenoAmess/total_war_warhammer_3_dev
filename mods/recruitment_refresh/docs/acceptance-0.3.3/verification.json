@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.3",
+  "package_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "joint_capital_pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "cold_package_verified": true,
+  "production_hot_reload_credited": false,
+  "tracked_payload_matches_pack": true,
+  "cases": [
+    "convoy_button",
+    "original_hire",
+    "idle_protection",
+    "capital_transaction",
+    "dispatch_after_capital",
+    "active_protection",
+    "refreshed_hire",
+    "empty_pool",
+    "lord_lore_restore",
+    "lord_native_hire"
+  ]
+}

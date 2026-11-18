@@ -4,11 +4,13 @@
 
 | Mod | 状态 | 入口 |
 | --- | --- | --- |
-| 招募候选刷新 | `0.3.2 Alpha` 已公开更新；震旦商队与史兰单机验收、订阅包核对通过 | [项目说明](mods/recruitment_refresh/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
-| 迁移首都 | `0.1.0 Alpha` 已公开发布，独立最简实机通过 | [项目说明](mods/move_capital/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933) |
+| 招募候选刷新 | `0.3.3 Alpha` 混矮与领主法术系修复已实测，未上传；此前 `0.3.2` 已发布 | [项目说明](mods/recruitment_refresh/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
+| 迁移首都 | `0.2.0 Alpha` 已发布；新增混矮下与刷新 Mod 共同启用验收，包未变 | [项目说明](mods/move_capital/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933) |
 | 顾问换声 | 原版资源预研完成，尚无实现或可发布包 | [预研入口](mods/advisor_voice/README.md) |
 
 目录约定与新增 Mod 步骤见 [项目结构](docs/project-structure.md)，Steam 离线及账号占用规则见 [Steam 操作约定](docs/steam-operation.md)。
+
+2026-11-18 的[近期 DLC 授权清单与验证范围](docs/dlc-activation-2026-11-18.md)已更新；巴什瓦仍未拥有，不能把其他 DLC 的验收外推为爪语者直接实测。
 
 ## 开发
 

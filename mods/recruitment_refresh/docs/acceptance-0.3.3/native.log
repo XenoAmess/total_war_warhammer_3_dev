@@ -1,0 +1,173 @@
+FRONTEND_READY
+COMMAND_RESULT ok=true result=nil
+FRONTEND /root state=NewState
+FRONTEND /root/hud_frontend state=NewState
+FRONTEND /root/hud_frontend/background_movie state=NewState
+FRONTEND /root/watermark_square state=NewState
+FRONTEND /root/main state=NewState
+FRONTEND /root/main/theme_button_parent state=active
+FRONTEND /root/main/theme_button_parent/button_next_theme state=active
+FRONTEND /root/main/theme_button_parent/button_prev_theme state=active
+FRONTEND /root/main/theme_button_parent/button_prev_theme/image_assets state=active
+FRONTEND /root/main/theme_button_parent/button_prev_theme/arrow state=default
+FRONTEND /root/main/version_number state=NewState
+FRONTEND /root/main/news_frame state=default
+FRONTEND /root/main/news_frame/offline_holder state=NewState
+FRONTEND /root/main/news_frame/offline_holder/subholder state=default
+FRONTEND /root/main/news_frame/offline_holder/subholder/warning_container state=inactive
+FRONTEND /root/main/news_frame/offline_holder/subholder/warning_container/frame state=active
+FRONTEND /root/main/news_frame/offline_holder/subholder/warning_container/text_holder state=default
+FRONTEND /root/main/news_frame/offline_holder/subholder/warning_container/text_holder/warning_title state=active
+FRONTEND /root/main/news_frame/offline_holder/subholder/warning_container/text_holder/warning_body state=active
+FRONTEND /root/main/news_frame/offline_holder/subholder/warning_container/text_holder/warning_bottom state=active
+FRONTEND /root/main/left_holder state=default
+FRONTEND /root/main/left_holder/side_panel_bg state=default
+FRONTEND /root/main/left_holder/logo_parent state=NewState
+FRONTEND /root/main/left_holder/logo_parent/logo_movie_intro state=NewState
+FRONTEND /root/main/left_holder/buttons_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/button_start_campaign state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/button_start_campaign/lord_portrait state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/button_start_campaign/button_txt state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/smoke_holder/line_smoke3 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/smoke_holder/line_smoke3/smoke state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/start_campaign_holder/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line/line_smoke1 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line/line_smoke1/smoke state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line/line_decor state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/button_campaign state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/button_campaign/icon state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/button_campaign/button_txt state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/smoke_holder/line_smoke3 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign/smoke_holder/line_smoke3/smoke_hover state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/start_campaign_new state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/start_campaign_new/button_start_campaign_new state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/start_campaign_new/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/start_campaign_new/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/load_campaign state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/load_campaign/button_load_campaign state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/load_campaign/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/campaign_frame/campaign_buttons/load_campaign/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/button_battle state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/button_battle/icon state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/button_battle/button_txt state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/smoke_holder/line_smoke3 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/battle/smoke_holder/line_smoke3/smoke state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/button_multiplayer state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/button_multiplayer/icon state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/button_multiplayer/button_txt state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/smoke_holder/line_smoke3 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/multiplayer/smoke_holder/line_smoke3/smoke state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/button_options state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/button_options/icon state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/button_options/button_txt state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/blocker state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/smoke_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/smoke_holder/line_smoke3 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/options/smoke_holder/line_smoke3/smoke state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line/line_smoke1 state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line/line_smoke1/smoke state=NewState
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/h_line/line_decor state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/buttons_holder state=default
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/buttons_holder/button_narrative_viewer state=active
+FRONTEND /root/main/left_holder/buttons_holder/buttons_list/buttons_holder/button_credits state=active
+FRONTEND /root/sp_frame state=NewState
+FRONTEND /root/sp_frame/frame_BL state=NewState
+FRONTEND /root/sp_frame/frame_BL/button_quit state=active
+FINAL_COLD_NATIVE_RESUME
+COMMAND_RESULT ok=true result=nil
+CAMPAIGN_SCRIPTS_LOADED
+CAMPAIGN_UI_CREATED
+CAMPAIGN_READY main_warhammer
+DLC_BOTH_MODS_COLD_READY wh3_dlc23_chd_astragoth
+FINAL_COLD_PACK 51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+DLC_CAMPAIGN_INSPECT wh3_dlc23_chd_astragoth turn=5 offered=2
+INSPECTED_LIVE_VERSION 0.3.3
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+INFORMATION_EVENT_QUEUE_CLEARED count=3
+COMMAND_RESULT ok=true result=nil
+OPEN_CONVOYS_COMPLETE turn=5
+CHD_ACCEPTANCE_TOOLS_READY
+FINAL_CONVOY_BUTTON_LAYOUT_PASS
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+DLC_CHD_HIRE_PASS chd-final-original-hire id=1567
+COMMAND_RESULT ok=false result=[string "local live=xatw3_campaign_utilities;local rt,logic=live.runtime,live.logic..."]:8: assertion failed!
+CAPITAL_CAMERA_RETURNED_FROM_CONVOY_MAP
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+DLC_CAPITAL_PASS wh3_main_combi_region_uzkulak->wh3_main_combi_region_great_skull_lakes
+COMMAND_RESULT ok=true result=nil
+OPEN_CONVOYS_COMPLETE turn=5
+CHD_ACCEPTANCE_TOOLS_READY
+COMMAND_RESULT ok=true result=nil
+DLC_CHD_REFRESH_PASS chd-idle-protection 1->1
+COMMAND_RESULT ok=true result=nil
+DLC_CONVOY_DISPATCH_PASS id=1567 cargo=500
+COMMAND_RESULT ok=true result=nil
+OPEN_CONVOYS_COMPLETE turn=5
+COMMAND_RESULT ok=true result=nil
+DLC_CHD_REFRESH_PASS chd-active-protection 1->1
+COMMAND_RESULT ok=true result=nil
+VANILLA_CONVOY_CAPACITY_FIXTURE 1->2
+INFORMATION_EVENT_QUEUE_CLEARED count=0
+COMMAND_RESULT ok=true result=nil
+CHD_ACCEPTANCE_TOOLS_READY
+COMMAND_RESULT ok=true result=nil
+DLC_CHD_HIRE_PASS chd-refreshed-hire id=1568
+COMMAND_RESULT ok=true result=nil
+OPEN_CONVOYS_COMPLETE turn=5
+COMMAND_RESULT ok=true result=nil
+DLC_EMPTY_CONVOY_POOL_PASS
+INFORMATION_EVENT_QUEUE_CLEARED count=0
+COMMAND_RESULT ok=true result=nil
+COMMAND_RESULT ok=true result=nil
+NORMAL_LORD_OPENER true true active
+COMMAND_RESULT ok=true result=nil
+FINAL_LORD_LORE_PASS death=2->3 returned=wh3_dlc23_chd_sorcerer_prophet_death
+COMMAND_RESULT ok=true result=nil
+FINAL_LORD_HIRE_PASS wh3_dlc23_chd_sorcerer_prophet_death id=17251
+COMMAND_RESULT ok=true result=nil
+INFORMATION_EVENT_QUEUE_CLEARED count=1
+COMMAND_RESULT ok=true result=nil
+OPEN_CONVOYS_COMPLETE turn=5

@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-11-18T08:29:30.773049+00:00",
+  "pid": 21832,
+  "hwnd": 3868006,
+  "client_bbox": [
+    480,
+    270,
+    2080,
+    1170
+  ],
+  "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-acceptance-20261118\\captures\\final-lord-death-restored.png",
+  "sha256": "c461188e5c2b507e887fda158b088997bd7143f58277e6579bdb4b149a929433",
+  "candidate_pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "method": "owned_game_client_pixels_no_activation"
+}

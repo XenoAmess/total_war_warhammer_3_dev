@@ -1,0 +1,7 @@
+local live=xatw3_campaign_utilities;local rt=live.runtime;local faction=cm:get_local_faction_name();local subtype='wh3_dlc23_chd_lord_convoy_overseer';local fc=cm:model():world():caravans_system():faction_caravans(cm:get_local_faction())
+assert(fc:available_caravan_recruitment_items():num_items()==0 and #assert(rt.read_pool(faction,subtype))==0)
+live.ui.refresh_buttons();local b=assert(find_uicomponent(core:get_ui_root(),'military_convoys','master_panel','xatw3_refresh_candidates'));local seq=rt.state.next_sequence;local owned=xatw3_test.owned();b:SimulateLClick()
+cm:callback(function()
+ assert(fc:available_caravan_recruitment_items():num_items()==0 and #rt.read_pool(faction,subtype)==0 and rt.state.next_sequence==seq and xatw3_test.owned()==owned)
+ xatw3_test.save('empty-convoy-pool',{status='PASS',offered_count=0,pool_count=0,sequence_before=seq,sequence_after=rt.state.next_sequence,button_state=b:CurrentState(),owned_before=owned,owned_after=xatw3_test.owned(),package_sha256=xatw3_test.package_sha});xatw3_test.record('DLC_EMPTY_CONVOY_POOL_PASS')
+end,.7)

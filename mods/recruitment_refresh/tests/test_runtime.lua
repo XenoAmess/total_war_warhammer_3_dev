@@ -22,6 +22,13 @@ test('discover_ordinary_subtype_from_engine_metadata', function()
     assert(runtime.supported('test_fire_wizard'))
     assert(runtime.subtypes.test_fire_wizard == 'wizard')
 end)
+test('visible_convoy_panel_blocks_native_mutation_before_reading_character_details',function()
+    local guarded={cm=env.cm,common=env.common,out=env.out,core={get_ui_root=function()return {}end},
+        find_uicomponent=function(_,id)if id=='military_convoys' then return {Visible=function()return true end}end end}
+    local runtime=runtime_module.new(logic,guarded)
+    local ok,why=runtime.can_remove_candidate(123)
+    assert(not ok and why=='recruitment_panel_open')
+end)
 test('special_training_and_legendary_subtypes_are_not_auto_generated', function()
     generated = false
     local runtime = runtime_module.new(logic, env)

@@ -16,7 +16,7 @@ function M.new(runtime, logic, environment)
 
     local function caravan_panel()
         local root = core:get_ui_root()
-        for _, key in ipairs({'cathay_caravans', 'cp1_cth_bhashiva_caravans'}) do
+        for _, key in ipairs({'cathay_caravans', 'cp1_cth_bhashiva_caravans', 'military_convoys'}) do
             local panel = find_uicomponent(root, key)
             if panel and panel:Visible() then return panel end
         end
@@ -52,14 +52,46 @@ function M.new(runtime, logic, environment)
         if ok then return id end
     end
 
+    local function selected_lore(panel)
+        local ok, result = pcall(function()
+            local root = panel and find_uicomponent(panel, 'general_selection_panel')
+            if not root or not root:Visible() then return nil end
+            root = find_uicomponent(root, 'main_holder')
+            if not root or not root:Visible() then return nil end
+            root = find_uicomponent(root, 'lore_select_parent')
+            if not root or not root:Visible() then return nil end
+            local selected
+            for _, path in ipairs({{'wizard_type', 'type_list'}, {'lord_magic_lore_type', 'lore_type_list'}}) do
+                local group = find_uicomponent(root, path[1])
+                local list = group and group:Visible() and find_uicomponent(group, path[2])
+                if list and list:Visible() then
+                    for index = 0, list:ChildCount() - 1 do
+                        local child = UIComponent(list:Find(index))
+                        if child:Visible() and is_selected(child:CurrentState()) then
+                            if selected then return nil end
+                            selected = {group = path[1], list = path[2], key = child:Id()}
+                        end
+                    end
+                end
+            end
+            return selected
+        end)
+        if ok then return result end
+    end
+
     local function button(id, panel, label)
+        local convoy = panel:Id() == 'military_convoys'
+        local parent = panel
+        if convoy then parent = find_uicomponent(panel, 'master_panel') end
+        if not parent then return nil end
         local component = core:get_or_create_component(PREFIX .. id,
-            'ui/templates/square_small_button.twui.xml', panel)
+            'ui/templates/square_small_button.twui.xml', parent)
         component:SetVisible(false)
-        local footer = find_uicomponent(panel, 'character_panel_info_holder', 'footer')
+        local footer = convoy and parent
+            or find_uicomponent(panel, 'character_panel_info_holder', 'footer')
         if not footer or not footer:Visible() then return component end
-        local anchor = find_uicomponent(footer, 'button_raise')
-        if not anchor or not anchor:Visible() then anchor = find_uicomponent(footer, 'button_confirm') end
+        local anchor = find_uicomponent(footer, convoy and 'recruit_masters_heading' or 'button_raise')
+        if not convoy and (not anchor or not anchor:Visible()) then anchor = find_uicomponent(footer, 'button_confirm') end
         if not anchor or not anchor:Visible() then return component end
         local icon = find_uicomponent(component, 'icon')
         if not icon then return component end
@@ -73,8 +105,8 @@ function M.new(runtime, logic, environment)
         local ax, ay = anchor:Position()
         local aw, ah = anchor:Dimensions()
         if ah <= 0 or aw <= 0 then return component end
-        local scale = ah / 51
-        local size = math.floor(36 * scale)
+        local scale = ah / (convoy and 30 or 51)
+        local size = math.floor((convoy and 28 or 36) * scale)
         local gap = math.ceil(8 * scale)
         local icon_size = math.floor(24 * scale)
         local left, top = math.max(px, fx), math.max(py, fy)
@@ -105,8 +137,15 @@ function M.new(runtime, logic, environment)
         local cy = math.floor(ay + (ah - size) / 2)
         if cy < top or cy + size > bottom then return component end
         local x
-        for position = math.ceil(ax + aw + gap), math.floor(right - size) do
-            if position >= left and not overlaps(position, cy, size, size) then x = position; break end
+        if convoy then
+            -- The native master list has no ordinary recruitment footer. Use
+            -- the vacant right edge of its heading, away from hire controls.
+            x = math.floor(math.min(ax + aw, right) - size - gap)
+            if x < left then return component end
+        else
+            for position = math.ceil(ax + aw + gap), math.floor(right - size) do
+                if position >= left and not overlaps(position, cy, size, size) then x = position; break end
+            end
         end
         if not x then
             for position = math.floor(ax - size - gap), math.ceil(left), -1 do
@@ -137,6 +176,20 @@ function M.new(runtime, logic, environment)
         if not runtime.initialized then return end
         local faction = cm:get_local_faction_name()
         local root = core:get_ui_root()
+        local convoy = find_uicomponent(root, 'military_convoys')
+        if convoy and convoy:Visible() then
+            self.selected_subtype = nil
+            local master = find_uicomponent(convoy, 'master_panel')
+            local reserves = master and master:Visible() and find_uicomponent(master, 'reserve_master_listbox')
+            local b = button('refresh_candidates', convoy, 'refresh_caravan')
+            if not b then return end
+            if reserves and reserves:Visible() then self.selected_subtype = 'wh3_dlc23_chd_lord_convoy_overseer' end
+            b:SetInteractive(runtime.refresh_verified == true and self.selected_subtype ~= nil
+                and runtime.supported(self.selected_subtype) and runtime.can_act(faction)
+                and not runtime.state.locked and not self.submitting)
+            if not runtime.refresh_verified then b:SetTooltipText(text('refresh_unavailable'), true) end
+            return
+        end
         local panel = find_uicomponent(root, 'character_panel')
         if panel and panel:Visible() then
             local categories = active_categories(panel)
@@ -281,6 +334,7 @@ function M.new(runtime, logic, environment)
         if request.action == 'refresh' then
             self.reopen = {subtype = request.target,
                 category = selected_category(find_uicomponent(core:get_ui_root(), 'character_panel')),
+                lore = selected_lore(find_uicomponent(core:get_ui_root(), 'character_panel')),
                 button = runtime.subtypes and runtime.subtypes[request.target] == 'general'
                     and 'button_create_army' or 'button_agents'}
             local caravan = policy.caravan(request.target) and caravan_panel()
@@ -330,12 +384,12 @@ function M.new(runtime, logic, environment)
     function self.install()
         core:add_listener(PREFIX .. 'panels', 'PanelOpenedCampaign', true,
             function(context)
-                if context.string == 'character_panel' then self.selected_subtype = nil end
+                if context.string == 'character_panel' or context.string == 'military_convoys' then self.selected_subtype = nil end
                 after(self.refresh_buttons)
             end, true)
         core:add_listener(PREFIX .. 'closed', 'PanelClosedCampaign', true,
             function(context)
-                if context.string == 'character_panel' then self.selected_subtype = nil end
+                if context.string == 'character_panel' or context.string == 'military_convoys' then self.selected_subtype = nil end
             end, true)
         core:add_listener(PREFIX .. 'clicks', 'ComponentLClickUp', true, function(context)
             if context.string == 'button_tick' or context.string == 'button_cancel' then
@@ -383,9 +437,11 @@ function M.new(runtime, logic, environment)
             if reopen and (result.status == 'SUCCEEDED' or result.status == 'REJECTED') then
                 after(function()
                     local root = core:get_ui_root()
-                    local b = reopen.caravan
-                        and find_uicomponent(root, 'hud_campaign', 'faction_buttons_docker', 'button_caravan')
-                        or find_uicomponent(root, 'hud_campaign', 'hud_center_docker', reopen.button)
+                    local b
+                    if reopen.caravan then
+                        b = find_uicomponent(root, 'hud_campaign', 'faction_buttons_docker',
+                            reopen.caravan == 'military_convoys' and 'button_convoys' or 'button_caravan')
+                    else b = find_uicomponent(root, 'hud_campaign', 'hud_center_docker', reopen.button) end
                     if b and b:Visible() and (b:CurrentState() == 'active' or b:CurrentState() == 'hover') then b:SimulateLClick() end
                     after(function()
                         local function restore()
@@ -402,7 +458,13 @@ function M.new(runtime, logic, environment)
                                 local lore = panel and panel:Visible() and find_uicomponent(panel, 'general_selection_panel')
                                 local holder = lore and find_uicomponent(lore, 'main_holder')
                                 if holder then lore = lore:Visible() and holder or nil end
-                                for _, id in ipairs({'lore_select_parent', 'wizard_type', 'type_list', reopen.subtype}) do
+                                local ids = {'lore_select_parent', 'wizard_type', 'type_list', reopen.subtype}
+                                if reopen.lore then
+                                    -- Lords use lore keys (e.g. wh_main_lore_death),
+                                    -- while hero tabs can use agent subtype keys.
+                                    ids = {'lore_select_parent', reopen.lore.group, reopen.lore.list, reopen.lore.key}
+                                end
+                                for _, id in ipairs(ids) do
                                     lore = lore and lore:Visible() and find_uicomponent(lore, id) or nil
                                 end
                                 if lore and lore:Visible() and not is_selected(lore:CurrentState()) then lore:SimulateLClick() end
@@ -412,6 +474,13 @@ function M.new(runtime, logic, environment)
                         end
                         if reopen.caravan then
                             local parent = find_uicomponent(root, reopen.caravan)
+                            if reopen.caravan == 'military_convoys' then
+                                local master = parent and parent:Visible() and find_uicomponent(parent, 'master_panel')
+                                local slot = parent and parent:Visible() and find_uicomponent(parent, 'master_slot')
+                                if master and not master:Visible() and slot and slot:Visible() then slot:SimulateLClick() end
+                                after(finish)
+                                return
+                            end
                             local purchase = parent and parent:Visible() and find_uicomponent(parent,
                                 'caravans_panel', 'reserves_listview', 'add_caravan_button', 'button_purchase')
                             if purchase and purchase:Visible() then purchase:SimulateLClick() end

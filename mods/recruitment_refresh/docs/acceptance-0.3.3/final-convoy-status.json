@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-11-18T08:32:25.438337+00:00",
+  "pid": 21832,
+  "hwnd": 3868006,
+  "client_bbox": [
+    480,
+    270,
+    2080,
+    1170
+  ],
+  "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-acceptance-20261118\\captures\\final-convoy-status.png",
+  "sha256": "e3ff7ba88f8715cb5d168ad149f42f9e1d5bd8a7d7f089448d9d9b9f87bb49f8",
+  "candidate_pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "method": "owned_game_client_pixels_no_activation"
+}

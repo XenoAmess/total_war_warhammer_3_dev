@@ -1,11 +1,7 @@
-0.3.2 — 商队与有限招募池 / Caravan and finite recruitment pools
-- 商队保留原领队、姓名及名额，只重抽为不同背景；已有、闲置或在途商队不刷新，成功后返回商队招募页。
-- 扩展有随机背景的史兰、血裔及部分晋升／召唤类型的现有候选池，不新增特殊名额或解锁；保留附加特性点数和默认技能。
-- 唯一、不朽、开局、已招募、受伤和未知履历等保护继续生效。额外培养进度会在预检时拒绝整次刷新。
-- 冰雪宫廷训练结果、王朝／科技专属人物、黑色方舟及龙舰提督等不重抽。
-- 192 项离线测试通过。9.0.5 最终包实测：震旦连续两次 1→1、正常雇用、护卫队兵种／数量匹配新背景及已有商队保护；史兰 1→1、附加特性点数／默认技能保留及正常雇用。
-- 史兰使用原版仪式生成人物函数及附加特性夹具，不算完整仪式／训练流程验收。本机无混矮和巴什瓦授权，两类商队未直接实测；其余有限池未逐类型实测，联机仍未实机验收。
+0.3.3 — 混矮车队与法术系恢复 / Convoy UI and lore restoration
+- 修复混矮独立运输将领列表缺少刷新入口、关闭保护及返回路径。
+- 兼容领主法术系键与英雄亚种键，修复死亡系已刷新却返回默认哈苏特系的观感问题。
+- 197 项离线测试通过；精确冷启动包通过混矮车队、护卫、闲置／在途保护、派遣、空池及死亡系领主 2→3／正常招募验收，并与迁都 0.2.0 共同测试。
+- NPC 城镇转让和原版科技瞬时研究为夹具。巴什瓦未拥有，爪语者与巴什瓦运输将领未直接实测；其他 DLC／有限池未逐项实测，原生联机未验收。
 
-Caravans reroll an unhired leader's background while keeping their identity, name and slot. Owned, idle and travelling caravans are protected. Eligible existing Slann, bloodline and selected ascension/summoning pools retain their counts, extra trait points and default skills. Special unlocks are not granted. Existing identity/history protections remain; extra progression rejects the operation during preflight. Ice Court training choices and fixed dynasty, technology or ship characters are excluded.
-
-192 offline tests passed. Exact-package SP checks on WH3 9.0.5 passed Cathay refresh twice at 1->1, native hiring, background-specific escort units and owned-caravan protection; Slann at 1->1 retained extra trait points/default skills and could be hired. The Slann fixture uses the vanilla ritual spawn function with extra test traits, not a full ritual/training playthrough. Chaos Dwarf and Bhashiva caravans were NOT directly tested because this machine lacks those licenses. Other finite types were not individually tested. Native multiplayer remains untested.
+Adds the missing Chaos Dwarf Military Convoys master-list icon, close guard and reopening path. Preserves the actual lord lore key or hero subtype tab, fixing a successful Death refresh reopening on Hashut. 197 offline tests passed; exact cold-package SP checks covered convoy identity/background, hiring/escorts, idle/active protection, dispatch, empty pools and Death-lore lord refresh/hiring with Move Capital 0.2.0 enabled. Settlement transfer and instant vanilla research were fixtures. Bhashiva/Clawspeakers remain unowned and untested directly; other DLC factions/finite types were not individually tested, and native multiplayer is untested.

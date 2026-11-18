@@ -81,6 +81,22 @@ local function visible(f,obstacle)
  if obstacle then clear(f.button,obstacle,math.ceil(8*f.scale)) end
 end
 local function test(name,fn) fn();passed[#passed+1]=name end
+test('convoy_refresh_uses_master_heading_without_overlapping_reserves_or_hire_controls',function()
+ local f=fixture();f.panel.visible=false
+ local convoy=f.comp('military_convoys',f.root,0,0,1600,900)
+ local master=f.comp('master_panel',convoy,20,40,450,800)
+ local heading=f.comp('recruit_masters_heading',master,22,455,436,30)
+ local reserves=f.comp('reserve_master_listbox',master,22,490,436,250)
+ local hire=f.comp('hire_add_master_button',master,22,750,436,51)
+ local key='wh3_dlc23_chd_lord_convoy_overseer'
+ f.runtime.supported=function(k)return k==key end
+ f.ui.refresh_buttons()
+ assert(f.ui.selected_subtype==key and f.button.visible and f.button.interactive)
+ inside(f.button,heading);inside(f.icon,f.button);clear(f.button,reserves);clear(f.button,hire)
+ assert(f.button.tooltip=='xatw3_refresh_caravan_tooltip')
+ f.runtime.supported=function()return false end;f.ui.refresh_buttons();assert(not f.button.interactive)
+ master.visible=false;f.ui.refresh_buttons();assert(not f.button.visible and f.ui.selected_subtype==nil)
+end)
 
 test('hidden_lord_page_cannot_supply_hero_target',function()
  local f=fixture();assert(f.ui.selected_subtype=='supported')

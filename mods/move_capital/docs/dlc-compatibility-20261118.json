@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "mod_id": "move_capital",
+  "version": "0.2.0",
+  "status": "PASS",
+  "recorded_at_utc": "2026-11-18T08:43:34.016750+00:00",
+  "pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "source_changed": false,
+  "joint_recruitment_refresh_version": "0.3.3",
+  "joint_recruitment_refresh_pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "game_version": "9.0.5.0",
+  "faction": "wh3_dlc23_chd_astragoth",
+  "capital_transaction": {
+    "previous": "wh3_main_combi_region_uzkulak",
+    "target": "wh3_main_combi_region_great_skull_lakes",
+    "target_buildings": "wh3_dlc23_chd_settlement_factory_1",
+    "old_and_new_settlement_ownership_levels_buildings_and_province_capital_flags_preserved": true,
+    "convoys_and_recruitment_pools_unchanged": true,
+    "refresh_sequence_unchanged": true
+  },
+  "subsequent_native_convoy_dispatch": "PASS",
+  "subsequent_ordinary_lord_hire_at_new_factory_capital": "PASS",
+  "scope": "Unchanged published 0.2.0 package; single-player DLC integration only.",
+  "fixtures": [
+    "NPC settlement Great Skull Lakes was transferred to the player to make a second owned target; this is not conquest acceptance.",
+    "After active-convoy protection passed, vanilla technology wh3_dlc23_tech_chd_industry_22 was instantly researched to raise the active-convoy limit from 1 to 2 and permit native hiring. This is not a complete research playthrough.",
+    "An existing vanilla autosave was cold-loaded; refreshed-state save/reload persistence is not credited."
+  ],
+  "limitations": [
+    "Only the declared Chaos Dwarf settlement transaction and subsequent convoy/lord recruitment interactions were accepted.",
+    "Other DLC factions and native multiplayer were not individually tested; Bhashiva remains unowned.",
+    "No complete campaign/journey-return or post-operation save/reload acceptance."
+  ],
+  "evidence_directory": "dlc-compatibility-20261118",
+  "steam_final_offline": true,
+  "workshop_upload_performed": false
+}

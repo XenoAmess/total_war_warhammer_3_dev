@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.3",
+  "status": "PASS",
+  "release_status": "READY_NOT_PUBLISHED",
+  "recorded_at_utc": "2026-11-18T08:43:34.016750+00:00",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-acceptance-20261118",
+  "source_parent_commit": "6fa8b4244152c0163556a389b601eccf74a30b5e",
+  "pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "pack_bytes": 98161,
+  "release_identity": "495317074cb7210a6fb94dd6a1cdf6a6f499abe6470ca84fbce4cc6eb40fbcc6",
+  "game_version": "9.0.5.0",
+  "game_build_id": 26403568,
+  "game_exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
+  "license_inventory": "../../../docs/dlc-activation-2026-11-18.json",
+  "joint_move_capital_pack_sha256": "e3702133d65dc7d08c1248a96e5b48a297505f238fe2d6e79a950d79f9d3767f",
+  "defects": [
+    {
+      "symptom": "混矮待雇用运输将领列表没有刷新入口",
+      "cause": "military_convoys 使用独立 master_panel 与 button_convoys；原实现只接入普通人物招募面板和震旦商队路径。",
+      "fix": "在招募新队长标题旁接入刷新按钮，关闭独立面板释放上下文后刷新，并重开运输将领列表；原生修改保护也检查该面板。",
+      "native_reproduction": "acceptance-0.3.3/published-ui-gap.json"
+    },
+    {
+      "symptom": "死亡系术士先知已刷新 2→3，界面却返回默认哈苏特系，表面看不到结果",
+      "cause": "领主用法术系键 wh_main_lore_death；旧恢复逻辑只按英雄亚种键查找 wizard_type/type_list。",
+      "fix": "关闭前保存实际可见且唯一选中的法术系标签及其容器；分类重建后恢复同一标签，缺失或不可见时不猜测其他标签。",
+      "native_reproduction": "acceptance-0.3.3/lord-lore-before-fix.json"
+    }
+  ],
+  "offline_tests": {
+    "shared": 90,
+    "mod": 107,
+    "total": 197,
+    "status": "PASS",
+    "deterministic_build": true,
+    "pack_round_trip": true,
+    "tracked_payload_matches_pack": true
+  },
+  "native": {
+    "status": "PASS",
+    "cold_package_verified": true,
+    "production_hot_reload_credited": false,
+    "faction": "wh3_dlc23_chd_astragoth",
+    "turn": 5,
+    "convoy_refreshes": [
+      {
+        "case": "chd-idle-protection",
+        "count": "1->1",
+        "owned_state": "idle",
+        "capital": "wh3_main_combi_region_great_skull_lakes"
+      },
+      {
+        "case": "chd-active-protection",
+        "count": "1->1",
+        "owned_state": "active",
+        "capital": "wh3_main_combi_region_great_skull_lakes"
+      }
+    ],
+    "convoy_identity_name_and_count_preserved": true,
+    "background_changes_verified": true,
+    "other_pools_unchanged": true,
+    "owned_cargo_and_units_unchanged": true,
+    "native_hires": [
+      "original 1567",
+      "refreshed 1568"
+    ],
+    "escort_units_and_counts_match_vanilla_background": true,
+    "native_recruitment_cost_deducted": true,
+    "dispatch_after_capital": {
+      "cargo": 500,
+      "id": 1567,
+      "button_state": "active",
+      "before": "idle_caravans:1567:1281:0:false:false:wh3_dlc23_chd_cha_convoy_overseer,wh3_dlc23_chd_inf_chaos_dwarf_warriors,wh3_dlc23_chd_inf_chaos_dwarf_warriors,wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses,wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses,wh3_dlc23_chd_mon_great_taurus,wh3_dlc23_chd_mon_lammasu",
+      "package_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+      "after": "active_caravans:1567:1281:500:false:false:wh3_dlc23_chd_cha_convoy_overseer,wh3_dlc23_chd_inf_chaos_dwarf_warriors,wh3_dlc23_chd_inf_chaos_dwarf_warriors,wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses,wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses,wh3_dlc23_chd_mon_great_taurus,wh3_dlc23_chd_mon_lammasu",
+      "status": "PASS",
+      "selected": 1567,
+      "capital": "wh3_main_combi_region_great_skull_lakes",
+      "destination": "格雷苏巨厅"
+    },
+    "empty_pool": "No generated offers and no request sequence consumption.",
+    "lord_lore": {
+      "target": "wh3_dlc23_chd_sorcerer_prophet_death",
+      "count": "2->3",
+      "ui_target": "wh3_dlc23_chd_sorcerer_prophet_death",
+      "other_lores_and_hero_pools_unchanged": true,
+      "default_skills_preserved_for_replaced_candidates": true,
+      "native_hire": {
+        "forces_before": 5,
+        "forces_after": 6,
+        "id": 17251,
+        "region": "wh3_main_combi_region_great_skull_lakes",
+        "target": "wh3_dlc23_chd_sorcerer_prophet_death",
+        "gold_before": 12281,
+        "package_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+        "rank": 1,
+        "status": "PASS",
+        "background": "wh3_dlc23_skill_innate_chd_lord_sorcerer_prophet_3_hateful_1",
+        "capital": "wh3_main_combi_region_great_skull_lakes",
+        "gold_after": 10781
+      }
+    },
+    "capital_move": {
+      "previous": "wh3_main_combi_region_uzkulak",
+      "target": "wh3_main_combi_region_great_skull_lakes",
+      "target_buildings": "wh3_dlc23_chd_settlement_factory_1",
+      "old_and_new_settlement_ownership_levels_buildings_and_province_capital_flags_preserved": true,
+      "convoys_and_recruitment_pools_unchanged": true,
+      "refresh_sequence_unchanged": true
+    },
+    "verification": "acceptance-0.3.3/verification.json"
+  },
+  "fixtures": [
+    "NPC settlement Great Skull Lakes was transferred to the player to make a second owned target; this is not conquest acceptance.",
+    "After active-convoy protection passed, vanilla technology wh3_dlc23_tech_chd_industry_22 was instantly researched to raise the active-convoy limit from 1 to 2 and permit native hiring. This is not a complete research playthrough.",
+    "An existing vanilla autosave was cold-loaded; refreshed-state save/reload persistence is not credited."
+  ],
+  "harness_corrections": [
+    "An early refresh command ran while the native master list was collapsed after hiring; its UI assertion stopped before dispatch. The list was reopened, then the recorded final idle/active cases passed.",
+    "Initial turn-navigation fixtures were corrected for native notification, advisor and UI timing behavior. Final business cases bind the exact frozen package; historical navigation attempts are not additional passing tests."
+  ],
+  "static_review": {
+    "rows": 85,
+    "excluded_non_auto_generated_special_rows": 38,
+    "evidence": "acceptance-0.3.3/metadata-audit.json",
+    "ui_layouts": 3,
+    "ui_contract": "acceptance-0.3.3/ui-contract.json"
+  },
+  "limits": [
+    "Bhashiva 4399460 remains unowned: Clawspeaker Life/other lores and Bhashiva Sawai caravan are not directly tested.",
+    "Thanquol 3589660 remains unowned; the four Verminlord subtypes require wh3_dlc29_loet_thanquol in the current ownership junction.",
+    "Other newly owned DLC factions and finite recruitment families are not individually native-tested.",
+    "No complete journey/return, complete ritual/training, refreshed-state save/reload or native multiplayer credit. Ice Court training and fixed dynasty/technology/ship/camp-only identities remain excluded."
+  ],
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "available": false,
+    "model_list_reads": 2,
+    "candidate_posts": 0,
+    "fallback_used": false,
+    "reason": "Configured service exposed only open-h3-2k video model at both observations; implementation/review performed by owner.",
+    "evidence": "acceptance-0.3.3/model-service.json"
+  },
+  "cleanup": "acceptance-0.3.3/cleanup.json",
+  "steam_final_offline": "acceptance-0.3.3/offline-after-cleanup.json",
+  "workshop_upload_performed": false
+}

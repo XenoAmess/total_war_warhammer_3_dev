@@ -275,7 +275,7 @@ function M.new(logic, environment)
     function self.can_remove_candidate(id)
         local panel = environment.find_uicomponent(environment.core:get_ui_root(), 'character_panel')
         if not self.multiplayer_executing and panel and panel:Visible() then return false, 'recruitment_panel_open' end
-        for _, key in ipairs({'cathay_caravans', 'cp1_cth_bhashiva_caravans'}) do
+        for _, key in ipairs({'cathay_caravans', 'cp1_cth_bhashiva_caravans', 'military_convoys'}) do
             local special = environment.find_uicomponent(environment.core:get_ui_root(), key)
             if special and special:Visible() then return false, 'recruitment_panel_open' end
         end
@@ -330,7 +330,7 @@ function M.new(logic, environment)
             if not self.can_remove_candidate(candidate.id) then return false, 'native_pool_unavailable' end
         end
         local mr = (environment._G or _G).memreader_plus
-        return true, sync.fields({'0.3.2', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
+        return true, sync.fields({'0.3.3', require('script.xatw3_release_recruitment_refresh'), sync.identity(), self.native_pool.build or '', mr and mr.plus_version or '',
             self.state.next_sequence, self.subtypes[request.target], plan.fingerprint})
     end
 

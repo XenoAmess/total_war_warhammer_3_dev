@@ -186,6 +186,37 @@ test('missing_or_hidden_lore_does_not_force_remembered_subtype',function()
         assert(not clicked and f.dialogs==0)
     end
 end)
+test('lord_lore_key_is_preserved_across_native_category_rebuild',function(f)
+    local categories=f.panel.children.lords_and_agents_holder;categories.children.supported=nil
+    local list=component('list_box',component('lord_parent',categories))
+    local category=component('native_lord_category',list);category.state='selected'
+    local function make_lores(selected)
+        local holder=component('main_holder',component('general_selection_panel',f.panel))
+        local lores=component('lore_type_list',component('lord_magic_lore_type',component('lore_select_parent',holder)))
+        local fire=component('wh_main_lore_fire',lores);local death=component('wh_main_lore_death',lores)
+        fire.state=selected=='fire' and 'selected' or 'active';death.state=selected=='death' and 'selected_hover' or 'active'
+        function death:SimulateLClick()self.state='selected';fire.state='active';f.lore_restored=true end
+    end
+    make_lores('death')
+    function category:SimulateLClick()
+        self.state='selected';f.queue[#f.queue+1]=function()make_lores('fire')end
+    end
+    local opener=f.root.children.hud_campaign.children.hud_center_docker.children.button_create_army
+    function opener:SimulateLClick()f.reopened=self.id;f.panel.visible=true;category.state='active' end
+    f.start();assert(f.ui.reopen.lore.key=='wh_main_lore_death' and f.ui.reopen.subtype=='supported')
+    f.panel.visible=false;f.drain();f.ui.refresh_buttons=function()assert(f.lore_restored)end
+    f.runtime.on_result({status='SUCCEEDED'});f.drain()
+    assert(f.reopened=='button_create_army' and f.lore_restored and #f.dispatched==1)
+end)
+test('unavailable_lord_lore_does_not_click_another_visible_lore',function(f)
+    local holder=component('main_holder',component('general_selection_panel',f.panel))
+    local lores=component('lore_type_list',component('lord_magic_lore_type',component('lore_select_parent',holder)))
+    local death=component('wh_main_lore_death',lores);death.state='selected'
+    local fire=component('wh_main_lore_fire',lores);function fire:SimulateLClick()error('Wrong lore clicked')end
+    f.start();f.panel.visible=false;f.drain();lores.children.wh_main_lore_death=nil
+    f.ui.refresh_buttons=function()assert(f.ui.selected_subtype==nil)end
+    f.runtime.on_result({status='SUCCEEDED'});f.drain();assert(#f.dispatched==1)
+end)
 test('reopen_preserves_native_category_alias_instead_of_inferring_from_subtype',function()
     for _,state in ipairs({'selected','selected_hover'}) do
         local f=fixture();local categories=f.panel.children.lords_and_agents_holder
@@ -245,6 +276,26 @@ test('caravan_refresh_waits_for_both_panels_and_reopens_through_caravan_purchase
     caravan.visible=false;f.drain();assert(#f.dispatched==1)
     f.runtime.on_result({status='SUCCEEDED'});f.drain()
     assert(f.caravan_opened and f.purchase_opened and f.ui.selected_subtype==key)
+end)
+test('convoy_master_list_closes_before_dispatch_and_reopens_without_ordinary_recruitment',function(f)
+    local key='wh3_dlc23_chd_lord_convoy_overseer'
+    f.panel.visible=false
+    f.runtime.subtypes={[key]='general'};f.runtime.supported=function(k)return k==key end
+    local convoy=component('military_convoys',f.root)
+    local master=component('master_panel',convoy);component('reserve_master_listbox',master)
+    local slot=component('master_slot',convoy)
+    function slot:SimulateLClick() master.visible=true;f.master_reopened=true end
+    local hud=component('button_convoys',component('faction_buttons_docker',f.root.children.hud_campaign))
+    function hud:SimulateLClick()convoy.visible=true;master.visible=false;f.convoy_reopened=true end
+    f.closed_panels={};f.environment.CampaignUI.ClosePanel=function(name)f.closed_panels[name]=true end
+    f.ui.refresh_buttons();assert(f.ui.selected_subtype==key)
+    f.click(component('xatw3_refresh_candidates'));assert(f.closed_panels.military_convoys)
+    f.step();assert(#f.dispatched==0,'Convoy contexts still open')
+    convoy.visible=false;f.drain();assert(#f.dispatched==1)
+    f.runtime.on_result({status='SUCCEEDED'});f.drain()
+    assert(f.convoy_reopened and f.master_reopened and f.ui.selected_subtype==key)
+    assert(not f.reopened and not f.root.children.character_panel)
+    f.emit('PanelClosedCampaign',{string='military_convoys'});assert(f.ui.selected_subtype==nil)
 end)
 test('uncertain_result_keeps_error_and_does_not_reopen',function(f)
     f.start(); f.panel.visible=false; f.drain(); f.runtime.on_result({status='PARTIAL'}); f.drain()

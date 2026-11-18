@@ -1,0 +1,35 @@
+{
+  "status": "STATIC_LAYOUT_REVIEW",
+  "layouts": [
+    {
+      "game_pack": "ui3.pack",
+      "entry": "ui/campaign ui/cathay_caravans.twui.xml",
+      "sha256": "930db29187fdae56d365560dd62f7f0674fe99de60d9defc278b9d0d75f004de",
+      "root": "cathay_caravans",
+      "hud_button": "button_caravan",
+      "selection": "caravans_panel/reserves_listview/add_caravan_button/button_purchase -> character_panel"
+    },
+    {
+      "game_pack": "ui3.pack",
+      "entry": "ui/campaign ui/cp1_cth_bhashiva_caravans.twui.xml",
+      "sha256": "ed5700da16e33fdf5efd5dd9684de00e338c6d507850dbc72041dd8141464f62",
+      "root": "cp1_cth_bhashiva_caravans",
+      "hud_button": "button_caravan",
+      "selection": "caravans_panel/reserves_listview/add_caravan_button/button_purchase -> character_panel"
+    },
+    {
+      "game_pack": "ui3.pack",
+      "entry": "ui/campaign ui/military_convoys.twui.xml",
+      "sha256": "4412db4aae1424be583d2b33e2aaa28169df9892c12da4ff92d8d868105549a3",
+      "root": "military_convoys",
+      "hud_button": "button_convoys",
+      "selection": "master_panel/reserve_master_listbox; hire_add_master_button"
+    }
+  ],
+  "lord_lore": {
+    "file": "ui/campaign ui/character_panel.twui.xml",
+    "sha256": "758c402ab3be48d99cff671e94e98109376e609291e9f86e78f924830bfc2839",
+    "hero_selector": "general_selection_panel/main_holder/lore_select_parent/wizard_type/type_list/<agent_subtype>",
+    "lord_selector": "general_selection_panel/main_holder/lore_select_parent/lord_magic_lore_type/lore_type_list/<magic_lore_key>"
+  }
+}

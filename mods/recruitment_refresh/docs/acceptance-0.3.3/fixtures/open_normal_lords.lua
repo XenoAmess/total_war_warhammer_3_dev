@@ -1,0 +1,10 @@
+cm:dismiss_advice();local event=find_uicomponent(core:get_ui_root(),'events','button_set','accept_holder','button_accept');if event and event:Visible(true)then event:SimulateLClick()end
+CampaignUI.ClosePanel('military_convoys');CampaignUI.ClosePanel('settlement_panel');CampaignUI.CloseCurrentHUDPanel()
+local settlement=cm:get_local_faction():home_region():settlement();local x,y,d,b,h=cm:get_camera_position();cm:scroll_camera_from_current(false,1,{settlement:display_position_x(),settlement:display_position_y(),7.6,b,4})
+cm:callback(function()
+ local home=cm:get_local_faction():home_region();common.get_context_value('CcoCampaignSettlement',home:cqi(),'Select')
+ cm:callback(function()
+  local button=find_uicomponent(core:get_ui_root(),'hud_campaign','hud_center_docker','button_create_army');xatw3_test.record('NORMAL_LORD_OPENER '..tostring(button~=nil and button~=false)..' '..tostring(button and button:Visible(true))..' '..tostring(button and button:CurrentState()))
+  assert(button and button:Visible(true) and (button:CurrentState()=='active' or button:CurrentState()=='hover'));button:SimulateLClick()
+ end,.6)
+end,1.3)

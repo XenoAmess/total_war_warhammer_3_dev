@@ -1,0 +1,766 @@
+{
+  "status": "STATIC_METADATA_REVIEW_ONLY",
+  "game_db_sha256": "73fe248f0983720d20638d5dfe6ba20e5207229a1a4d67c9b86a3bfe1b7d7626",
+  "policy_sha256": "c64a511c05245ba5ab0cbaadadde9d0afb8678eb1eccb25d4f79b1804bb0ab00",
+  "rows": [
+    {
+      "key": "wh2_dlc11_vmp_bloodline_blood_dragon",
+      "auto_generate": false,
+      "recruitment_category": "vmp_bloodlines",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc11_vmp_bloodline_lahmian",
+      "auto_generate": false,
+      "recruitment_category": "vmp_bloodlines",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc11_vmp_bloodline_necrarch",
+      "auto_generate": false,
+      "recruitment_category": "vmp_bloodlines",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc11_vmp_bloodline_strigoi",
+      "auto_generate": false,
+      "recruitment_category": "vmp_bloodlines",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc11_vmp_bloodline_von_carstein",
+      "auto_generate": false,
+      "recruitment_category": "vmp_bloodlines",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_beasts",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_dlc03_lore_beasts",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_beasts_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_dlc03_lore_beasts",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_death",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_death",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_death_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_death",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_fire",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_fire",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_fire_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_fire",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_heavens",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_heavens",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_heavens_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_heavens",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_high",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh2_main_lore_high_magic",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_high_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh2_main_lore_high_magic",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_life",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_dlc05_lore_life",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_life_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_dlc05_lore_life",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_metal",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_metal",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_metal_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_metal",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_shadows",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_dlc05_lore_shadows",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_dlc13_lzd_slann_mage_priest_shadows_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_dlc05_lore_shadows",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_main_def_black_ark",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_main_def_black_ark_blessed_dread",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_main_lzd_slann_mage_priest",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_light",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh2_main_lzd_slann_mage_priest_horde",
+      "auto_generate": false,
+      "recruitment_category": "lzd_slann_mage_priest",
+      "magic_lore": "wh_main_lore_light",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_cp1_cth_sawai_caravan",
+      "auto_generate": true,
+      "recruitment_category": "wh3_cp1_cth_sawai_caravan",
+      "magic_lore": null,
+      "classification": "authoritative_unhired_offer_only_background_reroll",
+      "ownership_content_packs": [
+        "wh3_cp1_bhashiva_cth"
+      ]
+    },
+    {
+      "key": "wh3_demo_kho_cha_exalted_bloodthirster",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_demo_nur_exalted_great_unclean_one_nurgle",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc20_chs_daemon_prince_khorne",
+      "auto_generate": false,
+      "recruitment_category": "chs_daemon_princes",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc20_chs_daemon_prince_nurgle",
+      "auto_generate": false,
+      "recruitment_category": "chs_daemon_princes",
+      "magic_lore": "wh3_main_lore_nurgle",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc20_chs_daemon_prince_slaanesh",
+      "auto_generate": false,
+      "recruitment_category": "chs_daemon_princes",
+      "magic_lore": "wh3_main_lore_slaanesh",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc20_chs_daemon_prince_tzeentch",
+      "auto_generate": false,
+      "recruitment_category": "chs_daemon_princes",
+      "magic_lore": "wh3_main_lore_tzeentch",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc20_chs_daemon_prince_undivided",
+      "auto_generate": false,
+      "recruitment_category": "chs_daemon_princes",
+      "magic_lore": "wh_main_lore_fire",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc20_chs_exalted_hero_mkho",
+      "auto_generate": true,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "requires_live_ordinary_agent_pool_and_identity_history_guards",
+      "ownership_content_packs": [
+        "wh3_dlc20_champions"
+      ]
+    },
+    {
+      "key": "wh3_dlc20_chs_exalted_hero_mnur",
+      "auto_generate": true,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "requires_live_ordinary_agent_pool_and_identity_history_guards",
+      "ownership_content_packs": [
+        "wh3_dlc20_champions"
+      ]
+    },
+    {
+      "key": "wh3_dlc23_chd_lord_convoy_overseer",
+      "auto_generate": true,
+      "recruitment_category": "wh3_dlc23_chd_lord_convoy_overseer",
+      "magic_lore": null,
+      "classification": "authoritative_unhired_offer_only_background_reroll",
+      "ownership_content_packs": [
+        "wh3_dlc23_chaos_dwarfs"
+      ]
+    },
+    {
+      "key": "wh3_dlc24_chs_exalted_hero_mtze",
+      "auto_generate": true,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "requires_live_ordinary_agent_pool_and_identity_history_guards",
+      "ownership_content_packs": [
+        "wh3_dlc24_shadows_of_change_tze"
+      ]
+    },
+    {
+      "key": "wh3_dlc24_tze_exalted_lord_of_change_metal_locked_army",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_tze_exalted_lord_of_change",
+      "magic_lore": "wh_main_lore_metal",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc24_tze_exalted_lord_of_change_tzeentch_locked_army",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_tze_exalted_lord_of_change",
+      "magic_lore": "wh3_main_lore_tzeentch",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc25_nur_cha_exalted_great_unclean_one_nurgle_qb_boss",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_nurgle",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc25_nur_exalted_hero_chieftain",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_dlc25_thrones_of_decay_nur"
+      ]
+    },
+    {
+      "key": "wh3_dlc26_kho_exalted_bloodthirster_khorne_spawned_army",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_kho_exalted_bloodthirster",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc27_chs_cha_daemon_prince_mkho_qb",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_dlc27_chs_exalted_hero_msla",
+      "auto_generate": true,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "requires_live_ordinary_agent_pool_and_identity_history_guards",
+      "ownership_content_packs": [
+        "wh3_dlc27_tides_of_torment_sla"
+      ]
+    },
+    {
+      "key": "wh3_dlc27_hef_dragonship_captain_01",
+      "auto_generate": false,
+      "recruitment_category": "wh3_dlc27_hef_dragonships",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_dlc27_tides_of_torment_hef"
+      ]
+    },
+    {
+      "key": "wh3_dlc27_hef_dragonship_captain_02",
+      "auto_generate": false,
+      "recruitment_category": "wh3_dlc27_hef_dragonships",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_dlc27_tides_of_torment_hef"
+      ]
+    },
+    {
+      "key": "wh3_dlc27_hef_dragonship_captain_03",
+      "auto_generate": false,
+      "recruitment_category": "wh3_dlc27_hef_dragonships",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_dlc27_tides_of_torment_hef"
+      ]
+    },
+    {
+      "key": "wh3_dlc27_hef_dragonship_captain_04",
+      "auto_generate": false,
+      "recruitment_category": "wh3_dlc27_hef_dragonships",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_dlc27_tides_of_torment_hef"
+      ]
+    },
+    {
+      "key": "wh3_dlc27_hef_dragonship_captain_05",
+      "auto_generate": false,
+      "recruitment_category": "wh3_dlc27_hef_dragonships",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_dlc27_tides_of_torment_hef"
+      ]
+    },
+    {
+      "key": "wh3_dlc29_skv_verminlord_corruptor",
+      "auto_generate": false,
+      "recruitment_category": "wh3_skv_verminlord",
+      "magic_lore": "wh3_dlc29_lore_verminlord_corruptor",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_dlc29_loet_thanquol"
+      ]
+    },
+    {
+      "key": "wh3_dlc29_skv_verminlord_deceiver",
+      "auto_generate": false,
+      "recruitment_category": "wh3_skv_verminlord",
+      "magic_lore": "wh3_dlc29_lore_verminlord_deceiver",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_dlc29_loet_thanquol"
+      ]
+    },
+    {
+      "key": "wh3_dlc29_skv_verminlord_warbringer",
+      "auto_generate": false,
+      "recruitment_category": "wh3_skv_verminlord",
+      "magic_lore": "wh3_dlc29_lore_verminlord_warbringer",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_dlc29_loet_thanquol"
+      ]
+    },
+    {
+      "key": "wh3_dlc29_skv_verminlord_warpseer",
+      "auto_generate": false,
+      "recruitment_category": "wh3_skv_verminlord",
+      "magic_lore": "wh3_dlc29_lore_verminlord_warpseer",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_dlc29_loet_thanquol"
+      ]
+    },
+    {
+      "key": "wh3_main_cth_lord_caravan_master",
+      "auto_generate": true,
+      "recruitment_category": "wh3_main_cth_lord_caravan_master",
+      "magic_lore": null,
+      "classification": "authoritative_unhired_offer_only_background_reroll",
+      "ownership_content_packs": [
+        "wh3_core_agents_cathay"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_khorne",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_khorne_fe",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_nurgle",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": "wh3_main_lore_nurgle",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_nurgle_fe",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": "wh3_main_lore_nurgle",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_slaanesh",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": "wh3_main_lore_slaanesh",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_slaanesh_fe",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": "wh3_main_lore_slaanesh",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_tzeentch",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": "wh3_main_lore_tzeentch",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_dae_daemon_prince_tzeentch_fe",
+      "auto_generate": false,
+      "recruitment_category": "legendary_lords",
+      "magic_lore": "wh3_main_lore_tzeentch",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_daemons"
+      ]
+    },
+    {
+      "key": "wh3_main_kho_exalted_bloodthirster",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_kho_exalted_bloodthirster",
+      "magic_lore": null,
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_khorne"
+      ]
+    },
+    {
+      "key": "wh3_main_ksl_frost_maiden_ice",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_of_ice",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_kislev"
+      ]
+    },
+    {
+      "key": "wh3_main_ksl_frost_maiden_tempest",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_of_tempest",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_kislev"
+      ]
+    },
+    {
+      "key": "wh3_main_ksl_ice_witch_ice",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_ksl_ice_witch",
+      "magic_lore": "wh3_main_lore_of_ice",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_kislev"
+      ]
+    },
+    {
+      "key": "wh3_main_ksl_ice_witch_tempest",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_ksl_ice_witch",
+      "magic_lore": "wh3_main_lore_of_tempest",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": [
+        "wh3_core_agents_kislev"
+      ]
+    },
+    {
+      "key": "wh3_main_nur_exalted_great_unclean_one_death",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_nur_exalted_great_unclean_one",
+      "magic_lore": "wh_main_lore_death",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_nurgle"
+      ]
+    },
+    {
+      "key": "wh3_main_nur_exalted_great_unclean_one_nurgle",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_nur_exalted_great_unclean_one",
+      "magic_lore": "wh3_main_lore_nurgle",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_nurgle"
+      ]
+    },
+    {
+      "key": "wh3_main_pro_ksl_frost_maiden_ice",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_main_sla_exalted_keeper_of_secrets_shadow",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_sla_exalted_keeper_of_secrets",
+      "magic_lore": "wh_dlc05_lore_shadows",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_slaanesh"
+      ]
+    },
+    {
+      "key": "wh3_main_sla_exalted_keeper_of_secrets_slaanesh",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_sla_exalted_keeper_of_secrets",
+      "magic_lore": "wh3_main_lore_slaanesh",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_slaanesh"
+      ]
+    },
+    {
+      "key": "wh3_main_tze_exalted_lord_of_change_metal",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_tze_exalted_lord_of_change",
+      "magic_lore": "wh_main_lore_metal",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_tzeentch"
+      ]
+    },
+    {
+      "key": "wh3_main_tze_exalted_lord_of_change_tzeentch",
+      "auto_generate": false,
+      "recruitment_category": "wh3_main_tze_exalted_lord_of_change",
+      "magic_lore": "wh3_main_lore_tzeentch",
+      "classification": "existing_unlocked_candidate_only_random_background_and_progress_guards",
+      "ownership_content_packs": [
+        "wh3_core_agents_tzeentch"
+      ]
+    },
+    {
+      "key": "wh3_pro10_chs_daemon_prince_tzeentch",
+      "auto_generate": false,
+      "recruitment_category": "chs_daemon_princes",
+      "magic_lore": "wh3_main_lore_tzeentch",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_kho_cha_daemon_prince_of_khorne",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_kho_cha_daemon_prince_of_khorne_fe",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_nur_cha_daemon_prince_of_nurgle",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_nur_cha_daemon_prince_of_nurgle_fe",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_sla_cha_daemon_prince_of_slaanesh",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_sla_cha_daemon_prince_of_slaanesh_fe",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_tze_cha_daemon_prince_of_tzeentch",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh3_survival_tze_cha_daemon_prince_of_tzeentch_fe",
+      "auto_generate": false,
+      "recruitment_category": null,
+      "magic_lore": "wh3_main_lore_daemon_prince",
+      "classification": "excluded_non_auto_generated_not_whitelisted",
+      "ownership_content_packs": []
+    },
+    {
+      "key": "wh_main_chs_exalted_hero",
+      "auto_generate": true,
+      "recruitment_category": null,
+      "magic_lore": null,
+      "classification": "requires_live_ordinary_agent_pool_and_identity_history_guards",
+      "ownership_content_packs": []
+    }
+  ],
+  "limits": [
+    "Does not claim native hiring, full DLC campaign coverage or DLC ownership from subtype presence.",
+    "Runtime also requires the correct faction live pool, ordinary agent class, identity/history eligibility and verified native progress/layout.",
+    "No unsupported finite category was added by this audit."
+  ]
+}

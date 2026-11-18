@@ -1,5 +1,7 @@
 # Move Capital
 
+**DLC validation, 2026-11-18:** the unchanged 0.2.0 package passed Chaos Dwarf single-player checks with Recruitment Refresh 0.3.3 enabled. Moving Uzkulak's capital to the Great Skull Lakes factory preserved both settlements' buildings, levels, ownership and province-capital flags, recruitment pools and owned convoys. Native convoy dispatch and Death-lore lord hiring at the new capital also passed. The target settlement transfer and vanilla convoy-capacity technology are test fixtures, not conquest or full research acceptance. See [the DLC evidence and limits](docs/dlc-compatibility-20261118.json).
+
 **0.2.0 is published** with experimental multiplayer synchronization; public description, changelog, gallery, launcher metadata and subscribed package hash are verified. See [publication receipt](docs/workshop-publication-0.2.0.json). Multiplayer native acceptance is deliberately excluded by the user; see [protocol, offline coverage and recovery limits](../../docs/multiplayer-transport.md) and [changelog](CHANGELOG.md). The published-version evidence below is historical.
 
 The final 0.2.0 package passed offline tests and isolated Kislev single-player UI/transaction regression on 9.0.5; see [candidate evidence](docs/multiplayer-implementation.json). This does not establish native multiplayer compatibility.
