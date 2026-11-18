@@ -1,0 +1,134 @@
+{
+  "enumerated_before": 70,
+  "enumerated_after": 82,
+  "newly_owned": [
+    {
+      "appid": 3589650,
+      "name": "Total War: WARHAMMER III - Nagash – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 3589660,
+      "name": "Total War: WARHAMMER III - Thanquol – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 3589670,
+      "name": "Total War: WARHAMMER III - Boris Todbringer – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 3589680,
+      "name": "Total War: WARHAMMER III - The Glottkin – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 4399460,
+      "name": "Total War: WARHAMMER III - Bhashiva – Character Pack",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000643,
+      "downloading": false
+    }
+  ],
+  "missing_installed": [],
+  "enumerated_unowned": [
+    {
+      "appid": 1834021,
+      "name": "Total War: WARHAMMER III - Blood for the Blood God",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834034,
+      "name": "Total War: WARHAMMER III - 30th Anniversary Regiments",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834050,
+      "name": "Total War: WARHAMMER III - Gotrek & Felix",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834056,
+      "name": "Total War: WARHAMMER III - Catchweb Spidershrine",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834060,
+      "name": "Total War: WARHAMMER III – Glade Captain",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834063,
+      "name": "Total War: WARHAMMER III - Blood for the Blood God II",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 2325830,
+      "name": "Total War: WARHAMMER III – Shadows of Change",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    }
+  ],
+  "store_wh3_unowned": [
+    {
+      "appid": 4605280,
+      "name": "Total War: WARHAMMER III - Original Soundtrack",
+      "listed_for_wh3": false,
+      "source": "official_store_catalog",
+      "store_parent_app": "1142710",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    }
+  ]
+}

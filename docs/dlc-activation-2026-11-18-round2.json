@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "batch": "2026-11-18-round2",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "recorded_at_utc": "2026-11-18T11:26:08.107151+00:00",
+  "observed_at_utc": "2026-11-18T11:23:48.507916+00:00",
+  "status": "LICENSES_SYNCED_INSTALLED_OFFLINE_VERIFIED",
+  "steam_owner": "76561198273714027",
+  "scope": [
+    "recruitment_refresh",
+    "move_capital"
+  ],
+  "previous_inventory": "dlc-activation-2026-11-18/dlc-after-offline-full.json",
+  "raw_inventory": "dlc-activation-2026-11-18-round2/dlc-after-offline-full.json",
+  "steam_enumeration_before": 70,
+  "steam_enumeration_after": 82,
+  "ownership_rows_are_not_unique_paid_packs": true,
+  "new_paid_dlc": [
+    {
+      "appid": 3589650,
+      "name": "Total War: WARHAMMER III - Nagash – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 3589660,
+      "name": "Total War: WARHAMMER III - Thanquol – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 3589670,
+      "name": "Total War: WARHAMMER III - Boris Todbringer – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 3589680,
+      "name": "Total War: WARHAMMER III - The Glottkin – Lords of the End Times",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000404,
+      "downloading": false
+    },
+    {
+      "appid": 4399460,
+      "name": "Total War: WARHAMMER III - Bhashiva – Character Pack",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": true,
+      "installed": true,
+      "earliest_purchase_unix": 1795000643,
+      "downloading": false
+    }
+  ],
+  "enumerated_owned_count": 75,
+  "enumerated_all_owned_installed": false,
+  "owned_enumerated_all_installed": true,
+  "missing_installed": [],
+  "enumerated_unowned": [
+    {
+      "appid": 1834021,
+      "name": "Total War: WARHAMMER III - Blood for the Blood God",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834034,
+      "name": "Total War: WARHAMMER III - 30th Anniversary Regiments",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834050,
+      "name": "Total War: WARHAMMER III - Gotrek & Felix",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834056,
+      "name": "Total War: WARHAMMER III - Catchweb Spidershrine",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834060,
+      "name": "Total War: WARHAMMER III – Glade Captain",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 1834063,
+      "name": "Total War: WARHAMMER III - Blood for the Blood God II",
+      "listed_for_wh3": true,
+      "store_available": false,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    },
+    {
+      "appid": 2325830,
+      "name": "Total War: WARHAMMER III – Shadows of Change",
+      "listed_for_wh3": true,
+      "store_available": true,
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    }
+  ],
+  "remaining_unowned_in_supplied_official_wh3_catalog": [
+    {
+      "appid": 4605280,
+      "name": "Total War: WARHAMMER III - Original Soundtrack",
+      "listed_for_wh3": false,
+      "source": "official_store_catalog",
+      "store_parent_app": "1142710",
+      "owned": false,
+      "installed": false,
+      "downloading": false
+    }
+  ],
+  "unowned_interpretation": "Seven raw unowned entries remain. Blood for the Blood God III 1374300 and the three individual Shadows of Change character packs are owned. Do not equate legacy/free/combined entries to seven missing paid gameplay packs; in-game free-content availability is not yet verified.",
+  "catalog_scope": "Current client WH3 enumeration plus the official Store catalog captured earlier on 2026-11-18; not a claim about future releases.",
+  "required_dlc_install_requests": [],
+  "download_claim": "No required DLC/base transfer observed; final StateFlags=4 and TargetBuildID=0. Historical byte counters retained in raw manifests are not new-transfer evidence.",
+  "game_version": "9.0.5.0",
+  "game_build_id": 26403568,
+  "game_exe_sha256": "d2a8a58288bf8bd86768f21ff6be036cebb1916f9c312999c60afc1abe13789f",
+  "transitional_online_sdk_result": "Initial online SDK retained the previous 70-entry catalog. Ordinary client restart followed by a fresh offline SDK session enumerated 82 entries and the five new paid licenses.",
+  "license_blockers_resolved": [
+    "Bhashiva/Clawspeaker/Sawai caravan",
+    "Thanquol/four Verminlord subtypes"
+  ],
+  "native_acceptance": "IN_PROGRESS; separate Mod reports will record actual outcomes. Ownership does not grant test credit.",
+  "multiplayer": "NOT_RUN; still requires a second participant/environment.",
+  "steam_final_mode": "intentional_offline",
+  "offline_receipt": "dlc-activation-2026-11-18-round2/offline-after-inventory.json",
+  "local_model": {
+    "available": false,
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "open-h3-2k",
+          "object": "model",
+          "owned_by": "local",
+          "shared_gpu_queue": true,
+          "root": "/home/ubuntu/workspace/xenoamess_bake_videos/models/Open-H3-Regenerate-2K-IC",
+          "sizes": [
+            "2560x1440",
+            "1440x2560",
+            "3840x2160"
+          ],
+          "draft_generation": false,
+          "native_resolutions": true,
+          "four_k_max_windows_per_load": 1
+        }
+      ]
+    },
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-18T11:21:19.994187+00:00",
+    "base_url": "http://192.168.1.11:8080/v1",
+    "configured_model": "qwen38-coder",
+    "candidate_posts": 0,
+    "fallback_used": false
+  },
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-round2-20261118",
+  "evidence": [
+    {
+      "file": "dlc-activation-2026-11-18-round2/account-before-dlc-after-offline-full.json",
+      "sha256": "b16022d3369ea75b2af586122e4be286d007951f9dd8adcf72ae9c8bb6eb36ad",
+      "bytes": 359
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/account-before-dlc-online-activation.json",
+      "sha256": "428ee064cbe9ca4868dfe332bc9b2de2e4a0c866369031dc219a1d420fc4bdaf",
+      "bytes": 358
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/account-before-online.json",
+      "sha256": "a3d1801441bbbf88c53f0258d4c871f12a9041398ef91490676b8b72f94fcb21",
+      "bytes": 359
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/account-before-restart.json",
+      "sha256": "ef44d57bc349f0437f01ec9d8f8ade90e22c79b6e61c6921e5d5391df2a835c1",
+      "bytes": 359
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/account-initial.json",
+      "sha256": "51745445a2e4c73015867f1bde31e9908ba11f2c5702d2daade73c7a25c4e0bd",
+      "bytes": 359
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/cef_read.py",
+      "sha256": "4b7567fbe6ec9a2c1399e8b5787bad7027895aadf9720ce410731cdaf9af2cfd",
+      "bytes": 1219
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/common.py",
+      "sha256": "cfeeb48e2a439290f1ce6ade981a737c3d463746eb956252b6a19ab09d43a2cb",
+      "bytes": 6169
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/controlled-startup-offline.json",
+      "sha256": "d2e7e4d1d41ab363a99849b49a704d2c3c8f61b86f41aa7ccbe8bd364d96774a",
+      "bytes": 2269
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/dlc-after-offline-full.json",
+      "sha256": "718f01ec9433bb431984cff05e32271001e47195c64fb4c3e7eb841daeb8e67a",
+      "bytes": 29178
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/dlc-online-activation.json",
+      "sha256": "abb22f66e16dd9b1b8b393864141e2d5fc0997d2a58d3e969e2ae3666e1cd950",
+      "bytes": 27536
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/dlc_client.py",
+      "sha256": "1ee0d47cac2de5b755845e12cffd55ef0889f3d1b0f285cf1c16af7345ce70ef",
+      "bytes": 4927
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/download-state-2.json",
+      "sha256": "379cb24f485400a81a1e9dfb5155b185fe77117a899ddfc35a15523f86a96f68",
+      "bytes": 4300
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/download_state.js",
+      "sha256": "94629eccb1e394fa61af8698a5801faad2f103f4fcb70c8d263e778bdac67f1c",
+      "bytes": 835
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/final-offline.json",
+      "sha256": "e6d07ca60a382a66a54aefc2b67c6d6e1aa21d6f011bcdb36507aa4c281cdb97",
+      "bytes": 2269
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/finalize_sync.py",
+      "sha256": "42ad8569929071ac5b9dece40b845cf2afe07b049041cb62c950e8fee8052708",
+      "bytes": 5407
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/license-diff.json",
+      "sha256": "817074021cbefc703a792a50d3fde195e5be2c39f2d8e8a51e084c2daeb1f910",
+      "bytes": 3604
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/local-model-status.json",
+      "sha256": "d882a73e7711c83c0955320bb75f9954e0362db8b5510ae51dbb8b725ce09baf",
+      "bytes": 762
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/manifest-after.json",
+      "sha256": "627aacdc8115036613de72bd4d6cf70254d9d0112794237ae63ec79ece8bb564",
+      "bytes": 238
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/manifest-before.json",
+      "sha256": "627aacdc8115036613de72bd4d6cf70254d9d0112794237ae63ec79ece8bb564",
+      "bytes": 238
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/offline-after-inventory.json",
+      "sha256": "edb5f46f1b7a747f816ac162d461ad1e8cf20331897f174f829f98d520e9cfe4",
+      "bytes": 2269
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/offline-before-online-stage.json",
+      "sha256": "6f5dece96874224aecc23039951d76f978dd1428482fc4388a260646743d678c",
+      "bytes": 2269
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/offline-initial.json",
+      "sha256": "2440f401d27ebd0f1e84bb96ce15462904a99c7ce99a590d4918f43f96fcf048",
+      "bytes": 2269
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/prepare_sync.py",
+      "sha256": "b3f0da8dc452aea0c0ce000b5f3a0e412c3afadf67fa3feb7191239942c77f3b",
+      "bytes": 1540
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/store-dlc-catalog.json",
+      "sha256": "8ce56479ccc359389ec2755cca0e29ce90be517dcf642e2b2d9933ee923d0821",
+      "bytes": 5025
+    },
+    {
+      "file": "dlc-activation-2026-11-18-round2/sync_controller.py",
+      "sha256": "19b4077a83adba3d90ed4e56488ff0a0eddad81f51e1746f04dc5396035e2361",
+      "bytes": 3167
+    }
+  ]
+}
