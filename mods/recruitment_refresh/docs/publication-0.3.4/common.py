@@ -6,7 +6,12 @@ CONTROL=ROOT.parent/'launcher-both-followup-20261031T141338Z/steam_control_force
 PROBE=REPO/'mods/recruitment_refresh/docs/publication-0.3.1/steam_release_probe.py'
 sys.path.insert(0,str(REPO/'tools'))
 from project import load_project
-from workshop import account_activity,Steam
+from workshop import Steam, _html_account_activity
+import workshop as workshop_module
+def account_activity(owner):
+ # Use the existing strict full-profile parser directly; avoid redundant mini/XML requests.
+ return _html_account_activity(owner,datetime.now(timezone.utc).isoformat(),language='schinese')
+workshop_module.account_activity=account_activity
 PROJECT=load_project('recruitment_refresh')
 def now():return datetime.now(timezone.utc).isoformat()
 def read(p):return json.loads(p.read_text(encoding='utf-8'))

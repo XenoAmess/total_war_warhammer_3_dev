@@ -25,9 +25,11 @@ from account_confirmation import confirmed_idle, confirmed_idle_client_persona
 APP_ID = 1142710
 
 
-def _html_account_activity(owner: str, observed: str) -> dict:
+def _html_account_activity(owner: str, observed: str, *, language: str = 'english') -> dict:
+    if language not in ('english', 'schinese'):
+        raise ValueError('Unsupported public profile language')
     request = urllib.request.Request(
-        f'https://steamcommunity.com/profiles/{owner}/?l=english&presence_check={time.time_ns()}',
+        f'https://steamcommunity.com/profiles/{owner}/?l={language}&presence_check={time.time_ns()}',
         headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
     with urllib.request.urlopen(request, timeout=15) as response:
         raw = response.read(512001)
