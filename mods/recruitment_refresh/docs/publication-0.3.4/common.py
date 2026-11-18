@@ -8,9 +8,26 @@ sys.path.insert(0,str(REPO/'tools'))
 from project import load_project
 from workshop import Steam, _html_account_activity
 import workshop as workshop_module
+import urllib.error
 def account_activity(owner):
- # Use the existing strict full-profile parser directly; avoid redundant mini/XML requests.
- return _html_account_activity(owner,datetime.now(timezone.utc).isoformat(),language='schinese')
+ # Every admission still performs a new strict full-profile read. Space HTTP reads
+ # across the controller/children; a rate-limit failure never becomes idle evidence.
+ for attempt in range(3):
+  stamp=ROOT/'presence-request-time.json'
+  if stamp.exists():
+   previous=json.loads(stamp.read_text(encoding='utf-8'))['started_epoch']
+   delay=max(0,15-(time.time()-previous))
+   if delay:time.sleep(min(delay,30))
+  stamp.write_bytes((json.dumps({'started_epoch':time.time()})+'\n').encode())
+  try:return _html_account_activity(owner,datetime.now(timezone.utc).isoformat(),language='schinese')
+  except urllib.error.HTTPError as error:
+   if error.code!=429:raise
+   path=ROOT/'presence-http-retries.json'
+   records=json.loads(path.read_text(encoding='utf-8'))if path.exists()else[]
+   records.append({'attempt':attempt+1,'observed_at_utc':datetime.now(timezone.utc).isoformat(),'status':429,'action':'wait for fresh public presence; no SDK initialization'})
+   path.write_bytes((json.dumps(records,indent=2)+'\n').encode())
+   if attempt==2:raise
+   time.sleep(20+10*attempt)
 workshop_module.account_activity=account_activity
 PROJECT=load_project('recruitment_refresh')
 def now():return datetime.now(timezone.utc).isoformat()
