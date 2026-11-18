@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.3",
+  "source_commit": "2625d099b56be3a2d1d93db598b673bbe8e2b43f",
+  "publication_input_commit": "807ab452f41593c1bba1f5f18b157b0b694921b4",
+  "pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "bytes": 98161,
+  "acceptance": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS"
+  },
+  "description_sha256": "0acbbdb8638e5e69a436ebea67c90e1b291e40bc9fe055166648c6c7a10f49df",
+  "change_notes_sha256": "27c181e5c4d4d3c9a237425535dd992af919ead66e27ca4bd9872b50730a086f",
+  "existing_gallery_count": 3,
+  "production_source_changed": false,
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "available": false,
+    "candidate_posts": 0,
+    "fallback_used": false,
+    "receipt": "local-model-status.json"
+  }
+}

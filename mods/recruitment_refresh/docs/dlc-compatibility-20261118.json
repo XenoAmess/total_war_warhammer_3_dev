@@ -3,7 +3,7 @@
   "mod_id": "recruitment_refresh",
   "version": "0.3.3",
   "status": "PASS",
-  "release_status": "READY_NOT_PUBLISHED",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "recorded_at_utc": "2026-11-18T08:43:34.016750+00:00",
   "machine_id": "pc-20260924rtuf-f11af23c08",
   "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-acceptance-20261118",
@@ -146,5 +146,13 @@
   },
   "cleanup": "acceptance-0.3.3/cleanup.json",
   "steam_final_offline": "acceptance-0.3.3/offline-after-cleanup.json",
-  "workshop_upload_performed": false
+  "workshop_upload_performed": true,
+  "release_status_at_acceptance": "READY_NOT_PUBLISHED",
+  "workshop_upload_performed_during_native_acceptance": false,
+  "publication_followup": {
+    "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+    "publication_record": "workshop-publication-0.3.3.json",
+    "verified_at_utc": "2026-11-18T09:07:24.236785+00:00",
+    "accepted_package_unchanged": true
+  }
 }

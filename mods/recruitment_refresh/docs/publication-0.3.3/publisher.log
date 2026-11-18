@@ -1,0 +1,12 @@
+{"stage": "upload_begin", "utc": "2026-11-18T08:59:24.157283+00:00", "version": "0.3.3"}
+Setting breakpad minidump AppID = 1142710
+SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561198273714027 [API loaded no]
+{"stage": "upload_complete", "utc": "2026-11-18T08:59:35.388609+00:00", "item_id": "3830548217", "sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd"}
+Traceback (most recent call last):
+  File "D:\workspace\.codex-wh3-runtime\dlc-release-20261118\publish_child.py", line 12, in <module>
+    idle('account-before-download-sdk.json');steam=Steam(DLL)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\.codex-wh3-runtime\dlc-release-20261118\common.py", line 44, in idle
+    if activity['status']!='PUBLIC_PRESENCE_IDLE':raise RuntimeError('Account busy/unknown; stay offline: '+json.dumps(activity))
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Account busy/unknown; stay offline: {"owner": "76561198273714027", "status": "BUSY", "game": "Total War: WARHAMMER III", "observed_at_utc": "2026-11-18T08:59:35.388694+00:00", "server_date": "Wed, 18 Nov 2026 08:59:34 GMT", "source": "steam_community_miniprofile", "response_sha256": "fd6249f01e8734199e4f3ac2e5300c166c19c8c6a2249626a4b6fd0493e89d01"}

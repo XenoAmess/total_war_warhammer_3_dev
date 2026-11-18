@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+    "status": 429,
+    "retry_after": null,
+    "observed_at_utc": "2026-11-18T09:05:31.117685+00:00"
+  },
+  {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217",
+    "status": 429,
+    "retry_after": null,
+    "observed_at_utc": "2026-11-18T09:05:31.935436+00:00"
+  }
+]

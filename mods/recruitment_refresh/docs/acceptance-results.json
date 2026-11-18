@@ -2,7 +2,7 @@
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
   "version": "0.3.3",
-  "release_status": "READY_NOT_PUBLISHED",
+  "release_status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
   "recorded_at_utc": "2026-11-18T08:43:34.016750+00:00",
   "source_parent_commit": "6fa8b4244152c0163556a389b601eccf74a30b5e",
   "release_pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
@@ -13,7 +13,7 @@
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN_NOT_PUBLISHED",
+  "L4": "PASS",
   "acceptance_scope": "Incremental exact cold-package single-player DLC acceptance: Chaos Dwarf convoy UI/identity/background/hiring/escorts, idle and active protection, empty pool, native dispatch and Death-lore lord restoration/default skills/hiring; jointly enabled with Move Capital 0.2.0. See explicit fixture and coverage limits.",
   "offline_tests": {
     "shared": 90,
@@ -29,11 +29,16 @@
   "tracked_payload_matches_pack": true,
   "cleanup": "acceptance-0.3.3/cleanup.json",
   "steam_offline": true,
-  "workshop_upload_performed": false,
+  "workshop_upload_performed": true,
   "limitations": [
     "Bhashiva 4399460 remains unowned: Clawspeaker Life/other lores and Bhashiva Sawai caravan are not directly tested.",
     "Thanquol 3589660 remains unowned; the four Verminlord subtypes require wh3_dlc29_loet_thanquol in the current ownership junction.",
     "Other newly owned DLC factions and finite recruitment families are not individually native-tested.",
     "No complete journey/return, complete ritual/training, refreshed-state save/reload or native multiplayer credit. Ice Court training and fixed dynasty/technology/ship/camp-only identities remain excluded."
-  ]
+  ],
+  "source_commit": "2625d099b56be3a2d1d93db598b673bbe8e2b43f",
+  "publication_record": "workshop-publication-0.3.3.json",
+  "published_at_utc": "2026-11-18T08:59:32+00:00",
+  "verified_at_utc": "2026-11-18T09:07:24.236785+00:00",
+  "subscription_mount_scope": "Frontend release identity loaded from a byte-identical copy of the actual Workshop subscription download; no repeat business acceptance credit."
 }

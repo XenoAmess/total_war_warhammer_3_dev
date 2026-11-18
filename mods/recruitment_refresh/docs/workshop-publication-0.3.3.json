@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.3",
+  "item_id": "3830548217",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+  "source_commit": "2625d099b56be3a2d1d93db598b673bbe8e2b43f",
+  "publication_input_commit": "807ab452f41593c1bba1f5f18b157b0b694921b4",
+  "pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "pack_bytes": 98161,
+  "release_identity": "495317074cb7210a6fb94dd6a1cdf6a6f499abe6470ca84fbce4cc6eb40fbcc6",
+  "uploaded_at_utc": "2026-11-18T08:59:32+00:00",
+  "verified_at_utc": "2026-11-18T09:07:24.236785+00:00",
+  "user_instruction": "发布你的修复至创意工坊。",
+  "release_scope": "Incremental exact cold-package single-player DLC acceptance: Chaos Dwarf convoy UI/identity/background/hiring/escorts, idle and active protection, empty pool, native dispatch and Death-lore lord restoration/default skills/hiring; jointly enabled with Move Capital 0.2.0. See explicit fixture and coverage limits.",
+  "acceptance_file": "acceptance-results-0.3.3.json",
+  "description_sha256": "0acbbdb8638e5e69a436ebea67c90e1b291e40bc9fe055166648c6c7a10f49df",
+  "change_notes_sha256": "27c181e5c4d4d3c9a237425535dd992af919ead66e27ca4bd9872b50730a086f",
+  "account_occupancy": "Fresh public idle checks before restart, online mode, child process, publisher SDK and download SDK; no account takeover.",
+  "pre_online_recoveries": [
+    {
+      "attempt": "attempt1-pre-online",
+      "reason": "CEF disconnected after startup inspection; no online/upload SDK initialization",
+      "restored_offline": true
+    },
+    {
+      "attempt": "attempt2-pre-online",
+      "reason": "Startup native tray state not yet ready; no online/upload SDK initialization",
+      "restored_offline": true
+    }
+  ],
+  "post_upload_recovery": {
+    "upload_callback": "PASS; exactly one update submitted",
+    "verification_connection_initially_blocked": "Public presence still showed WH3 immediately after publisher shutdown",
+    "action": "Restored offline, waited for a fresh public idle receipt, then used a verification-only connection; no repeat upload"
+  },
+  "public_page_recovery": "English and language-neutral HTML returned HTTP 429; anonymous schinese main and changelog pages subsequently read successfully. Public API description comparison, image hashes and subscription bytes also passed.",
+  "download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+    "bytes": 98161,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-11-18T09:01:48.284608+00:00"
+  },
+  "public_verification": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "version": "0.3.3",
+    "item_id": "3830548217",
+    "observed_at_utc": "2026-11-18T09:06:57.260647+00:00",
+    "pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+    "public_description": "PASS",
+    "public_changelog": "PASS",
+    "required_dependency": "PASS",
+    "launcher_metadata": "PASS",
+    "cover": "PASS",
+    "gallery": "PASS_UNCHANGED_3_IMAGES",
+    "real_subscribed_download": "PASS"
+  },
+  "public_pages": [
+    {
+      "kind": "main",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217&l=schinese",
+      "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-20261118\\public-main-0.html",
+      "sha256": "7d940d0f3f50004acb1b048f4d968723096214c379733c28a27a1f2959cc4d04",
+      "bytes": 97951,
+      "status": "PASS"
+    },
+    {
+      "kind": "changelog",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=schinese",
+      "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-20261118\\public-changelog-0.html",
+      "sha256": "c72484011ba2a730da12e1e6161e2a7df60d98d549ed384ab4bb9a1b6b0406be",
+      "bytes": 65473,
+      "status": "PASS"
+    }
+  ],
+  "launcher_metadata": {
+    "PACK_NAME": [
+      "xatw3_campaign_utilities.pack"
+    ],
+    "game_version": [
+      "589824"
+    ]
+  },
+  "images": [
+    {
+      "file": "preview.png",
+      "url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+      "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+      "status": "PASS",
+      "bytes": 49827
+    },
+    {
+      "slot": 0,
+      "file": "lord-refresh-icon.jpg",
+      "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "status": "PASS",
+      "bytes": 904363
+    },
+    {
+      "slot": 1,
+      "file": "lord-refreshed.jpg",
+      "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "status": "PASS",
+      "bytes": 904683
+    },
+    {
+      "slot": 2,
+      "file": "hero-final.jpg",
+      "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "status": "PASS",
+      "bytes": 887983
+    }
+  ],
+  "subscriber_mount": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "source": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "source_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+    "installation_method": "byte-identical copy from verified real subscription folder",
+    "frontend_mount_only": true,
+    "business_retest": false,
+    "installed": [
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+        "sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_release_mount.pack",
+        "sha256": "a14a9cb3e1eda0eff472712ba93300a0c22c90d52378c0e70b1dde63b1c78cde"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+        "sha256": "0c751ae032bb51718c267cd06b67c648035367c13338763edf9a689be4ce9ae1"
+      }
+    ],
+    "pid": 20968,
+    "cleaned": true,
+    "preferences_restored": true,
+    "user_script_restored": true,
+    "steam_intentionally_offline": true,
+    "release_identity": "495317074cb7210a6fb94dd6a1cdf6a6f499abe6470ca84fbce4cc6eb40fbcc6",
+    "completed_at_utc": "2026-11-18T09:04:09.829053+00:00"
+  },
+  "subscriber_mount_scope": "Frontend release identity loaded from a byte-identical copy of the actual Workshop subscription download; no repeat business acceptance credit.",
+  "limitations": [
+    "Bhashiva 4399460 remains unowned: Clawspeaker Life/other lores and Bhashiva Sawai caravan are not directly tested.",
+    "Thanquol 3589660 remains unowned; the four Verminlord subtypes require wh3_dlc29_loet_thanquol in the current ownership junction.",
+    "Other newly owned DLC factions and finite recruitment families are not individually native-tested.",
+    "No complete journey/return, complete ritual/training, refreshed-state save/reload or native multiplayer credit. Ice Court training and fixed dynasty/technology/ship/camp-only identities remain excluded."
+  ],
+  "steam_final_mode": "offline",
+  "steam_final_receipt": {
+    "schema": "wh3.release-steam-offline/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-18T09:07:23.937494+00:00",
+    "nonce": "1e288caa84f9babfe131732898fd9a2e",
+    "status": "offline",
+    "steam": {
+      "pid": 16112,
+      "birth_filetime": "134394661494933804",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.23.65.88"
+    },
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19675800,
+      "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+      "file_id": "1125899908071526",
+      "mtime_ns": "1794535550000000000"
+    },
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-18T09:07:24.178779+00:00",
+      "nonce": "1e288caa84f9babfe131732898fd9a2e",
+      "module_base": "140711352926208",
+      "module_size": 19959808,
+      "value_rva": "18653399",
+      "value_address": "140711371579607",
+      "producer_rva": "6691596",
+      "producer_anchor_hex": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "producer_anchor_sha256": "e2ee13da1019c3cb41a999d4fda37bde192574390690cb2328c903de7fdd54c2",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 16112,
+        "birth_filetime": "134394661494933804",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "steam_after": {
+        "pid": 16112,
+        "birth_filetime": "134394661494933804",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "tray_manager_pointer_rva": "18645800",
+      "tray_manager_address": "2282343833728",
+      "tray_state_offset": "352",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    }
+  },
+  "temporary_steam_debugging_removed": true,
+  "test_files_and_preferences_restored": true,
+  "offline_probe_implementation": "publication-0.3.1/steam_release_probe.py",
+  "offline_probe_sha256": "8764e0da151d32024350e4053bb1bc1b3c3a30d83624d37834146cfe19a72c7c",
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-20261118",
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "available": false,
+    "candidate_posts": 0,
+    "fallback_used": false,
+    "reason": "Configured endpoint lists only the video model open-h3-2k; owner performed publication preparation and verification."
+  },
+  "evidence": [
+    {
+      "file": "publication-0.3.3/account-after-publisher-busy.json",
+      "sha256": "8abb4e246c4b534afefd313ce2945d934cc846a71a3118dc42781a2cb6c5e3da",
+      "bytes": 332
+    },
+    {
+      "file": "publication-0.3.3/account-after-publisher-exit.json",
+      "sha256": "0c39b64f5815b6daf1ed4c16fdfed04fede204bb8cac08322c4bcbddd5ed38dd",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.3/account-before-child.json",
+      "sha256": "f46c9de8ef510e1ee85f3d396512cc4d6308b425b6e68c5ea2f5474f5f39bc79",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.3/account-before-download-sdk.json",
+      "sha256": "111dc4f7f4691cbd284efb8eab33153f153bd3f6e09e965af88e633b6bb040f6",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.3/account-before-online.json",
+      "sha256": "9bad84d29f643d9a39c31445ac6069955db17c4f8b41cba9632cbf349fb85cd9",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.3/account-before-publisher-sdk.json",
+      "sha256": "7808df0c28997c8495e0c3bbc6ba31ed4c76a996f2f5c8c1485271d8c40804c7",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.3/account-before-restart.json",
+      "sha256": "eaac9be2fd9f8a0a4f7d0281345af34d622e683faf89267b61ebe7f97620998a",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.3/account-before-verification-child.json",
+      "sha256": "49fa3a3038baf7d73ef70a4e0def00483ec45597f3b5e944d082dec8e2fc28d6",
+      "bytes": 358
+    },
+    {
+      "file": "publication-0.3.3/account-before-verification-online.json",
+      "sha256": "7581011c5e7d351eecd193eb968615d5c7d9f0bfd134312012e35bd62feb7c32",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.3/account-before-verification-restart.json",
+      "sha256": "1d4876e18dc0c44dd3ac4f87093f91c40e52946cc9df0fe4c730fb64544f1402",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.3/account-initial.json",
+      "sha256": "c3cd07fd5e7fcafd01ba3fd0ca31335afae0d2aa6f5c2cecad7eafed1b9508f0",
+      "bytes": 359
+    },
+    {
+      "file": "publication-0.3.3/attempt1-pre-online-failure.json",
+      "sha256": "d87e0e2173ea89a1b7af96e2322ec581d0af177059f597b57b84addc1221f272",
+      "bytes": 369
+    },
+    {
+      "file": "publication-0.3.3/attempt1-pre-online-final-offline.json",
+      "sha256": "2bc8063f33ed289f2ef93b495aef4343f9f45670c80835a5193895b0d30aece9",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.3/attempt2-pre-online-failure.json",
+      "sha256": "7636bd13360b29e63eb8a25584618a04baa9fea11ce6e5ac3f0116af79a5c654",
+      "bytes": 383
+    },
+    {
+      "file": "publication-0.3.3/attempt2-pre-online-final-offline.json",
+      "sha256": "250f121598b5f12da57028d0980d48a4057345487d910fb732bd2c3a01c1fde8",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.3/check_release_records.py",
+      "sha256": "6c34a60e76550575d3af4af90fb22b7ceb2255c2cd29018818ec1094f15e1882",
+      "bytes": 4488
+    },
+    {
+      "file": "publication-0.3.3/common.py",
+      "sha256": "cfeeb48e2a439290f1ce6ade981a737c3d463746eb956252b6a19ab09d43a2cb",
+      "bytes": 6169
+    },
+    {
+      "file": "publication-0.3.3/controller.py",
+      "sha256": "be52b6e2680762bcb967d03e19350b0b71226c091948e5aec40ef3586574e27b",
+      "bytes": 1495
+    },
+    {
+      "file": "publication-0.3.3/download_child.py",
+      "sha256": "89c40d91acdaa3ec5fde99e6ce0da60d9e84f124089669ef3625a113dbe4ce98",
+      "bytes": 2511
+    },
+    {
+      "file": "publication-0.3.3/download_controller.py",
+      "sha256": "c71a8f20bd3b6555604537ecf38a5ddd586e26f54a3daeaaaa9b8ca023014113",
+      "bytes": 1556
+    },
+    {
+      "file": "publication-0.3.3/final-after-all-checks.json",
+      "sha256": "618a3330458c9efe6fc9b813b4c51572a84db5864eb9cc2570e79c63dc88660a",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.3/final-offline.json",
+      "sha256": "08a589a8f1f7dacae6f57405bac66ba87c695d4a92f32db4353ce98078a62c1c",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.3/finalize_release.py",
+      "sha256": "43e7fb16c15f3e8c2789f36e29345919e954ca6add5fabc80890c338d6ed7eba",
+      "bytes": 8707
+    },
+    {
+      "file": "publication-0.3.3/images.json",
+      "sha256": "614df3b2842e1c5e3707490a73d224fc1a0ae5d5180a5ecb658e2014a02a5bbf",
+      "bytes": 1174
+    },
+    {
+      "file": "publication-0.3.3/local-model-status.json",
+      "sha256": "3d6b5c6e7c64893f05a8a7893311641428c6786af6b5855e53c780a1a7e54a25",
+      "bytes": 710
+    },
+    {
+      "file": "publication-0.3.3/mount-session.json",
+      "sha256": "ee6be544c9d0688c473ad8c61967cfcf9606d03527a81e868e8979820b66af5f",
+      "bytes": 1333
+    },
+    {
+      "file": "publication-0.3.3/mount_smoke.py",
+      "sha256": "27198c642e399e256d4b1612eb76588e3776d19b5f96592a87c4062253ea946c",
+      "bytes": 5108
+    },
+    {
+      "file": "publication-0.3.3/normalize_records.py",
+      "sha256": "6a5fcf94ad13c79fa4a3d7de7ace97824ed86ed82b94dc6d69cccb4e6127879f",
+      "bytes": 1624
+    },
+    {
+      "file": "publication-0.3.3/offline-after-subscriber-mount.json",
+      "sha256": "2d548d3f045a0d80bfda0a562613b4bf54a72a2c8f4db164ec6edda7ae64ee4b",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.3/offline-after-upload.json",
+      "sha256": "86ee25baa54edbd043f608e920c425b93af340b06d0d78a768757ac9c7bf97d9",
+      "bytes": 2266
+    },
+    {
+      "file": "publication-0.3.3/offline-before-publication.json",
+      "sha256": "80b4930b1116888b02347d0deaf0a12824b537ab330144e2e9b9cdf7ddbc082b",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.3/offline-before-verification.json",
+      "sha256": "d4566a1701fe1a00cc398fc6d48124cda44ece4c3f3fc413d00e603645c0acef",
+      "bytes": 2266
+    },
+    {
+      "file": "publication-0.3.3/prepare_release.py",
+      "sha256": "c59db86628c2560883a2eea7b597e77d28f69dd26913254e0ebfe2022a32b997",
+      "bytes": 4162
+    },
+    {
+      "file": "publication-0.3.3/prepared.json",
+      "sha256": "bde3966c6f10c12081bccaf2bcb7653de8f1a0d76f5e5e864073b9ba202060d6",
+      "bytes": 851
+    },
+    {
+      "file": "publication-0.3.3/public-after.json",
+      "sha256": "4cce9f44fc267cb5e993fdaa693bc8b124dc527c4f9300df230b88745da12c08",
+      "bytes": 7345
+    },
+    {
+      "file": "publication-0.3.3/public-page-retries.json",
+      "sha256": "91542380db036ff9793c14559e14436fe39b350e9c8d6afe3889df1cc5c75d3d",
+      "bytes": 432
+    },
+    {
+      "file": "publication-0.3.3/public-pages-check.json",
+      "sha256": "4de9738d73e56d5d6684526d65fb13310cf5a88db7e6d15105d88860722208fe",
+      "bytes": 687
+    },
+    {
+      "file": "publication-0.3.3/public-standard-check.json",
+      "sha256": "9abb4a808dacc61dc0ff43a839652e7571d866e3dbd181f5e517bae6eb7b3c9e",
+      "bytes": 391
+    },
+    {
+      "file": "publication-0.3.3/public-verification.json",
+      "sha256": "fd5eb3f5537b7da1142ba0720f6f9c6372def0b7369e9d0e1249ef37830f2a60",
+      "bytes": 472
+    },
+    {
+      "file": "publication-0.3.3/publish_child.py",
+      "sha256": "8a165f90d720145d9bf9caa639a57bc5a0606327402abe27e8fe5c30be46233f",
+      "bytes": 2755
+    },
+    {
+      "file": "publication-0.3.3/publisher.log",
+      "sha256": "e693e6392f5976b5e93e3a6d5a4ba59986b63fae8d39c754af293276e299c95f",
+      "bytes": 1353
+    },
+    {
+      "file": "publication-0.3.3/remote-launcher-metadata.json",
+      "sha256": "e8c42d1ebf014a18789b8da076785a40da650e9472ab0f81cf680a3478567fa6",
+      "bytes": 99
+    },
+    {
+      "file": "publication-0.3.3/steam-control.log",
+      "sha256": "680f08a0b89338dad3bd113e9c463cf6e9d9180c17c62aa85bd57862db2faf92",
+      "bytes": 27121
+    },
+    {
+      "file": "publication-0.3.3/subscriber-mount.log",
+      "sha256": "76b236d7b8679638e4f2ea55e2a48ba8a032c03eeb3f67cbed329f3458ce6cfd",
+      "bytes": 144
+    },
+    {
+      "file": "publication-0.3.3/subscription-download.json",
+      "sha256": "13b19bfd20a24c9c4d265166ded6cbcc7c4da0a7f41e75f7d39e463d9d79f716",
+      "bytes": 409
+    },
+    {
+      "file": "publication-0.3.3/subscription-verifier.log",
+      "sha256": "2baa0fbbc19f2f260ff1752d9ff7c7c8e6d45d0f794b2451cf8cd7febb577643",
+      "bytes": 378
+    },
+    {
+      "file": "publication-0.3.3/verify_public.py",
+      "sha256": "f6ae0a360108a516d59765cee848ea33d92b1fbae05be723fcad980db1c169e8",
+      "bytes": 4181
+    }
+  ],
+  "steam_control_log_canonicalization": {
+    "source": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-20261118\\control.log",
+    "source_sha256": "823f1b2859a73a4ac6e0825a5e5dc1bb5c24182da63b4720d1167a3ba575d1ed",
+    "transform": "Committed log uses LF, removes trailing line whitespace and trailing blank lines; original runtime log remains unchanged."
+  }
+}

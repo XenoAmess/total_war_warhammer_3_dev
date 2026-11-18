@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.3",
+  "item_id": "3830548217",
+  "observed_at_utc": "2026-11-18T09:06:57.260647+00:00",
+  "pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "public_description": "PASS",
+  "public_changelog": "PASS",
+  "required_dependency": "PASS",
+  "launcher_metadata": "PASS",
+  "cover": "PASS",
+  "gallery": "PASS_UNCHANGED_3_IMAGES",
+  "real_subscribed_download": "PASS"
+}

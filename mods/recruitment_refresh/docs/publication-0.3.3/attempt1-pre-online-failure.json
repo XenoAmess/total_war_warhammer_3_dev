@@ -1,0 +1,7 @@
+{
+  "stage": "initial offline control after CEF startup",
+  "error": "responsive inspection followed by disconnect before offline request; no online or upload SDK initialized",
+  "offline_restoration": "PASS",
+  "retry_basis": "fresh native offline proof avoids redundant GoOffline on already offline startup",
+  "observed_at_utc": "2026-11-18T08:57:37.432982+00:00"
+}

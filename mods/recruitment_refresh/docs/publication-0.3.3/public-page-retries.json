@@ -1,0 +1,20 @@
+[
+  {
+    "kind": "main",
+    "attempt": 0,
+    "utc": "2026-11-18T09:04:40.349016+00:00",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "kind": "main",
+    "attempt": 1,
+    "utc": "2026-11-18T09:05:01.198821+00:00",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "kind": "main",
+    "attempt": 2,
+    "utc": "2026-11-18T09:05:22.013047+00:00",
+    "error": "HTTP Error 429: Too Many Requests"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "stage": "initial native offline read during startup",
+  "error": "tray_state_unavailable while SharedJSContext already reported offline; no online or upload SDK initialized",
+  "offline_restoration": "PASS",
+  "retry_basis": "bounded read-only wait for both native and tray offline readiness before any online request",
+  "observed_at_utc": "2026-11-18T08:58:44.728660+00:00"
+}

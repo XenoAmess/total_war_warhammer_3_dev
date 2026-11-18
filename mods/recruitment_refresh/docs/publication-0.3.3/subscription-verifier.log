@@ -1,0 +1,4 @@
+Setting breakpad minidump AppID = 1142710
+SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561198273714027 [API loaded no]
+{"stage": "subscription_download_verified", "utc": "2026-11-18T09:01:48.285468+00:00", "sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd"}
+{"stage": "online_operations_complete", "utc": "2026-11-18T09:01:48.289194+00:00"}
