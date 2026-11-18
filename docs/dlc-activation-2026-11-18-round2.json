@@ -164,8 +164,9 @@
     "status": "COMPLETED_WITH_EXPLICIT_SCOPE_LIMITS",
     "recruitment_refresh": "../mods/recruitment_refresh/docs/dlc-compatibility-20261118-round2.json",
     "move_capital": "../mods/move_capital/docs/dlc-compatibility-20261118-round2.json",
-    "recruitment_refresh_candidate": "0.3.4 NOT_PUBLISHED",
-    "steam_final_offline": "../mods/recruitment_refresh/docs/acceptance-0.3.4/steam-final-offline.json"
+    "steam_final_offline": "../mods/recruitment_refresh/docs/acceptance-0.3.4/steam-final-offline.json",
+    "recruitment_refresh_release": "0.3.4 PUBLISHED_PUBLIC_DOWNLOAD_VERIFICATION_PENDING",
+    "publication_record": "../mods/recruitment_refresh/docs/workshop-publication-0.3.4.json"
   },
   "multiplayer": "NOT_RUN; still requires a second participant/environment.",
   "steam_final_mode": "intentional_offline",

@@ -1,0 +1,33 @@
+{
+  "publishedfileid": "3830548217",
+  "result": 1,
+  "creator": "76561198273714027",
+  "creator_app_id": 1142710,
+  "consumer_app_id": 1142710,
+  "filename": "",
+  "file_size": "98307",
+  "file_url": "",
+  "hcontent_file": "6946056118719599880",
+  "preview_url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+  "hcontent_preview": "13984720066538470627",
+  "title": "招募候选刷新 | Recruitment Refresh",
+  "description": "[h1]招募候选刷新 / Recruitment Refresh[/h1]\n[b]0.3.4 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]\n\n[b]必需物品：memreader Plus，请订阅并同时启用。单机实测依赖版本 0.15.2。[/b] 迁都为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]独立 Mod[/url]，两者互不依赖。\n\n在人物招募页选择类别，点击“招募”旁的刷新图标。免费，无额外回合冷却，单击刷新、不弹确认。非空普通领主／事务官子类型不足 3 人时补足到 3 人，更多候选保持人数。原版建筑、容量、费用和内容解锁条件保持。多法术系领主与英雄刷新后返回原法术系。\n\n[h2]商队与特殊候选[/h2]\n支持震旦督运总督、混矮运输将领及巴什瓦商队的原版待雇用候选。保留身份、姓名及名额，按原版权重排除旧背景重抽；已有、闲置及在途商队不刷新。混矮在“武装车队”运输将领列表的“招募新队长”标题右侧使用刷新图标，完成后返回该列表；震旦与巴什瓦返回商队招募页。特殊池不补足到 3 人，不授予解锁。\n\n有随机背景的史兰、血裔、四种灾祸领主（Verminlord）及部分晋升／召唤类型，可刷新通过保护检查的现有候选，保留附加特性点数及默认技能。普通随机重抽可能重复天赋或世代。唯一、传奇、不朽、开局、受伤、已招募等人物继续保护；普通及有限来源池保护未知履历，商队另以原版待雇用记录核实。额外经验、技能点或技能会在预检时拒绝刷新。\n\n[b]冰雪宫廷训练结果、固定王朝／科技专属人物、黑色方舟、龙舰提督及营地专用领主不重抽。空池不补员。[/b]\n\n[h2]验收范围[/h2]\n199 项离线测试通过。0.3.4 修复巴什瓦长牙之路刷新后招募页未重新打开的问题。精确最终包在 9.0.5 单机直接补验爪语者生命／野兽／阴影系刷新及法术系恢复；巴什瓦运输将领身份／背景、正常雇用与护卫核对、派遣、空池、在途／待命保护；四种灾祸领主各完成 1→1 刷新及正常雇用，各扣 1000、等级 1，其他池和默认技能保持。\n\n与迁都 0.2.0 共同启用，巴什瓦及 Thanquol 迁都时建筑、等级、所有权、省会标志和所检查的候选池保持，新首都正常雇用通过。实际已刷新／已雇用的旧存档升级至 0.3.4，以及最终 0.3.4 已刷新／已雇用／已迁都的存档冷启动读取通过。此前震旦、混矮和史兰验收保留为历史记录。\n\n测试使用科技瞬时研究、原版候选生成函数、NPC 城镇转让及一次人物移位夹具，不算完整仪式、研究或攻城流程。普通扫威将领刷新 2→3 通过，但原版军队上限 1/1 时仍无法雇用，不计为雇用通过。[b]其他 DLC 派系及有限池未逐项实测，完整商队往返、仪式／训练和原生联机仍未验收；不宣称全派系兼容。[/b]\n\n[h2]实验性联机支持[/h2]\n[b]多人同步未做原生联机验收，不保证无失步。[/b] 全部玩家须启用完全相同的本 Mod 包（包括语言）、memreader Plus 及其他 Mod／依赖版本。各端关闭人物面板，比对版本和候选计划后执行，再核对结果；联机完成后手动重开面板。\n\n混用版本、断线或成员变化可能拒绝或持续等待。单端原生失败不能自动回滚；结果不明或部分完成时停止操作，不自动重试。保留操作前独立存档，异常后读回，不手动清除锁。依赖、引擎或原生结构校验不通过时停用对应刷新。空间不足时隐藏图标；禁用 Mod 不撤销已保存的操作。不宣称全派系或大型改造 Mod 组合兼容。\n\n[h2]English[/h2]\nRequires memreader Plus (SP tested with 0.15.2). Free one-click refresh beside Recruit in Immortal Empires. Nonempty ordinary lord/hero pools fill to at least 3; larger pools retain their counts. Normal costs, capacity and unlock conditions remain. Both lord lore keys and hero subtype tabs are restored after refresh.\n\nOnly currently offered, unhired Cathay, Chaos Dwarf and Bhashiva caravan leaders are eligible. Their identity, name and slot stay intact while the background changes. Owned, idle and travelling caravans are protected. Chaos Dwarfs use the icon beside Recruit New Master in the Military Convoys master list. Bhashiva refresh reopens its dedicated caravan recruitment page. Existing eligible random-background Slann, bloodline, four Verminlord and selected ascension/summoning pools retain their counts, extra traits and default skills; no special unlocks or extra offers are granted.\n\nUnique, immortal, starting, wounded and recruited characters remain protected. Unknown history and extra progression reject ordinary/finite replacements. Ice Court training, fixed dynasty/technology characters, Black Arks, Dragonship Admirals, camp-only lords and empty pools are excluded.\n\n199 offline tests passed. Bhashiva and four Verminlord types now directly tested in the exact cold-loaded 0.3.4 package: Clawspeaker Life/Beasts/Shadows refresh and correct lore restoration; Bhashiva caravan identity/background, native hiring with matching escorts, dispatch, empty pools and idle/active protection; all four Verminlord types refreshed at 1->1 and hired normally for 1000 at rank 1, preserving other pools and default skills. Move Capital 0.2.0 was enabled for Bhashiva and Thanquol relocation, followed by native hiring at the new capitals. Actual refreshed/hired saves survived upgrade to 0.3.4, and final 0.3.4 refreshed/hired/relocated state survived cold save/reload. Earlier Cathay, Chaos Dwarf and Slann checks remain historical evidence.\n\nInstant technology research, original candidate-generation functions, NPC settlement transfers and one lord move were test fixtures, not full ritual/research/conquest playthroughs. Ordinary Bhashiva Sawai refresh passed at 2->3; native army capacity 1/1 still prevented hiring. [b]Other DLC factions and finite types were not individually tested. Full caravan return journeys, ritual/training playthroughs and native multiplayer remain untested.[/b]\n\n[b]Multiplayer is EXPERIMENTAL; OOS-free operation is not guaranteed.[/b] Peers need identical packages/languages and matching dependencies/other Mods. Version/plan checks precede mutation and result checks follow it; reopen MP panels manually. Disconnects or membership changes may reject or stall. Keep a pre-operation save and reload after uncertainty rather than retrying or clearing locks.\n\n[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/recruitment_refresh]源码与验收记录 / Source and acceptance[/url]\n\n[h2]实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg[/img]\n\n[h2]实机：单击刷新后的领主候选 / Lord candidates after one-click refresh[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg[/img]\n\n[h2]实机：牧首招募页刷新图标 / Native Patriarch recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg[/img]\n",
+  "time_created": 1793412332,
+  "time_updated": 1795008870,
+  "visibility": 0,
+  "banned": 0,
+  "ban_reason": "",
+  "subscriptions": 161,
+  "favorited": 15,
+  "lifetime_subscriptions": 201,
+  "lifetime_favorited": 18,
+  "views": 559,
+  "tags": [
+    {
+      "tag": "mod"
+    },
+    {
+      "tag": "campaign"
+    }
+  ]
+}

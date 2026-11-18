@@ -2,7 +2,7 @@
   "schema_version": 1,
   "mod_id": "recruitment_refresh",
   "version": "0.3.4",
-  "release_status": "NATIVE_ACCEPTED_NOT_PUBLISHED",
+  "release_status": "PUBLISHED_PUBLIC_DOWNLOAD_VERIFICATION_PENDING",
   "recorded_at_utc": "2026-11-18T13:13:58.634614+00:00",
   "source_commit": "6ce2c366ba202117e44c55dca894454a92238423",
   "source_parent_commit": "8b6e9b52a2a7169cb875a997d81760d06a029cc5",
@@ -14,7 +14,7 @@
   "L1": "PASS",
   "L2": "PASS",
   "L3": "PASS",
-  "L4": "NOT_RUN",
+  "L4": "PENDING",
   "offline_tests": {
     "shared": 90,
     "mod": 109,
@@ -30,7 +30,7 @@
   "tracked_payload_matches_pack": true,
   "cleanup": "acceptance-0.3.4/cleanup.json",
   "steam_offline": true,
-  "workshop_upload_performed": false,
+  "workshop_upload_performed": true,
   "acceptance_scope": "Incremental exact-package offline single-player DLC acceptance: Bhashiva Clawspeaker lores and Sawai caravan/ordinary pool; four Thanquol Verminlords, native hire and persistence; jointly enabled with unchanged Move Capital 0.2.0. Fixtures and scope limits remain explicit.",
   "limitations": [
     "No complete caravan journey/return, full original ritual/training/research/unlock construction or native multiplayer credit.",
@@ -38,5 +38,13 @@
     "Verminlord extra-trait signatures were empty; no new nonempty trait-copy credit.",
     "Ordinary Bhashiva Sawai hire was blocked by native army cap 1/1, not credited.",
     "The final Bhashiva 0.3.4 save is retained but not reloaded in this session; Bhashiva actual 0.3.3 refreshed-state upgrade and Thanquol final 0.3.4 refreshed-state reload passed."
+  ],
+  "publication_record": "workshop-publication-0.3.4.json",
+  "published_at_utc": "2026-11-18T13:34:30+00:00",
+  "public_verified_at_utc": "2026-11-18T13:39:28.436579+00:00",
+  "publication_pending": [
+    "Remote launcher metadata readback",
+    "Real subscribed package download/hash",
+    "Downloaded subscription frontend identity mount"
   ]
 }

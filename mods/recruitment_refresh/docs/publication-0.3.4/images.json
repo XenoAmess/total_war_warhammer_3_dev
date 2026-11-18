@@ -1,0 +1,33 @@
+[
+  {
+    "file": "preview.png",
+    "url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+    "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+    "status": "PASS",
+    "bytes": 49827
+  },
+  {
+    "slot": 0,
+    "file": "lord-refresh-icon.jpg",
+    "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+    "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+    "status": "PASS",
+    "bytes": 904363
+  },
+  {
+    "slot": 1,
+    "file": "lord-refreshed.jpg",
+    "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+    "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+    "status": "PASS",
+    "bytes": 904683
+  },
+  {
+    "slot": 2,
+    "file": "hero-final.jpg",
+    "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+    "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+    "status": "PASS",
+    "bytes": 887983
+  }
+]

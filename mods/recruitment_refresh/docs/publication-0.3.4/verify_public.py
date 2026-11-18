@@ -1,9 +1,11 @@
 from common import *
 import argparse,html,re
 from concurrent.futures import ThreadPoolExecutor
-parser=argparse.ArgumentParser();parser.add_argument('--mod',required=True,choices=['recruitment_refresh']);parser.parse_args()
-accepted=read(PROJECT.root/'docs/acceptance-results-0.3.4.json');download=read(ROOT/'subscription-download.json')
-if sha(Path(download['pack']))!=accepted['release_pack_sha256']:raise RuntimeError('Downloaded package changed')
+parser=argparse.ArgumentParser();parser.add_argument('--mod',required=True,choices=['recruitment_refresh']);parser.add_argument('--public-only',action='store_true');args=parser.parse_args()
+accepted=read(PROJECT.root/'docs/acceptance-results-0.3.4.json')
+if not args.public_only:
+ download=read(ROOT/'subscription-download.json')
+ if sha(Path(download['pack']))!=accepted['release_pack_sha256']:raise RuntimeError('Downloaded package changed')
 expected=(PROJECT.root/'workshop/description.bbcode').read_text(encoding='utf-8').strip()
 for attempt in range(6):
  row=public_details();save('public-after-'+str(attempt)+'.json',row)
@@ -45,9 +47,14 @@ def check_image(record):
  return {**record,'status':'PASS','bytes':len(raw)}
 with ThreadPoolExecutor(max_workers=4) as pool:images=list(pool.map(check_image,requests))
 save('images.json',images)
-metadata=read(ROOT/'remote-launcher-metadata.json')
-from workshop_metadata import build_launcher_metadata
-from workshop_launcher import owned_values
-if not all(owned_values(metadata,k)==[v] for k,v in build_launcher_metadata(PROJECT).items()):raise RuntimeError('Launcher metadata mismatch')
+if not args.public_only:
+ metadata=read(ROOT/'remote-launcher-metadata.json')
+ from workshop_metadata import build_launcher_metadata
+ from workshop_launcher import owned_values
+ if not all(owned_values(metadata,k)==[v] for k,v in build_launcher_metadata(PROJECT).items()):raise RuntimeError('Launcher metadata mismatch')
 result={'status':'PASS','mod_id':'recruitment_refresh','version':'0.3.4','item_id':'3830548217','observed_at_utc':now(),'pack_sha256':accepted['release_pack_sha256'],'public_description':'PASS','public_changelog':'PASS','required_dependency':'PASS','launcher_metadata':'PASS','cover':'PASS','gallery':'PASS_UNCHANGED_3_IMAGES','real_subscribed_download':'PASS'}
-save('public-verification.json',result);event('public_verification_passed',**result)
+if args.public_only:
+ result.update(status='PUBLIC_METADATA_PASS',launcher_metadata='NOT_RUN_ACCOUNT_BUSY',real_subscribed_download='NOT_RUN_ACCOUNT_BUSY')
+ save('public-body-verification.json',result);event('public_body_verification_passed',**result)
+else:
+ save('public-verification.json',result);event('public_verification_passed',**result)

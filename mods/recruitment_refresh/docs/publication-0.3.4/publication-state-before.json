@@ -1,0 +1,490 @@
+{
+  "account_activity_before_sdk_init": {
+    "owner": "76561198273714027",
+    "status": "PUBLIC_PRESENCE_IDLE",
+    "game": null,
+    "online_state": "online",
+    "observed_at_utc": "2026-11-18T08:59:24.172696+00:00",
+    "server_date": "Wed, 18 Nov 2026 08:59:24 GMT",
+    "source": "steam_community_public_presence",
+    "response_sha256": "e6f5d4a34516886932733ea341e2a57304f170b3eb394cf936d25f3e0e324dd7"
+  },
+  "owner": "76561198273714027",
+  "app_id": 1142710,
+  "status": "PUBLISHED_PUBLIC_SUBSCRIBED_VERIFIED",
+  "item_id": "3830548217",
+  "required_items": [
+    "3811098873"
+  ],
+  "pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "version": "0.3.3",
+  "uploaded_at_utc": "2026-11-18T08:59:32+00:00",
+  "verified_at_utc": "2026-11-18T09:07:24.236785+00:00",
+  "visibility": "public",
+  "downloaded_pack_bytes": 98161,
+  "downloaded_pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+  "steam_final_mode": "offline",
+  "mod_id": "recruitment_refresh",
+  "release_acceptance": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS",
+    "L4": "PASS",
+    "scope": "Incremental exact cold-package single-player DLC acceptance: Chaos Dwarf convoy UI/identity/background/hiring/escorts, idle and active protection, empty pool, native dispatch and Death-lore lord restoration/default skills/hiring; jointly enabled with Move Capital 0.2.0. See explicit fixture and coverage limits.",
+    "release_pack_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd"
+  },
+  "uploaded_version": "0.3.3",
+  "uploaded_title": "招募候选刷新 | Recruitment Refresh",
+  "description_sha256": "0acbbdb8638e5e69a436ebea67c90e1b291e40bc9fe055166648c6c7a10f49df",
+  "preview_sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+  "final_offline_receipt": {
+    "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-20261118\\final-after-all-checks.json",
+    "sha256": "618a3330458c9efe6fc9b813b4c51572a84db5864eb9cc2570e79c63dc88660a"
+  },
+  "launcher_metadata": {
+    "pack_name": "xatw3_campaign_utilities.pack",
+    "game_version": "589824"
+  },
+  "launcher_repair_record": "docs/launcher-repair-20261031.json",
+  "gallery": [
+    {
+      "file": "lord-refresh-icon.jpg",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "caption": "实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg",
+      "index": 0
+    },
+    {
+      "file": "lord-refreshed.jpg",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "caption": "实机：单击刷新后的领主候选 / Lord candidates after one-click refresh",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg",
+      "index": 1
+    },
+    {
+      "file": "hero-final.jpg",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "caption": "实机：牧首招募页刷新图标 / Native Patriarch recruitment icon",
+      "url": "https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg",
+      "index": 2
+    }
+  ],
+  "previous_release_verification": {
+    "anonymous_metadata_verification": "PASS",
+    "anonymous_page_verification": "PASS",
+    "dependency_verification": "PASS",
+    "changelog_verification": "PENDING_SEPARATE_WEB_CHECK",
+    "preview_hash_verification": "PASS",
+    "download_hash_verification": "PASS",
+    "verification_for_version": "0.2.1",
+    "screenshots_status": "DEFERRED_BY_USER",
+    "source_code_commit": "1c836ba7ec56f2b7c424137b742230663bb152b3",
+    "launcher_metadata_verification": "PASS",
+    "launcher_metadata_verified_at_utc": "2026-10-31T14:56:36.276Z",
+    "actual_subscription_download": {
+      "status": "PASS",
+      "mod_id": "recruitment_refresh",
+      "item_id": "3830548217",
+      "flags": 5,
+      "sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+      "bytes": 41622,
+      "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+      "observed_at_utc": "2026-10-31T14:56:33.026406+00:00"
+    },
+    "legacy_launcher_backend_verification": "PASS",
+    "legacy_launcher_backend": {
+      "mod_id": "xatw3_campaign_utilities.pack",
+      "title": "招募候选刷新 | Recruitment Refresh",
+      "owner": "76561198273714027",
+      "workshop_id": "3830548217",
+      "pack_file": "C:/SteamLibrary/steamapps/workshop/content/1142710/3830548217/xatw3_campaign_utilities.pack",
+      "category": "campaign",
+      "subscribed": true,
+      "up_to_date": true,
+      "conflicted": false,
+      "sha256": "80f89c5faf3f0ff7c9e8873190f1f0d07dc38590b84e632983716a31210ef5a0",
+      "bytes": 41622,
+      "observed_at_utc": "2026-10-31T14:56:36.276Z",
+      "status": "PASS",
+      "scope": "Installed legacy launcher 3.25.3 greenworks.getModInformation; GUI pixels and gameplay not tested"
+    },
+    "anonymous_description_verification": "PASS",
+    "launcher_metadata_remote": {
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ],
+      "game_version": [
+        "589824"
+      ]
+    }
+  },
+  "verification_for_version": "0.2.2",
+  "source_code_commit": "0a13e332b10dd514d94e3cc0273fd7bf7e19c720",
+  "screenshots_status": "UPLOADED_GALLERY_AND_INLINE_BBCODE_VERIFIED",
+  "anonymous_description_verification": "PASS",
+  "download_hash_verification": "PASS",
+  "launcher_metadata_verification": "PASS",
+  "launcher_metadata_remote": {
+    "game_version": [
+      "589824"
+    ],
+    "PACK_NAME": [
+      "xatw3_campaign_utilities.pack"
+    ]
+  },
+  "actual_subscription_download": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "sha256": "b260913929e90fa06df949098d03e5d0c72c291fabd12210a2a4d1f4e94255a2",
+    "observed_at_utc": "2026-11-01T14:32:26.576579+00:00"
+  },
+  "gallery_readback": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "status": "PASS",
+    "images": [
+      {
+        "slot": 0,
+        "file": "lord-refresh-icon.jpg",
+        "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+        "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78"
+      },
+      {
+        "slot": 1,
+        "file": "lord-refreshed.jpg",
+        "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+        "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c"
+      },
+      {
+        "slot": 2,
+        "file": "hero-final.jpg",
+        "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+        "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345"
+      }
+    ],
+    "launcher_metadata": {
+      "game_version": [
+        "589824"
+      ],
+      "PACK_NAME": [
+        "xatw3_campaign_utilities.pack"
+      ]
+    },
+    "observed_at_utc": "2026-11-01T14:32:35.436848+00:00"
+  },
+  "steam_final_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-01T15:00:51.826022+00:00",
+    "nonce": "f461b0b2c45080016e6c7a9565f482fb",
+    "reason": "observed",
+    "steam": {
+      "pid": 6188,
+      "birth_filetime": "134380188129027648",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-01T15:00:51.826022+00:00",
+      "nonce": "f461b0b2c45080016e6c7a9565f482fb",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 6188,
+        "birth_filetime": "134380188129027648",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 6188,
+        "birth_filetime": "134380188129027648",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "2109288292480",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "temporary_cef_endpoint": "CLOSED",
+  "change_notes_sha256": "6a7ea650837bf8715d9e6963e71119707db8c2594a0efd4a8a66a3b422cc361d",
+  "public_details": {
+    "publishedfileid": "3830548217",
+    "result": 1,
+    "creator": "76561198273714027",
+    "creator_app_id": 1142710,
+    "consumer_app_id": 1142710,
+    "filename": "",
+    "file_size": "98161",
+    "file_url": "",
+    "hcontent_file": "1276140388933736034",
+    "preview_url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+    "hcontent_preview": "13984720066538470627",
+    "title": "招募候选刷新 | Recruitment Refresh",
+    "description": "[h1]招募候选刷新 / Recruitment Refresh[/h1]\n[b]0.3.3 Alpha · 超凡帝国 · Windows x64 / WH3 9.0.5[/b]\n\n[b]必需物品：memreader Plus，请订阅并同时启用。单机实测依赖版本 0.15.2。[/b] 迁都为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933]独立 Mod[/url]，两者互不依赖。\n\n在人物招募页选择类别，点击“招募”旁的刷新图标。免费，无额外回合冷却，单击刷新、不弹确认。非空普通领主／事务官子类型不足 3 人时补足到 3 人，更多候选保持人数。原版建筑、容量、费用和内容解锁条件保持。多法术系领主与英雄刷新后返回原法术系。\n\n[h2]商队与特殊候选[/h2]\n支持震旦督运总督、混矮运输将领及巴什瓦商队的原版待雇用候选。保留身份、姓名及名额，按原版权重排除旧背景重抽；已有、闲置及在途商队不刷新。混矮在“武装车队”运输将领列表的“招募新队长”标题右侧使用刷新图标，完成后返回该列表；震旦与巴什瓦返回商队招募页。特殊池不补足到 3 人，不授予解锁。\n\n有随机背景的史兰、血裔及部分晋升／召唤类型，可刷新通过保护检查的现有候选，保留附加特性点数及默认技能。普通随机重抽可能重复天赋或世代。唯一、传奇、不朽、开局、受伤、已招募等人物继续保护；普通及有限来源池保护未知履历，商队另以原版待雇用记录核实。额外经验、技能点或技能会在预检时拒绝刷新。\n\n[b]冰雪宫廷训练结果、固定王朝／科技专属人物、黑色方舟、龙舰提督及营地专用领主不重抽。空池不补员。[/b]\n\n[h2]验收范围[/h2]\n197 项离线测试通过。0.3.3 精确最终包在 9.0.5 单机完成混矮车队两次 1→1、闲置／在途保护、迁都后原生派遣、刷新后雇用及护卫兵种／数量核对、空池保护；死亡系术士先知 2→3 后仍返回死亡系，默认技能与其他池保持，且能在迁都后的工厂首都正常雇用。同期启用迁都 0.2.0，两处城镇建筑、等级、所有权和省会标志保持。\n\n迁都目标使用 NPC 城镇转让夹具，车队容量使用原版科技瞬时研究夹具，不算攻城或完整研究流程。0.3.2 的震旦商队和史兰验收为历史记录；[b]巴什瓦仍未拥有，爪语者和巴什瓦运输将领未直接实测。其他 DLC 派系及有限池未逐项实测，没有完整旅程、仪式／训练或刷新后存读档的全面验收。[/b]\n\n[h2]实验性联机支持[/h2]\n[b]多人同步未做原生联机验收，不保证无失步。[/b] 全部玩家须启用完全相同的本 Mod 包（包括语言）、memreader Plus 及其他 Mod／依赖版本。各端关闭人物面板，比对版本和候选计划后执行，再核对结果；联机完成后手动重开面板。\n\n混用版本、断线或成员变化可能拒绝或持续等待。单端原生失败不能自动回滚；结果不明或部分完成时停止操作，不自动重试。保留操作前独立存档，异常后读回，不手动清除锁。依赖、引擎或原生结构校验不通过时停用对应刷新。空间不足时隐藏图标；禁用 Mod 不撤销已保存的操作。不宣称全派系或大型改造 Mod 组合兼容。\n\n[h2]English[/h2]\nRequires memreader Plus (SP tested with 0.15.2). Free one-click refresh beside Recruit in Immortal Empires. Nonempty ordinary lord/hero pools fill to at least 3; larger pools retain their counts. Normal costs, capacity and unlock conditions remain. Both lord lore keys and hero subtype tabs are restored after refresh.\n\nOnly currently offered, unhired Cathay, Chaos Dwarf and Bhashiva caravan leaders are eligible. Their identity, name and slot stay intact while the background changes. Owned, idle and travelling caravans are protected. Chaos Dwarfs use the icon beside Recruit New Master in the Military Convoys master list. Existing eligible random-background Slann, bloodline and selected ascension/summoning pools retain their counts, extra traits and default skills; no special unlocks or extra offers are granted.\n\nUnique, immortal, starting, wounded and recruited characters remain protected. Unknown history and extra progression reject ordinary/finite replacements. Ice Court training, fixed dynasty/technology characters, Black Arks, Dragonship Admirals, camp-only lords and empty pools are excluded.\n\n197 offline tests passed. Exact cold-package SP checks cover Chaos Dwarf refresh twice at 1->1, idle/active protection, dispatch after moving capital, native hiring with background-matched escorts, empty pools, and Death-lore Sorcerer Prophet refresh at 2->3 with the Death page/default skills restored and native hiring at the new factory capital. Move Capital 0.2.0 was enabled alongside it. Settlement transfer and instant vanilla convoy-capacity research were fixtures, not complete conquest/research playthroughs. [b]Bhashiva/Clawspeakers remain unowned and untested directly; other DLC factions and finite types were not individually tested. No complete journey, ritual/training, refreshed-state save/reload or native multiplayer credit.[/b]\n\n[b]Multiplayer is EXPERIMENTAL; OOS-free operation is not guaranteed.[/b] Peers need identical packages/languages and matching dependencies/other Mods. Version/plan checks precede mutation and result checks follow it; reopen MP panels manually. Disconnects or membership changes may reject or stall. Keep a pre-operation save and reload after uncertainty rather than retrying or clearing locks.\n\n[url=https://github.com/XenoAmess/total_war_warhammer_3_dev/tree/main/mods/recruitment_refresh]源码与验收记录 / Source and acceptance[/url]\n\n[h2]实机：领主招募页刷新图标，避让原生按钮 / Native lord recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refresh-icon.jpg[/img]\n\n[h2]实机：单击刷新后的领主候选 / Lord candidates after one-click refresh[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/lord-refreshed.jpg[/img]\n\n[h2]实机：牧首招募页刷新图标 / Native Patriarch recruitment icon[/h2]\n[img]https://raw.githubusercontent.com/XenoAmess/total_war_warhammer_3_dev/main/mods/recruitment_refresh/workshop/screenshots/hero-final.jpg[/img]\n",
+    "time_created": 1793412332,
+    "time_updated": 1794992372,
+    "visibility": 0,
+    "banned": 0,
+    "ban_reason": "",
+    "subscriptions": 157,
+    "favorited": 15,
+    "lifetime_subscriptions": 197,
+    "lifetime_favorited": 18,
+    "views": 548,
+    "tags": [
+      {
+        "tag": "mod"
+      },
+      {
+        "tag": "campaign"
+      }
+    ]
+  },
+  "download_verification": {
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "sha256": "bea9860afde96264a8eeb89a884890c2c6174e5b07d6368f4d9178b2cc46196e",
+    "observed_at_utc": "2026-11-10T19:56:50.063479+00:00"
+  },
+  "final_steam_offline": {
+    "schema": "xar.steam-offline-state-probe/v2",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+    "nonce": "6f08b936244e304e8734bffb156e5fb7",
+    "reason": "observed",
+    "steam": {
+      "pid": 5604,
+      "birth_filetime": "134388142408000726",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.15.70.27"
+    },
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19452568,
+      "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+      "file_id": "281474977134280",
+      "mtime_ns": "1792620918000000000"
+    },
+    "endpoint": null,
+    "diagnostics": [],
+    "observation_method": "native_current_user_byte",
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-10T19:57:59.740310+00:00",
+      "nonce": "6f08b936244e304e8734bffb156e5fb7",
+      "module_base": "140711393361920",
+      "module_size": 19730432,
+      "value_rva": "18435783",
+      "value_address": "140711411797703",
+      "producer_rva": "6548332",
+      "producer_anchor_hex": "440fb6055363b500488d155da67700488bcbe80d713d00",
+      "producer_anchor_sha256": "16316f5b39bac43273fac08a65f62c45af1d41938ce2d13d830ab16e1474966a",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "steam_after": {
+        "pid": 5604,
+        "birth_filetime": "134388142408000726",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.15.70.27"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19452568,
+        "sha256": "cd9226db4e6c28942df70c22c0475d91fdd62cba5f100baae2d65af57cabb610",
+        "file_id": "281474977134280",
+        "mtime_ns": "1792620918000000000"
+      },
+      "tray_manager_pointer_rva": "18428640",
+      "tray_manager_address": "1853688717440",
+      "tray_state_offset": "340",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    },
+    "status": "offline",
+    "offline_mode": true
+  },
+  "native_multiplayer": "NOT_RUN_USER_REQUEST",
+  "pack_bytes": 98161,
+  "last_download": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "item_id": "3830548217",
+    "flags": 5,
+    "subscribed": true,
+    "installed": true,
+    "sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+    "bytes": 98161,
+    "pack": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "observed_at_utc": "2026-11-18T09:01:48.284608+00:00"
+  },
+  "last_publication_record": "docs/workshop-publication-0.3.3.json",
+  "steam_final_offline_receipt": {
+    "schema": "wh3.release-steam-offline/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-18T09:07:23.937494+00:00",
+    "nonce": "1e288caa84f9babfe131732898fd9a2e",
+    "status": "offline",
+    "steam": {
+      "pid": 16112,
+      "birth_filetime": "134394661494933804",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.23.65.88"
+    },
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19675800,
+      "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+      "file_id": "1125899908071526",
+      "mtime_ns": "1794535550000000000"
+    },
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-18T09:07:24.178779+00:00",
+      "nonce": "1e288caa84f9babfe131732898fd9a2e",
+      "module_base": "140711352926208",
+      "module_size": 19959808,
+      "value_rva": "18653399",
+      "value_address": "140711371579607",
+      "producer_rva": "6691596",
+      "producer_anchor_hex": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "producer_anchor_sha256": "e2ee13da1019c3cb41a999d4fda37bde192574390690cb2328c903de7fdd54c2",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 16112,
+        "birth_filetime": "134394661494933804",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "steam_after": {
+        "pid": 16112,
+        "birth_filetime": "134394661494933804",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "tray_manager_pointer_rva": "18645800",
+      "tray_manager_address": "2282343833728",
+      "tray_state_offset": "352",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    }
+  },
+  "subscriber_mount": {
+    "status": "PASS",
+    "mod_id": "recruitment_refresh",
+    "source": "C:\\SteamLibrary\\steamapps\\workshop\\content\\1142710\\3830548217\\xatw3_campaign_utilities.pack",
+    "source_sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd",
+    "installation_method": "byte-identical copy from verified real subscription folder",
+    "frontend_mount_only": true,
+    "business_retest": false,
+    "installed": [
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\xatw3_campaign_utilities.pack",
+        "sha256": "51af917201f2b82aac216783b3b5291ac8198671a444182c9f3a15b0cfbe73cd"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\zz_xatw3_release_mount.pack",
+        "sha256": "a14a9cb3e1eda0eff472712ba93300a0c22c90d52378c0e70b1dde63b1c78cde"
+      },
+      {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Total War WARHAMMER III\\data\\memreader_plus.pack",
+        "sha256": "0c751ae032bb51718c267cd06b67c648035367c13338763edf9a689be4ce9ae1"
+      }
+    ],
+    "pid": 20968,
+    "cleaned": true,
+    "preferences_restored": true,
+    "user_script_restored": true,
+    "steam_intentionally_offline": true,
+    "release_identity": "495317074cb7210a6fb94dd6a1cdf6a6f499abe6470ca84fbce4cc6eb40fbcc6",
+    "completed_at_utc": "2026-11-18T09:04:09.829053+00:00"
+  }
+}

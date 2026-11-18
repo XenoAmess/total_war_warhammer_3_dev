@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "main",
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217&l=schinese",
+    "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-034-20261118\\public-main-0.html",
+    "sha256": "1bd808f7b67e8ce221dfd49b0e9d320353f2a47e83e9d28665e284bce68fcd29",
+    "bytes": 99011,
+    "status": "PASS"
+  },
+  {
+    "kind": "changelog",
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=schinese",
+    "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-034-20261118\\public-changelog-0.html",
+    "sha256": "1eb08203bb0d4a068e9780411467b280d9c7a703ac8af20f141d372797970540",
+    "bytes": 68051,
+    "status": "PASS"
+  }
+]

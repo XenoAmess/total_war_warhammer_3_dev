@@ -5,7 +5,7 @@
   "recorded_at_utc": "2026-11-18T12:49:18.331606+00:00",
   "machine_id": "pc-20260924rtuf-f11af23c08",
   "source_parent_commit": "8b6e9b52a2a7169cb875a997d81760d06a029cc5",
-  "workshop_upload_performed": false,
+  "workshop_upload_performed": true,
   "game": {
     "version": "9.0.5.0",
     "build_id": 26403568,
@@ -434,5 +434,17 @@
         }
       }
     }
+  },
+  "release_status": "PUBLISHED_PUBLIC_DOWNLOAD_VERIFICATION_PENDING",
+  "workshop_upload_performed_during_native_acceptance": false,
+  "publication_followup": {
+    "status": "PUBLISHED_PUBLIC_DOWNLOAD_VERIFICATION_PENDING",
+    "publication_record": "workshop-publication-0.3.4.json",
+    "accepted_package_unchanged": true,
+    "pending_verification": [
+      "Remote launcher metadata readback",
+      "Real subscribed package download/hash",
+      "Downloaded subscription frontend identity mount"
+    ]
   }
 }

@@ -1,0 +1,125 @@
+2026-11-18T13:32:40.444015+00:00 inspect 
+Traceback (most recent call last):
+  File "D:\workspace\.codex-wh3-runtime\launcher-both-followup-20261031T141338Z\steam_control_force.py", line 20, in <module>
+    assert ports,'No owned Steam CEF debugger available'
+           ^^^^^
+AssertionError: No owned Steam CEF debugger available
+
+2026-11-18T13:32:41.753871+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:32:42.958551+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:32:44.186202+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:32:45.934705+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:13.985370+00:00 online {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+{"requested": "GoOnline"}
+
+
+2026-11-18T13:33:14.181953+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:14.894051+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:15.606010+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:16.319938+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:17.031841+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:17.743511+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:18.453125+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:19.166113+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:19.874530+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:20.581146+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:21.293458+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:22.000775+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:22.705493+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:23.413519+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:24.112588+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": true, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:33:24.814882+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:34:33.447707+00:00 inspect {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:34:33.647101+00:00 offline {"steam_pid": 19224, "port": 8080, "target": "20D660DCB2C8B8FBE8F4AE84441A74F2", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+{"requested": "GoOffline"}
+
+
+2026-11-18T13:34:50.097576+00:00 inspect 
+Traceback (most recent call last):
+  File "D:\workspace\.codex-wh3-runtime\launcher-both-followup-20261031T141338Z\steam_control_force.py", line 20, in <module>
+    assert ports,'No owned Steam CEF debugger available'
+           ^^^^^
+AssertionError: No owned Steam CEF debugger available
+
+2026-11-18T13:34:51.403335+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:52.605338+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:53.810635+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:55.022867+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:56.232362+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:57.441972+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:58.656461+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:34:59.855164+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:35:01.064185+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:35:02.264666+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:35:04.106278+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": null}}
+
+
+2026-11-18T13:35:05.585474+00:00 inspect {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+
+
+2026-11-18T13:35:06.092870+00:00 offline {"steam_pid": 20940, "port": 8080, "target": "382153B3791C5FD2736098F4C20EBC59", "state": {"canGoOffline": true, "canGoOnline": true, "offline": false, "title": "SharedJSContext", "steamid": "76561198273714027"}}
+{"requested": "GoOffline"}
+
+

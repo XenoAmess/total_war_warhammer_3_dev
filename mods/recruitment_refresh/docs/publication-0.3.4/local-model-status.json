@@ -1,0 +1,29 @@
+{
+  "available": false,
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "open-h3-2k",
+        "object": "model",
+        "owned_by": "local",
+        "shared_gpu_queue": true,
+        "root": "/home/ubuntu/workspace/xenoamess_bake_videos/models/Open-H3-Regenerate-2K-IC",
+        "sizes": [
+          "2560x1440",
+          "1440x2560",
+          "3840x2160"
+        ],
+        "draft_generation": false,
+        "native_resolutions": true,
+        "four_k_max_windows_per_load": 1
+      }
+    ]
+  },
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-11-18T13:20:33.585105+00:00",
+  "base_url": "http://192.168.1.11:8080/v1",
+  "configured_model": "qwen38-coder",
+  "candidate_posts": 0,
+  "fallback_used": false
+}

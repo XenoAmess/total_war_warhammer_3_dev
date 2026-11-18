@@ -1,0 +1,6 @@
+{
+  "stage": "before Steam restart",
+  "error": "HTTP 429 on fresh public presence",
+  "upload_submitted": false,
+  "steam_mode_changed": false
+}

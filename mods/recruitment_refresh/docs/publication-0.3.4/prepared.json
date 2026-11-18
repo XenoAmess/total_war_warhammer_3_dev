@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.4",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-11-18T13:32:31.359968+00:00",
+  "source_commit": "6ce2c366ba202117e44c55dca894454a92238423",
+  "publication_input_commit": "090a13639715558e3df21200c9aff2af5bfbd440",
+  "pack_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "bytes": 98307,
+  "acceptance": {
+    "L0": "PASS",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS"
+  },
+  "description_sha256": "669e5aed711c537d5ebbfcc9e09fb57bf60f28bf224ded8930f48438022170ea",
+  "change_notes_sha256": "963446409810da009bce07e3f1357bea2e608e6fb28c8b524555b8adb3a53f46",
+  "preview_sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+  "existing_gallery_count": 3,
+  "production_source_changed": false,
+  "local_model": {
+    "configured_model": "qwen38-coder",
+    "available": false,
+    "candidate_posts": 0,
+    "fallback_used": false,
+    "receipt": "local-model-status.json"
+  }
+}

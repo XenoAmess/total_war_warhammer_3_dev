@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "mod_id": "recruitment_refresh",
+  "version": "0.3.4",
+  "status": "PUBLISHED_PUBLIC_DOWNLOAD_VERIFICATION_PENDING",
+  "item_id": "3830548217",
+  "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217",
+  "source_commit": "6ce2c366ba202117e44c55dca894454a92238423",
+  "publication_input_commit": "090a13639715558e3df21200c9aff2af5bfbd440",
+  "pack_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+  "pack_bytes": 98307,
+  "release_identity": "5a958457fb30b620e246ee928b180244cb0ba5a148c41c4edb5cf16936e84bbe",
+  "uploaded_at_utc": "2026-11-18T13:34:30+00:00",
+  "public_verified_at_utc": "2026-11-18T13:39:28.436579+00:00",
+  "user_instruction": "发布到创意工坊",
+  "upload_count": 1,
+  "upload_callback": "PASS",
+  "public_verification": {
+    "status": "PUBLIC_METADATA_PASS",
+    "mod_id": "recruitment_refresh",
+    "version": "0.3.4",
+    "item_id": "3830548217",
+    "observed_at_utc": "2026-11-18T13:39:28.436579+00:00",
+    "pack_sha256": "0d28ee92aa0bf1f5a9c3d7d7331fec682ece2def45c90341f084726607d3bf9d",
+    "public_description": "PASS",
+    "public_changelog": "PASS",
+    "required_dependency": "PASS",
+    "launcher_metadata": "NOT_RUN_ACCOUNT_BUSY",
+    "cover": "PASS",
+    "gallery": "PASS_UNCHANGED_3_IMAGES",
+    "real_subscribed_download": "NOT_RUN_ACCOUNT_BUSY"
+  },
+  "description_sha256": "669e5aed711c537d5ebbfcc9e09fb57bf60f28bf224ded8930f48438022170ea",
+  "change_notes_sha256": "963446409810da009bce07e3f1357bea2e608e6fb28c8b524555b8adb3a53f46",
+  "public_pages": [
+    {
+      "kind": "main",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217&l=schinese",
+      "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-034-20261118\\public-main-0.html",
+      "sha256": "1bd808f7b67e8ce221dfd49b0e9d320353f2a47e83e9d28665e284bce68fcd29",
+      "bytes": 99011,
+      "status": "PASS"
+    },
+    {
+      "kind": "changelog",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/changelog/3830548217?l=schinese",
+      "path": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-034-20261118\\public-changelog-0.html",
+      "sha256": "1eb08203bb0d4a068e9780411467b280d9c7a703ac8af20f141d372797970540",
+      "bytes": 68051,
+      "status": "PASS"
+    }
+  ],
+  "images": [
+    {
+      "file": "preview.png",
+      "url": "https://images.steamusercontent.com/ugc/13984720066538470627/2365FA70617FE91F7ECE536B6E1DDE85EE8BA6A2/",
+      "sha256": "e74c39e78c26cda68c1c1058d103213496b66cba3a2bd74e57e55d54aa6777f0",
+      "status": "PASS",
+      "bytes": 49827
+    },
+    {
+      "slot": 0,
+      "file": "lord-refresh-icon.jpg",
+      "url": "https://images.steamusercontent.com/ugc/9751051178397961117/73144DAF9C93E240FF4F0E2AEE6BB3E0E5DC7619/",
+      "sha256": "813a3fcf8cdd856e75a7e4ec5e57e2cabf8ed91ea664c091fbbfd2b61f52cc78",
+      "status": "PASS",
+      "bytes": 904363
+    },
+    {
+      "slot": 1,
+      "file": "lord-refreshed.jpg",
+      "url": "https://images.steamusercontent.com/ugc/11001269906930278465/4507FC84830F6957F529E1D2BAA54D75712398F0/",
+      "sha256": "752ec52bb8613c350f8b4d0165bd42f9ae9757deeb5332ef5a72181cc647e09c",
+      "status": "PASS",
+      "bytes": 904683
+    },
+    {
+      "slot": 2,
+      "file": "hero-final.jpg",
+      "url": "https://images.steamusercontent.com/ugc/15975116264728483314/22886B85ED03FFC3186DC59307116F52D6733A72/",
+      "sha256": "63570df489333ed6e304e9a769de1b6ee3d603b95406f616c50c273dfb46f345",
+      "status": "PASS",
+      "bytes": 887983
+    }
+  ],
+  "acceptance_file": "acceptance-results-0.3.4.json",
+  "acceptance_scope": "Incremental exact-package offline single-player DLC acceptance: Bhashiva Clawspeaker lores and Sawai caravan/ordinary pool; four Thanquol Verminlords, native hire and persistence; jointly enabled with unchanged Move Capital 0.2.0. Fixtures and scope limits remain explicit.",
+  "account_occupancy": {
+    "before_upload": "Fresh strict public full-profile idle checks; no account takeover",
+    "after_upload": "BUSY: Crusader Kings III reported on another machine; no verification SDK initialized",
+    "evidence": "publication-0.3.4/post-upload-occupancy-block.json"
+  },
+  "pending_verification": [
+    "Remote launcher metadata readback",
+    "Real subscribed package download/hash",
+    "Downloaded subscription frontend identity mount"
+  ],
+  "native_acceptance_unchanged": true,
+  "limitations": [
+    "No complete caravan journey/return, full original ritual/training/research/unlock construction or native multiplayer credit.",
+    "Other newly owned DLC campaigns and finite families are not individually native-tested.",
+    "Verminlord extra-trait signatures were empty; no new nonempty trait-copy credit.",
+    "Ordinary Bhashiva Sawai hire was blocked by native army cap 1/1, not credited.",
+    "The final Bhashiva 0.3.4 save is retained but not reloaded in this session; Bhashiva actual 0.3.3 refreshed-state upgrade and Thanquol final 0.3.4 refreshed-state reload passed."
+  ],
+  "steam_final_mode": "offline",
+  "steam_final_receipt": {
+    "schema": "wh3.release-steam-offline/v1",
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-18T13:49:20.736189+00:00",
+    "nonce": "9aab1dcd6c587cd2161845fffad49345",
+    "status": "offline",
+    "steam": {
+      "pid": 16040,
+      "birth_filetime": "134394825114724374",
+      "exe": "D:\\steam\\steam.exe",
+      "file_version": "11.23.65.88"
+    },
+    "offline_mode": true,
+    "observation_method": "native_current_user_byte",
+    "source": {
+      "path": "D:\\steam\\SteamUI.dll",
+      "bytes": 19675800,
+      "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+      "file_id": "1125899908071526",
+      "mtime_ns": "1794535550000000000"
+    },
+    "native_evidence": {
+      "machine_id": "pc-20260924rtuf-f11af23c08",
+      "observed_at_utc": "2026-11-18T13:49:20.988998+00:00",
+      "nonce": "9aab1dcd6c587cd2161845fffad49345",
+      "module_base": "140711631781888",
+      "module_size": 19959808,
+      "value_rva": "18653399",
+      "value_address": "140711650435287",
+      "producer_rva": "6691596",
+      "producer_anchor_hex": "440fb605c385b600488d15c5297800488bcbe8dd0a3e00",
+      "producer_anchor_sha256": "e2ee13da1019c3cb41a999d4fda37bde192574390690cb2328c903de7fdd54c2",
+      "raw_samples": [
+        1,
+        1
+      ],
+      "steam_before": {
+        "pid": 16040,
+        "birth_filetime": "134394825114724374",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "steam_after": {
+        "pid": 16040,
+        "birth_filetime": "134394825114724374",
+        "exe": "D:\\steam\\steam.exe",
+        "file_version": "11.23.65.88"
+      },
+      "source_before": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "source_after": {
+        "path": "D:\\steam\\SteamUI.dll",
+        "bytes": 19675800,
+        "sha256": "2dfb0a5d50dd90667549cc7d413c7bfb0794c9af4ebaf08bf1cf7d938a11ea93",
+        "file_id": "1125899908071526",
+        "mtime_ns": "1794535550000000000"
+      },
+      "tray_manager_pointer_rva": "18645800",
+      "tray_manager_address": "2516192927872",
+      "tray_state_offset": "352",
+      "tray_state_samples": [
+        4,
+        4
+      ]
+    }
+  },
+  "temporary_steam_debugging_removed": true,
+  "publication_test_files_installed": false,
+  "publication_game_started": false,
+  "runtime_root": "D:\\workspace\\.codex-wh3-runtime\\dlc-release-034-20261118",
+  "local_model": {
+    "available": false,
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "open-h3-2k",
+          "object": "model",
+          "owned_by": "local",
+          "shared_gpu_queue": true,
+          "root": "/home/ubuntu/workspace/xenoamess_bake_videos/models/Open-H3-Regenerate-2K-IC",
+          "sizes": [
+            "2560x1440",
+            "1440x2560",
+            "3840x2160"
+          ],
+          "draft_generation": false,
+          "native_resolutions": true,
+          "four_k_max_windows_per_load": 1
+        }
+      ]
+    },
+    "machine_id": "pc-20260924rtuf-f11af23c08",
+    "observed_at_utc": "2026-11-18T13:20:33.585105+00:00",
+    "base_url": "http://192.168.1.11:8080/v1",
+    "configured_model": "qwen38-coder",
+    "candidate_posts": 0,
+    "fallback_used": false
+  },
+  "evidence": [
+    {
+      "file": "publication-0.3.4/account-before-child.json",
+      "sha256": "18c0b7503377c33cd078f176fc681632a0e76113873b1ed31e3d0dc4515a39fc",
+      "bytes": 346
+    },
+    {
+      "file": "publication-0.3.4/account-before-online.json",
+      "sha256": "59191c90bc70cd7217a1ed37a9f064cace4e15357d36ac475e709d4a95083cf7",
+      "bytes": 347
+    },
+    {
+      "file": "publication-0.3.4/account-before-publisher-sdk.json",
+      "sha256": "337876d7c4abb990d30fd8cb9dcbebd517db1f1fcc47b9d72ea8006ebaba2e35",
+      "bytes": 346
+    },
+    {
+      "file": "publication-0.3.4/account-before-restart.json",
+      "sha256": "e50a1d8240270f90bd0388a68b0eebed28f40d3c2cb9f0b441860ad7eeebf4a9",
+      "bytes": 347
+    },
+    {
+      "file": "publication-0.3.4/account-before-verification-restart.json",
+      "sha256": "266324fc14caa2c42261118b0a3a0cdd5de2161f2777b63077109660e5c14950",
+      "bytes": 331
+    },
+    {
+      "file": "publication-0.3.4/account-busy-game-detail.json",
+      "sha256": "2958feecf8b5582fc9fe3313a7a7d9da3d83a0d2699c373f2699f4074d4149cf",
+      "bytes": 340
+    },
+    {
+      "file": "publication-0.3.4/account-wait-1795009334254871200.json",
+      "sha256": "a6498f216c8078c188f6a4ca17365c15b265ac6005e8432d7ea85fb312b0cc53",
+      "bytes": 331
+    },
+    {
+      "file": "publication-0.3.4/account-wait-1795009422675396000.json",
+      "sha256": "32e8f07aa57ed7e2b94249ad3b82beb9d0cd5d93694614c5eb6682fd39fb0bb2",
+      "bytes": 331
+    },
+    {
+      "file": "publication-0.3.4/account-wait-1795009760471365400.json",
+      "sha256": "22b827efd2ac62506cf8277c255157ccd195d6255e7fe37115b207ab2e5dd651",
+      "bytes": 331
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/account-before-online.json",
+      "sha256": "eb333ffd8e203686c073544f374ababd436396acd202cbdbe1b8bb47c1b2224f",
+      "bytes": 346
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/account-before-restart.json",
+      "sha256": "a1c2d0f8712239040ebc563a92d1525d8228c87ce72bf16d1e39d8da4ec63662",
+      "bytes": 346
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/account-initial.json",
+      "sha256": "fb2c5d12407a4be1c31ee546c2e18326998ef32baaedae62aa1de398f72c8ac9",
+      "bytes": 347
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/controlled-startup-offline-1795008263886302800.json",
+      "sha256": "6058d19f8149fd6d13a236ed6aa96a0895a873037eb4272fd73d072c5b037ad0",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/controlled-startup-offline.json",
+      "sha256": "6058d19f8149fd6d13a236ed6aa96a0895a873037eb4272fd73d072c5b037ad0",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/failure.json",
+      "sha256": "c1ae4943896d77b69ffdcb29ca94d471fe2503058772bfc32e60e6080bea7117",
+      "bytes": 255
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/final-offline-1795008343091362100.json",
+      "sha256": "f6333888848cd011bba02651e4fe6dbcf84b16b45499efe263111da16d1ea71c",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/final-offline.json",
+      "sha256": "f6333888848cd011bba02651e4fe6dbcf84b16b45499efe263111da16d1ea71c",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/offline-before-publication-1795008251284986700.json",
+      "sha256": "ee3379bf958ad00f63c0c39812b30a5999871f90d6196fc05e7af09ae593c24d",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/offline-before-publication.json",
+      "sha256": "ee3379bf958ad00f63c0c39812b30a5999871f90d6196fc05e7af09ae593c24d",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/offline-initial-1795008084456481300.json",
+      "sha256": "8aef1d09d470e5e610d1b9c5e7dab20bb1ff1d226a8471f2c2ec4cf6a91355b7",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/offline-initial.json",
+      "sha256": "8aef1d09d470e5e610d1b9c5e7dab20bb1ff1d226a8471f2c2ec4cf6a91355b7",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/public-before.json",
+      "sha256": "55d59135c3ed59c4188cfc00971e7d0926648766b7e65cdba9a27c67a31f4fbe",
+      "bytes": 7345
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress-1795008262076474700.json",
+      "sha256": "1a0d0db452183a9ef4148e9d512da3a84c2d8c0ca80d9a8f0a8e30c8910a2987",
+      "bytes": 495
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress-1795008263425769400.json",
+      "sha256": "b4e4152825c8139da7fa48f98fae4269b6bcc177f68a3cf4d00b4baa79a63a0e",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress-1795008302848386200.json",
+      "sha256": "c990088174c8bba400518db3f86947a3e6876de5e84885025b57d050a13116c5",
+      "bytes": 495
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress-1795008304194661800.json",
+      "sha256": "4098a20bfc5f26d55aba397a71b72bd2c51d0adb64c23f3d16f3ba04bf0e3d0f",
+      "bytes": 495
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress-1795008305538791600.json",
+      "sha256": "98c6792a883c42bbc358aad35f1950971dff89ec178bfb84286666273a8b7a36",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress-1795008339564584200.json",
+      "sha256": "01233a1c6ec771e44393b89645354923fbdfe41b0056899c1a0cf5b910c2a66e",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt1-before-upload/restore-progress.json",
+      "sha256": "01233a1c6ec771e44393b89645354923fbdfe41b0056899c1a0cf5b910c2a66e",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt2-before-restart/account-initial.json",
+      "sha256": "2f432ddb77d9abe2d1b75cc955061233ae52b93979fa6eba6e233fb5b1bbeb35",
+      "bytes": 346
+    },
+    {
+      "file": "publication-0.3.4/attempt2-before-restart/failure.json",
+      "sha256": "b8c440b20d6095ac9b162d4970fd37d3e675114e052600d715da51cbff8fe307",
+      "bytes": 146
+    },
+    {
+      "file": "publication-0.3.4/attempt2-before-restart/offline-initial.json",
+      "sha256": "04039875c34168069fcf7a08afee5a569c40a4494fb50793747bccfe1b9f677d",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/attempt2-before-restart/public-before.json",
+      "sha256": "d2de5bd87817b1336ed06b91bca3f4415e6b87cbf29b80b1f009228942a7418a",
+      "bytes": 7345
+    },
+    {
+      "file": "publication-0.3.4/check_presence_route.py",
+      "sha256": "f45e4c7dba589566bfe4f705f6f1377753d8db10ceec15146ad4d029fec9a3d7",
+      "bytes": 1897
+    },
+    {
+      "file": "publication-0.3.4/check_release_records.py",
+      "sha256": "2db5bf93bd7f690d009d6aca1a3d48b295fd3ffb047c6bad30226ed018bc9fdc",
+      "bytes": 2848
+    },
+    {
+      "file": "publication-0.3.4/child.log",
+      "sha256": "c497da21b971fd91af48d30ae5fc8db4cfff769463fdf383fe11220a69072a61",
+      "bytes": 473
+    },
+    {
+      "file": "publication-0.3.4/common.py",
+      "sha256": "0c2be73b5977eeea0c26db6118ffc2d5d9a57bc43e7e2a18cf41b497fcda6983",
+      "bytes": 7387
+    },
+    {
+      "file": "publication-0.3.4/control.log",
+      "sha256": "0603dd8ad6efe0c3f539bfd1d1ef143eefa08110d6667e090ff9b3cd08e5aeb0",
+      "bytes": 9695
+    },
+    {
+      "file": "publication-0.3.4/controller.py",
+      "sha256": "0aac8531bd865fabf2bbfc6090254e179c7e0ce578e4e2573d4dfa6274d3e538",
+      "bytes": 1774
+    },
+    {
+      "file": "publication-0.3.4/download_child.py",
+      "sha256": "168f7c4931c721eb1c619dfbc17ab252aa9a44b055ac4221172ff402781cea93",
+      "bytes": 2511
+    },
+    {
+      "file": "publication-0.3.4/download_controller.py",
+      "sha256": "6287e679cc9240da192783fab055b5350d3db7ee2dba4c0cd23f95baed832c16",
+      "bytes": 1556
+    },
+    {
+      "file": "publication-0.3.4/final-offline.json",
+      "sha256": "0a4bf32a6ad4b02e221f50f2c2c24a696f986975962300e1537fe43165d80790",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/finalize_release.py",
+      "sha256": "c0064920ad40351b9e876f94d3cbbc6289f48a4584938dc0c7a2abf79ece6cb5",
+      "bytes": 6963
+    },
+    {
+      "file": "publication-0.3.4/images.json",
+      "sha256": "614df3b2842e1c5e3707490a73d224fc1a0ae5d5180a5ecb658e2014a02a5bbf",
+      "bytes": 1174
+    },
+    {
+      "file": "publication-0.3.4/local-model-status.json",
+      "sha256": "4614c6b14b4a6c398c34234ceb11e3fa340704b9eb4478c297db44402ac73cc2",
+      "bytes": 762
+    },
+    {
+      "file": "publication-0.3.4/mount_smoke.py",
+      "sha256": "e9da7c3b288e70105a420b881bfc4b7f15c362c8a7aeb06e42951a641b98b0f3",
+      "bytes": 5108
+    },
+    {
+      "file": "publication-0.3.4/offline-after-public-verification.json",
+      "sha256": "0b08ee5ae4e1d916136b1da0ff4f55b1e18e121029402e3a10573bf236899072",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/offline-after-verification-busy.json",
+      "sha256": "69f8a1db130576d608914f6eda8957c36e2855c13880115df368f3a0dce07ab6",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/offline-before-publication.json",
+      "sha256": "e95b667f69dce09c525963b7fcd7f2bcbaa31c3062dc660c41beb30d745bb41b",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/offline-final-current.json",
+      "sha256": "144599327b38a67a3f3b4cb334b4d3c42f790946aee4831c48bde115de329d49",
+      "bytes": 2269
+    },
+    {
+      "file": "publication-0.3.4/post-upload-occupancy-block.json",
+      "sha256": "0056929ef753c46ad9329fc9cdd703ad9ade4d45dd7d6626d59d985f0ddd10ae",
+      "bytes": 469
+    },
+    {
+      "file": "publication-0.3.4/prepare_release.py",
+      "sha256": "e263a94b18557138fb2a10f3b9216049715d02578052646c9cee3387a85eb10b",
+      "bytes": 3777
+    },
+    {
+      "file": "publication-0.3.4/prepared.json",
+      "sha256": "312ae2f685597bd7a32d0acfbb959f67b21f550e0d05a57864dc41dbc859f775",
+      "bytes": 1042
+    },
+    {
+      "file": "publication-0.3.4/presence-http-retries.json",
+      "sha256": "b6806fa23c3fb697d99f359e5e7f6c6ac353ed3bf822836e8ec22e10c2b3f62b",
+      "bytes": 528
+    },
+    {
+      "file": "publication-0.3.4/presence-route-verification.json",
+      "sha256": "f2d6a85584773df5e538752191b01620db804cd59430043f8258363813213a0a",
+      "bytes": 452
+    },
+    {
+      "file": "publication-0.3.4/public-after.json",
+      "sha256": "636999a37e3de6d8bba76c55bfc1456ad3e35378f7f79b1080119eb566eb50c1",
+      "bytes": 8331
+    },
+    {
+      "file": "publication-0.3.4/public-body-verification.json",
+      "sha256": "f50674c0a3ef26ec0cf470de84390aae96d7b5088df1eae06724697f5f52aa98",
+      "bytes": 520
+    },
+    {
+      "file": "publication-0.3.4/public-pages-check.json",
+      "sha256": "40f881b2b81281fb7f828213aa6abee8b09b796dee1740ba78057e0c3f733def",
+      "bytes": 695
+    },
+    {
+      "file": "publication-0.3.4/publication-state-before.json",
+      "sha256": "2a3f5e88fdf98c2cbe5d6f0481fe90b758abec09cec7c9af754f02c5daf690d4",
+      "bytes": 25084
+    },
+    {
+      "file": "publication-0.3.4/publish_child.py",
+      "sha256": "4417105c1d3a0009c1b05aca7825e05ddd8c301e93cb604ab1fe6d0a74360106",
+      "bytes": 1232
+    },
+    {
+      "file": "publication-0.3.4/record_public_release_pending.py",
+      "sha256": "47c7861abc317f30f1bb5cf0117a2a6383497e2fd5224ed39113501a668bdf1a",
+      "bytes": 6196
+    },
+    {
+      "file": "publication-0.3.4/update_public_release_pending_docs.py",
+      "sha256": "b810d4f34e19fe85cbe5507b3eca44c02bebb251795e3140fc754ab740da5787",
+      "bytes": 5358
+    },
+    {
+      "file": "publication-0.3.4/update_release_docs.py",
+      "sha256": "205395fc8f441a420fa3abc5acb759bb7e62dcb4c3eb19d1ad736a94e30d0b5c",
+      "bytes": 4945
+    },
+    {
+      "file": "publication-0.3.4/upload.json",
+      "sha256": "9be531e4f54e8aa220d141843cfe9e469c05b61cf01918812f61facea7bab35b",
+      "bytes": 24628
+    },
+    {
+      "file": "publication-0.3.4/verify_public.py",
+      "sha256": "257bb14266df0dc9ed9b8b09724b37ec59c6f642b31575bcb883e1e8473230fc",
+      "bytes": 4554
+    }
+  ],
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "last_account_occupancy": {
+    "owner": "76561198273714027",
+    "status": "BUSY",
+    "online_state": "in-game",
+    "observed_at_utc": "2026-11-18T13:49:16.757066+00:00",
+    "server_date": "Wed, 18 Nov 2026 13:49:17 GMT",
+    "source": "steam_community_public_profile_html",
+    "response_sha256": "ac5e6f59762d165f92e48892e5ce7cfe412e9412841f27dbf9e09e5f13aa4ef1"
+  }
+}

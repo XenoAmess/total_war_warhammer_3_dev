@@ -34,4 +34,4 @@
 
 后续结果归各 Mod 的专属记录，并更新[跨批次补验清单](dlc-acceptance-ledger.md)。原生联机仍需第二端及真实多人环境，购买 DLC 不解除此依赖。本地代码模型仍未提供 `qwen38-coder`，仅列出视频模型；没有候选请求或地址／模型回退。
 
-两 Mod 的本批直接补验已完成并保留夹具与未验范围，见[招募刷新 0.3.4 候选报告](../mods/recruitment_refresh/docs/dlc-compatibility-20261118-round2.md)、[迁都 0.2.0 报告](../mods/move_capital/docs/dlc-compatibility-20261118-round2.json)及[持续验收清单](dlc-acceptance-ledger.md)。授权统计仍是上述实际读回，业务通过不改变 7 条未拥有原始标记。0.3.4 未上传工坊；最终 Steam 主动离线。
+两 Mod 的本批直接补验已完成并保留夹具与未验范围，见[招募刷新 0.3.4 候选报告](../mods/recruitment_refresh/docs/dlc-compatibility-20261118-round2.md)、[迁都 0.2.0 报告](../mods/move_capital/docs/dlc-compatibility-20261118-round2.json)及[持续验收清单](dlc-acceptance-ledger.md)。授权统计仍是上述实际读回，业务通过不改变 7 条未拥有原始标记。0.3.4 已更新原工坊条目并核对公开页面；订阅包检查因另一台机器正在运行 CK3 待验，最终 Steam 主动离线。

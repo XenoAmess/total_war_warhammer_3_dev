@@ -4,7 +4,7 @@
 
 | Mod | 状态 | 入口 |
 | --- | --- | --- |
-| 招募候选刷新 | `0.3.3 Alpha` 已发布；混矮车队与领主法术系修复，订阅包哈希及载入核对通过 | [项目说明](mods/recruitment_refresh/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
+| 招募候选刷新 | `0.3.4 Alpha` 已发布；巴什瓦商队面板恢复与 DLC 补验，公开页面已核对，订阅包验证待账号空闲 | [项目说明](mods/recruitment_refresh/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830548217) |
 | 迁移首都 | `0.2.0 Alpha` 已发布；新增混矮下与刷新 Mod 共同启用验收，包未变 | [项目说明](mods/move_capital/README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3830651933) |
 | 顾问换声 | 原版资源预研完成，尚无实现或可发布包 | [预研入口](mods/advisor_voice/README.md) |
 

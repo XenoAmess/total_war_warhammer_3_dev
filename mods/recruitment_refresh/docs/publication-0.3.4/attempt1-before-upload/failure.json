@@ -1,0 +1,7 @@
+{
+  "stage": "before_publisher_child",
+  "error": "HTTP 429 from fresh public account presence queries; no child or game SDK initialization",
+  "upload_submitted": false,
+  "steam_offline_restored": true,
+  "final_offline_receipt": "final-offline.json"
+}

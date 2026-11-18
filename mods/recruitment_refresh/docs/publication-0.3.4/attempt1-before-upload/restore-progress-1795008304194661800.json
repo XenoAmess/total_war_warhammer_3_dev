@@ -1,0 +1,15 @@
+{
+  "schema": "wh3.release-steam-offline/v1",
+  "machine_id": "pc-20260924rtuf-f11af23c08",
+  "observed_at_utc": "2026-11-18T13:25:04.393113+00:00",
+  "nonce": "ff1b482b0d3da015b95acc7cd34d854a",
+  "status": "unavailable",
+  "steam": {
+    "pid": 24888,
+    "birth_filetime": "134394818553888755",
+    "exe": "D:\\steam\\steam.exe",
+    "file_version": "11.23.65.88"
+  },
+  "reason": "tray_state_unavailable",
+  "detail": "native positive offline mode requires the current offline tray state"
+}

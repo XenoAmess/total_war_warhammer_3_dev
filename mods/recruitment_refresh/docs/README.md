@@ -1,5 +1,8 @@
 # 招募候选刷新文档
 
+- [0.3.4 巴什瓦、四种灾祸领主与两 Mod 直接补验](dlc-compatibility-20261118-round2.md)
+- [0.3.4 已发布回执及账号空闲后待验项](workshop-publication-0.3.4.json)
+
 - [0.3.3 DLC 排查、两处修复与精确包实机验收](dlc-compatibility-20261118.md)
 - [0.3.3 创意工坊发布回执](workshop-publication-0.3.3.json)
 - [0.3.2 商队与特殊候选实现及实机验收](special-recruitment-implementation-0.3.2.json)
